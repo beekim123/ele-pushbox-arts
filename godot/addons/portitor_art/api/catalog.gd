@@ -293,7 +293,8 @@ static func _file_set(root: String, files: Dictionary) -> Dictionary:
 		var key: String=PREFIX+relative
 		if key==PREFIX+"manifest.json" or files.has(key): continue
 		# Godot may create only these precise sidecars for owned sources.
-		if relative.ends_with(".uid") and relative.trim_suffix(".uid").ends_with(".gd") and files.has(PREFIX+relative.trim_suffix(".uid")): continue
+		var uid_source: String=relative.trim_suffix(".uid")
+		if relative.ends_with(".uid") and (uid_source.ends_with(".gd") or uid_source.ends_with(".gdshader") or uid_source.ends_with(".gdshaderinc")) and files.has(PREFIX+uid_source): continue
 		if relative.ends_with(".import") and files.has(PREFIX+relative.trim_suffix(".import")): continue
 		return Contract.result(["unknown package file: "+relative])
 	for key: String in files:

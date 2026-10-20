@@ -34,6 +34,12 @@ func _run() -> void:
 	check(loaded.ok,"actual ZIP Catalog: "+str(loaded.errors));end("contracts.actual-package")
 	if not loaded.ok:_finish();return
 	begin()
+	check(FileAccess.file_exists("res://addons/portitor_art/runtime/ui/palette_dim.gdshader.uid"),"actual editor-created owned shader sidecar accepted")
+	var bad_path: String="res://addons/portitor_art/resources/catalog.json.uid";var extra: FileAccess=FileAccess.open(bad_path,FileAccess.WRITE);extra.store_string("uid://not-an-owned-script");extra.close()
+	var texture_before: Texture2D=catalog.texture("art:obj.crate_wood")
+	check(not catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok and catalog.texture("art:obj.crate_wood")==texture_before,"unknown/non-source UID sidecar rejects atomically")
+	DirAccess.remove_absolute(bad_path);check(catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok,"valid exact bytes reload after removing unknown sidecar");end("contracts.editor-sidecars")
+	begin()
 	for theme: String in Models.THEMES:check(Contract.require_capability(catalog,"art:theme."+theme,"theme").ok,"implemented theme: "+theme)
 	for uid: String in ["art:theme.candy","art:theme.jeju","art:theme.polar","art:ui.screen.confirm","art:ui.screen.delivery_hud","art:ui.screen.delivery_pause","art:ui.screen.hint_animal","art:ui.screen.hud_keys","art:ui.screen.observe","art:ui.screen.reels","art:ui.screen.settlement","art:ui.screen.settlement_fail","art:ui.screen.shop"]:
 		check(catalog.capability(uid).native=="reference_only" and not Contract.require_capability(catalog,uid).ok,"reference refuses binding: "+uid)

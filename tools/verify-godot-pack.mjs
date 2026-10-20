@@ -32,7 +32,7 @@ const THEMES=['dungeon','ruins','cave','forest','sky','cosmos','diyu'];
 const VIEWS=['lobby','chapters','levels','play','pause','settings','hint','complete','rulecard','dialogue','controls'];
 const EMBEDDED=[['hub_start','lobby'],['lobby_generic','lobby'],['pause_help','pause'],['settings_help','settings'],['clear_found','complete'],['rulecard_how','rulecard']];
 export function expectedCases(phase){
-  if(phase==='contracts')return ['actual-package','capabilities','report-envelope','display-schemas','font-attributes','ui-intents-atomicity',...EMBEDDED.map(x=>'embedded-denial.'+x[0])].map(x=>({id:'contracts.'+x,scope:'public-contracts'}));
+  if(phase==='contracts')return ['actual-package','editor-sidecars','capabilities','report-envelope','display-schemas','font-attributes','ui-intents-atomicity',...EMBEDDED.map(x=>'embedded-denial.'+x[0])].map(x=>({id:'contracts.'+x,scope:'public-contracts'}));
   const result=[{id:'gpu.package',scope:'public-render'},{id:'reference.integer-and-frames',scope:'public-js-reference'}];
   for(const theme of THEMES)for(const tick of [0,127])for(const kind of ['background','terrain'])result.push({id:'reference.'+kind+'.'+theme+'.'+tick,scope:'public-js-reference'});
   for(const theme of THEMES)for(const tick of [0,127])result.push({id:'world.'+theme+'.'+tick,scope:'public-render'});
