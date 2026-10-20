@@ -1,0 +1,118 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.diyu_dog",
+ "name": "地府 · 小白狗（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  13,
+  10
+ ],
+ "anchor": [
+  6,
+  10
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sit": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0
+   ]
+  },
+  "wag": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "bark": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    4,
+    4,
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zzzz...",
+   ".....zttttz..",
+   "....zFtzttzzz",
+   "....zFttttttz",
+   ".z..zFFttzzz.",
+   "zuz..zikiz...",
+   ".zuzztttttz..",
+   "..zutttttuz..",
+   "..zuttzttuz..",
+   "...zzzzzzzz.."
+  ],
+  [
+   "......zzzz...",
+   ".....zttttz..",
+   "....zFtzttzzz",
+   "z...zFttttttz",
+   "zuz.zFFttzzz.",
+   "zzuz.zikiz...",
+   ".zzzztttttz..",
+   "..zutttttuz..",
+   "..zuttzttuz..",
+   "...zzzzzzzz.."
+  ],
+  [
+   ".............",
+   "......zzzz...",
+   ".....zttttz..",
+   ".z..zFtzttzzz",
+   "zuz.zFttttttz",
+   ".zuzzFFttzzz.",
+   "..zuttzikiz..",
+   "..zutttttuz..",
+   "..zuzzzzzuz..",
+   "..zz.....zz.."
+  ],
+  [
+   ".............",
+   "......zzzz...",
+   ".....zttttz..",
+   "z...zFtzttzzz",
+   "zuz.zFttttttz",
+   ".zuzzFFttzzz.",
+   "..zuttzikiz..",
+   "..zutttttuz..",
+   "...zuzzzuz...",
+   "...zz...zz..."
+  ],
+  [
+   "......zzzz.z.",
+   ".....zttttz.z",
+   "....zFtzttzzz",
+   "....zFtttttzz",
+   ".z..zFFttzDz.",
+   "zuz..zikiz...",
+   ".zuzztttttz..",
+   "..zutttttuz..",
+   "..zuttzttuz..",
+   "...zzzzzzzz.."
+  ]
+ ],
+ "usage": "地府的提示动物：戴红项圈小铃铛的小白狗。平时趴坐在下一步要用的东西旁边（sit）；人走近时跑过去（walk），冲着那个东西摇尾巴（wag）；喂桂花糕时叫一声（bark），头顶出提示气泡。面朝右绘制，朝左时水平镜像。不挡路、不受伤、不能推。",
+ "notes": "用浅色（白毛、米色耳朵）是为了在地府的暗背景上读得清；原计划的小黑狗在暗处看不见。不在配送模式的随机生态里出现，只由房间的提示步骤摆放。",
+ "content_hash": "563f63333c1e2fdcd0176336a61b05aa2ff752122be5063b4582264059a3831a"
+}

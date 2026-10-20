@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.snowman",
+ "name": "雪人（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "....zttttttz....",
+   "...zttttztzuz...",
+   "...zttttuujjjz..",
+   "...ztttuuubbz...",
+   "....ztuuvvvz....",
+   "ff.ziiiiiihhz.ff",
+   "f.ziiiiiihihhz.f",
+   ".fztttttttihtzf.",
+   "..fttttzttihuf..",
+   ".ztttttttuhzuvz.",
+   ".ztttttzuuuvvvz.",
+   "..zttuuuuvvvvz..",
+   "...zuuuvvvvvz...",
+   "....zzzzzzzz...."
+  ],
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "....zttttttz....",
+   "...zttttztzuz...",
+   "...zttttuujjjz..",
+   "...ztttuuubbz...",
+   "....ztuuvvvz....",
+   "ff.ziiiiiihhz...",
+   "f.ziiiiiihihhzff",
+   ".fztttttttihtzff",
+   "..fttttzttihuf..",
+   ".ztttttttuuhzvz.",
+   ".ztttttzuuuvvvz.",
+   "..zttuuuuvvvvz..",
+   "...zuuuvvvvvz...",
+   "....zzzzzzzz...."
+  ],
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "....zttttttz....",
+   "...zttttztzuz...",
+   "...zttttuujjjz..",
+   "...ztttzuubbz...",
+   "f.f.ztuuzzvz.f.f",
+   ".f.ziiiiiihhz.f.",
+   ".fziiiiiihihhzf.",
+   "..ftttttttihtf..",
+   "..zttttzttihuz..",
+   ".ztttttttuuhzvz.",
+   ".ztttttzuuuvvvz.",
+   "..zttuuuuvvvvz..",
+   "...zuuuvvvvvz...",
+   "....zzzzzzzz...."
+  ],
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "....zttttttz....",
+   "...zttttztzuz...",
+   "...zttttuujjjz..",
+   "...ztttzuubbz.f.",
+   "f.f.ztuuzzvz...f",
+   ".f.ziiiiiihhz..f",
+   ".fziiiiiihihhzf.",
+   "..ftttttttihtf..",
+   "..zttttzttihuz..",
+   ".ztttttttuhzuvz.",
+   ".ztttttzuuuvvvz.",
+   "..zttuuuuvvvvz..",
+   "...zuuuvvvvvz...",
+   "....zzzzzzzz...."
+  ]
+ ],
+ "usage": "收件人·雪人：两个雪球垒成，煤球眼睛、胡萝卜鼻子、树枝手，脖子上围着红围巾，站在木屋院子里（idle，围巾尾巴和树枝手轻轻动），不走动。收到货物时举起两只树枝手挥动、咧嘴笑（win）。白色的身子有 z 描边和 u / v 的阴影，放在雪地上也看得清。面朝右绘制，朝左时水平镜像。",
+ "notes": "怕热不收热汤罐、喜欢毛线手套属于货物规则（cargo_only，DLV-01）；v2 先当普通收件人，这次不画戴手套的样子。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "80678d22095a82c66b39867dfc886c85cfa0270dfa3195f4628be35cbc73a808"
+}

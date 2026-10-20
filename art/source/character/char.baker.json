@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.baker",
+ "name": "面包师（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....zzzz.......",
+   "....zttttz......",
+   "...zttttutz.....",
+   "...ztutttuz.....",
+   "....zuuuuz......",
+   "...zEEEEEEz.....",
+   "...zEzEEzEz.....",
+   "...zDEEFEDz.....",
+   "...zEeffeEz.....",
+   "...zzEEEEz..zz..",
+   "..zeeiiieezzcdz.",
+   "..zettttteEdfddz",
+   "..zEttttuzzddfez",
+   "...ztuttuz.zeez.",
+   "...zyyzyyz..zz..",
+   "....zz.zz......."
+  ],
+  [
+   ".....zzzz.......",
+   "....zttttz......",
+   "...zttttutz.....",
+   "...ztutttuz.....",
+   "....zuuuuz......",
+   "...zEEEEEEz.....",
+   "...zEFEEFEz.....",
+   "...zDEEFEDz.....",
+   "...zEeffeEz.....",
+   "...zzEEEEz..zz..",
+   "..zeeiiieezzcdz.",
+   "..zettttteEdfddz",
+   "..zEttttuzzddfez",
+   "...ztuttuz.zeez.",
+   "...zyyzyyz..zz..",
+   "....zz.zz......."
+  ],
+  [
+   "....zttttz......",
+   "...zttttutz.....",
+   "...ztutttuz.....",
+   "....zuuuuz......",
+   "...zEEEEEEz.....",
+   "...zEzEEzEz.....",
+   "...zDEEFEDz.....",
+   "...zEeffeEz.....",
+   "...zzEziEz..zz..",
+   "..zeeiiieezzcdz.",
+   "..zettttteEdfddz",
+   "..zEttttuzzddfez",
+   "...ztuttuz.zeez.",
+   "...zyyzyyz..zz..",
+   "....zz.zz.......",
+   "................"
+  ],
+  [
+   ".....zzzz.......",
+   "....zttttz......",
+   "...zttttutz.....",
+   "...ztutttuz.....",
+   "....zuuuuz......",
+   "...zEEEEEEz.....",
+   "...zEzEEzEz.....",
+   "...zDEEFEDz.....",
+   "...zEeffeEz.....",
+   "...zzEziEz..zz..",
+   "..zeeiiieezzcdz.",
+   "..zettttteEdfddz",
+   "..zEttttuzzddfez",
+   "...ztuttuz.zeez.",
+   "...zyyzyyz..zz..",
+   "....zz.zz......."
+  ]
+ ],
+ "usage": "收件人·面包师：高高的白厨师帽、圆脸、小胡子、红领巾、白围裙，手里拿着一块饼干（idle，偶尔眨眼），不走动。收到货物时张嘴笑、跳一下（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "5964f5e6e7345f590abda6266adc72402b725e62817266a08ba220eec5522330"
+}

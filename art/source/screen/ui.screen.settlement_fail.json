@@ -1,0 +1,97 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settlement_fail",
+ "name": "失败结算",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/mapgen2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json"
+ ],
+ "depends": [
+  "avatar.zombie",
+  "cargo.vase",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.panel"
+ ],
+ "version": 4,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settlement_fail",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "recipient": "zombie",
+  "cargo": "vase",
+  "reason": "hearts",
+  "picked": 30,
+  "kept": 15,
+  "room": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "id": "ui_result_preview",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    1
+   ],
+   "name": "UI result preview",
+   "exits": [
+    "left.0.low",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.low>right.0.low"
+   ],
+   "map": [
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    ".......B............",
+    "......FFF...........",
+    "####################",
+    "####################"
+   ]
+  }
+ },
+ "usage": "这一单没送成（心掉光或货物坏了）：没有小费，路上拾到的金币带回一半。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "21a6004cbd6f8aaef1c131241a04054c4ddf9b2803bfc1b85c9d1271e34e0e60"
+}

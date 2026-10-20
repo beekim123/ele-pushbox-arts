@@ -1,0 +1,123 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.bounce_mushroom",
+ "name": "弹跳蘑菇",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  20
+ ],
+ "anchor": [
+  8,
+  20
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "squash": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "spring": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "bounce": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    1,
+    2,
+    2,
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   ".zzDDDiiiiiiizz.",
+   "zDDDiittiiiiiihz",
+   "zDiiittttiiiiihz",
+   "ziiiiittiiiittiz",
+   "zhiiiiiiiiitthhz",
+   ".zzhhhhhhhhhhzz.",
+   "...zFcFcFcFcz...",
+   ".....zcEEFz.....",
+   ".....zcEEFz.....",
+   ".....zcEEFz.....",
+   ".....zcEEFz.....",
+   ".....zcEEFz.....",
+   ".....zcEEFz.....",
+   "....zcEEEFFz....",
+   "....zzzzzzzz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   ".zzDDDiiiiiiizz.",
+   "zDDDiittttiiiihz",
+   "ziiiiittiiiitthz",
+   "zhhhhhhhhhhhhhhz",
+   ".zzzzzzzzzzzzzz.",
+   "..zFcFcFcFcFcz..",
+   "....zcEEEEFz....",
+   "....zcEEEEFz....",
+   "....zcEEEEFz....",
+   "....zcEEEEFz....",
+   "....zcEEEEFz....",
+   "...zcEEEEEFFz...",
+   "...zzzzzzzzzz..."
+  ],
+  [
+   "................",
+   "...zzzzzzzzzz...",
+   ".zzDDDiiiiiiizz.",
+   "zDDDiittiiiiiihz",
+   "zDiiittttiiiiihz",
+   "ziiiiittiiiittiz",
+   "zhiiiiiiiiitthhz",
+   ".zzhhhhhhhhhhzz.",
+   "...zFcFcFcFcz...",
+   "......zcFz......",
+   "..t...zcFz...t..",
+   "..t...zcFz...t..",
+   "......zcFz......",
+   "..v...zcFz...v..",
+   "......zcFz......",
+   "......zcFz......",
+   "......zcFz......",
+   "......zcFz......",
+   ".....zcEFFz.....",
+   ".....zzzzzz....."
+  ]
+ ],
+ "usage": "弹跳蘑菇（机关 bounce）：画在 bounce 的 at 格，锚点在格子底边中点，下面 16 行是格子、上面 4 行留给弹起的伞盖。伞盖顶边就是格子顶边，这一格是实心的，人和箱子落在它上面一格。平时画 idle；有东西真正落下踩中时画 squash（伞盖压下 2 像素、变扁），把它弹起 height 格（G08 是 2 格）的那一下画 spring（伞盖顶起 3 像素、两边有向上的动势线），然后回到 idle（workbench/js/core/mech/bounce.js）。bounce 是把 squash、spring、idle 连起来播一遍。",
+ "notes": "关卡模式第 4 章 G08。红伞盖白斑点、奶白菌柄，在 6 个章节背景上都显眼；三个状态靠伞盖高度和压扁/拉长的形状区分，不只靠颜色。",
+ "content_hash": "06647e160beb77a4274a0c422f38bc37e1d0d11947c74aab9fd6a427c3c46f3b"
+}

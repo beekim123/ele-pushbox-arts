@@ -1,0 +1,44 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:plate_down",
+ "version": 2,
+ "hash": "48237cc61f1ac5710a48580b311f85a1e4604dad0a4441c9af842419cf4bcc97",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "plate_down",
+  "uid": "sfx:plate_down",
+  "name": "压板按下",
+  "description": "D3 温软单嗒，按下音高比松开高三个半音。",
+  "seed": 170105,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "48237cc61f1ac5710a48580b311f85a1e4604dad0a4441c9af842419cf4bcc97",
+  "gain_db": -13.9285,
+  "instruments": [
+   {
+    "id": "plate",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 1000,
+    "attack_ms": 8,
+    "decay_ms": 18,
+    "sustain": 0.55,
+    "release_ms": 30
+   }
+  ],
+  "duration_ms": 100,
+  "events": [
+   {
+    "instrument": "plate",
+    "start_ms": 0,
+    "duration_ms": 70,
+    "note": 50,
+    "gain_db": 0
+   }
+  ]
+ }
+}

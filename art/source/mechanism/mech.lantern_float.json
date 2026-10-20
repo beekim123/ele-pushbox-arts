@@ -1,0 +1,176 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.lantern_float",
+ "name": "浮空地块 · 灯笼浮台（地府）",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "left": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "mid": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "right": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "left_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "mid_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "right_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzzzzzzzz",
+   ".ziiiiiiiiiiiiii",
+   "zhhhhhhhhhhhhhhh",
+   "zhjjjjajjjjjjajh",
+   "zhkkkkakkkkkkakh",
+   "zhllllalllllllah",
+   "zhllllalllllllah",
+   "zhkkkkakkkkkkakh",
+   "zhjjjjajjjjjjajh",
+   "zhhhhhhhhhhhhhhh",
+   ".zffffffffffffff",
+   "..zzzzzzzzzzzzzz",
+   "...k............",
+   "...k............",
+   "..kik...........",
+   "..zhz..........."
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "iiiiiiiiiiiiiiii",
+   "hhhhhhhhhhhhhhhh",
+   "jjajjjjjjjjjajjh",
+   "kkakkkiiikkkakkh",
+   "llallilllillallh",
+   "llallilllillallh",
+   "kkakkkiiikkkakkh",
+   "jjajjjjjjjjjajjh",
+   "hhhhhhhhhhhhhhhh",
+   "ffffffffffffffff",
+   "zzzzzzzzzzzzzzzz",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzz..",
+   "iiiiiiiiiiiiiiz.",
+   "hhhhhhhhhhhhhhhz",
+   "jjajjjjjjajjjjhz",
+   "kkakkkkkkakkkkhz",
+   "lalllllllallllhz",
+   "lalllllllallllhz",
+   "kkakkkkkkakkkkhz",
+   "jjajjjjjjajjjjhz",
+   "hhhhhhhhhhhhhhhz",
+   "ffffffffffffffz.",
+   "zzzzzzzzzzzzzz..",
+   "............k...",
+   "............k...",
+   "...........kik..",
+   "...........zhz.."
+  ],
+  [
+   "..zzzzzzzzzzzzzz",
+   ".ziiiiiiiiiiiiii",
+   "zhhhhhhhhhhhhhhh",
+   "zhkkkkjkkkkkkjkh",
+   "zhlllljlllllljlh",
+   "zhttttjtttttttjh",
+   "zhttttjtttttttjh",
+   "zhlllljlllllljlh",
+   "zhkkkkjkkkkkkjkh",
+   "zhhhhhhhhhhhhhhh",
+   ".zffffffffffffff",
+   "..zzzzzzzzzzzzzz",
+   "...l............",
+   "...l............",
+   "..lil...........",
+   "..zhz..........."
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "iiiiiiiiiiiiiiii",
+   "hhhhhhhhhhhhhhhh",
+   "kkjkkkkkkkkkjkkh",
+   "lljllliiillljllh",
+   "ttjttitttittjtth",
+   "ttjttitttittjtth",
+   "lljllliiillljllh",
+   "kkjkkkkkkkkkjkkh",
+   "hhhhhhhhhhhhhhhh",
+   "ffffffffffffffff",
+   "zzzzzzzzzzzzzzzz",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzz..",
+   "iiiiiiiiiiiiiiz.",
+   "hhhhhhhhhhhhhhhz",
+   "kkjkkkkkkjkkkkhz",
+   "lljlllllljllllhz",
+   "tjtttttttjtttthz",
+   "tjtttttttjtttthz",
+   "lljlllllljllllhz",
+   "kkjkkkkkkjkkkkhz",
+   "hhhhhhhhhhhhhhhz",
+   "ffffffffffffffz.",
+   "zzzzzzzzzzzzzz..",
+   "............l...",
+   "............l...",
+   "...........lil..",
+   "...........zhz.."
+  ]
+ ],
+ "usage": "浮空地块（float_block）在地府的样子：一段 2–4 格宽、红漆木框糊黄纸的扁灯笼台，里面点着灯，悬在空中。每格一帧：最左格 left，中间格 mid（宽 4 格时重复），最右格 right，两端垂着流苏。板面顶边就是格子顶边。被推动或撑篙移动的那一下换成 *_move（纸面更亮），停下后换回。",
+ "notes": "规则和石牢的符文浮石完全相同，只换外观。纸面是暖黄色，和地府青黑色的石头、暗背景都分得开；和红灯笼装饰的区别是它扁、宽、有木框，而且站得上去。",
+ "content_hash": "db943286974489b17c81326ca23cdbb6b76b5e6264a77df0ecbabf5b5f293406"
+}

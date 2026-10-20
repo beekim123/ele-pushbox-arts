@@ -1,0 +1,80 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.shop",
+ "name": "驿站货架",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/dialogue.js",
+  "workbench/js/core/font-small.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.panel",
+  "ui.keycap",
+  "ui.bubble",
+  "ui.bubble_tail",
+  "char.turtle_keeper",
+  "item.coin",
+  "item.sandbag",
+  "item.first_aid",
+  "item.rope_ladder",
+  "ui.delivery_icons"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "shop",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "coins": 45,
+  "goods": [
+   {
+    "id": "sandbag",
+    "price": 10,
+    "stock": 5
+   },
+   {
+    "id": "first_aid",
+    "price": 50,
+    "stock": 1
+   },
+   {
+    "id": "rope_ladder",
+    "price": 25,
+    "stock": 0
+   }
+  ],
+  "focus": 0,
+  "bag": [
+   "first_aid"
+  ],
+  "slots": 3,
+  "sand": 2
+ },
+ "usage": "在驿站和龟掌柜说话时打开（世界暂停）：每站回 1 颗心一次；货架上每样东西有价格和库存，卖完的变暗；下面是背包格和沙袋数。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "267d16250937ed3619c685b049c770d516487ec82e69364d75c7a3a4bf98c85a"
+}

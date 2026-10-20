@@ -1,0 +1,197 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.jeju",
+ "name": "主题 · 济州海女村（白天的海边）",
+ "category": "theme",
+ "kind": "procedural",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "anchor": null,
+ "layer": "terrain",
+ "palette": "endesga32",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/terrain-jeju.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.jeju_harubang",
+  "deco.jeju_tangerine_tree",
+  "deco.jeju_canola",
+  "fauna.jeju_dragonfly"
+ ],
+ "params": {
+  "title": "济州",
+  "rock": {
+   "pattern": "jeju",
+   "base": [
+    "x",
+    "y"
+   ],
+   "pore": "z",
+   "lip": "w",
+   "speck": "w",
+   "light": "v",
+   "dark": "z",
+   "edge": "z",
+   "grass": [
+    "m",
+    "n",
+    "o"
+   ],
+   "soil": [
+    "g",
+    "f"
+   ],
+   "blacksand": [
+    "w",
+    "x",
+    "t"
+   ],
+   "reef": [
+    "y",
+    "z",
+    "u",
+    "w",
+    "o",
+    "n"
+   ],
+   "wall": [
+    "x",
+    "v",
+    "y",
+    "z"
+   ],
+   "deck": [
+    "e",
+    "f",
+    "g",
+    "v",
+    "f"
+   ],
+   "top": "m"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "jeju",
+   "base": [
+    "r",
+    "s"
+   ],
+   "speck": "u",
+   "accent": "v",
+   "detail": "y",
+   "far": "v",
+   "far2": "u",
+   "mid": "w",
+   "cloud": [
+    "t",
+    "u"
+   ],
+   "sea": [
+    "q",
+    "p",
+    "r",
+    "q"
+   ],
+   "glint": "u",
+   "shore": [
+    "y",
+    "x"
+   ],
+   "foam": "u"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.jeju_harubang",
+    "anim": "default",
+    "every": 12,
+    "max": 1,
+    "salt": 7
+   },
+   {
+    "type": "floor",
+    "id": "deco.jeju_tangerine_tree",
+    "anim": "sway",
+    "every": 6,
+    "max": 2,
+    "salt": 11
+   },
+   {
+    "type": "floor",
+    "id": "deco.jeju_canola",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.jeju_dragonfly",
+    "anim": "fly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "sun": {
+    "x": 52,
+    "y": 30,
+    "radius": 24
+   },
+   "weathers": [
+    "rain"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "配送模式第三张地图「济州海女村」的地形、背景与生态（只用于配送模式）。画风是白天的海边。地形用 terrain-jeju.js 的 jeju 图案：岩石是深灰蓝的多孔玄武岩（小气孔的下沿有一点亮边）；房间最左、最右两列画成圆石垒的石墙（돌담），最下面一行画成礁石（藤壶白点、绿藻）；下半屏悬空一格厚的石条画成码头栈道（木板和桩子，没有框和叉撑）；露天的顶面在上半屏是火山土和草（草尖最多伸进上面 2 像素），在下半屏是闪着细光的黑沙（比规则的沙深得多）。背景是晴天：蓝天抖动过渡到地平线的淡蓝，几朵慢慢飘的白云（底边不平），地平线上是平顶的汉拿山和几座小火山丘（오름），下面是海：地平线处蓝，往下抖动过渡成比规则水暗的墨绿，波纹随时间移动、偶尔闪光，不画规则水那道亮水面线，最下面是近岸礁石剪影。生态：石头爷爷（每屏最多 1 尊，只作地标）、橘子树、油菜花，偶尔飞过红蜻蜓（配送模式里它是提示动物，由 ambient_exclude 关掉）。太阳在左上，没有暗角和灯光；天气默认关，可选「雨」。",
+ "notes": "取材韩国济州岛（三多岛：风多、石头多、海女多）；石头爷爷只作地标，不能推倒，也不当箱子、怪物或收件人。天空比 art-direction 第 1 节第 5 条亮（用户要求明亮，同 theme.sky 的先例），所以靠近地形的海和近岸礁石压暗。规则材料（土、裂石、沙、水）和其他主题完全相同。不画海鸥（是怪物）和全屏风线（阵风只画在机关格）。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e8a081b7160dfaeda3f276d48ec40568d6b0d6ffc28acf2606f5aa0b918f06ae"
+}

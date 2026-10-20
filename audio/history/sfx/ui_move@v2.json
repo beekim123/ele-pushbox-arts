@@ -1,0 +1,44 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:ui_move",
+ "version": 2,
+ "hash": "c4c2688ec4aee688a766979b71b831676d64e2fd73269a60d396cc26d7c2739a",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "ui_move",
+  "uid": "sfx:ui_move",
+  "name": "光标移动",
+  "description": "C4 极短木点，70 ms 总时长含 25 ms 软尾。",
+  "seed": 170125,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "c4c2688ec4aee688a766979b71b831676d64e2fd73269a60d396cc26d7c2739a",
+  "gain_db": -12.2545,
+  "instruments": [
+   {
+    "id": "cursor",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 1000,
+    "attack_ms": 8,
+    "decay_ms": 12,
+    "sustain": 0.42,
+    "release_ms": 25
+   }
+  ],
+  "duration_ms": 70,
+  "events": [
+   {
+    "instrument": "cursor",
+    "start_ms": 0,
+    "duration_ms": 45,
+    "note": 60,
+    "gain_db": 0
+   }
+  ]
+ }
+}

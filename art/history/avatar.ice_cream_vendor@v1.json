@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.ice_cream_vendor",
+ "name": "滚轮头像 · 冰淇淋车老板",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   "........zzzzzzzzz.......",
+   ".......zititititiz......",
+   "......zitititititiz.....",
+   "......zitititititiz.....",
+   "....zzzitititititizzz...",
+   "...ztttttttttttttttttz..",
+   "....zuuuuuuuuuuuuuuuz...",
+   "....zggEEEEEEEEEEEgz....",
+   "....zgEEEEEEEEEEEEgz....",
+   "....zgEEzzEEEEzzEEEz....",
+   "....zgEEzzEEEEzzEEEz....",
+   "....zEDDEEEEFEEEDDEz....",
+   "....zEDDEEEEFFEEDDEz....",
+   "....zEEEEEzEEEEzEEEz....",
+   ".....zEEEEEzzzzEEEz.....",
+   "......zEEEEEEEEEEz......",
+   "......zzzEEEEEEzzz..z...",
+   "...zzztttCCzzCCtttzzwz..",
+   "..ztttttttCCtttttttkkjz.",
+   ".zttttttttttttttttklkkjz",
+   "zttttttttuttttttttkkkkjz",
+   "zttttttttutttttttjjjjjjb",
+   "zttttttttutttttttttzfzzz"
+  ]
+ ],
+ "usage": "收件人「冰淇淋车老板」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "dc7ea66cb0cd527bd9fff7c6dbc7c3f5ff86bf5b1d61fd48a261af26c8f6f514"
+}

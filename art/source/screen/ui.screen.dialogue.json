@@ -1,0 +1,57 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.dialogue",
+ "name": "对话气泡示例",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/dialogue.js",
+  "workbench/js/core/font-small.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
+ ],
+ "depends": [
+  "char.miner",
+  "char.portitor",
+  "item.sandbag",
+  "theme.dungeon",
+  "ui.bubble",
+  "ui.bubble_tail",
+  "ui.class_icon",
+  "ui.emote",
+  "ui.goal_lamp",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 3,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "dialogue"
+ },
+ "usage": "对话系统的样张（docs/design/dialogue.md）：渡口居民头顶「!」并用说话气泡交委托（名牌写名字），主角用思考气泡自言自语，系统说明用木牌样式。全部角色台词用 10px 小字。",
+ "notes": "只用于确认对话气泡的样子；游戏里的对话由对话数据驱动。老矿工借用 char.miner 当示例居民。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "b2d0012a3f36c3efcb1a97f1c71af571ef4f92a8632a39cf661fdf7635b77bfc"
+}

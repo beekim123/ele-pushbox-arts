@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:door_close",
+ "version": 2,
+ "hash": "4e614e2fd2338d17aa8455a852194c23cb7cd501bc1ad197064b074368f83741",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "door_close",
+  "uid": "sfx:door_close",
+  "name": "门关闭",
+  "description": "木轴 G3 到 C3 两音下行，落点温柔收住。",
+  "seed": 170108,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "4e614e2fd2338d17aa8455a852194c23cb7cd501bc1ad197064b074368f83741",
+  "gain_db": -13.3518,
+  "instruments": [
+   {
+    "id": "wood",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 900,
+    "attack_ms": 14,
+    "decay_ms": 32,
+    "sustain": 0.45,
+    "release_ms": 60
+   }
+  ],
+  "duration_ms": 260,
+  "events": [
+   {
+    "instrument": "wood",
+    "start_ms": 0,
+    "duration_ms": 82,
+    "note": 55,
+    "gain_db": 0
+   },
+   {
+    "instrument": "wood",
+    "start_ms": 108,
+    "duration_ms": 92,
+    "note": 48,
+    "gain_db": 0
+   }
+  ]
+ }
+}

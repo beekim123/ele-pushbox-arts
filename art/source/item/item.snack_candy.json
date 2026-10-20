@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.snack_candy",
+ "name": "零食 · 奶糖（糖果王国）",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....zz.zzz.zz..",
+   "....zmmztcczmmz.",
+   "....znmmccdmmnz.",
+   ".zz.zzzzzzdznnz.",
+   "zDDztcczDDz.zz..",
+   "zCDDcczzDzzz.zz.",
+   "zCCzczDDztcczDDz",
+   ".zz.zzCDDccdDDCz",
+   ".....zCCzcddzCCz",
+   "......zz.zzz.zz.",
+   "................"
+  ]
+ ],
+ "usage": "道具图标：零食在糖果王国的包装——奶糖，三颗用糖纸包着、两头拧起来的奶糖（糖身 c，糖纸一颗薄荷绿 m、两颗粉色 D）堆在一起。喂给提示动物（棉花糖小羊）换一句明确提示。驿站货架和背包格里用。",
+ "notes": "已有的 item.snack 不改，另建本图标；画法里按地区选图标由 DLV-08 接（delivery-candy.md 第 5 节）。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f04a0e9e40e92a16e4a471dd916fd45c1d03d0798f50de5fee42e6559a70070f"
+}

@@ -1,0 +1,61 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:dig",
+ "version": 2,
+ "hash": "806479d87a260bb4a802f186c0b85e2d9f0b680dcd80d2552670af850254cfd9",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "dig",
+  "uid": "sfx:dig",
+  "name": "挖掘",
+  "description": "低木铲 D3 下擦，附极轻低通颗粒；噪声只作质感。",
+  "seed": 170103,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "806479d87a260bb4a802f186c0b85e2d9f0b680dcd80d2552670af850254cfd9",
+  "gain_db": -12.7931,
+  "instruments": [
+   {
+    "id": "wood",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 900,
+    "attack_ms": 16,
+    "decay_ms": 32,
+    "sustain": 0.45,
+    "release_ms": 60
+   },
+   {
+    "id": "grain",
+    "wave": "noise",
+    "gain_db": -4,
+    "lowpass_hz": 1100,
+    "attack_ms": 18,
+    "decay_ms": 50,
+    "sustain": 0.3,
+    "release_ms": 55
+   }
+  ],
+  "duration_ms": 220,
+  "events": [
+   {
+    "instrument": "wood",
+    "start_ms": 0,
+    "duration_ms": 160,
+    "note": 50,
+    "slide_to_note": 45,
+    "gain_db": 0
+   },
+   {
+    "instrument": "grain",
+    "start_ms": 12,
+    "duration_ms": 145,
+    "gain_db": 0
+   }
+  ]
+ }
+}

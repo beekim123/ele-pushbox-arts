@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.meng_po",
+ "name": "孟婆（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzz.......",
+   ".....zuvuz......",
+   "....zzvvvzz.....",
+   "...zvvuvvvvz....",
+   "...zvEEEEEEz....",
+   "...zvEzEEzEz....",
+   "...zvEEEEFEu....",
+   "....zEFFFEz.u...",
+   "...zBBBBBBzu....",
+   "..zBCBBBBBzzzzz.",
+   "..zBCBBBEzcuuucz",
+   "..zBBBBBBzzccczz",
+   "..zBBBBBBBzzzz..",
+   "..zgBBBBBgz.....",
+   "...zzzzzzz......"
+  ],
+  [
+   "................",
+   "......zzz.......",
+   ".....zuvuz......",
+   "....zzvvvzz.....",
+   "...zvvuvvvvz....",
+   "...zvEEEEEEz....",
+   "...zvEzEEzEz....",
+   "...zvEEEEFEzu...",
+   "....zEFFFEzu....",
+   "...zBBBBBBz.u...",
+   "..zBCBBBBBzzzzz.",
+   "..zBCBBBEzcuuucz",
+   "..zBBBBBBzzccczz",
+   "..zBBBBBBBzzzz..",
+   "..zgBBBBBgz.....",
+   "...zzzzzzz......"
+  ],
+  [
+   "......zzz.......",
+   ".....zuvuz......",
+   "....zzvvvzz.....",
+   "...zvvuvvvvz....",
+   "...zvEEEEEEz....",
+   "...zvEzEEzEz....",
+   "...zvEEEEFEu....",
+   "....zEFFFEz.u...",
+   "...zBBBBBBzu....",
+   "..zBCBBBBBzzzzz.",
+   "..zBCBBBEzcuuucz",
+   "..zBBBBBBzzccczz",
+   "..zBBBBBBBzzzz..",
+   "..zgBBBBBgz.....",
+   "...zzzzzzz......",
+   "................"
+  ],
+  [
+   "................",
+   "......zzz.......",
+   ".....zuvuz......",
+   "....zzvvvzz.....",
+   "...zvvuvvvvz....",
+   "...zvEEEEEEz....",
+   "...zvEtEEtEz....",
+   "...zvEEEEFEzu...",
+   "....zEFFFEzu.u..",
+   "...zBBBBBBz.....",
+   "..zBCBBBBBzzzzz.",
+   "..zBCBBBEzcuuucz",
+   "..zBBBBBBzzccczz",
+   "..zBBBBBBBzzzz..",
+   "..zgBBBBBgz.....",
+   "...zzzzzzz......"
+  ]
+ ],
+ "usage": "收件人·孟婆：白发挽髻、紫衣的老婆婆，捧着一碗冒热气的汤，站在奈何桥头的汤摊旁（idle，热气飘动），不走动。收到货物时笑眯眯地点头（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "和蔼的老奶奶形象，不画阴森。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f72e44b429e5d1e69e661ae25d1c2958ff05af0ffb5f71aae992dccb907761fe"
+}

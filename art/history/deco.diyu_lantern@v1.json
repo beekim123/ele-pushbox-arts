@@ -1,0 +1,90 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.diyu_lantern",
+ "name": "地府 · 引魂灯",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  10,
+  16
+ ],
+ "anchor": [
+  6,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "flicker": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    0,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..ffff....",
+   ".f....f...",
+   ".f....h...",
+   ".f...fff..",
+   ".f..zcccz.",
+   ".f.zcckccz",
+   ".f.zckkkuz",
+   ".f.zcckcuz",
+   ".f..zccuz.",
+   ".f...fff..",
+   ".f....h...",
+   ".f....h...",
+   ".f........",
+   ".f........",
+   ".f........",
+   "fff......."
+  ],
+  [
+   "..ffff....",
+   ".f....f...",
+   ".f....h...",
+   ".f...fff..",
+   ".f..zcccz.",
+   ".f.zcckccz",
+   ".f.zcklkuz",
+   ".f.zcckcuz",
+   ".f..zccuz.",
+   ".f...fff..",
+   ".f....h...",
+   ".f....h...",
+   ".f........",
+   ".f........",
+   ".f........",
+   "fff......."
+  ],
+  [
+   "..ffff....",
+   ".f....f...",
+   ".f....h...",
+   ".f...fff..",
+   ".f..zcccz.",
+   ".f.zcckccz",
+   ".f.zckjkuz",
+   ".f.zcckcuz",
+   ".f..zccuz.",
+   ".f...fff..",
+   ".f....h...",
+   ".f.....h..",
+   ".f........",
+   ".f........",
+   ".f........",
+   "fff......."
+  ]
+ ],
+ "usage": "插在地上的引魂灯：一根竹竿，顶端弯下来挂一盏白纸灯笼，下面垂着红穗子，烛光微微闪（锚点在灯笼正下方的地面上，竹竿在锚点左边 5 像素）。生态规则把它放在开局就空着的地面格上（每屏最多 1 盏），并在灯笼周围点一圈暖光。画在人物和箱子后面，只是装饰，不能互动。",
+ "notes": "第一版是挂在城墙上的红灯笼；地府改成荒郊野岭后没有墙可挂，改画成插在地上的引魂灯（2026-10-16 用户反馈：地府应该是荒郊野岭的感觉）。和灯笼浮台（mech.lantern_float）的区别：它小、竖着、挂在竹竿上，浮台扁、宽、有木框，而且站得上去。配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3df6d3cb39ed5ef60828ddaa100bd958dd54bcedcacd1366f6f9c0d6c4d92183"
+}

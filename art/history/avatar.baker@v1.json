@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.baker",
+ "name": "滚轮头像 · 面包师",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........zzzzzz..........",
+   "......zzttttttzz........",
+   ".....ztttttttttuz.......",
+   "....zttttuttttutuz......",
+   "....zttttuttttutuz......",
+   ".....ztttuttttuuz.......",
+   "......zuuuuuuuuz........",
+   ".....zzuvuuuuuvzz.......",
+   "....zEEEEEEEEEEEEz......",
+   "...zEEEEEEEEEEEEEEz.....",
+   "...zEEEzzEEEEzzEEEz.....",
+   "...zEEEzzEEEEzzEEEz.....",
+   "...zEDDEEEEFEEEDDEz.....",
+   "...zEDDEEEEFFEEDDEz.....",
+   "...zEEEeffffffeEEEz.....",
+   "....zEEEeffEEffeEz......",
+   ".....zEEEEEEEEEEz.......",
+   ".....zzziiiiiizzz.zzzz..",
+   "...zzeeiiiiiiiieezddddz.",
+   "..zeeeeettttttteeddfdddz",
+   ".zeeeeetttttttttddddfddz",
+   "zeeeeettttttttttdfdddddz",
+   "zeeeeettttttttttddddfdez",
+   "zeeeeettttttttttdddddeez"
+  ]
+ ],
+ "usage": "收件人「面包师」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "c104ac6b4bd6e53d90178a3ba4cdad452df23a2d4c1eb42becbd5e12d3401f4a"
+}

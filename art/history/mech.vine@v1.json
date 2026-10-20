@@ -1,0 +1,101 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.vine",
+ "name": "吸水藤梯",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "root": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "stem": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "top": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".......mn.......",
+   "......mnnm......",
+   "....n.nmn.n.....",
+   "...nmn.n.nmn....",
+   "....nnnnnnn.....",
+   "...ooooooooo...."
+  ],
+  [
+   "..on........no..",
+   "..nmo......omn..",
+   "..onnnnnnnnnno..",
+   "..on........no..",
+   "..mo........om..",
+   "..on..m.....no..",
+   "..onnnnnnnnnno..",
+   "..no........on..",
+   "..on.....m..no..",
+   "..mo........om..",
+   "..onnnnnnnnnno..",
+   "..on........no..",
+   "..nm.m......mn..",
+   "..on........no..",
+   "..onnnnnnnnnno..",
+   "..no........on.."
+  ],
+  [
+   "......m..m......",
+   ".....mnmmnm.....",
+   "....mnn..nnm....",
+   "...m.on..no.m...",
+   "....mo....om....",
+   "..on.m....m.no..",
+   "..onnnnnnnnnno..",
+   "..no........on..",
+   "..on.....m..no..",
+   "..mo........om..",
+   "..onnnnnnnnnno..",
+   "..on........no..",
+   "..nm.m......mn..",
+   "..on........no..",
+   "..onnnnnnnnnno..",
+   "..no........on.."
+  ]
+ ],
+ "usage": "藤梯：没浇水时只有根（root）；根部水量达标后，从根向上长出 stem，最上一格画 top。长出后按梯子规则攀爬。",
+ "notes": "横档是藤条，和木梯外观不同，但都能爬。",
+ "content_hash": "d24a082c0bf9f8e3a31b2115f2c2ba00626b0a3c7a67801410eea5e15f2d3e25"
+}

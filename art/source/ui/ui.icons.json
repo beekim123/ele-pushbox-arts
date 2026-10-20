@@ -1,0 +1,194 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.icons",
+ "name": "界面图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  12
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "undo": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "restart": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "hint": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "observe": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "pause": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "lock": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  },
+  "check": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "skip": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    7
+   ]
+  }
+ },
+ "frames": [
+  [
+   "............",
+   "....z.......",
+   "...zkz......",
+   "..zkkzzzz...",
+   ".zkkkkkkkz..",
+   "..zkkzzzkkz.",
+   "...zkz..zkz.",
+   "....z...zkz.",
+   "........zkz.",
+   "....zzzzkkz.",
+   "....zkkkkz..",
+   "....zzzzz..."
+  ],
+  [
+   "............",
+   "....zzzzz...",
+   "...zkkkkkz..",
+   "..zkzzzzzkz.",
+   "..zkz...zzz.",
+   "..zkz.......",
+   "..zkz...zzz.",
+   "..zkz..zkkz.",
+   "..zkzzzzkz..",
+   "...zkkkkkz..",
+   "....zzzzz...",
+   "............"
+  ],
+  [
+   "....zzzz....",
+   "...zllllz...",
+   "..zlltllkz..",
+   "..zltllllz..",
+   "..zllllllz..",
+   "...zllllz...",
+   "....zkkz....",
+   "....zvvz....",
+   "....zwwz....",
+   "....zvvz....",
+   ".....zz.....",
+   "............"
+  ],
+  [
+   "............",
+   "............",
+   "...zzzzzz...",
+   "..zuuuuuuz..",
+   ".zuuzzzzuuz.",
+   "zuuzssszzuuz",
+   "zuuzstsszuuz",
+   ".zuuzzzzuuz.",
+   "..zuuuuuuz..",
+   "...zzzzzz...",
+   "............",
+   "............"
+  ],
+  [
+   "............",
+   "..zzz..zzz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zuz..zuz..",
+   "..zvz..zvz..",
+   "..zzz..zzz..",
+   "............"
+  ],
+  [
+   "............",
+   "....zzzz....",
+   "...zvvvvz...",
+   "...zvzzvz...",
+   "...zvzzvz...",
+   "..zzzzzzzz..",
+   "..zkkkkkkz..",
+   "..zkkzzkkz..",
+   "..zkkzzkkz..",
+   "..zbbbbbbz..",
+   "..zzzzzzzz..",
+   "............"
+  ],
+  [
+   "............",
+   "..........z.",
+   ".........zmz",
+   "........zmz.",
+   ".......zmz..",
+   ".z....zmz...",
+   "zmz..zmz....",
+   ".zmzzmz.....",
+   "..zmmz......",
+   "...zz.......",
+   "............",
+   "............"
+  ],
+  [
+   "............",
+   "..z...z..zz.",
+   "..zz..zz.zz.",
+   "..zuz.zuzzz.",
+   "..zuuzzuuzz.",
+   "..zuuuzuuuz.",
+   "..zuuzzuuzz.",
+   "..zuz.zuzzz.",
+   "..zz..zz.zz.",
+   "..z...z..zz.",
+   "............",
+   "............"
+  ]
+ ],
+ "usage": "HUD 按钮与菜单状态图标：撤销、重开、提示、观察、暂停、锁定、已通关、已跳过。",
+ "notes": "",
+ "content_hash": "94ae7bd0f452553f2abbfe6eb440fa24413a2809f40294d134d519b79eb0d209"
+}

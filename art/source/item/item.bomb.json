@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.bomb",
+ "name": "炸药",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "..........z.l...",
+   ".........z.lkl..",
+   "........zz..l...",
+   ".......zf.......",
+   "...zzzzfzzz.....",
+   "..ziiaziiazz....",
+   "..zihazihazaz...",
+   "..ziiaziiazaz...",
+   "..zkkkzkkkzkz...",
+   "..ziiaziiazaz...",
+   "..zihazihazaz...",
+   "..ziiaziiazaz...",
+   "...zzzzzzzzz....",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "HUD 背包中的一枚炸药（第 3 章起）；拖动时作为光标。",
+ "notes": "",
+ "content_hash": "f50e0501ea870a20c7addf1fad72f70ce4dac2a54ffe88ccaff3c474ca7b049b"
+}

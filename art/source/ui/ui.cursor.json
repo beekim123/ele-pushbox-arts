@@ -1,0 +1,110 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.cursor",
+ "name": "鼠标指针",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  12
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "cursor",
+ "palette": "endesga32",
+ "animations": {
+  "arrow": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "dig": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "pour": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "blocked": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "z...........",
+   "zz..........",
+   "ztz.........",
+   "zttz........",
+   "ztttz.......",
+   "zttttz......",
+   "ztttttz.....",
+   "zttttttz....",
+   "ztttzzzz....",
+   "ztzttz......",
+   "zz.zttz.....",
+   "....zz......"
+  ],
+  [
+   "........zzz.",
+   ".......zuvz.",
+   "......zuvwz.",
+   ".....zuwwz..",
+   "....zezzz...",
+   "...zez......",
+   "..zez.......",
+   ".zez........",
+   "zez.........",
+   "zz..........",
+   "............",
+   "............"
+  ],
+  [
+   "....zzz.....",
+   "...zfkfz....",
+   "....zfz.....",
+   "...zccdz....",
+   "..zcccddz...",
+   "..zccdddz...",
+   "...zzzzz....",
+   "....d.......",
+   "....k.......",
+   "...d.k......",
+   "....d.......",
+   "............"
+  ],
+  [
+   "...zzzzzz...",
+   "..ziiiiiiz..",
+   ".ziiz..ziiz.",
+   "ziz.z...ziz.",
+   "ziz..z..ziz.",
+   "ziz...z.ziz.",
+   "ziz....zziz.",
+   ".ziiz..ziiz.",
+   "..ziiiiiiz..",
+   "...zzzzzz...",
+   "............",
+   "............"
+  ]
+ ],
+ "usage": "系统指针替换。悬停可挖格显示 dig，可倒格显示 pour，非法目标显示 blocked。热点为左上角（dig、pour 为图形中心，见 hotspot）。",
+ "notes": "hotspot: arrow (0,0); dig (1,10); pour (4,9); blocked (5,5)",
+ "content_hash": "a81f0eee56940511a17162e7b735137b2154a966ba3c5d72c077b77431f78ee9"
+}

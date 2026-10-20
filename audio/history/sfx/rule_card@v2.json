@@ -1,0 +1,60 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:rule_card",
+ "version": 2,
+ "hash": "50c0fc9c2893d352215b53ee24507efcf8324c17b5bcda28942a535169f12ba5",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "rule_card",
+  "uid": "sfx:rule_card",
+  "name": "规则卡",
+  "description": "纸页轻刷与单颗 D4，噪声只占很小能量。",
+  "seed": 170114,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "50c0fc9c2893d352215b53ee24507efcf8324c17b5bcda28942a535169f12ba5",
+  "gain_db": -14.2323,
+  "instruments": [
+   {
+    "id": "page_tone",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 1050,
+    "attack_ms": 22,
+    "decay_ms": 55,
+    "sustain": 0.58,
+    "release_ms": 75
+   },
+   {
+    "id": "paper",
+    "wave": "noise",
+    "gain_db": -6,
+    "lowpass_hz": 1000,
+    "attack_ms": 25,
+    "decay_ms": 65,
+    "sustain": 0.35,
+    "release_ms": 65
+   }
+  ],
+  "duration_ms": 300,
+  "events": [
+   {
+    "instrument": "page_tone",
+    "start_ms": 0,
+    "duration_ms": 225,
+    "note": 62,
+    "gain_db": 0
+   },
+   {
+    "instrument": "paper",
+    "start_ms": 0,
+    "duration_ms": 180,
+    "gain_db": 0
+   }
+  ]
+ }
+}

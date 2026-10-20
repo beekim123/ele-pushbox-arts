@@ -1,0 +1,95 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.candy_oven_vent",
+ "name": "烤炉口 · 糖果王国",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "off": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "on": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    1,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   "..zvvvvvvvvvvz..",
+   ".zvwwwwwwwwwwvz.",
+   ".zwvyvyvyvyvywz.",
+   ".zwvyvyvyvyvywz.",
+   ".zwvyvyvyvyvywz.",
+   ".zxxxxxxxxxxxxz.",
+   "..zzzzzzzzzzzz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....j....j.....",
+   "...zzzzzzzzzz...",
+   "..zvvvvvvvvvvz..",
+   ".zvwwwwwwwwwwvz.",
+   ".zwvjvjvjvjvjwz.",
+   ".zwvkvkvkvkvkwz.",
+   ".zwvjvjvjvjvjwz.",
+   ".zhhhhhhhhhhhhz.",
+   "..zzzzzzzzzzzz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".......j....j...",
+   "...zzzzzzzzzz...",
+   "..zvvvvvvvvvvz..",
+   ".zvwwwwwwwwwwvz.",
+   ".zwvkvkvkvkvkwz.",
+   ".zwvjvjvjvjvjwz.",
+   ".zwvkvkvkvkvkwz.",
+   ".zaaaaaaaaaaaaz.",
+   "..zzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "糖果王国的烤炉口（机关 heat_vent），锚点在格子底边中点：嵌在地里的一块铁格栅（v、w 的框和栅条，栅条之间是缝），只画在格子下部、贴着底边。熄着画 off（缝里是黑的）；扳杆扳下、烤炉点着以后画 on（缝里透出 j、k 的火光，底下一道红，上沿冒两点火星，4 fps 两帧交替闪），同时 area 里的每一格画 fx.candy_heat。确认前 content/catalog/mechanisms.json 里 heat_vent 的 assets 不登记，关卡模式用不用见 delivery-candy.md 第 7 节第 12 条；接进配送画面是 DLV-08 的事。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "908619d31ef04017576d37032584afe6236ab0c3138a684f7dcca5c569bc0826"
+}

@@ -1,0 +1,246 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.rat_swarm",
+ "name": "鼠群",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "chase": {
+   "fps": 12,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "flee": {
+   "fps": 12,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "stunned": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    6,
+    7
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    8,
+    9
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "........zz......",
+   "......zzDDzz....",
+   "D....zfffgAgz...",
+   "D...zgggggfgDz..",
+   "....zzggggzzz...",
+   "..zzDDzzzzDDzz..",
+   ".zeeefAzeeefAfz.",
+   "zfffffzfffffefDz",
+   ".zfffffzffffffz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "D.......zz......",
+   "D.....zzDDzz....",
+   "....zzfffgAgz...",
+   "..zzDDzzggzzDz..",
+   ".zeeefAfzzDDzz..",
+   "zfffffezeeefAfz.",
+   ".zffffzfffffefDz",
+   ".zgzzzgzffffffz.",
+   "..z...z.zgzzzgz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".........zz.....",
+   ".......zzDDzzz..",
+   "D....zzffffgAD..",
+   "D...zgfggggggz..",
+   ".....zzggggzz...",
+   "...zzDDzzzzDDzzz",
+   ".zzeeeezzeeeefAD",
+   "zfefffzfeffffffz",
+   ".zfffffzfffffzz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "D........zz.....",
+   "D......zzDDzzz..",
+   ".....zzffffgAD..",
+   "...zzDDzzzgzzz..",
+   ".zzeeeefAzzDDzzz",
+   "zfeffffzzeeeefAD",
+   ".zffffzfeffffffz",
+   ".zgzzzgzfffffzz.",
+   "..z...z.zgzzzgz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "....zctccz......",
+   "....zcccdDzz....",
+   "D....zfffgAgz...",
+   "D...zgggggfgDz..",
+   "....zzggggzzz...",
+   "..zzDDzzzzDDzz..",
+   ".zeeefAzeeefAfz.",
+   "zfffffzfffffefDz",
+   ".zfffffzffffffz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "D...zctccz......",
+   "D...zcccdDzz....",
+   "....zzfffgAgz...",
+   "..zzDDzzggzzDz..",
+   ".zeeefAfzzDDzz..",
+   "zfffffezeeefAfz.",
+   ".zffffzfffffefDz",
+   ".zgzzzgzffffffz.",
+   "..z...z.zgzzzgz."
+  ],
+  [
+   "................",
+   "................",
+   "....k....l......",
+   "...klk.......k..",
+   "....k.......klk.",
+   ".............k..",
+   "........zz......",
+   "......zzDDzz....",
+   "D....zfffgugz...",
+   "D...zgggggfgDz..",
+   "....zzggggzzz...",
+   "..zzDDzzzzDDzz..",
+   ".zeeefuzeeefufz.",
+   "zfffffzfffffefDz",
+   ".zfffffzffffffz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   ".........k......",
+   "........klk.....",
+   "....l....k......",
+   ".............l..",
+   "................",
+   "........zz......",
+   "......zzDDzz....",
+   "D....zfffgugz...",
+   "D...zgggggfgDz..",
+   "....zzggggzzz...",
+   "..zzDDzzzzDDzz..",
+   ".zeeefuzeeefufz.",
+   "zfffffzfffffefDz",
+   ".zfffffzffffffz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..s.............",
+   "..r.....zzz.....",
+   "......zzDDAz....",
+   "D....zfffffgz...",
+   "D...zgggggggDz..",
+   "....zzzgggzzz...",
+   "..zzDDAzzzDDAz..",
+   ".zeeeeezeeeeefz.",
+   "zfffffzfffffffDz",
+   ".zfffffzffffffz.",
+   "..zgzzzzgzzzgz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..s.............",
+   "D.r.....zzz.....",
+   "D.....zzDDAz....",
+   "....zzzffffgz...",
+   "..zzDDAzggzzzz..",
+   ".zeeeeefzzDDAz..",
+   "zffffffzeeeeefz.",
+   ".zffffzfffffffDz",
+   ".zgzzzgzffffffz.",
+   "..z...z.zgzzzgz."
+  ]
+ ],
+ "usage": "配送模式·幽暗石牢的怪物：一窝三只、红眼睛的老鼠。看见同一行的人就追过来，碰到人就偷一袋沙或 5 金币，然后背着赃物逃跑。能推。面朝右绘制，朝左时水平镜像。",
+ "notes": "和生态里的小老鼠（fauna.dungeon_rat，灰色、单只）区分：棕色、三只成堆、红眼睛；配送模式的石牢里关掉生态小老鼠。被放倒时播放 fx.monster_poof。 第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "1e741865f806cbbae9da2a28998cf7d31dab13e8a7827352cbeaee5b8f7e4ad0"
+}

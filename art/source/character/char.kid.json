@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.kid",
+ "name": "小孩（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "............zz..",
+   "...........ziiz.",
+   "..........zitiiz",
+   "..........ziiiiz",
+   "...zzzzz..ziiihz",
+   "..zfffffz..zhhz.",
+   ".zfeeffffz..zhz.",
+   ".zffEEEEEz...z..",
+   ".zfEzEEzEz..z...",
+   ".zfEDEEDEz.z....",
+   "..zEEEFEz.z.....",
+   ".ztqtttqtz......",
+   ".zEqqrqqtEz.....",
+   "..zqqzqqzz......",
+   "..zffzffz.......",
+   "...zz.zz........"
+  ],
+  [
+   "............zz..",
+   "...........ziiz.",
+   "..........zitiiz",
+   "..........ziiiiz",
+   "...zzzzz..ziiihz",
+   "..zfffffz..zhhz.",
+   ".zfeeffffz..zhz.",
+   ".zffEEEEEz...z..",
+   ".zfEFEEFEz..z...",
+   ".zfEDEEDEz.z....",
+   "..zEEEFEz.z.....",
+   ".ztqtttqtz......",
+   ".zEqqrqqtEz.....",
+   "..zqqzqqzz......",
+   "..zffzffz.......",
+   "...zz.zz........"
+  ],
+  [
+   "...........ziiz.",
+   "..........zitiiz",
+   "..........ziiiiz",
+   "...zzzzz..ziiihz",
+   "..zfffffz..zhhz.",
+   ".zfeeffffz..zhz.",
+   ".zffEEEEEz...z..",
+   ".zfEzEEzEz..z...",
+   "zEfEDEEDEz.z....",
+   "ztzEEziEz.z.....",
+   ".ztqtttqtz......",
+   "..zqqrqqtEz.....",
+   "..zqqzqqzz......",
+   "..zffzffz.......",
+   "...zz.zz........",
+   "................"
+  ],
+  [
+   "............zz..",
+   "...........ziiz.",
+   "..........zitiiz",
+   "..........ziiiiz",
+   "...zzzzz..ziiihz",
+   "..zfffffz..zhhz.",
+   ".zfeeffffz..zhz.",
+   ".zffEEEEEz...z..",
+   ".zfEzEEzEz..z...",
+   ".zfEDEEDEz.z....",
+   "..zEEziEz.z.....",
+   ".ztqtttqtz......",
+   ".zEqqrqqtEz.....",
+   "..zqqzqqzz......",
+   "..zffzffz.......",
+   "...zz.zz........"
+  ]
+ ],
+ "usage": "收件人·小孩：短短的棕色头发、白衬衫外面套蓝色背带裤，手里牵着一只红气球（idle，偶尔眨眼），不走动。收到货物时张嘴笑、跳一下并挥手（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "art/ 里原来没有 char.kid，按 delivery-candy.md 第 6 节新画（短发、背带裤、手里一个气球）；以后乡下地图共用。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "c87d3775eb415e2c7ad20112a5695d441832fd0bf917f3b5057d3083c8bff83d"
+}

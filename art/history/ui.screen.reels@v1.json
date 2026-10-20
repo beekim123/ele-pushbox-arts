@@ -1,0 +1,67 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.reels",
+ "name": "滚轮台（配送开局）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.panel",
+  "ui.keycap",
+  "char.lucky_cat",
+  "cargo.letter",
+  "cargo.vase",
+  "cargo.ice_cream",
+  "avatar.old_miner",
+  "avatar.zombie",
+  "avatar.goblin_smith",
+  "ui.delivery_icons"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "reels",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "cargoList": [
+   "letter",
+   "vase",
+   "ice_cream"
+  ],
+  "recipientList": [
+   "old_miner",
+   "zombie",
+   "goblin_smith"
+  ],
+  "cargo": "letter",
+  "recipient": "old_miner",
+  "liked": true,
+  "rerolls": 1,
+  "cat": "idle"
+ },
+ "usage": "一局配送从这里开始：招财猫拉下拉杆，货物轮和收件人轮先后停下；下面写出两边的规矩和\"喜欢\"加成。←→ 选滚轮，R 用重转券，Enter 出发。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "138cda5479dee0fd74e3ae7909f908ad3cacb0c2852f2592418e12d337190146"
+}

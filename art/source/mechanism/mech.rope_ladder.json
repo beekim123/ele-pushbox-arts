@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.rope_ladder",
+ "name": "绳梯（放下后）",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...e........d...",
+   "...d........d...",
+   "...deeeeeeeee...",
+   "...effffffffd...",
+   "...d........d...",
+   "...d........e...",
+   "...eeeeeeeeed...",
+   "...dffffffffd...",
+   "...d........e...",
+   "...e........d...",
+   "...deeeeeeeed...",
+   "...dffffffffe...",
+   "...e........d...",
+   "...d........d...",
+   "...deeeeeeeee...",
+   "...effffffffd..."
+  ]
+ ],
+ "usage": "放下以后的绳梯，一格一块，和木梯（mech.ladder）同样能爬，但一眼能看出是道具放的。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "eca5efe295502dc73850ee0c41a84ee44e30225c2773e5cf27e6d6798d186440"
+}

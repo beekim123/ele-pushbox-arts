@@ -1,0 +1,161 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.diyu",
+ "name": "主题 · 地府（荒郊野岭）",
+ "category": "theme",
+ "kind": "procedural",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "anchor": null,
+ "layer": "terrain",
+ "palette": "endesga32",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "fauna.diyu_butterfly"
+ ],
+ "params": {
+  "title": "地府",
+  "rock": {
+   "pattern": "wild",
+   "base": [
+    "x",
+    "y"
+   ],
+   "soil": "g",
+   "stone": [
+    "w",
+    "v",
+    "y"
+   ],
+   "grass": [
+    "F",
+    "e",
+    "f"
+   ],
+   "root": "f",
+   "seam": "z",
+   "speck": "y",
+   "light": "w",
+   "light2": "x",
+   "dark": "z",
+   "edge": "y",
+   "top": "F"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "diyu",
+   "base": [
+    "z",
+    "y"
+   ],
+   "speck": "x",
+   "accent": "p",
+   "detail": "z",
+   "far": "p",
+   "mid": "y",
+   "mist": "p",
+   "moon": [
+    "x",
+    "w"
+   ],
+   "wisp": [
+    "o",
+    "p"
+   ],
+   "banner": "x"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.diyu_lantern",
+    "anim": "flicker",
+    "every": 10,
+    "max": 1,
+    "salt": 3
+   },
+   {
+    "type": "floor",
+    "id": "deco.diyu_lily",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.diyu_butterfly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "lights": {
+    "sources": {
+     "deco.diyu_lantern": {
+      "radius": 24,
+      "dy": -10
+     }
+    }
+   },
+   "vignette": 12,
+   "weathers": [
+    "fireflies",
+    "embers"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "配送模式第二张地图「地府」的地形、背景与生态（只用于配送模式）。画风是荒郊野岭：去阴间路上的荒山野地，夜里。地形用 terrain-diyu.js 的 wild 图案：深色泥土里夹着大小不一的石头，顶面一层枯草（草尖伸进上面的空格 1–3 像素），草下有细根，悬空的地方垂着根须，外角是圆的，侧面边缘参差。背景是冥山的夜：抖动的夜空、稀疏的星和一弯淡月，地平线泛起青绿的光，远山淡进光里，前面是更暗的圆丘，最前面是荒丘剪影——枯树、坟包和木牌、招魂幡，两层雾慢慢飘，几点鬼火时明时灭。生态：地上插着引魂灯（周围一圈暖光）、长着彼岸花，偶尔飞过彼岸蝶。天气可选「萤火虫」（当鬼火）和「余烬」（像烧纸的火星）。",
+ "notes": "取材中国民间的阴间路：黄泉路、乱葬岗、荒山、枯树、雾和鬼火，配彼岸花和引魂灯；不画恐怖血腥。第一版画的是酆都城（城墙、城楼、青黑砖石地形），2026-10-16 用户反馈「应该是荒郊野岭的感觉」，已重做。规则材料（土、裂石、沙、水）和其他主题完全相同。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e7d67e5a07bb6afb1d6146e07ad45860e373e18b92c3a90537f709c89deba834"
+}

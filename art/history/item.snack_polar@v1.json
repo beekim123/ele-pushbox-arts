@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.snack_polar",
+ "name": "零食 · 燕麦饼（极地雪村）",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzz......",
+   "...zzzcccdzzz...",
+   "..zddzcdddzdez..",
+   ".zddzcddedezeez.",
+   ".zdeezdddezeeez.",
+   ".ztututututuuvz.",
+   ".ziiiiiiiiiiihz.",
+   "ziiiiiiiiiiiiihz",
+   "zihihihitihihihz",
+   "ziiiiiititiiiihz",
+   "zhihihihthihihhz",
+   "ziiiiiiiiiiiihhz",
+   ".zhihihihihihhz.",
+   "..zihhhhhhhhhz..",
+   "...zzzzzzzzzz..."
+  ]
+ ],
+ "usage": "道具图标：零食在极地雪村的包装——燕麦饼，三块圆圆的燕麦饼装在红色的毛线小袋里（白色罗纹袋口，袋上织着和毛线手套一样的小雪花）。喂给小驯鹿换一句明确提示（雪鹀只会提醒去找小驯鹿）。驿站货架和背包格里用。",
+ "notes": "已确认的 item.snack 不能改、不能加动作，所以雪村另建这个图标；同一个道具 snack，画法里按地区选（DLV-06）。 DSN-04（极地雪村）的美术候选（ART-01c），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "718e669ad760f45ebe8c0546a7449c6b6778253a1162902a2769753856955e3d"
+}

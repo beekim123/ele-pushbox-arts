@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:hint_show",
+ "version": 2,
+ "hash": "abc0596d6d7f2bb046e55877d7d3d85fc1dbf70878073ac058454b94514cef6a",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "hint_show",
+  "uid": "sfx:hint_show",
+  "name": "提示出现",
+  "description": "G4/C5 两颗柔和音符，留出短呼吸。",
+  "seed": 170113,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "abc0596d6d7f2bb046e55877d7d3d85fc1dbf70878073ac058454b94514cef6a",
+  "gain_db": -16.4204,
+  "instruments": [
+   {
+    "id": "bell",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1900,
+    "attack_ms": 14,
+    "decay_ms": 55,
+    "sustain": 0.58,
+    "release_ms": 65
+   }
+  ],
+  "duration_ms": 260,
+  "events": [
+   {
+    "instrument": "bell",
+    "start_ms": 0,
+    "duration_ms": 72,
+    "note": 67,
+    "gain_db": 0
+   },
+   {
+    "instrument": "bell",
+    "start_ms": 125,
+    "duration_ms": 70,
+    "note": 72,
+    "gain_db": 0
+   }
+  ]
+ }
+}

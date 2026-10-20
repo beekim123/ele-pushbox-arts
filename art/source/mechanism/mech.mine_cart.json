@@ -1,0 +1,77 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.mine_cart",
+ "name": "矿车",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "roll": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zuuuuuuuuuuuuuvz",
+   "zvvvvvvvvvvvvvwz",
+   "ziiiiwiiiiwiiihz",
+   ".ziaauaaaauaahz.",
+   ".ziaawaaaawaahz.",
+   "..zhhwhhhhwhhz..",
+   "..zzzzzzzzzzzz..",
+   ".zxvvxz..zxvvxz.",
+   ".zvuuvz..zvuuvz.",
+   ".zvuuvz..zvuuvz.",
+   ".zxvvxz..zxvvxz.",
+   "..zzzz....zzzz..",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zuuuuuuuuuuuuuvz",
+   "zvvvvvvvvvvvvvwz",
+   "ziiiiwiiiiwiiihz",
+   ".ziaauaaaauaahz.",
+   ".ziaawaaaawaahz.",
+   "..zhhwhhhhwhhz..",
+   "..zzzzzzzzzzzz..",
+   ".zxvxxz..zxvxxz.",
+   ".zvuuxz..zvuuxz.",
+   ".zxuuvz..zxuuvz.",
+   ".zxxvxz..zxxvxz.",
+   "..zzzz....zzzz..",
+   "................",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "矿车（机关 mine_cart）：画在矿车所在格，和轨道 mech.cart_track 叠在同一格（轨道在下）。车斗上沿就是格子顶边，像升降台一样算支撑，货物站在它上面一格。停着画 idle；被从侧面推着沿轨道滑行时循环 roll（车轮辐条转动），停下回到 idle。车轮压在轨道的钢轨上。",
+ "notes": "关卡模式第 3 章 Q07、Q10，第 6 章 E05。锈红色车斗、铁箍铁沿、两只铁轮，轮廓是梯形车斗加两只轮子，和木箱、铁箱、升降台一眼分开。",
+ "content_hash": "93cbb324351872f10bb936fa127ad95a61d46f6a90303ae5e4fd696616cb78ae"
+}

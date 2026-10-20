@@ -1,0 +1,210 @@
+{
+  "format": "pushbox.review-batches/1",
+  "note": "确认页按批次筛选用（WB-06）。Claude 合并美术包时追加一批；只是分组，不代表确认状态。",
+  "batches": [
+    {
+      "id": "onboarding",
+      "name": "新手引导（UX-03）",
+      "about": "关卡里的按键提示、目标发光、因果光等；在「美术 › 场景」打开 M01–M07 能看到用在关卡里的样子",
+      "assets": [
+        "ui.action_icon",
+        "ui.cause_link",
+        "ui.goal_glow",
+        "ui.hud_glow",
+        "ui.key_cmd",
+        "ui.keyhint"
+      ]
+    },
+    {
+      "id": "candy",
+      "name": "糖果王国（ART-02a/b/c）",
+      "about": "糖果地图的主题、装饰、动物、收件人、怪物、货物、机关",
+      "assets": [
+        "avatar.baker",
+        "avatar.candy_princess",
+        "avatar.ice_cream_vendor",
+        "avatar.kid",
+        "cargo.chocolate",
+        "cargo.pudding",
+        "char.baker",
+        "char.candy_princess",
+        "char.ice_cream_vendor",
+        "char.kid",
+        "deco.candy_frosting_flower",
+        "deco.candy_lollipop_tree",
+        "deco.candy_mint_bush",
+        "fauna.candy_hummingbird",
+        "fauna.candy_lamb",
+        "fx.candy_heat",
+        "item.snack_candy",
+        "mech.candy_jelly",
+        "mech.candy_oven_vent",
+        "monster.ant_army",
+        "monster.gingerbread",
+        "theme.candy"
+      ]
+    },
+    {
+      "id": "jeju",
+      "name": "济州海女村（DSN-01）",
+      "about": "济州地图的主题、装饰、动物、收件人、怪物、货物、机关",
+      "assets": [
+        "avatar.goblin_chief",
+        "avatar.haenyeo",
+        "avatar.lighthouse_keeper",
+        "avatar.tangerine_farmer",
+        "cargo.buckwheat_jelly",
+        "cargo.kite",
+        "cargo.tangerine",
+        "char.goblin_chief",
+        "char.haenyeo",
+        "char.lighthouse_keeper",
+        "char.tangerine_farmer",
+        "deco.jeju_canola",
+        "deco.jeju_harubang",
+        "deco.jeju_tangerine_tree",
+        "fauna.jeju_dragonfly",
+        "fauna.jeju_pony",
+        "fx.jeju_gust",
+        "item.snack_jeju",
+        "mech.jeju_seesaw",
+        "monster.dokkaebi",
+        "monster.seagull",
+        "theme.jeju"
+      ]
+    },
+    {
+      "id": "diyu",
+      "name": "地府与配送通用（配送改版）",
+      "about": "地府地图和配送模式共用的角色、动物、怪物、货物、机关；石牢的牢猫也在这里",
+      "assets": [
+        "avatar.ancestor",
+        "avatar.judge",
+        "avatar.meng_po",
+        "avatar.wuchang",
+        "avatar.yama",
+        "cargo.paper_house",
+        "cargo.qingtuan",
+        "char.ancestor",
+        "char.judge",
+        "char.meng_po",
+        "char.wuchang",
+        "char.yama",
+        "deco.diyu_lantern",
+        "deco.diyu_lily",
+        "fauna.diyu_butterfly",
+        "fauna.diyu_dog",
+        "fauna.dungeon_cat",
+        "item.snack",
+        "mech.lantern_float",
+        "mech.rune_float",
+        "monster.imp",
+        "monster.jiangshi",
+        "monster.wandering_soul",
+        "theme.diyu"
+      ]
+    },
+    {
+      "id": "ui11a",
+      "name": "大厅皮肤设置（UI-11a）",
+      "about": "设置页多了「大厅皮肤」一行（7 个选项，默认漂浮符文）；设置页升到第 7 版",
+      "assets": [
+        "ui.screen.settings"
+      ]
+    },
+    {
+      "id": "ux05",
+      "name": "新手引导界面（UX-05）",
+      "about": "7 张新界面：顶栏按键提示、规则卡按法、过关「你发现了」、开始游戏大厅、操作说明（Mac / PC 轮换）、暂停和设置里的「操作说明」",
+      "assets": [
+        "ui.screen.clear_found",
+        "ui.screen.controls",
+        "ui.screen.hub_start",
+        "ui.screen.hud_keys",
+        "ui.screen.pause_help",
+        "ui.screen.rulecard_how",
+        "ui.screen.settings_help"
+      ]
+    },
+    {
+      "id": "art03",
+      "name": "关卡机关美术（ART-03）",
+      "about": "去掉问号方块的 6 种机关：矿车和轨道、灯照木板、套娃箱、弹跳蘑菇、跷跷板、阵风",
+      "assets": [
+        "fx.gust",
+        "mech.bounce_mushroom",
+        "mech.cart_track",
+        "mech.lantern_plank",
+        "mech.mine_cart",
+        "mech.seesaw",
+        "obj.crate_nested"
+      ]
+    },
+    {
+      "id": "polar_a",
+      "name": "极地雪村①（ART-01a）",
+      "about": "雪村主题（地形、背景、白天 / 傍晚极光）、雪松、小木屋、雪屋、越橘、小驯鹿、雪鹀",
+      "assets": [
+        "deco.polar_cabin",
+        "deco.polar_lingonberry",
+        "deco.polar_snowhouse",
+        "deco.polar_spruce",
+        "fauna.polar_bunting",
+        "fauna.polar_reindeer",
+        "theme.polar"
+      ]
+    },
+    {
+      "id": "polar_b",
+      "name": "极地雪村②（ART-01b）",
+      "about": "4 位收件人的角色和头像：雪人、极地渔夫、驯鹿牧人、独角鲸",
+      "assets": [
+        "avatar.fisher",
+        "avatar.narwhal",
+        "avatar.reindeer_herder",
+        "avatar.snowman",
+        "char.fisher",
+        "char.narwhal",
+        "char.reindeer_herder",
+        "char.snowman"
+      ]
+    },
+    {
+      "id": "polar_c",
+      "name": "极地雪村③（ART-01c）",
+      "about": "企鹅、雪怪、热汤罐、毛线手套、冰灯、燕麦饼零食",
+      "assets": [
+        "cargo.ice_lantern",
+        "cargo.mittens",
+        "cargo.soup_flask",
+        "item.snack_polar",
+        "monster.penguin",
+        "monster.yeti"
+      ]
+    },
+    {
+      "id": "dlv06",
+      "name": "配送界面重新确认（DLV-06）",
+      "about": "冰面规则改了这些界面引用的代码，版本号换了，画面和之前确认的一个像素都没变",
+      "assets": [
+        "ui.screen.confirm",
+        "ui.screen.delivery_hud",
+        "ui.screen.delivery_pause",
+        "ui.screen.hint_animal",
+        "ui.screen.observe",
+        "ui.screen.reels",
+        "ui.screen.settlement",
+        "ui.screen.settlement_fail",
+        "ui.screen.shop"
+      ]
+    },
+    {
+      "id": "concept",
+      "name": "概念草图（不进游戏）",
+      "about": "主角备选草图，不用确认",
+      "assets": [
+        "char.portitor_alt"
+      ]
+    }
+  ]
+}

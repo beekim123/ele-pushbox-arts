@@ -1,0 +1,95 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.heat_vent",
+ "name": "热喷口",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "active": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    1,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   "..zaaaaaaaaaaz..",
+   "..zzjzzjzzjzzz..",
+   "..zaaaaaaaaaaz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..j...j...j.....",
+   ".j.j.j.j.j.j....",
+   "j...j...j...j...",
+   "...zzzzzzzzzz...",
+   "..zaaaaaaaaaaz..",
+   "..zzjzzjzzjzzz..",
+   "..zaaaaaaaaaaz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...j...j...j....",
+   "..j.j.j.j.j.j...",
+   "...j...j...j....",
+   "...zzzzzzzzzz...",
+   "..zaaaaaaaaaaz..",
+   "..zzzzjzzjzzzz..",
+   "..zaaaaaaaaaaz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ]
+ ],
+ "usage": "热喷口：开关扳动后喷热气，作用区里的冰当场化成水。作用区在观察模式下用橙色虚线框标出。",
+ "notes": "",
+ "content_hash": "209d87777324350081358077a14054505123733c2172b2214c113dab79cffef7"
+}

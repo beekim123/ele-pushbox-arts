@@ -1,0 +1,172 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.goblin_smith",
+ "name": "地精铁匠（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "work": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    0
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    5,
+    6
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   ".....zzzzz.zzz..",
+   ".zz.zfeeffzvwwz.",
+   "zmmzzfffffzwwwz.",
+   ".zDmmmmmmmmwwwz.",
+   "..zmmmmmmkmmfz..",
+   "...zmmmmmznmfz..",
+   "...zmmmmmmnnfz..",
+   "....zmnnzzzmz...",
+   "....zgfggfmz....",
+   "...zmgeeeegz....",
+   "...zmgeffegz....",
+   "....zgeeeegz....",
+   ".....znzznz.....",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz......",
+   ".zz.zfeeffz..z..",
+   "zmmzzfffffz.zmz.",
+   ".zDmmmmmmmmzDvwz",
+   "..zmmmmmmkmmnwwz",
+   "...zmmmmmznmzwwz",
+   "...zmmmmmmnnzfz.",
+   "....zmnnzzzzfz..",
+   "....zgfggfmmz...",
+   "...zmgeeeegz....",
+   "...zmgeffegz....",
+   "....zgeeeegz....",
+   ".....znzznz.....",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz......",
+   ".zz.zfeeffz..z..",
+   "zmmzzfffffz.zmz.",
+   ".zDmmmmmmmmzDnz.",
+   "..zmmmmmmkmmnz..",
+   "...zmmmmmznmz...",
+   "...zmmmmmmnnz...",
+   "....zmnnzzzz..zz",
+   "....zgfggfgzzzvw",
+   "...zmgeeeemmffww",
+   "...zmgeffegzzzww",
+   "....zgeeeegz..zz",
+   ".....znzznz.....",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz......",
+   ".zz.zfeeffz..z..",
+   "zmmzzfffffz.zmz.",
+   ".zDmmmmmmmmzDnz.",
+   "..zmmmmmmkmmnz..",
+   "...zmmmmmznmz...",
+   "...zmmmmmmnnz...",
+   "....zmnnzzzz.k.l",
+   "....zgfggfgz..zz",
+   "...zmgeeeemmzzvw",
+   "...zmgeffegzffww",
+   "....zgeeeegzzzww",
+   ".....znzznz...zz",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz......",
+   ".zz.zfeeffz..z..",
+   "zmmzzfffffz.zmz.",
+   ".zDmmmmmmmmzDnz.",
+   "..zmmmmmmmmmnz..",
+   "...zmmmmmznmz...",
+   "...zmmmmmmnnz...",
+   "....zmnnzzzz.k.l",
+   "....zgfggfgz..zz",
+   "...zmgeeeemmzzvw",
+   "...zmgeffegzffww",
+   "....zgeeeegzzzww",
+   ".....znzznz...zz",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz.zzz..",
+   ".zz.zfeeffzvwwz.",
+   "zmmzzfffffzwwwz.",
+   ".zDmmmmmmmmwwwz.",
+   "..zmmmmmmkmmfz..",
+   "...zmmmmmznmfz..",
+   "...zmmmmmmnnfz..",
+   "....zmnztzzmz...",
+   "....zgfggfmz....",
+   "...zmgeeeegz....",
+   "...zmgeffegz....",
+   "....zgeeeegz....",
+   ".....znzznz.....",
+   "....zggzzggz...."
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzz......",
+   ".zz.zfeeffz..z..",
+   "zmmzzfffffz.zmz.",
+   ".zDmmmmmmmmzDvwz",
+   "..zmmmmmmmmmnwwz",
+   "...zmmmmmznmzwwz",
+   "...zmmmmmmnnzfz.",
+   "....zmnztzzzfz..",
+   "....zgfggfmmz...",
+   "...zmgeeeegz....",
+   "...zmgeffegz....",
+   "....zgeeeegz....",
+   ".....znzznz.....",
+   "....zggzzggz...."
+  ]
+ ],
+ "usage": "收件人·地精铁匠：在自家铁砧旁打铁（work 循环），不走动。他家很烫，冰淇淋在这里化得快 3 倍。面朝右绘制，朝左时水平镜像；铁砧和炉子是 obj.goblin_forge，放在他面前那一格。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "aec499b0c22bf603343aa32f4dc22069ff84091db6a009a78d0accc8c2211359"
+}

@@ -1,0 +1,208 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.candy",
+ "name": "主题 · 糖果王国（晴朗的午后）",
+ "category": "theme",
+ "kind": "procedural",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "anchor": null,
+ "layer": "terrain",
+ "palette": "endesga32",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/terrain-jeju.js",
+  "workbench/js/core/terrain-candy.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.candy_lollipop_tree",
+  "deco.candy_mint_bush",
+  "deco.candy_frosting_flower",
+  "fauna.candy_hummingbird"
+ ],
+ "params": {
+  "title": "糖果王国",
+  "rock": {
+   "pattern": "candy",
+   "base": [
+    "E",
+    "F"
+   ],
+   "seam": "F",
+   "speck": "d",
+   "light": "c",
+   "light2": "c",
+   "dark": "F",
+   "edge": "d",
+   "top": "D",
+   "cracker": [
+    "E",
+    "F",
+    "d",
+    "F",
+    "c",
+    "d"
+   ],
+   "frost": [
+    "t",
+    "D",
+    "C"
+   ],
+   "sprinkle": [
+    "m",
+    "r",
+    "t"
+   ],
+   "mint": [
+    "m",
+    "n"
+   ],
+   "wall": [
+    "E",
+    "c",
+    "F",
+    "f",
+    "D",
+    "t",
+    "F"
+   ],
+   "choco": [
+    "f",
+    "e",
+    "g",
+    "d"
+   ],
+   "wafer": [
+    "E",
+    "F",
+    "c",
+    "F"
+   ]
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "candy",
+   "base": [
+    "r",
+    "u"
+   ],
+   "speck": "t",
+   "accent": "D",
+   "detail": "f",
+   "cloud": [
+    "t",
+    "c"
+   ],
+   "hills": [
+    "c",
+    "E"
+   ],
+   "grove": "B",
+   "castle": [
+    "D",
+    "C"
+   ],
+   "lace": "c",
+   "spire": "n",
+   "cherry": "i",
+   "river": [
+    "e",
+    "f",
+    "g"
+   ],
+   "glint": "d",
+   "shore": "g"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.candy_lollipop_tree",
+    "anim": "sway",
+    "every": 6,
+    "max": 2,
+    "salt": 11
+   },
+   {
+    "type": "floor",
+    "id": "deco.candy_mint_bush",
+    "anim": "sway",
+    "every": 5,
+    "max": 2,
+    "salt": 5
+   },
+   {
+    "type": "floor",
+    "id": "deco.candy_frosting_flower",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.candy_hummingbird",
+    "anim": "fly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "sun": {
+    "x": 52,
+    "y": 30,
+    "radius": 24
+   },
+   "weathers": [],
+   "weather": "none"
+  }
+ },
+ "usage": "配送模式糖果王国的地形、背景与生态（只用于配送模式）。画风是晴朗温暖的午后、童话里的糖果乡。地形用 terrain-candy.js 的 candy 图案：岩石是苏打饼干（每格一块，四边一圈烤色，几排规整的小孔，孔下沿有亮边，露天顶面有亮边，不画裂纹）；房间最左、最右两列画成夹心饼干摞（饼干和粉色夹心、奶油交替），最下面一行画成巧克力块（一格一块）；下半屏悬空一格厚的条画成威化（斜格纹，没有框和叉撑）；露天的顶面在上半屏是粉色草莓糖霜（往下滴 1–3 像素，零星糖针，最多伸进上面 2 像素），在下半屏是一层薄荷糖霜。背景是晴天：蓝天抖动过渡到地平线的淡色，几朵慢慢飘的奶油云（底边不平），地平线上是三层的粉色蛋糕城堡（奶油花边、薄荷尖顶、塔尖樱桃），两边是圆圆的奶油山和棒棒糖林剪影，比地形淡、不描边；下面是巧克力河：地平线处浅，往下抖动过渡成深巧克力，横向波纹随时间移动、偶尔闪光，不用蓝色，不画规则水那道亮水面线，最下面是近岸的深色剪影。生态：棒棒糖树、薄荷糖丛、糖霜小花，偶尔飞过小蜂鸟（配送模式里它是提示动物，由 ambient_exclude 关掉）。太阳在左上，没有暗角和灯光；天气默认关，不加新天气。",
+ "notes": "设计见 docs/design/delivery-candy.md 第 1、5、6、7 节。规则材料（土、裂石、沙、水、冰）和其他主题完全相同，水保持蓝色（第 7 节第 1 条 A）。饼干地形按第 7 节第 2 条 A；和规则的土、裂石、沙、水、冰并排的对照图在 docs/packages/ART-02a/terrain.png，分不清时改 B（白巧克力 u/v）。天空用亮蓝（第 7 节第 3 条 A）。城堡每 480 像素一座，背景按 x−x0 连续，任意宽度都能画。「场景」页的主题列表里看不到新主题是已知问题（同济州）。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "78ec122e0be31321a4ec29bcf17724e5f5db327c13edc79c83cdf7fb00e6f5a6"
+}

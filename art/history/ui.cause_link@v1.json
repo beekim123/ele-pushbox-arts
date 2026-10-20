@@ -1,0 +1,35 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.cause_link",
+ "name": "一起闪与因果光",
+ "category": "ui",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/onboarding-fx.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/font-small.js"
+ ],
+ "depends": [
+  "mech.socket",
+  "ui.goal_lamp",
+  "ui.icons",
+  "mech.plate",
+  "mech.door",
+  "mech.link_symbol"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_cause_link"
+ },
+ "usage": "第一次见到时有关系的东西一起闪两次（1 像素白边，0.25 秒亮 / 0.25 秒灭）：槽和目标灯（M01）、压板和门的记号（M05）；压板开门时薄荷绿虚线从压板跑到门，0.6 秒淡掉（onboarding.md 第 3 节）。",
+ "notes": "UX-03 第 1 版，等用户确认。画法在 workbench/js/core/onboarding-fx.js（G2 组件，不改 ui.keycap / ui.panel / 气泡 / HUD）；样张见工作台「资产」「确认」页（PB.ui.SCREENS.onb_cause_link）。art/export/preview 里的 PNG 是空白：tools/art.mjs 的 renderProcedural 只画 theme / screen / material 三类。",
+ "content_hash": "bae84458b31f51dac9bb2b96ad07fcbf980069386d21402a27749ea660783532"
+}

@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.lever",
+ "name": "开关",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "off": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "on": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zz............",
+   "..zfz...........",
+   "...zfz..........",
+   "....zfz.........",
+   ".....zfz........",
+   "......zfz.......",
+   "....zzzzzzzz....",
+   "...zvuuuuuuvz...",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "............zz..",
+   "...........zfz..",
+   "..........zfz...",
+   ".........zfz....",
+   "........zfz.....",
+   ".......zfz......",
+   "....zzzzzzzz....",
+   "...zvuuuuuuvz...",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ]
+ ],
+ "usage": "释放口、火盆、喷口的开关：人物站在开关格按 ↑ 扳动一次，扳动后保持 on。",
+ "notes": "",
+ "content_hash": "3a67b3c41cd505bf63ca3f97c8c60bd9c3f9183d88098dfe3b16a937ebd37d58"
+}

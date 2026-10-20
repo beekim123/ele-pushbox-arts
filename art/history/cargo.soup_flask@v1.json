@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.soup_flask",
+ "name": "货物 · 热汤罐",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "cold": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......ut.......",
+   "........uu......",
+   "......zutz......",
+   ".....zvwwwz.....",
+   ".....zuvvvz.....",
+   "....zuuuuuvz....",
+   "....ziiiiihz....",
+   "....ziDiiihz....",
+   "....ziDiiihz....",
+   "....ziDhhihz....",
+   "....ziDhhihz....",
+   "....ziDiiihz....",
+   "....ziDiihhz....",
+   "....ziiiihhz....",
+   "....zvvvvvwz....",
+   ".....zzzzzz....."
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....ztttuz.....",
+   ".....zuvvtz.....",
+   "....zuuuuuvz....",
+   "....zutuhtuz....",
+   "....zuuhhhaz....",
+   "....zhuthhaz....",
+   "....zhuaahaz....",
+   "....zhuaahaz....",
+   "....zhuhhtaz....",
+   "....zuuhhaaz....",
+   "....zuthuaaz....",
+   "....zvvvvvwz....",
+   ".....zuzzuz....."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：红色的保温罐，银色的箍和螺旋盖，盖子上冒着热气。怕冷：冷气口喷气的那一步，人站在它的冷气范围里，汤凉一点，完好度 −1；有损坏时换成 cold（不冒气，罐身和盖子结了一层霜，颜色发暗）。",
+ "notes": "怕冷（frost_damage）属于实时规则（DLV-01）；只给极地渔夫、驯鹿牧人（cargo_only）。 DSN-04（极地雪村）的美术候选（ART-01c），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e24dcf5df2ca78d17cb0a98a2c81917fea30fed3361071143c41d60560ce0cc6"
+}

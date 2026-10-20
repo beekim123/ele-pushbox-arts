@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.kid",
+ "name": "滚轮头像 · 小孩",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...................zzz..",
+   ".......zzzzzz.....ziiiz.",
+   ".....zzffffffzz..ziitiiz",
+   "....zffeeffffffz.zitiiiz",
+   "...zffeeffffffffzziiiiiz",
+   "..zffffffffffffffziiiihz",
+   "..zffffffffffffffziiihhz",
+   "..zffEEfEEEEEEEffzzhhhz.",
+   "..zfEEEEEEEEEEEEfz.zhz..",
+   "..zfEEEEEEEEEEEEEz..z...",
+   "..zfEEzzEEEEzzEEEz..z...",
+   "..zfEEzzEEEEzzEEEz..z...",
+   "..zEDDEEEEEEEDDEEz..z...",
+   "..zEEEEEFEEFEEEEEz..z...",
+   "...zEEEEEFFEEEEEz....z..",
+   "....zEEEEEEEEEEz.....z..",
+   ".....zzEEEEEEzz......z..",
+   "...zzttzEEEEzttz.....z..",
+   "..ztttqtttttqtttz....z..",
+   ".zttttqtttttqttttz...z..",
+   "ztttttqqqqqqqtttttz..z..",
+   "ztttttqqqqqqqtttttz..z..",
+   "ztttttqqqrqqqtttttz..z..",
+   "ztttttqqqqqqqtttttz..z.."
+  ]
+ ],
+ "usage": "收件人「小孩」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "art/ 里原来没有 avatar.kid，新画；以后乡下地图共用。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "5336858f213ede724ccdda111380c94eebd770bd3e17cea1f69f8fa8d889a238"
+}

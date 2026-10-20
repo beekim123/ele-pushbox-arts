@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.kite",
+ "name": "货物 · 风筝",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "torn": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzzzzzz..",
+   "..zddddddddddz..",
+   "..ztettAittetz..",
+   "..ztteiiiiettz..",
+   "..ztttehhetttz..",
+   "..zttttzzttttz..",
+   "..ztttz..ztttz..",
+   "..ztttz..ztttz..",
+   "..zttetzztettz..",
+   "..ztettddttetz..",
+   "..zetttddtttez..",
+   "..zttttddttttz..",
+   "..zeeeeeeeeeez..",
+   "..zzzzzzzzzzzz..",
+   ".......u........",
+   "......u........."
+  ],
+  [
+   "..zzzzzzzzzzzz..",
+   "..zttddddddddz..",
+   "..zddttAittetz..",
+   "..ztteiiiiettz..",
+   "..ztttehhetttz..",
+   "..zttttzzttttz..",
+   "..ztttz..ztttz..",
+   "..ztttz..ztttz..",
+   "..zttetzztettz..",
+   "..ztzttddttezz..",
+   "..zetztddttz....",
+   "..zttttddtz.....",
+   "..zeeeeeez......",
+   "..zzzzzzz.......",
+   ".......u........",
+   "......u........."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：방패연（盾牌风筝）：中间有圆孔的长方形纸风筝、顶上一个红色圆纹、竹骨交叉。很轻：人站在阵风里被吹到一次，完好度 −1，躲在石墙后面没事；有损坏时换成 torn（右下角撕破、横骨歪了）。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3ff8c842f9fb48a08eda72f15bfca379473d2dbfdfb3d47d2012027fe1c2384d"
+}

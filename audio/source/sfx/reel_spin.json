@@ -1,0 +1,45 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "reel_spin",
+ "uid": "sfx:reel_spin",
+ "name": "滚轮转动",
+ "description": "400 ms 循环内两次低木软嗒，0/200 ms 起音；每个尾音在下次起音前自然落静。",
+ "seed": 170118,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "828f91d11fa886e6a2e79d199598e5f4b69d119910d3595cb8a1d2d5239ada6b",
+ "gain_db": -10.8214,
+ "instruments": [
+  {
+   "id": "tick",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 700,
+   "attack_ms": 14,
+   "decay_ms": 35,
+   "sustain": 0.35,
+   "release_ms": 65
+  }
+ ],
+ "duration_ms": 400,
+ "loop": true,
+ "events": [
+  {
+   "instrument": "tick",
+   "start_ms": 0,
+   "duration_ms": 80,
+   "note": 43,
+   "gain_db": 0
+  },
+  {
+   "instrument": "tick",
+   "start_ms": 200,
+   "duration_ms": 80,
+   "note": 43,
+   "gain_db": -1
+  }
+ ]
+}

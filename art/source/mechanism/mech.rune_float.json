@@ -1,0 +1,176 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.rune_float",
+ "name": "浮空地块 · 符文浮石（石牢）",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "left": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "mid": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "right": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "left_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "mid_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "right_move": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzzzzzzzz",
+   ".zuuuuuuuuuuuuuv",
+   "zuvvvvvvvvvvvvvw",
+   "zuvvvvvvqvvvvvvw",
+   "zvvvvvvqvqvvwvvw",
+   "zvvvvvqvvvqvvvvw",
+   "zvvvvvvqvqvvvvvw",
+   "zvvwvvvvqvvvvvvw",
+   "zwvvvvvvvvvvvwvw",
+   "zwwwwwwwwwwwwwww",
+   ".zxxxxxxxxxxxxxx",
+   "..zzzzzzzzzzzzzz",
+   "..q..q..q..q..q.",
+   "....r...........",
+   "...........r....",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "uuuuuuuuuuuuuuuv",
+   "vvvvvvvvvvvvvvvw",
+   "vvvvvvqvqvqvvvvw",
+   "vvvvvvvqqqvvvvvw",
+   "vvwvvvvvqvvvvvvw",
+   "vvvvvvvvqvvvvvvw",
+   "vvvvvvvvqvvvwvvw",
+   "vvvvwvvvvvvvvvvw",
+   "wwwwwwwwwwwwwwww",
+   "xxxxxxxxxxxxxxxx",
+   "zzzzzzzzzzzzzzzz",
+   "..q..q..q..q..q.",
+   "....r...........",
+   "...........r....",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzz..",
+   "uuuuuuuuuuuuuuz.",
+   "vvvvvvvvvvvvvvuz",
+   "vvvvvvvqvvvvvvuz",
+   "vvvwvvqvqvvvvvvz",
+   "vvvvvqvvvqvvvvvz",
+   "vvvvvvqvqvvvvvvz",
+   "vvvvvvvqvvvvwvvz",
+   "vvwvvvvvvvvvvvwz",
+   "wwwwwwwwwwwwwwwz",
+   "xxxxxxxxxxxxxxz.",
+   "zzzzzzzzzzzzzz..",
+   ".q..q..q..q..q..",
+   "...........r....",
+   "....r...........",
+   "................"
+  ],
+  [
+   "..zzzzzzzzzzzzzz",
+   ".zuuuuuuuuuuuuuv",
+   "zuvvvvvvvvvvvvvw",
+   "zuvvvvvvsvvvvvvw",
+   "zvvvvvvsvsvvwvvw",
+   "zvvvvvsvtvsvvvvw",
+   "zvvvvvvsvsvvvvvw",
+   "zvvwvvvvsvvvvvvw",
+   "zwvvvvvvvvvvvwvw",
+   "zwwwwwwwwwwwwwww",
+   ".zxxxxxxxxxxxxxx",
+   "..zzzzzzzzzzzzzz",
+   "..r..r..r..r..r.",
+   "....s......s....",
+   ".s.....s......s.",
+   "..r......r...r.."
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "uuuuuuuuuuuuuuuv",
+   "vvvvvvvvvvvvvvvw",
+   "vvvvvvsvsvsvvvvw",
+   "vvvvvvvsssvvvvvw",
+   "vvwvvvvvtvvvvvvw",
+   "vvvvvvvvsvvvvvvw",
+   "vvvvvvvvsvvvwvvw",
+   "vvvvwvvvvvvvvvvw",
+   "wwwwwwwwwwwwwwww",
+   "xxxxxxxxxxxxxxxx",
+   "zzzzzzzzzzzzzzzz",
+   "..r..r..r..r..r.",
+   "....s......s....",
+   ".s.....s......s.",
+   "..r......r...r.."
+  ],
+  [
+   "zzzzzzzzzzzzzz..",
+   "uuuuuuuuuuuuuuz.",
+   "vvvvvvvvvvvvvvuz",
+   "vvvvvvvsvvvvvvuz",
+   "vvvwvvsvsvvvvvvz",
+   "vvvvvsvtvsvvvvvz",
+   "vvvvvvsvsvvvvvvz",
+   "vvvvvvvsvvvvwvvz",
+   "vvwvvvvvvvvvvvwz",
+   "wwwwwwwwwwwwwwwz",
+   "xxxxxxxxxxxxxxz.",
+   "zzzzzzzzzzzzzz..",
+   ".r..r..r..r..r..",
+   "....s......s....",
+   ".s......s.....s.",
+   "..r...r......r.."
+  ]
+ ],
+ "usage": "浮空地块（float_block）在石牢的样子：一段 2–4 格宽、悬在空中的浅灰符文石板。每格一帧：最左格 left，中间格 mid（宽 4 格时重复两次），最右格 right；板面顶边就是格子顶边，人和箱子站在它上面一格。板下的蓝点是悬浮的符文光。被推动或撑篙移动的那一下换成 *_move（符文亮起，下面的光更密），停下后换回。",
+ "notes": "比石牢的岩石（深蓝灰石砖）浅两档，并有圆角描边和板下的光点，一眼能看出「不是墙、会动」。格与格之间有一道浅缝，方便数宽度。",
+ "content_hash": "ac7cc14d46bb2076f9a126be2a141fa0ce512f9736e34b9e48637603779e6971"
+}

@@ -1,0 +1,49 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.polar_snowhouse",
+ "name": "极地 · 雪屋",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  14
+ ],
+ "anchor": [
+  12,
+  14
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   "........zzzzzzzz........",
+   "......zzuuuuuuuuzz......",
+   ".....ztttutttttuuuz.....",
+   "....zttttutttttuuuuz....",
+   "...zuuuuuuuuuuuuuvvvz...",
+   "..ztttutttttuttuuuvuuz..",
+   "..ztttutttttuttuuuvuvz..",
+   ".zuuuuuuuuuuuuuuvvvvvvz.",
+   ".ztutttttuttttuuzvvuvvz.",
+   "zttutttttutttuuzzzvvuvuz",
+   "zuuuuuuuuuuuuuzzzzzvvvvz",
+   "ztttttutttttuuzzzzzvuvuz",
+   "ztttttutttttuuzzzzzvvuvz"
+  ]
+ ],
+ "usage": "用雪块一圈一圈垒成的半球形雪屋：白色雪块、灰白 u 砖缝，背光的右边偏灰，右下开一个黑色的矮门洞。只是背景装饰，不能进、不能互动；每屏最多 1 座。",
+ "notes": "只用白 t、灰白 u、灰 v 和黑 z，不用冰的青色 s，免得和冰面（规则材料）混在一起。门洞朝右，和其他精灵一样面朝右。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "bce0622a6407ed5c9314bc55216819224b8e12af37f17aa061185254279f3d63"
+}

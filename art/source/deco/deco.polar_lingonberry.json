@@ -1,0 +1,41 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.polar_lingonberry",
+ "name": "极地 · 越橘",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  6
+ ],
+ "anchor": [
+  4,
+  6
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".........",
+   "..n...n..",
+   ".nono.on.",
+   ".oinoioo.",
+   "..ih.ih..",
+   "tuttuttut"
+  ]
+ ],
+ "usage": "雪地里露出来的一小丛越橘：几片深绿的小叶子，叶子下面挂着两小串红果子，根部埋在一层雪里。长在地面上，只是装饰，不能摘、不能互动。",
+ "notes": "只有 9×6，整圈描黑边会糊成一团，所以没有描 z 边：深绿叶子 o 本身当边，红果 i / h 在白雪和深色岩石上都看得清。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "6df94a60f4c2f110912ba9bf0cbc37a0cd5266eb0fbc4adb9bafacf6ac3b40d5"
+}

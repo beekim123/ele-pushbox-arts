@@ -1,0 +1,30 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.action_icon",
+ "name": "动作图标",
+ "category": "ui",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/onboarding-fx.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/font-small.js"
+ ],
+ "depends": [
+  "char.portitor"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_action_icon"
+ },
+ "usage": "镐（挖）、沙袋（倒沙）、炸药、鼠标左 / 右键、红叉（不行）。备选按法按了字母后图标在头顶上下跳、能走的方向在旁边闪，按错方向图标抖一下并出红叉；鼠标停在相邻格上时画出点下去会做什么（onboarding.md 第 7 节）。",
+ "notes": "UX-03 第 1 版，等用户确认。画法在 workbench/js/core/onboarding-fx.js（G2 组件，不改 ui.keycap / ui.panel / 气泡 / HUD）；样张见工作台「资产」「确认」页（PB.ui.SCREENS.onb_action_icon）。art/export/preview 里的 PNG 是空白：tools/art.mjs 的 renderProcedural 只画 theme / screen / material 三类。",
+ "content_hash": "fa55c20c9102b47d1f8995a79d29730f205273a08599667dce111453efe13f2b"
+}

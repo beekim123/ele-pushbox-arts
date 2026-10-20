@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.paper_house",
+ "name": "货物 · 纸扎房子",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "damaged": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".......zz.......",
+   "......zqqz......",
+   "....zzqrrqzz....",
+   "..zzqqrrrrqqzz..",
+   ".zqqqqqqqqqqqqz.",
+   "zrzzzzzzzzzzzzrz",
+   "..zizlllllllziz.",
+   "..zizlzzlzzlziz.",
+   "..zizlzklzklziz.",
+   "..zizllllllllizz",
+   "..zizllzhhzllizz",
+   "..zizllzhhzllziz",
+   "..zizllzhhzllziz",
+   ".zzzzzzzzzzzzzzz",
+   ".zccccccccccccz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "....zz.zzz......",
+   "..zzqqzrqqqzz...",
+   ".zqqqqqqqqqqqqz.",
+   "zrzzzzzzzzzzzzrz",
+   "..zizlll.lllzi..",
+   "..zizlzz..zlziz.",
+   "..zizlzkl..lziz.",
+   "..zizllll.llliz.",
+   "..zizllzhhzllizz",
+   "..zizllzhhzllziz",
+   "..zizllzhhzllziz",
+   ".zzzzzzzzzzzzzzz",
+   ".zccccccccccccz."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：纸扎房子（蓝瓦、红柱、黄纸墙）。只送太爷爷和黑白无常。怕水：泡一次扣 1 点完好度；碰到火直接烧掉。有损坏时换成 damaged（屋顶塌了一角、纸墙破洞）。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b037d3e05af811178d78919e9c1eb52fd9d049da3431a63367b4bf915990205d"
+}

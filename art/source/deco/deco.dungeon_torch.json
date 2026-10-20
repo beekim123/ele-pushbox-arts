@@ -1,0 +1,72 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.dungeon_torch",
+ "name": "石牢 · 壁挂火把",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  6,
+  10
+ ],
+ "anchor": [
+  2,
+  9
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "flicker": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..l...",
+   "..kl..",
+   ".jkkl.",
+   ".jjk..",
+   "..j...",
+   "zfffz.",
+   ".zfz..",
+   "..f...",
+   "..f...",
+   "..z..."
+  ],
+  [
+   "......",
+   "..l...",
+   ".lkl..",
+   ".jkk..",
+   ".jj...",
+   "zfffz.",
+   ".zfz..",
+   "..f...",
+   "..f...",
+   "..z..."
+  ],
+  [
+   "...l..",
+   "..lk..",
+   ".lkkj.",
+   "..kjj.",
+   "...j..",
+   "zfffz.",
+   ".zfz..",
+   "..f...",
+   "..f...",
+   "..z..."
+  ]
+ ],
+ "usage": "挂在背景墙上，不发光晕。",
+ "notes": "",
+ "content_hash": "faf405815625bb62794c31d2480bb99fc1da2515b5e7bd0b77207217a8722531"
+}

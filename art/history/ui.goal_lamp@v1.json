@@ -1,0 +1,62 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.goal_lamp",
+ "name": "目标灯",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  9
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "off": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "on": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".zzzzzzz.",
+   "zxwwwwwxz",
+   "zwxxxxxwz",
+   "zwxyyyxwz",
+   "zwxyyyxwz",
+   "zwxyyyxwz",
+   "zwxxxxxwz",
+   "zxwwwwwxz",
+   ".zzzzzzz."
+  ],
+  [
+   ".zzzzzzz.",
+   "zkllllllz",
+   "zlltttllz",
+   "zlttttlkz",
+   "zltttllkz",
+   "zlltllkkz",
+   "zllllkkkz",
+   "zkkkkkkkz",
+   ".zzzzzzz."
+  ]
+ ],
+ "usage": "HUD 右上角目标灯：每个目标一盏。",
+ "notes": "",
+ "content_hash": "4dba01bdb0c6e4cd64e63f85ca53024bb7bf2cdbe6eaa1a7aa03b8e7490486fe"
+}

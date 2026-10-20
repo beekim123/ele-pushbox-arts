@@ -1,0 +1,143 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.forest",
+ "name": "主题 · 迷雾古森",
+ "category": "theme",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.forest_flower",
+  "deco.forest_grass",
+  "fauna.forest_bird",
+  "fauna.forest_butterfly"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "title": "迷雾古森",
+  "chapter": 4,
+  "rock": {
+   "pattern": "grass",
+   "base": [
+    "f",
+    "e"
+   ],
+   "seam": "g",
+   "speck": "F",
+   "light": "m",
+   "light2": "n",
+   "dark": "g",
+   "edge": "g",
+   "top": "m"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "forest",
+   "base": [
+    "p",
+    "o"
+   ],
+   "speck": "n",
+   "accent": "g",
+   "detail": "o"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.forest_grass",
+    "anim": "sway",
+    "every": 3,
+    "max": 4
+   },
+   {
+    "type": "floor",
+    "id": "deco.forest_flower",
+    "anim": "sway",
+    "every": 5,
+    "max": 2,
+    "salt": 3
+   },
+   {
+    "type": "percher",
+    "id": "fauna.forest_bird",
+    "chance": 0.35
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.forest_butterfly",
+    "anim": "fly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "beams": {
+    "count": 3,
+    "slope": [
+     1,
+     4
+    ],
+    "width": 10
+   },
+   "mist": true,
+   "weathers": [
+    "rain",
+    "fireflies"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "第 4 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
+ "notes": "盘根褐土顶着一层草皮，背景是雾中的树干与树冠；野花和草丛，知更鸟在边上啄食，蝴蝶飞舞。",
+ "content_hash": "e90b4ba521c3de9c9eda5928061aa2efa49f1315dfcddfd355b0a540f524463b"
+}

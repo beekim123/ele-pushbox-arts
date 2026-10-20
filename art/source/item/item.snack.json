@@ -1,0 +1,83 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.snack",
+ "name": "零食（小鱼饼干 / 桂花糕）",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "dungeon": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "diyu": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....zzzzz....zz",
+   "...zzEEEddz..zdz",
+   "..zEEdddeddzzddz",
+   ".zEzddddddedzddz",
+   ".zEdddedddddddz.",
+   ".zddddddddeddddz",
+   "..zdddeddddzzddz",
+   "...zzFFFFzz..zdz",
+   ".....zzzz.....zz",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   ".....zzzzz......",
+   "....ztjtktz.....",
+   "....zjttktz.....",
+   "....zcccccz.....",
+   "....zcccccz.....",
+   "..zzzzzzzzzzzz..",
+   ".ztjtktzzttkjtz.",
+   ".zttjttzzttjttz.",
+   ".zccccczzcccccz.",
+   ".zccccczzcccccz.",
+   "..zzzzzzzzzzzzz.",
+   ".zhiiiiiiiiiiihz",
+   "..zzzzzzzzzzzzz."
+  ]
+ ],
+ "usage": "道具图标：零食，喂给提示动物换一句明确提示。同一个道具按地区换包装：石牢是小鱼饼干（dungeon），地府是桂花糕（diyu）。驿站货架和背包格里用。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "4f1533198afeedaa44b9fcb95fd94844d16513ac8b2f1842c68a71e0b17bfdf9"
+}

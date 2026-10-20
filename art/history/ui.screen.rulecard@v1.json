@@ -1,0 +1,39 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.rulecard",
+ "name": "规则卡",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "char.miner",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "rulecard"
+ },
+ "usage": "跳关或首次遇到概念时显示；也可从 HUD 旁的小图标重新打开。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "85693810e3816e3730f79469b2fddc5f7a98f04bbda44abf494118e5c65b2a5a"
+}

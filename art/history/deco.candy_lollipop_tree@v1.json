@@ -1,0 +1,70 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.candy_lollipop_tree",
+ "name": "糖果王国 · 棒棒糖树",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....zztDDzz....",
+   "....ztDDDDDDz...",
+   "...ztDttttttDz..",
+   "..ztDttDDDDttDz.",
+   "..ztDtDDttDDtDz.",
+   "..zDDtDtDttDtDz.",
+   "..ztDtDDtDtDttz.",
+   "..ztDttDDttDtDz.",
+   "..ztDDttttDDtDz.",
+   "...ztDDDDDDtDz..",
+   "....zttttttDz...",
+   ".....zzttDzz....",
+   ".......ztz......",
+   ".......ztz......",
+   ".......ztz......",
+   ".......ztz......"
+  ],
+  [
+   "......zztDDzz...",
+   ".....ztDDDDDDz..",
+   "....ztDttttttDz.",
+   "...ztDttDDDDttDz",
+   "...ztDtDDttDDtDz",
+   "...zDDtDtDttDtDz",
+   "...ztDtDDtDtDttz",
+   "...ztDttDDttDtDz",
+   "...ztDDttttDDtDz",
+   "....ztDDDDDDtDz.",
+   ".....zttttttDz..",
+   "......zzttDzz...",
+   "........ztz.....",
+   ".......ztz......",
+   ".......ztz......",
+   ".......ztz......"
+  ]
+ ],
+ "usage": "长在地面上的一棵棒棒糖树：粉白两色的大螺旋糖插在白色细棍上（比扳杆头大得多），随风轻轻摆。画在箱子和人物后面，只是装饰。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "021e63f56ccedc7c514daafc08173e1874c00caf752afa2a5c1bfa47e6fa4ea5"
+}

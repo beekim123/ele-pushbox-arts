@@ -1,0 +1,273 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.dokkaebi",
+ "name": "小鬼怪（도깨비）",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "wrestle": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "pushed": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "ko": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    7,
+    8
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    9,
+    10
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzzzz.",
+   "..zgggDggDggzbez",
+   "..zDtzDDDtzDzekz",
+   "..zDtzDDDtzDzkez",
+   "..ziDDDDDDDizeez",
+   "...zDDzttzDz.zfz",
+   "....zzzzzzz..zfz",
+   "...zrrDDDrrzzDDz",
+   "..zDrqDDDqrDDzz.",
+   "..zDzqqqqqzz....",
+   "...zuuuuuuuz....",
+   "...zuuvzuuvz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzzzz.",
+   "..zgggDggDggzbez",
+   "..zDDDDDDDDDzekz",
+   "..zDzzDDDzzDzkez",
+   "..ziDDDDDDDizeez",
+   "...zDDzttzDz.zfz",
+   "....zzzzzzz..zfz",
+   "...zrrDDDrrzzDDz",
+   "..zDrqDDDqrDDzz.",
+   "..zDzqqqqqzz....",
+   "...zuuuuuuuz....",
+   "...zuuvzuuvz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzzzz.",
+   "..zgggDggDggzbez",
+   "..zDtzDDDtzDzekz",
+   "..zDtzDDDtzDzkez",
+   "..ziDDDDDDDizeez",
+   "...zDDzttzDz.zfz",
+   "....zzzzzzz..zfz",
+   "...zrrDDDrrzzDDz",
+   "..zDrqDDDqrDDzz.",
+   "..zDzqqqqqzz....",
+   "...zuuuuuuuz....",
+   "..zuuvz.zuuvz...",
+   "..zzzz...zzzz..."
+  ],
+  [
+   "................",
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzzzz.",
+   "..zgggDggDggzbez",
+   "..zDtzDDDtzDzekz",
+   "..zDtzDDDtzDzkez",
+   "..ziDDDDDDDizeez",
+   "...zDDzttzDz.zfz",
+   "....zzzzzzz..zfz",
+   "...zrrDDDrrzzDDz",
+   "..zDrqDDDqrDDzz.",
+   "..zDzqqqqqzz....",
+   "...zzuvzuvzz....",
+   "....zzzzzzz....."
+  ],
+  [
+   ".......zz.......",
+   "......zcdz......",
+   "...z.zzcdzzz.z..",
+   "...zzgggggggzz..",
+   "...zgggDggDggz..",
+   "...zDzzDDDzzDz..",
+   "...zDtzDDDtzDz..",
+   "...ziDDDDDDDiz..",
+   "....zDDzttzDz...",
+   ".....zzzzzzz....",
+   "....zrrDDDrrzzz.",
+   "...zrrqDDDqrDDDz",
+   "...zqqqqqqqzDDz.",
+   "...zuuuuuuuzzz..",
+   "..zuuvz..zuuvz..",
+   ".zzzzz...zzzzz.."
+  ],
+  [
+   "................",
+   ".......zz.......",
+   "......zcdz......",
+   "...z.zzcdzzz.z..",
+   "...zzgggggggzz..",
+   "...zgggDggDggz..",
+   "...zDzzDDDzzDz..",
+   "...zDtzDDDtzDz.t",
+   "...ziDDDDDDDiz..",
+   "....zDDzttzDz..t",
+   ".....zzzzzzz....",
+   "....zrrDDDrrDDDz",
+   "...zrrqDDDqrzzz.",
+   "...zqqqqqqqz....",
+   "...zuuuuuuuz....",
+   ".zzzzz...zzzzz.."
+  ],
+  [
+   "......zz........",
+   ".....zcdz.....t.",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzz..t",
+   ".zzgggDggDggzz..",
+   "zDzDttDDDttDzDz.",
+   "zDzDtzDDDtzDzDz.",
+   "zDziDDDDDDDizDz.",
+   ".zDzDDzzzDDzDz..",
+   "..zDzzzzzzzDz...",
+   "..zDrrDDDrrDz...",
+   "...zrqDDDqrz....",
+   "...zqqqqqqqz....",
+   "...zuuuuuuuz....",
+   "...zuuvzuuvz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   "................",
+   "..k.............",
+   ".klk............",
+   "..k...zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzz...",
+   "..zgggDggDggz...",
+   "..zDzDDDDzDDz...",
+   "..zDDzDDDDzDz...",
+   "..ziDDDDDDDiz...",
+   "...zDDzzzzDz....",
+   "....zzzzzzz.....",
+   "..zDzrrDDDrrzDz.",
+   ".zuuuuuuuuuuuz..",
+   ".zzzzzzzzzzzzbez"
+  ],
+  [
+   ".............k..",
+   "............klk.",
+   ".............k..",
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzz...",
+   "..zgggDggDggz...",
+   "..zDzDDDDzDDz...",
+   "..zDDzDDDDzDz...",
+   "..ziDDDDDDDiz...",
+   "...zDDzzzzDz....",
+   "....zzzzzzz.....",
+   "..zDzrrDDDrrzDz.",
+   ".zuuuuuuuuuuuz..",
+   ".zzzzzzzzzzzzbez"
+  ],
+  [
+   "......zz........",
+   ".....zcdz.......",
+   "..z.zzcdzzz.z...",
+   "..zzgggggggzzzz.",
+   "..zgggDggDggzDDz",
+   "..zDtzDDDtzDzDDz",
+   "..zDtzDDDtzDzzDz",
+   "..ziDDDDDDDizzDz",
+   "...zDDzzzDDzzDz.",
+   "....zzzzzzzzDz..",
+   "...zrrDDDrrDz...",
+   "..zDrqDDDqrz....",
+   "..zDzqqqqqz.....",
+   "...zuuuuuuuz....",
+   "...zuuvzuuvz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   ".......zz.......",
+   "......zcdz......",
+   "...z.zzcdzzz.z..",
+   ".zzzzgggggggzz..",
+   "zDDzgggDggDggz..",
+   "zDDzDtzDDDtzDz..",
+   "zDzzDtzDDDtzDz..",
+   "zDzziDDDDDDDiz..",
+   ".zDzzDDzzzDDz...",
+   "..zDzzzzzzzz....",
+   "...zDrrDDDrrz...",
+   "....zrqDDDqrDz..",
+   ".....zqqqqqzDz..",
+   "....zuuuuuuuz...",
+   "....zuuvzuuvz...",
+   "....zzzz.zzzz..."
+  ]
+ ],
+ "usage": "配送模式·济州海女村的怪物：粉红皮肤、头顶一只圆头小角、一撮乱毛、穿蓝坎肩和宽裤、拿방망이的小鬼怪（도깨비）。在过道里来回走（walk），碰到人就要摔跤（wrestle，收起방망이双手前推），把人推回一格；被人从侧面推时吓一跳、双手捂脸（pushed），推出两格就认输坐下（ko，头上转星星、방망이掉在脚边），让开路、留下金币。能推、能压；掉进两格深的坑里被困住时挥手求救（trapped）。面朝右绘制，朝左时水平镜像。",
+ "notes": "要可爱、不吓人：不穿虎皮裙，不画獠牙和两只尖角，和日本鬼（오니）、地府的青面小鬼（monster.imp）区分。摔跤和闻味跟人属于实时规则（DLV-01），v2 先当普通怪物。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "d00c782ddabf54a2950fa3f113606b1c13f8f77e027905e6128f6194c5f22874"
+}

@@ -1,0 +1,246 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.imp",
+ "name": "小鬼",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "chase": {
+   "fps": 12,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "flee": {
+   "fps": 12,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "stunned": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    6,
+    7
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    8,
+    9
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrlrrlz..",
+   ".....zqrrrrrrz..",
+   ".....zqrzttttz..",
+   "......zqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   "......zrzzrz....",
+   "......zz..zz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrlrrlz..",
+   ".....zqrrrrrrz..",
+   ".....zqrzttttz..",
+   "......zqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   ".......zrrz.....",
+   ".......zzzz....."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "...........z....",
+   "..........zcz...",
+   ".......zzzzczz..",
+   "......zqrrrrrrz.",
+   ".....zzqrrlrrlz.",
+   "......zqrrrrrrz.",
+   "......zqrzttttz.",
+   ".......zqrztztz.",
+   "........zrrz....",
+   ".......zhiiizzrz",
+   "......zrzhiiz...",
+   ".......zrzzrz...",
+   "......zz....zz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "...........z....",
+   "..........zcz...",
+   ".......zzzzczz..",
+   "......zqrrrrrrz.",
+   ".....zzqrrlrrlz.",
+   "......zqrrrrrrz.",
+   "......zqrzttttz.",
+   ".......zqrztztz.",
+   "........zrrz....",
+   ".......zhiiizzrz",
+   ".....zrzzhiiz...",
+   "........zrrz....",
+   "........zzzz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   "...zzzqrrrrrrz..",
+   "..zcdzqrrlrrlz..",
+   ".zcccdzrrrrrrz..",
+   ".zcdcdzrzttttz..",
+   "..zzzzzqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   "......zrzzrz....",
+   "......zz..zz...."
+  ],
+  [
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   "...zzzqrrrrrrz..",
+   "..zcdzqrrlrrlz..",
+   ".zcccdzrrrrrrz..",
+   ".zcdcdzrzttttz..",
+   "..zzzzzqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   ".......zrrz.....",
+   ".......zzzz.....",
+   "................"
+  ],
+  [
+   "....k.......l...",
+   "...klk.....lkl..",
+   "....k.......l...",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrzrrzz..",
+   ".....zqrrrrrrz..",
+   ".....zqrzttttz..",
+   "......zqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   "......zrzzrz....",
+   "......zz..zz...."
+  ],
+  [
+   "..l.......k.....",
+   ".lkl.....klk....",
+   "..l.......k.....",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrzrrzz..",
+   ".....zqrrrrrrz..",
+   ".....zqrzttttz..",
+   "......zqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   "......zrzzrz....",
+   "......zz..zz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrlrrlz..",
+   ".....zqrrrrrrz..",
+   ".....zqrzttttz..",
+   "......zqrzzzz...",
+   ".......zrrz.....",
+   "..zrz.zhiiizrz..",
+   "...zzzrzhiizzz..",
+   "......zrzzrz....",
+   "......zz..zz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "..........z.....",
+   ".........zcz....",
+   "......zzzzczz...",
+   ".....zqrrrrrrz..",
+   "....zzqrrlrrlz..",
+   ".....zqrrrrrrz..",
+   "...zrzqrztzrzz..",
+   "....zzzqrzzzz...",
+   ".......zrrz.....",
+   "......zhiiiz....",
+   ".....zrzhiizrz..",
+   "......zrzzrz...."
+  ]
+ ],
+ "usage": "配送模式·地府的怪物：青面獠牙、头顶一只小角、系红肚兜的小鬼。看见同一行的人就追过来（chase），碰到人就偷一袋沙或 5 金币，背着小包袱逃跑（flee）；被推一下会晕一会儿（stunned），被箱子困住时挣扎（trapped）。能推。面朝右绘制，朝左时水平镜像。",
+ "notes": "行为照搬石牢的鼠群（monsters.json 的 imp 参数）。蓝色皮肤是为了和地府的红灯笼、彼岸花分开，也和石牢的绿僵尸、地精区分。被放倒时播放 fx.monster_poof。",
+ "content_hash": "48e833c982b68afd61b85be358f61dfbd89e2badb19638c257a43e1f16430d09"
+}

@@ -1,0 +1,11 @@
+{
+ "_meta": {"note": "UI-11a (user's decision, 2026-10-17): the settings row \"Lobby skin\" and its 7 options; the frozen content/i18n and the existing content/i18n-* tables are untouched."},
+ "settings.lobby_skin": "Lobby skin",
+ "lobby_skin.s1": "Crystal",
+ "lobby_skin.s2": "Runes",
+ "lobby_skin.s3": "Jade",
+ "lobby_skin.s4": "Bubbles",
+ "lobby_skin.s5": "Vines",
+ "lobby_skin.s6": "Starport",
+ "lobby_skin.generic": "Standard"
+}

@@ -1,0 +1,89 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fx.fire",
+ "name": "火焰",
+ "category": "fx",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "fx",
+ "palette": "endesga32",
+ "animations": {
+  "burn": {
+   "fps": 10,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".........l......",
+   "...l.....k......",
+   "...k.........l..",
+   "l............k..",
+   "k......l........",
+   "k..l...k......l.",
+   "j..kl.lk..l...k.",
+   "jl.kk.kj.lklllkl",
+   ".k.jk.kjlkkkkkjk",
+   "akljjlj.kkjkkkjk",
+   ".jkajkjakjjjjj.j",
+   "ajk.aka.jjajjjaj",
+   ".aja.j.aja.a.a.a",
+   "..j.aja.a.a.a.a.",
+   ".a...a...a.a.a.a"
+  ],
+  [
+   "................",
+   "............l...",
+   "............k...",
+   "........l.....l.",
+   "........k.....kl",
+   ".l..........l..k",
+   ".k......l...k..k",
+   ".k..ll..kl..k..j",
+   "lj.lkkl.kk.lj..j",
+   "kjlkkkkljklkjl..",
+   "kakkjjkkjjkk.kla",
+   "j.kjjjjkajkjakk.",
+   "jajj.ajj.ajj.jka",
+   "a.j.a.aja.j..jj.",
+   ".a.a.a.a.a.a.aj.",
+   "a.a.a.a.a.a.a.a."
+  ],
+  [
+   "................",
+   "...............l",
+   ".............l.k",
+   ".............k.l",
+   "......l........k",
+   "......k..l...l..",
+   "...l..k..k...k..",
+   "..lk..j..kl.lk..",
+   "l.kk..j..jk.kj.l",
+   "klkjll.l.jk.kj.k",
+   "kkjjkkakl.jlj.lk",
+   "jkjakk.kkajkjakj",
+   "jja.jjajk.aka.kj",
+   ".j.ajj.jja.j.aja",
+   "a.a.a...j.aja.j.",
+   ".a.a.a.a...a...a"
+  ]
+ ],
+ "usage": "正在燃烧的格上叠加火焰（循环），烧尽后停止。下半部是网点，能看见下面正在烧的材料。",
+ "notes": "",
+ "content_hash": "61ce4bde702c4e712f1dca644f7b3090b2e938ec9ad175812e841b121d1c6688"
+}

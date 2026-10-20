@@ -1,0 +1,86 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.dungeon_bat",
+ "name": "石牢 · 蝙蝠",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  8
+ ],
+ "anchor": [
+  6,
+  0
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "hang": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....zz.....",
+   "....zBBz....",
+   "...zBBBBz...",
+   "..zBBBBBBz..",
+   "..zBBzzBBz..",
+   "...zBDBDz...",
+   "....zBBz....",
+   ".....zz....."
+  ],
+  [
+   ".....zz.....",
+   "....zBBz....",
+   "...zBBBBz...",
+   "..zBBBBBBz..",
+   "..zBBzzBBz..",
+   "...zBBBBz...",
+   "....zBBz....",
+   ".....zz....."
+  ],
+  [
+   "z..........z",
+   "zBz......zBz",
+   ".zBz.zz.zBz.",
+   "..zBzBBzBz..",
+   "...zBDDBz...",
+   "....zBBz....",
+   ".....zz.....",
+   "............"
+  ],
+  [
+   "............",
+   "............",
+   ".....zz.....",
+   "..zzzBBzzz..",
+   ".zBBBDDBBBz.",
+   "zBBzzBBzzBBz",
+   "zBz..zz..zBz",
+   "z..........z"
+  ]
+ ],
+ "usage": "倒挂在房间顶部，偶尔飞一小圈再回原位。画在地形后面。",
+ "notes": "",
+ "content_hash": "d2eb3b1ef3417414ac847e2cdfb1ab11c45a46128ef00eac1563ebc6b1514bdc"
+}

@@ -1,0 +1,71 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.levels",
+ "name": "关卡选择",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 4,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "levels",
+  "theme": "theme.dungeon",
+  "done": 4,
+  "levels": [
+   {
+    "id": "M01",
+    "state": "cleared"
+   },
+   {
+    "id": "M02",
+    "state": "cleared"
+   },
+   {
+    "id": "M03",
+    "state": "skipped"
+   },
+   {
+    "id": "M04",
+    "state": "cleared"
+   },
+   {
+    "id": "M05",
+    "state": "open",
+    "next": true
+   },
+   {
+    "id": "M06",
+    "state": "cleared"
+   },
+   {
+    "id": "M07",
+    "state": "open"
+   }
+  ]
+ },
+ "usage": "关卡格（编号、名称、通关 / 跳过标记）与所选关卡的示意小地图和一句话发现。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "3ce7d34a0b822daa3fb5d01c243a606e06de7c4ae367565e2c06dec2c5ca4b24"
+}

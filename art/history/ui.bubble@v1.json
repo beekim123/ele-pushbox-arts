@@ -1,0 +1,95 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.bubble",
+ "name": "对话气泡",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  12
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "ninepatch": [
+  4,
+  4,
+  4,
+  4
+ ],
+ "animations": {
+  "say": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "think": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "sign": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzz..",
+   ".zttttttttz.",
+   "ztcccccccctz",
+   "zccccccccccz",
+   "zccccccccccz",
+   "zccccccccccz",
+   "zccccccccccz",
+   "zccccccccccz",
+   "zccccccccccz",
+   "zdccccccccdz",
+   ".zddddddddz.",
+   "..zzzzzzzz.."
+  ],
+  [
+   "..zzzzzzzz..",
+   ".zttttttttz.",
+   "ztuuuuuuuutz",
+   "zuuuuuuuuuuz",
+   "zuuuuuuuuuuz",
+   "zuuuuuuuuuuz",
+   "zuuuuuuuuuuz",
+   "zuuuuuuuuuuz",
+   "zuuuuuuuuuuz",
+   "zvuuuuuuuuvz",
+   ".zvvvvvvvvz.",
+   "..zzzzzzzz.."
+  ],
+  [
+   "zzzzzzzzzzzz",
+   "zddddddddddz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zdFFFFFFFFFz",
+   "zeeeeeeeeeez",
+   "zzzzzzzzzzzz"
+  ]
+ ],
+ "usage": "九宫格对话气泡（角 4px）。say＝角色说话（米色，深字 g）；think＝自言自语 / 心里话（浅灰蓝，深字 x）；sign＝系统说明、告示牌（木色方角，深字 g）。文字用 10px 小字（font-small），内边距左右 5、上下 3。",
+ "notes": "对话系统（docs/design/dialogue.md）的底板，和 ui.bubble_tail 拼在一起用；颜色在六个主题上都要清楚。",
+ "content_hash": "2ae0ff3e9b905d64ec2e7f0923a20d46b3645614be59aa9bc9e448af26749130"
+}

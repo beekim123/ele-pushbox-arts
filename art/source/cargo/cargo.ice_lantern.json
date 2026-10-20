@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.ice_lantern",
+ "name": "货物 · 冰灯",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "cracked": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   ".......vv.......",
+   "......v..v......",
+   "......v..v......",
+   "......zzzz......",
+   ".....zstuuz.....",
+   "....zstssssz....",
+   "....zstsssuz....",
+   "....zsttjsuz....",
+   "....zssllsuz....",
+   "....zsslksuz....",
+   "....zssccsuz....",
+   "....zssssuuz....",
+   "...zfeeeeeefz...",
+   "....zzzzzzzz...."
+  ],
+  [
+   "................",
+   "................",
+   ".......vv.......",
+   "......v..v......",
+   "......v..v......",
+   "......zzzz......",
+   ".....zstuz...t..",
+   "....zstsszz.....",
+   "....zstszs....t.",
+   "....zsttjzzz.s..",
+   "....zssllzuz....",
+   "....zsslksuz....",
+   "....zssccsuz....",
+   "....zssssuuz....",
+   "...zfeeeeeefz...",
+   "....zzzzzzzz...."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：冰做的灯罩里点着小蜡烛，下面一块小木底座，上面一个铁丝提手。灯罩用青色 s，但只有一小块、带 z 描边，和整格的冰分得开。怕摔：落下 2 格或以上就裂一块，落在沙上没事；有损坏时换成 cracked（灯罩右上角裂开、缺了一块，碎冰往外飞）。",
+ "notes": "木底座和铁丝提手是这次加的，让它看起来像能提着走的灯；规则参数同荞麦凉粉（fragile_fall_rows 2、sand_cushion），属于实时规则（DLV-01）。谁都能收。 DSN-04（极地雪村）的美术候选（ART-01c），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "99212f8cdab5897c33370d51ff5cd89def5f5191efb6098d1b977339e3169330"
+}

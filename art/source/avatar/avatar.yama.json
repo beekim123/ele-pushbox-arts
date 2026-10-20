@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.yama",
+ "name": "滚轮头像 · 阎王",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzzzzzzzzzzzzz...",
+   "..zkkkkkkkkkkkkkkkkkz...",
+   "..zzzzzzzzzzzzzzzzzzz...",
+   "...k.k..zyyyyyz..k.k....",
+   "...k.k.zyyyyyyyz.k.k....",
+   "...k.kzEEEEEEEEEzk.k....",
+   "...k.zEEEEEEEEEEEzk.....",
+   ".....zzzzEEEEEzzzz......",
+   ".....zEzzzEEEzzzEz......",
+   ".....zEEtzEEEztEEz......",
+   ".....zEEEEEEEEEEEz......",
+   ".....zEEEEEFFEEEEEz.....",
+   "....zzzzEEEEEEEEzzzz....",
+   "....zzzzzzzEzzzzzzzz....",
+   "....zzzzzzzzzzzzzzzz....",
+   ".....zzzzzzzzzzzzzz.....",
+   "......zzzzzzzzzzzz......",
+   "....zzzizzzzzzzzizzz....",
+   "...ziiiiizzzzzziiiiiz...",
+   "..ziiiiiiiizziiiiiiiiz..",
+   "..zikiiiiiikkiiiiiikiz..",
+   "..zkkkkkkkkkkkkkkkkkkz..",
+   "..ziiiiiiiiiiiiiiiiiiz..",
+   "..zhiiiiiiiiiiiiiiiihz.."
+  ]
+ ],
+ "usage": "收件人「阎王」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b6c465355350c795739a6a2c8e838e43efc529abbf55e7cfea795f7d1a83acef"
+}

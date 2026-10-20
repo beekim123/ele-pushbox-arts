@@ -1,0 +1,317 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.gingerbread",
+ "name": "姜饼人",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "run": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "bump": {
+   "fps": 6,
+   "loop": false,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "pushed": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "ko": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    7,
+    8
+   ]
+  },
+  "soggy": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    9,
+    10
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    11,
+    12
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zzzzz.....",
+   ".....zdddddz....",
+   "....zdeeeeeez...",
+   "....zeeteetez...",
+   "....zeeeeeeez...",
+   "....zeetttefz...",
+   "..zzzzeeeefzzz..",
+   ".zdeeeemnmeeeez.",
+   "zteeeeeeeeeeeetz",
+   ".zezzeeetefzzez.",
+   "..z.zeeeeefz.z..",
+   "....zeeetefz....",
+   "...zeeezzeeez...",
+   "...ztttzztttz...",
+   "...zeefzzeefz...",
+   "....zzz..zzz...."
+  ],
+  [
+   "......zzzzz.....",
+   ".....zdddddz....",
+   "....zdeeeeeez...",
+   "....zeefeefez...",
+   "....zeeeeeeez...",
+   "....zeetttefz...",
+   "..zzzzeeeefzzz..",
+   ".zdeeeemnmeeeez.",
+   "zteeeeeeeeeeeetz",
+   ".zezzeeetefzzez.",
+   "..z.zeeeeefz.z..",
+   "....zeeetefz....",
+   "...zeeezzeeez...",
+   "...ztttzztttz...",
+   "...zeefzzeefz...",
+   "....zzz..zzz...."
+  ],
+  [
+   ".......zzzzz....",
+   "......zdddddz...",
+   ".....zdeeeeeez..",
+   ".....zeeteetez..",
+   ".....zeeeeeeez..",
+   ".....zeetttefz..",
+   "...zzzzeeeefz...",
+   "..zdeeemnmeeezz.",
+   ".zteeeeeeeeeeetz",
+   "..zzzeeetefzzzz.",
+   "....zeeeeefz....",
+   "..zzeeeetefz....",
+   ".zeeezzzzeeez...",
+   "ztttz....ztttz..",
+   "zeez......zeefz.",
+   ".zz........zzz.."
+  ],
+  [
+   "................",
+   ".......zzzzz....",
+   "......zdddddz...",
+   ".....zdeeeeeez..",
+   ".....zeeteetez..",
+   ".....zeeeeeeez..",
+   ".....zeetttefz..",
+   "....zzzeeeefzzz.",
+   "...zteeemnmeeetz",
+   "....zeeetefzzzz.",
+   "....zeeeeefz....",
+   "....zeeetefz....",
+   "....zeeeeeez....",
+   "...ztttzztttz...",
+   "...zeefzzeefz...",
+   "....zzz..zzz...."
+  ],
+  [
+   "................",
+   ".....zzzzz......",
+   "....zdddddz.....",
+   "...zdeeeeeez....",
+   "...zeeteetez....",
+   "...zeeeeeeez....",
+   "...zeetttefz....",
+   "zzzzzeeeefz.....",
+   "teeeeemnmez.....",
+   "zteeeeeeeefz....",
+   ".zzzzeeetefz....",
+   "....zeeeeefz....",
+   "...zeeeeeeeez...",
+   "..ztttzzztttz...",
+   "..zeefz.zeefz...",
+   "...zzz...zzz...."
+  ],
+  [
+   "........zzzzz...",
+   ".......zdddddz..",
+   "......zdeeeeeez.",
+   "......zeeteetez.",
+   "......zeeeeeeezt",
+   "......zeetttefzt",
+   "......zzeeeefzzz",
+   ".....zemnmeeeeet",
+   "....zeeeeeeeeeet",
+   "....zeeetefzzzzz",
+   "...zeeeeefz....t",
+   "..zeeeetefz....t",
+   ".zeeezzzeeez....",
+   "ztttz...ztttz...",
+   "eezz....zeefz...",
+   "zz.......zzz...."
+  ],
+  [
+   ".z..zzzzz....z..",
+   "ztzzdddddzz.ztz.",
+   "ztezdeeeeeezetz.",
+   ".zeeeteeteeeez..",
+   "..zeeeeeeeeez...",
+   "...zeeettefz....",
+   "...zeeettefz....",
+   "....zeeeefz.....",
+   "....zmnmeefz....",
+   "...zeeetefz.....",
+   "...zeeeeefz.....",
+   "...zeeetefz.....",
+   "..zeeezzeeez....",
+   "..ztttzztttz....",
+   "..zeefzzeefz....",
+   "...zzz..zzz....."
+  ],
+  [
+   "....k...........",
+   "...klk.......k..",
+   "....k.......klk.",
+   "......zzzzz..k..",
+   ".....zdddddz....",
+   "....zdeeeeeez...",
+   "....zeezeezez...",
+   "....zeeeeeeez...",
+   "....zeetttefz...",
+   "...zzzeeeefzz...",
+   "..zdeeemnmeeez..",
+   ".zteeeeeeeeeetz.",
+   "..zzzeeetefzzz..",
+   "..zeeeeeeeeeez..",
+   ".ztteezzzzeettz.",
+   "..zzzz....zzzz.."
+  ],
+  [
+   "...........k....",
+   "..k.......klk...",
+   ".klk.......k....",
+   "..k...zzzzz.....",
+   ".....zdddddz....",
+   "....zdeeeeeez...",
+   "....zeezeezez...",
+   "....zeeeeeeez...",
+   "....zeetttefz...",
+   "...zzzeeeefzz...",
+   "..zdeeemnmeeez..",
+   ".zteeeeeeeeeetz.",
+   "..zzzeeetefzzz..",
+   "..zeeeeeeeeeez..",
+   ".ztteezzzzeettz.",
+   "..zzzz....zzzz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "......zzzzz.....",
+   ".....zeeeeez....",
+   "....zeffffffz...",
+   "....zffuffufz...",
+   "....zffffffgz...",
+   "....zfffuffgz...",
+   "...zzzfufugzz...",
+   "..zefffmnmfffz..",
+   ".zufffffffffuz..",
+   ".rzzzfffufgzzs..",
+   "..zffffffffffz..",
+   ".zuuffzzzzffuuz.",
+   "..zzzz....zzzz.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "......zzzzz.....",
+   ".....zeeeeez....",
+   "....zeffffffz...",
+   "....zffuffufz...",
+   "....zffffffgz...",
+   "....zfffuffgz...",
+   "...zzzfufugzz...",
+   "..zefffmnmfffz..",
+   ".zufffffffffuzs.",
+   "..zzzfffufgzz...",
+   ".rzffffffffffr..",
+   ".zuuffzzzzffuuz.",
+   "..zzzz....zzzz.."
+  ],
+  [
+   "..z..zzzzz......",
+   ".ztzzdddddz.....",
+   ".zezdeeeeeez....",
+   ".zezeeteetez....",
+   ".zeeeeeeeeez....",
+   "..zeeettteefz...",
+   "...zzeeeefzzzz..",
+   "....zmnmeeeeetz.",
+   "....zeeeeeeeeez.",
+   "....zeetefzzzz..",
+   "....zeeeefz.....",
+   "....zeetefzz....",
+   "....zeeeeeeez...",
+   "...ztttzztttz...",
+   "...zeefz.zeez...",
+   "....zzz...zz...."
+  ],
+  [
+   "......zzzzz..z..",
+   ".....zdddddzztz.",
+   "....zdeeeeeezez.",
+   "....zeeteetezez.",
+   "....zeeeeeeeeez.",
+   "...zeeettteefz..",
+   "..zzzzeeeefzz...",
+   ".zteeeemnmez....",
+   ".zeeeeeeeeez....",
+   "..zzzzeetefz....",
+   ".....zeeeefz....",
+   "....zzeetefz....",
+   "...zeeeeeeeez...",
+   ".uztttzzztttz.u.",
+   "..ueez..zeefzu..",
+   "...zz....zzz...."
+  ]
+ ],
+ "usage": "配送模式·糖果王国（巧克力河堤）的怪物：圆头姜饼人，e 色的身子、白色糖霜描的笑脸、两颗纽扣和手腕脚腕上的糖霜线，脖子上一个薄荷色小领结。平时站着、偶尔眨眼（idle）；在过道里飞快地跑来跑去（run）；碰到人先缩身、再往前一撞（bump，手前有两道白色冲撞线），把人推回一格、拿走 5 个金币；被人从侧面推时吓一跳、双手举起、嘴张成 O（pushed）；被箱子压到时坐倒、眼睛闭成两道、头上转星星（ko）；被推进糖水里泡软了坐着：身子变暗、糖霜发灰、嘴往下撇、身上滴着水（soggy），走不动、金币还人；掉进两格深的坑或两边被箱子堵住时跺脚挥手（trapped）。面朝右绘制，朝左时水平镜像。",
+ "notes": "照 delivery-candy.md 第 1 节「取材注意」：不画碎掉、被咬、被吃；泡软只画变暗、坐着、滴水，不画化掉、裂开。边跑边喊、撞人拿金币属于实时规则（DLV-01），v2 先当普通怪物。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f5c872f4e6546cb84a1a47f665786d6dad8c6be87c08f74fd4159956bb75025c"
+}

@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.candy_princess",
+ "name": "滚轮头像 · 糖果公主",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....zzz.........zzz.....",
+   "...zedez..z.z.zzedez....",
+   "..zedeeezzkzkzkedeeez...",
+   "..zeeeefzzkkikkeeeefz...",
+   "...zCDCzeeeeeeeeCDCzz...",
+   "...zeeeeeeeeeeeeeeeeez..",
+   "...zeeeeeeeeeeeeeeeez...",
+   "...zeeeEEeEEEEEEEEeeez..",
+   "...zeeEEEEEEEEEEEEEeez..",
+   "...zeEEEEEEEEEEEEEEEez..",
+   "...zeEEzzEEEEEEzzEEEez..",
+   "...zeEEzzEEEEEEzzEEEez..",
+   "...zeEDDEEEEEEEEDDEEez..",
+   "...zeEDDEEEEFEEEDDEEez..",
+   "....zeEEEEEEFFEEEEEez...",
+   ".....zEEEEEEEEEEEEEz....",
+   "......zzEEEEEEEEEzz.....",
+   ".....zzzzzEEEEEzzzz.....",
+   "...zzDDDttttttttDDDzzz..",
+   "..zDDDDDtttttttttDDDDDz.",
+   ".zDDCDDDDDDCDDDDDDCDDz..",
+   ".zDDCDDDDDDCCDDDDDCDDz..",
+   ".zDDDCDDDDDDDDDDDCDDDz..",
+   ".zDDDCDDDDDDDDDDDCDDDz.."
+  ]
+ ],
+ "usage": "收件人「糖果公主」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b9b53c39ba7c9a92e4936b48b1fe19e5e2852ba7f4e121f931830c7333369e1c"
+}

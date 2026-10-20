@@ -1,0 +1,55 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.diyu_butterfly",
+ "name": "地府 · 彼岸蝶（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  5
+ ],
+ "anchor": [
+  3,
+  2
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "rest": {
+   "fps": 1,
+   "loop": true,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "iA...Ai",
+   "AlAzAlA",
+   ".iAzAi.",
+   ".hizih.",
+   "..h.h.."
+  ],
+  [
+   ".......",
+   "...z...",
+   ".iAzAi.",
+   "hlAzAlh",
+   "..hzh.."
+  ]
+ ],
+ "usage": "地府的第二种提示动物：红色的彼岸蝶。停在下一步要去的地方（rest），人走近时飞过去绕一圈（fly）。也作为地府主题的飞虫生态；配送模式里关掉随机出现的蝴蝶，只由提示步骤摆放（worlds.json ambient_exclude）。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "478bb61357dc52969557ae39e7cf534f43c781db0bab1133819e7b48b243443d"
+}

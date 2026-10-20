@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.pudding",
+ "name": "货物 · 焦糖布丁",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "collapsed": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zffffz.....",
+   "....zfeffffz....",
+   "....zfdffdfz....",
+   "...zcfddfddez...",
+   "...zcdddfddez...",
+   "...zcdddddddez..",
+   "..zcddddddddez..",
+   ".zzcddddddddezz.",
+   "zttttttttttttuuz",
+   "zuuuuuuuuuuuuvvz",
+   ".zzvvvvvvvvvvzz.",
+   "...zzzzzzzzzz...",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   ".....zzz........",
+   "....zfffz.......",
+   "....zfeffzz.....",
+   "...zcfdffzfz....",
+   "...zcdddffdfz...",
+   "...zcdddddfdez..",
+   "..zcdddddddddzz.",
+   ".zzcdddddddedddz",
+   "zttttttttttttddz",
+   "zuuuuuuuuuuuuvvz",
+   ".zzvvvvvvvvvvzz.",
+   "...zzzzzzzzzz...",
+   "................"
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：小白盘子上一个焦糖布丁（d 的身子、f 的焦糖顶往下淌）。人被软糖弹起来、没抓住梯子又落回软糖上，晃塌一块，完好度 −1；有损坏时换成 collapsed（右上角塌下来、滑到盘子上）。不送面包师。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "bf8bf1fc83beb55d85a51e35b234d7b24a93419b2e3e82c47c9b437cc866e685"
+}

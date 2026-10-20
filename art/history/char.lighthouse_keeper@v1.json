@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.lighthouse_keeper",
+ "name": "灯塔大叔（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......zz.......",
+   "......zttz......",
+   ".....ziiiiz.....",
+   "....zihihiiz....",
+   "....zhhhhhhz....",
+   "....zEEEEEEz....",
+   "....zEzEEzEz....",
+   "....zuEFFEuz....",
+   ".....zuuuuz.....",
+   "....zllllllzzz..",
+   "...zlkllfllzz.z.",
+   "...zlklllllzvvz.",
+   "...zlkllfllzlkz.",
+   "...zkllllllzkjz.",
+   "....zqqzqqzzvvz.",
+   "...zzzzzzzzzzz.."
+  ],
+  [
+   ".......zz.......",
+   "......zttz......",
+   ".....ziiiiz.....",
+   "....zihihiiz....",
+   "....zhhhhhhz....",
+   "....zEEEEEEz....",
+   "....zEzEEzEz....",
+   "....zuEFFEuz....",
+   ".....zuuuuz.....",
+   "....zllllllzzz..",
+   "...zlkllfllzz.z.",
+   "...zlklllllzvvz.",
+   "...zlkllfllzklz.",
+   "...zkllllllzjkz.",
+   "....zqqzqqzzvvz.",
+   "...zzzzzzzzzzz.."
+  ],
+  [
+   "......zttz......",
+   ".....ziiiiz.....",
+   "....zihihiiz....",
+   "....zhhhhhhz....",
+   "....zEEEEEEz....",
+   "....zEzFEzFzzz..",
+   "....zuEFFEuz..z.",
+   ".....zuuuuzzvvz.",
+   "....zllllllzlkz.",
+   "...zlkllfllzkjz.",
+   "...zlklllllzvvz.",
+   "...zlkllfllzzz..",
+   "...zkllllllkz...",
+   "....zqqzqqz.....",
+   "...zzzzzzzzz....",
+   "................"
+  ],
+  [
+   ".......zz.......",
+   "......zttz......",
+   ".....ziiiiz.....",
+   "....zihihiiz....",
+   "....zhhhhhhz....",
+   "....zEEEEEEz....",
+   "....zEzFEzFz....",
+   "....zuEFFEuzzz..",
+   ".....zuuuuzz..z.",
+   "....zllllllzvvz.",
+   "...zlkllfllzklz.",
+   "...zlklllllzjkz.",
+   "...zlkllfllzvvz.",
+   "...zkllllllkzz..",
+   "....zqqzqqz.....",
+   "...zzzzzzzzz...."
+  ]
+ ],
+ "usage": "收件人·灯塔大叔：戴红毛线帽、留灰胡子、穿黄雨衣、提着一盏油灯的大叔，站在防波堤尽头的石灯台（도대불）下（idle，灯火闪动），不走动。收到货物时把灯举高、眯眼笑（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "门前刮风、风筝会被吹属于实时规则（DLV-01，暂缓）。黄雨衣在蓝天和黑色玄武岩前都很醒目。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3d0531df178d789cc2df72cfc741d8ef7116f6aa2d19a777783b5b80e4f9d162"
+}

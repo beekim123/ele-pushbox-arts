@@ -1,0 +1,185 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.skeleton_guard",
+ "name": "骷髅守卫",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    1
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    3,
+    4
+   ]
+  },
+  "attack": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    5,
+    0
+   ]
+  },
+  "ko": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zz........",
+   ".....zizzz...z..",
+   "....zwvvvwz.zuz.",
+   "...zxxxxxxxzzuz.",
+   "...zuuuuuuuz.e..",
+   "...zuzzuzzuz.e..",
+   "...zuzAuzAuz.e..",
+   "...zuuuzuuuz.e..",
+   "....zuuuuuz..e..",
+   "....ztztztz..e..",
+   ".....zzuzz...e..",
+   "....zuzuzuzzue..",
+   "....zvuzuvz..e..",
+   ".....zuuuz...e..",
+   ".....zuzuz...e..",
+   "....zzz.zzz..z.."
+  ],
+  [
+   ".....zizzz...z..",
+   "....zwvvvwz.zuz.",
+   "...zxxxxxxxzzuz.",
+   "...zuuuuuuuz.e..",
+   "...zuzzuzzuz.e..",
+   "...zuzAuzAuz.e..",
+   "...zuuuzuuuz.e..",
+   "....zuuuuuz..e..",
+   "....ztztztz..e..",
+   ".....zzuzz...e..",
+   "....zuzuzuzzue..",
+   "....zvuzuvz..e..",
+   ".....zuuuz...e..",
+   ".....zuzuz...e..",
+   ".....zuzuz...e..",
+   "....zzz.zzz..z.."
+  ],
+  [
+   "......zz........",
+   ".....zizzz...z..",
+   "....zwvvvwz.zuz.",
+   "...zxxxxxxxzzuz.",
+   "...zuuuuuuuz.e..",
+   "...zuzzuzzuz.e..",
+   "...zuzAuzAuz.e..",
+   "...zuuuzuuuz.e..",
+   "....zuuuuuz..e..",
+   "....ztztztz..e..",
+   ".....zzuzz...e..",
+   "....zuzuzuzzue..",
+   "....zvuzuvz..e..",
+   ".....zuuuz...e..",
+   "....zuz.zuz..e..",
+   "...zzz...zzz.z.."
+  ],
+  [
+   "......zz........",
+   ".....zizzz...z..",
+   "....zwvvvwz.zuz.",
+   "...zxxxxxxxzzuz.",
+   "...zuuuuuuuz.e..",
+   "...zuzzuzzuz.e..",
+   "...zuzAuzAuz.e..",
+   "...zuuuzuuuz.e..",
+   "....zuuuuuz..e..",
+   "..uzzzzzzzz..e..",
+   "..z..ztztz...e..",
+   "....zuzuzuzzue..",
+   "....zvuzuvz..e..",
+   ".....zuuuz...e..",
+   ".....zuzuz...e..",
+   "....zzz.zzz..z.."
+  ],
+  [
+   "......zz........",
+   ".....zizzz...z..",
+   "....zwvvvwz.zuz.",
+   "...zxxxxxxxzzuz.",
+   "...zuuuuuuuz.e..",
+   "...zuzzuzzuz.e..",
+   "...zuzAuzAuz.e..",
+   "...zuuuzuuuz.e..",
+   "..uzzuuuuuz..e..",
+   "..z.zzzzzzz..e..",
+   ".....ztztz...e..",
+   "....zuzuzuzzue..",
+   "....zvuzuvz..e..",
+   ".....zuuuz...e..",
+   ".....zuzuz...e..",
+   "....zzz.zzz..z.."
+  ],
+  [
+   "......zz........",
+   ".....zizzz......",
+   "....zwvvvwz.....",
+   "...zxxxxxxxz....",
+   "...zuuuuuuuz....",
+   "...zuzzuzzuz....",
+   "...zuzAuzAuz....",
+   "...zuuuzuuuz....",
+   "....zuuuuuz.....",
+   "....ztztztz....u",
+   ".....zzuzz.ueeee",
+   "....zuzuzuzz...u",
+   "....zvuzuvz.....",
+   ".....zuuuz......",
+   ".....zuzuz......",
+   "....zzz.zzz....."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "......zzzzz.....",
+   ".....zwvvvwz....",
+   "....zxxxxxxxz...",
+   "....zuzAuzAuz...",
+   "...zzuuzuuuzzz..",
+   "..zuzztztztzzuz.",
+   ".zuuzuzzuzzuuuz.",
+   "zzzzzzzzzzzzzzzz",
+   "................"
+  ]
+ ],
+ "usage": "配送模式·幽暗石牢的怪物：戴旧铁盔、拿长矛的骷髅，沿地面巡逻，碰墙、落差、人的头顶就回头；碰到人伤 1 颗心。推不动，只能压、埋、摔、困。面朝右绘制，朝左时水平镜像。",
+ "notes": "被放倒时先显示 ko 一帧，再播放 fx.monster_poof。 第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "7c5340f68c1fd3df4414a6516cb5baf45a446f260307ab676f94258d4c5f2ace"
+}

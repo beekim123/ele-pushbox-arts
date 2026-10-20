@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.haenyeo",
+ "name": "滚轮头像 · 海女奶奶",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   ".........zzzzzz.........",
+   ".......zzyyyywyzz.......",
+   "......zyyyyyyyywyz......",
+   ".....zyyyyyyyyyyyyz.....",
+   ".....zyvvvvvvvvvvyz.....",
+   "....zyvsuuuuuuuuuvyz....",
+   "....zyvssuuuuuuuuvyz....",
+   "....zyyvvvvvvvvvvvyz....",
+   "....zyuEEEEEEEEEEuyz....",
+   "....zyuEEEEEEEEEEuyz....",
+   "....zyEEzzEEEEzzEEyz....",
+   "....zyEEzzEEEEzzEEyz....",
+   "....zyEDDEEEEEEDDEyz....",
+   "....zyEEEEFEEFEEEEyz....",
+   ".....zyEEEEFFEEEEyz.....",
+   "......zyEEEEEEEEyz......",
+   "......zyyzEEEEzyyz......",
+   ".....zyyyyzzzzyyyzzzzz..",
+   "...zzyyyyyyyyyyyzlkkjjz.",
+   "..zywyyyyyyyyyyyzkjjjjz.",
+   ".zywyyyyyyyyyyyyzjjjjbz.",
+   ".zwyyyyyyyyyyyyyzjjjbbz.",
+   ".zyyyyyyyyyyyyyyzjjbbbz."
+  ]
+ ],
+ "usage": "收件人「海女奶奶」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e3f832812840a67fc3fd03a0d3213cdcbaf76d36390afa04284fbed91a9897a6"
+}

@@ -1,0 +1,132 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.ruins",
+ "name": "主题 · 黄金神庙",
+ "category": "theme",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.ruins_lotus",
+  "deco.ruins_vine",
+  "fauna.ruins_scarab"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "title": "黄金神庙",
+  "chapter": 2,
+  "rock": {
+   "pattern": "block",
+   "base": [
+    "d",
+    "F"
+   ],
+   "seam": "e",
+   "speck": "c",
+   "light": "c",
+   "light2": "d",
+   "dark": "f",
+   "edge": "e",
+   "top": "k"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "ruins",
+   "base": [
+    "f",
+    "g"
+   ],
+   "speck": "e",
+   "accent": "e",
+   "detail": "g"
+  },
+  "ambient": [
+   {
+    "type": "hang",
+    "id": "deco.ruins_vine",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "floor",
+    "id": "deco.ruins_lotus",
+    "every": 6,
+    "max": 2
+   },
+   {
+    "type": "walker",
+    "id": "fauna.ruins_scarab",
+    "chance": 0.3
+   }
+  ],
+  "env": {
+   "beams": {
+    "count": 2,
+    "slope": [
+     1,
+     2
+    ],
+    "width": 14
+   },
+   "motes": true,
+   "weathers": [
+    "sandstorm"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "第 2 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
+ "notes": "砂岩大石块与金色饰边，背景是立柱和刻纹墙；垂藤、金莲点缀，金甲虫在地上爬。",
+ "content_hash": "d73b763e7af2267f8997d64c06d08a80558accd2703d2d04e1da551734c3e7d2"
+}

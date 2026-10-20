@@ -1,0 +1,40 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.dungeon_moss",
+ "name": "石牢 · 苔藓与小菇",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  5
+ ],
+ "anchor": [
+  4,
+  5
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzz...",
+   ".zbkbz..",
+   "..zcz...",
+   "n.zcz.n.",
+   "nmoconnm"
+  ]
+ ],
+ "usage": "长在地面上方的空格底部。",
+ "notes": "",
+ "content_hash": "08d991b50716ab13d802895f9b51ea689a76a05d72a3f550a27f72ec1da85478"
+}

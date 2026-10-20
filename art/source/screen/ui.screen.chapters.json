@@ -1,0 +1,88 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.chapters",
+ "name": "章节选择",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.cave",
+  "theme.cosmos",
+  "theme.dungeon",
+  "theme.forest",
+  "theme.ruins",
+  "theme.sky",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel",
+  "ui.theme_emblem"
+ ],
+ "version": 6,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "chapters",
+  "chapters": [
+   {
+    "theme": "theme.dungeon",
+    "done": 4,
+    "total": 7
+   },
+   {
+    "theme": "theme.ruins",
+    "done": 0,
+    "total": 7
+   },
+   {
+    "theme": "theme.cave",
+    "locked": true,
+    "need": 5
+   },
+   {
+    "theme": "theme.forest",
+    "locked": true,
+    "need": 4
+   },
+   {
+    "theme": "theme.sky",
+    "locked": true,
+    "need": 5
+   },
+   {
+    "theme": "theme.cosmos",
+    "locked": true
+   }
+  ],
+  "focus": 1
+ },
+ "usage": "章节（地图）选择：左右轮播。当前地图是中间的大卡（主题小景、徽章、章号、进度或锁），两侧依次缩小变暗；下方是名称、页码指示与左右键、说明栏。地图数量不限：16 张以内显示页码点，更多时显示「当前 / 总数」。←→ 或点击两侧卡片切换，Enter 进入。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "444fab65592fd9d0f846dd891ae2e2f6b63b727d556b852221bb69260799557c"
+}

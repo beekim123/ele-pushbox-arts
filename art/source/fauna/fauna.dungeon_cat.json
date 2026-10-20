@@ -1,0 +1,115 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.dungeon_cat",
+ "name": "石牢 · 牢猫（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  10
+ ],
+ "anchor": [
+  6,
+  10
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sit": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "meow": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    4,
+    4,
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......z...z.",
+   ".....zvzzzvz",
+   ".....zvvvvvz",
+   ".....zvlvlvz",
+   ".z...zuvDvuz",
+   "zvz.zzzuuuz.",
+   "zvzzvwvzuuz.",
+   ".zvvwvwvuuz.",
+   ".zvvvvvvuuz.",
+   "..zzzzzzzzz."
+  ],
+  [
+   "......z...z.",
+   ".....zvzzzvz",
+   ".....zvvvvvz",
+   "zz...zvlvlvz",
+   "zvz..zuvDvuz",
+   ".zvzzzzuuuz.",
+   "zvzzvwvzuuz.",
+   ".zvvwvwvuuz.",
+   ".zvvvvvvuuz.",
+   "..zzzzzzzzz."
+  ],
+  [
+   "............",
+   "............",
+   "........z.z.",
+   ".z.....zvzvz",
+   "zvz....zvvvz",
+   ".zvzzzzzlvlz",
+   "..zvwvwvvDvz",
+   "..zvvwvwvvz.",
+   "..zvzzzzvzz.",
+   "..zz....zz.."
+  ],
+  [
+   "............",
+   "............",
+   "........z.z.",
+   "z......zvzvz",
+   "zvz....zvvvz",
+   ".zvzzzzzlvlz",
+   "..zvwvwvvDvz",
+   "..zvvwvwvvz.",
+   "...zvzzvzz..",
+   "...zz..zz..."
+  ],
+  [
+   "......z...z.",
+   ".....zvzzzvz",
+   ".....zvvvvvz",
+   ".....zzvlvlv",
+   ".z...zzuvDvu",
+   "zvz.zzzztzzz",
+   "zvzzvwvzuuz.",
+   ".zvvwvwvuuz.",
+   ".zvvvvvvuuz.",
+   "..zzzzzzzzz."
+  ]
+ ],
+ "usage": "石牢的提示动物：灰色虎斑猫。平时蹲在下一步要用的东西旁边（sit，尾巴偶尔甩一下）；人走近时走过去（walk）蹲到那个东西上；喂小鱼饼干时叫一声（meow），头顶出提示气泡。面朝右绘制，朝左时水平镜像。不挡路、不受伤、不能推。",
+ "notes": "不在配送模式的随机生态里出现，只由房间的提示步骤摆放。",
+ "content_hash": "0bc7f82924612e6c810a4f517e514a941d982761d55f79a7e23f715a812171af"
+}

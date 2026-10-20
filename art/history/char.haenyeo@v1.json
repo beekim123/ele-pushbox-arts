@@ -1,0 +1,204 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.haenyeo",
+ "name": "海女奶奶（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "dive": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "surface": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    6,
+    7
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyvsuuuvz...",
+   "....zyuEEEEEz...",
+   "....zyuzEEzEz...",
+   "....zyEEEEDEz...",
+   ".....zEEFFEz....",
+   "....zyyzzzyzzzz.",
+   "...zywyyyyzzkjjz",
+   "...zwyyyyyEEjjjz",
+   "...zwyyyyxzzjjbz",
+   "...zyyyyyyzjjbbz",
+   "...zxyyyyyxzzzz.",
+   "....zyyzyyzzuzuz",
+   "...zzzzzzzzzzuz."
+  ],
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyvsuuuvz...",
+   "....zyuEEEEEz...",
+   "....zyuFEEFEz...",
+   "....zyEEEEDEz...",
+   ".....zEEFFEz....",
+   "....zyyzzzyzzzz.",
+   "...zywyyyyzzkjjz",
+   "...zwyyyyyEEjjjz",
+   "...zwyyyyxzzjjbz",
+   "...zyyyyyyzjjbbz",
+   "...zxyyyyyxzzzz.",
+   "....zyyzyyzzuzuz",
+   "...zzzzzzzzzzuz."
+  ],
+  [
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyvsuuuvz...",
+   "....zyuEEEEEz...",
+   "....zyuFEEFEz...",
+   "....zyEEEEDEz...",
+   ".....zEEziEz....",
+   "....zyyzzzyzzzz.",
+   "...zywyyyyzzkjjz",
+   "...zwyyyyyEEjjjz",
+   "...zwyyyyxzzjjbz",
+   "...zyyyyyyzjjbbz",
+   "...zxyyyyyxzzzz.",
+   "....zyyzyyzzuzuz",
+   "...zzzzzzzzzzuz.",
+   "................"
+  ],
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyvsuuuvz...",
+   "....zyuEEEEEz...",
+   "....zyuFEEFEz...",
+   "....zyEEEEDEz...",
+   ".....zEEziEz....",
+   "....zyyzzzyzzzz.",
+   "...zywyyyyzzkjjz",
+   "...zwyyyyyEEjjjz",
+   "...zwyyyyxzzjjbz",
+   "...zyyyyyyzjjbbz",
+   "...zxyyyyyxzzzz.",
+   "....zyyzyyzzuzuz",
+   "...zzzzzzzzzzuz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....t..........",
+   ".........zzzz...",
+   "....s...zlkjjz..",
+   "........zkjjjz..",
+   "..s.....zjjjbz..",
+   ".tsssrrrrrrssst.",
+   ".r............r."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....t..........",
+   "................",
+   "................",
+   "....t...........",
+   ".........zzzz...",
+   "...s....zlkjjz..",
+   ".s......zkjjjzs.",
+   "..tssrrrrrrsst..",
+   "..r..........r.."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyyyyyyz....",
+   "....zyvvvvvvz...",
+   "....zyvszuzvz...",
+   "....zyvvvvvvz...",
+   "....zyEEEEDzzzz.",
+   ".....zEEFEzlkjjz",
+   "....zyyzzzzkjjjz",
+   "..szywyyyyzjjjbz",
+   ".tsssrrrrrrssst.",
+   ".r............r."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "......zzzzz.....",
+   ".....zyyywyz....",
+   "....zyyyyyyz....",
+   "....zyvvvvvvz...",
+   "....zyvszuzvz..t",
+   "....zyvvvvvvzt..",
+   "....zyEEEEDEz.t.",
+   ".....zEEzEEzztz.",
+   "....zyyzzzzlkjjt",
+   "...zywyyyyzkjjjz",
+   ".s........zjjjbz",
+   "..tssrrrrrrsst..",
+   "..r..........r.."
+  ]
+ ],
+ "usage": "收件人·海女奶奶：穿黑色潜水服、额头上推着潜水镜、抱着橘色浮球（테왁）和网兜（망사리）的老奶奶，站在防波堤的石圈（불턱）边（idle，偶尔眨眼），不走动。收到货物时眯眼笑、跳一下（win）。dive 是潜在水下、只露出水面上的浮球和气泡；surface 是戴着潜水镜冒出水面、吹一声口哨（숨비소리）。这两个动作的锚点放在水面格顶边往下 3 px（同 fx.ripple），画面第 13 行就是水面线。面朝右绘制，朝左时水平镜像。",
+ "notes": "海女是真实的职业，画成能干、爽朗的老奶奶，不拿她当笑料。潜水、上岸属于实时规则（DLV-01，暂缓）：v2 只用 idle、win，dive、surface 先画好备用。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b12df444fc6db2660d55c1b035331620a3b60af8028a2f308356263db48d9d4e"
+}

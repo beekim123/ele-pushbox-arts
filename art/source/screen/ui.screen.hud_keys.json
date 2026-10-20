@@ -1,0 +1,53 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hud_keys",
+ "name": "关卡顶栏（标 Z / R / H）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json",
+  "workbench/js/core/font-small.js",
+  "workbench/js/core/ui-onboarding.js",
+  "workbench/js/core/onboarding-fx.js"
+ ],
+ "depends": [
+  "char.portitor",
+  "item.sandbag",
+  "mech.exit_flag",
+  "theme.dungeon",
+  "ui.goal_lamp",
+  "ui.icons",
+  "ui.keycap",
+  "ui.panel"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_hud_keys",
+  "level": "M04"
+ },
+ "usage": "所有关卡的顶栏：撤销、重开、提示图标旁各挂一个小键帽 Z、R、H（键帽字用 u，不抢眼），用鼠标时也照样显示（onboarding.md 第 2 节）。样张用 M04（带沙袋）。",
+ "notes": "UX-05 第 1 版，等用户确认。照已确认的关卡顶栏（ui-kit.js levelHud）排版，只多出三个键帽，右侧木牌随之变宽；已确认的顶栏不改。画法在 workbench/js/core/ui-onboarding.js（G2 组件）。",
+ "content_hash": "40c7a872b77af04f852c71420a4e1aa02d57efa67bd0d9268ac1cc692d3d8a41"
+}

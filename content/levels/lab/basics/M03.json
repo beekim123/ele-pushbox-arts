@@ -1,0 +1,26 @@
+{
+ "format": "pushbox.levelspec/1",
+ "id": "M03",
+ "mode": "lab",
+ "group": "basics",
+ "chapter": "dungeon",
+ "title": "挖开一格",
+ "map": [
+  "##########",
+  "#........#",
+  "#..e.....#",
+  "#.Pe.B.o.#",
+  "##########"
+ ],
+ "bag": {
+  "sand": 0,
+  "bomb": 0
+ },
+ "solution": [
+  "DIG_R",
+  "R",
+  "R",
+  "R",
+  "R"
+ ]
+}

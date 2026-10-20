@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.ruins_scarab",
+ "name": "神庙 · 金甲虫",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  6
+ ],
+ "anchor": [
+  4,
+  6
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzz..",
+   ".zklkkz.",
+   "zkllkkkz",
+   "zbkkkkbz",
+   ".zzzzzz.",
+   "z.z..z.z"
+  ],
+  [
+   "..zzzz..",
+   ".zklkkz.",
+   "zkllkkkz",
+   "zbkkkkbz",
+   ".zzzzzz.",
+   ".z.zz.z."
+  ]
+ ],
+ "usage": "沿地面慢慢爬，走走停停。",
+ "notes": "",
+ "content_hash": "0edbff7f7b4db6e05912e43a2c58c39e8f800b05f0bf2b35b12f761060fb38e7"
+}

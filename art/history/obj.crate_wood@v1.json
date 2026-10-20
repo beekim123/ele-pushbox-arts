@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "obj.crate_wood",
+ "name": "木箱",
+ "category": "object",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zddddddddddddddz",
+   "zdeeeeeeeeeeeefz",
+   "zdebbbbbbbbbddfz",
+   "zdebbbbbbbbddbfz",
+   "zdebbbbbbbddbbfz",
+   "zdeeeeeeeddeeefz",
+   "zdebbbbbddbbbbfz",
+   "zdebbbbddbbbbbfz",
+   "zdebbbddbbbbbbfz",
+   "zdeeeddeeeeeeefz",
+   "zdebddbbbbbbbbfz",
+   "zdeddbbbbbbbbbfz",
+   "zdeeeeeeeeeeeefz",
+   "zffffffffffffffz",
+   "zzzzzzzzzzzzzzzz"
+  ]
+ ],
+ "usage": "可推、可叠放；第 2 章起浮在水上。占满一格。",
+ "notes": "斜撑从左下到右上，木纹接缝两道；与铁箱靠材质和铆钉区分。",
+ "content_hash": "8004b9b3ca8f9b25e809e24c6fdbc770db5a1da7b2528049f4f2da0cd6ca381f"
+}

@@ -1,0 +1,202 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.keycap",
+ "name": "按键图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  13,
+  13
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "left": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "right": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "up": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "down": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "Z": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "R": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  },
+  "H": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "B": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    7
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuzuuuvz",
+   "zuuuuuzzuuuvz",
+   "zuuuuzzzzzuvz",
+   "zuuuuuzzuuuvz",
+   "zuuuuuuzuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuzzuuuuvz",
+   "zuzzzzzuuuuvz",
+   "zuuuuzzuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuzzzuuuuvz",
+   "zuuzzzzzuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuzzzzzuuuvz",
+   "zuuuzzzuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuzzzzzuuuvz",
+   "zuuuuuzuuuuvz",
+   "zuuuuzuuuuuvz",
+   "zuuuzuuuuuuvz",
+   "zuuzzzzzuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuzzzzuuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzzzzuuuuvz",
+   "zuuzuuzuuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzzzzzuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ],
+  [
+   ".zzzzzzzzzzz.",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuzzzzuuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzzzzuuuuvz",
+   "zuuzuuuzuuuvz",
+   "zuuzzzzuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zuuuuuuuuuuvz",
+   "zvvvvvvvvvvwz",
+   ".zzzzzzzzzzz."
+  ]
+ ],
+ "usage": "引导与设置中显示的按键。修饰键（Shift、Ctrl、Tab、Esc）用 ui.panel_key 九宫格加文字绘制。",
+ "notes": "",
+ "content_hash": "63774b82a1496982bed95c0a1804e46cf323c4bfd1a7dbef06d5aa6ce5e3706f"
+}

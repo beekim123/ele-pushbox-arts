@@ -1,0 +1,38 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hint",
+ "name": "提示面板",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 3,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "hint"
+ },
+ "usage": "按 H 逐级展开三层提示；第三层提供演示与回到正确位置。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "a0cebcbd7fd5019ae3807c643560f7d095f83fcc03d2f137f8221ff17e40ef5a"
+}

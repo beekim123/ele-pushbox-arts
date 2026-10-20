@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.yama",
+ "name": "阎王（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".zzzzzzzzzzzzz..",
+   ".zkkkkkkkkkkkz..",
+   "..zzzyyyyyzzz...",
+   "..k.zyyyyyz.k...",
+   "..k.zEEEEEz.k...",
+   "..kzzzEEzzzzk...",
+   "...zEtzEEtzEz...",
+   "...zEEEFEEEEz...",
+   "...zzzzzzzzzz...",
+   "..zizzzzzzzzizz.",
+   ".ziiizzzzzziiicz",
+   ".ziikkkkkkkiizcz",
+   ".ziiiiiiiiiiizcz",
+   ".zihiiikiiiihzz.",
+   ".zihiiiiiiiihz..",
+   "..zzzzzzzzzzz..."
+  ],
+  [
+   ".zzzzzzzzzzzzz..",
+   ".zkkkkkkkkkkkz..",
+   "..zzzyyyyyzzz...",
+   "...k.zyyyyyz.k..",
+   "...k.zEEEEEz.k..",
+   "..kzzzEEzzzzk...",
+   "...zEtzEEtzEz...",
+   "...zEEEFEEEEz...",
+   "...zzzzzzzzzz...",
+   "..zizzzzzzzzizz.",
+   ".ziiizzzzzziiicz",
+   ".ziikkkkkkkiizcz",
+   ".ziiiiiiiiiiizcz",
+   ".zihiiikiiiihzz.",
+   ".zihiiiiiiiihz..",
+   "..zzzzzzzzzzz..."
+  ],
+  [
+   ".zzzzzzzzzzzzz..",
+   ".zkkkkkkkkkkkz..",
+   "..zzzyyyyyzzz...",
+   "..k.zyyyyyz.k...",
+   "..k.zEEEEEz.k...",
+   "..kzzzEEzzzzk...",
+   "...zEzzEEzzEz...",
+   "...zEEEFEEEEz...",
+   "...zzzzzzzzzz...",
+   "..zizzzzzzzzizzz",
+   ".ziiizzzzzziiitz",
+   ".ziikkkkkkkiizcz",
+   ".ziiiiiiiiiiizcz",
+   ".zihiiikiiiihzz.",
+   ".zihiiiiiiiihz..",
+   "..zzzzzzzzzzz..."
+  ],
+  [
+   ".zkkkkkkkkkkkz..",
+   "..zzzyyyyyzzz...",
+   "..k.zyyyyyz.k...",
+   "..k.zEEEEEz.k...",
+   "..kzzzEEzzzzk...",
+   "...zEzzEEzzEz...",
+   "...zEEEFEEEEz...",
+   "...zzzzzzzzzz...",
+   "..zizzzzzzzzizzz",
+   ".ziiizzzzzziiitz",
+   ".ziikkkkkkkiizcz",
+   ".ziiiiiiiiiiizcz",
+   ".zihiiikiiiihzz.",
+   ".zihiiiiiiiihz..",
+   "..zzzzzzzzzzz...",
+   "..zzzzzzzzzzz..."
+  ]
+ ],
+ "usage": "收件人·阎王：戴垂着金珠串的平顶冕冠、浓眉大黑胡子、穿红金龙袍、手持笏板，坐在阎罗殿里（idle，珠串轻晃），不走动。收到货物时哈哈大笑（win）。阎罗殿边上有油锅，冰淇淋在他家化得快 3 倍。面朝右绘制，朝左时水平镜像。",
+ "notes": "威严但不吓人：眼睛画成笑眼更像「好说话的大王」。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "aec4f07219fdf1c031f102a65886bebcc9c2ff265f0bd17f6e6f8972bb7d7ef2"
+}

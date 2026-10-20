@@ -1,0 +1,28 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.key_cmd",
+ "name": "⌘ 键帽",
+ "category": "ui",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/onboarding-fx.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/font-small.js"
+ ],
+ "depends": [],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_key_cmd"
+ },
+ "usage": "Mac 的 ⌘ 键帽（11×11，和 G2 键帽同一画法）：平时、按住（修饰键按下去）、闪的暗半拍；字体文件里没有 ⌘ 字形（UX-02 交付），所以画成图形。",
+ "notes": "UX-03 第 1 版，等用户确认。画法在 workbench/js/core/onboarding-fx.js（G2 组件，不改 ui.keycap / ui.panel / 气泡 / HUD）；样张见工作台「资产」「确认」页（PB.ui.SCREENS.onb_key_cmd）。art/export/preview 里的 PNG 是空白：tools/art.mjs 的 renderProcedural 只画 theme / screen / material 三类。",
+ "content_hash": "57d85c662b78829d365814d892c8b06505cc0cd9818d42c9013e6138dadc190f"
+}

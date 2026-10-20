@@ -1,0 +1,227 @@
+{
+ "format": "pushbox.audio-presets/1",
+ "presets": {
+  "guzheng": {
+   "wave": "pluck",
+   "gain_db": 0,
+   "lowpass_hz": 3200,
+   "attack_ms": 8,
+   "decay_ms": 150,
+   "sustain": 0.8,
+   "release_ms": 650,
+   "pluck_brightness": 0.78,
+   "pluck_decay_ms": 5500,
+   "echo": {
+    "delay_ms": 115,
+    "feedback": 0.18,
+    "mix": 0.08
+   }
+  },
+  "pipa": {
+   "wave": "pluck",
+   "gain_db": 0,
+   "lowpass_hz": 3600,
+   "attack_ms": 8,
+   "decay_ms": 200,
+   "sustain": 0.8,
+   "release_ms": 220,
+   "pluck_brightness": 0.95,
+   "pluck_decay_ms": 3800
+  },
+  "dizi": {
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 2800,
+   "attack_ms": 45,
+   "decay_ms": 100,
+   "sustain": 0.88,
+   "release_ms": 140,
+   "breath": 0.14,
+   "vibrato_hz": 5.4,
+   "vibrato_cents": 22,
+   "vibrato_delay_ms": 160
+  },
+  "xiao": {
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 1250,
+   "attack_ms": 120,
+   "decay_ms": 200,
+   "sustain": 0.82,
+   "release_ms": 300,
+   "breath": 0.22,
+   "vibrato_hz": 4.5,
+   "vibrato_cents": 14,
+   "vibrato_delay_ms": 280
+  },
+  "erhu": {
+   "wave": "saw",
+   "gain_db": 0,
+   "lowpass_hz": 1700,
+   "attack_ms": 90,
+   "decay_ms": 180,
+   "sustain": 0.8,
+   "release_ms": 220,
+   "vibrato_hz": 5.6,
+   "vibrato_cents": 42,
+   "vibrato_delay_ms": 180
+  },
+  "muyu": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 2100,
+   "attack_ms": 8,
+   "decay_ms": 90,
+   "sustain": 0.06,
+   "release_ms": 120,
+   "fm_ratio": 1.48,
+   "fm_depth": 3.6,
+   "fm_decay_ms": 22
+  },
+  "bangzi": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 3400,
+   "attack_ms": 8,
+   "decay_ms": 60,
+   "sustain": 0.035,
+   "release_ms": 80,
+   "fm_ratio": 2.76,
+   "fm_depth": 5.2,
+   "fm_decay_ms": 12
+  },
+  "bianzhong": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 3600,
+   "attack_ms": 10,
+   "decay_ms": 500,
+   "sustain": 0.38,
+   "release_ms": 1100,
+   "fm_ratio": 1.414,
+   "fm_depth": 4.5,
+   "fm_decay_ms": 850,
+   "echo": {
+    "delay_ms": 180,
+    "feedback": 0.25,
+    "mix": 0.1
+   }
+  },
+  "gayageum": {
+   "wave": "pluck",
+   "gain_db": 0,
+   "lowpass_hz": 2200,
+   "attack_ms": 9,
+   "decay_ms": 300,
+   "sustain": 0.85,
+   "release_ms": 450,
+   "pluck_brightness": 0.58,
+   "pluck_decay_ms": 6000,
+   "vibrato_hz": 4.3,
+   "vibrato_cents": 35,
+   "vibrato_delay_ms": 150
+  },
+  "harp": {
+   "wave": "pluck",
+   "gain_db": 0,
+   "lowpass_hz": 2400,
+   "attack_ms": 12,
+   "decay_ms": 220,
+   "sustain": 0.85,
+   "release_ms": 900,
+   "pluck_brightness": 0.6,
+   "pluck_decay_ms": 7000,
+   "echo": {
+    "delay_ms": 145,
+    "feedback": 0.2,
+    "mix": 0.09
+   }
+  },
+  "marimba": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 2500,
+   "attack_ms": 8,
+   "decay_ms": 220,
+   "sustain": 0.12,
+   "release_ms": 260,
+   "fm_ratio": 4,
+   "fm_depth": 1.7,
+   "fm_decay_ms": 45
+  },
+  "waves": {
+   "wave": "noise",
+   "gain_db": 0,
+   "lowpass_hz": 600,
+   "attack_ms": 200,
+   "decay_ms": 500,
+   "sustain": 0.6,
+   "release_ms": 1000
+  },
+  "glockenspiel": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 3900,
+   "attack_ms": 8,
+   "decay_ms": 360,
+   "sustain": 0.32,
+   "release_ms": 850,
+   "fm_ratio": 3.5,
+   "fm_depth": 2.4,
+   "fm_decay_ms": 500
+  },
+  "epiano": {
+   "wave": "fm",
+   "gain_db": 0,
+   "lowpass_hz": 2800,
+   "attack_ms": 10,
+   "decay_ms": 320,
+   "sustain": 0.28,
+   "release_ms": 480,
+   "fm_ratio": 1,
+   "fm_depth": 2.2,
+   "fm_decay_ms": 140
+  },
+  "pad_strings": {
+   "wave": "saw",
+   "gain_db": 0,
+   "lowpass_hz": 1100,
+   "attack_ms": 180,
+   "decay_ms": 240,
+   "sustain": 0.78,
+   "release_ms": 1000,
+   "vibrato_hz": 4.7,
+   "vibrato_cents": 9,
+   "vibrato_delay_ms": 350
+  },
+  "pluck_bass": {
+   "wave": "pluck",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 25,
+   "decay_ms": 300,
+   "sustain": 0.9,
+   "release_ms": 320,
+   "pluck_brightness": 0.25,
+   "pluck_decay_ms": 6500
+  },
+  "brush": {
+   "wave": "noise",
+   "gain_db": 0,
+   "lowpass_hz": 2300,
+   "attack_ms": 40,
+   "decay_ms": 200,
+   "sustain": 0.5,
+   "release_ms": 200
+  },
+  "soft_kick": {
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 350,
+   "attack_ms": 8,
+   "decay_ms": 100,
+   "sustain": 0.06,
+   "release_ms": 130
+  }
+ }
+}

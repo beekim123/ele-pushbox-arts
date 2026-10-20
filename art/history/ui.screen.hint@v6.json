@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hint",
+ "name": "提示面板",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/dialogue.js",
+  "workbench/js/core/font-small.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "item.sandbag",
+  "theme.dungeon",
+  "ui.bubble",
+  "ui.bubble_tail",
+  "ui.class_icon",
+  "ui.goal_lamp",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 6,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "hint",
+  "level": 3
+ },
+ "usage": "按 H 逐级展开三层提示：提示由主角用对话气泡说出（10px 小字，气泡上方的名牌写「提示 n/3」）；底部细条放按键说明，第三层提供演示与回到正确位置。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "fe54342c105c701351792f67ec4f51ef5a0f292fc749376d0779021b9643f019"
+}

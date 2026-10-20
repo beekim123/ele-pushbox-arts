@@ -1,0 +1,21 @@
+{
+ "_meta": {"note": "UI text added by the 2026-10-16 interface style (docs/design/ui-style.md); the frozen content/i18n is untouched."},
+ "ui.title_alt": "渡界人",
+ "lobby.current_tag": "Now",
+ "keys.adjust": "Adjust",
+ "settings.ui_style": "UI style",
+ "settings.ui_style.note1": "The lobby follows the map;",
+ "settings.ui_style.note2": "other screens use this.",
+ "ui_style.s1": "Crystal",
+ "ui_style.s2": "Runes",
+ "ui_style.s3": "Jade",
+ "ui_style.s4": "Bubbles",
+ "ui_style.s1.mark": "C",
+ "ui_style.s2.mark": "R",
+ "ui_style.s3.mark": "J",
+ "ui_style.s4.mark": "B",
+ "dlv.confirm.title": "Give up this delivery?",
+ "dlv.confirm.text": "You keep half the coins you picked up.",
+ "dlv.confirm.yes": "Give up",
+ "dlv.confirm.no": "Not yet"
+}

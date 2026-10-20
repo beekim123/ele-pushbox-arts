@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.ancestor",
+ "name": "太爷爷（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyiyz.....",
+   "....zyyyyyyz....",
+   "....zuEEEEuz....",
+   "....zEzEEzEz....",
+   "....zEEEEEEz....",
+   "....zuttttuz....",
+   ".....zuttuz..z..",
+   "....zqzuuzqzzez.",
+   "...zqqqzzqqqzez.",
+   "...zqfqqqqqEzez.",
+   "...zqfqqqqqzzez.",
+   "...zqqqqqqqz.ez.",
+   "...zxqqqqqxz.ez.",
+   "....zzzzzzz..zz."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyiyz.....",
+   "....zyyyyyyz....",
+   "....zuEEEEuz....",
+   "....zEEEEEEz....",
+   "....zEEEEEEz....",
+   "....zuttttuz....",
+   ".....zuttuz..z..",
+   "....zqzuuzqzzez.",
+   "...zqqqzzqqqzez.",
+   "...zqfqqqqqEzez.",
+   "...zqfqqqqqzzez.",
+   "...zqqqqqqqz.ez.",
+   "...zxqqqqqxz.ez.",
+   "....zzzzzzz..zz."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyiyz.....",
+   "....zyyyyyyz....",
+   "....zuEEEEuz....",
+   "....zEtEEtEz....",
+   "....zEEzzEEz....",
+   "....zuttttuz....",
+   ".....zuttuz..z..",
+   "....zqzuuzqzzez.",
+   "...zqqqzzqqqzez.",
+   "...zqfqqqqqEzez.",
+   "...zqfqqqqqzzez.",
+   "...zqqqqqqqz.ez.",
+   "...zxqqqqqxz.ez.",
+   "....zzzzzzz..zz."
+  ],
+  [
+   "......zzzz......",
+   ".....zyyiyz.....",
+   "....zyyyyyyz....",
+   "....zuEEEEuz....",
+   "....zEtEEtEz....",
+   "....zEEzzEEz....",
+   "....zuttttuz....",
+   ".....zuttuz..z..",
+   "....zqzuuzqzzez.",
+   "...zqqqzzqqqzez.",
+   "...zqfqqqqqEzez.",
+   "...zqfqqqqqzzez.",
+   "...zqqqqqqqz.ez.",
+   "...zxqqqqqxz.ez.",
+   "....zzzzzzz..zz.",
+   "....zzzzzzz..zz."
+  ]
+ ],
+ "usage": "收件人·太爷爷（玩家家里的祖先）：戴瓜皮帽、白胡子、穿蓝长衫拄拐杖的慈祥老人，在自家小院等着（idle，偶尔眨眼），不走动。收到青团、纸扎房子这些家里烧来的东西最高兴（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "像清明节想起的家里老人：暖、慈祥。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fdd09be4ec7f7ae10ce5e7f1a7bec75808f19db4d2d97206982b7ee794ffcde0"
+}

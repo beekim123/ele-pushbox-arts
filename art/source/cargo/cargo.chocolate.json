@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.chocolate",
+ "name": "货物 · 巧克力",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "melted": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "........zzzzzzz.",
+   ".zzzzzzztDDDDDDz",
+   "zeffgeffDDDDDDDz",
+   "zfffgfffgDDDDDCz",
+   "zfffgfffDDDDDDCz",
+   "zggggggggDDDDDCz",
+   "zeffgeffDDDDDDCz",
+   "zfffgfffgDDDDDCz",
+   "zfffgfffDDDDDDCz",
+   "zggggggggDDDDDCz",
+   ".zzzzzzzCCCCCCCz",
+   "........zzzzzzz.",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "........zzzzzzz.",
+   "....zzzztDDDDDDz",
+   "..zzgeffDDDDDDDz",
+   ".zefgfffgDDDDDCz",
+   "zefffgffDDDDDDCz",
+   "zfgfffgggDDDDDCz",
+   "zfffgeffDDDDDDCz",
+   "zffffgffgDDDDDCz",
+   "zfffffffDDDDDDCz",
+   "zgfffffggDDDDDCz",
+   ".zggffggCCCCCCCz",
+   "..zzffzzzzzzzzz.",
+   "..zzfezz........",
+   ".zgfffegz......."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：一板巧克力，露出来的一半是 f、e 的方格（g 的格缝），另一半包着粉色的纸。怕热：人站在点着的烤炉热气里每走一步化一块，完好度 −1；有损坏时换成 melted（露出来的一头化了：边角塌下来、格子糊掉，淌出一道落成一小摊）。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "eadf8fa291f00be03d4e216e273f9d0b3b1dd2465ea4882adeb19b5314d41907"
+}

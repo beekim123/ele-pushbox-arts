@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settlement",
+ "name": "送达结算",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.panel",
+  "avatar.old_miner",
+  "item.coin",
+  "ui.delivery_icons"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settlement",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "recipient": "old_miner",
+  "cargo": "letter",
+  "integrity": 3,
+  "max": 3,
+  "secs": 41.2,
+  "par": 36,
+  "timePct": 136,
+  "likePct": 150,
+  "pay": 30,
+  "tip": 61,
+  "picked": 25,
+  "total": 86,
+  "rating": "A"
+ },
+ "usage": "送到以后：完好度、用时（和参考时间比）、喜欢三个系数，小费 = 基础报酬 × 三个系数（整数算法见 delivery-realtime.md 第 11 节），加上路上拾到的金币；右上角是评级。示例：给老矿工送信，3/3 完好，41.2 秒（参考 36 秒），小费 61，合计 86，评级 A。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "5e949d677dd27100d1860b728932206d1e9053f2ff1e8b5d28f71ca5b44ed929"
+}

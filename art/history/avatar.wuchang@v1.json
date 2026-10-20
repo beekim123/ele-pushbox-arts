@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.wuchang",
+ "name": "滚轮头像 · 黑白无常",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....zz............zz....",
+   "...zttz..........zyuz...",
+   "...ztvz..........zyyz...",
+   "..zttttz........zyuyxz..",
+   "..ztvtuz........zyyyxz..",
+   ".zttttuuz......zyyuyxxz.",
+   ".zttvttuz......zyyyyxxz.",
+   "zzzzzzzzzzz...zzzzzzzzzz",
+   ".zttttttttz....zwwwwwwz.",
+   ".zttttttttz....zxxwwxxz.",
+   ".ztzzttzztz....zwwwwwwz.",
+   ".zttttttttz....zuzwwuzw.",
+   ".zDttttttDz....zwwwwwwz.",
+   ".zttzzzzttz....zwwzzwwz.",
+   "..zttiittz.....zwwwwwwz.",
+   "..zztiitzz......zzwwzz..",
+   "...zziizz.......zzzzzz..",
+   ".zzzuziuzzz...zzxzzzzxzz",
+   "zttuuziuzttz.zxxyyzzyyxz",
+   "zttuuzizuttz.zxyyyvvyyxz",
+   "zttuuuzuuttz.zxyyvyyvyxz",
+   "zttuuuuuuttz.zxyyyvvyyxz",
+   "zttuuuuuuttz.zxyyyyyyyxz",
+   "zttuuuuuuttz.zxyyyyyyyxz"
+  ]
+ ],
+ "usage": "收件人「黑白无常」的头像（24 × 24）：滚轮格子、结算界面里用。左白右黑。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "be1bcc58ff471af314f83e89c08abf47a21c466fb8116020c6a4ad08ae8fb483"
+}

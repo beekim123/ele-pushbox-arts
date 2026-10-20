@@ -1,0 +1,115 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settings",
+ "name": "设置",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-skins.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json",
+  "workbench/js/core/font-ui11.js",
+  "content/i18n-ui11/zh-Hans.json",
+  "content/i18n-ui11/en.json",
+  "workbench/js/core/ui-screens-settings2.js"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.cave",
+  "theme.dungeon",
+  "theme.ruins",
+  "theme.sky",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 7,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settings",
+  "items": [
+   {
+    "key": "settings.language",
+    "type": "value",
+    "valueKey": "@language"
+   },
+   {
+    "key": "settings.lobby_skin",
+    "type": "value",
+    "valueKey": "lobby_skin.s2",
+    "options": [
+     "lobby_skin.s1",
+     "lobby_skin.s2",
+     "lobby_skin.s3",
+     "lobby_skin.s4",
+     "lobby_skin.s5",
+     "lobby_skin.s6",
+     "lobby_skin.generic"
+    ]
+   },
+   {
+    "key": "settings.music",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.sfx",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.scale",
+    "type": "value",
+    "valueKey": "settings.scale.auto"
+   },
+   {
+    "key": "settings.env",
+    "type": "value",
+    "valueKey": "env.full"
+   },
+   {
+    "key": "settings.grid",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.unlock",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.tutorial",
+    "type": "value",
+    "valueKey": "settings.run"
+   }
+  ],
+  "focus": 1
+ },
+ "usage": "设置项全部可用方向键调整。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。 2026-10-17 用户决定（UI-11a，docs/design/ui-style.md §2）：「语言」下面加「大厅皮肤」一行，左右键在 7 个选项里换（S1 晶石琉璃、S2 漂浮符文、S3 祥云玉简、S4 梦泡糖霜、S5 藤木萤光、S6 星港舱板、G2 通用大厅），默认 S2；大厅显示所选皮肤的整张画面（皮肤 + 它原来配的章节背景：S1 cave、S2 dungeon、S3 ruins、S4 sky、S5 forest、S6 cosmos，即参考图 lobby.<主题>.png；G2 是 lobby_generic），不再跟着当前章节换。画法见 workbench/js/core/ui-screens-settings2.js（9 行时行距 16→14 px）。",
+ "content_hash": "bd2280ea8b535fc891e507a59a577173b8b318ee111cbfe31a584f3e2b2ec79d"
+}

@@ -1,0 +1,305 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hint_animal",
+ "name": "提示动物气泡（配送）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json"
+ ],
+ "depends": [
+  "cargo.vase",
+  "char.portitor",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_cat",
+  "fauna.jeju_pony",
+  "item.coin",
+  "item.first_aid",
+  "item.rope_ladder",
+  "item.sandbag",
+  "item.snack",
+  "item.snack_jeju",
+  "mech.ladder",
+  "mech.lantern_float",
+  "mech.rune_float",
+  "monster.rat_swarm",
+  "monster.skeleton_guard",
+  "obj.crate_wood",
+  "theme.diyu",
+  "theme.dungeon",
+  "ui.delivery_icons"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "hint_animal",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "hud": {
+   "hearts": 2,
+   "maxHearts": 3,
+   "cargo": "vase",
+   "left": 2,
+   "max": 3,
+   "rule": "fragile",
+   "hot": false,
+   "coins": 35,
+   "sand": 2,
+   "items": [
+    "first_aid",
+    "rope_ladder"
+   ],
+   "slots": 3,
+   "secs": 83,
+   "minimap": {
+    "cols": 8,
+    "rows": 4,
+    "cur": 4,
+    "rooms": [
+     {
+      "index": 0,
+      "x": 0,
+      "y": 2,
+      "cols": 1,
+      "rows": 1,
+      "role": "gate",
+      "seen": true
+     },
+     {
+      "index": 1,
+      "x": 1,
+      "y": 2,
+      "cols": 2,
+      "rows": 1,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 2,
+      "x": 3,
+      "y": 2,
+      "cols": 1,
+      "rows": 1,
+      "role": "station",
+      "seen": true
+     },
+     {
+      "index": 3,
+      "x": 4,
+      "y": 1,
+      "cols": 1,
+      "rows": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 4,
+      "x": 5,
+      "y": 0,
+      "cols": 2,
+      "rows": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 5,
+      "x": 7,
+      "y": 0,
+      "cols": 1,
+      "rows": 1,
+      "role": "home",
+      "seen": false
+     }
+    ]
+   },
+   "snacks": 3
+  },
+  "room2": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "weight": 10,
+   "mirror": true,
+   "id": "dungeon2_sandpour",
+   "type": "room",
+   "role": "twist",
+   "name": "沙井 · 站在浮石上倒沙",
+   "idea": "关键想法：浮石不只用来过坑——它是你在坑上唯一能站的地方。变化：先站在浮石上把沙倒进坑底压住压板开门，再撑过去；先撑就倒不进去了（可以撑回来）。",
+   "needs": [
+    "pole"
+   ],
+   "requires": [
+    "float_block",
+    "pour"
+   ],
+   "mechanisms": [
+    "float_block",
+    "pole",
+    "dig",
+    "pour",
+    "plate_door",
+    "ladder",
+    "hint_animal"
+   ],
+   "exits": [
+    "left.0.high",
+    "right.0.high",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.high>right.0.high",
+    "left.0.high>right.0.low"
+   ],
+   "puzzle_area": [
+    [
+     1,
+     2,
+     12,
+     8
+    ]
+   ],
+   "links": [
+    {
+     "plates": [
+      [
+       7,
+       8
+      ]
+     ],
+     "doors": [
+      [
+       12,
+       2
+      ],
+      [
+       12,
+       3
+      ]
+     ]
+    }
+   ],
+   "hints": [
+    {
+     "text": "先挖一袋沙。",
+     "target": [
+      2,
+      3
+     ],
+     "show": {
+      "action": "dig",
+      "dir": "DIG_R",
+      "at": [
+       1,
+       3
+      ]
+     },
+     "done": {
+      "any": [
+       {
+        "bag_sand": 1
+       },
+       {
+        "door": 0
+       }
+      ]
+     }
+    },
+    {
+     "text": "站到浮石右端，把沙倒进坑里：沙落到底，压住压板。",
+     "target": [
+      7,
+      4
+     ],
+     "show": {
+      "action": "pour",
+      "dir": "POUR_R",
+      "at": [
+       6,
+       4
+      ]
+     },
+     "done": {
+      "door": 0
+     }
+    },
+    {
+     "text": "门开了：对着岸撑一下，上对岸。",
+     "target": [
+      4,
+      4
+     ],
+     "show": {
+      "action": "pole",
+      "dir": "DIG_L",
+      "at": [
+       5,
+       4
+      ]
+     },
+     "done": {
+      "player": [
+       8,
+       0,
+       19,
+       9
+      ]
+     }
+    }
+   ],
+   "map": [
+    "####################",
+    "####################",
+    "............|.......",
+    "..ss........|...H...",
+    "#####...########H###",
+    "#####FF.########H###",
+    "#####...########H...",
+    "#####...########H...",
+    "#####.._############",
+    "####################"
+   ]
+  },
+  "world": "dungeon",
+  "nearHint": true,
+  "hintKey": "d2.hint",
+  "fedFlyer": true
+ },
+ "usage": "G2 主动物头顶提示、走近方向箭头、飞行动物喂食提示。",
+ "notes": "UI-10b 美术候选；复用 ui-common.js 的 G2 组件。新文字与字形仅放 i18n-delivery2 / font-delivery2.js。须由用户确认后才可用于正式游戏。",
+ "content_hash": "7b22747be917b905c9f987413b77beb8b2a8f2897deb401ed3e0ee6b89c20b40"
+}

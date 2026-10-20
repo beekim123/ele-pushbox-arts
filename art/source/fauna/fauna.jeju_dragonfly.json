@@ -1,0 +1,62 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.jeju_dragonfly",
+ "name": "济州 · 红蜻蜓（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  5
+ ],
+ "anchor": [
+  4,
+  2
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "rest": {
+   "fps": 1,
+   "loop": true,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..ttu.tu.",
+   "...utuu..",
+   "hihihiiAz",
+   "...utuu..",
+   "..ttu.tu."
+  ],
+  [
+   ".........",
+   "..utt.ut.",
+   "hihihiiAz",
+   "..utt.ut.",
+   "........."
+  ],
+  [
+   ".........",
+   ".uttu.tu.",
+   "hihihiiAz",
+   ".uttu.tu.",
+   "........."
+  ]
+ ],
+ "usage": "济州的第二种提示动物：红蜻蜓（고추잠자리），从上往下看的样子：一节一节的红身子、黑眼睛、四片透明翅膀。停在下一步要去的地方（rest，翅膀平摊）；人走近时飞过去，在目标上方绕圈（fly，扇翅膀）。喂它零食只会提醒去找小马。也是济州主题的飞虫生态，但配送模式里关掉随机出现的红蜻蜓，只由提示步骤摆放（worlds.json 的 ambient_exclude）。面朝右绘制，朝左时水平镜像。",
+ "notes": "红色身子在蓝天、黑色玄武岩上都看得清；和海鸥（白色、大）不会混。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b40bc937f37b37c26f84abc2037451dd6a072891a8c5db8a0126f582f09ff82a"
+}

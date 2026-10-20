@@ -1,0 +1,97 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settings",
+ "name": "设置",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-skins.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-level.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.cave",
+  "theme.dungeon",
+  "theme.ruins",
+  "theme.sky",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 6,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settings",
+  "items": [
+   {
+    "key": "settings.language",
+    "type": "value",
+    "valueKey": "@language"
+   },
+   {
+    "key": "settings.music",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.sfx",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.scale",
+    "type": "value",
+    "valueKey": "settings.scale.auto"
+   },
+   {
+    "key": "settings.env",
+    "type": "value",
+    "valueKey": "env.full"
+   },
+   {
+    "key": "settings.grid",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.unlock",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.tutorial",
+    "type": "value",
+    "valueKey": "settings.run"
+   }
+  ],
+  "focus": 1
+ },
+ "usage": "设置项全部可用方向键调整。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "cde3e49fc687ee33c811a219e066c8b7829f5c4c79eac022b449f040f1ba4f56"
+}

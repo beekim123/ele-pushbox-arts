@@ -1,0 +1,176 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.bin_gauge",
+ "name": "收集斗刻度",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  6,
+  16
+ ],
+ "anchor": [
+  3,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "0": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "1": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "2": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "3": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "4": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "full": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zzzzzz",
+   ".zwwz."
+  ],
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zzzzzz",
+   ".zwwz."
+  ],
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zzzzzz",
+   ".zwwz."
+  ],
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxyyxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zzzzzz",
+   ".zwwz."
+  ],
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zxssxz",
+   "zzzzzz",
+   ".zwwz."
+  ],
+  [
+   "zzzzzz",
+   "zxyyxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zxllxz",
+   "zzzzzz",
+   ".zllz."
+  ]
+ ],
+ "usage": "收集斗右侧的刻度：0–4 格表示收集进度，达标后切到 full（黄色）并锁存。玩家只看刻度，不显示 cell 数。",
+ "notes": "",
+ "content_hash": "73f54395ea1cbbcbdcd8b45c0b6c16b0afcdfb0aca45d3694a340cead4a6cd36"
+}

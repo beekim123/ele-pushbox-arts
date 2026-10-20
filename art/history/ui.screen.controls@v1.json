@@ -1,0 +1,53 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.controls",
+ "name": "操作说明",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "content/i18n-common/zh-Hans.json",
+  "content/i18n-common/en.json",
+  "workbench/js/core/font-small.js",
+  "workbench/js/core/ui-onboarding.js",
+  "workbench/js/core/onboarding-fx.js",
+  "content/i18n-onboarding/zh-Hans.json",
+  "content/i18n-onboarding/en.json",
+  "workbench/js/core/font-onboarding.js"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.key_cmd",
+  "ui.keycap",
+  "ui.keyhint",
+  "ui.panel"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_controls",
+  "bomb": false
+ },
+ "usage": "设置和暂停菜单里的“操作说明”打开这一页，Esc 返回（onboarding.md 第 6 节）。一行一个动作：走 / 推 / 登阶、爬梯、挖、倒沙、撤销、重开、观察、提示、暂停（放炸药到第 3 组才列：params.bomb）；挖、倒沙两行同时画按住和备选键；右下三条说明：不用按住、鼠标、Mac 触控板。",
+ "notes": "UX-05 第 1 版，等用户确认。Mac、PC 两版每 3 秒轮换（确认页缩略图是 Mac 版）：Mac 倒沙画 ⌘（UX-03 的 ui.key_cmd），PC 画 Ctrl；“Mac 触控板”一条只在 Mac 版。键位取自 onboarding-fx.js 的动作 × 设备表（第 7 节），不另写一份。按住的画法：修饰键按下去、薄荷绿边。画法在 workbench/js/core/ui-onboarding.js。",
+ "content_hash": "29f578b23de297e9fd04002606bcd7b60b02f51b86d178da692bceb49b395bc1"
+}

@@ -1,0 +1,122 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.rule_icon",
+ "name": "规则图标（第 2–5 章）",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  7
+ ],
+ "anchor": [
+  3,
+  3
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "rise": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "sink": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "burn": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "etch": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "freeze": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "slow": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...t...",
+   "..ttt..",
+   ".t.t.t.",
+   "...t...",
+   ".u...u.",
+   "u.u.u.u",
+   ".u...u."
+  ],
+  [
+   ".B...B.",
+   "B.B.B.B",
+   ".B...B.",
+   "...C...",
+   ".C.C.C.",
+   "..CCC..",
+   "...C..."
+  ],
+  [
+   "...k...",
+   "..kk...",
+   "..klk..",
+   ".kllk.k",
+   ".jllkkj",
+   "jakkkaj",
+   ".jaaaj."
+  ],
+  [
+   "...F...",
+   "..F.F..",
+   ".F...F.",
+   "F..F..F",
+   ".F...F.",
+   "..F.F..",
+   "...F..."
+  ],
+  [
+   "t..s..t",
+   ".t.s.t.",
+   "..tst..",
+   "sssssss",
+   "..tst..",
+   ".t.s.t.",
+   "t..s..t"
+  ],
+  [
+   ".......",
+   "..vv...",
+   ".vuwv..",
+   ".vwwv.v",
+   "..vv.vu",
+   "....vww",
+   "....vv."
+  ]
+ ],
+ "usage": "观察模式中标在材料上：rise 上浮气体、sink 下沉气体、burn 可燃、etch 可酸蚀（和软岩刻纹同形）、freeze 冰、slow 慢速粉末（碎石）。",
+ "notes": "和已确认的 ui.class_icon 一起用，不替换它。",
+ "content_hash": "6a48e52b1ce771144f7435a220d71024d35c2864a5833dfa2cddde38ca1ff878"
+}

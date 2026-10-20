@@ -1,0 +1,61 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.lobby",
+ "name": "大厅",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 3,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "lobby",
+  "theme": "theme.dungeon",
+  "items": [
+   {
+    "key": "menu.continue",
+    "icon": "continue",
+    "detail": "M05"
+   },
+   {
+    "key": "menu.chapters",
+    "icon": "chapters"
+   },
+   {
+    "key": "menu.settings",
+    "icon": "settings"
+   },
+   {
+    "key": "menu.quit",
+    "icon": "quit"
+   }
+  ]
+ },
+ "usage": "启动后的第一个界面。背景、地面与生态随玩家当前所在章节的主题切换（六种主题都有参考图）。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "6830a9b79f5e4b72c513a25148522e8e42e5e34913440e09f55e8e26cb1cfa2a"
+}

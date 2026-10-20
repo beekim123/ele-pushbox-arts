@@ -1,0 +1,37 @@
+{
+ "format": "pushbox.art/1",
+ "id": "material.chapter2_5",
+ "name": "第 2–5 章材料",
+ "category": "material",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/matter.js"
+ ],
+ "depends": [],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "materials": [
+   "gravel",
+   "fuse",
+   "acid",
+   "limeA",
+   "limeB",
+   "hard",
+   "smoke",
+   "fog",
+   "plug",
+   "wood",
+   "ice"
+  ]
+ },
+ "usage": "第 2–5 章新增材料的着色：碎石、引信、酸液、软岩 A 与 A′（同一刻纹）、硬岩、轻烟、沉雾、菌塞、木栅、冰。游戏中按 workbench/js/core/matter.js 着色，各主题相同。",
+ "notes": "这些材料带规则，所以不随主题换皮：同色同纹 = 同规则。可挖、可炸、可酸蚀、可燃的材料都有块状外框；气体是半透明网点，不画外框。",
+ "content_hash": "ceaeea0afc5dfb0b4a190fdcfb5db55fda0512350c19d5cecee3839ddec96a5a"
+}

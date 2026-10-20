@@ -1,0 +1,95 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.frost_vent",
+ "name": "冷凝喷口",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "active": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    1,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   "..zrrrrrrrrrrz..",
+   "..zzszzszzszzz..",
+   "..zrrrrrrrrrrz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..s...s...s.....",
+   ".s.s.s.s.s.s....",
+   "s...s...s...s...",
+   "...zzzzzzzzzz...",
+   "..zrrrrrrrrrrz..",
+   "..zzszzszzszzz..",
+   "..zrrrrrrrrrrz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...s...s...s....",
+   "..s.s.s.s.s.s...",
+   "...s...s...s....",
+   "...zzzzzzzzzz...",
+   "..zrrrrrrrrrrz..",
+   "..zzzzszzszzzz..",
+   "..zrrrrrrrrrrz..",
+   "zzzwwwwwwwwwwzzz",
+   "xxxxxxxxxxxxxxxx"
+  ]
+ ],
+ "usage": "冷凝喷口：开关扳动后喷冷气，作用区里的水当场变成冰。作用区在观察模式下用青色虚线框标出。",
+ "notes": "",
+ "content_hash": "b5df0602f0371d9ebee340faa18add27d902ce254ebe4eb90d30a6b22641dc3b"
+}

@@ -1,0 +1,160 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.zombie",
+ "name": "僵尸（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    2,
+    3,
+    2
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....z.zz.......",
+   "....zgzggz......",
+   "...zgnmmmnz.....",
+   "...znmmtznz.....",
+   "...znmmmmnz.....",
+   "...znnogtgz.....",
+   "....zonnnzzzzz..",
+   "...zqqqqqqqqnmz.",
+   "...zqrqqqqqqnmz.",
+   "...zqqqqqqqozz..",
+   "...zqngqqzzz....",
+   "...zfffffz......",
+   "...zffzffz......",
+   "...zffzffz......",
+   "...zggzggz......",
+   "....zz.zz......."
+  ],
+  [
+   ".....z.zz.......",
+   "....zgzggz......",
+   "...zgnmmmnz.....",
+   "...znmmtznz.....",
+   "...znmmmmnz.....",
+   "...znnogtgz.....",
+   "....zonnnzzzzz..",
+   "...zqqqqqqqqnmz.",
+   "...zqrqqqqqqnmz.",
+   "...zqqqqqqozzz..",
+   "...zqngqqzz.....",
+   "...zfffffz......",
+   "...zffzffz......",
+   "...zffzffz......",
+   "...zggzggz......",
+   "....zz.zz......."
+  ],
+  [
+   "................",
+   ".....z.zz.......",
+   "....zgzggz......",
+   "...zgnmmmnz.....",
+   "...znmmtznz.....",
+   "...znmmmmnz.....",
+   "...znnogtgz.....",
+   "....zonnnzzzzz..",
+   "...zqqqqqqqqnmz.",
+   "...zqrqqqqqqnmz.",
+   "...zqqqqqqozzz..",
+   "...zqngqqzz.....",
+   "...zfffffz......",
+   "....zfffz.......",
+   "....zfffz.......",
+   "....zgggz......."
+  ],
+  [
+   ".....z.zz.......",
+   "....zgzggz......",
+   "...zgnmmmnz.....",
+   "...znmmtznz.....",
+   "...znmmmmnz.....",
+   "...znnogtgz.....",
+   "....zonnnzzzzz..",
+   "...zqqqqqqqqnmz.",
+   "...zqrqqqqqqnmz.",
+   "...zqqqqqqqozz..",
+   "...zqngqqzzz....",
+   "...zfffffz......",
+   "...zffzffz......",
+   "...zfz.zfz......",
+   "...zgz.zgz......",
+   "....z...z......."
+  ],
+  [
+   ".....z.zz.......",
+   "..zzzgzggzzz....",
+   ".znmgnmmmnmnz...",
+   ".znmnmmtznmnz...",
+   ".zqqnmmmmnqqz...",
+   ".zqqnnozzoqqz...",
+   ".zqqzonnnzqqz...",
+   "..zzqqqqqqzz....",
+   "...zqrqqqqz.....",
+   "...zqqqqqz......",
+   "...zqngqqz......",
+   "...zfffffz......",
+   "...zffzffz......",
+   "...zffzffz......",
+   "...zggzggz......",
+   "....zz.zz......."
+  ],
+  [
+   "................",
+   ".....z.zz.......",
+   "..zzzgzggzzz....",
+   ".znmgnmmmnmnz...",
+   ".znmnmmtznmnz...",
+   ".zqqnmmmmnqqz...",
+   ".zqqnnozzoqqz...",
+   ".zqqzonnnzqqz...",
+   "..zzqqqqqqzz....",
+   "...zqrqqqqz.....",
+   "...zqqqqqz......",
+   "...zqngqqz......",
+   "...zfffffz......",
+   "...zffzffz......",
+   "...zffzffz......",
+   "...zggzggz......"
+  ]
+ ],
+ "usage": "收件人·僵尸：在家里来回闲逛（0.8 秒一格），不伤人；人走进他的格子或他走到人身上就算送达。面朝右绘制，朝左时水平镜像。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "08946939bb3666a5d227126f97ef86fced41faf9abafea67ac87d92d0d1364c4"
+}

@@ -1,0 +1,54 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.cosmos_sprout",
+ "name": "星站 · 异星球芽",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  8
+ ],
+ "anchor": [
+  4,
+  8
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "glow": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..z.....",
+   ".zsz..z.",
+   ".ztz.zsz",
+   "..B..ztz",
+   "..B...B.",
+   "..B..B..",
+   ".zBCBBz.",
+   ".zzzzzz."
+  ],
+  [
+   "..z.....",
+   ".ztz..z.",
+   ".zsz.ztz",
+   "..B..zsz",
+   "..B...B.",
+   "..B..B..",
+   ".zBCBBz.",
+   ".zzzzzz."
+  ]
+ ],
+ "usage": "地面装饰；球芽缓慢明暗变化。",
+ "notes": "",
+ "content_hash": "4f02f4e5c234d60544b0bbd09e1c292d1b0d54fdbcd5b6d56525aead60dee0f6"
+}

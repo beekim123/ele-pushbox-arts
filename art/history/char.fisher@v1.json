@@ -1,0 +1,160 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.fisher",
+ "name": "极地渔夫（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "reel": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zrrrrqz.....",
+   "...zrrrrrrqz....",
+   "...zqrqrqrqz....",
+   "...zFEEEzEEz....",
+   "...zFFEEEEEEz...",
+   "....zuutttuz....",
+   "....zvuuuuvz....",
+   "...zbbuuuvbez...",
+   "...zbbbbbbbebz..",
+   "...zeeeeeeefFz..",
+   "...zbbbbbbeezf..",
+   "....zxxxyxxz..f.",
+   "...zyyyyzyyyz..u",
+   "....zzzz.zzz...u"
+  ],
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zrrrrqz.....",
+   "...zrrrrrrqz....",
+   "...zqrqrqrqz....",
+   "...zFEEEFEEz....",
+   "...zFFEEEEEEz...",
+   "....zuutttuz....",
+   "....zvuuuuvz....",
+   "...zbbuuuvbez...",
+   "...zbbbbbbbebz..",
+   "...zeeeeeeefFz..",
+   "...zbbbbbbeezf..",
+   "....zxxxyxxz..f.",
+   "...zyyyyzyyyz..u",
+   "....zzzz.zzz...u"
+  ],
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zrrrrqz.....",
+   "...zrrrrrrqz....",
+   "...zqrqrqrqz..fu",
+   "...zFEEEzzEzzf.u",
+   "...zFFEEEEEEFz.u",
+   "....zuutttuzbzvv",
+   "....zvuuufvzbzw.",
+   "...zbbuuuvbez...",
+   "...zbbbbbbbez...",
+   "...zeeeeeeefz...",
+   "...zbbbbbbeez...",
+   "....zxxxyxxz....",
+   "...zyyyyzyyyz...",
+   "....zzzz.zzz...."
+  ],
+  [
+   ".....zztuz......",
+   "....zrrrrqz.....",
+   "...zrrrrrrqz....",
+   "...zqrqrqrqz..fu",
+   "...zFEEEzzEzzf.u",
+   "...zFFEEEEEEFz.u",
+   "....zuutttuzbzvv",
+   "....zvuuufvzbzw.",
+   "...zbbuuuvbez...",
+   "...zbbbbbbbez...",
+   "...zeeeeeeefz...",
+   "...zbbbbbbeez...",
+   "....zxxxyxxz....",
+   "...zyyyyzyyyz...",
+   "....zzzz.zzz....",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "........zz......",
+   "......zztuz.....",
+   ".....zrrrrqz....",
+   "....zrrrrrrqz...",
+   "....zqrqrqrqz...",
+   "....zFEEEzEEz...",
+   "....zFFEEEEEEz..",
+   "....zbuutttuez..",
+   "...zbbvuuuuvz...",
+   "...zeeeuuuvfbz..",
+   "...zbbbbbbeezbz.",
+   "....zxxxyxxzzFz.",
+   "...zyyyyzyyyzzf.",
+   "....zzzz.zzz...u"
+  ],
+  [
+   "................",
+   "................",
+   "........zz......",
+   "......zztuz.....",
+   ".....zrrrrqz....",
+   "....zrrrrrrqz...",
+   "....zqrqrqrqz...",
+   "....zFEEEzEEz...",
+   "....zFFEEEEEEz..",
+   "....zbuutttuez..",
+   "...zbbvuuuuvzzz.",
+   "...zeeeuuuvfbbFf",
+   "...zbbbbbbeezzzu",
+   "....zxxxyxxz...u",
+   "...zyyyyzyyyz..u",
+   "....zzzz.zzz...u"
+  ]
+ ],
+ "usage": "收件人·极地渔夫：戴蓝色毛线帽（白绒球）、穿厚棉袄、留灰白大胡子的老渔夫，手拿短短的冰钓竿，钓线垂进冰窟窿（idle，偶尔眨眼），不走动。收到货物时举起钓竿、线上挂着一条小鱼，乐得跳一下（win）。reel 是弯腰收线：身子前倾、帽子压低，双手把竿往上提。面朝右绘制，朝左时水平镜像。",
+ "notes": "鱼上钩时顾不上收货属于实时规则（DLV-01，暂缓）：v2 只用 idle、win，reel 先画好备用。渔夫只钓鱼。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "982314b9b9105f14f3a02d97e74d39cdca6cc6c100daf6856424d3c369c265e3"
+}

@@ -1,0 +1,166 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.jiangshi",
+ "name": "僵尸",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 1,
+   "loop": true,
+   "frames": [
+    0
+   ]
+  },
+  "hop": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    1,
+    2,
+    2,
+    1
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    3,
+    4
+   ]
+  },
+  "ko": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zz........",
+   ".....ziiz.......",
+   "....zyxyyz......",
+   "...zyxyyyyz.....",
+   "..zxxxxxxxxz....",
+   "...zulllvz......",
+   "...zulilvz......",
+   "...zulilvz......",
+   "....zlllz.......",
+   "...zqqqqqzzzzzz.",
+   "..zqkkqqqqqqquuz",
+   "..zqkkqqzzzzzzz.",
+   "..zqqqqqqz......",
+   "..zqxqqqqz......",
+   "...zqqqqz.......",
+   "...zzzzzz......."
+  ],
+  [
+   "................",
+   "......zz........",
+   ".....ziiz.......",
+   "....zyxyyz......",
+   "...zyxyyyyz.....",
+   "..zxxxxxxxxz....",
+   "...zulllvz......",
+   "...zulilvz......",
+   "...zulilvz......",
+   "....zlllz.......",
+   "...zqqqqqzzzzzz.",
+   "..zqkkqqqqqqquuz",
+   "..zqkkqqzzzzzzz.",
+   "..zqqqqqqz......",
+   "..zzzzzzzz......",
+   "...zqqqqz......."
+  ],
+  [
+   "......zz........",
+   ".....ziiz.......",
+   "....zyxyyz......",
+   "...zyxyyyyz.....",
+   "..zxxxxxxxxz....",
+   "...zulllvz......",
+   "...zulilvz......",
+   "...zulilvz......",
+   "....zlllz.......",
+   "...zqqqqqzzzzzz.",
+   "..zqkkqqqqqqquuz",
+   "..zqkkqqzzzzzzz.",
+   "..zqqqqqqz......",
+   "..zqxqqqqz......",
+   "...zqqqqz.......",
+   "....zzzz........"
+  ],
+  [
+   "......zz........",
+   ".....ziiz.......",
+   "....zyxyyz......",
+   "...zyxyyyyz.....",
+   "..zxxxxxxxxz....",
+   "...zulllvz......",
+   "...zulilvz......",
+   "...zulilvz......",
+   "....zlllz....zz.",
+   "...zqqqqqzzzzuz.",
+   "..zqkkqqqqzzqzuz",
+   "..zqkkqqzqqqzzz.",
+   "..zqqqqqqzz.....",
+   "..zqxqqqqz......",
+   "...zqqqqz.......",
+   "...zzzzzz......."
+  ],
+  [
+   "......zz........",
+   ".....ziiz.......",
+   "....zyxyyz......",
+   "...zyxyyyyz.....",
+   "..zxxxxxxxxz....",
+   "...zulllvz......",
+   "...zulilvz......",
+   "...zulilvz......",
+   "....zlllz.......",
+   "...zqqqqqzzzzzz.",
+   "..zqkkqqqqzzzzzz",
+   "..zqkkqqqqqqqqz.",
+   "..zqqqqqqzzzuuz.",
+   "..zqxqqqqz......",
+   "...zqqqqz.......",
+   "...zzzzzz......."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..........zuuz..",
+   "...zzzzzzzzqz...",
+   ".zzxyyzqqqqqqqz.",
+   "zixyyyzqkkqqqqz.",
+   "zixxyulllqqqqzz.",
+   ".zzxxzzllzzzzz..",
+   "................"
+  ]
+ ],
+ "usage": "配送模式·地府的怪物：穿清朝官服、额前贴黄符、平伸双臂的僵尸。原地不动（idle）；看见同一行的人就一跳一跳追过来（hop，每跳一格，落地后停半秒），碰到人伤 1 颗心。推不动，只能压、困、摔。被困住时挥手（trapped），被放倒时先显示 ko 一帧，再播放 fx.monster_poof。面朝右绘制，朝左时水平镜像。",
+ "notes": "和石牢的绿皮僵尸收件人（char.zombie）完全不同：深蓝官服、黄符、平伸手臂、两脚并拢。只画「民俗里的跳跳僵尸」，不画血腥。",
+ "content_hash": "4aa76da86b739569c6a098b102816ceb4aa1aa29f7aa9b0b01a1a1e0959c1b6f"
+}

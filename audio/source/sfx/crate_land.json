@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "crate_land",
+ "uid": "sfx:crate_land",
+ "name": "箱子落地",
+ "description": "比推箱更低、更宽的 E2 木质落定；上层轻共鸣晚 14 ms，避免爆裂。",
+ "seed": 170101,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "e0b5eea9fe9b129bd1291b1c1cbaee9b942b417d06ba08763bac39ed4206e463",
+ "gain_db": -12.614,
+ "instruments": [
+  {
+   "id": "wood",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 15,
+   "decay_ms": 32,
+   "sustain": 0.45,
+   "release_ms": 105
+  },
+  {
+   "id": "body",
+   "wave": "sine",
+   "gain_db": -9,
+   "lowpass_hz": 850,
+   "attack_ms": 16,
+   "decay_ms": 50,
+   "sustain": 0.42,
+   "release_ms": 80
+  }
+ ],
+ "duration_ms": 240,
+ "events": [
+  {
+   "instrument": "wood",
+   "start_ms": 0,
+   "duration_ms": 135,
+   "note": 40,
+   "slide_to_note": 38,
+   "gain_db": 0
+  },
+  {
+   "instrument": "body",
+   "start_ms": 14,
+   "duration_ms": 116,
+   "note": 52,
+   "slide_to_note": 50,
+   "gain_db": -2
+  }
+ ]
+}

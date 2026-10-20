@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.mittens",
+ "name": "货物 · 毛线手套",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "wet": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "...zzz..........",
+   "..zrrqz...zzz...",
+   ".zrrrrqz.zrrqz..",
+   ".zrrtrqzzrrrrqz.",
+   "zrrtrtqzzrrtrqz.",
+   "zrrrtrqzrrtrtqz.",
+   ".zrrrrqzrrrtrqz.",
+   ".zrrrrqzzrrrrqz.",
+   ".ztttttzzrrrrqz.",
+   ".zututuzztttttz.",
+   "..zzzzz.zututuz.",
+   "....c....zzzzz..",
+   ".....c....c.....",
+   "......cccc......"
+  ],
+  [
+   "................",
+   "................",
+   "...zzz..........",
+   "..zqqxz...zzz...",
+   ".zqqqqxz.zqqxz..",
+   ".zqqvqxzzqqqqxz.",
+   "zqqvqvxzzqqvqxz.",
+   "zqqqvqxzqqvqvxz.",
+   ".zqqqqxzqqqvqxz.",
+   ".rqqqqxzzqqqqxz.",
+   ".zvvvvvzzqqqqxz.",
+   ".zwvwvwzzvvvvvz.",
+   "..zzzzz.zwvwvwz.",
+   "...svt...zzzzz..",
+   "...u.v....v.ss..",
+   "......vvrv...u.."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：一副用绳连着的蓝色毛线手套，白色袖口，手背上织着小雪花。怕湿：落进水里，或者站在化冰流出来的水里，湿透冻硬，完好度 −1；有损坏时换成 wet（颜色变深、袖口发灰、挂着冰碴和水滴）。",
+ "notes": "怕湿（wet_damage）属于实时规则（DLV-01）；只给雪人、极地渔夫（cargo_only）。 DSN-04（极地雪村）的美术候选（ART-01c），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "419dbd1f368d7cdd8bb178513e2185f9f6375607d637ae13d8a3a0edeac5c9f7"
+}

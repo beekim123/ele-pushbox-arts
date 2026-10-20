@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.rope_ladder",
+ "name": "绳梯",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....z......z....",
+   "...zdz....zdz...",
+   "...zezzzzzzdz...",
+   "...zdeeeeeedz...",
+   "...zdffffffdz...",
+   "...zdzzzzzzdz...",
+   "...zdzzzzzzez...",
+   "...zdeeeeeedz...",
+   "...zdffffffdz...",
+   "...zdzzzzzzdz...",
+   "...zezzzzzzdz...",
+   "...zdeeeeeedz...",
+   "...zdffffffdz...",
+   "...zdzzzzzzez...",
+   "...zdz....zdz...",
+   "....z......z...."
+  ]
+ ],
+ "usage": "道具图标：绳梯（向面前那一列往下放一段梯子，最多 6 格）。驿站货架和背包格里用。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "4c236edf6c23baae3db3bdc8053becc19aa5f665b4b201825c60e87792a42309"
+}

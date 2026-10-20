@@ -1,0 +1,90 @@
+{
+ "format": "pushbox.art/1",
+ "id": "obj.goblin_forge",
+ "name": "铁砧与炉子（地精铁匠家）",
+ "category": "object",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzz.z..",
+   "wuuuuuuuuuwwzkz.",
+   "zwwwwwwwwwzzlzzz",
+   ".zzxxxxxzzzkjkjk",
+   "..zxxxxxz.zggggg",
+   ".zwwwwwwwzzggggg",
+   ".zxxxxxxxzzggggg",
+   "..zzzzzzz..zgggz"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   ".............z..",
+   "zzzzzzzzzzzzzkz.",
+   "wuuuuuuuuuwwzz..",
+   "zwwwwwwwwwzzzlzz",
+   ".zzxxxxxzzzjkjkj",
+   "..zxxxxxz.zggggg",
+   ".zwwwwwwwzzggggg",
+   ".zxxxxxxxzzggggg",
+   "..zzzzzzz..zgggz"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzz.z..",
+   "wuuuuuuuuuwwzkz.",
+   "zwwwwwwwwwzzzzlz",
+   ".zzxxxxxzzzkjkjk",
+   "..zxxxxxz.zggggg",
+   ".zwwwwwwwzzggggg",
+   ".zxxxxxxxzzggggg",
+   "..zzzzzzz..zgggz"
+  ]
+ ],
+ "usage": "地精铁匠家的陈设：铁砧 + 一小盆通红的炭。背景物件，不挡人；炭火表示\"这个房间很热\"。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "998d67321e65cb3691a38501a378a86eb630347fd85395363d42795293d6930b"
+}

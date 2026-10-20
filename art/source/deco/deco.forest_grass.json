@@ -1,0 +1,46 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.forest_grass",
+ "name": "古森 · 草丛",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  4
+ ],
+ "anchor": [
+  4,
+  4
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..m...m.",
+   ".mn.m.n.",
+   ".n.mn.nm",
+   "mnnonnon"
+  ],
+  [
+   "...m...m",
+   "..mn.m.n",
+   ".n.mn.nm",
+   "mnnonnon"
+  ]
+ ],
+ "usage": "地面装饰。",
+ "notes": "",
+ "content_hash": "1cd11380958d41b5277d46d74cb3e3469be16801cadaf657d33a751ca7f5bb44"
+}

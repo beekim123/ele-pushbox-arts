@@ -1,0 +1,73 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.hub_start",
+ "name": "大厅（新玩家）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-skins.js",
+  "workbench/js/core/font-small.js",
+  "workbench/js/core/ui-onboarding.js",
+  "content/i18n-onboarding/zh-Hans.json",
+  "content/i18n-onboarding/en.json",
+  "workbench/js/core/font-onboarding.js"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel",
+  "ui.theme_emblem"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_hub_start",
+  "theme": "theme.dungeon",
+  "items": [
+   {
+    "key": "onb.hub.start",
+    "icon": "continue"
+   },
+   {
+    "key": "menu.chapters",
+    "icon": "chapters"
+   },
+   {
+    "key": "menu.settings",
+    "icon": "settings"
+   },
+   {
+    "key": "menu.quit",
+    "icon": "quit"
+   }
+  ],
+  "coins": 0
+ },
+ "usage": "存档里还没进过任何一关时的大厅：第一项是“开始游戏”，按下直接进 M01（onboarding.md 第 6 节）；进过一关以后换回已确认的大厅。",
+ "notes": "UX-05 第 1 版，等用户确认。直接用已确认的大厅画法（ui-style.js lobby，第一张地图的皮肤），只把第一项的字换成 onb.hub.start，右侧不标关卡号；金币按新存档画 0。",
+ "content_hash": "cca00f50d1f706bc719c01ec7b7a74f516652683391c4cf3d034c3fa4fd4380e"
+}

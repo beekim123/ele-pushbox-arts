@@ -1,0 +1,131 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.menu_icons",
+ "name": "菜单图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  12
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "continue": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "chapters": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "settings": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "quit": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "language": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  }
+ },
+ "frames": [
+  [
+   "............",
+   "..zz........",
+   "..zkz.......",
+   "..zklz......",
+   "..zkllz.....",
+   "..zkkllz....",
+   "..zkkllz....",
+   "..zkllz.....",
+   "..zklz......",
+   "..zkz.......",
+   "..zz........",
+   "............"
+  ],
+  [
+   "............",
+   ".zz.........",
+   ".zezzzzzz...",
+   ".zezkkkkkz..",
+   ".zezkllkz...",
+   ".zezkkkkkz..",
+   ".zezzzzzz...",
+   ".zez........",
+   ".zez........",
+   ".zez........",
+   ".zfz........",
+   "zzzzz......."
+  ],
+  [
+   "....z..z....",
+   "..z.zuuz.z..",
+   ".zuzuuuuzuz.",
+   "..zuuzzuuz..",
+   "zzuuz..zuuzz",
+   "zuuz....zuuz",
+   "zuuz....zuuz",
+   "zzuuz..zuuzz",
+   "..zuuzzuuz..",
+   ".zuzuuuuzuz.",
+   "..z.zuuz.z..",
+   "....z..z...."
+  ],
+  [
+   "............",
+   ".zzzzzzzz...",
+   ".zffffffz...",
+   ".zfeeeefz...",
+   ".zfeeeefz.z.",
+   ".zfeekefzzlz",
+   ".zfeeeefzllz",
+   ".zfeeeefz.z.",
+   ".zfeeeefz...",
+   ".zfeeeefz...",
+   ".zzzzzzzz...",
+   "............"
+  ],
+  [
+   "....zzzz....",
+   "..zzrrrrzz..",
+   ".zrrsrrsrrz.",
+   ".zrsrrrrsrz.",
+   "zrrsrrrrsrrz",
+   "zssssssssssz",
+   "zrrsrrrrsrrz",
+   ".zrsrrrrsrz.",
+   ".zrrsrrsrrz.",
+   "..zzrrrrzz..",
+   "....zzzz....",
+   "............"
+  ]
+ ],
+ "usage": "大厅与设置菜单中每一项左侧的图标；文字可能很长，图标保证不读字也能认出功能。",
+ "notes": "",
+ "content_hash": "58765a11a4ab23ded7a7d5b6938a1b1f79ad784c266db34b8e0fecf03020f11f"
+}

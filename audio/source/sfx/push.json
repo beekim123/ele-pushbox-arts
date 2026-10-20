@@ -1,0 +1,38 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "push",
+ "uid": "sfx:push",
+ "name": "推箱",
+ "description": "低木质单咚：A2 向 G2 轻降，短门限和柔尾。",
+ "seed": 170100,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "efbc79274845128c41ece8f684f11aabe832f6bec434edb56705b26d35347cb6",
+ "gain_db": -12.6929,
+ "instruments": [
+  {
+   "id": "wood",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 10,
+   "decay_ms": 32,
+   "sustain": 0.45,
+   "release_ms": 65
+  }
+ ],
+ "duration_ms": 180,
+ "events": [
+  {
+   "instrument": "wood",
+   "start_ms": 0,
+   "duration_ms": 115,
+   "note": 45,
+   "slide_to_note": 43,
+   "gain_db": 0
+  }
+ ]
+}

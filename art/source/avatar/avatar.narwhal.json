@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.narwhal",
+ "name": "滚轮头像 · 独角鲸",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   "........................",
+   "........................",
+   "........................",
+   "........................",
+   "........................",
+   "........................",
+   ".......................e",
+   "............zzz.......cz",
+   "..........zzvvvzz....ez.",
+   ".....zzzzzvvvvvwvz..cz..",
+   "...zzvvvvvvvwvvvvvzez...",
+   ".zzvvvvvvvwvvvxzvvcz....",
+   "zvvvvvvwvvvvvvzzvvwz....",
+   "vvvvvvvvvvvvvvvvwwwz....",
+   "vvvvwvvvvvvvvvvwwwwz....",
+   "vvvvvvvvuuuuuuuuuuzwz...",
+   "vvvvvvwvvuuuuuuuuzwwz...",
+   "vvvwvvvvvvuuuuuuuwwwz...",
+   "uuuuuuuuuuuuuuuuuuuz....",
+   "tsstrrrrrtrrrrrrtrrrrsst",
+   "..qrqqrqqrqqrqqrqqrqqr..",
+   "........................",
+   "........................"
+  ]
+ ],
+ "usage": "收件人「独角鲸」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "和 char.narwhal 同一套长相（灰白斑点、螺旋长牙，浮在水面），一眼对得上。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "d32a12c3217b7c5d3f99f225b2f1e6c624dbf622219e65534ac16946cd82d694"
+}

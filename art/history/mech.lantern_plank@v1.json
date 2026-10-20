@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.lantern_plank",
+ "name": "灯照显形木板",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "dark": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "lit": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "ww.ww.ww.ww.ww.w",
+   "w..............w",
+   "................",
+   "w..............w",
+   "w..............w",
+   ".v.v.v.v.v.v.v..",
+   "w..............w",
+   "................",
+   "w..............w",
+   "w..............w",
+   ".v.v.v.v.v.v.v..",
+   "w..............w",
+   "................",
+   "w..............w",
+   "w..............w",
+   "ww.ww.ww.ww.ww.w"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zllllllllllllllz",
+   "zkgkkkkkkkkkkgjz",
+   "zkkkjkkkkkjkkkjz",
+   "zjjjjjjjjjjjjjjz",
+   "zzzzzzzzzzzzzzzz",
+   "zlllllllllllllkz",
+   "zkgkkkjkkkkkkgjz",
+   "zkkkkkkkkjkkkkjz",
+   "zjjjjjjjjjjjjjjz",
+   "zzzzzzzzzzzzzzzz",
+   "zlllllllllllllkz",
+   "zkgkkkkkjkkkkgjz",
+   "zkkjkkkkkkkkkkjz",
+   "zjjjjjjjjjjjjjbz",
+   "zzzzzzzzzzzzzzzz"
+  ]
+ ],
+ "usage": "灯照显形的幽灵木板（机关 lantern_reveal 的 cells）：每个格子画一份，占满一格。人物离得远（规则：两格以内才算照到，workbench/js/core/mech/lantern_reveal.js）时画 dark：只有虚线框和稀疏的板缝点，表示这一格是空的、站不住、箱子会掉下去；照到时画 lit：三块实心金黄木板，和石块一样能站、能挡。",
+ "notes": "关卡模式第 3 章 Q08、第 6 章 E02。暗和亮靠\"虚线空心\"对\"实心木板\"区分，不只靠颜色；亮的木板是灯光的金黄色，横着三块板、两头钉子，没有斜撑，和木箱、承重桥分开。不画光晕和半透明。",
+ "content_hash": "c488a74185fbbf6a08c67e8786a0b95261fdee6b7ba7b99e478edc75fb89719a"
+}

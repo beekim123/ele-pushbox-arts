@@ -1,0 +1,105 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settlement",
+ "name": "送达结算",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/mapgen2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json"
+ ],
+ "depends": [
+  "avatar.old_miner",
+  "item.coin",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.panel"
+ ],
+ "version": 3,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settlement",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "recipient": "old_miner",
+  "cargo": "letter",
+  "integrity": 3,
+  "max": 3,
+  "secs": 41.2,
+  "par": 36,
+  "timePct": 136,
+  "likePct": 150,
+  "pay": 30,
+  "tip": 61,
+  "picked": 25,
+  "total": 86,
+  "rating": "A",
+  "room": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "id": "ui_result_preview",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    1,
+    1
+   ],
+   "name": "UI result preview",
+   "exits": [
+    "left.0.low",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.low>right.0.low"
+   ],
+   "map": [
+    "####################",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    "#..................#",
+    ".......B............",
+    "......FFF...........",
+    "####################",
+    "####################"
+   ]
+  }
+ },
+ "usage": "送到以后：完好度、用时（和参考时间比）、喜欢三个系数，小费 = 基础报酬 × 三个系数（整数算法见 delivery-realtime.md 第 11 节），加上路上拾到的金币；右上角是评级。示例：给老矿工送信，3/3 完好，41.2 秒（参考 36 秒），小费 61，合计 86，评级 A。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "eb200c1c77c54dbb7e345ed3a2cb1474a74b03b8e230879cd0cee84edfc46bbf"
+}

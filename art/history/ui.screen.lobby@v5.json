@@ -1,0 +1,69 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.lobby",
+ "name": "大厅",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-skins.js"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel",
+  "ui.theme_emblem"
+ ],
+ "version": 5,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "lobby",
+  "theme": "theme.dungeon",
+  "items": [
+   {
+    "key": "menu.continue",
+    "icon": "continue",
+    "detail": "M05"
+   },
+   {
+    "key": "menu.chapters",
+    "icon": "chapters"
+   },
+   {
+    "key": "menu.settings",
+    "icon": "settings"
+   },
+   {
+    "key": "menu.quit",
+    "icon": "quit"
+   }
+  ],
+  "coins": 1280
+ },
+ "usage": "启动后的第一个界面。背景、地面与生态随玩家当前所在章节的主题切换（六种主题都有参考图）。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。 2026-10-16 界面定稿：画法见 workbench/js/core/ui-style.js（移植 tools/ui-proposals 的已确认效果图）。",
+ "content_hash": "d26fbdaec9c31d7b585cba36ba266d536351205d8512ebfdd6a35b06b3addbc7"
+}

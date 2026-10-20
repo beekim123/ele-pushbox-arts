@@ -1,0 +1,95 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.torch",
+ "name": "火盆",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "off": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "lit": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    1,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   "..zggggggggggz..",
+   "..zzffffffffzz..",
+   "...zfeeeeeefz...",
+   "....zfeeeefz....",
+   ".....zfeefz.....",
+   "......zffz......",
+   "......zffz......",
+   "....zzzzzzzz....",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   "....l.....k.....",
+   "...lkl...kjk....",
+   "..kjkl..ljk.....",
+   ".kjjjkkljjk.....",
+   "..jajjjjajj.....",
+   "..zzzzzzzzzzzz..",
+   "..zggggggggggz..",
+   "..zzffffffffzz..",
+   "...zfeeeeeefz...",
+   "....zfeeeefz....",
+   ".....zfeefz.....",
+   "......zffz......",
+   "......zffz......",
+   "....zzzzzzzz....",
+   "xxxxxxxxxxxxxxxx"
+  ],
+  [
+   "................",
+   ".....k....l.....",
+   "....kjk..lkl....",
+   "...ljkk.kjjk....",
+   "..kjjjkljjjk....",
+   "...jajjjjaj.....",
+   "..zzzzzzzzzzzz..",
+   "..zggggggggggz..",
+   "..zzffffffffzz..",
+   "...zfeeeeeefz...",
+   "....zfeeeefz....",
+   ".....zfeefz.....",
+   "......zffz......",
+   "......zffz......",
+   "....zzzzzzzz....",
+   "xxxxxxxxxxxxxxxx"
+  ]
+ ],
+ "usage": "火盆：开关扳动后点燃，并对作用区写一次高温（点燃区内的木栅）。点燃后保持 lit 动画。作用区在观察模式下用橙色虚线框标出。",
+ "notes": "",
+ "content_hash": "e276eda21aee67de1bf4dd896ed57f469f50bce134f9657ca0e289a1678a8038"
+}

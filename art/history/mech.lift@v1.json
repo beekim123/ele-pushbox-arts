@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.lift",
+ "name": "升降台",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "deck": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "rail": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "uuuuuuuuuuuuuuuu",
+   "vvvvvvvvvvvvvvvv",
+   "zkkzzkkzzkkzzkkz",
+   "kzzkkzzkkzzkkzzk",
+   "zzzzzzzzzzzzzzzz",
+   "xwx...........wx",
+   "x..wx.......wx.x",
+   "x...wx.....wx..x",
+   "x.....wx.wx....x",
+   "x......wwx.....x",
+   "x.....wx.wx....x",
+   "x...wx.....wx..x",
+   "x..wx.......wx.x",
+   "xwx...........wx",
+   "zzzzzzzzzzzzzzzz"
+  ],
+  [
+   "zv..............",
+   "xw..............",
+   "xw..............",
+   "xw..............",
+   "zv..............",
+   "xw..............",
+   "xw..............",
+   "xw..............",
+   "zv..............",
+   "xw..............",
+   "xw..............",
+   "xw..............",
+   "zv..............",
+   "xw..............",
+   "xw..............",
+   "xw.............."
+  ]
+ ],
+ "usage": "两站升降台。deck 是台面，占满所在格，像一块会移动的实心块，宽 width 格就横向重复 width 次；rail 是导轨，画在两站之间竖井的最左列（右列水平翻转）。",
+ "notes": "第 2 章。台面所在格算支撑，箱子和人物站在它上面一格。黄黑斜纹表示会动的机关。",
+ "content_hash": "55e8155989a4c06d20ac854276d0591fcb81450c56d1bd652f9bf03660f45978"
+}

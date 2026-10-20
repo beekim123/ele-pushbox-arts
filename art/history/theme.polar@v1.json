@@ -1,0 +1,219 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.polar",
+ "name": "主题 · 极地雪村（冬天的白天）",
+ "category": "theme",
+ "kind": "procedural",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "anchor": null,
+ "layer": "terrain",
+ "palette": "endesga32",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/terrain-jeju.js",
+  "workbench/js/core/terrain-polar.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.polar_spruce",
+  "deco.polar_cabin",
+  "deco.polar_snowhouse",
+  "deco.polar_lingonberry",
+  "fauna.polar_bunting"
+ ],
+ "params": {
+  "title": "雪村",
+  "rock": {
+   "pattern": "polar",
+   "base": [
+    "x",
+    "w"
+   ],
+   "crack": "y",
+   "speck": "w",
+   "light": "w",
+   "dark": "y",
+   "rim": "w",
+   "edge": "y",
+   "snow": [
+    "t",
+    "u"
+   ],
+   "pebble": [
+    "y",
+    "x"
+   ],
+   "spruce": [
+    "o",
+    "p",
+    "t",
+    "u",
+    "f",
+    "g"
+   ],
+   "rubble": [
+    "y",
+    "x",
+    "w",
+    "u"
+   ],
+   "deck": [
+    "e",
+    "f",
+    "g",
+    "f",
+    "g"
+   ],
+   "top": "t"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "polar",
+   "base": [
+    "r",
+    "u"
+   ],
+   "speck": "u",
+   "accent": "v",
+   "detail": "y",
+   "cloud": [
+    "t",
+    "u"
+   ],
+   "peak": [
+    "t",
+    "u",
+    "v",
+    "w"
+   ],
+   "glacier": [
+    "u",
+    "t",
+    "v"
+   ],
+   "forest": [
+    "o",
+    "p",
+    "u"
+   ],
+   "floor": [
+    "y",
+    "x"
+   ],
+   "time": "day",
+   "dusk": {
+    "sky": [
+     "y",
+     "x"
+    ],
+    "aurora": [
+     "m",
+     "n",
+     "C"
+    ],
+    "tint": "v"
+   }
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.polar_cabin",
+    "anim": "smoke",
+    "every": 12,
+    "max": 1,
+    "salt": 7
+   },
+   {
+    "type": "floor",
+    "id": "deco.polar_snowhouse",
+    "anim": "default",
+    "every": 12,
+    "max": 1,
+    "salt": 13
+   },
+   {
+    "type": "floor",
+    "id": "deco.polar_spruce",
+    "anim": "sway",
+    "every": 6,
+    "max": 2,
+    "salt": 11
+   },
+   {
+    "type": "floor",
+    "id": "deco.polar_lingonberry",
+    "anim": "default",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.polar_bunting",
+    "anim": "fly",
+    "count": 1,
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "sun": {
+    "x": 40,
+    "y": 50,
+    "radius": 16
+   },
+   "weathers": [
+    "snow"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "配送模式第四张地图「极地雪村」的地形、背景与生态（只用于配送模式）。画风是冬天的白天。地形用 terrain-polar.js 的 polar 图案：岩石是深蓝灰的花岗岩（x 底色、w 的大块切面、y 的细裂缝），不用青色 s、不画斜向高光（留给规则的冰）；露天的顶面盖雪（白 t 加一道 u 阴影线，下沿起伏）：上半屏 3–4 像素的厚雪，边上垂下 1 像素的雪檐；下半屏 2 像素踩实的薄雪，露出几颗深色石子；雪只是岩石顶面的画法，不成整格。房间最左、最右两列画成密密的雪松树丛（o / p 的针叶挂着 t 的雪团，最下面露出 f 的树干）；最下面一行画成冻土和乱石（y 上的 x 圆石、u 的霜点）；下半屏悬空一格厚的石条画成积雪的木台（e / f 的横板和短桩，没有框和叉撑）。背景是晴天：r 蓝天抖动过渡到地平线的浅色 u，几朵扁扁的白云慢慢飘（底边不平），地平线上是连绵的雪山（亮面 t、阴面 u / v、山脚 w），山谷里流下一条冰川；地平线以下是深色的雪松林剪影（远排 o、近排 p，树梢点 u 的雪），再往下是 y / x 的林下阴影，比地形的中间调暗；不画冰海和水面。可选的傍晚：background.time 设为 dusk 时天空换成 y → x 的深蓝，两三条极光（m / n，顶上一点 C）以 4 fps 慢慢飘，雪山泛 v；地形照旧。生态：雪松、红色小木屋（每屏最多 1 座）、雪屋（每屏最多 1 座）、越橘丛，偶尔飞过雪鹀（配送模式里它是提示动物，由 ambient_exclude 关掉）。太阳在左上，低低的冬日太阳；没有暗角和灯光；天气默认关，只能选「下雪」。",
+ "notes": "取材北极圈的冬天（北欧、北极小镇的红木屋、雪屋、雪松林、冰川、极光），童话式的北方雪村，不专指某个民族；极光只当天上的光。天空比 art-direction 第 1 节第 5 条亮（delivery-polar.md 第 7 节第 1 条按 C），所以地平线以下的雪松林剪影和林下阴影压暗。规则材料（土、裂石、沙、水，连同块的描边）和其他主题完全相同，沙还是米黄色；冰由 matter.js 照关卡模式画。傍晚 dusk 默认关，要不要打开由用户定（第 7 节第 11 条）；打开时 env.sun 宜一起去掉。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f66612b5aaa714042f8d68132ab8807c585ab2ede5dc74b6ec3f98b2845d2654"
+}

@@ -1,0 +1,140 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.dungeon",
+ "name": "主题 · 幽暗石牢",
+ "category": "theme",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.dungeon_moss",
+  "deco.dungeon_torch",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_rat"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "title": "幽暗石牢",
+  "chapter": 1,
+  "rock": {
+   "pattern": "brick",
+   "base": [
+    "x",
+    "y"
+   ],
+   "seam": "z",
+   "speck": "w",
+   "light": "w",
+   "light2": "x",
+   "dark": "z",
+   "edge": "z",
+   "top": "w"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "dungeon",
+   "base": [
+    "z",
+    "y"
+   ],
+   "speck": "x",
+   "accent": "g",
+   "detail": "x"
+  },
+  "ambient": [
+   {
+    "type": "wall",
+    "id": "deco.dungeon_torch",
+    "anim": "flicker",
+    "spacing": 96,
+    "y": 22
+   },
+   {
+    "type": "hanger",
+    "id": "fauna.dungeon_bat",
+    "count": 1,
+    "chance": 0.35
+   },
+   {
+    "type": "floor",
+    "id": "deco.dungeon_moss",
+    "every": 5,
+    "max": 3
+   },
+   {
+    "type": "walker",
+    "id": "fauna.dungeon_rat",
+    "chance": 0.15
+   }
+  ],
+  "env": {
+   "lights": {
+    "sources": {
+     "deco.dungeon_torch": {
+      "radius": 28,
+      "dy": -6
+     }
+    }
+   },
+   "vignette": 10,
+   "weathers": [
+    "embers",
+    "drips"
+   ],
+   "weather": "none"
+  }
+ },
+ "usage": "第 1 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
+ "notes": "冷灰石砖与黑暗的牢墙，壁挂火把，地上长着苔藓和小菇，顶上倒挂着蝙蝠，偶尔有老鼠跑过。",
+ "content_hash": "c3881552b196c87ce21cd7d76954f6d058b388a060a010676167686326ed1e25"
+}

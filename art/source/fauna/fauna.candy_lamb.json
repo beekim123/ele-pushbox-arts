@@ -1,0 +1,166 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.candy_lamb",
+ "name": "糖果王国 · 棉花糖小羊",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  13
+ ],
+ "anchor": [
+  8,
+  13
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sit": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  "wag": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "bleat": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6,
+    6,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "....zz.zz.......",
+   "z.zzttzttzzz....",
+   "tzttttttttttz...",
+   "zttttttttCtDDz..",
+   "ztttttttutDDDDz.",
+   "zutttuttttmmzDz.",
+   ".zuuuuuuuuuDDDz.",
+   ".zDCzzzzDCzzDCz.",
+   ".zDCz..zDCz.zz..",
+   "..zz....zz......"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "....zz.zz.......",
+   "z.zzttzttzzz....",
+   "tzttttttttttz...",
+   "zttttttttCtDDz..",
+   "ztttttttutDDDDz.",
+   "zutttuttttmmzDz.",
+   ".zuuuuuuuuuDDDz.",
+   ".zDCzzzzDCzzDzz.",
+   ".zDCz..zDCz.zz..",
+   "..zz....zz......"
+  ],
+  [
+   "...........zz...",
+   "..........zttzz.",
+   ".........ztttDDz",
+   "....zz.zzCCDDzDz",
+   "z.zzttzttzzDDDCz",
+   "tztttttttttDDzz.",
+   "zttttttttttmmz..",
+   "ztttttttutttz...",
+   "zutttuttttuuz...",
+   ".zuuuuuuuuuz....",
+   ".zDCzzzzDCz.....",
+   ".zDCz..zDCz.....",
+   "..zz....zz......"
+  ],
+  [
+   "................",
+   "...........zz...",
+   ".z........zttzz.",
+   "ztz.zz.zzztttDDz",
+   "tzzzttzttCCDDzDz",
+   "zztttttttttDDDCz",
+   "zttttttttttDDzz.",
+   "ztttttttuttmmz..",
+   "zutttuttttuuz...",
+   ".zuuuuuuuuuz....",
+   ".zDCzzzzDCz.....",
+   ".zDCz..zDCz.....",
+   "..zz....zz......"
+  ],
+  [
+   "..........zttzz.",
+   ".........ztttDDz",
+   "....zz.zzCCDDzDz",
+   "z.zzttzttzzDDDCz",
+   "tztttttttttDDzz.",
+   "zttttttttttmmz..",
+   "ztttttttutttz...",
+   "zutttuttttuuz...",
+   ".zuuuuuuuuuz....",
+   ".zzzzzzzzzz.....",
+   "zDCzz.zDCzz.....",
+   "zDzzCzzDzzCz....",
+   ".z..z..z..z....."
+  ],
+  [
+   "...........zz...",
+   "..........zttzz.",
+   ".........ztttDDz",
+   "....zz.zzCCDDzDz",
+   "..zzttzttzzDDDCz",
+   "zztttttttttDDzz.",
+   "tttttttttttmmz..",
+   "ztttttttutttz...",
+   "zutttuttttuuz...",
+   ".zuuuuuuuuuz....",
+   ".zDCzzzzDCz.....",
+   ".zDCz..zDCz.....",
+   "..zz....zz......"
+  ],
+  [
+   "..........zttzz.",
+   ".........ztttDDz",
+   ".z......zCCDDzDz",
+   "ztz.zz.zzzzDDDz.",
+   "tzzzttzttzzDDzzz",
+   "zztttttttttDDDDz",
+   "zttttttttttmmzz.",
+   "ztttttttutttz...",
+   "zutttuttttuuz...",
+   ".zuuuuuuuuuz....",
+   ".zDCzzzzDCz.....",
+   ".zDCz..zDCz.....",
+   "..zz....zz......"
+  ]
+ ],
+ "usage": "配送模式糖果王国的提示动物「棉花糖小羊」：白色卷毛（下沿浅灰阴影）、粉脸粉耳、脖子上挂薄荷绿小铃铛，四条粉腿，面朝右（往左走时水平翻转）。sit 低头啃糖霜（站在下一步要用的东西旁边），walk 小跑，wag 冲着那个东西摇尾巴、点头，bleat 咩地叫一声（喂了奶糖后头顶冒出提示）。站在地面上，画在箱子和人物后面。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "4fdf61b1e9ba0fd14381cfbcaa215f80a613177bfd59074c11eb91ac8281622a"
+}

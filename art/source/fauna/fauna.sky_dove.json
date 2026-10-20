@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.sky_dove",
+ "name": "圣域 · 白鸽",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  10,
+  6
+ ],
+ "anchor": [
+  5,
+  3
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..z....z..",
+   ".zuz..zuz.",
+   "..zutzuz..",
+   "...zttttzk",
+   "....zuuzz.",
+   ".........."
+  ],
+  [
+   "..........",
+   "...zzzz...",
+   "..zuttuz..",
+   ".zuttttuzk",
+   "zuz.zuz.z.",
+   "zz..zz...."
+  ]
+ ],
+ "usage": "从背景远处横向飞过，画在地形后面。",
+ "notes": "",
+ "content_hash": "98fc6674c135cddf8eb2d3ac6a0ec093b773b6c039cbafcc974fa4b01b1101c9"
+}

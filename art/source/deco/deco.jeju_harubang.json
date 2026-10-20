@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.jeju_harubang",
+ "name": "济州 · 石头爷爷",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  10,
+  16
+ ],
+ "anchor": [
+  5,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...zzzz...",
+   "..zvvwwz..",
+   "..zvwwwz..",
+   ".zvwwwwxz.",
+   "zvvwwwwwxz",
+   "zzxxxxxxzz",
+   ".zuuwwuuz.",
+   ".zuzvvzuz.",
+   ".zwwvvwwz.",
+   ".zwvvvvwz.",
+   ".zwxvvxwz.",
+   "zzwxxxxwzz",
+   "zwvvvvwwxz",
+   "zwwxxvvvvz",
+   "zxwxwxxwxz",
+   "zzzzzzzzzz"
+  ]
+ ],
+ "usage": "济州的石头爷爷（돌하르방）：黑色多孔玄武岩雕的守护石像，戴大帽子、鼓着大眼睛、长鼻子，两只手一高一低放在肚子上。生态规则把它立在开局就空着的地面格上（每屏最多 1 尊），只是地标：画在人物和箱子后面，不能推、不能推倒，也不能互动。",
+ "notes": "取材济州岛的돌하르방；比地形的玄武岩亮一级（灰蓝），在黑色岩地上也认得出。只作地标，不当箱子、怪物或收件人（worlds.json 的 care）。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "ac7da0d9e13534304c228df0bdf8bf9b5833a3a17be4c15bba17a183303a2f5d"
+}

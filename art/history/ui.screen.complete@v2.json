@@ -1,0 +1,40 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.complete",
+ "name": "过关",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "char.miner",
+  "mech.socket_lit",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "complete"
+ },
+ "usage": "所有目标灯点亮后显示；人物播放胜利动作。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "2ace29d731512ad493dd7be095542889a68bb89fe392cc28e077c584a97357fe"
+}

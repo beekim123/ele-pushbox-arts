@@ -1,0 +1,67 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.lobby_generic",
+ "name": "通用大厅",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.diyu",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel",
+  "ui.theme_emblem"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "lobby_generic",
+  "theme": "theme.diyu",
+  "items": [
+   {
+    "key": "result.lobby.level"
+   },
+   {
+    "key": "result.lobby.delivery"
+   },
+   {
+    "key": "menu.settings"
+   },
+   {
+    "key": "menu.quit"
+   }
+  ],
+  "coins": 1280
+ },
+ "usage": "尚无独立皮肤的地图使用的 G2 通用大厅；预览固定使用地府大厅场景。",
+ "notes": "UI-10c 候选。独立资产，不覆盖六套章节大厅；需用户确认后才能用于游戏。",
+ "content_hash": "2edd46733942372b145565ca581d30a3abaeeac5b107a02f76287e84a98482be"
+}

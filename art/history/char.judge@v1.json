@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.judge",
+ "name": "判官（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyyyz.....",
+   "zz..zyyxyyyz..zz",
+   "zyzzzzzzzzzzzzyz",
+   "zz..zEEEEEEz..zz",
+   "....zEzEEzEz..z.",
+   "....zEEEEEEz.zez",
+   "....zzzzzzzz.zez",
+   "...zizzyyzzizzez",
+   "..ziizzzzzziiEz.",
+   "..ziikkkkkkiizz.",
+   "..ziiiiiiiiiiz..",
+   "..ziiiiiiiiiiz..",
+   "..zhiiiiiiiihz..",
+   "...zzzzzzzzzz..."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyyyz.....",
+   "zz..zyyxyyyz..zz",
+   "zyzzzzzzzzzzzzyz",
+   "zz..zEEEEEEz..zz",
+   "....zEzEEzEz....",
+   "....zEEEEEEz..z.",
+   "....zzzzzzzz.zez",
+   "...zizzyyzzizzez",
+   "..ziizzzzzziiEz.",
+   "..ziikkkkkkiizz.",
+   "..ziiiiiiiiiiz..",
+   "..ziiiiiiiiiiz..",
+   "..zhiiiiiiiihz..",
+   "...zzzzzzzzzz..."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zyyyyz.....",
+   "zz..zyyxyyyz..zz",
+   "zyzzzzzzzzzzzzzz",
+   "zz..zEEEEEEz.zez",
+   "....zEtEEtEz....",
+   "....zEEEEEEz....",
+   "....zzzzzzzzzEzz",
+   "...zizzyyzzzzzez",
+   "..ziizzzzzziiEz.",
+   "..ziikkkkkkiizz.",
+   "..ziiiiiiiiiiz..",
+   "..ziiiiiiiiiiz..",
+   "..zhiiiiiiiihz..",
+   "...zzzzzzzzzz..."
+  ],
+  [
+   "......zzzz......",
+   ".....zyyyyz.....",
+   "zz..zyyxyyyz..zz",
+   "zyzzzzzzzzzzzzzz",
+   "zz..zEEEEEEz.zez",
+   "....zEtEEtEz....",
+   "....zEEEEEEz....",
+   "....zzzzzzzzzEzz",
+   "...zizzyyzzzzzez",
+   "..ziizzzzzziiEz.",
+   "..ziikkkkkkiizz.",
+   "..ziiiiiiiiiiz..",
+   "..ziiiiiiiiiiz..",
+   "..zhiiiiiiiihz..",
+   "...zzzzzzzzzz...",
+   "...zzzzzzzzzz..."
+  ]
+ ],
+ "usage": "收件人·判官：戴两边伸出长翅的黑色乌纱帽、留黑长须、穿红官袍系金腰带，手握一支大毛笔，坐镇判官殿（idle，偶尔眨眼），不走动。收到货物时举笔（win）。他最讲究：货物有损坏，小费减半。面朝右绘制，朝左时水平镜像。",
+ "notes": "帽翅是最好认的轮廓，宽度刚好占满一格。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "5e438a02e9fbe068f601a6d9b8293f30563cd8f6bf0feb511618bdb5f1318528"
+}

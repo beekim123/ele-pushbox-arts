@@ -1,0 +1,68 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:shop_buy",
+ "version": 2,
+ "hash": "099c8b83f8e99c488f32e92e14faae98dbef2badeef9d9a646c5c132e4bab6ec",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "shop_buy",
+  "uid": "sfx:shop_buy",
+  "name": "驿站买东西",
+  "description": "低木扣 C3 后 E4/G4 上行应答，成功感来自音程而非加响。",
+  "seed": 170121,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "099c8b83f8e99c488f32e92e14faae98dbef2badeef9d9a646c5c132e4bab6ec",
+  "gain_db": -15.6755,
+  "instruments": [
+   {
+    "id": "wood",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 900,
+    "attack_ms": 10,
+    "decay_ms": 32,
+    "sustain": 0.45,
+    "release_ms": 40
+   },
+   {
+    "id": "receipt",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1500,
+    "attack_ms": 12,
+    "decay_ms": 35,
+    "sustain": 0.6,
+    "release_ms": 60
+   }
+  ],
+  "duration_ms": 300,
+  "events": [
+   {
+    "instrument": "wood",
+    "start_ms": 0,
+    "duration_ms": 65,
+    "note": 48,
+    "gain_db": 0
+   },
+   {
+    "instrument": "receipt",
+    "start_ms": 90,
+    "duration_ms": 60,
+    "note": 64,
+    "gain_db": 0
+   },
+   {
+    "instrument": "receipt",
+    "start_ms": 190,
+    "duration_ms": 50,
+    "note": 67,
+    "gain_db": 0
+   }
+  ]
+ }
+}

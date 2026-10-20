@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.zombie",
+ "name": "滚轮头像 · 僵尸",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   "........................",
+   ".......z.z.zz...........",
+   "......zgzgzggz..........",
+   ".......zgzzgzzz.........",
+   ".......zzmmmmmnzz.......",
+   "......zmmnnnnnnmnz......",
+   "......zmnnnnnnnnoz......",
+   ".....zmnngngnnnnnnz.....",
+   ".....zmnggggnnnnnoz.....",
+   ".....zmnnnnnntttnoz.....",
+   "....znnnzzznntztnnnz....",
+   ".....zmnnnnnntttnoz.....",
+   ".....zmnnnnnnnnnnoz.....",
+   ".....znnnnnnnnnnnoz.....",
+   "......zmngtggtgnoz......",
+   "......znoggggggooz......",
+   ".......zznooooozz.......",
+   "......zzrrrrrrrqzz......",
+   "....zzrrqqqqqqqqrqzz....",
+   "...zrrqqqnqqqqqqqqrqz...",
+   "...zrqqqqqnqqqqqqqqqz...",
+   "..zrqqqqqqqqqqqqqqqqqz..",
+   "..zqqqqqqqqqqqqqqqqqqz.."
+  ]
+ ],
+ "usage": "收件人「僵尸」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fea509a9818ab135825d06410c991cc2e7258c52e4ade9cf72817bb1ae5410c8"
+}

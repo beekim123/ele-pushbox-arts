@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.meng_po",
+ "name": "滚轮头像 · 孟婆",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   ".........zzzzz..........",
+   "........zuuvuuz.........",
+   "........zuvvvuz.........",
+   ".......zzzzzzzzz........",
+   ".....zzvvuuuuuvvzz......",
+   "....zvvuuvvvvvuuvvz.....",
+   "...zvvuvvvvvvvvvuvvz....",
+   "...zvuvEEEEEEEEEvuvz....",
+   "...zvvEEEEEEEEEEEvvz....",
+   "...zvEEzzEEEEEzzEEvz....",
+   "...zvEEEEEEEEEEEEEvz....",
+   "...zvEEFEEEEEEEFEEvz....",
+   "....zEEEEEFFFEEEEEz.....",
+   "....zEDEEEEEEEEEDEz.....",
+   ".....zEEEEzzzEEEEz......",
+   "......zEEEEEEEEEz.......",
+   ".......zzEEEEEzz........",
+   ".....zzBBzzzzzBBzz......",
+   "....zBBBBCCCCCBBBBz.....",
+   "...zBBBBBBCCCBBBBBBz....",
+   "..zBBBBBBBBCBBBBBBBBz...",
+   "..zBBBBBBBBCBBBBBBBBz...",
+   "..zBBBBBBBBCBBBBBBBBz..."
+  ]
+ ],
+ "usage": "收件人「孟婆」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fd39720c72eadf7f6a54e425146fdfd04fb01ed11fef04c3851de7407789dcba"
+}

@@ -1,0 +1,121 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.cosmos",
+ "name": "主题 · 深空星站",
+ "category": "theme",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.cosmos_sprout",
+  "fauna.cosmos_drone"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "title": "深空星站",
+  "chapter": 6,
+  "rock": {
+   "pattern": "panel",
+   "base": [
+    "w",
+    "x"
+   ],
+   "seam": "y",
+   "speck": "v",
+   "light": "v",
+   "light2": "w",
+   "dark": "y",
+   "edge": "y",
+   "top": "k",
+   "trim": "hazard"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "cosmos",
+   "base": [
+    "z",
+    "y"
+   ],
+   "speck": "t",
+   "accent": "B",
+   "detail": "x"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.cosmos_sprout",
+    "anim": "glow",
+    "every": 5,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.cosmos_drone",
+    "anim": "hover",
+    "count": 1,
+    "path": "hover",
+    "chance": 0.35
+   }
+  ],
+  "env": {
+   "vignette": 10,
+   "weathers": [
+    "meteors"
+   ],
+   "weather": "meteors"
+  }
+ },
+ "usage": "扩展章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
+ "notes": "金属舱板，顶边黄黑警示条，背景是星空、行星与站体桁架；异星球芽，巡检无人机在远处悬停。",
+ "content_hash": "a9fdc7fe0b8172325c60dc6c122134e382e4c132d6dff5ae496a2fc3b0d626f3"
+}

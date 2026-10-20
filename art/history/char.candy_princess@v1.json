@@ -1,0 +1,132 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.candy_princess",
+ "name": "糖果公主（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  20
+ ],
+ "anchor": [
+  8,
+  20
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzz.z.z.zzz...",
+   ".zedezkzkzedez..",
+   ".zeefzkikzeefz..",
+   "..zDeeeeeeeDz...",
+   "..zeeeeeeeeez...",
+   "..zeeEEEEEEez...",
+   "..zeEEzEEzEez...",
+   "..zeEEDEEDEz....",
+   "...zEEEEFEz.....",
+   "...zDDtttDDz....",
+   "...zDDDDDDDz....",
+   "...zEDDDDDEz....",
+   "....zCCCCCz.....",
+   "...zDDDDDDDz....",
+   "..zDCDDDCDDDz...",
+   "..zDCDDDCDDCz...",
+   ".zDDCDDDCDDCDz..",
+   ".ztttttttttttz..",
+   "..zzzCCzCCzzz...",
+   ".....zz.zz......"
+  ],
+  [
+   "..zzz.z.z.zzz...",
+   ".zedezkzkzedez..",
+   ".zeefzkikzeefz..",
+   "..zDeeeeeeeDz...",
+   "..zeeeeeeeeez...",
+   "..zeeEEEEEEez...",
+   "..zeEEFEEFEez...",
+   "..zeEEDEEDEz....",
+   "...zEEEEFEz.....",
+   "...zDDtttDDz....",
+   "...zDDDDDDDz....",
+   "...zEDDDDDEz....",
+   "....zCCCCCz.....",
+   "...zDDDDDDDz....",
+   "..zDCDDDCDDDz...",
+   "..zDCDDDCDDCz...",
+   ".zDDCDDDCDDCDz..",
+   ".ztttttttttttz..",
+   "..zzzCCzCCzzz...",
+   ".....zz.zz......"
+  ],
+  [
+   ".zedezkzkzedez..",
+   ".zeefzkikzeefz..",
+   "..zDeeeeeeeDz...",
+   "..zeeeeeeeeez...",
+   "..zeeEEEEEEez...",
+   "..zeEEzEEzEez...",
+   "..zeEEDEEDEz....",
+   "...zEEEziEzz....",
+   "..zEDDtttDDEz...",
+   "..zEzzzzzzzEz...",
+   "...zzDDDDDzz....",
+   "....zCCCCCz.....",
+   "...zDDDDDDDz....",
+   "..zDCDDDCDDDz...",
+   "..zDCDDDCDDCz...",
+   ".zDDCDDDCDDCDz..",
+   ".ztttttttttttz..",
+   "..zzzCCzCCzzz...",
+   ".....zz.zz......",
+   "................"
+  ],
+  [
+   "..zzz.z.z.zzz...",
+   ".zedezkzkzedez..",
+   ".zeefzkikzeefz..",
+   "..zDeeeeeeeDz...",
+   "..zeeeeeeeeez...",
+   "..zeeEEEEEEez...",
+   "..zeEEzEEzEez...",
+   "..zeEEDEEDEz....",
+   "...zEEEziEz.....",
+   "...zDDtttDDz....",
+   "...zDDDDDDDz....",
+   "...zEDDDDDEz....",
+   "....zCCCCCz.....",
+   "...zDDDDDDDz....",
+   "..zDCDDDCDDDz...",
+   "..zDCDDDCDDCz...",
+   ".zDDCDDDCDDCDz..",
+   ".ztttttttttttz..",
+   "..zzzCCzCCzzz...",
+   ".....zz.zz......"
+  ]
+ ],
+ "usage": "收件人·糖果公主：普通肤色、棕色双丸子头（扎粉色发绳）、头顶一顶小王冠（金色只有几个像素，中间一颗红宝石）、粉色蓬蓬裙配白色花边（idle，偶尔眨眼），不走动。收到货物时张嘴笑、举起双手跳一下（win）。16 × 20，锚点在底边中间。面朝右绘制，朝左时水平镜像。",
+ "notes": "照 delivery-candy.md 第 1 节「取材注意」：不画粉皮肤、粉头发，不照泡泡糖公主和迪士尼公主；大块亮黄 k / l 留给主角。 DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b00f705615b21d2cf1e2cfa967c8826f67b02d52019979d2a6bb00d1285c8cc1"
+}

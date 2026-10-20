@@ -1,0 +1,1681 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "music",
+ "id": "theme_b",
+ "uid": "music:theme_b",
+ "name": "小信差",
+ "description": "轻快、带附点，像小跑着送信。1–8原型：三角波+正弦低音；9–16石牢：低八度、A羽和声与弱回声；17–24地府：圆笛、离散短倚音与木点（音乐格式不支持连续滑音）；25–32海女村：大调、主旋律及分解伴奏前长后短、轻浪声。四遍保留原谱的全部音名及顺序；石牢按设计降八度，海女村按3.0节变换节奏（每两拍1.25/0.75，每小节仍四拍），前三遍时值与起点逐音保留。",
+ "seed": 170118,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "2b18abbf627e4e082bb626f492beae2a887ce84327b3a59d6705513fa0613613",
+ "gain_db": -19,
+ "instruments": [
+  {
+   "id": "theme_triangle",
+   "wave": "triangle",
+   "gain_db": -1,
+   "lowpass_hz": 1800,
+   "attack_ms": 16,
+   "decay_ms": 80,
+   "sustain": 0.85,
+   "release_ms": 40
+  },
+  {
+   "id": "round_flute",
+   "wave": "sine",
+   "gain_db": -2,
+   "lowpass_hz": 1800,
+   "attack_ms": 20,
+   "decay_ms": 80,
+   "sustain": 0.85,
+   "release_ms": 40
+  },
+  {
+   "id": "sine_bass",
+   "wave": "sine",
+   "gain_db": -9,
+   "lowpass_hz": 700,
+   "attack_ms": 22,
+   "decay_ms": 160,
+   "sustain": 0.9,
+   "release_ms": 45
+  },
+  {
+   "id": "soft_pluck",
+   "wave": "triangle",
+   "gain_db": -3,
+   "lowpass_hz": 1200,
+   "attack_ms": 12,
+   "decay_ms": 100,
+   "sustain": 0.35,
+   "release_ms": 35
+  },
+  {
+   "id": "quiet_echo",
+   "wave": "sine",
+   "gain_db": -2,
+   "lowpass_hz": 1400,
+   "attack_ms": 12,
+   "decay_ms": 60,
+   "sustain": 0.45,
+   "release_ms": 35
+  },
+  {
+   "id": "soft_surf",
+   "wave": "noise",
+   "gain_db": -2,
+   "lowpass_hz": 500,
+   "attack_ms": 200,
+   "decay_ms": 500,
+   "sustain": 0.4,
+   "release_ms": 600
+  }
+ ],
+ "set": "theme",
+ "bpm": 84,
+ "meter": [
+  4,
+  4
+ ],
+ "bars": 32,
+ "mode": "C 五声（展示曲含四种色彩）",
+ "tracks": [
+  {
+   "instrument": "theme_triangle",
+   "notes": [
+    {
+     "beat": 0,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 0.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 1,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 2,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 3,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 4,
+     "length": 1.5,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 5.5,
+     "length": 0.5,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 6,
+     "length": 2,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 8,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 8.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 9,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 10,
+     "length": 1,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 11,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 12,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 13,
+     "length": 1,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 14,
+     "length": 2,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 16,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 16.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 17,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 18,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 19,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 20,
+     "length": 1.5,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 21.5,
+     "length": 0.5,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 22,
+     "length": 2,
+     "gain_db": -1,
+     "note": 74
+    },
+    {
+     "beat": 24,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 24.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 25,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 26,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 27,
+     "length": 1,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 28,
+     "length": 4,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 32,
+     "length": 0.75,
+     "gain_db": 0,
+     "note": 48
+    },
+    {
+     "beat": 32.75,
+     "length": 0.25,
+     "gain_db": 0,
+     "note": 50
+    },
+    {
+     "beat": 33,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 34,
+     "length": 1,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 35,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 36,
+     "length": 1.5,
+     "gain_db": 0,
+     "note": 57
+    },
+    {
+     "beat": 37.5,
+     "length": 0.5,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 38,
+     "length": 2,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 40,
+     "length": 0.75,
+     "gain_db": 0,
+     "note": 50
+    },
+    {
+     "beat": 40.75,
+     "length": 0.25,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 41,
+     "length": 1,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 42,
+     "length": 1,
+     "gain_db": 0,
+     "note": 57
+    },
+    {
+     "beat": 43,
+     "length": 1,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 44,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 45,
+     "length": 1,
+     "gain_db": 0,
+     "note": 50
+    },
+    {
+     "beat": 46,
+     "length": 2,
+     "gain_db": 0,
+     "note": 48
+    },
+    {
+     "beat": 48,
+     "length": 0.75,
+     "gain_db": 0,
+     "note": 48
+    },
+    {
+     "beat": 48.75,
+     "length": 0.25,
+     "gain_db": 0,
+     "note": 50
+    },
+    {
+     "beat": 49,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 50,
+     "length": 1,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 51,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 52,
+     "length": 1.5,
+     "gain_db": 0,
+     "note": 57
+    },
+    {
+     "beat": 53.5,
+     "length": 0.5,
+     "gain_db": 0,
+     "note": 60
+    },
+    {
+     "beat": 54,
+     "length": 2,
+     "gain_db": 0,
+     "note": 62
+    },
+    {
+     "beat": 56,
+     "length": 0.75,
+     "gain_db": 0,
+     "note": 60
+    },
+    {
+     "beat": 56.75,
+     "length": 0.25,
+     "gain_db": 0,
+     "note": 57
+    },
+    {
+     "beat": 57,
+     "length": 1,
+     "gain_db": 0,
+     "note": 55
+    },
+    {
+     "beat": 58,
+     "length": 1,
+     "gain_db": 0,
+     "note": 52
+    },
+    {
+     "beat": 59,
+     "length": 1,
+     "gain_db": 0,
+     "note": 50
+    },
+    {
+     "beat": 60,
+     "length": 4,
+     "gain_db": 0,
+     "note": 48
+    },
+    {
+     "beat": 96,
+     "length": 0.9375,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 96.9375,
+     "length": 0.3125,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 97.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 98,
+     "length": 1.25,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 99.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 100,
+     "length": 1.625,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 101.625,
+     "length": 0.375,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 102,
+     "length": 2,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 104,
+     "length": 0.9375,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 104.9375,
+     "length": 0.3125,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 105.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 106,
+     "length": 1.25,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 107.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 108,
+     "length": 1.25,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 109.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 110,
+     "length": 2,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 112,
+     "length": 0.9375,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 112.9375,
+     "length": 0.3125,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 113.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 114,
+     "length": 1.25,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 115.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 116,
+     "length": 1.625,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 117.625,
+     "length": 0.375,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 118,
+     "length": 2,
+     "gain_db": -1,
+     "note": 74
+    },
+    {
+     "beat": 120,
+     "length": 0.9375,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 120.9375,
+     "length": 0.3125,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 121.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 122,
+     "length": 1.25,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 123.25,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 124,
+     "length": 4,
+     "gain_db": -1,
+     "note": 60
+    }
+   ]
+  },
+  {
+   "instrument": "round_flute",
+   "notes": [
+    {
+     "beat": 64,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 64.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 65,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 66,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 67,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 68,
+     "length": 1.5,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 69.5,
+     "length": 0.5,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 70,
+     "length": 2,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 72,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 72.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 73,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 74,
+     "length": 1,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 75,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 76,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 77,
+     "length": 1,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 78,
+     "length": 2,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 80,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 60
+    },
+    {
+     "beat": 80.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 81,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 82,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 83,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 84,
+     "length": 1.5,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 85.5,
+     "length": 0.5,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 86,
+     "length": 2,
+     "gain_db": -1,
+     "note": 74
+    },
+    {
+     "beat": 88,
+     "length": 0.75,
+     "gain_db": -1,
+     "note": 72
+    },
+    {
+     "beat": 88.75,
+     "length": 0.25,
+     "gain_db": -1,
+     "note": 69
+    },
+    {
+     "beat": 89,
+     "length": 1,
+     "gain_db": -1,
+     "note": 67
+    },
+    {
+     "beat": 90,
+     "length": 1,
+     "gain_db": -1,
+     "note": 64
+    },
+    {
+     "beat": 91,
+     "length": 1,
+     "gain_db": -1,
+     "note": 62
+    },
+    {
+     "beat": 92,
+     "length": 4,
+     "gain_db": -1,
+     "note": 60
+    }
+   ]
+  },
+  {
+   "instrument": "sine_bass",
+   "notes": [
+    {
+     "beat": 0,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 4,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 8,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 41
+    },
+    {
+     "beat": 12,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 16,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 45
+    },
+    {
+     "beat": 20,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 41
+    },
+    {
+     "beat": 24,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 28,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 32,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 45
+    },
+    {
+     "beat": 36,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 40
+    },
+    {
+     "beat": 40,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 48
+    },
+    {
+     "beat": 44,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 40
+    },
+    {
+     "beat": 48,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 41
+    },
+    {
+     "beat": 52,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 38
+    },
+    {
+     "beat": 56,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 40
+    },
+    {
+     "beat": 60,
+     "length": 3.8125,
+     "gain_db": -2,
+     "note": 45
+    },
+    {
+     "beat": 64,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 68,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 45
+    },
+    {
+     "beat": 72,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 76,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 40
+    },
+    {
+     "beat": 80,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 84,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 45
+    },
+    {
+     "beat": 88,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 92,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 96,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    },
+    {
+     "beat": 100,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 104,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 41
+    },
+    {
+     "beat": 108,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 112,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 45
+    },
+    {
+     "beat": 116,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 41
+    },
+    {
+     "beat": 120,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 43
+    },
+    {
+     "beat": 124,
+     "length": 3.8125,
+     "gain_db": -4,
+     "note": 48
+    }
+   ]
+  },
+  {
+   "instrument": "soft_pluck",
+   "notes": [
+    {
+     "beat": 64.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 66.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 68.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 70.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 72.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 74.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 76.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 78.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 80.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 82.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 84.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 86.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 88.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 90.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 92.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 48
+    },
+    {
+     "beat": 94.5,
+     "length": 0.0625,
+     "gain_db": -12,
+     "note": 55
+    },
+    {
+     "beat": 96,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 96.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 64
+    },
+    {
+     "beat": 97,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 67
+    },
+    {
+     "beat": 97.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 72
+    },
+    {
+     "beat": 98,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 98.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 64
+    },
+    {
+     "beat": 99,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 67
+    },
+    {
+     "beat": 99.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 72
+    },
+    {
+     "beat": 100,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 100.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 101,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 101.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 102,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 102.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 103,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 103.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 104,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 53
+    },
+    {
+     "beat": 104.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 57
+    },
+    {
+     "beat": 105,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 105.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 65
+    },
+    {
+     "beat": 106,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 53
+    },
+    {
+     "beat": 106.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 57
+    },
+    {
+     "beat": 107,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 107.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 65
+    },
+    {
+     "beat": 108,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 108.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 109,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 109.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 110,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 110.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 111,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 111.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 112,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 57
+    },
+    {
+     "beat": 112.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 60
+    },
+    {
+     "beat": 113,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 64
+    },
+    {
+     "beat": 113.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 69
+    },
+    {
+     "beat": 114,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 57
+    },
+    {
+     "beat": 114.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 60
+    },
+    {
+     "beat": 115,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 64
+    },
+    {
+     "beat": 115.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 69
+    },
+    {
+     "beat": 116,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 53
+    },
+    {
+     "beat": 116.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 57
+    },
+    {
+     "beat": 117,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 117.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 65
+    },
+    {
+     "beat": 118,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 53
+    },
+    {
+     "beat": 118.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 57
+    },
+    {
+     "beat": 119,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 119.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 65
+    },
+    {
+     "beat": 120,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 120.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 121,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 121.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 122,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 55
+    },
+    {
+     "beat": 122.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 59
+    },
+    {
+     "beat": 123,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 62
+    },
+    {
+     "beat": 123.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 67
+    },
+    {
+     "beat": 124,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 124.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 64
+    },
+    {
+     "beat": 125,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 67
+    },
+    {
+     "beat": 125.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 72
+    },
+    {
+     "beat": 126,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 60
+    },
+    {
+     "beat": 126.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 64
+    },
+    {
+     "beat": 127,
+     "length": 0.25,
+     "gain_db": -10,
+     "note": 67
+    },
+    {
+     "beat": 127.625,
+     "length": 0.25,
+     "gain_db": -13,
+     "note": 72
+    }
+   ]
+  },
+  {
+   "instrument": "quiet_echo",
+   "notes": [
+    {
+     "beat": 36.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 57
+    },
+    {
+     "beat": 38.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 52
+    },
+    {
+     "beat": 46.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 48
+    },
+    {
+     "beat": 52.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 57
+    },
+    {
+     "beat": 54.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 62
+    },
+    {
+     "beat": 60.625,
+     "length": 0.3125,
+     "gain_db": -16,
+     "note": 48
+    },
+    {
+     "beat": 64.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 65.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 64
+    },
+    {
+     "beat": 66.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 69.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 72.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 64
+    },
+    {
+     "beat": 73.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 67
+    },
+    {
+     "beat": 74.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 64
+    },
+    {
+     "beat": 76.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 60
+    },
+    {
+     "beat": 77.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 60
+    },
+    {
+     "beat": 80.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 81.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 64
+    },
+    {
+     "beat": 82.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 85.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 72
+    },
+    {
+     "beat": 88.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 64
+    },
+    {
+     "beat": 89.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 62
+    },
+    {
+     "beat": 90.8125,
+     "length": 0.0625,
+     "gain_db": -15,
+     "note": 60
+    }
+   ]
+  },
+  {
+   "instrument": "soft_surf",
+   "notes": [
+    {
+     "beat": 96.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 100.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 104.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 108.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 112.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 116.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 120.25,
+     "length": 3,
+     "gain_db": -1
+    },
+    {
+     "beat": 124.25,
+     "length": 3,
+     "gain_db": -1
+    }
+   ]
+  }
+ ]
+}

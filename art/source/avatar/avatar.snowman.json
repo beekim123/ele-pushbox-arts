@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.snowman",
+ "name": "滚轮头像 · 雪人",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   ".........zzzzzz.........",
+   ".......zzttttttzz.......",
+   "......zttttttttttz......",
+   ".....zttttttttttttz.....",
+   ".....zttttttttttttz.....",
+   "....zttttttttttttuuz....",
+   "....ztttxztttxzuuuuz....",
+   "...zttttzztttzzuuuuuz...",
+   "...ztttttttttuuuuuuvz...",
+   "...ztttttttujjjjjjzvz...",
+   "....ztttttuujjjbzzvz....",
+   "....zttttuuubbzzvvvz....",
+   "....ztttzuuuuuzvvvvz....",
+   ".....zuuuuzuzvvvvvz.....",
+   "......zuuuuvvvvvvz......",
+   ".....zzzzuvvvvvzzzz.....",
+   "....ziiiiiiiiiiihhhz....",
+   "...ziiiiiiiiiiiiihhhz...",
+   "...ziiiiihhhiiiiiihhz...",
+   "....ztttttttttiitttz....",
+   "...zttttttttttihttttz...",
+   "..zttttttttzttihtttuuz..",
+   ".ztttttttttttthhtuuuuuz."
+  ]
+ ],
+ "usage": "收件人「雪人」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "和 char.snowman 同一套长相（煤球眼睛、胡萝卜鼻子、红围巾），一眼对得上。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "7fb6521bed6643b03341ee0460afb6197ad35802cf8884a3792859eb16ccaaf1"
+}

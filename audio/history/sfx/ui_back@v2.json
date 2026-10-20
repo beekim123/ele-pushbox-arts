@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:ui_back",
+ "version": 2,
+ "hash": "cbad9560a31e54f5c7ee3904573430fbbc7412c1722a276296073cae917da3da",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "ui_back",
+  "uid": "sfx:ui_back",
+  "name": "取消或返回",
+  "description": "G4/C4 下行双点，与确认保持相反方向。",
+  "seed": 170127,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "cbad9560a31e54f5c7ee3904573430fbbc7412c1722a276296073cae917da3da",
+  "gain_db": -15.629,
+  "instruments": [
+   {
+    "id": "ui",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1500,
+    "attack_ms": 8,
+    "decay_ms": 10,
+    "sustain": 0.6,
+    "release_ms": 25
+   }
+  ],
+  "duration_ms": 120,
+  "events": [
+   {
+    "instrument": "ui",
+    "start_ms": 0,
+    "duration_ms": 32,
+    "note": 67,
+    "gain_db": 0
+   },
+   {
+    "instrument": "ui",
+    "start_ms": 58,
+    "duration_ms": 37,
+    "note": 60,
+    "gain_db": 0
+   }
+  ]
+ }
+}

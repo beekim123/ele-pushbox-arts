@@ -1,0 +1,152 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.door",
+ "name": "门",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "terrain_overlay",
+ "palette": "endesga32",
+ "animations": {
+  "closed": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "opening": {
+   "fps": 12,
+   "loop": false,
+   "frames": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "open": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "closing": {
+   "fps": 12,
+   "loop": false,
+   "frames": [
+    4,
+    3,
+    2,
+    1,
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zxxxxxxxxxxxxxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxwwwwwwwwwwwwxz"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zxxxxxxxxxxxxxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxwwwwwwwwwwwwxz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zxxxxxxxxxxxxxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxwwwwwwwwwwwwxz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zxxxxxxxxxxxxxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxuvxuvxuvxuvxxz",
+   "zxwwwwwwwwwwwwxz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zxxxxxxxxxxxxxxz",
+   "zxwwwwwwwwwwwwxz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz",
+   "zx............xz"
+  ]
+ ],
+ "usage": "门格。关闭时 SDK 写 gate 材料，贴图盖在上面；门框始终可见，打开后只剩门框。配对符号叠加在门框中央上部。",
+ "notes": "竖条门，栏杆上收；配对符号单独绘制（mech.link_symbol）。",
+ "content_hash": "74fb99c41322092f4e8bdddac2cf38872a7d890a99b25fc7a61cca6ad39cd714"
+}

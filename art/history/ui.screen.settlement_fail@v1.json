@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settlement_fail",
+ "name": "失败结算",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.panel",
+  "avatar.zombie",
+  "cargo.vase"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settlement_fail",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "recipient": "zombie",
+  "cargo": "vase",
+  "reason": "hearts",
+  "picked": 30,
+  "kept": 15
+ },
+ "usage": "这一单没送成（心掉光或货物坏了）：没有小费，路上拾到的金币带回一半。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e46ea2a5a1354fc34a6227afad82fc4785c81de39900d891fb46fca7106cfee5"
+}

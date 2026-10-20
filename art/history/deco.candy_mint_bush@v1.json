@@ -1,0 +1,54 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.candy_mint_bush",
+ "name": "糖果王国 · 薄荷糖丛",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  8
+ ],
+ "anchor": [
+  6,
+  8
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....z..zz...",
+   "...zmzzmmz..",
+   "..ztmmmmmz..",
+   ".zzmnntnnzz.",
+   "zmtmmmnmmmmz",
+   "zmmnmnnnmnmz",
+   "znnnnnnnnnnz",
+   ".zzzzzzzzzz."
+  ],
+  [
+   ".....z..zz..",
+   "....zmzzmmz.",
+   "...ztmmmmmz.",
+   ".zzzmntmnnz.",
+   "zmtmmmnmmmmz",
+   "zmmnmnnnmnmz",
+   "znnnnnnnnnnz",
+   ".zzzzzzzzzz."
+  ]
+ ],
+ "usage": "长在地面上的一丛薄荷糖叶：深浅两种绿的叶片，几点白色糖霜高光，上面的叶尖随风轻轻摆。画在箱子和人物后面，只是装饰。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f7f10e53abec06879fc40988af33bdaafc0438fdf3e54115859c7494ee90c1ee"
+}

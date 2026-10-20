@@ -1,0 +1,171 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.seesaw",
+ "name": "跷跷板",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  20
+ ],
+ "anchor": [
+  8,
+  20
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "end": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "end_low": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "end_high": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "mid": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "pivot": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzzz",
+   "EEEEEEEEEEuuuuuz",
+   "dddddddeddvkkzzz",
+   "dddeedddddvkzzkz",
+   "ffffffffffwwwwwz",
+   "zzzzzzzzzzzzzzzz",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zz..............",
+   "EEzzzz..........",
+   "ddEEEEzzzz......",
+   "ddddddEEEEzzzz..",
+   "ffdeeddedduuuuzz",
+   "zzffffddddvkkzuz",
+   "..zzzzffffvkzzzz",
+   "......zzzzwwwwkz",
+   "..........zzzzwz",
+   "..............zz",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "..............zz",
+   "..........zzzzuz",
+   "......zzzzuuuuzz",
+   "..zzzzEEEEvkkzkz",
+   "zzEEEEdeddvkzzwz",
+   "EEddddddddwwwwzz",
+   "dddeedffffzzzz..",
+   "ddffffzzzz......",
+   "ffzzzz..........",
+   "zz..............",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzzz",
+   "EEEEEEEfEEEEEEEE",
+   "dddddddfdddeeddd",
+   "ddeedddfdddddddd",
+   "ffffffffffffffff",
+   "zzzzzzzzzzzzzzzz",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzzz",
+   "EEEEEEEEEEEEEEEE",
+   "ddddddduvdddeedd",
+   "ddeedddvwddddddd",
+   "ffffffffffffffff",
+   "zzzzzzzzzzzzzzzz",
+   ".......zz.......",
+   "......zuwz......",
+   "......zuwz......",
+   ".....zuvwwz.....",
+   ".....zuvwwz.....",
+   "....zuvvwwwz....",
+   "....zuvvwwwz....",
+   "...zuvvvwwwwz...",
+   "...zuvvvwwwwz...",
+   "..zzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "跷跷板（机关 seesaw）：每格画一帧，锚点在格子底边中点，下面 16 行是格子、上面 4 行留给翘起的端头。两个端点格画 end 系列（画的是右端，左端水平镜像），端点之间的格子画 mid，正中那格画 pivot（板下是铁支架；两端之间格数为偶数时放在靠左的中间格）。板面顶边就是格子顶边，人和箱子站在端点上面一格。三种状态：平＝两端都画 end；左低＝左端 end_low（镜像）、右端 end_high；右低＝右端 end_low、左端 end_high（镜像）。只有端点格倾斜，mid / pivot 一直是平的（workbench/js/core/mech/seesaw.js：一端落下新载重，另一端把上面的东西弹起）。",
+ "notes": "关卡模式第 4 章 G09、G10，第 6 章 E06。木板加黄黑斜纹铁端头（和升降台一样表示会动的机关），铁三角支架；端头低/高各沉下/翘起 4 像素，形状上一眼看出哪头低。",
+ "content_hash": "3b4e1321e05800b73fe5f5e927349e242aca4e8bcd250df8b2460bd79cbe1721"
+}

@@ -1,0 +1,43 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.cave_crystal",
+ "name": "晶窟 · 紫晶簇",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  8
+ ],
+ "anchor": [
+  4,
+  8
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...z....",
+   "..zCz.z.",
+   "..zDzzCz",
+   ".zCtDzDz",
+   ".zCDCzCz",
+   "zBzCDzBz",
+   "zBzBCzBz",
+   "zzzzzzzz"
+  ]
+ ],
+ "usage": "地面装饰。",
+ "notes": "",
+ "content_hash": "efea73ac5f71e7eedbb1e9e070959f0a03e7249f0a0a1b1e4e8b969632c1b3cf"
+}

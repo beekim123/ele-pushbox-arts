@@ -1,0 +1,139 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.candy_jelly",
+ "name": "软糖 · 糖果王国",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "squash": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    1,
+    2
+   ]
+  },
+  "launch": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    3,
+    4
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".zzzzzzzzzzzzzz.",
+   "zDDttDDCCCCCCCCz",
+   "zDtDDCCCCCCCCCCz",
+   "zDDCCCCCCCCCCCCz",
+   "zDCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCDCz",
+   "zCCCCCCCCCCCCDCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCBz",
+   "zCCCCCCCCCCCCCBz",
+   "zBBBBBBBBBBBBBBz",
+   ".zzzzzzzzzzzzzz."
+  ],
+  [
+   "................",
+   "................",
+   ".zzzzzzzzzzzzzz.",
+   "zDDttDDCCCCCCCCz",
+   "zDtDDCCCCCCCCCCz",
+   "zDCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCDCz",
+   "zCCCCCCCCCCCCDCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCBz",
+   "zCCCCCCCCCCCCCBz",
+   "zBBBBBBBBBBBBBBz",
+   ".zzzzzzzzzzzzzz."
+  ],
+  [
+   ".......u........",
+   "...u...u....u...",
+   "...u........u...",
+   ".zzzzzzzzzzzzzz.",
+   "zDDDttDDDCCCCCCz",
+   "zDCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCDCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCCz",
+   "zCCCCCCCCCCCCCBz",
+   "zCCCCCCCCCCCCCBz",
+   "zCCCCCCCCCCCCCBz",
+   "zBBBBBBBBBBBBBBz",
+   ".zzzzzzzzzzzzzz."
+  ],
+  [
+   "....zzzzzzzz....",
+   "...zDttDCCCCz...",
+   "..zDtDDCCCCCCz..",
+   "t.zDDCCCCCCCCz.t",
+   "t.zDCCCCCCCCCz.t",
+   "..zCCCCCCCCCCz..",
+   "..zCCCCCCCCCCz..",
+   "..zCCCCCCCCCDz..",
+   "u.zCCCCCCCCCDz.u",
+   "..zCCCCCCCCCCz..",
+   "..zCCCCCCCCCCz..",
+   "..zCCCCCCCCCBz..",
+   "..zCCCCCCCCCBz..",
+   "..zCCCCCCCCCBz..",
+   "..zBBBBBBBBBBz..",
+   "...zzzzzzzzzz..."
+  ],
+  [
+   "..zzzzzzzzzzzz..",
+   ".zDDttDDCCCCCCz.",
+   ".zDtDDCCCCCCCCz.",
+   ".zDDCCCCCCCCCCz.",
+   ".zDCCCCCCCCCCCz.",
+   ".zCCCCCCCCCCCCz.",
+   ".zCCCCCCCCCCCCz.",
+   ".zCCCCCCCCCCCDz.",
+   ".zCCCCCCCCCCCDz.",
+   ".zCCCCCCCCCCCCz.",
+   ".zCCCCCCCCCCCCz.",
+   ".zCCCCCCCCCCCBz.",
+   ".zCCCCCCCCCCCBz.",
+   ".zCCCCCCCCCCCBz.",
+   ".zBBBBBBBBBBBBz.",
+   "..zzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "糖果王国的软糖（机关 bounce），一格画一份，锚点在格子底边中点：一整格的葡萄软糖（C，暗面 B，高光 D 和 t），顶边就是格子顶边，四角圆一点；平时画 idle，和地面一样一眼认得出，颜色和饼干、糖霜、规则材料都分得开。有东西落上去时播放一次 squash（顶边先压下 2 px、再压下 3 px，上方有落下线），把它弹起来时播放一次 launch（收成窄高的一块、两侧有速度线，再回到原宽），放完回到 idle。第 6 节定的是 16 × 16，弹起只在格子里表现，不往格子上面画。确认前 content/catalog/mechanisms.json 里 bounce 的 assets 不登记，关卡模式用不用见 delivery-candy.md 第 7 节第 12 条；接进配送画面是 DLV-08 的事。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "a45ce58f8b0d54fae799b9e0befaf62a6480097c836fab33c24d3abfc7b92ab0"
+}

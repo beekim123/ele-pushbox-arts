@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.vase",
+ "name": "货物 · 花瓶",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "cracked": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "......ztuz......",
+   "......ztuz......",
+   ".....zrrrrz.....",
+   "....zttttttz....",
+   "...ztqtqtqttz...",
+   "...ztrqrqrquz...",
+   "...ztttttttuz...",
+   "...ztqtqtqtuz...",
+   "....ztqtqtqz....",
+   ".....ztttuz.....",
+   ".....zrrrrz.....",
+   "......zzzz......",
+   "................",
+   "................"
+  ],
+  [
+   "......zzzz......",
+   ".....zttttz.....",
+   "......ztuz......",
+   "......ztuz......",
+   ".....zrrrrz.....",
+   "....zttttztz....",
+   "...ztqtqzqttz...",
+   "...ztrqrqzquz...",
+   "...zttttzttuz...",
+   "...ztqtztqtuz...",
+   "....ztqtztqz....",
+   ".....ztttuz.....",
+   ".....zrrrrz.....",
+   "......zzzz......",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "货物图标：花瓶（青花）。cracked 用在完好度下降时。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "0eeb7e49c72daafc67a145c3641528958e97b447d184c3bc777a8cd2d7947944"
+}

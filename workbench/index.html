@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>渡界人 PORTITOR · 工作台</title>
+<link rel="stylesheet" href="css/workbench.css">
+<link rel="stylesheet" href="audio.css">
+<script src="js/app/appearance.js"></script>
+<script src="js/app/nav.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav" aria-expanded="true" aria-label="菜单"><span class="bars" aria-hidden="true"></span></button>
+  <div class="brand"><strong>渡界人</strong><span>PORTITOR · 美术与声音工作台</span></div>
+  <div class="crumb" id="nav-crumb"></div>
+  <div class="top-right">
+    <a class="drafts-flag" id="drafts-flag" href="#export" hidden></a>
+    <label class="appearance"><span class="appearance-label">网页外观</span>
+      <select id="appearance">
+        <option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option>
+      </select>
+    </label>
+  </div>
+</header>
+<nav class="nav" id="nav" aria-label="工作台页面"></nav>
+<div class="nav-scrim" id="nav-scrim" hidden></div>
+
+<main>
+
+
+
+
+
+
+  <section class="view" id="view-scenes" hidden>
+    <aside class="side" aria-label="场景列表"><div id="scene-list"></div></aside>
+    <div class="work">
+      <div class="stage-host" id="scene-stage"></div>
+      <div class="under" id="scene-steps"></div>
+    </div>
+    <aside class="info" id="scene-info" aria-label="场景说明"></aside>
+  </section>
+
+  <section class="view" id="view-assets" hidden>
+    <aside class="side" aria-label="筛选">
+      <input type="search" id="asset-search" placeholder="搜索名称或标识" aria-label="搜索资产">
+      <div class="filter-group" id="asset-categories" role="group" aria-label="分类"></div>
+      <div class="filter-group" id="asset-status" role="group" aria-label="状态"></div>
+    </aside>
+    <div class="work">
+      <p class="result-count" id="asset-count"></p>
+      <div class="cards" id="asset-cards"></div>
+    </div>
+    <aside class="info inspector" id="asset-inspector" aria-label="资产详情"></aside>
+  </section>
+
+  <section class="view" id="view-edit" hidden>
+    <div class="edit-layout" id="edit-root"></div>
+  </section>
+
+  <section class="view single" id="view-review" hidden>
+    <div class="page" id="review-root"></div>
+  </section>
+
+  <section class="view single" id="view-export" hidden>
+    <div class="page" id="export-root"></div>
+  </section>
+  <section class="view single" id="view-audio" hidden>
+    <div class="page audio-page" id="audio-root"></div>
+  </section>
+
+  <section class="view single" id="view-ui-proposals" hidden>
+    <div class="page" id="ui-proposals-root"></div>
+  </section>
+  <section class="view single" id="view-concepts" hidden>
+    <div class="page concepts-page" id="concepts-root"></div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="data/bundle.js"></script>
+<script src="data/content.js"></script>
+<script src="data/audio.js"></script>
+<script src="js/core/raster.js"></script>
+<script src="js/core/font-data.js"></script>
+<script src="js/core/font-small.js"></script>
+<script src="js/core/font-delivery.js"></script>
+<script src="js/core/font-extra.js"></script>
+<script src="js/core/font-ui.js"></script>
+<script src="js/core/font-rooms2.js"></script>
+<script src="js/core/sprites.js"></script>
+<script src="js/core/i18n.js"></script>
+<script src="js/core/tilemodel.js"></script>
+<script src="js/core/terrain.js"></script>
+<script src="js/core/terrain-diyu.js"></script>
+<script src="js/core/terrain-jeju.js"></script>
+<script src="js/core/terrain-candy.js"></script>
+<script src="js/core/terrain-polar.js"></script>
+<script src="js/core/ambient.js"></script>
+<script src="js/core/env.js"></script>
+<script src="js/core/matter.js"></script>
+<script src="js/core/scene.js"></script>
+<script src="js/core/dialogue.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/core/ui-delivery.js"></script>
+<script src="js/core/ui-kit.js"></script>
+<script src="js/core/ui-skins.js"></script>
+<script src="js/core/ui-style.js"></script>
+<script src="js/core/rooms.js"></script>
+<script src="js/core/mapgen.js"></script>
+<script src="js/core/rooms2.js"></script>
+<script src="js/core/mapgen2.js"></script>
+<script src="js/core/delivery-scene.js"></script>
+<script src="js/core/delivery-scene2.js"></script>
+<script src="js/app/store.js"></script>
+<script src="js/app/stage.js"></script>
+<script src="js/app/views/scenes.js"></script>
+<script src="js/app/views/assets.js"></script>
+<script src="js/app/views/editor.js"></script>
+<script src="js/app/views/review.js"></script>
+<script src="js/app/views/export.js"></script>
+<script src="js/app/views/audio.js"></script>
+<script src="js/app/views/ui-proposals.js"></script>
+<script src="js/core/ui-common.js"></script>
+<script src="js/core/ui-screens-level.js"></script>
+<script src="js/core/ui-screens-result.js"></script>
+<script src="js/core/font-delivery2.js"></script>
+<script src="js/core/font-onboarding.js"></script>
+<script src="js/core/ui-screens-delivery.js"></script>
+<script src="js/core/onboarding-fx.js"></script>
+<script src="js/app/views/concepts.js"></script>
+<script src="js/core/font-ui11.js"></script>
+<script src="js/core/ui-screens-settings2.js"></script>
+<script src="js/core/ui-onboarding.js"></script>
+<script src="js/app/main.js"></script>
+<script src="js/concepts/cenote.js"></script>
+<script src="js/concepts/stepwell.js"></script>
+<script src="js/concepts/wonderland.js"></script>
+<script src="js/concepts/frontier.js"></script>
+<script src="js/concepts/baba_yaga.js"></script>
+<script src="js/concepts/inari.js"></script>
+<script src="js/concepts/existing-worlds.js"></script>
+<script src="js/concepts/ink_town.js"></script>
+<script src="js/concepts/cyber_market.js"></script>
+<script src="js/concepts/undersea.js"></script>
+<script src="js/concepts/dino.js"></script>
+<script src="js/concepts/steam_city.js"></script>
+<script src="js/concepts/muertos.js"></script>
+<script src="js/concepts/moon.js"></script>
+<script src="js/concepts/mud_town.js"></script>
+<script src="js/concepts/pirate_cove.js"></script>
+<script src="js/concepts/venice.js"></script>
+<script src="js/concepts/aegean.js"></script>
+<script src="js/concepts/andes.js"></script>
+<script src="js/concepts/savanna.js"></script>
+<script src="js/concepts/spaceport.js"></script>
+<script src="js/concepts/floating_market.js"></script>
+<script src="js/concepts/xianxia.js"></script>
+<script src="js/concepts/bamboo.js"></script>
+<script src="js/concepts/polder.js"></script>
+<script src="js/concepts/desert.js"></script>
+<script src="js/concepts/countryside.js"></script>
+<script src="js/concepts/graveyard.js"></script>
+<script src="js/concepts/fjord.js"></script>
+<script src="js/concepts/glowworm_cave.js"></script>
+<script src="js/concepts/clock_tower.js"></script>
+<script src="js/concepts/whale_belly.js"></script>
+<script src="js/concepts/dewdrop.js"></script>
+<script src="js/concepts/bubble_realm.js"></script>
+<script src="js/concepts/reed_isles.js"></script>
+<script src="js/concepts/endless_library.js"></script>
+<script src="js/concepts/beehive.js"></script>
+<script src="js/concepts/lightning_lake.js"></script>
+<script src="js/concepts/salt_mine.js"></script>
+<script src="js/concepts/kelp_forest.js"></script>
+<script src="js/concepts/balloon_valley.js"></script>
+<script src="js/concepts/tree_heart.js"></script>
+<script src="js/concepts/jellyfish.js"></script>
+<script src="js/concepts/miniature.js"></script>
+<script src="js/concepts/matmata.js"></script>
+<script src="js/concepts/vent.js"></script>
+<script src="js/concepts/kite_sky.js"></script>
+<script src="js/concepts/carpet_loom.js"></script>
+<script src="js/concepts/leafcutter.js"></script>
+<script src="js/concepts/supra_table.js"></script>
+<script src="js/concepts/sheep_dream.js"></script>
+<script src="js/concepts/impossible_hall.js"></script>
+<script src="js/concepts/tea_factory.js"></script>
+</body>
+</html>

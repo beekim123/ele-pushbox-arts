@@ -1,0 +1,171 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.jeju_seesaw",
+ "name": "跷跷板 · 济州跳板",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  20
+ ],
+ "anchor": [
+  8,
+  20
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "end": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "down": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "launch": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "mid": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "pivot": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzz.",
+   "kkkkkkkkkkklDDDz",
+   "jjaajjjjjjjliiiz",
+   "aaaaaaaaaaalhhhz",
+   "zzzzzzzzzzzzzzz.",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzz..t...u..u..",
+   "kkkkzzzz..t..u..",
+   "jjaakkkkzzzz.t..",
+   "aaaajjjjkkklzzz.",
+   "zzzzaaaajjjlDDDz",
+   "....zzzzaaaliiiz",
+   "........zzzzhhhz",
+   "............zzz.",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "............zzz.",
+   "........zzzzDDDz",
+   "....zzzzkkkliiiz",
+   "zzzzkkkkjjjlhhhz",
+   "kkkkjjjjaaalzzz.",
+   "jjaaaaaazzzz.t..",
+   "aaaazzzz..t..u..",
+   "zzzz..t...u..u..",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzzz",
+   "kkkkkkkkkkkkkkkk",
+   "jaajjjjjjjjaaajj",
+   "aaaaaaaaaaaaaaaa",
+   "zzzzzzzzzzzzzzzz",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "zzzzzzzzzzzzzzzz",
+   "kkkkkkkkkkkkkkkk",
+   "jaajjjjjjjjjjjjj",
+   "aaaaaaaaaaaaaaaa",
+   "zzzzzzzzzzzzzzzz",
+   "..cEcfccEEfEcE..",
+   ".zccEeEccceccEzd",
+   "czEccfEcEcfcEdz.",
+   ".zcEceccEcecddz.",
+   ".zccEfcEccfcEdzd",
+   "EzEcEeEcccecddz.",
+   ".zdEdfdEdEfdFdz.",
+   "dzFdFeFdFFeFdFzF",
+   ".zFFefFeFFfeFFz.",
+   ".zeFeeFeeFeeFez.",
+   "..zzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "济州跳板（널뛰기）的跷跷板（机关 seesaw），每格画一帧，锚点在格子底边中点，下面 16 行是格子、上面 4 行留给弹起的端头：两个端点格画 end（画的是右端，左端水平镜像），端点之间的格子画 mid，正中那格画 pivot（板下是草垛支点，两端之间格数为偶数时放在靠左的中间格）；板面顶边就是格子顶边，人和箱子站在端点上面一格。一端落下新载重时，这一端换成 down（压下 3 px、上方有动势线），另一端换成 launch（翘起 3 px、下方有动势线），被弹的东西升起、横移、落位以后两端换回 end；被挡住（seesaw-blocked）时两端也闪一下 down / launch 再回 end。端点格是实心的（workbench/js/core/mech/seesaw.js）；房间里端点之间的格子一般是井壁石墙，跳板从墙里穿过，墙格上画不画 mid / pivot 由 DLV-05 定。确认前 content/catalog/mechanisms.json 里 seesaw 的 assets 不登记，关卡模式用不用见 delivery-jeju.md 第 7 节第 12 条。",
+ "notes": "橙色漆板、红漆端头、黄色分隔带，区别于木箱（棕黄）、承重桥（沙岩色）、码头栈道（深棕灰）；草垛是浅色稻草捆，两道草绳，两头露出草茬。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "edf5de8a43ad78e9fdfa3e3b75825a1b414396488966770f392cb85a72e212f4"
+}

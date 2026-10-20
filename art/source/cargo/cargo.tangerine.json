@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.tangerine",
+ "name": "货物 · 橘子筐",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "damaged": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   ".......zzz......",
+   "......zznmz.....",
+   ".....zkjjz......",
+   "...zzzjjjzzzz...",
+   "..zkjzjjbzkjjz..",
+   "..zjjjzzzzjjjz..",
+   "..zjjbzbbzjjbz..",
+   ".zzzzzzzzzzzzzz.",
+   ".zddcddddcddddz.",
+   ".zeefeefeefeefz.",
+   "..zfeefeefeefz..",
+   "..zeefeefeefez..",
+   "...zzzzzzzzzz...",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzz....zzz...",
+   "..zkjbz..zkjbz..",
+   "..zjbjzzzzjbjz..",
+   "..zjjbzbbzjjbz..",
+   ".zzzzzzzzzzzzzz.",
+   ".zddcddddcddddz.",
+   ".zeefeefeefeefz.",
+   "..zfeefeefeefz..",
+   "..zeefeefeefez..",
+   "...zzzzzzzzzz...",
+   "................"
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：竹筐装的济州橘子（감귤）。人被跷跷板弹起来时颠出一个，完好度 −1；有损坏时换成 damaged（少了顶上那个、剩下的有压痕）。不送橘园阿姨。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "97cb9d54f748ed95555162179f17ff504894ea4e1c4f09143402f7e41b0f6581"
+}

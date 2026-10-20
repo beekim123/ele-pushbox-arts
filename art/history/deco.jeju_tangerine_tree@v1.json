@@ -1,0 +1,70 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.jeju_tangerine_tree",
+ "name": "济州 · 橘子树",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......oooo......",
+   "....oonmmnoo....",
+   "...onmmmmnnno...",
+   "..onmkjnnnnmno..",
+   "..onnjjnnkjnno..",
+   ".onnnnnnnjjnnno.",
+   ".onkjnnmnnnnnoo.",
+   ".onjjnnnnnkjnoo.",
+   "..oonnnnnnjjoo..",
+   "...ooonkjnoooo..",
+   ".....oojjooo....",
+   ".......ef.......",
+   ".......ef.......",
+   "......eeff......",
+   ".....eeefff....."
+  ],
+  [
+   "................",
+   ".......oooo.....",
+   ".....oonmmnoo...",
+   "....onmmmmnnno..",
+   "...onmkjnnnnmno.",
+   "..onnjjnnkjnno..",
+   ".onnnnnnnjjnnno.",
+   ".onkjnnmnnnnnoo.",
+   ".onjjnnnnnkjnoo.",
+   "..oonnnnnnjjoo..",
+   "...ooonkjnoooo..",
+   ".....oojjooo....",
+   ".......ef.......",
+   ".......ef.......",
+   "......eeff......",
+   ".....eeefff....."
+  ]
+ ],
+ "usage": "长在地面上的矮橘子树：深绿的圆树冠上挂着五个橘黄的果子，短树干。树冠上半部随风轻轻摆。画在箱子和人物后面，只是装饰，不能摘、不能互动。",
+ "notes": "橘子是济州的特产；果子用橘色 j（亮点 k 在左上），和货物「橘子筐」同色，一看就是同一种橘子。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "ca05de66bc4d923a3959382b0f40e61a9f15c3114b4582133d5c1a798445b3d7"
+}

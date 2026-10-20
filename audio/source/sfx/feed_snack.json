@@ -1,0 +1,55 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "feed_snack",
+ "uid": "sfx:feed_snack",
+ "name": "喂零食",
+ "description": "C4 向 G3 小啵，然后 G4 轻快答音。",
+ "seed": 170122,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "b19fc407d247b9d62e7df1ee4ef5a4c74b2f914f14c3b32f2a983e7fe0b755a7",
+ "gain_db": -15.5826,
+ "instruments": [
+  {
+   "id": "pop",
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 1200,
+   "attack_ms": 10,
+   "decay_ms": 25,
+   "sustain": 0.58,
+   "release_ms": 50
+  },
+  {
+   "id": "reply",
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 1600,
+   "attack_ms": 12,
+   "decay_ms": 35,
+   "sustain": 0.55,
+   "release_ms": 55
+  }
+ ],
+ "duration_ms": 260,
+ "events": [
+  {
+   "instrument": "pop",
+   "start_ms": 0,
+   "duration_ms": 75,
+   "note": 60,
+   "slide_to_note": 55,
+   "gain_db": 0
+  },
+  {
+   "instrument": "reply",
+   "start_ms": 130,
+   "duration_ms": 75,
+   "note": 67,
+   "gain_db": 0
+  }
+ ]
+}

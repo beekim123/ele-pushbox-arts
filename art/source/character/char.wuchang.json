@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.wuchang",
+ "name": "黑白无常（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  16
+ ],
+ "anchor": [
+  12,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....zz..........zz.....",
+   "....ztvz........zyuz....",
+   "....zttz........zyyz....",
+   "...ztvtuz......zyuyxz...",
+   "..zttttuuz....zyyyyxxz..",
+   ".zzzzzzzzzz..zzzzzzzzzz.",
+   "..zttttttz....zxxwwxxz..",
+   "..ztzttztz....zwzwwzwz..",
+   "..zttiittz....zwwzzwwz..",
+   ".zzuziizuzz..zzzwwwwzzz.",
+   "zttuziizuttzzxxyzwwzyxxz",
+   "zttuuziuuttzzxyyyzzyyyxz",
+   ".zttuuuuttz..zxyvyyvyxz.",
+   ".zttuuuuttz..zxyyvvyyxz.",
+   ".zuuuuuuuvz..zyyyyyyyyz.",
+   "..zzzzzzzz....zzzzzzzz.."
+  ],
+  [
+   ".....zz..........zz.....",
+   "....ztvz........zyuz....",
+   "....zttz........zyyz....",
+   "...ztvtuz......zyuyxz...",
+   "..zttttuuz....zyyyyxxz..",
+   ".zzzzzzzzzz..zzzzzzzzzz.",
+   "..zttttttz....zxxwwxxz..",
+   "..ztzttztz....zwzwwzwz..",
+   "..zttiittz....zwwzzwwz..",
+   ".zzuziizuzz..zzzwwwwzzz.",
+   "zttuziizuttzzxxyzwwzyxxz",
+   "zttuuuiuuttzzxyyyzzyyyxz",
+   ".zttuuuuttz..zxyvyyvyxz.",
+   ".zttuuuuttz..zxyyvvyyxz.",
+   ".zuuuuuuuvz..zyyyyyyyyz.",
+   "..zzzzzzzz....zzzzzzzz.."
+  ],
+  [
+   "....ztvz.........zz.....",
+   "....zttz........zyuz....",
+   "...ztvtuz.......zyyz....",
+   "..zttttuuz.....zyuyxz...",
+   ".zzzzzzzzzz...zyyyyxxz..",
+   "..zttttttz...zzzzzzzzzz.",
+   "..zzttttzz....zwwwwwwz..",
+   "..zttiittz....zwzwwzwz..",
+   ".zzuziizuzz...zwzwwzwz..",
+   "zttuziizuttz.zzzwwwwzzz.",
+   "zttuuziuuttzzxxyzwwzyxxz",
+   ".zttuuuuttz.zxyyyzzyyyxz",
+   ".zttuuuuttz..zxyvyyvyxz.",
+   ".zuuuuuuuvz..zxyyvvyyxz.",
+   "..zzzzzzzz...zyyyyyyyyz.",
+   "..zzzzzzzz....zzzzzzzz.."
+  ],
+  [
+   ".....zz.........zyuz....",
+   "....ztvz........zyyz....",
+   "....zttz.......zyuyxz...",
+   "...ztvtuz.....zyyyyxxz..",
+   "..zttttuuz...zzzzzzzzzz.",
+   ".zzzzzzzzzz...zwwwwwwz..",
+   "..zttttttz....zwzwwzwz..",
+   "..zzttttzz....zwwzzwwz..",
+   "..zttiittz...zzzwwwwzzz.",
+   ".zzuziizuzz.zxxyzwwzyxxz",
+   "zttuziizuttzzxyyyzzyyyxz",
+   "zttuuziuuttz.zxyvyyvyxz.",
+   ".zttuuuuttz..zxyyvvyyxz.",
+   ".zttuuuuttz..zyyyyyyyyz.",
+   ".zuuuuuuuvz...zzzzzzzz..",
+   "..zzzzzzzz....zzzzzzzz.."
+  ]
+ ],
+ "usage": "收件人·黑白无常：一对勾魂使者，左边白无常（白高帽上写着字、白衣、笑着吐长舌头），右边黑无常（黑高帽上写着白字、灰脸皱眉、黑衣挂锁链）。站在一起算一个收件人，不走动（idle，白无常的舌头晃一晃）。收到货物时一起蹦一下（win）。图宽 24 像素（比一格宽 8 像素），左右各伸出半格的四分之一，摆放时两边要留空。面朝右绘制，朝左时水平镜像（两人位置互换也没关系）。",
+ "notes": "民间形象偏「憨」：不画獠牙血口。黑无常在暗背景里靠灰脸和衣服上的浅色描边读出来。纸扎房子他们俩和祖先都收。 配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "51aac273292137af5b1ecd2c6a505d15928f5ab1863350ecd4f1164cb0b6ec08"
+}

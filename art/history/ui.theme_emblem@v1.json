@@ -1,0 +1,176 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.theme_emblem",
+ "name": "主题徽章",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "dungeon": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "ruins": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "cave": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "forest": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "sky": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "cosmos": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "....zzzzzzzz....",
+   "...zxxxxxxxxz...",
+   "..zxwwwwwwwwxz..",
+   "..zxwzwzwzwzxz..",
+   "..zxwzwzwzwzxz..",
+   "..zxwzwzwzwzxz..",
+   "..zxwzwzwzwzxz..",
+   "..zxwzwzwzwzxz..",
+   "..zxwwwwwwwwxz..",
+   "..zxxxxxxxxxxz..",
+   "..zzzzzzzzzzzz..",
+   "....z......z....",
+   "...zjz....zjz...",
+   "...zkz....zkz...",
+   "....z......z...."
+  ],
+  [
+   "................",
+   ".......zz.......",
+   "......zbbz......",
+   ".....zbddbz.....",
+   "....zbddddbz....",
+   "....zbdzzdbz....",
+   "...zbddzzddbz...",
+   "...zbddddddbz...",
+   "..zbddzddzddbz..",
+   "..zbddddddddbz..",
+   ".zbddddzzddddbz.",
+   ".zbddddzzddddbz.",
+   "zbbbbbbbbbbbbbbz",
+   "zeeeeeeeeeeeeeez",
+   "zzzzzzzzzzzzzzzz",
+   "................"
+  ],
+  [
+   "................",
+   "......z.........",
+   ".....zCz....z...",
+   ".....zDz...zCz..",
+   "....zCtDz..zDz..",
+   "....zCDCz.zCtDz.",
+   "...zBCDCzzzCDCz.",
+   "...zBCDCzBzBCDz.",
+   "..zBBCDzzCzBBCz.",
+   "..zBzCCzCtDzBCz.",
+   "..zBzBCzCDCzBzz.",
+   ".zBBzBCzBCDzBz..",
+   ".zBzzBzzBBCzBz..",
+   ".zzzzzzzzzzzzz..",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   ".......zz.......",
+   "......zmmz......",
+   ".....zmmnmz.....",
+   "....zmmmmnnz....",
+   "...zmmmnmmnnz...",
+   "..zmmnmmmnmnnz..",
+   "..znmmmnmmmnnz..",
+   "...zznmmmnnzz...",
+   "....zzznnzzz....",
+   ".......zfz......",
+   ".......zfz......",
+   ".......zfz......",
+   "......zffz......",
+   "....zzzzzzzz....",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   "....zzttttzz....",
+   "...zttttttttz...",
+   "..zttttttttttzz.",
+   ".zzttttttttttttz",
+   "zttttttttttttuuz",
+   "zttttttttttuuuuz",
+   "zuuttttttuuuuuvz",
+   ".zvuuuuuuuuuuvz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   ".....zzzzzz.....",
+   "...zzCCCCCDzz...",
+   "..zBCCCCCCCDDz..",
+   ".zBBCCCCCCCCCDz.",
+   ".zBBCCCCCCCCCCz.",
+   "zDDDDDDDDDDDDDDz",
+   ".zBBBCCCCCCCCCz.",
+   "..zBBBCCCCCCCz..",
+   "...zzBBBCCCzz...",
+   ".....zzzzzz.....",
+   "................",
+   "..t.........t...",
+   "........u.......",
+   "...u............",
+   "..............t."
+  ]
+ ],
+ "usage": "章节卡上代替文字的主题标志：石牢铁窗与火把、神庙金字塔、晶窟紫晶、古森树冠、圣域云朵、星站行星。",
+ "notes": "",
+ "content_hash": "116c2633d6261bbcaf0c121b0c45cd874d52a2b53188c3dcc1025430d37c1076"
+}

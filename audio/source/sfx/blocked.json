@@ -1,0 +1,37 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "blocked",
+ "uid": "sfx:blocked",
+ "name": "不能操作",
+ "description": "C3 低软咚，无惩罚性高音，单次安静结束。",
+ "seed": 170130,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "91ff297787e3c8224f65ea5fcf372c69d26613546893b247309edf6c49b6573e",
+ "gain_db": -15.1955,
+ "instruments": [
+  {
+   "id": "blocked",
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 700,
+   "attack_ms": 14,
+   "decay_ms": 30,
+   "sustain": 0.5,
+   "release_ms": 50
+  }
+ ],
+ "duration_ms": 140,
+ "events": [
+  {
+   "instrument": "blocked",
+   "start_ms": 0,
+   "duration_ms": 90,
+   "note": 48,
+   "gain_db": 0
+  }
+ ]
+}

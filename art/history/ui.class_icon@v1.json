@@ -1,0 +1,90 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.class_icon",
+ "name": "观察 · 格子类别",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  7
+ ],
+ "anchor": [
+  3,
+  3
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "solid": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "earth": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "sand": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "water": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzz",
+   "zwwvwwz",
+   "zwxxwxz",
+   "zvwwwvz",
+   "zwxwxwz",
+   "zwwvwwz",
+   "zzzzzzz"
+  ],
+  [
+   "zzzzzzz",
+   "zeefeez",
+   "zfeevez",
+   "zeeeefz",
+   "zevfeez",
+   "zeeefez",
+   "zzzzzzz"
+  ],
+  [
+   "...z...",
+   "..zcz..",
+   ".zcdcz.",
+   "zcdcdcz",
+   "zdcdcdz",
+   "zzzzzzz",
+   "......."
+  ],
+  [
+   "...z...",
+   "..zrz..",
+   ".zrrrz.",
+   "zrrsrrz",
+   "zrqrrrz",
+   ".zqqqz.",
+   "..zzz.."
+  ]
+ ],
+ "usage": "观察模式（按住 Tab）时画在每格中心，表示规则判定的格子类别。",
+ "notes": "",
+ "content_hash": "e90a69439d78f4b829d7f0ac5bc6c5ce642a2291ce702091999c573241819e95"
+}

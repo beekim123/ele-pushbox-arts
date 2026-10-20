@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.buckwheat_jelly",
+ "name": "货物 · 荞麦凉粉",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "chipped": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   ".zEmEzEEnEzEmEz.",
+   ".zFFFzFFFFzFFez.",
+   ".zFFezFFFezFFez.",
+   ".zzzzzzzzzzzzzz.",
+   ".zEEmEzEEnzEEEz.",
+   ".zFFFFzFFFzFFez.",
+   ".zFFFezFFezFFez.",
+   "zuttttttttttttuz",
+   ".zuuttttttttuuz.",
+   "..zzzzzzzzzzzz..",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzz......",
+   ".zEmEzEEnEz.....",
+   ".zFFFzFFFFz.....",
+   ".zFFezFFFezzzz..",
+   ".zzzzzzzzzzzzzz.",
+   ".zEEmEzEEnzEEEz.",
+   ".zFzFFzFFFzFFzz.",
+   "..zezezFFezFzFz.",
+   "zuttttttttttttuz",
+   ".zuuttttttttuuz.",
+   "..zzzzzzzzzzzz..",
+   "................"
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：荞麦凉粉（메밀묵），切成小块摆在白盘子上。落下 2 格或以上就碎一块（落在沙上没事）；有损坏时换成 chipped（右上那块碎了、盘子上有碎渣）。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "7bfdadaf4da1bc086033aced9a129cbc81863fd9ac40a13b8af25c2bb190bb65"
+}

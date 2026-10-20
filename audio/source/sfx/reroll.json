@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "reroll",
+ "uid": "sfx:reroll",
+ "name": "重转",
+ "description": "C4/E4/C4 短回旋，三颗圆润音，独立于转动循环。",
+ "seed": 170120,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "c021e6732a6012263261d520dc516d037229e91fe472d84cd45d9fce1b4ef88d",
+ "gain_db": -15.929,
+ "instruments": [
+  {
+   "id": "turn",
+   "wave": "sine",
+   "gain_db": 0,
+   "lowpass_hz": 1400,
+   "attack_ms": 10,
+   "decay_ms": 20,
+   "sustain": 0.6,
+   "release_ms": 40
+  }
+ ],
+ "duration_ms": 250,
+ "events": [
+  {
+   "instrument": "turn",
+   "start_ms": 0,
+   "duration_ms": 42,
+   "note": 60,
+   "gain_db": 0
+  },
+  {
+   "instrument": "turn",
+   "start_ms": 78,
+   "duration_ms": 42,
+   "note": 64,
+   "gain_db": 0
+  },
+  {
+   "instrument": "turn",
+   "start_ms": 156,
+   "duration_ms": 54,
+   "note": 60,
+   "gain_db": 0
+  }
+ ]
+}

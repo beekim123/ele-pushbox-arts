@@ -1,0 +1,74 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.link_symbol",
+ "name": "配对符号",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  7
+ ],
+ "anchor": [
+  3,
+  3
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "circle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "triangle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "square": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzz..",
+   ".zsssz.",
+   "zsstssz",
+   "zsssssz",
+   "zsssssz",
+   ".zsssz.",
+   "..zzz.."
+  ],
+  [
+   "...z...",
+   "..zDz..",
+   "..zDz..",
+   ".zDtDz.",
+   ".zDDDz.",
+   "zDDDDDz",
+   "zzzzzzz"
+  ],
+  [
+   "zzzzzzz",
+   "zlllllz",
+   "zltlllz",
+   "zlllllz",
+   "zlllllz",
+   "zlllllz",
+   "zzzzzzz"
+  ]
+ ],
+ "usage": "画在门与压板上表示配对；形状是主要信息，颜色辅助（圆=青、三角=粉、方=黄）。",
+ "notes": "",
+ "content_hash": "fd0f35f349161d0e16b6a86b66fd827fd76af4c0f1029d24a8111bb2d48afe21"
+}

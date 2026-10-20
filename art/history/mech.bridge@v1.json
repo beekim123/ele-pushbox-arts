@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.bridge",
+ "name": "承重桥板",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "intact": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "strained": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zccEcccEccEcccEz",
+   "zEdEEdEEEdEEdEEz",
+   "zdEdddEddEddEddz",
+   "zFFFFFFFFFFFFFFz",
+   "zzzzzzzzzzzzzzzz",
+   ".wx..........xw.",
+   "..x..........x..",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zccEccczcEcccEcz",
+   "zEdEEdzEEzEEdEEz",
+   "zdEddzEdddzdEddz",
+   "zFFFzFFFFFFzFFFz",
+   "zzzzzzzzzzzzzzzz",
+   ".wx.....F....xw.",
+   "..x..........x..",
+   "........F.......",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "承重桥板：画在桥所在格的上部，人和箱子站在它上面一格。intact 为平时；strained 为载重正好等于承重（再加一点就塌）。塌下时播放 fx.rubble。承重和当前载重用板面上的刻痕表示（工作台代码绘制：空的刻痕是深色，已压上的重量是黄色，压满时变红）。",
+ "notes": "关卡模式 v2 第 2 章（W08）的新机关候选，也是地府奈何桥、安第斯绳桥的通用规则。沙岩色，裂开时出现深色裂纹和掉落的碎屑。",
+ "content_hash": "06251883be328e1bde199c2bb9aaf0c7a9f6a799d5721c34819a4269f495f311"
+}

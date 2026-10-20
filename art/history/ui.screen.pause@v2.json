@@ -1,0 +1,48 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.pause",
+ "name": "暂停菜单",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "char.miner",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "pause",
+  "items": [
+   "pause.resume",
+   "pause.hint",
+   "pause.restart",
+   "pause.skip",
+   "pause.levels",
+   "pause.settings",
+   "pause.menu"
+  ]
+ },
+ "usage": "局内按 Esc 打开；背景为压暗的关卡画面。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "bb57633e90b5ab54fd1b8850dbb71265f3236ca989a926b1ea229e441fe56215"
+}

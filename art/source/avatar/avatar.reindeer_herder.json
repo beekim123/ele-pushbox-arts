@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.reindeer_herder",
+ "name": "滚轮头像 · 驯鹿牧人",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..........zttz..........",
+   "........zzttttzz........",
+   "......zzCCtttuCCzz......",
+   ".....zCCCCCCCCCCCCz.....",
+   ".....zCCCCCCCCCCCCz.....",
+   "....zCCCCCCCCCCCCCCz....",
+   "....zCCCCCCCCCCCCCBz....",
+   "....zCCCCCCCCCCCBBBz....",
+   "....zCBCBCBCBCBCBCBz....",
+   "....zCBCBCBCBCBCBCBz....",
+   ".....zffEEEBBEEEffz.....",
+   ".....zfEEEEEEEEEEfz.....",
+   ".....zEEEzEEEEzEEEz.....",
+   ".....zEEEEEEFEEEEFz.....",
+   ".....zEEDEEEEEEDFFz.....",
+   ".....zEEEEfEEfFFFFz.f...",
+   ".....zzEEEEffFFFFzz.fk..",
+   "....zjjjjjjjjjjbbbjz.fl.",
+   "....zjjjjjjjjjjjjbbzkfk.",
+   ".....zjjjjjjjjjbbbz.....",
+   "...zznnnnnnnnnjbnnnzz...",
+   "..znnnnnnnnnnnjbnnnnnz..",
+   ".znnnnnnnnnnnnbbnnnnnnz.",
+   "znnnnnnnnnnnnnnnnnnnnnnz"
+  ]
+ ],
+ "usage": "收件人「驯鹿牧人」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "和 char.reindeer_herder 同一套长相（莓红色毛线帽、橙色围巾、绿外套和一串小铜铃），一眼对得上。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "67ccb4ca34f78be70a4cd6ab49322963082374dc3c9b0a4798201dccd36b76e7"
+}

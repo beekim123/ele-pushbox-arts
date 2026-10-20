@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.letter",
+ "name": "货物 · 信件",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   ".zttttttttttttz.",
+   ".zcdccccccccdcz.",
+   ".zccdccccccdccz.",
+   ".zcccdccccdcccz.",
+   ".zccccdDidccccz.",
+   ".zccccciihccccz.",
+   ".zcccccchcccccz.",
+   ".zccccccccccccz.",
+   ".zddddddddddddz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：信件。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "755d60fe4cd9fddc356cb2154695834209935dfed6da8e443721c2c4a0df3bb4"
+}

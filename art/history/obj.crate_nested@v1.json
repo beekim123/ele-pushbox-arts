@@ -1,0 +1,101 @@
+{
+ "format": "pushbox.art/1",
+ "id": "obj.crate_nested",
+ "name": "套娃箱",
+ "category": "object",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "outer": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "middle": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "inner": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zddddddddddddddz",
+   "zdeeeeeeeeeeeefz",
+   "zdeggggggggggefz",
+   "zdegddddddddgefz",
+   "zdegdggggggfgefz",
+   "zdegdgbbbdgfgefz",
+   "zdegdgbbdbgfgefz",
+   "zdegdgbdbbgfgefz",
+   "zdegdgdbbbgfgefz",
+   "zdegdggggggfgefz",
+   "zdegffffffffgefz",
+   "zdeggggggggggefz",
+   "zdeeeeeeeeeeeefz",
+   "zffffffffffffffz",
+   "zzzzzzzzzzzzzzzz"
+  ],
+  [
+   "................",
+   "................",
+   ".zzzzzzzzzzzzzz.",
+   ".zddddddddddddz.",
+   ".zdeeeeeeeeeefz.",
+   ".zdeggggggggefz.",
+   ".zdegddddddgefz.",
+   ".zdegdbbbdfgefz.",
+   ".zdegdbbdbfgefz.",
+   ".zdegdbdbbfgefz.",
+   ".zdegddbbbfgefz.",
+   ".zdegffffffgefz.",
+   ".zdeggggggggefz.",
+   ".zdeeeeeeeeeefz.",
+   ".zffffffffffffz.",
+   ".zzzzzzzzzzzzzz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   "..zddddddddddz..",
+   "..zdeeeeeeeefz..",
+   "..zdebbbbbddfz..",
+   "..zdebbbbddbfz..",
+   "..zdeeeddeeefz..",
+   "..zdebddbbbbfz..",
+   "..zdeddbbbbbfz..",
+   "..zdeebbbbbbfz..",
+   "..zdeeeeeeeefz..",
+   "..zffffffffffz..",
+   "..zzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "套娃箱（机关 nested_box）：箱子里套着箱子，每次被炸掉一层（workbench/js/core/mech/nested_box.js）。按剩下的层数画：3 层画 outer（占满一格，里面看得见两层小箱），2 层画 middle（14×14，里面看得见一层小箱），只剩 1 层画 inner（12×12，就是一只小木箱，规则上已经是普通箱子）。小箱都贴着格子底边居中，和普通箱子一样推、叠、落。",
+ "notes": "关卡模式第 3 章 Q09（三层都是木头）。照木箱 obj.crate_wood 的配色：黑框、浅色上左倒角、深色右下阴影、斜撑；里层的小箱用深褐框线 g，同心套着，数得出还剩几层，不靠颜色区分。外层是铁箱等其他材质的套娃箱这一版没画。",
+ "content_hash": "3b59561ae52f24b99ea141199aa03e60a994a5518f612a1d88d8ae8c393f8c84"
+}

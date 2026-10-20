@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.bubble_tail",
+ "name": "气泡尾巴",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  6
+ ],
+ "anchor": [
+  3,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "say": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "think": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zcccccz",
+   ".zcccz.",
+   "..zcz..",
+   "...z...",
+   ".......",
+   "......."
+  ],
+  [
+   "zuuuuuz",
+   ".zzzzz.",
+   "..zuz..",
+   "...z...",
+   "..zuz..",
+   "...z..."
+  ]
+ ],
+ "usage": "气泡下沿指向说话人的尾巴。锚点在顶边中间，盖住气泡底边那一行描边。say 是尖角，think 是一串小圆点。说话人在气泡下方时向下画；气泡在说话人下方时上下翻转。",
+ "notes": "",
+ "content_hash": "93a98ba7445f1e1f18e32d2e11f45a358c18b52cc1dae76ac883b83b088c727f"
+}

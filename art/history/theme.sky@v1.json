@@ -1,0 +1,135 @@
+{
+ "format": "pushbox.art/1",
+ "id": "theme.sky",
+ "name": "主题 · 云端圣域",
+ "category": "theme",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "deco.sky_flower",
+  "fauna.sky_cloudling",
+  "fauna.sky_dove"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "terrain",
+ "palette": "endesga32",
+ "params": {
+  "title": "云端圣域",
+  "chapter": 5,
+  "rock": {
+   "pattern": "cloud",
+   "base": [
+    "t",
+    "u"
+   ],
+   "seam": "u",
+   "speck": "u",
+   "light": "t",
+   "light2": "t",
+   "dark": "v",
+   "edge": "v",
+   "top": "t",
+   "under": "t"
+  },
+  "earth": {
+   "base": [
+    "e",
+    "F"
+   ],
+   "clump": "f",
+   "pebble": "v",
+   "pebbleShade": "g",
+   "crust": "d",
+   "crust2": "F",
+   "dark": "f",
+   "frame": "g",
+   "bevel": "d"
+  },
+  "cracked": {
+   "base": [
+    "F",
+    "d"
+   ],
+   "crack": "g",
+   "crackLight": "c",
+   "light": "c",
+   "dark": "f",
+   "frame": "f",
+   "bevel": "c"
+  },
+  "sand": {
+   "base": [
+    "c",
+    "d",
+    "c"
+   ],
+   "grain": "k",
+   "top": "l"
+  },
+  "water": {
+   "body": "q",
+   "upper": "r",
+   "surface": "s",
+   "glint": "t"
+  },
+  "background": {
+   "style": "sky",
+   "base": [
+    "r",
+    "s"
+   ],
+   "speck": "u",
+   "accent": "v",
+   "detail": "v"
+  },
+  "ambient": [
+   {
+    "type": "floor",
+    "id": "deco.sky_flower",
+    "anim": "sway",
+    "every": 4,
+    "max": 3
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.sky_dove",
+    "anim": "fly",
+    "count": 1,
+    "path": "cross",
+    "chance": 0.35
+   },
+   {
+    "type": "flyer",
+    "id": "fauna.sky_cloudling",
+    "anim": "float",
+    "count": 1,
+    "path": "drift",
+    "chance": 0.25
+   }
+  ],
+  "env": {
+   "sun": {
+    "x": 292,
+    "y": 34,
+    "radius": 24
+   },
+   "weathers": [
+    "wind",
+    "snow"
+   ],
+   "weather": "wind"
+  }
+ },
+ "usage": "第 5 章的地形、背景与生态。游戏中地形按 workbench/js/core/terrain.js 着色；生态按 ambient.js 的规则摆放。",
+ "notes": "实心台是云朵：白色云团、顶面微微起伏、底部有阴影和圆弧；背景是晴空、远处浮岛与淡蓝色远云（比实心云暗一级，不会误认成落脚点）。",
+ "content_hash": "da7d99f444b82552d47d2f41a22b1306d8ac154226716b2cb0366b8cd94d20e9"
+}

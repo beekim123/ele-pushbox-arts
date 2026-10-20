@@ -1,0 +1,52 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.forest_flower",
+ "name": "古森 · 三色野花",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  7
+ ],
+ "anchor": [
+  4,
+  7
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".i...l..",
+   "iki.lkl.",
+   ".i...l..",
+   ".n.r.n..",
+   "..rkr.n.",
+   "..nrn.n.",
+   ".mnnmnm."
+  ],
+  [
+   "..i...l.",
+   ".iki.lkl",
+   "..i...l.",
+   ".n.r.n..",
+   "..rkr.n.",
+   "..nrn.n.",
+   ".mnnmnm."
+  ]
+ ],
+ "usage": "地面装饰；花头左右摇一像素。",
+ "notes": "",
+ "content_hash": "75c78b780b2903d4d6f231f655d558af3cf570749cd748f229f7f24f52ccd595"
+}

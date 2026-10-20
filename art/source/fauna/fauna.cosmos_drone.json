@@ -1,0 +1,54 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.cosmos_drone",
+ "name": "星站 · 巡检无人机",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  10,
+  8
+ ],
+ "anchor": [
+  5,
+  4
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "hover": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "xxx....xxx",
+   "..zzzzzz..",
+   ".zuuuuuuz.",
+   "zuvzsszvuz",
+   "zuvvvvvvuz",
+   ".zwwwwwwz.",
+   "..z.zz.z..",
+   ".........."
+  ],
+  [
+   ".xxx..xxx.",
+   "..zzzzzz..",
+   ".zuuuuuuz.",
+   "zuvzAAzvuz",
+   "zuvvvvvvuz",
+   ".zwwwwwwz.",
+   "..z.zz.z..",
+   ".........."
+  ]
+ ],
+ "usage": "在背景中悬停巡航，指示灯闪烁。",
+ "notes": "",
+ "content_hash": "1401146e5501c690722e3142526e22c205a897fa10693ee11375f9df4e68afc7"
+}

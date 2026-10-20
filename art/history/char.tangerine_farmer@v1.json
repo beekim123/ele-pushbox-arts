@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.tangerine_farmer",
+ "name": "橘园阿姨（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zkkkkdz....",
+   "..zzzzbbbbbzzzz.",
+   ".zkkdkkkkkkkkdkz",
+   "..zzzzzzzzzzzzz.",
+   "....zfEEEEEEz...",
+   "....zfEzEEzEz...",
+   ".....zDEFEDz....",
+   "....zmmmmmzz.zz.",
+   "...zmnmmmzkjzkjz",
+   "...zmnmmzzjjzjjz",
+   "...zzBBBEEeeeeez",
+   "...zBCBBzzefefez",
+   "...zBBCBBBzzzzz.",
+   "...zzzzzzzzz...."
+  ],
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zkkkkdz....",
+   "..zzzzbbbbbzzzz.",
+   ".zkkdkkkkkkkkdkz",
+   "..zzzzzzzzzzzzz.",
+   "....zfEEEEEEz...",
+   "....zfEFEEFEz...",
+   ".....zDEFEDz....",
+   "....zmmmmmzz.zz.",
+   "...zmnmmmzkjzkjz",
+   "...zmnmmzzjjzjjz",
+   "...zzBBBEEeeeeez",
+   "...zBCBBzzefefez",
+   "...zBBCBBBzzzzz.",
+   "...zzzzzzzzz...."
+  ],
+  [
+   "......zzzzz.....",
+   ".....zkkkkdz....",
+   "..zzzzbbbbbzzzz.",
+   ".zkkdkkkkkkkkdkz",
+   "..zzzzzzzzzzzzz.",
+   "....zfEEEEEEz...",
+   "....zfEFEEFEz...",
+   ".....zDEiEDz....",
+   "....zmmmmmzz.zz.",
+   "...zmnmmmzkjzkjz",
+   "...zmnmmzzjjzjjz",
+   "...zzBBBEEeeeeez",
+   "...zBCBBzzefefez",
+   "...zBBCBBBzzzzz.",
+   "...zzzzzzzzz....",
+   "................"
+  ],
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zkkkkdz....",
+   "..zzzzbbbbbzzzz.",
+   ".zkkdkkkkkkkkdkz",
+   "..zzzzzzzzzzzzz.",
+   "....zfEEEEEEz...",
+   "....zfEFEEFEz...",
+   ".....zDEiEDz....",
+   "....zmmmmmzz.zz.",
+   "...zmnmmmzkjzkjz",
+   "...zmnmmzzjjzjjz",
+   "...zzBBBEEeeeeez",
+   "...zBCBBzzefefez",
+   "...zBBCBBBzzzzz.",
+   "...zzzzzzzzz...."
+  ]
+ ],
+ "usage": "收件人·橘园阿姨：戴宽檐草帽、穿绿上衣和花布宽裤（몸뻬）、抱着一筐橘子的阿姨，站在橘园里（idle，偶尔眨眼），不走动。收到货物时笑着跳一下（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "橘子是她自己种的，所以橘子筐不送给她（cargo_only）。草帽的宽檐是她的剪影标志，和戴毛线帽的灯塔大叔、戴黑笠的鬼怪大王一眼分开。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "70e559f5acb1a4addfd2306ba553a2e6dd1c286b0301d12b305129e55c31563f"
+}

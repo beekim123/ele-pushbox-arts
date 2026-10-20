@@ -1,0 +1,678 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.reels",
+ "name": "滚轮台（配送开局）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json"
+ ],
+ "depends": [
+  "avatar.goblin_smith",
+  "avatar.old_miner",
+  "avatar.zombie",
+  "cargo.ice_cream",
+  "cargo.letter",
+  "cargo.vase",
+  "char.lucky_cat",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_cat",
+  "fauna.jeju_pony",
+  "item.snack",
+  "item.snack_jeju",
+  "mech.lantern_float",
+  "mech.rune_float",
+  "monster.skeleton_guard",
+  "obj.crate_wood",
+  "theme.diyu",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.keycap",
+  "ui.panel"
+ ],
+ "version": 3,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "reels",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "cargoList": [
+   "letter",
+   "vase",
+   "ice_cream"
+  ],
+  "recipientList": [
+   "old_miner",
+   "zombie",
+   "goblin_smith"
+  ],
+  "cargo": "letter",
+  "recipient": "old_miner",
+  "liked": true,
+  "rerolls": 1,
+  "cat": "idle",
+  "room2": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "weight": 10,
+   "mirror": true,
+   "id": "dungeon2_yard",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    2
+   ],
+   "name": "放风场 · 高台上的拉杆",
+   "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+   "needs": [
+    "float_block"
+   ],
+   "requires": [
+    "float_block",
+    "push",
+    "lever"
+   ],
+   "mechanisms": [
+    "float_block",
+    "push",
+    "lever",
+    "ladder",
+    "hint_animal"
+   ],
+   "exits": [
+    "left.0.low",
+    "right.1.low"
+   ],
+   "routes": [
+    "left.0.low>right.1.low"
+   ],
+   "puzzle_area": [
+    [
+     1,
+     1,
+     27,
+     9
+    ]
+   ],
+   "legend": {
+    "2": {
+     "monster": "skeleton_guard",
+     "dir": "left",
+     "zone": [
+      28,
+      32
+     ]
+    }
+   },
+   "devices": [
+    {
+     "type": "lever",
+     "at": [
+      24,
+      4
+     ],
+     "action": {
+      "link": 0
+     }
+    }
+   ],
+   "links": [
+    {
+     "plates": [],
+     "doors": [
+      [
+       33,
+       16
+      ],
+      [
+       33,
+       17
+      ]
+     ]
+    }
+   ],
+   "hints": [
+    {
+     "text": "推浮石把箱子运过坑。",
+     "target": [
+      12,
+      7
+     ],
+     "show": {
+      "action": "push",
+      "dir": "R",
+      "at": [
+       4,
+       7
+      ]
+     },
+     "done": {
+      "covers": [
+       12,
+       7
+      ]
+     }
+    },
+    {
+     "text": "把箱子推到高台下面当台阶。",
+     "target": [
+      21,
+      6
+     ],
+     "show": {
+      "action": "push",
+      "dir": "R",
+      "at": [
+       12,
+       6
+      ]
+     },
+     "done": {
+      "crate": [
+       21,
+       6
+      ]
+     }
+    },
+    {
+     "text": "上高台拉下拉杆：下层的门开了。",
+     "target": [
+      24,
+      4
+     ],
+     "show": {
+      "action": "lever",
+      "dir": "U",
+      "at": [
+       24,
+       4
+      ]
+     },
+     "done": {
+      "lever": 0
+     }
+    },
+    {
+     "text": "从梯子下去，穿过下层的门。",
+     "target": [
+      27,
+      10
+     ],
+     "show": {
+      "action": "climb",
+      "dir": "D",
+      "at": [
+       27,
+       5
+      ]
+     },
+     "done": {
+      "player": [
+       28,
+       10,
+       39,
+       19
+      ]
+     }
+    }
+   ],
+   "map": [
+    "########################################",
+    "#...........................############",
+    "#...........................############",
+    "#...........................############",
+    "#..........................H############",
+    "#.....................#####H############",
+    ".......B..............#####H############",
+    ".....FFF.....##############H############",
+    "##########...##############H############",
+    "##########...##############H############",
+    "##########...##############H...........#",
+    "##########...##############H...........#",
+    "##########...##############H...........#",
+    "###########################H...........#",
+    "#############..............H...........#",
+    "#############..............H...........#",
+    "#############..............H.....|......",
+    "#############.......$......H..2..|..$...",
+    "########################################",
+    "########################################"
+   ]
+  },
+  "world": "dungeon",
+  "map": "dungeon_2",
+  "mapList": [
+   "dungeon_2",
+   "diyu_1"
+  ],
+  "mapRooms": {
+   "dungeon_2": {
+    "format": "pushbox.room/2",
+    "world": "dungeon",
+    "weight": 10,
+    "mirror": true,
+    "id": "dungeon2_yard",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "放风场 · 高台上的拉杆",
+    "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      9
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "skeleton_guard",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       24,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推浮石把箱子运过坑。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "把箱子推到高台下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        12,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "上高台拉下拉杆：下层的门开了。",
+      "target": [
+       24,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        24,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过下层的门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        5
+       ]
+      },
+      "done": {
+       "player": [
+        28,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#..........................H############",
+     "#.....................#####H############",
+     ".......B..............#####H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "##########...##############H...........#",
+     "###########################H...........#",
+     "#############..............H...........#",
+     "#############..............H...........#",
+     "#############..............H.....|......",
+     "#############.......$......H..2..|..$...",
+     "########################################",
+     "########################################"
+    ]
+   },
+   "diyu_1": {
+    "format": "pushbox.room/2",
+    "world": "diyu",
+    "weight": 10,
+    "mirror": true,
+    "id": "diyu_fengdu",
+    "type": "room",
+    "role": "develop",
+    "size": [
+     2,
+     2
+    ],
+    "name": "酆都城 · 钟楼的锣",
+    "idea": "关键想法：纸台把箱子运过坑，箱子再当台阶。变化：锣在钟楼上，敲响开的是下层的城门；城门外有跳跳僵尸巡街，不进解谜区。",
+    "needs": [
+     "float_block"
+    ],
+    "requires": [
+     "float_block",
+     "push",
+     "lever"
+    ],
+    "mechanisms": [
+     "float_block",
+     "push",
+     "lever",
+     "ladder",
+     "hint_animal"
+    ],
+    "exits": [
+     "left.0.low",
+     "right.1.low"
+    ],
+    "routes": [
+     "left.0.low>right.1.low"
+    ],
+    "puzzle_area": [
+     [
+      1,
+      1,
+      27,
+      12
+     ]
+    ],
+    "legend": {
+     "2": {
+      "monster": "jiangshi",
+      "dir": "left",
+      "zone": [
+       28,
+       32
+      ]
+     },
+     "3": {
+      "monster": "wandering_soul",
+      "dir": "left",
+      "zone": [
+       34,
+       38
+      ]
+     }
+    },
+    "devices": [
+     {
+      "type": "lever",
+      "at": [
+       23,
+       4
+      ],
+      "action": {
+       "link": 0
+      }
+     }
+    ],
+    "links": [
+     {
+      "plates": [],
+      "doors": [
+       [
+        33,
+        16
+       ],
+       [
+        33,
+        17
+       ]
+      ]
+     }
+    ],
+    "hints": [
+     {
+      "text": "推纸台过坑：箱子坐在上面一起走。",
+      "target": [
+       12,
+       7
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        4,
+        7
+       ]
+      },
+      "done": {
+       "covers": [
+        12,
+        7
+       ]
+      }
+     },
+     {
+      "text": "踩上纸台，把箱子推到钟楼下面当台阶。",
+      "target": [
+       21,
+       6
+      ],
+      "show": {
+       "action": "push",
+       "dir": "R",
+       "at": [
+        11,
+        6
+       ]
+      },
+      "done": {
+       "crate": [
+        21,
+        6
+       ]
+      }
+     },
+     {
+      "text": "踩着箱子上钟楼，敲锣：城门开了。",
+      "target": [
+       23,
+       4
+      ],
+      "show": {
+       "action": "lever",
+       "dir": "U",
+       "at": [
+        23,
+        4
+       ]
+      },
+      "done": {
+       "lever": 0
+      }
+     },
+     {
+      "text": "从梯子下去，穿过城门。",
+      "target": [
+       27,
+       10
+      ],
+      "show": {
+       "action": "climb",
+       "dir": "D",
+       "at": [
+        27,
+        6
+       ]
+      },
+      "done": {
+       "player": [
+        34,
+        10,
+        39,
+        19
+       ]
+      }
+     }
+    ],
+    "map": [
+     "########################################",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#...........................############",
+     "#.....................###...############",
+     ".......B........$..$..###..H############",
+     ".....FFF.....##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "##########...##############H############",
+     "###########################H############",
+     "###########################H############",
+     "###########################H############",
+     "##########################.......|......",
+     "##########################....2..|..3.$.",
+     "########################################",
+     "########################################"
+    ]
+   }
+  },
+  "focus": 1
+ },
+ "usage": "G2 三滚轮：地图 → 收件人 → 货物；R 重转，显示剩余次数。",
+ "notes": "UI-10b 美术候选；复用 ui-common.js 的 G2 组件。新文字与字形仅放 i18n-delivery2 / font-delivery2.js。须由用户确认后才可用于正式游戏。",
+ "content_hash": "1febeb784a0483c562ae56c2e8fc28e35be9c994d112ac0ee911d1994ec9e0c4"
+}

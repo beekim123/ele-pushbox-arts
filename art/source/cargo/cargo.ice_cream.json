@@ -1,0 +1,77 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.ice_cream",
+ "name": "货物 · 冰淇淋",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "melting": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    1,
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......znz......",
+   "......zzihz.....",
+   ".....zDDDDz.....",
+   "....zDDDDDDz....",
+   "...zDDtDDDDDz...",
+   "...zDDDDDDDCz...",
+   "....zDDDDDCz....",
+   "...zttDCCCttz...",
+   "...ztttttttuz...",
+   "...ztttttttuz...",
+   "...zddddddddz...",
+   "....zdbdbddz....",
+   "....zddbdbdz....",
+   ".....zdbddz.....",
+   ".....zddddz.....",
+   "......zbdz......"
+  ],
+  [
+   ".......znz......",
+   "......zzihz.....",
+   ".....zDDDDz.....",
+   "....zDDDDDDz....",
+   "...zDDtDDDDDz...",
+   "...zDDDDDDDCz...",
+   "....zDDDDDCz....",
+   "...zttDCCCttz...",
+   "...ztttttttuz...",
+   "...ztttttttuz...",
+   "...ztddddddtz...",
+   "...ztdbdbddtz...",
+   "....zddbdbdtz...",
+   ".....zdbddzz....",
+   ".....zddddz.....",
+   "......zbdz......"
+  ]
+ ],
+ "usage": "货物图标：冰淇淋（草莓 + 香草）。melting 用在正在化的时候。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "4a0426f3f3bc60493a8f13bed4735f04ae784511e6160e3f453e69d5479fe09f"
+}

@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.lighthouse_keeper",
+ "name": "滚轮头像 · 灯塔大叔",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..........zzzz..........",
+   ".........zttttz.........",
+   ".......zzzttttzzz.......",
+   "......ziiiizziiiiz......",
+   ".....ziiiiiiiiiiiiz.....",
+   "....ziiiiiiiiiiiiiiz....",
+   "....zihihihihihihihz....",
+   "....zhhhhhhhhhhhhhhz....",
+   "....zEEEEEEEEEEEEEEz....",
+   "....zEEEEEEEEEEEEEEz....",
+   "....zEEzzEEEEEEzzEEz....",
+   "....zEEzzEEEEEEzzEEz....",
+   "....zEEEEEEEEEEEEEEz....",
+   "....zuEEEEEFFEEEEEuz....",
+   "....zuuEEEEEEEEEEuuz....",
+   "....zuuuEEFFFFEEuuuz....",
+   ".....zuuuuuuuuuuuuz.....",
+   "......zuvuuuuuuvuz......",
+   ".....zzzuuvuuvuuzzz.....",
+   "...zzllllzzuuzzllllzz...",
+   "..zllllllllzzllllllllz..",
+   ".zlkllllllllllllllllllz.",
+   ".zlkllllflllllllfllllz..",
+   ".zlklllllllllllllllllz.."
+  ]
+ ],
+ "usage": "收件人「灯塔大叔」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "c44749d263664e8dc76a2c48a765f53e5ba1208105d1a1aa4dc07929bcb7f2cb"
+}

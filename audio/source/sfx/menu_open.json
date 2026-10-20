@@ -1,0 +1,38 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "menu_open",
+ "uid": "sfx:menu_open",
+ "name": "打开菜单",
+ "description": "C4→G4 柔和展开的单个上弯，区别于确认双点。",
+ "seed": 170128,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "a3826e547aed001000211b437145be7bdceff6ebdec82fb1edcf535ddd86cd37",
+ "gain_db": -14.845,
+ "instruments": [
+  {
+   "id": "menu",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 1200,
+   "attack_ms": 16,
+   "decay_ms": 35,
+   "sustain": 0.65,
+   "release_ms": 45
+  }
+ ],
+ "duration_ms": 160,
+ "events": [
+  {
+   "instrument": "menu",
+   "start_ms": 0,
+   "duration_ms": 115,
+   "note": 60,
+   "slide_to_note": 67,
+   "gain_db": 0
+  }
+ ]
+}

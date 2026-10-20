@@ -1,0 +1,48 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.cave_moth",
+ "name": "晶窟 · 水晶飞蛾",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  6,
+  5
+ ],
+ "anchor": [
+  3,
+  2
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 10,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "s....s",
+   "ss..ss",
+   "stzzts",
+   ".szzs.",
+   "......"
+  ],
+  [
+   "......",
+   "......",
+   "stzzts",
+   "ss..ss",
+   "s....s"
+  ]
+ ],
+ "usage": "在房间空处缓慢绕飞，画在地形后面。",
+ "notes": "",
+ "content_hash": "8ae9e104faf6057381452750cba06793cf693c2da96d9afb0eb01c0462fdda97"
+}

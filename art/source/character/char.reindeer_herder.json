@@ -1,0 +1,116 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.reindeer_herder",
+ "name": "驯鹿牧人（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zCCCCBz.....",
+   "...zCCCCCCBz....",
+   "...zBCBCBCBz....",
+   "...zffEEzEEz....",
+   "...zfFEEEDEEz...",
+   "....zzFEEEEz....",
+   "...zjjjjjjbz....",
+   "...znnmmnjboz...",
+   "...znnnnnjbonz..",
+   "...znnnnnjbofz..",
+   "...znnnnnooozf..",
+   "....zxxxyxxz.kf.",
+   "...zggggzgggzlk.",
+   "....zzzz.zzz...."
+  ],
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zCCCCBz.....",
+   "...zCCCCCCBz....",
+   "...zBCBCBCBz....",
+   "...zffEEFEEz....",
+   "...zfFEEEDEEz...",
+   "....zzFEEEEz....",
+   "...zjjjjjjbz....",
+   "...znnmmnjboz...",
+   "...znnnnnjbonz..",
+   "...znnnnnjbofz..",
+   "...znnnnnooozf..",
+   "....zxxxyxxz.kf.",
+   "...zggggzgggzlk.",
+   "....zzzz.zzz...."
+  ],
+  [
+   ".......zz.......",
+   ".....zztuz......",
+   "....zCCCCBz.....",
+   "...zCCCCCCBz.u.u",
+   "...zBCBCBCBz..l.",
+   "...zffEEzzEzzfk.",
+   "...zfFEEEDfEfzfk",
+   "....zzFEEEEznz..",
+   "...zjjjjjjbznz..",
+   "...znnmmnjboz...",
+   "...znnnnnjboz...",
+   "...znnnnjbnoz...",
+   "...znnnnnoooz...",
+   "....zxxxyxxz....",
+   "...zggggzgggz...",
+   "....zzzz.zzz...."
+  ],
+  [
+   ".....zztuz......",
+   "....zCCCCBz.....",
+   "...zCCCCCCBz...u",
+   "...zBCBCBCBz.kl.",
+   "...zffEEzzEzzffk",
+   "...zfFEEEDfEfz..",
+   "....zzFEEEEznz.u",
+   "...zjjjjjjbznz..",
+   "...znnmmnjboz...",
+   "...znnnnnjboz...",
+   "...znnnnjbnoz...",
+   "...znnnnnoooz...",
+   "....zxxxyxxz....",
+   "...zggggzgggz...",
+   "....zzzz.zzz....",
+   "................"
+  ]
+ ],
+ "usage": "收件人·驯鹿牧人：普通的冬衣——莓红色毛线帽（白绒球）、橙色围巾、绿色厚外套、棕色手套，手里提一串小铜铃，站在木屋院子里（idle，偶尔眨眼），不走动。收到货物时举起铃铛摇响（win）。面朝右绘制，朝左时水平镜像。",
+ "notes": "不专指某个民族：只画普通冬衣，不画萨米人、因纽特人等的民族服饰和纹样（delivery-polar 第 1 节「取材注意」、第 7 节第 6 条）。铃铛和小驯鹿（fauna.polar_reindeer）项圈上的铃铛呼应。不收毛线手套、多给小费属于实时与结算规则（DLV-01）。 DSN-04（极地雪村）的美术候选（ART-01b），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "ae586faa737a10c48025323d897b7e3096bca6d74f7c1d5e157aa0186f4c9764"
+}

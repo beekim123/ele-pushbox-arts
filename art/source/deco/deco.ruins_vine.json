@@ -1,0 +1,62 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.ruins_vine",
+ "name": "神庙 · 垂藤",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  6,
+  12
+ ],
+ "anchor": [
+  2,
+  0
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "onno..",
+   "on.o..",
+   ".n.n..",
+   ".nm...",
+   ".n....",
+   "on.n..",
+   "o..nm.",
+   "...n..",
+   "..nm..",
+   "..n...",
+   "..m...",
+   "......"
+  ],
+  [
+   "onno..",
+   "on.o..",
+   ".n.n..",
+   ".nm...",
+   ".n....",
+   ".on.n.",
+   ".o..nm",
+   "....n.",
+   "...nm.",
+   "...n..",
+   "...m..",
+   "......"
+  ]
+ ],
+ "usage": "从天花板空格垂下，锚点在顶端。",
+ "notes": "",
+ "content_hash": "1248130e07d359c261ebe0c60da54923c14e2fdaf34c209e1ec4c92069eca012"
+}

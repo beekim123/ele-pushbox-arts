@@ -1,0 +1,49 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.delivery_pause",
+ "name": "暂停菜单（配送）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "pause",
+  "items": [
+   "pause.resume",
+   "dlv.pause.restart_room",
+   "dlv.pause.give_up",
+   "pause.settings",
+   "pause.menu"
+  ]
+ },
+ "usage": "配送局内按 Esc：沿用已确认的暂停菜单（ui.screen.pause）的布局和画法，只换菜单项——继续、重来这个房间（时间不倒流）、放弃这一单、设置、回大厅。背景沿用暂停菜单参考图的关卡画面。",
+ "notes": "画法就是 ui.js 的 pause，没有改动；新菜单项的文字在 content/i18n-delivery。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "6f1e53c3dac19938cd506249fa827483ea8e31778fe6f1a6574ad4427b6099f1"
+}

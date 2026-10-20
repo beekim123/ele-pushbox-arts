@@ -1,0 +1,65 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.polar_bunting",
+ "name": "极地 · 雪鹀（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  6
+ ],
+ "anchor": [
+  4,
+  3
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "rest": {
+   "fps": 1,
+   "loop": true,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zt....",
+   "..ttt...",
+   "zzteeezk",
+   ".zttttz.",
+   "........",
+   "........"
+  ],
+  [
+   "........",
+   "....eee.",
+   "zzteeezk",
+   ".zttttz.",
+   "..ttt...",
+   "..zt...."
+  ],
+  [
+   "........",
+   "....eez.",
+   ".zeeetzk",
+   "zztttttz",
+   "..tuuuz.",
+   "...g.g.."
+  ]
+ ],
+ "usage": "极地雪村的第二种提示动物：雪鹀，白肚皮、栗色头顶和后背、黑色翅尖、小黄嘴。停在下一步要去的地方（rest）；人走近时飞过去，在目标上方扑翅膀（fly，白翅膀上下扇）。喂它零食只会提醒去找小驯鹿。也是极地主题的飞鸟生态，但配送模式里关掉随机出现的雪鹀，只由提示步骤摆放（worlds.json 的 ambient_exclude，由 DLV-07a 写）。面朝右绘制，朝左时水平镜像。",
+ "notes": "白身子靠栗色背和黑翅尖在雪地上认出来，在蓝天上也看得清；比小驯鹿小得多，不会混。只有 8×6，只在翅尖、尾巴和眼睛用黑 z，不整圈描边。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "22747ce0477e8a1e81816b6306d980bb5b08fc21148382c247d6c2ffd0da0ee7"
+}

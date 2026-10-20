@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "cargo_damage",
+ "uid": "sfx:cargo_damage",
+ "name": "货物受损",
+ "description": "低木 F3/D3/F3 三次小抖动，区别受伤的单个弯音。",
+ "seed": 170117,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "8bc0aa505961bcac747d98b92ee1b7e479511dfc433ab782ea5003e6c4f1959b",
+ "gain_db": -11.0007,
+ "instruments": [
+  {
+   "id": "crack_soft",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 950,
+   "attack_ms": 10,
+   "decay_ms": 22,
+   "sustain": 0.45,
+   "release_ms": 45
+  }
+ ],
+ "duration_ms": 280,
+ "events": [
+  {
+   "instrument": "crack_soft",
+   "start_ms": 0,
+   "duration_ms": 55,
+   "note": 53,
+   "gain_db": 0
+  },
+  {
+   "instrument": "crack_soft",
+   "start_ms": 92,
+   "duration_ms": 45,
+   "note": 50,
+   "gain_db": -3
+  },
+  {
+   "instrument": "crack_soft",
+   "start_ms": 175,
+   "duration_ms": 60,
+   "note": 53,
+   "gain_db": -4
+  }
+ ]
+}

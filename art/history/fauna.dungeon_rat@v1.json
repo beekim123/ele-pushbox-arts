@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.dungeon_rat",
+ "name": "石牢 · 小老鼠",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  10,
+  6
+ ],
+ "anchor": [
+  5,
+  6
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zz..",
+   "..zzzzvvz.",
+   ".zvvvvvvtz",
+   "zzvvvvvvvD",
+   "z.zwwwwzz.",
+   "...z..z..."
+  ],
+  [
+   "......zz..",
+   "..zzzzvvz.",
+   ".zvvvvvvtz",
+   "zzvvvvvvvD",
+   "z.zwwwwzz.",
+   "....zz...."
+  ]
+ ],
+ "usage": "沿地面来回走动，走走停停。画在箱子和人物后面。",
+ "notes": "",
+ "content_hash": "f09f3a8270586643715fffc226a3801ee9e006ff2583d5a170e018945e8f4733"
+}

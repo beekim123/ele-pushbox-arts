@@ -1,0 +1,21 @@
+{
+ "_meta": {"note": "2026-10-16 界面定稿（docs/design/ui-style.md）新增的界面文字；不改冻结的 content/i18n。"},
+ "ui.title_alt": "PORTITOR",
+ "lobby.current_tag": "当前",
+ "keys.adjust": "调整",
+ "settings.ui_style": "界面风格",
+ "settings.ui_style.note1": "大厅随地图换风格，",
+ "settings.ui_style.note2": "其他界面用这一套。",
+ "ui_style.s1": "晶石琉璃",
+ "ui_style.s2": "漂浮符文",
+ "ui_style.s3": "祥云玉简",
+ "ui_style.s4": "梦泡糖霜",
+ "ui_style.s1.mark": "晶",
+ "ui_style.s2.mark": "符",
+ "ui_style.s3.mark": "玉",
+ "ui_style.s4.mark": "泡",
+ "dlv.confirm.title": "放弃这一单？",
+ "dlv.confirm.text": "路上拾到的金币只带回一半。",
+ "dlv.confirm.yes": "放弃",
+ "dlv.confirm.no": "再想想"
+}

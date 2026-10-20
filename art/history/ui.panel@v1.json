@@ -1,0 +1,131 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.panel",
+ "name": "面板",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "normal": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "focused": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "wood": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzzzzzzzzzzzzzzzzzz..",
+   ".xxxxxxxxxxxxxxxxxxxxxx.",
+   "zxxyyyyyyyyyyyyyyyyyyzzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxyyyyyyyyyyyyyyyyyyyyzz",
+   "zxzyyyyyyyyyyyyyyyyyyzzz",
+   ".xzzzzzzzzzzzzzzzzzzzzz.",
+   "..zzzzzzzzzzzzzzzzzzzz.."
+  ],
+  [
+   "..zzzzzzzzzzzzzzzzzzzz..",
+   ".wwwwwwwwwwwwwwwwwwwwww.",
+   "zwwxxxxxxxxxxxxxxxxxxyyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwxxxxxxxxxxxxxxxxxxxxyz",
+   "zwyxxxxxxxxxxxxxxxxxxyyz",
+   ".wyyyyyyyyyyyyyyyyyyyyy.",
+   "..zzzzzzzzzzzzzzzzzzzz.."
+  ],
+  [
+   "..zzzzzzzzzzzzzzzzzzzz..",
+   ".eeeeeeeeeeeeeeeeeeeeee.",
+   "zeeffffffffffffffffffggz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zeffffffffffffffffffffgz",
+   "zegffffffffffffffffffggz",
+   ".eggggggggggggggggggggg.",
+   "..zzzzzzzzzzzzzzzzzzzz.."
+  ]
+ ],
+ "usage": "九宫格面板（角 6px）。normal＝深色信息面板，focused＝选中项，wood＝章节标题与按钮。",
+ "notes": "",
+ "ninepatch": [
+  6,
+  6,
+  6,
+  6
+ ],
+ "content_hash": "a5a5deea16eb5e6e910aa6e90ef044d6095746748d13288fcad70687c1caf1a1"
+}

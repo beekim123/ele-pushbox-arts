@@ -1,0 +1,50 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.sky_flower",
+ "name": "圣域 · 白雏菊",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  6
+ ],
+ "anchor": [
+  4,
+  6
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".t....t.",
+   "tlt..tlt",
+   ".t.t..t.",
+   ".ntltn..",
+   "..nm.m..",
+   ".mnnnm.."
+  ],
+  [
+   "..t....t",
+   ".tlt..tl",
+   ".t.t..t.",
+   ".ntltn..",
+   "..nm.m..",
+   ".mnnnm.."
+  ]
+ ],
+ "usage": "地面装饰。",
+ "notes": "",
+ "content_hash": "cc43539105a8b3db23899736c2de90fa2629a6147ed07adf0888dd8115a50ea9"
+}

@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.tangerine_farmer",
+ "name": "滚轮头像 · 橘园阿姨",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   ".........zzzzzz.........",
+   "........zkkkkkdz........",
+   ".......zkkkkkkkdz.......",
+   ".......zkkkkkkkdz.......",
+   ".....zzzbbbbbbbbzzz.....",
+   "..zzzkkkkkkkkkkkkkkkzzz.",
+   ".zkkdkkkkkkkkkkkkkkkdkkz",
+   "..zzzzzzzzzzzzzzzzzzzzz.",
+   ".....zffEEEEEEEEffz.....",
+   "....zffEEEEEEEEEEffz....",
+   "....zfEEzzEEEEzzEEfz....",
+   "....zfEEzzEEEEzzEEfz....",
+   "....zfEDDEEEEEEDDEfz....",
+   "....zfEEEEFEEFEEEEfz....",
+   ".....zfEEEEFFEEEEfz.....",
+   "......zEEEEEEEEEEz......",
+   ".......zzEEEEEEzz.......",
+   ".....zzmmzzzzzzmmzznm...",
+   "...zzmmmmmmmmmmmmmzzz...",
+   "..zmnmmmmmmmmmmzzzkjjz..",
+   ".zmnmmmmmmmmmmzkjjzjbzz.",
+   ".zmnmmmmmmmmmmzjjbzzzmz.",
+   ".zmmmmmmmmmmmmmzzzmmmmz."
+  ]
+ ],
+ "usage": "收件人「橘园阿姨」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "d210783dde6a1786882696e5530e77121149d1115c357dddb2d9a3cdc4523fbf"
+}

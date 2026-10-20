@@ -1,0 +1,45 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:menu_close",
+ "version": 2,
+ "hash": "bbb812d9ff9ad7603d0f4da7df84e6f0019238cb59a7566b15329c12b3cbfac7",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "menu_close",
+  "uid": "sfx:menu_close",
+  "name": "关闭菜单",
+  "description": "G4→C4 柔和合拢的单个下弯。",
+  "seed": 170129,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "bbb812d9ff9ad7603d0f4da7df84e6f0019238cb59a7566b15329c12b3cbfac7",
+  "gain_db": -14.8656,
+  "instruments": [
+   {
+    "id": "menu",
+    "wave": "triangle",
+    "gain_db": 0,
+    "lowpass_hz": 1200,
+    "attack_ms": 16,
+    "decay_ms": 35,
+    "sustain": 0.65,
+    "release_ms": 45
+   }
+  ],
+  "duration_ms": 160,
+  "events": [
+   {
+    "instrument": "menu",
+    "start_ms": 0,
+    "duration_ms": 115,
+    "note": 67,
+    "slide_to_note": 60,
+    "gain_db": 0
+   }
+  ]
+ }
+}

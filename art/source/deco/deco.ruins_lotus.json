@@ -1,0 +1,42 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.ruins_lotus",
+ "name": "神庙 · 金莲",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  7
+ ],
+ "anchor": [
+  4,
+  7
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...l....",
+   "..lkl...",
+   ".D.l.D..",
+   "DCD.DCD.",
+   ".DnnnD..",
+   "..onno..",
+   "nnoooonn"
+  ]
+ ],
+ "usage": "地面装饰花。",
+ "notes": "",
+ "content_hash": "b7858a38d3711730e4fa6be7944d0fc6c4317542ff516e8f42aff45218ad2142"
+}

@@ -1,0 +1,33 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.goal_glow",
+ "name": "目标发光与光点",
+ "category": "ui",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/onboarding-fx.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/font-small.js"
+ ],
+ "depends": [
+  "mech.socket",
+  "mech.socket_lit",
+  "ui.goal_lamp",
+  "ui.icons"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "onb_goal_glow"
+ },
+ "usage": "空槽呼吸（1.6 秒一次，薄荷绿的光从槽里往上淡；关掉环境效果时不呼吸）；箱子进槽后光点带着尾巴 0.5 秒飞到右上角的目标灯（先快后慢），灯白闪 0.15 秒（onboarding.md 第 3 节）。",
+ "notes": "UX-03 第 1 版，等用户确认。画法在 workbench/js/core/onboarding-fx.js（G2 组件，不改 ui.keycap / ui.panel / 气泡 / HUD）；样张见工作台「资产」「确认」页（PB.ui.SCREENS.onb_goal_glow）。art/export/preview 里的 PNG 是空白：tools/art.mjs 的 renderProcedural 只画 theme / screen / material 三类。",
+ "content_hash": "9af08db24c1a3823004b38b6218dd724a3be69e2afcd4175f7a73dac47895bb7"
+}

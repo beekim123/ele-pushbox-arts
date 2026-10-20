@@ -1,0 +1,157 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.delivery_hud",
+ "name": "局内 HUD（配送）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "char.portitor",
+  "mech.ladder",
+  "monster.rat_swarm",
+  "item.coin",
+  "ui.delivery_icons",
+  "cargo.vase",
+  "item.sandbag",
+  "item.first_aid",
+  "item.rope_ladder"
+ ],
+ "version": 1,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "delivery_hud",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "room": [
+   "####################",
+   "####............####",
+   "##................##",
+   "#...H..............#",
+   "#...H##########....#",
+   "#...H..............#",
+   "....H...............",
+   "..P.H..#.....#......",
+   "####################",
+   "####################"
+  ],
+  "facing": "right",
+  "entities": [
+   {
+    "sprite": "monster.rat_swarm",
+    "anim": "walk",
+    "x": 12,
+    "y": 3,
+    "flip": true
+   },
+   {
+    "sprite": "item.coin",
+    "anim": "spin",
+    "x": 7,
+    "y": 3
+   },
+   {
+    "sprite": "item.coin",
+    "anim": "spin",
+    "x": 10,
+    "y": 3
+   },
+   {
+    "sprite": "item.coin",
+    "anim": "spin",
+    "x": 16,
+    "y": 7
+   }
+  ],
+  "hud": {
+   "hearts": 2,
+   "maxHearts": 3,
+   "cargo": "vase",
+   "left": 2,
+   "max": 3,
+   "rule": "fragile",
+   "hot": false,
+   "coins": 35,
+   "sand": 2,
+   "items": [
+    "first_aid",
+    "rope_ladder"
+   ],
+   "slots": 3,
+   "secs": 83,
+   "minimap": {
+    "cols": 4,
+    "rows": 3,
+    "cur": 4,
+    "rooms": [
+     {
+      "index": 0,
+      "x": 3,
+      "y": 0,
+      "role": "gate",
+      "seen": true
+     },
+     {
+      "index": 1,
+      "x": 2,
+      "y": 0,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 2,
+      "x": 2,
+      "y": 1,
+      "role": "station",
+      "seen": true
+     },
+     {
+      "index": 3,
+      "x": 2,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 4,
+      "x": 1,
+      "y": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 5,
+      "x": 0,
+      "y": 2,
+      "role": "home",
+      "seen": false
+     }
+    ]
+   }
+  }
+ },
+ "usage": "配送局内的 HUD（顶部 20 像素）：心、货物与完好度、货物规矩图标（易碎 / 会化 / 很热）、金币、沙袋、3 个背包格、用时、小地图（走过的房间、当前房间、收件人之家）。背景是石廊房间。",
+ "notes": "布局参考：文字来自 content/i18n-delivery（与已确认界面的文字表分开），缺的字形在 font-delivery.js；画法在 ui-delivery.js，没有改 ui.js。Godot 用 Control 容器实现。第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "23c03f3921674452382a4ef6731bf5aacf26cca8e8a8f55c753d2a06289c361b"
+}

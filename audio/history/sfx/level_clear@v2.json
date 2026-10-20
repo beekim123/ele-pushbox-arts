@@ -1,0 +1,58 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:level_clear",
+ "version": 2,
+ "hash": "f6c4463e1a0378ccd596b20f1a8e51ec8e85e8ed47a10c0fbb5ecfaa808aff4b",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "level_clear",
+  "uid": "sfx:level_clear",
+  "name": "全部灯亮过关",
+  "description": "C4/E4/G4 三音温暖收束，末音延长；只三次起音。",
+  "seed": 170110,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "f6c4463e1a0378ccd596b20f1a8e51ec8e85e8ed47a10c0fbb5ecfaa808aff4b",
+  "gain_db": -16.9303,
+  "instruments": [
+   {
+    "id": "close",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1600,
+    "attack_ms": 24,
+    "decay_ms": 90,
+    "sustain": 0.65,
+    "release_ms": 180
+   }
+  ],
+  "duration_ms": 1100,
+  "events": [
+   {
+    "instrument": "close",
+    "start_ms": 0,
+    "duration_ms": 180,
+    "note": 60,
+    "gain_db": 0
+   },
+   {
+    "instrument": "close",
+    "start_ms": 270,
+    "duration_ms": 200,
+    "note": 64,
+    "gain_db": 0
+   },
+   {
+    "instrument": "close",
+    "start_ms": 570,
+    "duration_ms": 350,
+    "note": 67,
+    "gain_db": 0
+   }
+  ]
+ }
+}

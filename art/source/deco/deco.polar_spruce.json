@@ -1,0 +1,82 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.polar_spruce",
+ "name": "极地 · 雪松",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  14,
+  22
+ ],
+ "anchor": [
+  7,
+  22
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zz......",
+   ".....zttz.....",
+   ".....zopz.....",
+   "....ztopuz....",
+   "....zooppz....",
+   ".....zopz.....",
+   "....ztopuz....",
+   "...ztooopuz...",
+   "...zooooppz...",
+   "....zooppz....",
+   "...ztooopuz...",
+   "..ztooooppuz..",
+   "..zooooopppz..",
+   "...zooooppz...",
+   "..ztooooppuz..",
+   ".ztooooooppuz.",
+   "ztooooooopppuz",
+   ".zooooooopppz.",
+   "ztooooooopppuz",
+   ".zzzzzfgzzzzz.",
+   ".....zfgz.....",
+   "......fg......"
+  ],
+  [
+   ".......zz.....",
+   "......zttz....",
+   "......zopz....",
+   ".....ztopuz...",
+   ".....zooppz...",
+   ".....zopzz....",
+   "....ztopuz....",
+   "...ztooopuz...",
+   "...zooooppz...",
+   "....zooppz....",
+   "...ztooopuz...",
+   "..ztooooppuz..",
+   "..zooooopppz..",
+   "...zooooppz...",
+   "..ztooooppuz..",
+   ".ztooooooppuz.",
+   "ztooooooopppuz",
+   ".zooooooopppz.",
+   "ztooooooopppuz",
+   ".zzzzzfgzzzzz.",
+   ".....zfgz.....",
+   "......fg......"
+  ]
+ ],
+ "usage": "长在地面上的一棵挂雪的雪松：深绿的尖塔形树冠一层一层往下变宽，每层枝头盖着白雪，下面一截短树干。树梢那一层带着雪团随风轻轻晃（sway）。画在箱子和人物后面，只是装饰，不能互动。",
+ "notes": "和地形左右两列的雪松树丛同一套颜色（针叶 o / p、雪 t / u、树干 f / g），站在树丛前面不会打架。雪只用白 t 和灰白 u，不用冰的青色 s。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "9d5cc1368fdb1c65fc42d11c86c027748e742ef3cf3a55cdfe327f824a96fcda"
+}

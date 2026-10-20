@@ -1,0 +1,186 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.seagull",
+ "name": "海鸥",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  12
+ ],
+ "anchor": [
+  8,
+  12
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    1
+   ]
+  },
+  "swoop": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    3,
+    4
+   ]
+  },
+  "grab": {
+   "fps": 8,
+   "loop": false,
+   "frames": [
+    5,
+    6
+   ]
+  },
+  "flee": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    7,
+    8
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzz.............",
+   "zyyzz...........",
+   ".zytuzz....zzz..",
+   "..zzuuuuz.ztttz.",
+   "....zzuuvzttztll",
+   ".zz...zzvzttttki",
+   "zttzzzzzzttttz..",
+   ".zzuuuuuuttttz..",
+   "...zttttttttz...",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "...........zzz..",
+   "..........ztttz.",
+   ".........zttztll",
+   "zzzzzz..ztttttki",
+   "yyuuuuzzuttttz..",
+   "zytuuuvvzttttz..",
+   ".zzzzzzzttttz...",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "...........zzz..",
+   "..........ztttz.",
+   ".........zttztll",
+   ".zz.....ztttttki",
+   "zttzzzzzzttttz..",
+   ".zzuzuuvvztttz..",
+   "...zuuuvztttz...",
+   "..zytuuzzzzz....",
+   ".zyyzzz.........",
+   ".zzz............"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "zz..............",
+   "zyzz......zzzz..",
+   ".zytuz...zttttz.",
+   "ztzzuuzzztttztll",
+   ".zzuzzuvztttttki",
+   "...zttzzzttttz..",
+   "....zztttttttz..",
+   "......zzzzzzz...",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "zz..............",
+   "zyzz............",
+   ".zytzz....zzzz..",
+   "..zzuuz..zttttz.",
+   "ztzzzuvzztttztll",
+   ".zzuzzzvztttttki",
+   "...zttzzzttttz..",
+   "....zztttttttz..",
+   "......zzzzzzz...",
+   "................"
+  ],
+  [
+   "zzz.............",
+   "zyyzz...........",
+   ".zytuzz....zzz..",
+   "..zzuuuuz.ztttz.",
+   "....zzuuvzttztll",
+   ".zz...zzvztttt..",
+   "zttzzzzzzttttzki",
+   ".zzuuuuuuttttz..",
+   "...zttttttttz...",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ],
+  [
+   "zzz.............",
+   "zyyzz...........",
+   ".zytuzz....zzz..",
+   "..zzuuuuz.ztttz.",
+   "....zzuuvzttztll",
+   ".zz...zzvzttttki",
+   "zttzzzzzzttttzlk",
+   ".zzuuuuuuttttzkj",
+   "...zttttttttz.zz",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ],
+  [
+   "zzz.............",
+   "zyyzz...........",
+   ".zytuzz....zzz..",
+   "..zzuuuuz.ztttz.",
+   "....zzuuvzttztll",
+   ".zz...zzvzttttki",
+   "zttzzzzzzttttzlk",
+   ".zzuuuuuuttttzkj",
+   "...zttttttttz.zz",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "...........zzz..",
+   "..........ztttz.",
+   ".........zttztll",
+   ".zz.....ztttttki",
+   "zttzzzzzzttttzlk",
+   ".zzuzuuvvztttzkj",
+   "...zuuuvztttz.zz",
+   "..zytuuzzzzz....",
+   ".zyyzzz.........",
+   ".zzz............"
+  ]
+ ],
+ "usage": "配送模式·济州海女村的怪物：白身灰翅、黑翅尖、黄嘴带红点的海鸥。在过道上空盘旋（fly），看见人就收起翅膀俯冲下来（swoop），叼走一块零食或 5 个金币（grab），再叼着东西飞走（flee）。推不动；躲到头顶有遮挡的格子（石墙檐下）或者打伞，它就叼不着。不受重力，画在地形前面。面朝右绘制，朝左时水平镜像。",
+ "notes": "俯冲属于实时规则（DLV-01），v2 先当普通怪物。叼着的东西统一画成一枚金币，零食和金币共用这套帧。和圣域的白鸽（fauna.sky_dove，小、只当生态）区分：海鸥大一圈、黄嘴红点、黑翅尖。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fc4a69e06d25574c7808acdb3be4c58d28a909d21da7d9aea574f923a6b2981f"
+}

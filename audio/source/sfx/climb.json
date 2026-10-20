@@ -1,0 +1,44 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "climb",
+ "uid": "sfx:climb",
+ "name": "爬梯",
+ "description": "木梯中低区双点，C3/G3 分别起于 0/44 ms。",
+ "seed": 170102,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "bfc3c1fa37ff90dd99b19ba5bc9508b51aff15956f99ae9365e6da23f93fdb5f",
+ "gain_db": -12.0615,
+ "instruments": [
+  {
+   "id": "rung",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 1000,
+   "attack_ms": 8,
+   "decay_ms": 12,
+   "sustain": 0.42,
+   "release_ms": 25
+  }
+ ],
+ "duration_ms": 100,
+ "events": [
+  {
+   "instrument": "rung",
+   "start_ms": 0,
+   "duration_ms": 26,
+   "note": 48,
+   "gain_db": 0
+  },
+  {
+   "instrument": "rung",
+   "start_ms": 44,
+   "duration_ms": 31,
+   "note": 55,
+   "gain_db": -2
+  }
+ ]
+}

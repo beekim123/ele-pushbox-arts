@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.sandbag",
+ "name": "沙袋",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "full": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "empty": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".......zzz......",
+   "......zfkfz.....",
+   ".......zfz......",
+   "......zccdz.....",
+   "....zzcccddzz...",
+   "...zccccccddfz..",
+   "..zcctccccdddfz.",
+   "..zcccccccdddfz.",
+   "..zccccccddddfz.",
+   "..zcccccddddffz.",
+   "..zdcccddddfffz.",
+   "...zdddddddffz..",
+   "....zzfffffzz...",
+   "......zzzzz.....",
+   "................"
+  ],
+  [
+   "................",
+   ".......zzz......",
+   "......zyvyz.....",
+   ".......zyz......",
+   "......zwwxz.....",
+   "....zzwwwxxzz...",
+   "...zwwwwwwxxyz..",
+   "..zwwvwwwwxxxyz.",
+   "..zwwwwwwwxxxyz.",
+   "..zwwwwwwxxxxyz.",
+   "..zwwwwwxxxxyyz.",
+   "..zxwwwxxxxyyyz.",
+   "...zxxxxxxxyyz..",
+   "....zzyyyyyzz...",
+   "......zzzzz.....",
+   "................"
+  ]
+ ],
+ "usage": "HUD 背包里的一袋沙（1 袋 = 1 格）。空袋用于背包空位与不可用提示。",
+ "notes": "",
+ "content_hash": "4717353f223ad3f9c60004d472c0ca7c599c5a62957ae9adb28163a4f4d9eccd"
+}

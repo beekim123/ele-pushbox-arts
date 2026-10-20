@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.cave_mushroom",
+ "name": "晶窟 · 荧光蘑菇",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  8
+ ],
+ "anchor": [
+  4,
+  8
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "glow": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    1,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzzz..",
+   ".zsssrz.",
+   "zsttssrz",
+   "zrsssrrz",
+   ".zzccz..",
+   "..zcz...",
+   "..zcz...",
+   ".zzczz.."
+  ],
+  [
+   "..zzzz..",
+   ".zrrrrz.",
+   "zrssrrrz",
+   "zrrrrrrz",
+   ".zzccz..",
+   "..zcz...",
+   "..zcz...",
+   ".zzczz.."
+  ]
+ ],
+ "usage": "地面装饰；伞盖缓慢明暗变化，不照亮周围。",
+ "notes": "",
+ "content_hash": "02a19b50f141b4c32a4f3ffb9c99f8a91bd7e28fb55277974e8695b2d1dcb3c8"
+}

@@ -1,0 +1,292 @@
+{
+ "format": "pushbox.art/1",
+ "id": "monster.penguin",
+ "name": "企鹅",
+ "category": "monster",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "walk": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "slide": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "bump": {
+   "fps": 6,
+   "loop": true,
+   "frames": [
+    6,
+    7
+   ]
+  },
+  "ko": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    8,
+    9
+   ]
+  },
+  "trapped": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    10,
+    11
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zxyyyz.....",
+   "....zxyyyyyz....",
+   "....zyyytttz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttz....",
+   "..zxyyytttttz...",
+   "..zyyyyyttuuz...",
+   "..zyyyyytuuuz...",
+   "...zyytyuuvvz...",
+   "....zyyuuvvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zxyyyz.....",
+   "....zxyyyyyz....",
+   "....zyyyttyz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttz....",
+   "..zxyyytttttz...",
+   "..zyyyyyttuuz...",
+   "..zyyyyytuuuz...",
+   "...zyytyuuvvz...",
+   "....zyyuuvvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ],
+  [
+   "................",
+   "................",
+   ".......zzzz.....",
+   "......zxyyyz....",
+   ".....zxyyyyyz...",
+   ".....zyyytttz...",
+   ".....zyyyttuzjj.",
+   "....zxxyytvz.b..",
+   "...zxyytttttz...",
+   "...zyyytttttz...",
+   "...zyyyytttuz...",
+   "...zyyyyttuuz...",
+   "...zyyyytuuvz...",
+   "....zyyyuuvz....",
+   "....zjjzzzjjz...",
+   ".....zz...zz...."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zxyyyz.....",
+   "....zxyyyyyz....",
+   "....zyyytttz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttz....",
+   "..zxyyytttttz...",
+   "..zyyyyyttuuz...",
+   "..zyyyyytuuuz...",
+   "...zyytyuuvvz...",
+   "....zyyuuvvz....",
+   ".....zzzzzz.....",
+   "......zjjjjz....",
+   ".......zzzz....."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...........zz...",
+   "......zzz.zxyz..",
+   "...zzzxxyzxyyyz.",
+   ".zzxxyyyyyyyytyz",
+   "zjyyyyyyyyytttzj",
+   "uzjyttttttttuvbj",
+   ".tzttttttuuuvz..",
+   "t..zzzuuvvzzz...",
+   "......zzzz......"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "...........zz...",
+   "......zzz.zxyz..",
+   "...zzzxxyzxyyyz.",
+   ".zzxxyyyyyyyytyz",
+   "zjyyyyyyyyytttzj",
+   ".zjyttttttttuvbj",
+   "t.zttttttuuuvz..",
+   "...zzzuuvvzzz...",
+   "uut...zzzz......"
+  ],
+  [
+   "................",
+   "................",
+   ".......zzzz.....",
+   "......zxyyyz....",
+   ".....zxyyyyyz...",
+   ".....zyyytttz...",
+   ".....zyyyttuzjj.",
+   "....zxxyytvz.bzt",
+   "...zxyytttttzyyz",
+   "...zyyytttttyzz.",
+   "...zyyyttttuyz.t",
+   "...zyyytttuuz...",
+   "...zyyyttuuvz...",
+   "....zyyyuuvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ],
+  [
+   "................",
+   "................",
+   ".......zzzz.....",
+   "......zxyyyz....",
+   ".....zxyyyyyz...",
+   "....zzyyytttz...",
+   "...zyzyyyttuzjj.",
+   "....zyxyytvz.b..",
+   "...zxyytttttz..t",
+   "...zyyytttttz...",
+   "...zyyyttttuz...",
+   "...zyyytttuuz...",
+   "...zyyyttuuvz...",
+   "....zyyyuuvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ],
+  [
+   ".....l..........",
+   "....k......l....",
+   "............k...",
+   "......zzzz......",
+   ".....zxyyyz.....",
+   "....zxyyyyyz....",
+   "....zyyyttvz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttz....",
+   "..zxyyytttttz...",
+   "..zyyyyyttuuz...",
+   "..zyyyyytuuuz...",
+   "...zyytyuuvvz...",
+   "....zyjjujjz....",
+   ".....zzzzzz....."
+  ],
+  [
+   ".......k..l.....",
+   "......l.........",
+   "...k............",
+   "......zzzz......",
+   ".....zxyyyz.....",
+   "....zxyyyyyz....",
+   "....zyyyttvz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttz....",
+   "..zxyyytttttz...",
+   "..zyyyyyttuuz...",
+   "..zyyyyytuuuz...",
+   "...zyytyuuvvz...",
+   "....zyjjujjz....",
+   ".....zzzzzz....."
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zxyyyz..r..",
+   "....zxyyyxyz....",
+   "...zzyyytttz..z.",
+   "..zyzyyyttuzjjyz",
+   "...zyxyytvyzbyz.",
+   "...zxyyttttzyz..",
+   "..zxyyttttttz...",
+   "..zyyyttttuuz...",
+   "..zyyytttuuuz...",
+   "...zyyttuuvvz...",
+   "....zyyuuvvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zxyyyz..r..",
+   "....zxyyyxyz....",
+   "....zyyytttz....",
+   "....zyyyttuzjj..",
+   "...zxxyytvyzb...",
+   "...zxyyttttzzz..",
+   "..zyyyttttttyyz.",
+   "..zyyyttttuuzzyz",
+   "..zyyytttuuuz.z.",
+   "...zyyttuuvvz...",
+   "....zyyuuvvz....",
+   ".....zjjzjjz....",
+   "......zz.zz....."
+  ]
+ ],
+ "usage": "配送模式·极地雪村的怪物：黑背白肚、橙嘴橙脚的企鹅（idle，偶尔眨眼）。在雪原（喘口气的房间）里摇摇摆摆地走（walk）；看见人就趴下肚皮滑过来（slide），一直滑到撞上东西才停；撞到人时甩翅膀（bump），把人推回一格。能推：被推时也一路滑走；箱子落在头上就晕倒（ko，头上转星星）；滑进两格深的坑里爬不出来，在坑里拍翅膀（trapped）。白肚皮有 z 描边和 u / v 的阴影，放在雪地上也看得清。面朝右绘制，朝左时水平镜像。",
+ "notes": "企鹅滑行撞人属于实时规则（DLV-01），v2 先当普通怪物，这里只画动作；站到台阶或梯子上躲开它不另画。企鹅做了怪物，就不做提示动物。 DSN-04（极地雪村）的美术候选（ART-01c），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "68f124278d7d1f88f412ebd8a6747c6828d28b9bcf1540685665f7f9f1a38e0a"
+}

@@ -1,0 +1,997 @@
+{
+  "format": "pushbox.catalog/1",
+  "kind": "audio",
+  "note": "DSN-02 声音设计规格；当前工具尚不读取 audio 目录，WB-02 实现校验/生成。条目是制作要求，不表示已生成、已确认或已进游戏。jeju_1 由 DSN-01 提供，当前以 pending_references 显式记录，不能永久豁免校验。music_set 是确认后解析到具体候选版本的稳定别名。",
+  "policy": {
+    "default_music_uid": "music:dungeon",
+    "fallback_order": [
+      "requested_set_approved_selection",
+      "music:dungeon_approved_selection",
+      "silence"
+    ],
+    "unapproved_in_game": false,
+    "walking_sfx": "silent",
+    "sfx_voice_limit": 3,
+    "sfx_bus_gain_db": -6,
+    "crossfade_ms": 1000,
+    "crossfade_curve": "linear_unity_sum",
+    "pause_music_gain_db": -9,
+    "pause_ramp_ms": 200,
+    "master_control": "workbench_monitor_only",
+    "existing_game_settings": {
+      "music": 0.8,
+      "sfx": 0.8
+    },
+    "preview_defaults": {
+      "master": 0.8,
+      "music": 0.8,
+      "sfx": 0.8
+    },
+    "export": {
+      "sample_rate": 44100,
+      "channels": 1,
+      "encoding": "pcm_s16le",
+      "container": "wav"
+    },
+    "metrics": {
+      "sfx_rms_dbfs": {
+        "target": -24,
+        "tolerance": 2
+      },
+      "music_rms_dbfs": {
+        "target": -26,
+        "tolerance": 2
+      },
+      "sample_peak_max_dbfs": -9,
+      "dc_abs_max": 0.001,
+      "music_seam_value_delta_max": 0.002,
+      "music_seam_slope_delta_max": 0.002,
+      "fundamental_hz": [
+        65,
+        1760
+      ],
+      "lowpass_hz_max": 4000,
+      "noise_energy_ratio_max": 0.08,
+      "music_window_seconds": 3,
+      "music_window_step_seconds": 1,
+      "music_window_rms_range_max_db": 6,
+      "music_window_ignore_below_dbfs": -50,
+      "music_full_silence_max_ms": 1000,
+      "sfx_endpoint_abs_max": 0.001
+    },
+    "sfx_duration_max_ms": 1600,
+    "music_bpm_range": [
+      64,
+      108
+    ],
+    "music_meter": [
+      4,
+      4
+    ],
+    "music_bars": 32,
+    "music_track_limit": 6,
+    "music_pitched_voice_limit": 4,
+    "note_midi_range": [
+      36,
+      81
+    ]
+  },
+  "routes": {
+    "delivery": {
+      "slice_to_music": {
+        "dungeon_1": "music:dungeon",
+        "dungeon_2": "music:dungeon",
+        "diyu_1": "music:diyu",
+        "jeju_1": "music:jeju"
+      },
+      "otherwise": "slice.world_to_music_then_default"
+    },
+    "world_to_music": {
+      "dungeon": "music:dungeon",
+      "diyu": "music:diyu",
+      "jeju": "music:jeju"
+    },
+    "chapter_to_music": {
+      "dungeon": "music:dungeon",
+      "ruins": "music:dungeon",
+      "cave": "music:dungeon",
+      "forest": "music:dungeon",
+      "sky": "music:dungeon",
+      "cosmos": "music:dungeon"
+    },
+    "group_to_chapter": {
+      "basics": "dungeon",
+      "water": "ruins",
+      "blast": "cave",
+      "react": "forest",
+      "thermal": "sky",
+      "experimental": "cosmos",
+      "hell-pool": "dungeon"
+    },
+    "lobby": "visible_map_context_then_default",
+    "result": "continue_current_no_restart",
+    "hell": "chapter_to_music_no_diyu_name_inference"
+  },
+  "pending_references": [
+    {
+      "domain": "slice",
+      "id": "jeju_1",
+      "owner": "DSN-01",
+      "reason": "当前基线 slices.json 未有该项；WB-02 派前由 Claude 核对 DSN-01 合并结果，缺失则报告错误并在交付记录，不修改 slices.json"
+    }
+  ],
+  "music_sets": [
+    {
+      "id": "dungeon",
+      "uid": "music:dungeon",
+      "kind": "music_set",
+      "name": "石牢",
+      "world": "dungeon",
+      "slices": [
+        "dungeon_1",
+        "dungeon_2"
+      ],
+      "candidates": [
+        "music:dungeon_a",
+        "music:dungeon_b",
+        "music:dungeon_c"
+      ]
+    },
+    {
+      "id": "diyu",
+      "uid": "music:diyu",
+      "kind": "music_set",
+      "name": "地府·酆都",
+      "world": "diyu",
+      "slices": [
+        "diyu_1"
+      ],
+      "candidates": [
+        "music:diyu_a",
+        "music:diyu_b",
+        "music:diyu_c"
+      ]
+    },
+    {
+      "id": "jeju",
+      "uid": "music:jeju",
+      "kind": "music_set",
+      "name": "济州海女村",
+      "world": "jeju",
+      "slices": [
+        "jeju_1"
+      ],
+      "candidates": [
+        "music:jeju_a",
+        "music:jeju_b",
+        "music:jeju_c"
+      ]
+    },
+    {
+      "id": "theme",
+      "uid": "music:theme",
+      "kind": "music_set",
+      "name": "主题小调",
+      "world": null,
+      "slices": [],
+      "candidates": [
+        "music:theme_a",
+        "music:theme_b",
+        "music:theme_c",
+        "music:theme_d"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "push",
+      "uid": "sfx:push",
+      "kind": "sfx",
+      "name": "推箱",
+      "trigger": "箱子成功移动一格后",
+      "sound": "低木质轻咚，尾音短",
+      "duration_ms": 180,
+      "max_instances": 1,
+      "min_interval_ms": 180,
+      "voice_group": "action",
+      "priority": 1,
+      "source": "audio/source/sfx/push.json"
+    },
+    {
+      "id": "crate_land",
+      "uid": "sfx:crate_land",
+      "kind": "sfx",
+      "name": "箱子落地",
+      "trigger": "下落结束且实际撞到支撑时；同次结算合并",
+      "sound": "圆钝的木箱落定声，不做爆裂",
+      "duration_ms": 240,
+      "max_instances": 2,
+      "min_interval_ms": 120,
+      "voice_group": "mechanism",
+      "priority": 2,
+      "source": "audio/source/sfx/crate_land.json"
+    },
+    {
+      "id": "climb",
+      "uid": "sfx:climb",
+      "kind": "sfx",
+      "name": "爬梯",
+      "trigger": "成功爬一格后；长按按间隔限频",
+      "sound": "低音双点，像木梯轻响",
+      "duration_ms": 100,
+      "max_instances": 1,
+      "min_interval_ms": 350,
+      "voice_group": "action",
+      "priority": 0,
+      "source": "audio/source/sfx/climb.json"
+    },
+    {
+      "id": "dig",
+      "uid": "sfx:dig",
+      "kind": "sfx",
+      "name": "挖掘",
+      "trigger": "一格土被挖掉并记入沙袋后",
+      "sound": "柔软颗粒擦过木铲",
+      "duration_ms": 220,
+      "max_instances": 1,
+      "min_interval_ms": 220,
+      "voice_group": "action",
+      "priority": 1,
+      "source": "audio/source/sfx/dig.json"
+    },
+    {
+      "id": "pour",
+      "uid": "sfx:pour",
+      "kind": "sfx",
+      "name": "倒沙",
+      "trigger": "一次倒沙动作实际消耗沙袋时",
+      "sound": "低通细沙沙声；一袋一次，不按颗粒叫",
+      "duration_ms": 320,
+      "max_instances": 1,
+      "min_interval_ms": 320,
+      "voice_group": "action",
+      "priority": 1,
+      "source": "audio/source/sfx/pour.json"
+    },
+    {
+      "id": "plate_down",
+      "uid": "sfx:plate_down",
+      "kind": "sfx",
+      "name": "压板按下",
+      "trigger": "未按下变为按下时",
+      "sound": "温软低音短嗒",
+      "duration_ms": 100,
+      "max_instances": 1,
+      "min_interval_ms": 120,
+      "voice_group": "mechanism",
+      "priority": 2,
+      "source": "audio/source/sfx/plate_down.json"
+    },
+    {
+      "id": "plate_up",
+      "uid": "sfx:plate_up",
+      "kind": "sfx",
+      "name": "压板松开",
+      "trigger": "按下变为未按下时",
+      "sound": "比按下略低的轻嗒",
+      "duration_ms": 100,
+      "max_instances": 1,
+      "min_interval_ms": 120,
+      "voice_group": "mechanism",
+      "priority": 2,
+      "source": "audio/source/sfx/plate_up.json"
+    },
+    {
+      "id": "door_open",
+      "uid": "sfx:door_open",
+      "kind": "sfx",
+      "name": "门打开",
+      "trigger": "关门状态切换为打开时",
+      "sound": "两音上行，柔和木轴声",
+      "duration_ms": 280,
+      "max_instances": 1,
+      "min_interval_ms": 180,
+      "voice_group": "mechanism",
+      "priority": 2,
+      "source": "audio/source/sfx/door_open.json"
+    },
+    {
+      "id": "door_close",
+      "uid": "sfx:door_close",
+      "kind": "sfx",
+      "name": "门关闭",
+      "trigger": "打开状态切换为关闭时",
+      "sound": "两音下行，轻轻合拢",
+      "duration_ms": 260,
+      "max_instances": 1,
+      "min_interval_ms": 180,
+      "voice_group": "mechanism",
+      "priority": 2,
+      "source": "audio/source/sfx/door_close.json"
+    },
+    {
+      "id": "goal_on",
+      "uid": "sfx:goal_on",
+      "kind": "sfx",
+      "name": "目标灯亮",
+      "trigger": "一个未亮目标第一次变亮时",
+      "sound": "小铃般的正弦两音，不尖亮",
+      "duration_ms": 350,
+      "max_instances": 1,
+      "min_interval_ms": 180,
+      "voice_group": "reward",
+      "priority": 2,
+      "source": "audio/source/sfx/goal_on.json"
+    },
+    {
+      "id": "level_clear",
+      "uid": "sfx:level_clear",
+      "kind": "sfx",
+      "name": "全部灯亮过关",
+      "trigger": "关卡首次进入完成状态时",
+      "sound": "三音温暖收束；覆盖最后一盏灯声",
+      "duration_ms": 1100,
+      "max_instances": 1,
+      "min_interval_ms": 1100,
+      "voice_group": "reward",
+      "priority": 3,
+      "source": "audio/source/sfx/level_clear.json"
+    },
+    {
+      "id": "undo",
+      "uid": "sfx:undo",
+      "kind": "sfx",
+      "name": "撤销",
+      "trigger": "关卡或地狱模式成功撤销一次后",
+      "sound": "短小下滑音；不回放被撤销动作声音",
+      "duration_ms": 180,
+      "max_instances": 1,
+      "min_interval_ms": 180,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/undo.json"
+    },
+    {
+      "id": "restart",
+      "uid": "sfx:restart",
+      "kind": "sfx",
+      "name": "重开",
+      "trigger": "重开真正生效时；取消重开不叫",
+      "sound": "低起音后轻柔重新落定",
+      "duration_ms": 450,
+      "max_instances": 1,
+      "min_interval_ms": 450,
+      "voice_group": "ui",
+      "priority": 2,
+      "source": "audio/source/sfx/restart.json"
+    },
+    {
+      "id": "hint_show",
+      "uid": "sfx:hint_show",
+      "kind": "sfx",
+      "name": "提示出现",
+      "trigger": "玩家主动展开一个新提示层级时",
+      "sound": "柔和的两颗音符",
+      "duration_ms": 260,
+      "max_instances": 1,
+      "min_interval_ms": 400,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/hint_show.json"
+    },
+    {
+      "id": "rule_card",
+      "uid": "sfx:rule_card",
+      "kind": "sfx",
+      "name": "规则卡",
+      "trigger": "规则卡从关闭变成打开时",
+      "sound": "纸页感的低通短声加轻音",
+      "duration_ms": 300,
+      "max_instances": 1,
+      "min_interval_ms": 400,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/rule_card.json"
+    },
+    {
+      "id": "coin",
+      "uid": "sfx:coin",
+      "kind": "sfx",
+      "name": "金币",
+      "trigger": "同帧金币入账合并为一次",
+      "sound": "两枚圆润小音，不随金额升高",
+      "duration_ms": 220,
+      "max_instances": 1,
+      "min_interval_ms": 120,
+      "voice_group": "reward",
+      "priority": 2,
+      "source": "audio/source/sfx/coin.json"
+    },
+    {
+      "id": "hurt",
+      "uid": "sfx:hurt",
+      "kind": "sfx",
+      "name": "受伤",
+      "trigger": "实际扣心且不在无敌期时",
+      "sound": "中低音短弯音；无尖叫或警笛",
+      "duration_ms": 350,
+      "max_instances": 1,
+      "min_interval_ms": 350,
+      "voice_group": "alert",
+      "priority": 3,
+      "source": "audio/source/sfx/hurt.json"
+    },
+    {
+      "id": "cargo_damage",
+      "uid": "sfx:cargo_damage",
+      "kind": "sfx",
+      "name": "货物受损",
+      "trigger": "实际扣完好度时；同一事件合并",
+      "sound": "低木音加轻抖动，区别于受伤",
+      "duration_ms": 280,
+      "max_instances": 1,
+      "min_interval_ms": 280,
+      "voice_group": "alert",
+      "priority": 3,
+      "source": "audio/source/sfx/cargo_damage.json"
+    },
+    {
+      "id": "reel_spin",
+      "uid": "sfx:reel_spin",
+      "kind": "sfx",
+      "name": "滚轮转动",
+      "trigger": "滚轮开始或重转真正开始时；三滚轮共用一声",
+      "sound": "缓慢的低音软嗒循环，不模拟高速连响",
+      "duration_ms": 400,
+      "max_instances": 1,
+      "min_interval_ms": 400,
+      "voice_group": "reel",
+      "priority": 0,
+      "source": "audio/source/sfx/reel_spin.json",
+      "loop": true,
+      "max_play_ms": 2000,
+      "stop_fade_ms": 80
+    },
+    {
+      "id": "reel_stop",
+      "uid": "sfx:reel_stop",
+      "kind": "sfx",
+      "name": "滚轮停下",
+      "trigger": "三个滚轮全部落定时一次；单格停下不叫",
+      "sound": "温暖两音落点，避免三声叠加",
+      "duration_ms": 300,
+      "max_instances": 1,
+      "min_interval_ms": 300,
+      "voice_group": "reel",
+      "priority": 2,
+      "source": "audio/source/sfx/reel_stop.json"
+    },
+    {
+      "id": "reroll",
+      "uid": "sfx:reroll",
+      "kind": "sfx",
+      "name": "重转",
+      "trigger": "成功扣除重转次数时",
+      "sound": "短回旋提示；随后滚轮循环延迟80毫秒开始",
+      "duration_ms": 250,
+      "max_instances": 1,
+      "min_interval_ms": 500,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/reroll.json"
+    },
+    {
+      "id": "shop_buy",
+      "uid": "sfx:shop_buy",
+      "kind": "sfx",
+      "name": "驿站买东西",
+      "trigger": "购买成功且钱和物品已结算时",
+      "sound": "柔和木扣加上行音；替代本次确认和金币声",
+      "duration_ms": 300,
+      "max_instances": 1,
+      "min_interval_ms": 300,
+      "voice_group": "reward",
+      "priority": 2,
+      "source": "audio/source/sfx/shop_buy.json"
+    },
+    {
+      "id": "feed_snack",
+      "uid": "sfx:feed_snack",
+      "kind": "sfx",
+      "name": "喂零食",
+      "trigger": "零食实际交给提示动物时",
+      "sound": "圆润的小啵和轻快应答音",
+      "duration_ms": 260,
+      "max_instances": 1,
+      "min_interval_ms": 500,
+      "voice_group": "action",
+      "priority": 1,
+      "source": "audio/source/sfx/feed_snack.json"
+    },
+    {
+      "id": "animal_hint",
+      "uid": "sfx:animal_hint",
+      "kind": "sfx",
+      "name": "提示动物叫一声",
+      "trigger": "玩家召唤提示成功且动物开始提示时",
+      "sound": "合成的中音双啾；全图同一套，不用录音",
+      "duration_ms": 380,
+      "max_instances": 1,
+      "min_interval_ms": 1500,
+      "voice_group": "action",
+      "priority": 1,
+      "source": "audio/source/sfx/animal_hint.json"
+    },
+    {
+      "id": "delivery_arrive",
+      "uid": "sfx:delivery_arrive",
+      "kind": "sfx",
+      "name": "送达",
+      "trigger": "送货成功并首次打开送达结算时",
+      "sound": "四音温暖短句；不复用关卡胜利声",
+      "duration_ms": 1300,
+      "max_instances": 1,
+      "min_interval_ms": 1300,
+      "voice_group": "reward",
+      "priority": 3,
+      "source": "audio/source/sfx/delivery_arrive.json"
+    },
+    {
+      "id": "ui_move",
+      "uid": "sfx:ui_move",
+      "kind": "sfx",
+      "name": "光标移动",
+      "trigger": "焦点实际换到另一项时",
+      "sound": "极轻的中低音木点",
+      "duration_ms": 70,
+      "max_instances": 1,
+      "min_interval_ms": 100,
+      "voice_group": "ui",
+      "priority": 0,
+      "source": "audio/source/sfx/ui_move.json"
+    },
+    {
+      "id": "ui_confirm",
+      "uid": "sfx:ui_confirm",
+      "kind": "sfx",
+      "name": "界面确认",
+      "trigger": "普通确认成功时；有专用业务声则不叫",
+      "sound": "短上行双点",
+      "duration_ms": 120,
+      "max_instances": 1,
+      "min_interval_ms": 120,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/ui_confirm.json"
+    },
+    {
+      "id": "ui_back",
+      "uid": "sfx:ui_back",
+      "kind": "sfx",
+      "name": "取消或返回",
+      "trigger": "取消选择或退回上层时",
+      "sound": "轻柔下降双点",
+      "duration_ms": 120,
+      "max_instances": 1,
+      "min_interval_ms": 120,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/ui_back.json"
+    },
+    {
+      "id": "menu_open",
+      "uid": "sfx:menu_open",
+      "kind": "sfx",
+      "name": "打开菜单",
+      "trigger": "菜单从关闭变为打开时",
+      "sound": "柔和展开音；不与普通确认叠放",
+      "duration_ms": 160,
+      "max_instances": 1,
+      "min_interval_ms": 160,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/menu_open.json"
+    },
+    {
+      "id": "menu_close",
+      "uid": "sfx:menu_close",
+      "kind": "sfx",
+      "name": "关闭菜单",
+      "trigger": "菜单从打开变为关闭时",
+      "sound": "柔和合拢音；替代本次取消声",
+      "duration_ms": 160,
+      "max_instances": 1,
+      "min_interval_ms": 160,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/menu_close.json"
+    },
+    {
+      "id": "blocked",
+      "uid": "sfx:blocked",
+      "kind": "sfx",
+      "name": "不能操作",
+      "trigger": "玩家主动按下但动作被拒绝时；按住不持续叫",
+      "sound": "低音轻咚，避免惩罚感",
+      "duration_ms": 140,
+      "max_instances": 1,
+      "min_interval_ms": 400,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/blocked.json"
+    },
+    {
+      "id": "volume_preview",
+      "uid": "sfx:volume_preview",
+      "kind": "sfx",
+      "name": "音效音量试听",
+      "trigger": "音效或总音量滑块调整结束，或点击试听时",
+      "sound": "平稳柔和双音；使用调节后的真实增益",
+      "duration_ms": 500,
+      "max_instances": 1,
+      "min_interval_ms": 500,
+      "voice_group": "ui",
+      "priority": 1,
+      "source": "audio/source/sfx/volume_preview.json"
+    },
+    {
+      "id": "dungeon_a",
+      "uid": "music:dungeon_a",
+      "kind": "music",
+      "set": "dungeon",
+      "name": "灯笈微光",
+      "theme": "灯光穿过空石廊，稀疏的三音问答",
+      "instruments": [
+        "正弦低垫",
+        "三角波木琴",
+        "低通脉冲点音"
+      ],
+      "bpm": 68,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "D 自然小调",
+      "mood": [
+        "地下",
+        "安静",
+        "陪伴"
+      ],
+      "difference": "用长留白和低区持续音；比地府少装饰，比济州慢",
+      "source": "audio/source/music/dungeon_a.json"
+    },
+    {
+      "id": "dungeon_b",
+      "uid": "music:dungeon_b",
+      "kind": "music",
+      "set": "dungeon",
+      "name": "符文回廊",
+      "theme": "短动机隔两小节回应，像远处的符文亮起",
+      "instruments": [
+        "三角波短拨弦",
+        "正弦低音",
+        "柔和脉冲回声"
+      ],
+      "bpm": 72,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "A 多利亚",
+      "mood": [
+        "幽静",
+        "好奇",
+        "不紧张"
+      ],
+      "difference": "靠问答和悬停感，不用地府的诙谐切分或济州的明亮分解",
+      "source": "audio/source/music/dungeon_b.json"
+    },
+    {
+      "id": "dungeon_c",
+      "uid": "music:dungeon_c",
+      "kind": "music",
+      "set": "dungeon",
+      "name": "石阶慢行",
+      "theme": "下行低音带小幅向上的旋律，像慢慢找到路",
+      "instruments": [
+        "正弦软钟",
+        "低三角波",
+        "极轻低通噪声刷音"
+      ],
+      "bpm": 64,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "E 小调五声",
+      "mood": [
+        "沉静",
+        "探索",
+        "温柔"
+      ],
+      "difference": "三者最疏、最低；不制造恐怖音程或地表舞步感",
+      "source": "audio/source/music/dungeon_c.json"
+    },
+    {
+      "id": "diyu_a",
+      "uid": "music:diyu_a",
+      "kind": "music",
+      "set": "diyu",
+      "name": "酆都夜摊",
+      "theme": "夜里摆摊的轻巧问答；原创五声旋律",
+      "instruments": [
+        "三角波拟拨弦",
+        "正弦木鱼点",
+        "柔和脉冲笛音"
+      ],
+      "bpm": 84,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "D 宫五声（D E F# A B）",
+      "mood": [
+        "夜市",
+        "诙谐",
+        "暖灯"
+      ],
+      "difference": "比石牢节奏活跃，比济州收敛；以五声装饰和木质打点辨认",
+      "source": "audio/source/music/diyu_a.json"
+    },
+    {
+      "id": "diyu_b",
+      "uid": "music:diyu_b",
+      "kind": "music",
+      "set": "diyu",
+      "name": "奈何茶暖",
+      "theme": "茶摊上慢慢聊家常，短句互答",
+      "instruments": [
+        "正弦圆笛",
+        "低通脉冲拟阮",
+        "低三角波"
+      ],
+      "bpm": 78,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "A 羽五声（A C D E G）",
+      "mood": [
+        "夜色",
+        "家常",
+        "安稳"
+      ],
+      "difference": "采用短倚音和轻切分，保持温暖；不套恐怖寺庙音效或海浪感",
+      "source": "audio/source/music/diyu_b.json"
+    },
+    {
+      "id": "diyu_c",
+      "uid": "music:diyu_c",
+      "kind": "music",
+      "set": "diyu",
+      "name": "纸灯小巡",
+      "theme": "小鬼提纸灯巡街，旋律轻轻错步",
+      "instruments": [
+        "三角波弹拨",
+        "正弦软铃",
+        "低音木块"
+      ],
+      "bpm": 92,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "G 徵五声（G A C D E）",
+      "mood": [
+        "俏皮",
+        "灯会",
+        "亲切"
+      ],
+      "difference": "有轻巧错拍与收句停顿；区别于石牢的静止和济州的开阔",
+      "source": "audio/source/music/diyu_c.json"
+    },
+    {
+      "id": "jeju_a",
+      "uid": "music:jeju_a",
+      "kind": "music",
+      "set": "jeju",
+      "name": "晨潮出门",
+      "theme": "明亮分解和弦带出白天海面",
+      "instruments": [
+        "三角波轻拨弦",
+        "正弦哨音",
+        "低通噪声轻刷"
+      ],
+      "bpm": 100,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "C 大调",
+      "mood": [
+        "白天",
+        "海风",
+        "轻快"
+      ],
+      "difference": "节奏均匀、音区略开阔；比石牢明亮，比地府少装饰倚音",
+      "source": "audio/source/music/jeju_a.json"
+    },
+    {
+      "id": "jeju_b",
+      "uid": "music:jeju_b",
+      "kind": "music",
+      "set": "jeju",
+      "name": "石墙晒网",
+      "theme": "石墙边整理渔网的短小活泼动机",
+      "instruments": [
+        "柔和脉冲短琴",
+        "正弦低音",
+        "三角波软马林巴"
+      ],
+      "bpm": 108,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "G 大调五声（G A B D E）",
+      "mood": [
+        "勤快",
+        "晴朗",
+        "松弛"
+      ],
+      "difference": "以稳定轻切分和清晰和弦区别于地府的夜市问答、石牢的稀疏低垫",
+      "source": "audio/source/music/jeju_b.json"
+    },
+    {
+      "id": "jeju_c",
+      "uid": "music:jeju_c",
+      "kind": "music",
+      "set": "jeju",
+      "name": "风过橘园",
+      "theme": "旋律像潮水往返，第二段多一个回答声部",
+      "instruments": [
+        "正弦软笛",
+        "三角波竖琴感分解",
+        "极轻噪声沙锤"
+      ],
+      "bpm": 96,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "F 利底亚",
+      "mood": [
+        "开阔",
+        "清新",
+        "期待"
+      ],
+      "difference": "使用明亮上行和较长旋律弧；不引用真实民歌或模仿他人旋律",
+      "source": "audio/source/music/jeju_c.json"
+    },
+    {
+      "id": "theme_a",
+      "uid": "music:theme_a",
+      "kind": "music",
+      "set": "theme",
+      "name": "渡口灯",
+      "theme": "温柔、上扬后落回，像提着灯出门；同一八小节动机依次展示原型、石牢、地府、海女村",
+      "instruments": [
+        "三角波主题",
+        "正弦低音",
+        "低八度三角波与正弦弱回声",
+        "正弦圆笛、短倚音、低通木点",
+        "三角波摇摆分解和弦、极轻低通浪声"
+      ],
+      "bpm": 84,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "C 五声（展示曲含四种色彩）",
+      "mood": [
+        "温柔",
+        "提灯出门",
+        "安稳"
+      ],
+      "difference": "温柔、上扬后落回，像提着灯出门；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+      "source": "audio/source/music/theme_a.json"
+    },
+    {
+      "id": "theme_b",
+      "uid": "music:theme_b",
+      "kind": "music",
+      "set": "theme",
+      "name": "小信差",
+      "theme": "轻快、带附点，像小跑着送信；同一八小节动机依次展示原型、石牢、地府、海女村",
+      "instruments": [
+        "三角波主题",
+        "正弦低音",
+        "低八度三角波与正弦弱回声",
+        "正弦圆笛、短倚音、低通木点",
+        "三角波摇摆分解和弦、极轻低通浪声"
+      ],
+      "bpm": 84,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "C 五声（展示曲含四种色彩）",
+      "mood": [
+        "轻快",
+        "送信",
+        "俏皮"
+      ],
+      "difference": "轻快、带附点，像小跑着送信；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+      "source": "audio/source/music/theme_b.json"
+    },
+    {
+      "id": "theme_c",
+      "uid": "music:theme_c",
+      "kind": "music",
+      "set": "theme",
+      "name": "回家的路",
+      "theme": "慢、音程宽，像摇篮曲；同一八小节动机依次展示原型、石牢、地府、海女村",
+      "instruments": [
+        "三角波主题",
+        "正弦低音",
+        "低八度三角波与正弦弱回声",
+        "正弦圆笛、短倚音、低通木点",
+        "三角波摇摆分解和弦、极轻低通浪声"
+      ],
+      "bpm": 84,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "C 五声（展示曲含四种色彩）",
+      "mood": [
+        "舒缓",
+        "归家",
+        "摇篮曲"
+      ],
+      "difference": "慢、音程宽，像摇篮曲；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+      "source": "audio/source/music/theme_c.json"
+    },
+    {
+      "id": "theme_d",
+      "uid": "music:theme_d",
+      "kind": "music",
+      "set": "theme",
+      "name": "钟与浪",
+      "theme": "先下行再上扬，结束在 A，带一点淡淡的思念；同一八小节动机依次展示原型、石牢、地府、海女村",
+      "instruments": [
+        "三角波主题",
+        "正弦低音",
+        "低八度三角波与正弦弱回声",
+        "正弦圆笛、短倚音、低通木点",
+        "三角波摇摆分解和弦、极轻低通浪声"
+      ],
+      "bpm": 84,
+      "meter": [
+        4,
+        4
+      ],
+      "bars": 32,
+      "mode": "C 五声（展示曲含四种色彩）",
+      "mood": [
+        "思念",
+        "钟声",
+        "潮水"
+      ],
+      "difference": "先下行再上扬，结束在 A，带一点淡淡的思念；1–8小节三角波与正弦低音，9–16小节低八度/A羽和声与弱回声，17–24小节五声圆笛/短倚音/木点，25–32小节大调摇摆主旋律、分解伴奏与轻浪声；全部音名及顺序保留",
+      "source": "audio/source/music/theme_d.json"
+    }
+  ]
+}

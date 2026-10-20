@@ -1,0 +1,351 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.confirm",
+ "name": "放弃这一单确认框",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json"
+ ],
+ "depends": [
+  "cargo.vase",
+  "char.portitor",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_cat",
+  "fauna.jeju_pony",
+  "item.first_aid",
+  "item.rope_ladder",
+  "item.sandbag",
+  "item.snack",
+  "item.snack_jeju",
+  "mech.lantern_float",
+  "mech.rune_float",
+  "monster.skeleton_guard",
+  "obj.crate_wood",
+  "theme.diyu",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "confirm",
+  "theme": "theme.dungeon",
+  "exclude": [
+   "fauna.dungeon_rat"
+  ],
+  "focus": 1,
+  "hud": {
+   "hearts": 2,
+   "maxHearts": 3,
+   "cargo": "vase",
+   "left": 2,
+   "max": 3,
+   "rule": "fragile",
+   "hot": false,
+   "coins": 35,
+   "sand": 2,
+   "items": [
+    "first_aid",
+    "rope_ladder"
+   ],
+   "slots": 3,
+   "secs": 83,
+   "minimap": {
+    "cols": 8,
+    "rows": 4,
+    "cur": 4,
+    "rooms": [
+     {
+      "index": 0,
+      "x": 0,
+      "y": 2,
+      "cols": 1,
+      "rows": 1,
+      "role": "gate",
+      "seen": true
+     },
+     {
+      "index": 1,
+      "x": 1,
+      "y": 2,
+      "cols": 2,
+      "rows": 1,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 2,
+      "x": 3,
+      "y": 2,
+      "cols": 1,
+      "rows": 1,
+      "role": "station",
+      "seen": true
+     },
+     {
+      "index": 3,
+      "x": 4,
+      "y": 1,
+      "cols": 1,
+      "rows": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 4,
+      "x": 5,
+      "y": 0,
+      "cols": 2,
+      "rows": 2,
+      "role": "room",
+      "seen": true
+     },
+     {
+      "index": 5,
+      "x": 7,
+      "y": 0,
+      "cols": 1,
+      "rows": 1,
+      "role": "home",
+      "seen": false
+     }
+    ]
+   },
+   "snacks": 3
+  },
+  "room2": {
+   "format": "pushbox.room/2",
+   "world": "dungeon",
+   "weight": 10,
+   "mirror": true,
+   "id": "dungeon2_yard",
+   "type": "room",
+   "role": "develop",
+   "size": [
+    2,
+    2
+   ],
+   "name": "放风场 · 高台上的拉杆",
+   "idea": "关键想法：浮石把箱子运过坑，箱子再当台阶。变化：拉杆在上层高台，它开的是下层出口的门——镜头要跟着走一大圈；骷髅守卫只在下层走廊巡逻，不进解谜区。",
+   "needs": [
+    "float_block"
+   ],
+   "requires": [
+    "float_block",
+    "push",
+    "lever"
+   ],
+   "mechanisms": [
+    "float_block",
+    "push",
+    "lever",
+    "ladder",
+    "hint_animal"
+   ],
+   "exits": [
+    "left.0.low",
+    "right.1.low"
+   ],
+   "routes": [
+    "left.0.low>right.1.low"
+   ],
+   "puzzle_area": [
+    [
+     1,
+     1,
+     27,
+     9
+    ]
+   ],
+   "legend": {
+    "2": {
+     "monster": "skeleton_guard",
+     "dir": "left",
+     "zone": [
+      28,
+      32
+     ]
+    }
+   },
+   "devices": [
+    {
+     "type": "lever",
+     "at": [
+      24,
+      4
+     ],
+     "action": {
+      "link": 0
+     }
+    }
+   ],
+   "links": [
+    {
+     "plates": [],
+     "doors": [
+      [
+       33,
+       16
+      ],
+      [
+       33,
+       17
+      ]
+     ]
+    }
+   ],
+   "hints": [
+    {
+     "text": "推浮石把箱子运过坑。",
+     "target": [
+      12,
+      7
+     ],
+     "show": {
+      "action": "push",
+      "dir": "R",
+      "at": [
+       4,
+       7
+      ]
+     },
+     "done": {
+      "covers": [
+       12,
+       7
+      ]
+     }
+    },
+    {
+     "text": "把箱子推到高台下面当台阶。",
+     "target": [
+      21,
+      6
+     ],
+     "show": {
+      "action": "push",
+      "dir": "R",
+      "at": [
+       12,
+       6
+      ]
+     },
+     "done": {
+      "crate": [
+       21,
+       6
+      ]
+     }
+    },
+    {
+     "text": "上高台拉下拉杆：下层的门开了。",
+     "target": [
+      24,
+      4
+     ],
+     "show": {
+      "action": "lever",
+      "dir": "U",
+      "at": [
+       24,
+       4
+      ]
+     },
+     "done": {
+      "lever": 0
+     }
+    },
+    {
+     "text": "从梯子下去，穿过下层的门。",
+     "target": [
+      27,
+      10
+     ],
+     "show": {
+      "action": "climb",
+      "dir": "D",
+      "at": [
+       27,
+       5
+      ]
+     },
+     "done": {
+      "player": [
+       28,
+       10,
+       39,
+       19
+      ]
+     }
+    }
+   ],
+   "map": [
+    "########################################",
+    "#...........................############",
+    "#...........................############",
+    "#...........................############",
+    "#..........................H############",
+    "#.....................#####H############",
+    ".......B..............#####H############",
+    ".....FFF.....##############H############",
+    "##########...##############H############",
+    "##########...##############H############",
+    "##########...##############H...........#",
+    "##########...##############H...........#",
+    "##########...##############H...........#",
+    "###########################H...........#",
+    "#############..............H...........#",
+    "#############..............H...........#",
+    "#############..............H.....|......",
+    "#############.......$......H..2..|..$...",
+    "########################################",
+    "########################################"
+   ]
+  },
+  "world": "dungeon"
+ },
+ "usage": "G2 放弃本局确认，以 v2 房间为背景。",
+ "notes": "UI-10b 美术候选；复用 ui-common.js 的 G2 组件。新文字与字形仅放 i18n-delivery2 / font-delivery2.js。须由用户确认后才可用于正式游戏。",
+ "content_hash": "312087ae242d0c79e5615c009eac05c161e1a69376cf221167efd1aff9f7f8c4"
+}

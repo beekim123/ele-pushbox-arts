@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.ladder",
+ "name": "梯子",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zf........fz..",
+   "..zfddddddddfz..",
+   "..zfeeeeeeeefz..",
+   "..zf........fz..",
+   "..zf........fz..",
+   "..zfddddddddfz..",
+   "..zfeeeeeeeefz..",
+   "..zf........fz..",
+   "..zf........fz..",
+   "..zfddddddddfz..",
+   "..zfeeeeeeeefz..",
+   "..zf........fz..",
+   "..zf........fz..",
+   "..zfddddddddfz..",
+   "..zfeeeeeeeefz..",
+   "..zf........fz.."
+  ]
+ ],
+ "usage": "可在格内上下爬；纵向平铺，上下格无缝衔接。",
+ "notes": "",
+ "content_hash": "92a24415a1048bce62488a0c4e7bd087e3158a8023aef6f2b937427eead953f6"
+}

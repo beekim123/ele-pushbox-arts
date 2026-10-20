@@ -1,0 +1,301 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.delivery_icons",
+ "name": "配送 HUD 图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "heart": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "heart_empty": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "clock": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "fragile": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "melt": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "hot": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  },
+  "pip": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "pip_empty": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    7
+   ]
+  },
+  "slot": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    8
+   ]
+  },
+  "arrow": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    9
+   ]
+  },
+  "kill": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    10
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "....zz.zz.......",
+   "...ziiziiz......",
+   "..zitDiiiiz.....",
+   "..ziDiiiiiz.....",
+   "...ziiiihz......",
+   "....ziihz.......",
+   ".....zhz........",
+   "......z.........",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "....zz.zz.......",
+   "...zyyzyyz......",
+   "..zyyyyyyyz.....",
+   "..zyyyyyyyz.....",
+   "...zyyyyyz......",
+   "....zyyyz.......",
+   ".....zyz........",
+   "......z.........",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   ".....zzzzzz.....",
+   "....ztttttuz....",
+   "...ztuuuzuuuz...",
+   "..ztuuuuzuuuuz..",
+   "..ztuuuuzuuuvz..",
+   "..ztuuuuzuuuvz..",
+   "..ztuuuuzzzuvz..",
+   "..ztuuuuuuuuvz..",
+   "..zuuuuuuuuuvz..",
+   "...zuuuuuuuvz...",
+   "....zuvvvvvz....",
+   ".....zzzzzz.....",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "...zzzzzzzzzz...",
+   "..zttttttttttz..",
+   "..ztttuzttttuz..",
+   "..zttuzzttttuz..",
+   "..ztuzttztttuz..",
+   "..zttttuzzttuz..",
+   "..zttttttzttuz..",
+   "...ztuuuutuuz...",
+   "....zzzzzzzz....",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "........z.......",
+   ".......zsz......",
+   "......ztssz.....",
+   "......ztsrz.....",
+   ".....ztsrssz....",
+   ".....ztrttrz....",
+   "....ztsstsssz...",
+   "....zssssssrz...",
+   ".....zssssrz....",
+   "......zsrrz.....",
+   ".......zzz......",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   ".......z........",
+   "......zkz.......",
+   "......zkkz.z....",
+   ".....zkkkzzkz...",
+   ".....zkjkkzkz...",
+   "....zkkjjkkkz...",
+   "....zkjjljjkz...",
+   "...zkjjllljkz...",
+   "...zkjjllljz....",
+   "....zkjjljkz....",
+   ".....zkjjkz.....",
+   "......zzzz......",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....zzzzzz.....",
+   "....ztttttlz....",
+   "....ztllllkz....",
+   "....ztllllkz....",
+   "....ztllllkz....",
+   "....ztllllkz....",
+   "....zlkkkkkz....",
+   ".....zzzzzz.....",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   ".....zzzzzz.....",
+   "....zyyyyyyz....",
+   "....zyyyyyyz....",
+   "....zyyyyyyz....",
+   "....zyyyyyyz....",
+   "....zyyyyyyz....",
+   "....zyyyyyyz....",
+   ".....zzzzzz.....",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   ".zzzzzzzzzzzzzz.",
+   "zxxxxxxxxxxxxxxz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   "zxyyyyyyyyyyyyyz",
+   ".zzzzzzzzzzzzzz."
+  ],
+  [
+   "................",
+   "................",
+   ".......z........",
+   "......zlz.......",
+   "....zzzllzz.....",
+   "...zlllllllz....",
+   "...zllllllllz...",
+   "...zlllllllz....",
+   "....zzzllzz.....",
+   "......zlz.......",
+   ".......z........",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "......zzzz......",
+   "....zztttuzz....",
+   "...zttuuuutuz...",
+   "...ztuuuuuuvz...",
+   "...ztuzzuzzvz...",
+   "...ztuzzuzzvz...",
+   "...ztuuuuuuvz...",
+   "...zuvuuuuuvz...",
+   "....zztuuuvz....",
+   ".....ztzuzvz....",
+   ".....zuvvvvz....",
+   "......zzzzz.....",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "配送模式 HUD 与结算用的图标：心 / 空心、用时、货物规则（易碎、会化、很热）、完好度格（满 / 空）、背包空格、收件人方向箭头、放倒怪物数。",
+ "notes": "第 4 步美术候选（配送切片），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "d565e6a8da680492da9427133d2803f4e10221b45fb56a082706be4aabd6282d"
+}

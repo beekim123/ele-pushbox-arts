@@ -1,0 +1,54 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.jeju_canola",
+ "name": "济州 · 油菜花",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  8
+ ],
+ "anchor": [
+  4,
+  8
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".l....l..",
+   "lkl.llkl.",
+   ".lll.ll..",
+   ".n.lkl.n.",
+   ".n.nl.n..",
+   "..nn.nn..",
+   ".mn.nmn..",
+   ".nmnnnmnm"
+  ],
+  [
+   "..l....l.",
+   ".lkl.llkl",
+   "..lll.ll.",
+   ".n.lkl.n.",
+   ".n.nl.n..",
+   "..nn.nn..",
+   ".mn.nmn..",
+   ".nmnnnmnm"
+  ]
+ ],
+ "usage": "长在地面上的一丛油菜花（유채꽃，济州春天到处都是）：三簇黄花，绿茎绿叶，花头随风轻轻摆。画在箱子和人物后面，只是装饰。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "c8ddae0d3aab851d8351729b50084754862e5e8db2aa933917a0f06cf4436b5d"
+}

@@ -1,0 +1,11 @@
+{
+ "_meta": {"note": "UI-11a（2026-10-17 用户决定）：设置页「大厅皮肤」一行和 7 个选项；冻结的 content/i18n 和已有的 content/i18n-* 不动。"},
+ "settings.lobby_skin": "大厅皮肤",
+ "lobby_skin.s1": "晶石琉璃",
+ "lobby_skin.s2": "漂浮符文",
+ "lobby_skin.s3": "祥云玉简",
+ "lobby_skin.s4": "梦泡糖霜",
+ "lobby_skin.s5": "藤木萤光",
+ "lobby_skin.s6": "星港舱板",
+ "lobby_skin.generic": "通用大厅"
+}

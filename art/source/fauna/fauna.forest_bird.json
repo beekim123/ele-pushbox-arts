@@ -1,0 +1,77 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.forest_bird",
+ "name": "古森 · 知更鸟",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  7
+ ],
+ "anchor": [
+  4,
+  7
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0
+   ]
+  },
+  "peck": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..zzz...",
+   ".zfftz..",
+   ".zffffzk",
+   ".ziieez.",
+   "zziieeez",
+   ".zzzzzz.",
+   "..z..z.."
+  ],
+  [
+   "........",
+   "..zzz...",
+   ".zfftz..",
+   "zziifzzk",
+   "zziieez.",
+   ".zzzzzz.",
+   "..z..z.."
+  ],
+  [
+   "........",
+   "ze....ez",
+   ".zezzez.",
+   "..zfftz.",
+   "..ziiffk",
+   "...zzzz.",
+   "........"
+  ]
+ ],
+ "usage": "停在地面边缘，啄几下，偶尔跳一格。",
+ "notes": "",
+ "content_hash": "9c44c68ef48b68d8b31901b3e17718d6b90e9308dcf893e4a5d2af341cc3756e"
+}

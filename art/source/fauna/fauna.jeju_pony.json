@@ -1,0 +1,166 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.jeju_pony",
+ "name": "济州 · 济州小马（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  13
+ ],
+ "anchor": [
+  8,
+  13
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sit": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  "wag": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "neigh": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6,
+    6,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzz.....",
+   "..zbbbeeecczz...",
+   ".zdeeeeeeeeccz..",
+   "zddeeeeeeeeeccz.",
+   "zdzeeeeeeeeeeiz.",
+   "zdzffeeeeeffzeez",
+   ".z.zfgz.zgfzezEz",
+   "...zfgz.zgfzzEEz",
+   "...zzzz.zzzz.zz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzz.....",
+   "..zbbbeeecczz...",
+   ".zdeeeeeeeeccz..",
+   "zddeeeeeeeeeccz.",
+   "zdzeeeeeeeeeeiz.",
+   "zdzffeeeeeffzkez",
+   ".z.zfgz.zgfzezEz",
+   "...zfgz.zgfzzEEz",
+   "...zzzz.zzzz.zz."
+  ],
+  [
+   "...........zz...",
+   "..........zeez..",
+   "..........zcetz.",
+   ".........zcceztz",
+   "...zzzzzzcceeetz",
+   "..zbbbeeecceeEEz",
+   ".zdeeeeeeeiizEEz",
+   "zddeeeeeeeekzzz.",
+   "zdzeeeeeeeeefz..",
+   "zdzffeeeeeffz...",
+   ".z.zfgz.zgfz....",
+   "...zfgz.zgfz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   "................",
+   "...........zz...",
+   "..........zeez..",
+   "..........zcetz.",
+   ".zz......zcceztz",
+   "zddzzzzzzcceeetz",
+   ".zzbbeeeecceeEEz",
+   "..zeeeeeeeiizEEz",
+   "..zeeeeeeeekzzz.",
+   "..zeeeeeeeeefz..",
+   "..zffeeeeeffz...",
+   "...zfgz.zgfz....",
+   "...zzzz.zzzz...."
+  ],
+  [
+   "...........zz...",
+   "..........zeez..",
+   "..........zcetz.",
+   ".........zcceztz",
+   "...zzzzzzcceeetz",
+   "..zbbbeeecceeEEz",
+   ".zdeeeeeeeiizEEz",
+   "zddeeeeeeeekzzz.",
+   "zdzeeeeeeeeefz..",
+   "zdzffeeeeeffz...",
+   ".z.zfgz.zgfz....",
+   "..zfzzgzzgzzfz..",
+   "..zz..zzzz..zz.."
+  ],
+  [
+   "...........zz...",
+   "..........zeez..",
+   "..........zcetz.",
+   ".........zcceztz",
+   "...zzzzzzcceeetz",
+   "..zbbbeeecceeEEz",
+   ".zdeeeeeeeiizEEz",
+   "zddeeeeeeeekzzz.",
+   "zdzeeeeeeeeefz..",
+   "zdzffeeeeeffz...",
+   ".z.zgfz.zfgz....",
+   "..zgzzfzzfzzgz..",
+   "..zz..zzzz..zz.."
+  ],
+  [
+   "...........zz...",
+   "..........zeez..",
+   "..........zcetz.",
+   ".........zcceztz",
+   "...zzzzzzcceeetz",
+   "..zbbbeeecceeEEz",
+   ".zdeeeeeeeiizzzz",
+   "zddeeeeeeeekzEEz",
+   "zdzeeeeeeeeefzz.",
+   "zdzffeeeeeffzfz.",
+   ".z.zfgz.zgfzzz..",
+   "...zfgz.zgz.....",
+   "...zzzz.zzz....."
+  ]
+ ],
+ "usage": "济州的主提示动物：栗色短腿的济州小马（조랑말），浅色鬃毛和尾巴、白鼻梁，脖子上系红绳挂一个小铃铛。平时站在下一步要用的东西旁边低头吃草（sit，偶尔晃一下铃铛）；人走近时小跑过去（walk），冲着那个东西点头、甩尾巴（wag）；喂一块小米糕时仰头打个响鼻、抬起前蹄（neigh），头顶出提示气泡。面朝右绘制，朝左时水平镜像。不挡路、不受伤、不能推。",
+ "notes": "济州马是韩国的天然纪念物。暖棕色在蓝天和黑色玄武岩上都看得清；四条短腿站着走、没有角，和小鬼怪（粉红皮肤、站着走）、海鸥（白色、会飞）都不像。动作名沿用画法代码里提示动物的 sit / wag / walk（delivery-scene2.js），neigh 对应小狗的 bark。不在配送模式的随机生态里出现，只由房间的提示步骤摆放。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "9e7a20b742bb22a611b904418d63b3d511f231d1ffd726ad7c72cb25bde47b59"
+}

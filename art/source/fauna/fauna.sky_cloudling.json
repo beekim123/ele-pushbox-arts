@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.sky_cloudling",
+ "name": "圣域 · 小云灵",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  12,
+  8
+ ],
+ "anchor": [
+  6,
+  4
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "float": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....zzzz....",
+   "..zzttttzz..",
+   ".zttttttttz.",
+   "zttzttzttttz",
+   "zttzttzttuuz",
+   "zuttttttuuuz",
+   ".zuuuuuuuuz.",
+   "..zzzzzzzz.."
+  ],
+  [
+   "....zzzz....",
+   "..zzttttzz..",
+   ".zttttttttz.",
+   "zttttttttttz",
+   "zttzttzttuuz",
+   "zuttttttuuuz",
+   ".zuuuuuuuuz.",
+   "..zzzzzzzz.."
+  ]
+ ],
+ "usage": "在背景中慢慢上下漂浮、眨眼。",
+ "notes": "",
+ "content_hash": "7cfda36287ed2f28ac9198a76b969f91e64805b2155c662160d54c1e8b341a63"
+}

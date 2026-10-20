@@ -1,0 +1,54 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "pour",
+ "uid": "sfx:pour",
+ "name": "倒沙",
+ "description": "低音气息托住细沙刷声，噪声低通 900 Hz 且远低于音高声部。",
+ "seed": 170104,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "c663ab8aa7a1b9adde6ed7d45fbad6becf8ddbcf07ec597423400efe1c46a7a4",
+ "gain_db": -15.9022,
+ "instruments": [
+  {
+   "id": "sand_body",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 600,
+   "attack_ms": 28,
+   "decay_ms": 75,
+   "sustain": 0.7,
+   "release_ms": 85
+  },
+  {
+   "id": "sand",
+   "wave": "noise",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 35,
+   "decay_ms": 80,
+   "sustain": 0.55,
+   "release_ms": 80
+  }
+ ],
+ "duration_ms": 320,
+ "events": [
+  {
+   "instrument": "sand_body",
+   "start_ms": 0,
+   "duration_ms": 235,
+   "note": 43,
+   "slide_to_note": 41,
+   "gain_db": 0
+  },
+  {
+   "instrument": "sand",
+   "start_ms": 8,
+   "duration_ms": 232,
+   "gain_db": 0
+  }
+ ]
+}

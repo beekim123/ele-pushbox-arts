@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:ui_confirm",
+ "version": 2,
+ "hash": "af8762fb552ed801da4fa255014f6d092c3aba7d803044a0dc95797da3301457",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "ui_confirm",
+  "uid": "sfx:ui_confirm",
+  "name": "界面确认",
+  "description": "C4/G4 上行双点，8 ms 以上起音与25 ms释放。",
+  "seed": 170126,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "af8762fb552ed801da4fa255014f6d092c3aba7d803044a0dc95797da3301457",
+  "gain_db": -15.6006,
+  "instruments": [
+   {
+    "id": "ui",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1500,
+    "attack_ms": 8,
+    "decay_ms": 10,
+    "sustain": 0.6,
+    "release_ms": 25
+   }
+  ],
+  "duration_ms": 120,
+  "events": [
+   {
+    "instrument": "ui",
+    "start_ms": 0,
+    "duration_ms": 32,
+    "note": 60,
+    "gain_db": 0
+   },
+   {
+    "instrument": "ui",
+    "start_ms": 58,
+    "duration_ms": 37,
+    "note": 67,
+    "gain_db": 0
+   }
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:reel_stop",
+ "version": 2,
+ "hash": "d1147285b7f307e1feb19130433571f10ecf8f7cc34e8a198d693209ac646dd9",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "reel_stop",
+  "uid": "sfx:reel_stop",
+  "name": "滚轮停下",
+  "description": "G3/C4 两音温暖落点，节奏与转动软嗒区别。",
+  "seed": 170119,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "d1147285b7f307e1feb19130433571f10ecf8f7cc34e8a198d693209ac646dd9",
+  "gain_db": -16.4007,
+  "instruments": [
+   {
+    "id": "settle",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1400,
+    "attack_ms": 15,
+    "decay_ms": 45,
+    "sustain": 0.6,
+    "release_ms": 75
+   }
+  ],
+  "duration_ms": 300,
+  "events": [
+   {
+    "instrument": "settle",
+    "start_ms": 0,
+    "duration_ms": 85,
+    "note": 55,
+    "gain_db": 0
+   },
+   {
+    "instrument": "settle",
+    "start_ms": 135,
+    "duration_ms": 90,
+    "note": 60,
+    "gain_db": 0
+   }
+  ]
+ }
+}

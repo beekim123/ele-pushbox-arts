@@ -1,0 +1,68 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.candy_hummingbird",
+ "name": "糖果王国 · 小蜂鸟",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  7
+ ],
+ "anchor": [
+  4,
+  3
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "rest": {
+   "fps": 1,
+   "loop": true,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...zz....",
+   "..zuuzz..",
+   ".zzzmzmz.",
+   "znmmmmDzz",
+   "nzznmzz..",
+   "z..zz....",
+   "........."
+  ],
+  [
+   ".........",
+   "....zzz..",
+   ".zzzmzmz.",
+   "znmmmmDzz",
+   "nzzuuzz..",
+   "z..zuz...",
+   "....z...."
+  ],
+  [
+   "....zz...",
+   "...zmzzzz",
+   "...zmDz..",
+   "..znmmz..",
+   ".znnmz...",
+   "..zzz....",
+   "........."
+  ]
+ ],
+ "usage": "糖果王国的小蜂鸟：薄荷绿身子、粉色喉咙、细长的嘴，面朝右。fly 扇着翅膀悬停（主题生态里偶尔飞过；配送模式里是带路的提示动物，走近时飞到目标上方悬停，此时由 worlds.json 的 ambient_exclude 关掉随机飞过），rest 停着不动（停在下一步要去的地方，脚在第 6 行，最下一行留空）。只帮小羊带路，不吃零食。",
+ "notes": "DSN-05（糖果王国）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "2eda47f0838c56d4c49076443c57d575320abd534dc4b05e17e5510b0e41b5e2"
+}

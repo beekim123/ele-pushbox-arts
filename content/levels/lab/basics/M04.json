@@ -1,0 +1,28 @@
+{
+ "format": "pushbox.levelspec/1",
+ "id": "M04",
+ "mode": "lab",
+ "group": "basics",
+ "chapter": "dungeon",
+ "title": "一袋沙做台阶",
+ "map": [
+  "##########",
+  "#........#",
+  "#......X.#",
+  "#.....####",
+  "#.P...####",
+  "##########"
+ ],
+ "bag": {
+  "sand": 1,
+  "bomb": 0
+ },
+ "solution": [
+  "R",
+  "R",
+  "POUR_R",
+  "R",
+  "R",
+  "R"
+ ]
+}

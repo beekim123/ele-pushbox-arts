@@ -1,0 +1,45 @@
+{
+ "format": "pushbox.audio-history/1",
+ "uid": "sfx:undo",
+ "version": 2,
+ "hash": "783869bca480885d80e214351000943e2c0d4e3406e82762ec723298d1b6b433",
+ "renderer_fingerprint": "066b6f01420f61ceea0af2449bbdab4a2f03df3135395dfcff024a0fbb8b7942",
+ "source": {
+  "format": "pushbox.audio/1",
+  "kind": "sfx",
+  "id": "undo",
+  "uid": "sfx:undo",
+  "name": "撤销",
+  "description": "E4 向 G3 的短下滑，单音回退手势。",
+  "seed": 170111,
+  "engine": "portitor-chip/1",
+  "sample_rate": 44100,
+  "channels": 1,
+  "version": 2,
+  "content_hash": "783869bca480885d80e214351000943e2c0d4e3406e82762ec723298d1b6b433",
+  "gain_db": -16.6155,
+  "instruments": [
+   {
+    "id": "undo",
+    "wave": "sine",
+    "gain_db": 0,
+    "lowpass_hz": 1400,
+    "attack_ms": 12,
+    "decay_ms": 30,
+    "sustain": 0.65,
+    "release_ms": 55
+   }
+  ],
+  "duration_ms": 180,
+  "events": [
+   {
+    "instrument": "undo",
+    "start_ms": 0,
+    "duration_ms": 125,
+    "note": 64,
+    "slide_to_note": 55,
+    "gain_db": 0
+   }
+  ]
+ }
+}

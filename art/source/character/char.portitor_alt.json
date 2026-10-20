@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.portitor_alt",
+ "name": "主角备选概念（B 铜铃机偶 / C 狐面行者）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "B_bell_automaton": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "C_fox_mask": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zz........",
+   ".....zkkz.......",
+   "....zkkkbz......",
+   "...zkkkkbbz.....",
+   "...zkzzzbbz.....",
+   "..zzbbbbbbzz....",
+   "....zFFFFz......",
+   "..vzbbbbbbz.....",
+   ".vvzbkbbbbz.....",
+   "..vzbbbbbbz.....",
+   "...zFFFFFFz.....",
+   "....zx..xz......",
+   "....zx..xz......",
+   "....zx..xz......",
+   "...zzz..zzz....."
+  ],
+  [
+   "......j...j.....",
+   ".....zjz.zjz....",
+   ".....zttttttz...",
+   "....zttittitz...",
+   "....ztttttttz...",
+   ".....zttttiz....",
+   "..zzz.zttz......",
+   ".zdFdzqqqqz.....",
+   ".zFdFzqqqqqz....",
+   ".zdFdzqqqqqz....",
+   ".zFdFzqqqqqz....",
+   ".zzzzzqqqqqz....",
+   "......zx.xz.....",
+   "......zx.xz.....",
+   "......zx.xz.....",
+   ".....zzz.zzz...."
+  ]
+ ],
+ "usage": "只用于和推荐方案 char.portitor 比较的概念草图，不进入游戏。",
+ "notes": "B：铃铛形脑袋的发条小机器人，背上一把发条钥匙；C：戴狐狸面具、背竹编书箱的旅人。说明见 docs/design/characters.md 1.3。",
+ "content_hash": "67b8374148a76242dbc4bdc02bd445c1f7975b72c4bb2904b073b7a9a3d0d097"
+}

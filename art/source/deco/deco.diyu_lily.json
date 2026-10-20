@@ -1,0 +1,56 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.diyu_lily",
+ "name": "地府 · 彼岸花",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  9,
+  9
+ ],
+ "anchor": [
+  4,
+  9
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sway": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "i...i...i",
+   ".i..i..i.",
+   "..iAiAi..",
+   ".iAhAhAi.",
+   "i.AAhAA.i",
+   "...ihi...",
+   "....n....",
+   "....n....",
+   "...ono..."
+  ],
+  [
+   ".i...i...",
+   "..i..i..i",
+   "..iAiAi..",
+   ".iAhAhAi.",
+   ".iAAhAA.i",
+   "...ihi...",
+   "....n....",
+   "....n....",
+   "...ono..."
+  ]
+ ],
+ "usage": "长在地面上的彼岸花（红花、长花蕊、没有叶子），随风轻轻摆。画在箱子和人物后面，只是装饰。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "e763612acf57e29178163ed55cc4c62138569f228dcccbc4c15b6f6b0a905c6f"
+}

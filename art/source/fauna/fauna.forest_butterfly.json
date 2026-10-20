@@ -1,0 +1,48 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.forest_butterfly",
+ "name": "古森 · 蝴蝶",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  7,
+  5
+ ],
+ "anchor": [
+  3,
+  2
+ ],
+ "layer": "background",
+ "palette": "endesga32",
+ "animations": {
+  "fly": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "DC...CD",
+   "DDCzCDD",
+   ".DCzCD.",
+   "..DzD..",
+   "......."
+  ],
+  [
+   ".......",
+   "...z...",
+   ".DCzCD.",
+   "DDCzCDD",
+   "......."
+  ]
+ ],
+ "usage": "在房间空处飞舞，画在地形后面。",
+ "notes": "",
+ "content_hash": "e4c5e613207d38dab9d962926faa7c263f017e4563b5314f9fb6f9188ae49eda"
+}

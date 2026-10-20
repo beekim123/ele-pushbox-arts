@@ -1,0 +1,70 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.socket",
+ "name": "目标槽",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "zz............zz",
+   "zbz....zz....zbz",
+   "zbz...zwwz...zbz",
+   "zbzzzzzwwzzzzzbz",
+   "zbbbbbbbbbbbbbbz",
+   "zzzzzzzzzzzzzzzz"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "zz............zz",
+   "zbz....zz....zbz",
+   "zbz...zvwz...zbz",
+   "zbzzzzzwwzzzzzbz",
+   "zbbbbbbbbbbbbbbz",
+   "zzzzzzzzzzzzzzzz"
+  ]
+ ],
+ "usage": "箱子目标。空槽显示托架与暗灯；箱子进入后托架被箱子遮住，改为在箱子上叠加 mech.socket_lit。",
+ "notes": "",
+ "content_hash": "4e24d52b6dd0c38315135ff57fba00ad1cd4cb365df5799e0f794495b85745af"
+}

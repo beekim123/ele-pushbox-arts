@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "obj.crate_iron",
+ "name": "铁箱",
+ "category": "object",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 0,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "zzzzzzzzzzzzzzzz",
+   "zuuuuuuuuuuuuuvz",
+   "zutvvvvvvvvvvtwz",
+   "zuvwwwwwwwwwwvwz",
+   "zuvwvvvvvvvvwvwz",
+   "zuvwvwwwwwwvwvwz",
+   "zuvwvwxxxxwvwvwz",
+   "zuvwvwxuvxwvwvwz",
+   "zuvwvwxvwxwvwvwz",
+   "zuvwvwxxxxwvwvwz",
+   "zuvwvwwwwwwvwvwz",
+   "zuvwvvvvvvvvwvwz",
+   "zuvwwwwwwwwwwvwz",
+   "zutvvvvvvvvvvtwz",
+   "zvwwwwwwwwwwwwxz",
+   "zzzzzzzzzzzzzzzz"
+  ]
+ ],
+ "usage": "可推；会沉入水中（第 2 章）。",
+ "notes": "四角铆钉、冷灰色，与木箱暖色形成对比。",
+ "content_hash": "8c04188e5a42b11842dd980cc3237842fb41ad7374a179510b5c629dc902bacb"
+}

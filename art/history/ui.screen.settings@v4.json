@@ -1,0 +1,80 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.settings",
+ "name": "设置",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js"
+ ],
+ "depends": [
+  "theme.dungeon",
+  "ui.icons",
+  "ui.keycap",
+  "ui.menu_icons",
+  "ui.panel"
+ ],
+ "version": 4,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "settings",
+  "items": [
+   {
+    "key": "settings.language",
+    "type": "value",
+    "valueKey": "@language"
+   },
+   {
+    "key": "settings.music",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.sfx",
+    "type": "slider",
+    "value": 8
+   },
+   {
+    "key": "settings.scale",
+    "type": "value",
+    "valueKey": "settings.scale.auto"
+   },
+   {
+    "key": "settings.env",
+    "type": "value",
+    "valueKey": "env.full"
+   },
+   {
+    "key": "settings.grid",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.unlock",
+    "type": "toggle",
+    "value": false
+   },
+   {
+    "key": "settings.tutorial",
+    "type": "value",
+    "valueKey": "settings.run"
+   }
+  ]
+ },
+ "usage": "设置项全部可用方向键调整。",
+ "notes": "布局参考：文字来自 content/i18n，容器按文字宽度伸缩；Godot 用 Control 容器实现，不按像素硬编码文字位置。",
+ "content_hash": "4c6df2e53a82b5b26efcfea702f0332847c7cb07b829d2352b04c3e21fa3df1a"
+}

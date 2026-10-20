@@ -1,0 +1,44 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "door_open",
+ "uid": "sfx:door_open",
+ "name": "门打开",
+ "description": "木轴 C3 到 G3 两音上行，第二音稍长。",
+ "seed": 170107,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "c9f833e5b0b15cb099b8fe011cdd4132f9fda65e5371b0c246efbabc6477542c",
+ "gain_db": -13.1957,
+ "instruments": [
+  {
+   "id": "wood",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 900,
+   "attack_ms": 14,
+   "decay_ms": 32,
+   "sustain": 0.45,
+   "release_ms": 65
+  }
+ ],
+ "duration_ms": 280,
+ "events": [
+  {
+   "instrument": "wood",
+   "start_ms": 0,
+   "duration_ms": 86,
+   "note": 48,
+   "gain_db": 0
+  },
+  {
+   "instrument": "wood",
+   "start_ms": 115,
+   "duration_ms": 100,
+   "note": 55,
+   "gain_db": 0
+  }
+ ]
+}

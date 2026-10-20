@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.goblin_chief",
+ "name": "滚轮头像 · 鬼怪大王",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..........zz............",
+   ".........zcdz...........",
+   "........zycdyz..........",
+   "........zyxyyyz.........",
+   "........zyxyyyz.........",
+   ".zzzzzzzzyxyyyzzzzzzzzz.",
+   "zyyxyyyyyyyyyyyyyyyyyyyz",
+   ".zzzzzzzzzzzzzzzzzzzzzz.",
+   "...zggggggggggggggggz...",
+   "..kzggDDggggggDDggggz...",
+   "..kzDDDDDDDDDDDDDDDDz...",
+   "..bzDttttzDDDDttttzDz...",
+   "..kzDttttzDDDDttttzDz...",
+   "..bzDttzzzDDDDttzzzDz...",
+   "..kziiDDDDDDDDDDDDiiz...",
+   "..bzDDzzzzzzzzzzzDDDz...",
+   "..k.zDztttttttttzDDz....",
+   "....zDzttttttttzDDz.....",
+   ".....zzzzzzzzzzzzz......",
+   "...zzBBBzzzzzzzzBBBzz...",
+   "..zBBBBBBBkkkkkBBBBBBz..",
+   ".zBCBBBBBBkkkkkBBBBBBBz.",
+   ".zBCBBBBBBBBBBBBBBBBBBz.",
+   ".zBBBBBBBBBBBBBBBBBBBBz."
+  ]
+ ],
+ "usage": "收件人「鬼怪大王」的头像（24 × 24）：滚轮格子、结算界面里用。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "1e2ca8bb169a5996e06fc04295dc0ab6c7914410bf2f3f7733500e5463f2a1e4"
+}

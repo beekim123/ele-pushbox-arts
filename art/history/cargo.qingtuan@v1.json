@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.qingtuan",
+ "name": "货物 · 青团",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "stale": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "......zzzz......",
+   ".....zmmtmz.....",
+   "....zmmmmmnz....",
+   "..zzzmmmmnnzzz..",
+   ".zmtmzznnnzmtmz.",
+   "zmmmmmzzzzmmmmnz",
+   "zmmmmnnzzmmmmnnz",
+   "znmmnnnzzmmnnnoz",
+   ".znnnnoozznnnoz.",
+   "zozzzzzzzzzzzzoz",
+   ".zoooooooooooooz",
+   "..zzzzzzzzzzzzz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "......zzzz......",
+   ".....znnnnz.....",
+   "....zonnznoz....",
+   "..zzznnnnoozzz..",
+   ".znnnzzoooznnnz.",
+   "zoonoozzzznoonoz",
+   "znnnnoozznnnnooz",
+   "zonnooozznnooopz",
+   ".zooooppzzooopz.",
+   "zpzzzzzzzzzzzzpz",
+   ".zpppppppppppppz",
+   "..zzzzzzzzzzzzz."
+  ]
+ ],
+ "usage": "货物图标（滚轮、HUD、结算）：青团（清明节的艾草糯米团，三个摆在粽叶上）。放久了会变硬（每 60 秒扣 1 点完好度），扣到一半以下换成 stale（颜色变暗、出现裂纹）。",
+ "notes": "配送重做（claude/delivery-redesign）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "0d6039abcdc5d4d0d1bb8167de63d1f5fd5b9ea6edfde92628110899ddd4754c"
+}

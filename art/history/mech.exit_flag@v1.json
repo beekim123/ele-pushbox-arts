@@ -1,0 +1,108 @@
+{
+ "format": "pushbox.art/1",
+ "id": "mech.exit_flag",
+ "name": "出口旗",
+ "category": "mechanism",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "marker",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "....zlz.........",
+   "....zkz.........",
+   "....zfzzzzzzzz..",
+   "....zfzzllllkz..",
+   "....zfzzlkklkzz.",
+   "....zfzzkkkkkkz.",
+   "....zfzzkkkkkz..",
+   "....zfzzzzzzz...",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "...zwwwz........",
+   "..zzzzzzz......."
+  ],
+  [
+   "....zlz.........",
+   "....zkz.........",
+   "....zfzzzzzzz...",
+   "....zfzzlllkkzz.",
+   "....zfzzlkkkkkz.",
+   "....zfzzkkkkkkz.",
+   "....zfzzkkkkkz..",
+   "....zfzzzzzzzz..",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "...zwwwz........",
+   "..zzzzzzz......."
+  ],
+  [
+   "....zlz.........",
+   "....zkz.........",
+   "....zfz.zzzzzz..",
+   "....zfzzzllkkkz.",
+   "....zfzzlkkkkkz.",
+   "....zfzzkkkkkz..",
+   "....zfzzkkkkkzz.",
+   "....zfzzzzzzzz..",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "...zwwwz........",
+   "..zzzzzzz......."
+  ],
+  [
+   "....zlz.........",
+   "....zkz.........",
+   "....zfzzzzzzzzz.",
+   "....zfzzlllkkkz.",
+   "....zfzzlkkkkz..",
+   "....zfzzkkkkkz..",
+   "....zfzzkkkkkkz.",
+   "....zfzzzzzzzzz.",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "....zfz.........",
+   "...zwwwz........",
+   "..zzzzzzz......."
+  ]
+ ],
+ "usage": "人物走到旗所在格即点亮该目标。",
+ "notes": "",
+ "content_hash": "cdf2f0ecce1a35bab5313d588da5e34b8e62452c384e5914e8c30d1ba1afd050"
+}

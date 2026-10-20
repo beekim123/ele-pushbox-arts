@@ -1,0 +1,124 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.goblin_chief",
+ "name": "鬼怪大王（收件人）",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  20,
+  18
+ ],
+ "anchor": [
+  10,
+  18
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "idle": {
+   "fps": 3,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  "win": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".........zz.........",
+   "........zcdz........",
+   ".......zycdyz.......",
+   ".......zyxyyz.......",
+   "..zzzzzzyxyyzzzzzz..",
+   ".zyyxyyyyyyyyyyyyyz.",
+   "..zzzzzzzzzzzzzzzz..",
+   "..kzgggDgggDgggzlkz.",
+   "..bzDttzDDDttzDzkjz.",
+   "..kzDttzDDDttzDzlkz.",
+   "..bziDDDDDDDDDizkkz.",
+   "..k.zDDzttttzDz.zjz.",
+   "....zzzzzzzzzzBBzbz.",
+   "...zBCBBBBBBBBBBzbz.",
+   "..zDzCBBkkkkkBBBzDz.",
+   "...zBCBBBBBBBBBBz...",
+   "...zBBBBBzBBBBBBz...",
+   "...zzzzzz.zzzzzzz..."
+  ],
+  [
+   ".........zz.........",
+   "........zcdz........",
+   ".......zycdyz.......",
+   ".......zyxyyz.......",
+   "..zzzzzzyxyyzzzzzz..",
+   ".zyyxyyyyyyyyyyyyyz.",
+   "..zzzzzzzzzzzzzzzz..",
+   "..kzgggDgggDgggzlkz.",
+   "..bzDDDzDDDDDzDzkjz.",
+   "..kzDzzzDDDzzzDzlkz.",
+   "..bziDDDDDDDDDizkkz.",
+   "..k.zDDzttttzDz.zjz.",
+   "....zzzzzzzzzzBBzbz.",
+   "...zBCBBBBBBBBBBzbz.",
+   "..zDzCBBkkkkkBBBzDz.",
+   "...zBCBBBBBBBBBBz...",
+   "...zBBBBBzBBBBBBz...",
+   "...zzzzzz.zzzzzzz..."
+  ],
+  [
+   "........zcdz........",
+   ".......zycdyz...zz..",
+   ".......zyxyyz...lkz.",
+   "..zzzzzzyxyyzzzzkjz.",
+   ".zyyxyyyyyyyyyyylkz.",
+   "..zzzzzzzzzzzzzzkkz.",
+   "..kzgggDgggDgggzzjz.",
+   "..bzDzzDDDDzzDDzzbz.",
+   "..kzDDDDDDDDDDDzzbz.",
+   "..bziDDDDDDDDDiz....",
+   "..k.zDDztiitzDz.....",
+   "....zzzzzzzzzzBBz...",
+   "...zBCBBBBBBBBBBBz..",
+   "..zDzCBBkkkkkBBBzDz.",
+   "...zBCBBBBBBBBBBz...",
+   "...zBBBBBzBBBBBBz...",
+   "...zzzzzz.zzzzzzz...",
+   "...................."
+  ],
+  [
+   ".........zz.........",
+   "........zcdz........",
+   ".......zycdyz.......",
+   ".......zyxyyz.......",
+   "..zzzzzzyxyyzzzzzz..",
+   ".zyyxyyyyyyyyyyylkz.",
+   "..zzzzzzzzzzzzzzkjz.",
+   "..kzgggDgggDgggzlkz.",
+   "..bzDzzDDDDzzDDzkkz.",
+   "..kzDDDDDDDDDDDzzjz.",
+   "..bziDDDDDDDDDizzbz.",
+   "..k.zDDztiitzDz.zbz.",
+   "....zzzzzzzzzzBBz...",
+   "...zBCBBBBBBBBBBBz..",
+   "..zDzCBBkkkkkBBBzDz.",
+   "...zBCBBBBBBBBBBz...",
+   "...zBBBBBzBBBBBBz...",
+   "...zzzzzz.zzzzzzz..."
+  ]
+ ],
+ "usage": "收件人·鬼怪大王：比小鬼怪大一圈，戴黑笠（갓，帽绳上串着珠子），头顶的圆角从帽顶穿出来，穿紫袍、系金腰带，拿金色방망이，站在熔岩洞口（idle，偶尔眨眼），不走动。收到货物时举起방망이哈哈大笑（win）。20 × 18，锚点在脚底中间。面朝右绘制，朝左时水平镜像。",
+ "notes": "和怪物小鬼怪（monster.dokkaebi）同一套长相：粉红皮肤、白眼珠、露齿笑，一眼能看出是它们的头头。先摔一跤才收货属于实时规则（DLV-01，暂缓），v2 先当普通收件人。 DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "f1a6bee81d9e8a638567ae5ec6a53332cbc6bae404b02ba21dfa09c709e7d970"
+}

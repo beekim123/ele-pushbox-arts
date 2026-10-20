@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.snack_jeju",
+ "name": "零食 · 小米糕（济州）",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "................",
+   "......zzz.......",
+   "..zzzzefFzzzz...",
+   ".zefFzcfezefcz..",
+   ".zcfezgffzfcez..",
+   ".zgffzzzzzgffz..",
+   "zmzzzmnmmnzzznz.",
+   ".zznnnnnnnnnzzoz",
+   "...zzzzzzzzz.zz.",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "道具图标：零食在济州海女村的包装——小米糕（오메기떡），三个裹着红豆沙的小米团子摆在叶子上。喂给提示动物（济州小马、红蜻蜓）换一句明确提示。驿站货架和背包格里用。",
+ "notes": "DSN-01（济州海女村）的美术候选，等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "53fe663b6412cbac8a088e0a923b782848ca9cdf85bf194028d5f8823e3943ac"
+}

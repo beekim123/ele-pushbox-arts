@@ -1,0 +1,182 @@
+{
+ "format": "pushbox.art/1",
+ "id": "fauna.polar_reindeer",
+ "name": "极地 · 小驯鹿（提示动物）",
+ "category": "fauna",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  13
+ ],
+ "anchor": [
+  8,
+  13
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "sit": {
+   "fps": 2,
+   "loop": true,
+   "frames": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  "wag": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "walk": {
+   "fps": 8,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  },
+  "ring": {
+   "fps": 4,
+   "loop": false,
+   "frames": [
+    6,
+    7,
+    6,
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzz..z.z",
+   "..zbbbbbbbbzzczc",
+   ".zeeeeeeeeeeezcz",
+   "zteeeeeeeeeeeidz",
+   ".zeeeeeeeeeeikez",
+   "..zettttttteezez",
+   "..zfgzzzzzgfzEEz",
+   "..zfgz...zgfzEgz",
+   "..zggz...zggzzz."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "...zzzzzzzz..z.z",
+   "..zbbbbbbbbzzczc",
+   ".zeeeeeeeeeeezcz",
+   "zteeeeeeeeeeeidz",
+   ".zeeeeeeeeeeikez",
+   "..zettttttteezez",
+   "..zfgzzzzzgfzEEz",
+   "..zfgz...zgfzEgz",
+   "..zggz...zggznzz"
+  ],
+  [
+   ".........zczcz..",
+   "..........zccz..",
+   "..........zdcz..",
+   ".z.......zeeeez.",
+   "ztzzzzzzzzeezeEz",
+   "ztzbbbbbbbieeEgz",
+   ".zeeeeeeeeikzzz.",
+   ".zeeeeeeeeeez...",
+   "..zetttttteez...",
+   "..zfgzzzzzgfz...",
+   "..zfgz...zgfz...",
+   "..zggz...zggz...",
+   "...zz.....zz...."
+  ],
+  [
+   "..........zczcz.",
+   "...........zccz.",
+   "..........zzdcz.",
+   ".........zeeeeez",
+   "...zzzzzzzeeezEz",
+   ".zzbbbbbbbieeEgz",
+   "zteeeeeeeeikzzz.",
+   ".zeeeeeeeeeez...",
+   "..zetttttteez...",
+   "..zfgzzzzzgfz...",
+   "..zfgz...zgfz...",
+   "..zggz...zggz...",
+   "...zz.....zz...."
+  ],
+  [
+   ".........zczcz..",
+   "..........zccz..",
+   "..........zdcz..",
+   ".........zeeeez.",
+   "...zzzzzzzeezeEz",
+   ".zzbbbbbbbieeEgz",
+   "zteeeeeeeeikzzz.",
+   ".zeeeeeeeeeez...",
+   "..zetttttteez...",
+   "..zfgzzzzzgfz...",
+   ".zfzgz...zgzfz..",
+   ".zgzgz...zgzgz..",
+   "..z.z.....z.z..."
+  ],
+  [
+   ".........zczcz..",
+   "..........zccz..",
+   "..........zdcz..",
+   ".........zeeeez.",
+   "...zzzzzzzeezeEz",
+   ".zzbbbbbbbieeEgz",
+   "zteeeeeeeeikzzz.",
+   ".zeeeeeeeeeez...",
+   "..zetttttteez...",
+   "..zgfzzzzzfgz...",
+   "..zgzfz.zfzgz...",
+   "..zgzgz.zgzgz...",
+   "...z.z...z.z...."
+  ],
+  [
+   ".........zczcz..",
+   "..........zccz..",
+   "..........zdcz..",
+   ".z.......zeeeez.",
+   "ztzzzzzzzzeezeEz",
+   "ztzbbbbbbbieeEgz",
+   ".zeeeeeeeeiezzz.",
+   ".zeeeeeeeekez...",
+   "..zetttttteez...",
+   "..zfgzzzzzgfz...",
+   "..zfgz...zgfz...",
+   "..zggz...zggz...",
+   "...zz.....zz...."
+  ],
+  [
+   ".........zczcz..",
+   "..........zccz..",
+   "..........zdcz..",
+   ".z.......zeeeez.",
+   "ztzzzzzzzzeezeEz",
+   "ztzbbbbbbbieeEgz",
+   ".zeeeeeeeeiezzz.",
+   ".zeeeeeeeeeekzl.",
+   "..zetttttteez...",
+   "..zfgzzzzzgfz...",
+   "..zfgz...zgfz...",
+   "..zggz...zggz...",
+   "...zz.....zz...."
+  ]
+ ],
+ "usage": "极地雪村的主提示动物：暖棕色的小驯鹿，白肚皮、白色短尾巴、一对短短的小鹿角，脖子上系红项圈挂一个小铃铛。平时站在下一步要用的东西旁边低头啃雪下面的苔藓（sit，偶尔叼起一小撮绿苔藓）；人走近时小跑过去（walk），冲着那个东西晃脑袋、甩短尾巴（wag）；喂它零食时抬起头，铃铛左右一晃叮当一响（ring），头顶出提示气泡。面朝右绘制，朝左时水平镜像。不挡路、不受伤、不能推。",
+ "notes": "暖棕色在白雪、蓝天和深蓝灰花岗岩上都看得清；有鹿角、白肚皮、白尾巴，和济州小马（没角、浅色鬃毛）不会混。只当雪村里可爱的动物画，不画成猎物，也不画拉雪橇的挽具。动作名沿用提示动物的 sit / wag / walk，ring 对应小狗的 bark、小马的 neigh。不在配送模式的随机生态里出现，只由房间的提示步骤摆放。 DSN-04（极地雪村）的美术候选（ART-01a），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "26f1d1efa336beef44dfd2363410bedd0bdbf0a16fd6686ce2f756e3ee2ae04c"
+}

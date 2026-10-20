@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.audio/1",
+ "kind": "sfx",
+ "id": "restart",
+ "uid": "sfx:restart",
+ "name": "重开",
+ "description": "C3 起音后 G3/C4 重新落定，三点不复用胜利旋律。",
+ "seed": 170112,
+ "engine": "portitor-chip/1",
+ "sample_rate": 44100,
+ "channels": 1,
+ "version": 2,
+ "content_hash": "9b528477ff64a80cc94421c9daba85b93dec6ddca2fe91354d46aa9b51ff99a1",
+ "gain_db": -14.291,
+ "instruments": [
+  {
+   "id": "reset",
+   "wave": "triangle",
+   "gain_db": 0,
+   "lowpass_hz": 1200,
+   "attack_ms": 16,
+   "decay_ms": 45,
+   "sustain": 0.55,
+   "release_ms": 70
+  }
+ ],
+ "duration_ms": 450,
+ "events": [
+  {
+   "instrument": "reset",
+   "start_ms": 0,
+   "duration_ms": 100,
+   "note": 48,
+   "gain_db": 0
+  },
+  {
+   "instrument": "reset",
+   "start_ms": 150,
+   "duration_ms": 70,
+   "note": 55,
+   "gain_db": 0
+  },
+  {
+   "instrument": "reset",
+   "start_ms": 275,
+   "duration_ms": 105,
+   "note": 60,
+   "gain_db": 0
+  }
+ ]
+}
