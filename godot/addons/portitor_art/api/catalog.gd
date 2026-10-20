@@ -13,6 +13,8 @@ const HOST: Dictionary = {"godot":"4.7.2","rendering_method":"gl_compatibility",
 const FONT_FILES: Array[String] = ["fusion-pixel-10px/OFL.txt","fusion-pixel-10px/README.md","fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2","fusion-pixel-12px/OFL.txt","fusion-pixel-12px/README.md","fusion-pixel-12px/fusion-pixel-12px-proportional-zh_hans.otf.woff2","fusion-pixel-12px/LICENSES/galmuri/LICENSE.txt","fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt","fusion-pixel-12px/LICENSES/cubic-11/OFL.txt"]
 const FONT_HASHES: Dictionary = {"fusion-pixel-10px":"20f58ce5f54e468bc6aa86944aa2445b1e19264193496e9cd57f913cdb279e72","fusion-pixel-12px":"0ebd99e6f1e9b650a793a3f759c1c3dfa99f0c5b6502e78569b48ddb43767e40"}
 const FONT_BINARIES: Dictionary = {"fusion-pixel-10px":"resources/fonts/fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2","fusion-pixel-12px":"resources/fonts/fusion-pixel-12px/fusion-pixel-12px-proportional-zh_hans.otf.woff2"}
+const REPORT_SCOPES: Array[String]=["public-contracts","public-js-reference","public-render","native-predecessor","public-pck"]
+const REPORT_FIELDS: Array[String]=["report_path","report_sha256","tested_producer_commit","tested_manifest_sha256","runtime_payload_sha256","renderer_sha256","approved_identity_sha256","verifier_commit","fixture_sha256","godot","platform","backend","scope","completed","failures","case_ids"]
 var resource_root: String = ""
 var manifest_sha256: String = ""
 var runtime_payload_sha256: String = ""
@@ -122,7 +124,36 @@ static func _manifest_header(value: Dictionary) -> Dictionary:
 	if value.identity.keys().size()!=3: return Contract.result(["invalid payload identities"])
 	for key: String in ["runtime_payload_sha256","renderer_sha256","approved_identity_sha256"]:
 		if not _hex(value.identity.get(key),64): return Contract.result(["missing payload identity: "+key])
-	if value.candidate_verification!={"status":"pending","runtime_payload_sha256":value.identity.runtime_payload_sha256,"reports":[]}: return Contract.result(["T7 requires a matching pending technical receipt"])
+	return _verification(value.candidate_verification,value.identity)
+
+static func _verification(value: Dictionary, identity: Dictionary) -> Dictionary:
+	if value.keys().size()!=3 or not value.has_all(["status","runtime_payload_sha256","reports"]) or value.runtime_payload_sha256!=identity.runtime_payload_sha256 or not value.reports is Array: return Contract.result(["technical receipt identity/fields mismatch"])
+	if value.status=="pending": return Contract.result([]) if value.reports.is_empty() else Contract.result(["pending has no technical reports"])
+	if value.status!="recorded" or value.reports.is_empty() or value.reports.size()>32: return Contract.result(["unsupported technical receipt status"])
+	var paths: Dictionary={}
+	var godot_pattern: RegEx=RegEx.new();godot_pattern.compile("^4\\.7\\.2(?:[.\\-][A-Za-z0-9_-]+)*$")
+	var case_pattern: RegEx=RegEx.new();case_pattern.compile("^[A-Za-z0-9_.:/-]{1,160}$")
+	for record: Variant in value.reports:
+		if not record is Dictionary or record.keys().size()!=REPORT_FIELDS.size() or not record.has_all(REPORT_FIELDS): return Contract.result(["unknown/functional report receipt fields"])
+		if not record.report_path is String or not _path(record.report_path) or not record.report_path.begins_with("godot/verification/") or not record.report_path.ends_with(".json") or paths.has(record.report_path): return Contract.result(["invalid/duplicate report origin"])
+		paths[record.report_path]=true
+		for key: String in ["report_sha256","tested_manifest_sha256","runtime_payload_sha256","renderer_sha256","approved_identity_sha256","fixture_sha256"]:
+			if not _hex(record[key],64): return Contract.result(["invalid technical report SHA"])
+		for key: String in ["tested_producer_commit","verifier_commit"]:
+			if not _hex(record[key],40): return Contract.result(["invalid tested/verifier commit"])
+		for key: String in ["runtime_payload_sha256","renderer_sha256","approved_identity_sha256"]:
+			if record[key]!=identity[key]: return Contract.result(["technical report belongs to another payload"])
+		if not record.godot is String or godot_pattern.search(record.godot)==null or record.platform!="macos-arm64" or record.backend!="gl_compatibility": return Contract.result(["unsupported tested target"])
+		if not record.completed is bool or not _integer(record.failures,0,2147483647) or not record.scope is Array or record.scope.is_empty() or not record.case_ids is Array or record.case_ids.is_empty() or record.case_ids.size()>4096: return Contract.result(["invalid technical completion/scope/cases"])
+		var scopes: Dictionary={};var ids: Dictionary={}
+		for scope: Variant in record.scope:
+			if not scope is String or scope not in REPORT_SCOPES or scopes.has(scope): return Contract.result(["unknown/duplicate technical scope"])
+			scopes[scope]=true
+		for id: Variant in record.case_ids:
+			if not id is String or case_pattern.search(id)==null or ids.has(id): return Contract.result(["invalid technical case identity"])
+			ids[id]=true
+	# Detached report bytes are checked by the committed producer, not executed here.
+	# This annotation never changes resource selection or source capability status.
 	return Contract.result([])
 
 static func _validate_index(index: Dictionary, files: Dictionary, manifest: Dictionary) -> Dictionary:

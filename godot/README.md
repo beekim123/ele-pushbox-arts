@@ -87,15 +87,21 @@ The final canonical manifest SHA hashes its original bytes and lives outside
 the manifest. The ZIP SHA hashes transport bytes and lives in checksums or an
 installation receipt. Neither is substituted for runtime or approval identity.
 
-T7's finite technical receipt is exactly
+T7 introduced the finite no-report receipt
 `{status:"pending",runtime_payload_sha256:<matching digest>,reports:[]}`. A
 committed producer-only `godot/verification-index.json` may supply the same shape;
 unknown fields, another payload or invented reports are rejected. `pending` here
 means no T8 technical report is attached, and is independent of U4 file approval.
-T8 must define and freeze any finite report-schema extension in the actual
-Catalog/payload **before** testing it, then bind tested source/payload, fixtures,
-report SHA and explicit scope without a manifest/report self-reference. Technical
-results do not automatically upgrade every static capability or game playability.
+T8 extends it with `status:"recorded"` and a finite report header. Each actual
+`portitor.art.native-test-report/1` body binds tested source/manifest/payload/
+renderer/approved identity, verifier commit, fixture SHA, Godot/platform/backend
+and explicit scopes/cases. The producer verifies committed report bytes, exact
+scope coverage and results; Catalog accepts only the finite non-executing header.
+Functional host/renderer/capability parameters remain in the runtime index.
+Freeze the actual Catalog/payload **before** testing it. Later attach the report
+outside the addon and rebuild from a new real commit with the same payload, while
+checking new manifest/ZIP integrity separately. Technical results do not
+automatically upgrade every static capability or game playability.
 
 ## Catalog
 
@@ -142,6 +148,7 @@ time and local machine paths are not part of content identity.
 ```sh
 node --test --test-concurrency=1 tests/godot-pack.test.mjs
 node tests/native/run-catalog.mjs --archive <fixed-candidate.zip> --godot <Godot-4.7.2-executable>
+node --single-threaded --v8-pool-size=1 tools/verify-godot-pack.mjs --source-commit <verifier-40hex> --archive <actual.zip> --baseline <T7actual.zip> --godot <absolute-binary> --out <new-absolute-directory>
 node tools/art.mjs verify
 node tools/audio.mjs verify
 ```
@@ -156,3 +163,21 @@ Before local computation, inspect the shared machine budget. Use one worker,
 numeric-library threads 1, `UV_THREADPOOL_SIZE=1`, test concurrency 1 and low
 scheduling priority for longer work. Only clean up processes created by the task.
 No public branch/tag/Release/attachment is authorized before T15's actual list.
+
+The independent verifier installs the actual ZIP into a temporary, zero-Autoload
+host and runs contracts, macOS GPU and a minimal PCK sequentially. Artificial
+world/UI/visual_cells fixtures contain no game/SDK/real levels/story. The public
+JS oracle loads only public raster/sprite/terrain code and selected approved
+histories. Seven themes, ten standalone UI plus six embedded branches and play
+HUD have explicit case coverage; sprite frame checks are not blanket sprite GPU
+acceptance. First native comparison uses the T7 local source carrier and the
+T1/T2/T6 extraction mapping, not a claimed previous formal native release.
+
+The producer-demo PCK preset uses Text scripts. Its named raw exporter first
+verifies every manifest-listed original byte, then adds all raw files and skips
+default imported entries. Actual PCK source/PNG/WOFF2 access and rendering must
+pass without skipping source SHA or duplicating fonts. PCK contains its host and
+engine files as well as the addon; it is not byte-identical to the source ZIP.
+Private full-game Mac export and consumer-lock tests remain separate integration
+work. Every run preserves initial failures, missing cases and input/source
+receipts; no original visual threshold or user approval is replaced.

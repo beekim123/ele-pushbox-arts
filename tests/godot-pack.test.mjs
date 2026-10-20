@@ -105,10 +105,18 @@ test('real committed inputs yield identical STORE archives and preserve selected
   assert.deepEqual(receiptManifest.candidate_verification,receipt);
   assert.equal(receiptManifest.identity.runtime_payload_sha256,manifest.identity.runtime_payload_sha256);
   assert.notEqual(withReceipt.manifest_sha256,a.manifest_sha256);
+  const binding={tested_producer_commit:fixture.sourceCommit,tested_manifest_sha256:a.manifest_sha256,...manifest.identity,verifier_commit:fixture.sourceCommit,fixture_sha256:lib.sha256(Buffer.from('explicit synthetic receipt fixture')),godot:'4.7.2.stable.official.ed1daf0bf',platform:'macos-arm64',backend:'gl_compatibility',scope:['public-contracts']};
+  const body={format:'portitor.art.native-test-report/1',binding,completed:true,failures:0,cases:[{id:'synthetic.schema',scope:'public-contracts',status:'passed',checks:1,failures:0}],artifacts:[],run_summary:[],known_limits:['Synthetic producer-to-Catalog schema fixture; no real GPU/PCK result.']};
+  const reportBytes=lib.canonical(body),record={report_path:'godot/verification/synthetic-schema.json',report_sha256:lib.sha256(reportBytes),...binding,completed:true,failures:0,case_ids:['synthetic.schema']};
+  fs.mkdirSync(path.join(fixture.root,'godot/verification'),{recursive:true});fs.writeFileSync(path.join(fixture.root,record.report_path),reportBytes);
+  fs.writeFileSync(path.join(fixture.root,'godot/verification-index.json'),lib.canonical({status:'recorded',runtime_payload_sha256:manifest.identity.runtime_payload_sha256,reports:[record]}));
+  const recordedCommit=commit(fixture.root),recorded=lib.buildGodotPack({...opts,sourceCommit:recordedCommit,outDir:path.join(fixture.root,'out-recorded')});
+  const recordedManifest=JSON.parse(fs.readFileSync(recorded.manifest));assert.equal(recordedManifest.candidate_verification.status,'recorded');assert.equal(recordedManifest.identity.runtime_payload_sha256,manifest.identity.runtime_payload_sha256);
   if (process.env.PORTITOR_T7_TEST_OUTPUT) {
     fs.mkdirSync(process.env.PORTITOR_T7_TEST_OUTPUT, {recursive:true});
     fs.copyFileSync(withReceipt.archive, path.join(process.env.PORTITOR_T7_TEST_OUTPUT, 'fixture.zip'));
     fs.copyFileSync(withReceipt.manifest, path.join(process.env.PORTITOR_T7_TEST_OUTPUT, 'fixture.manifest.json'));
+    fs.copyFileSync(recorded.archive,path.join(process.env.PORTITOR_T7_TEST_OUTPUT,'recorded-fixture.zip'));
   }
   mutateJson(fixture.root,'godot/verification-index.json',x=>{x.runtime_payload_sha256='0'.repeat(64);});
   const badReceiptCommit=commit(fixture.root);

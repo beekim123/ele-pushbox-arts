@@ -82,7 +82,7 @@ export function payloadDigest(files,domain='portitor.art.payload-files/1') {
 function treeTable(files){return [...files].sort(([a],[b])=>cmp(a,b)).map(([p,b])=>({path:p,bytes:b.length,sha256:sha256(b)}));}
 
 function committed(root,commit){
-  need(/^[a-f0-9]{40}$/.test(commit),'sourceCommit must be a full committed Git identity');
+  need(typeof commit==='string'&&/^[a-f0-9]{40}$/.test(commit),'sourceCommit must be a full committed Git identity');
   const run=(...args)=>execFileSync('git',['-c','gc.auto=0','-c','maintenance.auto=false','-c','pack.threads=1',...args],{cwd:root,maxBuffer:64*1024*1024});
   need(run('rev-parse',commit+'^{commit}').toString().trim()===commit,'sourceCommit is not a commit');
   const tree=new Map();
@@ -105,6 +105,42 @@ function declaredClosure(files){
       need(resolved.startsWith(PREFIX)&&files.has(resolved),'unknown/outside script reference: '+name+' -> '+ref);
     }
   }
+}
+
+export const VERIFICATION_SCOPES=Object.freeze(['public-contracts','public-js-reference','public-render','native-predecessor','public-pck']);
+const REPORT_BINDING_KEYS=['tested_producer_commit','tested_manifest_sha256','runtime_payload_sha256','renderer_sha256','approved_identity_sha256','verifier_commit','fixture_sha256','godot','platform','backend','scope'];
+const REPORT_KEYS=['report_path','report_sha256',...REPORT_BINDING_KEYS,'completed','failures','case_ids'];
+function keys(value,allowed){return object(value)&&Object.keys(value).sort().join(',')===[...allowed].sort().join(',');}
+export function validateVerification(envelope,identity,readReport){
+  need(keys(envelope,['status','runtime_payload_sha256','reports']),'unsupported verification receipt fields');
+  need(envelope.runtime_payload_sha256===identity.runtime_payload_sha256&&Array.isArray(envelope.reports),'verification receipt refers to another runtime payload');
+  if(envelope.status==='pending'){need(envelope.reports.length===0,'pending has no technical reports');return envelope;}
+  need(envelope.status==='recorded'&&envelope.reports.length>0&&envelope.reports.length<=32,'invalid recorded technical reports');
+  const seen=new Set();
+  for(const record of envelope.reports){
+    need(keys(record,REPORT_KEYS),'unknown/functional field in technical report receipt');
+    validatePath(record.report_path);need(record.report_path.startsWith('godot/verification/')&&record.report_path.endsWith('.json')&&!seen.has(record.report_path),'invalid/duplicate committed report path');seen.add(record.report_path);
+    for(const key of ['report_sha256','tested_manifest_sha256','runtime_payload_sha256','renderer_sha256','approved_identity_sha256','fixture_sha256'])need(typeof record[key]==='string'&&HASH.test(record[key]),'invalid report SHA: '+key);
+    for(const key of ['tested_producer_commit','verifier_commit'])need(typeof record[key]==='string'&&/^[a-f0-9]{40}$/.test(record[key]),'invalid tested/verifier commit');
+    for(const key of ['runtime_payload_sha256','renderer_sha256','approved_identity_sha256'])need(record[key]===identity[key],'report identity mismatch: '+key);
+    need(typeof record.godot==='string'&&/^4\.7\.2(?:[.\-][A-Za-z0-9_-]+)*$/.test(record.godot)&&record.platform==='macos-arm64'&&record.backend==='gl_compatibility','unsupported report test target');
+    need(Array.isArray(record.scope)&&record.scope.length>0&&new Set(record.scope).size===record.scope.length&&record.scope.every(s=>VERIFICATION_SCOPES.includes(s)),'unsupported technical scope');
+    need(typeof record.completed==='boolean'&&integer(record.failures,0,2147483647),'invalid report completion/failures');
+    need(Array.isArray(record.case_ids)&&record.case_ids.length>0&&record.case_ids.length<=4096&&new Set(record.case_ids).size===record.case_ids.length&&record.case_ids.every(x=>typeof x==='string'&&/^[A-Za-z0-9_.:/-]{1,160}$/.test(x)),'invalid report case IDs');
+    const bytes=readReport(record.report_path);need(sha256(bytes)===record.report_sha256,'committed report SHA mismatch');
+    const report=parseJson(bytes);
+    need(keys(report,['format','binding','completed','failures','cases','artifacts','run_summary','known_limits'])&&report.format==='portitor.art.native-test-report/1','unsupported actual report schema');
+    const binding=Object.fromEntries(REPORT_BINDING_KEYS.map(k=>[k,record[k]]));
+    need(canonical(report.binding).equals(canonical(binding))&&report.completed===record.completed&&report.failures===record.failures,'report receipt differs from actual report binding/result');
+    need(Array.isArray(report.cases)&&report.cases.length>0&&report.cases.every(c=>object(c)&&typeof c.id==='string'&&record.scope.includes(c.scope)&&['passed','failed','not_run','incomplete'].includes(c.status)&&integer(c.failures,0,2147483647)),'invalid scoped case result');
+    need(canonical(report.cases.map(c=>c.id).sort(cmp)).equals(canonical([...record.case_ids].sort(cmp))),'actual report case set mismatch');
+    need(canonical([...new Set(report.cases.map(c=>c.scope))].sort()).equals(canonical([...record.scope].sort())),'declared scope has no actual case coverage');
+    need(report.cases.reduce((n,c)=>n+c.failures,0)===report.failures,'actual report failure count mismatch');
+    need(report.cases.every(c=>c.status==='passed'||c.status==='not_run'?c.failures===0:c.failures>0),'case status contradicts its failure count');
+    need(!report.completed||report.cases.every(c=>!['not_run','incomplete'].includes(c.status)),'incomplete case cannot claim completed scope');
+    need(Array.isArray(report.artifacts)&&Array.isArray(report.run_summary)&&Array.isArray(report.known_limits),'invalid non-executing report evidence');
+  }
+  return envelope;
 }
 
 function validateNative(native){
@@ -249,7 +285,7 @@ function collect(reader,base,version){
 
 export function buildGodotPack({root,sourceCommit,packageVersion,outDir}) {
   need(typeof root==='string'&&typeof outDir==='string','explicit producer and output roots required');
-  need(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(?:[0-9A-Za-z-]+\.)*[0-9A-Za-z-]+)?$/.test(packageVersion),'invalid package SemVer');
+  need(typeof packageVersion==='string'&&/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-(?:[0-9A-Za-z-]+\.)*[0-9A-Za-z-]+)?$/.test(packageVersion),'invalid package SemVer');
   const reader=committed(root,sourceCommit),base=committed(root,BASE.commit);
   reader.run('merge-base','--is-ancestor',BASE.commit,sourceCommit);
   // Rebuilding a fixed commit cannot silently execute another revision's packer.
@@ -257,17 +293,13 @@ export function buildGodotPack({root,sourceCommit,packageVersion,outDir}) {
   const {files,index}=collect(reader,base,packageVersion),table=treeTable(files);validateFiles(table);
   const approved=index.assets.map(a=>[a.uid,a.version,a.hash,a.approval,a.png_sha256]).concat(index.audio.map(a=>[a.uid,a.version,a.hash,a.approval,a.sha256]),index.fonts.map(f=>[f.id,f.sha256])).sort((a,b)=>cmp(a[0],b[0]));
   const renderer=table.filter(f=>/\.(gd|gdshader|gdshaderinc)$/.test(f.path)||f.path===PREFIX+'resources/catalog.json');
-  let verification={status:'pending',runtime_payload_sha256:payloadDigest(table),reports:[]};
-  if(reader.tree.has('godot/verification-index.json')){
-    verification=reader.json('godot/verification-index.json');
-    need(object(verification)&&Object.keys(verification).sort().join(',')==='reports,runtime_payload_sha256,status','unsupported verification receipt fields');
-    need(verification.runtime_payload_sha256===payloadDigest(table),'verification receipt refers to another runtime payload');
-    need(verification.status==='pending'&&Array.isArray(verification.reports)&&verification.reports.length===0,'T7 does not invent technical reports or upgrade static coverage');
-  }
+  const identity={runtime_payload_sha256:payloadDigest(table),renderer_sha256:payloadDigest(renderer,'portitor.art.renderer-files/1'),approved_identity_sha256:sha256(Buffer.concat([Buffer.from('portitor.art.approved-identities/1\n'),canonical(approved)]))};
+  const verification=validateVerification(reader.tree.has('godot/verification-index.json')?reader.json('godot/verification-index.json'):{status:'pending',runtime_payload_sha256:identity.runtime_payload_sha256,reports:[]},identity,p=>reader.get(p));
+  for(const report of verification.reports)for(const commit of [report.tested_producer_commit,report.verifier_commit])reader.run('merge-base','--is-ancestor',commit,sourceCommit);
   const manifest={format:'portitor.art.godot-package/1',package_id:PACKAGE_ID,package_version:packageVersion,
     producer:{repository:'https://github.com/beekim123/ele-pushbox-arts.git',commit:sourceCommit,packer_profile:'portitor.art.store-zip/1',packer_version:'1'},assets_base:BASE,
     runtime:{index:PREFIX+'resources/catalog.json',api_version:'1',schemas:SCHEMAS},files:table,
-    identity:{runtime_payload_sha256:payloadDigest(table),renderer_sha256:payloadDigest(renderer,'portitor.art.renderer-files/1'),approved_identity_sha256:sha256(Buffer.concat([Buffer.from('portitor.art.approved-identities/1\n'),canonical(approved)]))},candidate_verification:verification};
+    identity,candidate_verification:verification};
   const manifestBytes=canonical(manifest);files.set(PREFIX+'manifest.json',manifestBytes);
   const archiveBytes=writeStoreZip(files),name='portitor-art-godot-'+packageVersion;
   fs.mkdirSync(outDir,{recursive:true});
