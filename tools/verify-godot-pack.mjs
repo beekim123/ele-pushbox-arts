@@ -25,7 +25,7 @@ export function validatePredecessor(prior,candidate){
 }
 export function actualTarget(target,phase){
   const v=target?.version,headless=phase==='contracts';
-  const valid=target?.os==='macOS'&&target?.architecture==='arm64'&&v?.major===4&&v?.minor===7&&v?.patch===2&&typeof v.hash==='string'&&/^[a-f0-9]{40}$/.test(v.hash)&&(headless?target.display_driver==='headless':target.display_driver==='macos'&&target.rendering_method==='gl_compatibility'&&/^opengl3(?:_es|_angle)?$/.test(target.rendering_driver));
+  const valid=target?.os==='macOS'&&target?.architecture==='arm64'&&v?.major===4&&v?.minor===7&&v?.patch===2&&typeof v.hash==='string'&&/^[a-f0-9]{40}$/.test(v.hash)&&(headless?target.display_driver==='headless':target.display_driver==='macOS'&&target.rendering_method==='gl_compatibility'&&/^opengl3(?:_es|_angle)?$/.test(target.rendering_driver));
   return {valid,platform:target?target.os.toLowerCase()+'-'+target.architecture:null,backend:target?.rendering_method||'headless',godot:v?`${v.major}.${v.minor}.${v.patch}.${v.status}.${v.build}.${String(v.hash).slice(0,9)}`:null};
 }
 function sourceReader(root,commit){
@@ -77,7 +77,8 @@ async function job({godot,args,cwd,out,pkg,verifierCommit,fixtureSha,phase,extra
   let timedOut=false;const timer=setTimeout(()=>{timedOut=true;child.kill('SIGTERM');},180000);
   const exit=await new Promise(resolve=>{child.on('error',error=>resolve({code:null,error:error.message}));child.on('close',(code,signal)=>resolve({code,signal}));});
   clearTimeout(timer);await Promise.all([new Promise(resolve=>stdout.end(resolve)),new Promise(resolve=>stderr.end(resolve))]);
-  const objects=text.split('\n').flatMap(line=>{try{return [JSON.parse(line)];}catch{return [];}}),suite=objects.findLast(x=>x.suite);
+  const objects=text.split('\n').flatMap(line=>{try{return [JSON.parse(line)];}catch{return [];}});let suite=objects.findLast(x=>x.suite);
+  if(!suite&&objects.some(x=>x.case)){const partial=objects.filter(x=>x.case).map(x=>x.case);suite={suite:'partial-case-stream',completed:false,cases:partial,failures:partial.reduce((n,c)=>n+c.failures,0)};}
   receipt.finished_utc=new Date().toISOString();receipt.exit=exit;receipt.timed_out=timedOut;receipt.suite=suite||null;
   receipt.target=suite?.target||objects.find(x=>x.target)?.target||null;
   receipt.godot_version_line=text.split('\n').find(x=>x.startsWith('Godot Engine '))||'';

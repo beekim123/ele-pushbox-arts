@@ -38,7 +38,7 @@ test('the first predecessor is the exact T7 carrier, never a self-comparison',()
   }
 });
 test('report target comes from the actual Godot runtime, without version/architecture fallbacks',()=>{
-  const t={os:'macOS',architecture:'arm64',version:{major:4,minor:7,patch:2,status:'stable',build:'official',hash:'e'.repeat(40)},rendering_method:'gl_compatibility',rendering_driver:'opengl3',display_driver:'macos'};
+  const t={os:'macOS',architecture:'arm64',version:{major:4,minor:7,patch:2,status:'stable',build:'official',hash:'e'.repeat(40)},rendering_method:'gl_compatibility',rendering_driver:'opengl3',display_driver:'macOS'};
   assert.equal(runner.actualTarget(t,'gpu').valid,true);
   for(const bad of [{...t,architecture:'x86_64'},{...t,rendering_method:'mobile'},{...t,version:{...t.version,patch:1}},null])assert.equal(runner.actualTarget(bad,'gpu').valid,false);
   assert.equal(runner.actualTarget(null,'gpu').godot,null);

@@ -6,6 +6,7 @@ const UiSchema=preload("res://addons/portitor_art/api/ui_model.gd")
 const Cells=preload("res://addons/portitor_art/api/visual_cells.gd")
 const Widgets=preload("res://addons/portitor_art/runtime/ui/widgets.gd")
 const UiView=preload("res://addons/portitor_art/runtime/ui/views/ui_view.gd")
+const World=preload("res://addons/portitor_art/runtime/render/world_view.gd")
 const Models=preload("res://fixtures/display_models.gd")
 var checks: int=0
 var failures: int=0
@@ -39,7 +40,11 @@ func _run() -> void:
 	var bad_path: String="res://addons/portitor_art/resources/catalog.json.uid";var extra: FileAccess=FileAccess.open(bad_path,FileAccess.WRITE);extra.store_string("uid://not-an-owned-script");extra.close()
 	var texture_before: Texture2D=catalog.texture("art:obj.crate_wood")
 	check(not catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok and catalog.texture("art:obj.crate_wood")==texture_before,"unknown/non-source UID sidecar rejects atomically")
-	DirAccess.remove_absolute(bad_path);check(catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok,"valid exact bytes reload after removing unknown sidecar");end("contracts.editor-sidecars")
+	DirAccess.remove_absolute(bad_path)
+	var media_path: String=catalog.metadata("art:obj.crate_wood").texture_path;var media_bytes: PackedByteArray=FileAccess.get_file_as_bytes(media_path);DirAccess.remove_absolute(media_path)
+	check(not catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok and catalog.texture("art:obj.crate_wood")==texture_before,"missing actual approved resource rejects atomically")
+	extra=FileAccess.open(media_path,FileAccess.WRITE);extra.store_buffer(media_bytes);extra.close()
+	check(catalog.load_at(catalog.resource_root,catalog.manifest_sha256).ok,"valid exact bytes reload after restoring own fixture");end("contracts.editor-sidecars")
 	begin()
 	for theme: String in Models.THEMES:check(Contract.require_capability(catalog,"art:theme."+theme,"theme").ok,"implemented theme: "+theme)
 	for uid: String in ["art:theme.candy","art:theme.jeju","art:theme.polar","art:ui.screen.confirm","art:ui.screen.delivery_hud","art:ui.screen.delivery_pause","art:ui.screen.hint_animal","art:ui.screen.hud_keys","art:ui.screen.observe","art:ui.screen.reels","art:ui.screen.settlement","art:ui.screen.settlement_fail","art:ui.screen.shop"]:
@@ -65,15 +70,20 @@ func _run() -> void:
 	model.values.hud.sand=-1;check(not UiSchema.validate(model).ok,"negative display count");model=before
 	var image: Image=Models.cells();var descriptor: Dictionary={"format":"visual_cells/1","size":Vector2i(128,80),"origin":Vector2i.ZERO,"visible_rect":Rect2i(0,0,128,80)}
 	check(Cells.validate_image(image,descriptor).ok,"own visual cells accepted")
-	image.set_pixel(1,1,Color8(19,0,0,255));check(not Cells.validate_image(image,descriptor).ok,"unknown visual class rejected");end("contracts.display-schemas")
+	image.set_pixel(1,1,Color8(19,0,0,255));check(not Cells.validate_image(image,descriptor).ok,"unknown visual class rejected")
+	var world_view: Node2D=World.new();root.add_child(world_view);check(world_view.configure(catalog).ok and world_view.set_snapshot(world).ok,"actual world provider accepts artificial snapshot")
+	var prior_anchor: Rect2=world_view.get_anchor("hud.goal");invalid=world.duplicate(true);invalid.theme_uid="art:theme.missing"
+	check(not world_view.set_snapshot(invalid).ok and world_view.get_anchor("hud.goal")==prior_anchor,"missing theme fails before replacing display state")
+	invalid=world.duplicate(true);invalid.entities[0].asset_uid="art:char.missing";check(not world_view.set_snapshot(invalid).ok,"missing approved sprite rejects")
+	world_view.clear_visual_cells();world_view.free();end("contracts.display-schemas")
 	begin()
 	var widget: RefCounted=Widgets.new();check(widget.configure(catalog).ok,"frozen font configure")
 	for small: bool in [false,true]:
-		var face: FontVariation=widget.font(small);var font: FontFile=face.base_font
+		var face: FontVariation=widget.ui_font(small);var font: FontFile=face.base_font
 		check(font.antialiasing==TextServer.FONT_ANTIALIASING_NONE and font.hinting==TextServer.HINTING_NONE and font.subpixel_positioning==TextServer.SUBPIXEL_POSITIONING_DISABLED and not font.multichannel_signed_distance_field,"actual font pixel attributes")
 		check(face.spacing_top==-2 and face.spacing_bottom==(-2 if small else 0),"original spacing")
 		check(font.msdf_pixel_range==8 and font.msdf_size==48 and font.disable_embedded_bitmaps and not font.generate_mipmaps and font.allow_system_fallback and not font.force_autohinter and font.keep_rounding_remainders and font.oversampling==0.0,"all frozen font construction attributes")
-		check(widget.g2_font(small).opentype_features=={"kern":0},"G2 kerning remains explicit")
+		check(widget.font(small).opentype_features=={"kern":0},"G2 kerning remains explicit")
 		check(font.has_char(68) and face.get_string_size("Demo",HORIZONTAL_ALIGNMENT_LEFT,-1,10 if small else 12).x>0,"frozen face supplies Latin display glyphs and positive metrics")
 	var other: RefCounted=Widgets.new();check(other.configure(catalog).ok and widget.font()!=other.font(),"configured instances do not share FontVariation cache");end("contracts.font-attributes")
 	begin()
