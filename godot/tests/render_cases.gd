@@ -40,6 +40,8 @@ func _run() -> void:
 	phase=OS.get_environment("PORTITOR_PHASE");output=OS.get_environment("PORTITOR_OUTPUT")
 	begin();check(DisplayServer.get_name()!="headless","actual GPU display driver required")
 	check(root.get_children().is_empty() and not FileAccess.file_exists("res://ele.gdextension"),"no game Autoload or SDK")
+	if phase=="pck":
+		check(not DirAccess.dir_exists_absolute("res://instances") and not DirAccess.dir_exists_absolute("res://export") and not DirAccess.dir_exists_absolute("res://godot/verification"),"PCK excludes root-isolation copies, exporter source and detached reports")
 	catalog=Catalog.new();var loaded: Dictionary=catalog.load_at("res://addons/portitor_art",FileAccess.get_file_as_string("res://fixtures/manifest.sha256").strip_edges())
 	check(loaded.ok,"actual source-byte package loads: "+str(loaded.errors));end("gpu.package","public-render")
 	if failures>0:_finish();return

@@ -127,8 +127,12 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
       }
     }
     if(phases.includes('pck')){
+      // The GPU root-isolation case creates B at runtime. Never export that tree.
+      const exportHost=path.join(hostRoot,'export-clean');stage(exportHost,pkg);
+      const exportImport=await job({godot,args:headless(exportHost,'--editor','--import'),cwd:exportHost,out:path.join(outDir,'export-import'),pkg,verifierCommit,fixtureSha,phase:'export-import'});runs.push(exportImport.receipt);
+      need(exportImport.receipt.passed,'clean export host import failed');
       const pck=path.join(outDir,'native-art-raw.pck');
-      const exported=await job({godot,args:headless(candidateHost,'--editor','--export-pack','Native Raw PCK',pck),cwd:candidateHost,out:path.join(outDir,'export'),pkg,verifierCommit,fixtureSha,phase:'export'});runs.push(exported.receipt);
+      const exported=await job({godot,args:headless(exportHost,'--editor','--export-pack','Native Raw PCK',pck),cwd:exportHost,out:path.join(outDir,'export'),pkg,verifierCommit,fixtureSha,phase:'export'});runs.push(exported.receipt);
       if(!exported.receipt.passed||!fs.existsSync(pck))cases.push({id:'pck:export',scope:'public-pck',status:'incomplete',checks:1,failures:1,notes:['Raw export failed; logs retained.']});
       else{
         const empty=path.join(hostRoot,'pck-empty');fs.mkdirSync(empty);const pckBefore=sha256(fs.readFileSync(pck));
