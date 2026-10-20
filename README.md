@@ -17,3 +17,5 @@ node tests/workbench.smoke.cjs
 许可证：代码采用 [MIT](LICENSE)；原创美术与声音采用 [CC BY-NC-SA 4.0](LICENSE-ASSETS.md)。游戏名、标志和列明的角色素材保留权利，不在 CC 授权范围内；字体保留各自 OFL 许可证。
 
 暂不接受外部贡献请求。确认记录只反映用户明确给出的美术确认。快照说明见 SNAPSHOT.md，来源见 PROVENANCE.md。
+
+本地 Godot 原生候选的生产格式、无 Node 消费接口、混合许可与独立验证边界见 [godot/README.md](godot/README.md)。候选不表示已发布、增加素材确认或完成实际文件/许可清单的用户确认。
