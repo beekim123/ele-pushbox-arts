@@ -1,5 +1,10 @@
 # Scoped native technical report
 
+The following report is historical evidence for the original T8 payload. The
+selected-native guard refresh starts with no current verification-index input;
+the producer supplies a matching pending/empty envelope for the new payload.
+The historical report is not attached to that changed runtime identity.
+
 `t8-report.json` is the unchanged actual standalone report generated from tested
 source/verifier `82a5a668b0a02dfebabef7b9988b8b22c1bee536`. Its tested pending
 manifest SHA is `92e0f4044359ad6a8d0ea9dbaa3b1d683ddb6f950574b6d6987716e5ed80c743`.

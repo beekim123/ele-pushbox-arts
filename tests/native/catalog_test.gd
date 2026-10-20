@@ -4,12 +4,15 @@ const Catalog = preload("res://addons/portitor_art/api/catalog.gd")
 const Contract = preload("res://addons/portitor_art/api/provider_contract.gd")
 var checks: int=0
 var failures: int=0
+var results: Array[Dictionary]=[]
 func _initialize() -> void:
 	call_deferred("_run")
 func check(ok: bool, message: String) -> void:
 	checks+=1
+	var item: Dictionary={"id":"catalog."+str(checks),"status":"passed" if ok else "failed","checks":1,"failures":0 if ok else 1,"assertion":message}
+	results.append(item);print(JSON.stringify({"case":item}))
 	if not ok:
-		failures+=1;push_error(message)
+		failures+=1;printerr("CHECK FAILED: "+message)
 func _run() -> void:
 	check(root.get_children().is_empty(),"no game Autoloads")
 	var catalog: RefCounted=Catalog.new()
@@ -22,6 +25,7 @@ func _run() -> void:
 	check(Contract.validate_provider(catalog).ok,"raw query provider protocol")
 	check(catalog.metadata("level:synthetic").is_empty(),"no game domain metadata")
 	check(catalog.capability("art:unknown").native=="missing","unknown capability remains missing")
+	check(Contract.validate(catalog.capability("art:unknown")).ok,"missing remains a valid unknown-UID query state")
 	check(catalog.texture("art:unknown")==null,"unknown sprite has no fallback")
 	var wood: Dictionary=catalog.metadata("art:obj.crate_wood")
 	check(wood.approved and not wood.placeholder and wood.size.size()==2 and int(wood.size[0])==16 and int(wood.size[1])==16,"approved wood metadata comes from history")
@@ -47,6 +51,7 @@ func _run() -> void:
 	for file: String in ["resources/fonts/fusion-pixel-12px/OFL.txt","resources/fonts/fusion-pixel-12px/LICENSES/galmuri/LICENSE.txt","resources/fonts/fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt","resources/fonts/fusion-pixel-12px/LICENSES/cubic-11/OFL.txt","resources/fonts/fusion-pixel-10px/OFL.txt"]:
 		check(FileAccess.file_exists(old_root.path_join(file)),"upstream notice travels: "+file)
 	_structured_failures(catalog,first)
+	_selected_missing_failure(catalog.resource_root)
 	var raw: Dictionary=Catalog._json('{"x":1,"x":2}'.to_utf8_buffer())
 	check(not raw.ok,"duplicate JSON keys rejected before Dictionary collapse")
 	var manifest_file: String=old_root.path_join("manifest.json")
@@ -103,7 +108,9 @@ func _structured_failures(catalog: RefCounted, first: Texture2D) -> void:
 			if file.path=="addons/portitor_art/resources/catalog.json":file.bytes=bytes.size();file.sha256=FileAccess.get_sha256(index_path)
 			if kind=="font_identity" and file.path=="addons/portitor_art/"+binary_relative:file.bytes=original_binary.size();file.sha256=FileAccess.get_sha256(binary_path)
 		manifest.identity.runtime_payload_sha256=_fixture_digest(manifest.files,"portitor.art.payload-files/1")
-		manifest.candidate_verification.runtime_payload_sha256=manifest.identity.runtime_payload_sha256
+		# A structural fixture has changed its payload. Do not borrow the real
+		# archive's T8 report or let its identity mismatch mask the inner check.
+		manifest.candidate_verification={"status":"pending","runtime_payload_sha256":manifest.identity.runtime_payload_sha256,"reports":[]}
 		var renderer: Array=[]
 		for file: Dictionary in manifest.files:
 			if file.path.ends_with(".gd") or file.path.ends_with(".gdshader") or file.path.ends_with(".gdshaderinc") or file.path=="addons/portitor_art/resources/catalog.json":renderer.append(file)
@@ -127,6 +134,56 @@ func _structured_failures(catalog: RefCounted, first: Texture2D) -> void:
 	check(not catalog.load_at(package_root,FileAccess.get_sha256(manifest_path)).ok,"unowned file in package is rejected")
 	DirAccess.remove_absolute(foreign)
 
+func _selected_missing_failure(package_root: String) -> void:
+	# Probe an independent Catalog so an unexpectedly accepted bad fixture does
+	# not contaminate the remaining original-package/cache assertions.
+	var index_path: String=package_root.path_join("resources/catalog.json")
+	var manifest_path: String=package_root.path_join("manifest.json")
+	var original_index: PackedByteArray=FileAccess.get_file_as_bytes(index_path)
+	var original_manifest: PackedByteArray=FileAccess.get_file_as_bytes(manifest_path)
+	var source_manifest: Dictionary=JSON.parse_string(original_manifest.get_string_from_utf8())
+	var control: Dictionary=_index_fixture_manifest(source_manifest,original_index)
+	_store(manifest_path,(JSON.stringify(control)+"\n").to_utf8_buffer())
+	var control_sha: String=FileAccess.get_sha256(manifest_path)
+	var probe: RefCounted=Catalog.new()
+	var loaded: Dictionary=probe.load_at(package_root,control_sha)
+	check(loaded.ok,"selected-missing control accepts exact bytes with a matching pending envelope")
+	if not loaded.ok:
+		_store(index_path,original_index);_store(manifest_path,original_manifest);return
+	var first: Texture2D=probe.texture("art:obj.crate_wood")
+	var prior_payload: String=probe.runtime_payload_sha256
+	var missing: Dictionary={"native":"missing","implementation_kind":"missing","evidence":[],"evidence_stage":"source_inventory","verified":false}
+	check(Contract.validate(missing).ok,"query contract still permits an honest missing result")
+	var index: Dictionary=JSON.parse_string(original_index.get_string_from_utf8())
+	var replaced: bool=false
+	for asset: Dictionary in index.assets:
+		if asset.uid=="art:obj.crate_wood" and asset.native.native=="implemented":
+			asset.native=missing.duplicate(true);replaced=true;break
+	check(replaced,"selected-missing fixture replaces one implemented approval without changing221identities or13references")
+	if replaced:
+		var bytes: PackedByteArray=(JSON.stringify(index)+"\n").to_utf8_buffer()
+		_store(index_path,bytes)
+		var candidate: Dictionary=_index_fixture_manifest(source_manifest,bytes)
+		_store(manifest_path,(JSON.stringify(candidate)+"\n").to_utf8_buffer())
+		var rejected: Dictionary=probe.load_at(package_root,FileAccess.get_sha256(manifest_path))
+		check(not rejected.ok and rejected.value==null and not rejected.errors.is_empty(),"selected approved asset cannot be missing with correct enclosing file/payload/renderer/manifest hashes")
+		check(probe.manifest_sha256==control_sha and probe.runtime_payload_sha256==prior_payload and probe.capability("art:obj.crate_wood").native=="implemented" and probe.texture("art:obj.crate_wood")==first,"selected-missing rejection preserves the previous root/index/texture")
+	_store(index_path,original_index);_store(manifest_path,original_manifest)
+
+func _index_fixture_manifest(source: Dictionary,index_bytes: PackedByteArray) -> Dictionary:
+	var manifest: Dictionary=source.duplicate(true)
+	var index_hash: HashingContext=HashingContext.new();index_hash.start(HashingContext.HASH_SHA256);index_hash.update(index_bytes)
+	var index_sha: String=index_hash.finish().hex_encode()
+	for record: Dictionary in manifest.files:
+		if record.path=="addons/portitor_art/resources/catalog.json":record.bytes=index_bytes.size();record.sha256=index_sha
+	manifest.identity.runtime_payload_sha256=_fixture_digest(manifest.files,"portitor.art.payload-files/1")
+	var renderer: Array=[]
+	for record: Dictionary in manifest.files:
+		if record.path.ends_with(".gd") or record.path.ends_with(".gdshader") or record.path.ends_with(".gdshaderinc") or record.path=="addons/portitor_art/resources/catalog.json":renderer.append(record)
+	manifest.identity.renderer_sha256=_fixture_digest(renderer,"portitor.art.renderer-files/1")
+	manifest.candidate_verification={"status":"pending","runtime_payload_sha256":manifest.identity.runtime_payload_sha256,"reports":[]}
+	return manifest
+
 func _store(file: String, bytes: PackedByteArray) -> void:
 	var output: FileAccess=FileAccess.open(file,FileAccess.WRITE)
 	output.store_buffer(bytes);output.close()
@@ -136,5 +193,5 @@ func _fixture_digest(files: Array, domain: String) -> String:
 	var hash_value: HashingContext=HashingContext.new();hash_value.start(HashingContext.HASH_SHA256);hash_value.update(text.to_utf8_buffer())
 	return hash_value.finish().hex_encode()
 func _finish() -> void:
-	print(JSON.stringify({"suite":"godot-native-catalog","completed":true,"checks":checks,"failures":failures,"scope":"T7 source-byte Catalog; no GPU/PCK claim"}))
+	print(JSON.stringify({"suite":"godot-native-catalog","completed":true,"checks":checks,"failures":failures,"cases":results,"scope":"native source-byte Catalog regression; no GPU/PCK claim"}))
 	quit(0 if failures==0 else 1)

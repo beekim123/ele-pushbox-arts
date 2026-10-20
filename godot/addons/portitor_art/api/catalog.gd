@@ -188,6 +188,7 @@ static func _validate_index(index: Dictionary, files: Dictionary, manifest: Dict
 		if not art_records.has(a.approval) or not _approval_item(art_records[a.approval].items,a,false): return Contract.result(["selected art identity lacks its original approval"])
 		var valid: Dictionary=Contract.validate(a.native)
 		if not valid.ok: return valid
+		if a.native.native not in ["implemented","reference_only"]: return Contract.result(["selected native entries must be implemented or reference_only"])
 		if a.native.evidence_stage!="source_inventory" or a.native.verified: return Contract.result(["static inventory is not candidate verification"])
 		if a.native.native=="reference_only": references+=1
 		if a.kind=="sprite":
