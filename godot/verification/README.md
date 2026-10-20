@@ -1,11 +1,20 @@
 # Scoped native technical report
 
-The following report is historical evidence for the original T8 payload. The
-selected-native guard refresh starts with no current verification-index input;
-the producer supplies a matching pending/empty envelope for the new payload.
-The historical report is not attached to that changed runtime identity.
+The current report is a fresh complete run after the selected-native guard and
+original public asset-name compatibility fixes. It tests source/verifier
+`d8f804180fecaac064ae885235cfe68a3c363bc2` and pending manifest
+`600f33e2da9407f0d232ade5688b35f40033e03283ad9dcfd330312871a3e8b0`.
+The producer first reset the receipt to pending and reran all 385 cases on the
+changed payload; no old report was reassigned. All 221 names come verbatim from
+the selected fixed public histories. Query missing remains valid, selected
+missing rejects, optional name is String-only and nameless legacy input accepts.
 
-`t8-report.json` is the unchanged actual standalone report generated from tested
+`t8-53c1b45-report.json` retains the original T8 report described below as history.
+Its old payload/report is not attached to the current runtime identity. The
+unchanged current full report is `t8-report.json`; both have 379 passed / 6 failed
+cases with the same known diyu edge difference and zero native/PCK image deltas.
+
+The historical original standalone report was generated from tested
 source/verifier `82a5a668b0a02dfebabef7b9988b8b22c1bee536`. Its tested pending
 manifest SHA is `92e0f4044359ad6a8d0ea9dbaa3b1d683ddb6f950574b6d6987716e5ed80c743`.
 The adjacent producer receipt references its original bytes. Neither this report
