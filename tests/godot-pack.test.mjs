@@ -35,8 +35,12 @@ function sourceFixture(t) {
   }
   git(root, 'config', 'user.name', 'Fixture');
   git(root, 'config', 'user.email', 'fixture@example.invalid');
+  // A synthetic fixture starts without real attached technical reports. Its
+  // packageVersion and source are intentionally different from the real run.
+  fs.rmSync(path.join(root,'godot/verification-index.json'),{force:true});
+  fs.rmSync(path.join(root,'godot/verification'),{recursive:true,force:true});
   git(root, 'add', '.');
-  git(root, 'commit', '-qm', 'synthetic committed producer');
+  git(root, 'commit', '--allow-empty', '-qm', 'synthetic committed producer');
   return {root, sourceCommit: git(root, 'rev-parse', 'HEAD')};
 }
 function commit(root) {
