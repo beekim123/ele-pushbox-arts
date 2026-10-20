@@ -29,6 +29,7 @@ func _run() -> void:
 	check(catalog.texture("art:unknown")==null,"unknown sprite has no fallback")
 	var wood: Dictionary=catalog.metadata("art:obj.crate_wood")
 	check(wood.approved and not wood.placeholder and wood.size.size()==2 and int(wood.size[0])==16 and int(wood.size[1])==16,"approved wood metadata comes from history")
+	if wood.has("name"):check(wood.name=="木箱","selected public history name is preserved in metadata queries")
 	check(wood.texture_path.begins_with(catalog.resource_root+"/resources/sprites/"),"texture paths resolve within root")
 	var first: Texture2D=catalog.texture("art:obj.crate_wood")
 	check(first!=null and first.get_size()==Vector2(16,16),"raw PNG bytes decode without an imported texture")
@@ -52,6 +53,7 @@ func _run() -> void:
 		check(FileAccess.file_exists(old_root.path_join(file)),"upstream notice travels: "+file)
 	_structured_failures(catalog,first)
 	_selected_missing_failure(catalog.resource_root)
+	_optional_name_control(catalog.resource_root)
 	var raw: Dictionary=Catalog._json('{"x":1,"x":2}'.to_utf8_buffer())
 	check(not raw.ok,"duplicate JSON keys rejected before Dictionary collapse")
 	var manifest_file: String=old_root.path_join("manifest.json")
@@ -75,11 +77,12 @@ func _structured_failures(catalog: RefCounted, first: Texture2D) -> void:
 	var original_binary: PackedByteArray=FileAccess.get_file_as_bytes(binary_path)
 	var include_a: String="runtime/render/terrain/fixture-a.gdshader"
 	var include_b: String="runtime/render/terrain/fixture-b.gdshaderinc"
-	for kind: String in ["approval","candidate","dependency","duplicate_uid","host","reference_claim","texture_path","include_depth","font_identity"]:
+	for kind: String in ["approval","candidate","dependency","duplicate_uid","host","reference_claim","texture_path","include_depth","font_identity","name_type"]:
 		var index: Dictionary=JSON.parse_string(original_index.get_string_from_utf8())
 		match kind:
 			"approval":index.assets[0].hash="0".repeat(64)
 			"candidate":index.assets[0].approved=false
+			"name_type":index.assets[0].name=42
 			"dependency":index.assets[0].depends=["unknown"]
 			"duplicate_uid":index.assets[1].uid=index.assets[0].uid
 			"host":index.host_requirements.worker_pool=0.5
@@ -168,6 +171,30 @@ func _selected_missing_failure(package_root: String) -> void:
 		var rejected: Dictionary=probe.load_at(package_root,FileAccess.get_sha256(manifest_path))
 		check(not rejected.ok and rejected.value==null and not rejected.errors.is_empty(),"selected approved asset cannot be missing with correct enclosing file/payload/renderer/manifest hashes")
 		check(probe.manifest_sha256==control_sha and probe.runtime_payload_sha256==prior_payload and probe.capability("art:obj.crate_wood").native=="implemented" and probe.texture("art:obj.crate_wood")==first,"selected-missing rejection preserves the previous root/index/texture")
+	_store(index_path,original_index);_store(manifest_path,original_manifest)
+
+func _optional_name_control(package_root: String) -> void:
+	var index_path: String=package_root.path_join("resources/catalog.json")
+	var manifest_path: String=package_root.path_join("manifest.json")
+	var original_index: PackedByteArray=FileAccess.get_file_as_bytes(index_path)
+	var original_manifest: PackedByteArray=FileAccess.get_file_as_bytes(manifest_path)
+	var index: Dictionary=JSON.parse_string(original_index.get_string_from_utf8())
+	# This value is already in the public fixed obj.crate_wood@v1 history.
+	for asset: Dictionary in index.assets:
+		if asset.uid=="art:obj.crate_wood":asset.name="木箱";break
+	var bytes: PackedByteArray=(JSON.stringify(index)+"\n").to_utf8_buffer()
+	_store(index_path,bytes)
+	var manifest: Dictionary=_index_fixture_manifest(JSON.parse_string(original_manifest.get_string_from_utf8()),bytes)
+	_store(manifest_path,(JSON.stringify(manifest)+"\n").to_utf8_buffer())
+	var probe: RefCounted=Catalog.new();var loaded: Dictionary=probe.load_at(package_root,FileAccess.get_sha256(manifest_path))
+	check(loaded.ok,"an optional original public String name is accepted with correct enclosing hashes")
+	if loaded.ok:check(probe.metadata("art:obj.crate_wood").name=="木箱","optional name is retained verbatim by the metadata query")
+	for asset: Dictionary in index.assets:asset.erase("name")
+	bytes=(JSON.stringify(index)+"\n").to_utf8_buffer();_store(index_path,bytes)
+	manifest=_index_fixture_manifest(JSON.parse_string(original_manifest.get_string_from_utf8()),bytes)
+	_store(manifest_path,(JSON.stringify(manifest)+"\n").to_utf8_buffer())
+	loaded=probe.load_at(package_root,FileAccess.get_sha256(manifest_path))
+	check(loaded.ok and not probe.metadata("art:obj.crate_wood").has("name"),"historical nameless index remains valid; no fallback text is invented")
 	_store(index_path,original_index);_store(manifest_path,original_manifest)
 
 func _index_fixture_manifest(source: Dictionary,index_bytes: PackedByteArray) -> Dictionary:

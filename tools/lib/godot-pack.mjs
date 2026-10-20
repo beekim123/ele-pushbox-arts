@@ -158,6 +158,7 @@ export function validateCatalog(index,files) {
   need(Array.isArray(index.assets)&&index.assets.length===221,'expected 221 approved identities');
   const byUid=new Map();const artRecords=new Map(index.approval_records.art.map(r=>[r.id,r]));
   for(const a of index.assets){
+    need(!Object.hasOwn(a,'name')||typeof a.name==='string','invalid optional selected asset name');
     need(UID.test(a.uid)&&a.uid==='art:'+a.id&&!byUid.has(a.uid)&&a.id!=='char.portitor_alt','invalid/duplicate approved UID');byUid.set(a.uid,a);
     need(a.approved===true&&a.placeholder===false&&integer(a.version,1)&&HASH.test(a.hash)&&HASH.test(a.png_sha256),'invalid approved asset identity');
     const rec=artRecords.get(a.approval),item=rec?.items.find(x=>x.asset===a.id&&x.version===a.version&&x.hash===a.hash);
@@ -227,11 +228,12 @@ function collect(reader,base,version){
     need(rec,'missing user approval: '+id);
     const historyPath=`art/history/${id}@v${ap.version}.json`,history=parseJson(frozen(historyPath)),png=frozen(ap.png);
     need(history.id===id&&history.version===ap.version&&history.content_hash===ap.hash&&sha256(png)===ap.png_sha256,'damaged selected approval: '+id);
+    need(typeof history.name==='string','selected history requires its original String name: '+id);
     const uid='art:'+id,c=nativeByUid.get(uid);need(c&&c.version===ap.version,'missing/mismatched native coverage: '+uid);
     const native={native:c.native,implementation_kind:c.implementation_kind,evidence:c.evidence,evidence_stage:'source_inventory',verified:false};
     const texturePath=history.kind==='sprite'?`resources/sprites/${id}@v${ap.version}.png`:'';
     if(texturePath)files.set(PREFIX+texturePath,png);
-    assets.push({uid,id,kind:history.kind,category:history.category,layer:history.layer,version:ap.version,hash:ap.hash,approved:true,placeholder:false,
+    assets.push({uid,id,name:history.name,kind:history.kind,category:history.category,layer:history.layer,version:ap.version,hash:ap.hash,approved:true,placeholder:false,
       approval:rec.id,png_sha256:ap.png_sha256,texture_path:texturePath,size:history.size||[0,0],frame_count:history.kind==='sprite'?history.frames.length:0,
       anchor:history.anchor||[0,0],animations:history.animations||{},ninepatch:history.ninepatch||null,params:history.params||{},depends:history.depends||[],native,
       origin:{history_path:historyPath,history_sha256:sha256(reader.get(historyPath)),media_path:ap.png,renderer:history.renderer||[]}});

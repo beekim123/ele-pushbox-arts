@@ -65,6 +65,13 @@ test('real committed inputs yield identical STORE archives and preserve selected
   const manifest = JSON.parse(fs.readFileSync(a.manifest, 'utf8'));
   const zipped = lib.readStoreZip(fs.readFileSync(a.archive));
   const index = JSON.parse(zipped.get('addons/portitor_art/resources/catalog.json'));
+  for(const asset of index.assets){
+    const history=JSON.parse(fs.readFileSync(path.join(fixture.root,asset.origin.history_path),'utf8'));
+    assert.equal(typeof asset.name,'string','selected original display name is missing: '+asset.uid);
+    assert.equal(asset.name,history.name,'display name must come verbatim from the selected fixed history: '+asset.uid);
+  }
+  const wrongName=structuredClone(index);wrongName.assets[0].name=42;
+  assert.throws(()=>lib.validateCatalog(wrongName,zipped),/name/,'optional public asset name must be a String');
   assert.equal(index.assets.length, 221);
   assert.equal(index.assets.filter(x => x.kind === 'sprite').length, 178);
   assert.equal(index.assets.filter(x => x.native.native === 'reference_only').length, 13);

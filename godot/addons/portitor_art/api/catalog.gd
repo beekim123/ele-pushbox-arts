@@ -182,7 +182,7 @@ static func _validate_index(index: Dictionary, files: Dictionary, manifest: Dict
 		if not item is Dictionary: return Contract.result(["invalid asset record"])
 		var a: Dictionary=item
 		var required: Dictionary={"uid":TYPE_STRING,"id":TYPE_STRING,"kind":TYPE_STRING,"category":TYPE_STRING,"layer":TYPE_STRING,"version":TYPE_FLOAT,"hash":TYPE_STRING,"approved":TYPE_BOOL,"placeholder":TYPE_BOOL,"approval":TYPE_STRING,"png_sha256":TYPE_STRING,"texture_path":TYPE_STRING,"size":TYPE_ARRAY,"frame_count":TYPE_FLOAT,"anchor":TYPE_ARRAY,"animations":TYPE_DICTIONARY,"params":TYPE_DICTIONARY,"depends":TYPE_ARRAY,"native":TYPE_DICTIONARY,"origin":TYPE_DICTIONARY}
-		errors=Contract.fields(a,required,{"ninepatch":typeof(a.get("ninepatch"))},"asset")
+		errors=Contract.fields(a,required,{"ninepatch":typeof(a.get("ninepatch")),"name":TYPE_STRING},"asset")
 		if not errors.is_empty(): return Contract.result(errors)
 		if not Contract.is_art_uid(a.uid) or a.uid!="art:"+a.id or assets.has(a.uid) or a.id=="char.portitor_alt" or not _integer(a.version,1,2147483647) or not _hex(a.hash,64) or not _hex(a.png_sha256,64) or not a.approved or a.placeholder: return Contract.result(["invalid selected approval identity"])
 		if not art_records.has(a.approval) or not _approval_item(art_records[a.approval].items,a,false): return Contract.result(["selected art identity lacks its original approval"])
