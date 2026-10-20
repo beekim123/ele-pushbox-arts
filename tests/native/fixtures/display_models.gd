@@ -3,6 +3,8 @@ extends RefCounted
 const THEMES: Array[String]=["dungeon","ruins","cave","forest","sky","cosmos","diyu"]
 const FRAME_ZERO: Array[String]=["art:item.sandbag","art:item.bomb","art:ui.emote","art:mech.ladder","art:obj.crate_wood"]
 const SETTING_IDS: Array[String]=["language","lobby_skin","music","sfx","window_scale","ambience","show_grid","open_all_levels","tutorial","controls"]
+static func host_identity() -> Dictionary:
+	return {"os":OS.get_name(),"architecture":Engine.get_architecture_name(),"version":Engine.get_version_info(),"rendering_method":RenderingServer.get_current_rendering_method(),"rendering_driver":RenderingServer.get_current_rendering_driver_name(),"display_driver":DisplayServer.get_name()}
 static func hud() -> Dictionary:
 	return {"visible":true,"id":"DEMO","title":"Demo","sand":7,"bomb":2,"sand_visible":true,"bomb_visible":true,"goals":[{"id":"a","lit":true},{"id":"b","lit":false}],"progress":"1 / 2","dragging":false,"drag_at":Vector2.ZERO,"class_icon":"","class_animation":""}
 static func picture(theme: String) -> Dictionary:

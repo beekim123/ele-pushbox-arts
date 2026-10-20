@@ -28,6 +28,7 @@ func end(id: String) -> void:
 	var item: Dictionary={"id":id,"scope":"public-contracts","status":"passed" if failures==_before.y else "failed","checks":checks-_before.x,"failures":failures-_before.y}
 	cases.append(item);print(JSON.stringify({"case":item}))
 func _run() -> void:
+	print(JSON.stringify({"target":Models.host_identity()}))
 	begin();check(root.get_children().is_empty(),"zero game Autoloads")
 	var catalog: RefCounted=Catalog.new()
 	var loaded: Dictionary=catalog.load_at("res://addons/portitor_art",FileAccess.get_file_as_string("res://fixtures/manifest.sha256").strip_edges())
@@ -94,5 +95,5 @@ func _run() -> void:
 		var checked: Dictionary=view.apply_model(Models.ui(pair[1],"en",pair[0]));check(not checked.ok and view.get_child_count()==0,"embedded branch refuses missing capability: "+pair[0]);view.free();end("contracts.embedded-denial."+pair[0])
 	_finish()
 func _finish() -> void:
-	var result: Dictionary={"suite":"native-art-contracts","completed":true,"checks":checks,"failures":failures,"cases":cases}
+	var result: Dictionary={"suite":"native-art-contracts","completed":true,"checks":checks,"failures":failures,"cases":cases,"target":Models.host_identity()}
 	print(JSON.stringify(result));quit(0 if failures==0 else 1)

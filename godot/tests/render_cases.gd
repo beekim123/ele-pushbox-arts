@@ -38,6 +38,7 @@ func capture(view: SubViewport,id: String) -> Image:
 	return image
 func _run() -> void:
 	phase=OS.get_environment("PORTITOR_PHASE");output=OS.get_environment("PORTITOR_OUTPUT")
+	print(JSON.stringify({"target":Models.host_identity()}))
 	begin();check(DisplayServer.get_name()!="headless","actual GPU display driver required")
 	check(root.get_children().is_empty() and not FileAccess.file_exists("res://ele.gdextension"),"no game Autoload or SDK")
 	if phase=="pck":
@@ -155,5 +156,5 @@ func _root_isolation() -> void:
 	var old: Texture2D=b.texture("art:obj.crate_wood");check(not b.load_at("res://missing","0".repeat(64)).ok and b.texture("art:obj.crate_wood")==old,"failed B rebind preserves B and A")
 	end("catalog.root-cache-isolation","public-render")
 func _finish() -> void:
-	var result: Dictionary={"suite":"native-art-render","completed":true,"checks":checks,"failures":failures,"cases":cases,"display_driver":DisplayServer.get_name(),"phase":phase}
+	var result: Dictionary={"suite":"native-art-render","completed":true,"checks":checks,"failures":failures,"cases":cases,"target":Models.host_identity(),"phase":phase}
 	print(JSON.stringify(result));quit(0 if failures==0 else 1)

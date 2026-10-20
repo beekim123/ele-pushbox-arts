@@ -23,6 +23,11 @@ function packageAt(archive){
 export function validatePredecessor(prior,candidate){
   need(prior.archive_sha256===T7_BASELINE.archive_sha256&&prior.manifest_sha256===T7_BASELINE.manifest_sha256&&prior.manifest.producer.commit===T7_BASELINE.producer_commit&&prior.manifest.identity.runtime_payload_sha256===T7_BASELINE.payload_sha256&&prior.archive_sha256!==candidate.archive_sha256,'baseline must be the fixed actual T7 source carrier, never the current candidate');return prior;
 }
+export function actualTarget(target,phase){
+  const v=target?.version,headless=phase==='contracts';
+  const valid=target?.os==='macOS'&&target?.architecture==='arm64'&&v?.major===4&&v?.minor===7&&v?.patch===2&&typeof v.hash==='string'&&/^[a-f0-9]{40}$/.test(v.hash)&&(headless?target.display_driver==='headless':target.display_driver==='macos'&&target.rendering_method==='gl_compatibility'&&/^opengl3(?:_es|_angle)?$/.test(target.rendering_driver));
+  return {valid,platform:target?target.os.toLowerCase()+'-'+target.architecture:null,backend:target?.rendering_method||'headless',godot:v?`${v.major}.${v.minor}.${v.patch}.${v.status}.${v.build}.${String(v.hash).slice(0,9)}`:null};
+}
 function sourceReader(root,commit){
   need(typeof commit==='string'&&/^[a-f0-9]{40}$/.test(commit),'fixed verifier commit required');
   need(git(root,'rev-parse',commit+'^{commit}').toString().trim()===commit,'verifier commit missing');
@@ -74,14 +79,16 @@ async function job({godot,args,cwd,out,pkg,verifierCommit,fixtureSha,phase,extra
   clearTimeout(timer);await Promise.all([new Promise(resolve=>stdout.end(resolve)),new Promise(resolve=>stderr.end(resolve))]);
   const objects=text.split('\n').flatMap(line=>{try{return [JSON.parse(line)];}catch{return [];}}),suite=objects.findLast(x=>x.suite);
   receipt.finished_utc=new Date().toISOString();receipt.exit=exit;receipt.timed_out=timedOut;receipt.suite=suite||null;
+  receipt.target=suite?.target||objects.find(x=>x.target)?.target||null;
   receipt.godot_version_line=text.split('\n').find(x=>x.startsWith('Godot Engine '))||'';
   receipt.process_completed=!timedOut&&!exit.error&&exit.code!==null;
   const needsSuite=['contracts','gpu','predecessor','pck'].includes(phase);
   receipt.completed=receipt.process_completed&&(!needsSuite||suite?.completed===true);receipt.run_incomplete=!receipt.completed;
   receipt.engine_errors=/SCRIPT ERROR|Parse Error|ERROR:/.test(errorText);
   receipt.input.archive_after_sha256=sha256(fs.readFileSync(pkg.archive));receipt.input_changed=receipt.input.archive_after_sha256!==pkg.archive_sha256;
-  receipt.integrity_ok=receipt.completed&&exit.code===(needsSuite&&suite?.failures>0?1:0)&&!receipt.engine_errors&&!receipt.input_changed;
-  receipt.passed=receipt.completed&&exit.code===0&&(!needsSuite||suite?.failures===0)&&!receipt.engine_errors&&!receipt.input_changed;
+  receipt.target_valid=!needsSuite||actualTarget(receipt.target,phase).valid;
+  receipt.integrity_ok=receipt.completed&&exit.code===(needsSuite&&suite?.failures>0?1:0)&&!receipt.engine_errors&&!receipt.input_changed&&receipt.target_valid;
+  receipt.passed=receipt.integrity_ok&&exit.code===0&&(!needsSuite||suite?.failures===0);
   write(receiptPath,JSON.stringify(receipt,null,2)+'\n');return {receipt,suite,stdoutPath,stderrPath};
 }
 export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baselineArchive,godot,outDir,phases=['contracts','gpu','pck']}){
@@ -156,14 +163,15 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
   const after=sourceSnapshot(root,tracked),sourceChanged=!canonical(before).equals(canonical(after))||git(root,'rev-parse','HEAD').toString().trim()!==verifierCommit,inputChanged=sha256(fs.readFileSync(pkg.archive))!==pkg.archive_sha256;
   for(const phase of ['gpu','predecessor','pck'])if(fs.existsSync(path.join(outDir,phase)))for(const file of fs.readdirSync(path.join(outDir,phase)).filter(p=>/\.(png|rgba)$/.test(p)).sort()){const bytes=fs.readFileSync(path.join(outDir,phase,file));artifacts.push({path:phase+'/'+file,sha256:sha256(bytes),bytes:bytes.length});}
   if(sourceChanged||inputChanged)cases.push({id:'source-or-input:changed',scope:'public-contracts',status:'incomplete',checks:1,failures:1});
-  const scopes=[...new Set(cases.map(c=>c.scope))].sort(),godotLine=runs.map(r=>r.godot_version_line).find(Boolean)||'',godotVersion=/Godot Engine v([^ ]+)/.exec(godotLine)?.[1]||'4.7.2.unknown';
-  const binding={tested_producer_commit:pkg.manifest.producer.commit,tested_manifest_sha256:pkg.manifest_sha256,...pkg.manifest.identity,verifier_commit:verifierCommit,fixture_sha256:fixtureSha,godot:godotVersion,platform:'macos-arm64',backend:'gl_compatibility',scope:scopes};
+  const scopes=[...new Set(cases.map(c=>c.scope))].sort(),targetRun=runs.find(r=>['gpu','pck'].includes(r.phase)&&r.target)||runs.find(r=>r.target),observed=actualTarget(targetRun?.target,targetRun?.phase);
+  const binding={tested_producer_commit:pkg.manifest.producer.commit,tested_manifest_sha256:pkg.manifest_sha256,...pkg.manifest.identity,verifier_commit:verifierCommit,fixture_sha256:fixtureSha,godot:observed.godot,platform:observed.platform,backend:observed.backend,scope:scopes};
   const report={format:'portitor.art.native-test-report/1',binding,completed:cases.length>0&&!cases.some(c=>['not_run','incomplete'].includes(c.status)),failures:cases.reduce((n,c)=>n+c.failures,0),cases,artifacts,run_summary:runs.map(r=>({phase:r.phase,exit_code:r.exit.code,completed:r.completed,run_incomplete:r.run_incomplete,engine_errors:r.engine_errors,integrity_ok:r.integrity_ok,job_receipt_path:r.phase+'/job.json',job_receipt_sha256:sha256(fs.readFileSync(path.join(outDir,r.phase,'job.json')))})),known_limits:['First native predecessor is the fixed actual T7 local carrier of T1/T2/T6 source mapping, not a previous formal native release; it executes source directly without editor import. T7 editor shader UID incompatibility remains recorded in the first T8 failure.','Public JS terrain comparison covers variant0/classes0..5; classes6..18 have synthetic native GPU coverage without a JS equivalent.','Neutral public UI is contract/GPU/native-predecessor coverage, not private gameplay/SDK or real localization acceptance.','178 sprites have approved bytes/frame-selection checks; only selected artificial scene sprites are GPU-rendered, not blanket178-sprite visual acceptance.','Full private Mac app/export/consumer-lock tests remain T13/T14; this is a public standalone PCK.']};
   const reportBytes=canonical(report);write(path.join(outDir,'report.json'),reportBytes);
   const record={report_path:'godot/verification/t8-report.json',report_sha256:sha256(reportBytes),...binding,completed:report.completed,failures:report.failures,case_ids:cases.map(c=>c.id).sort(cmp)};
-  const envelope={status:'recorded',runtime_payload_sha256:binding.runtime_payload_sha256,reports:[record]};validateVerification(envelope,pkg.manifest.identity,()=>reportBytes);
-  write(path.join(outDir,'verification-index.json'),canonical(envelope));write(path.join(outDir,'source-and-input.json'),canonical({verifier_commit:verifierCommit,source_before:before,source_after:after,source_changed:sourceChanged,input_changed:inputChanged,input:{archive_sha256:pkg.archive_sha256,manifest_sha256:pkg.manifest_sha256,...pkg.manifest.identity},fixture_sha256:fixtureSha}));
-  return {report:path.join(outDir,'report.json'),verification:path.join(outDir,'verification-index.json'),completed:report.completed,failures:report.failures,cases:cases.length,fixture_sha256:fixtureSha};
+  const envelope={status:'recorded',runtime_payload_sha256:binding.runtime_payload_sha256,reports:[record]};let verification=null;
+  try{validateVerification(envelope,pkg.manifest.identity,()=>reportBytes);verification=path.join(outDir,'verification-index.json');write(verification,canonical(envelope));}catch(error){write(path.join(outDir,'verification-not-attachable.txt'),error.message+'\nObserved target is never filled from the requested profile. A headless-only report has no actual GPU backend.\n');}
+  write(path.join(outDir,'source-and-input.json'),canonical({verifier_commit:verifierCommit,source_before:before,source_after:after,source_changed:sourceChanged,input_changed:inputChanged,input:{archive_sha256:pkg.archive_sha256,manifest_sha256:pkg.manifest_sha256,...pkg.manifest.identity},fixture_sha256:fixtureSha}));
+  return {report:path.join(outDir,'report.json'),verification,completed:report.completed,failures:report.failures,cases:cases.length,fixture_sha256:fixtureSha};
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
   const args=process.argv.slice(2),get=name=>args[args.indexOf('--'+name)+1];
