@@ -9,7 +9,7 @@ import {canonical,sha256,readStoreZip,validateFiles,payloadDigest,validateVerifi
 import {publicReference} from '../tests/native/public-reference.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const THREADS={OMP_NUM_THREADS:'1',OPENBLAS_NUM_THREADS:'1',MKL_NUM_THREADS:'1',VECLIB_MAXIMUM_THREADS:'1',UV_THREADPOOL_SIZE:'1'};
-const T7_BASELINE={archive_sha256:'9016ed479993c8418d8a2f1f8a83fab57c66ba66625556a528863ee30797bb78',manifest_sha256:'1962a952e88666fd6ea4bdea664f57744a76134c26038d3e7007bb84f78ad52d',producer_commit:'16c9082c4f838b2f1c9a58d70d7ff78890cac021'};
+const T7_BASELINE={archive_sha256:'9016ed479993c8418d8a2f1f8a83fab57c66ba66625556a528863ee30797bb78',manifest_sha256:'1962a952e88666fd6ea4bdea664f57744a76134c26038d3e7007bb84f78ad52d',producer_commit:'16c9082c4f838b2f1c9a58d70d7ff78890cac021',payload_sha256:'45a54a0dd780c128102293918351bcd498f13a4914c50fe556c9d16bd2a18515'};
 const need=(ok,message)=>{if(!ok)throw Error(message);};
 const cmp=(a,b)=>Buffer.compare(Buffer.from(a),Buffer.from(b));
 function git(root,...args){return execFileSync('git',['-c','gc.auto=0','-c','maintenance.auto=false','-c','pack.threads=1',...args],{cwd:root,maxBuffer:16*1024*1024});}
@@ -19,6 +19,9 @@ function packageAt(archive){
   need(files.size===manifest.files.length+1&&payloadDigest(manifest.files)===manifest.identity.runtime_payload_sha256,'actual archive set/payload mismatch');
   for(const file of manifest.files){const value=files.get(file.path);need(value&&value.length===file.bytes&&sha256(value)===file.sha256,'actual archive bytes changed: '+file.path);}
   return {archive:path.resolve(archive),bytes,files,manifest,index:JSON.parse(files.get('addons/portitor_art/resources/catalog.json')),archive_sha256:sha256(bytes),manifest_sha256:sha256(manifestBytes)};
+}
+export function validatePredecessor(prior,candidate){
+  need(prior.archive_sha256===T7_BASELINE.archive_sha256&&prior.manifest_sha256===T7_BASELINE.manifest_sha256&&prior.manifest.producer.commit===T7_BASELINE.producer_commit&&prior.manifest.identity.runtime_payload_sha256===T7_BASELINE.payload_sha256&&prior.archive_sha256!==candidate.archive_sha256,'baseline must be the fixed actual T7 source carrier, never the current candidate');return prior;
 }
 function sourceReader(root,commit){
   need(typeof commit==='string'&&/^[a-f0-9]{40}$/.test(commit),'fixed verifier commit required');
@@ -119,7 +122,7 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
       await run('gpu',pkg,candidateHost,gpu(candidateHost,'--script','res://tests/render_cases.gd'));
       need(baselineArchive,'first native predecessor carrier must be explicit');
       const prior=packageAt(baselineArchive),priorHost=path.join(hostRoot,'predecessor');stage(priorHost,prior);
-      need(prior.archive_sha256===T7_BASELINE.archive_sha256&&prior.manifest_sha256===T7_BASELINE.manifest_sha256&&prior.manifest.producer.commit===T7_BASELINE.producer_commit&&prior.archive_sha256!==pkg.archive_sha256,'baseline must be the fixed actual T7 source carrier, never the current candidate');
+      validatePredecessor(prior,pkg);
       artifacts.push({kind:'native-predecessor-input',archive_sha256:prior.archive_sha256,manifest_sha256:prior.manifest_sha256,producer_commit:prior.manifest.producer.commit,...prior.manifest.identity});
       // Compare original source-host execution. T7 did not support editor-created
       // shader UID sidecars; do not mutate that immutable baseline to hide it.

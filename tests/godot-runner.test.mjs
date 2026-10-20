@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {expectedCases,reconcileSuite} from '../tools/verify-godot-pack.mjs';
+import * as runner from '../tools/verify-godot-pack.mjs';
+const {expectedCases,reconcileSuite}=runner;
 test('the standalone matrix has explicit scope and case coverage',()=>{
   assert.equal(expectedCases('contracts').length,13);
   assert.equal(expectedCases('gpu').length,81);
@@ -22,4 +23,17 @@ test('completed assertions may fail without being relabeled an interrupted run',
   cases[0]={...cases[0],status:'failed',failures:1};
   const result=reconcileSuite('contracts',{passed:false,integrity_ok:true},{completed:true,failures:1,cases});
   assert.equal(result.length,13);assert.equal(result[0].status,'failed');
+});
+test('the first predecessor is the exact T7 carrier, never a self-comparison',()=>{
+  assert.equal(typeof runner.validatePredecessor,'function');
+  const prior={archive_sha256:'9016ed479993c8418d8a2f1f8a83fab57c66ba66625556a528863ee30797bb78',manifest_sha256:'1962a952e88666fd6ea4bdea664f57744a76134c26038d3e7007bb84f78ad52d',manifest:{producer:{commit:'16c9082c4f838b2f1c9a58d70d7ff78890cac021'},identity:{runtime_payload_sha256:'45a54a0dd780c128102293918351bcd498f13a4914c50fe556c9d16bd2a18515'}}};
+  assert.equal(runner.validatePredecessor(prior,{archive_sha256:'a'.repeat(64)}),prior);
+  assert.throws(()=>runner.validatePredecessor(prior,prior),/baseline/);
+  for(const key of ['archive_sha256','manifest_sha256','producer','payload']){
+    const bad=structuredClone(prior);
+    if(key==='producer')bad.manifest.producer.commit='0'.repeat(40);
+    else if(key==='payload')bad.manifest.identity.runtime_payload_sha256='0'.repeat(64);
+    else bad[key]='0'.repeat(64);
+    assert.throws(()=>runner.validatePredecessor(bad,{archive_sha256:'a'.repeat(64)}),/baseline/);
+  }
 });
