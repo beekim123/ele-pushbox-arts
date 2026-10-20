@@ -9,6 +9,7 @@ import {canonical,sha256,readStoreZip,validateFiles,payloadDigest,validateVerifi
 import {publicReference} from '../tests/native/public-reference.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const THREADS={OMP_NUM_THREADS:'1',OPENBLAS_NUM_THREADS:'1',MKL_NUM_THREADS:'1',VECLIB_MAXIMUM_THREADS:'1',UV_THREADPOOL_SIZE:'1'};
+const T7_BASELINE={archive_sha256:'9016ed479993c8418d8a2f1f8a83fab57c66ba66625556a528863ee30797bb78',manifest_sha256:'1962a952e88666fd6ea4bdea664f57744a76134c26038d3e7007bb84f78ad52d',producer_commit:'16c9082c4f838b2f1c9a58d70d7ff78890cac021'};
 const need=(ok,message)=>{if(!ok)throw Error(message);};
 const cmp=(a,b)=>Buffer.compare(Buffer.from(a),Buffer.from(b));
 function git(root,...args){return execFileSync('git',['-c','gc.auto=0','-c','maintenance.auto=false','-c','pack.threads=1',...args],{cwd:root,maxBuffer:16*1024*1024});}
@@ -53,9 +54,10 @@ export function reconcileSuite(phase,receipt,suite){
   if(!(receipt.integrity_ok??receipt.passed)||malformed||!suite?.completed||actual.reduce((n,c)=>n+(Number.isInteger(c.failures)?c.failures:0),0)!==suite?.failures)result.push({id:phase+':process',scope:expected[0].scope,status:'incomplete',checks:1,failures:1,notes:['Process/suite integrity failed; see bound job and engine logs.']});
   return result;
 }
-async function job({godot,args,cwd,out,pkg,verifierCommit,fixtureSha,phase}){
+async function job({godot,args,cwd,out,pkg,verifierCommit,fixtureSha,phase,extraInput={}}){
   fs.mkdirSync(out,{recursive:true});
   const receipt={format:'portitor.art.native-job/1',phase,started_utc:new Date().toISOString(),completed:false,run_incomplete:true,input:{archive:pkg.archive,archive_sha256:pkg.archive_sha256,manifest_sha256:pkg.manifest_sha256,tested_producer_commit:pkg.manifest.producer.commit,...pkg.manifest.identity,verifier_commit:verifierCommit,fixture_sha256:fixtureSha},command:{executable:godot,args,cwd},host:{platform:process.platform,arch:process.arch,numeric_threads:1,uv_threadpool:1}};
+  receipt.input.derived=extraInput;
   receipt.host.load_average=os.loadavg();receipt.host.free_memory=os.freemem();
   receipt.host.relevant_processes=execFileSync('ps',['-axo','pid,ppid,ni,%cpu,rss,command'],{encoding:'utf8'}).split('\n').filter(line=>/Godot|node .*\b(test|verify-godot|pack-godot)|python .*\b(test|build|render)/i.test(line));
   const receiptPath=path.join(out,'job.json');write(receiptPath,JSON.stringify(receipt,null,2)+'\n');
@@ -103,8 +105,8 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
   const candidateHost=path.join(hostRoot,'candidate');stage(candidateHost,pkg);
   const headless=(host,...extra)=>['--headless','--path',host,...extra];
   const gpu=(host,...extra)=>['--display-driver','macos','--path',host,...extra];
-  async function run(phase,selected,host,args){
-    const result=await job({godot,args,cwd:host,out:path.join(outDir,phase),pkg:selected,verifierCommit,fixtureSha,phase});runs.push(result.receipt);
+  async function run(phase,selected,host,args,extraInput={}){
+    const result=await job({godot,args,cwd:host,out:path.join(outDir,phase),pkg:selected,verifierCommit,fixtureSha,phase,extraInput});runs.push(result.receipt);
     cases.push(...reconcileSuite(phase,result.receipt,result.suite));
     return result;
   }
@@ -117,8 +119,10 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
       await run('gpu',pkg,candidateHost,gpu(candidateHost,'--script','res://tests/render_cases.gd'));
       need(baselineArchive,'first native predecessor carrier must be explicit');
       const prior=packageAt(baselineArchive),priorHost=path.join(hostRoot,'predecessor');stage(priorHost,prior);
-      const priorImport=await job({godot,args:headless(priorHost,'--editor','--import'),cwd:priorHost,out:path.join(outDir,'predecessor-import'),pkg:prior,verifierCommit,fixtureSha,phase:'predecessor-import'});runs.push(priorImport.receipt);
-      need(priorImport.receipt.passed,'predecessor carrier import failed');
+      need(prior.archive_sha256===T7_BASELINE.archive_sha256&&prior.manifest_sha256===T7_BASELINE.manifest_sha256&&prior.manifest.producer.commit===T7_BASELINE.producer_commit&&prior.archive_sha256!==pkg.archive_sha256,'baseline must be the fixed actual T7 source carrier, never the current candidate');
+      artifacts.push({kind:'native-predecessor-input',archive_sha256:prior.archive_sha256,manifest_sha256:prior.manifest_sha256,producer_commit:prior.manifest.producer.commit,...prior.manifest.identity});
+      // Compare original source-host execution. T7 did not support editor-created
+      // shader UID sidecars; do not mutate that immutable baseline to hide it.
       await run('predecessor',prior,priorHost,gpu(priorHost,'--script','res://tests/render_cases.gd'));
       const current=fs.readdirSync(path.join(outDir,'gpu')).filter(p=>p.endsWith('.rgba')).sort();
       for(const file of current){const a=fs.readFileSync(path.join(outDir,'gpu',file)),other=path.join(outDir,'predecessor',file);let diff=0;
@@ -136,7 +140,7 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
       if(!exported.receipt.passed||!fs.existsSync(pck))cases.push({id:'pck:export',scope:'public-pck',status:'incomplete',checks:1,failures:1,notes:['Raw export failed; logs retained.']});
       else{
         const empty=path.join(hostRoot,'pck-empty');fs.mkdirSync(empty);const pckBefore=sha256(fs.readFileSync(pck));
-        const result=await run('pck',pkg,empty,['--display-driver','macos','--path',empty,'--main-pack',pck,'--script','res://tests/render_cases.gd']);
+        const result=await run('pck',pkg,empty,['--display-driver','macos','--path',empty,'--main-pack',pck,'--script','res://tests/render_cases.gd'],{application_pack_sha256:pckBefore,application_pack_bytes:fs.statSync(pck).size});
         need(sha256(fs.readFileSync(pck))===pckBefore,'PCK bytes changed during run');artifacts.push({path:'native-art-raw.pck',sha256:pckBefore,bytes:fs.statSync(pck).size});
         for(const file of (phases.includes('gpu')?fs.readdirSync(path.join(outDir,'gpu')):[]).filter(p=>p.endsWith('.rgba')).sort()){
           const a=fs.readFileSync(path.join(outDir,'gpu',file)),packed=path.join(outDir,'pck',file);let same=fs.existsSync(packed)&&a.equals(fs.readFileSync(packed));
@@ -151,7 +155,7 @@ export async function verifyGodotPack({root=ROOT,verifierCommit,archive,baseline
   if(sourceChanged||inputChanged)cases.push({id:'source-or-input:changed',scope:'public-contracts',status:'incomplete',checks:1,failures:1});
   const scopes=[...new Set(cases.map(c=>c.scope))].sort(),godotLine=runs.map(r=>r.godot_version_line).find(Boolean)||'',godotVersion=/Godot Engine v([^ ]+)/.exec(godotLine)?.[1]||'4.7.2.unknown';
   const binding={tested_producer_commit:pkg.manifest.producer.commit,tested_manifest_sha256:pkg.manifest_sha256,...pkg.manifest.identity,verifier_commit:verifierCommit,fixture_sha256:fixtureSha,godot:godotVersion,platform:'macos-arm64',backend:'gl_compatibility',scope:scopes};
-  const report={format:'portitor.art.native-test-report/1',binding,completed:cases.length>0&&!cases.some(c=>['not_run','incomplete'].includes(c.status)),failures:cases.reduce((n,c)=>n+c.failures,0),cases,artifacts,run_summary:runs.map(r=>({phase:r.phase,exit_code:r.exit.code,completed:r.completed,run_incomplete:r.run_incomplete,engine_errors:r.engine_errors,integrity_ok:r.integrity_ok})),known_limits:['First native predecessor is the T7 local carrier of T1/T2/T6 source mapping, not a previous formal native release.','Public JS terrain comparison covers variant0/classes0..5; classes6..18 have synthetic native GPU coverage without a JS equivalent.','Neutral public UI is contract/GPU/native-predecessor coverage, not private gameplay/SDK or real localization acceptance.','178 sprites have approved bytes/frame-selection checks; only selected artificial scene sprites are GPU-rendered, not blanket178-sprite visual acceptance.','Full private Mac app/export/consumer-lock tests remain T13/T14; this is a public standalone PCK.']};
+  const report={format:'portitor.art.native-test-report/1',binding,completed:cases.length>0&&!cases.some(c=>['not_run','incomplete'].includes(c.status)),failures:cases.reduce((n,c)=>n+c.failures,0),cases,artifacts,run_summary:runs.map(r=>({phase:r.phase,exit_code:r.exit.code,completed:r.completed,run_incomplete:r.run_incomplete,engine_errors:r.engine_errors,integrity_ok:r.integrity_ok,job_receipt_path:r.phase+'/job.json',job_receipt_sha256:sha256(fs.readFileSync(path.join(outDir,r.phase,'job.json')))})),known_limits:['First native predecessor is the fixed actual T7 local carrier of T1/T2/T6 source mapping, not a previous formal native release; it executes source directly without editor import. T7 editor shader UID incompatibility remains recorded in the first T8 failure.','Public JS terrain comparison covers variant0/classes0..5; classes6..18 have synthetic native GPU coverage without a JS equivalent.','Neutral public UI is contract/GPU/native-predecessor coverage, not private gameplay/SDK or real localization acceptance.','178 sprites have approved bytes/frame-selection checks; only selected artificial scene sprites are GPU-rendered, not blanket178-sprite visual acceptance.','Full private Mac app/export/consumer-lock tests remain T13/T14; this is a public standalone PCK.']};
   const reportBytes=canonical(report);write(path.join(outDir,'report.json'),reportBytes);
   const record={report_path:'godot/verification/t8-report.json',report_sha256:sha256(reportBytes),...binding,completed:report.completed,failures:report.failures,case_ids:cases.map(c=>c.id).sort(cmp)};
   const envelope={status:'recorded',runtime_payload_sha256:binding.runtime_payload_sha256,reports:[record]};validateVerification(envelope,pkg.manifest.identity,()=>reportBytes);
