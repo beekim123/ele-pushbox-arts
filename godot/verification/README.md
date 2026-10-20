@@ -17,8 +17,9 @@ cases with the same known diyu edge difference and zero native/PCK image deltas.
 The historical original standalone report was generated from tested
 source/verifier `82a5a668b0a02dfebabef7b9988b8b22c1bee536`. Its tested pending
 manifest SHA is `92e0f4044359ad6a8d0ea9dbaa3b1d683ddb6f950574b6d6987716e5ed80c743`.
-The adjacent producer receipt references its original bytes. Neither this report
-nor receipt is installed in the runtime ZIP or PCK.
+The current producer receipt references the new `t8-report.json`, not these
+historical bytes. Neither report nor receipt is installed in the runtime ZIP or
+PCK.
 
 The actual run completed 385 cases: 379 passed / 6 failed, no incomplete/not_run or
 engine errors. The six failed cases are the same diyu exact JS comparison at
