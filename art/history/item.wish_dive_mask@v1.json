@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_dive_mask",
+ "name": "新水镜",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..........t.....",
+   "...zzzzzz.tlt...",
+   "..zyyyyyyz.t....",
+   ".zyzzzzzzyz.....",
+   ".zzvvvvvvzz..l..",
+   "zzvtssssrvzz....",
+   "zyvsttsssrvyz...",
+   "zyvsssssrrvyz...",
+   "zyvssssrrqvyz...",
+   "zzvsssrrqqvzz...",
+   ".zzvvvvvvvzz....",
+   "..zxxxxxxxz.....",
+   "...zzzzzzz......",
+   ".t..............",
+   "tlt.............",
+   ".t.............."
+  ]
+ ],
+ "usage": "心愿物（济州）：海女奶奶（char.haenyeo）想要的新水镜——老式圆镜片 + 黑带子，镜片亮、带星点高光，看得出是新的（潜水规则未定，画普通水镜）。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）；UI-12c 和灯谜摊会涂成一色当剪影用。",
+ "notes": "ART-05c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "0033ac55f57939742c4fc48be4320954edcf5ee4778be324ee387443f08fdb6c"
+}

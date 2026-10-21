@@ -124,8 +124,13 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   check((await page.locator('#review-root').innerText()).includes('82'),'offline batch is available in review');
   const receipt=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json')));
   const reports=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/render-report.json')));
-  const candidates=await page.evaluate(ids=>ids.map(id=>({id,approved:PBStore.asset(id).status})),receipt.assets.map(a=>a.id));
-  check(candidates.length===82&&candidates.every(a=>a.approved==='review'||a.approved==='draft'),'all offline entries retain candidate status');
+  const candidates=await page.evaluate(ids=>ids.map(id=>({id,status:PBStore.asset(id).status})),receipt.assets.map(a=>a.id));
+  const sourceStage=new Map(receipt.assets.map(a=>[a.id,a.stage]));
+  check(candidates.length===82&&candidates.every(a=>a.status===(sourceStage.get(a.id)==='review'?'approved':'draft')),
+    '76 reviewed entries are approved; six delivery concepts remain draft');
+  await page.locator('#review-status').selectOption('approved');
+  assert.equal(await page.locator('#review-results .review-card').count(),76);
+  check((await page.locator('#review-root').innerText()).includes('待确认 0'),'no reviewed art remains pending');
   for(const item of reports.renders){
     const result=await page.evaluate(item=>{
       const a=structuredClone(PBStore.asset(item.id));Object.assign(a.params,item.patch);

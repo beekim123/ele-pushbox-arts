@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.transfer_slip",
+ "name": "改签符",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   ".zzzzzzzzzzzzz..",
+   ".ztettttttttttz.",
+   ".zcdccqqqccccz..",
+   ".zcecqccqqccccz.",
+   ".zcdccccqqqccz..",
+   ".zcecqcccqccccz.",
+   ".zcdccqqqcciiz..",
+   ".zcecccccciihcz.",
+   ".zdddddddddddz..",
+   ".zzzzzzzzzzzzz..",
+   "................",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "道具图标：改签符——横着的浅色票根，左边骑缝、右边撕口齿边，蓝色圈形箭头，角上一个小红印；和竖长黄符 item.seal_diyu 分得开。用了以后门牌灯笼播 reroll、重抽这扇门。驿站货架、背包格和结算里用（界面按 \"item.\" + id 找图）。",
+ "notes": "ART-05a 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "025b0f495057e5de42b9a6c2d7d8659e82c8420b6ab55b64ba2f8518bf430eac"
+}

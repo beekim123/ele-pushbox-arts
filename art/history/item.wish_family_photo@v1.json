@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_family_photo",
+ "name": "全家福",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".zzzzzzzzzzzzz..",
+   ".zddddddddddez..",
+   ".zdcccccccccfz..",
+   ".zdcggccccggfz..",
+   ".zdcEEcggcEEfz..",
+   ".zdcEEcEEcEEfz..",
+   ".zdxxxxEEBBBBfz.",
+   ".zdxxxwaaBCBBfz.",
+   ".zdxxxwaaBBBBfz.",
+   ".zdxwxxaaBBCBfz.",
+   ".zeffffffffffz..",
+   ".zzzzzzzzzzzzzz.",
+   "....zfz...zfzfz.",
+   "...zzzzz.zzzzzz.",
+   "................"
+  ]
+ ],
+ "usage": "心愿物：先人（char.ancestor）想要的全家福——带木框和小支架的相片，相片里一家几个小人（不画五官）。剪影是带脚的方框。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）；UI-12c 和灯谜摊会涂成一色当剪影用。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "8a18a6e75f1d78e874a03b6e9190926808582f29dd1aee48ab0ae327c22902c6"
+}

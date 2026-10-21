@@ -1,0 +1,58 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.delivery_assist",
+ "name": "配送辅助设置独立面板",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-dhelp.js",
+  "workbench/js/core/ui-screens-dhelp.js",
+  "content/i18n-dhelp/zh-Hans.json",
+  "content/i18n-dhelp/en.json"
+ ],
+ "depends": [
+  "deco.dungeon_moss",
+  "deco.dungeon_torch",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.run_icons"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "delivery_assist",
+  "theme": "theme.dungeon",
+  "relaxed": 70,
+  "think": false,
+  "heart": true,
+  "focus": 0,
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "教学与辅助 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "78c855c1370430776f4a6ec1d6e29d9a08c75a228b57454bec8021a093e91cfc"
+}

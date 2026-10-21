@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { ROOT, listJson } from '../tools/lib/load-core.mjs';
 
 const sources = () => listJson('art/source').map(f => JSON.parse(fs.readFileSync(path.join(ROOT, f))));
@@ -33,9 +34,31 @@ test('offline UI is self-contained and only embeds art demonstration rooms', () 
   assert.equal(rooms, 25);
 });
 
-test('all 82 delivery entries remain unapproved; the 59 sprite sources and PNGs retain their original bytes', () => {
+test('the 76 reviewed entries match the explicit user approval; draft concepts and sprite bytes stay unchanged', () => {
   const receipt = JSON.parse(fs.readFileSync(path.join(ROOT, 'art/review/OFFLINE-ART-20261020/receipt.json')));
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'art/export/manifest.json')));
+  const request = JSON.parse(fs.readFileSync(path.join(ROOT, 'art/review/OFFLINE-ART-20261020/approval-20261021.json')));
+  const approvals = JSON.parse(fs.readFileSync(path.join(ROOT, 'art/approvals.json')));
+  const before = JSON.parse(execFileSync('git', ['show', request.source_commit + ':art/approvals.json'], {cwd:ROOT}));
+  assert.deepEqual(approvals.records.slice(0, before.records.length), before.records, 'old approval records are immutable');
+  const record = approvals.records.find(r => r.id === 'APR-0011');
+  assert.ok(record, 'the explicit user approval must be recorded');
+  assert.equal(record.note, '待确认的美术我都看过了，全部确认');
+  assert.equal(request.user_quote, record.note);
+  assert.equal(record.by, '用户');
+  assert.equal(record.via, 'chat');
+  assert.equal(record.items.length, 76);
+  assert.equal(request.approve.length, 76);
+  assert.deepEqual(record.items.map(a=>[a.asset,a.version,a.hash,a.png_sha256]),
+    request.approve.map(a=>[a.asset,a.version,a.hash,a.preview_sha256]));
+  const requested = new Map(request.approve.map(a=>[a.asset,a]));
+  assert.equal(request.excluded_drafts.length, 7);
+  for (const a of request.excluded_drafts) {
+    const entry = manifest.assets.find(x=>x.id===a.asset);
+    assert.equal(entry.current.status, 'draft', a.asset);
+    assert.equal(entry.current_is_approved, false, a.asset);
+    assert.equal(entry.current.hash, a.hash, a.asset);
+  }
   const hash = f => createHash('sha256').update(fs.readFileSync(path.join(ROOT, f))).digest('hex');
   assert.equal(receipt.assets.length, 82);
   assert.equal(new Set(receipt.assets.map(a => a.id)).size, 82);
@@ -46,8 +69,16 @@ test('all 82 delivery entries remain unapproved; the 59 sprite sources and PNGs 
     const src = JSON.parse(fs.readFileSync(path.join(ROOT, a.source)));
     const entry = manifest.assets.find(x => x.id === a.id);
     assert.equal(src.stage, a.stage, a.id);
-    assert.equal(entry.current_is_approved, false, a.id);
-    assert.equal(entry.approved, null, a.id);
+    if (a.stage === 'review') {
+      assert.ok(requested.has(a.id), a.id);
+      assert.equal(entry.current_is_approved, true, a.id);
+      assert.equal(entry.approved.approval, 'APR-0011', a.id);
+      assert.equal(entry.current.version, requested.get(a.id).version, a.id);
+      assert.equal(entry.current.hash, requested.get(a.id).hash, a.id);
+    } else {
+      assert.equal(entry.current_is_approved, false, a.id);
+      assert.equal(entry.approved, null, a.id);
+    }
     if (src.kind === 'sprite') {
       sprites++;
       assert.equal(hash(a.source), a.incoming_source_sha256, a.id);

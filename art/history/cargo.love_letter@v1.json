@@ -1,0 +1,76 @@
+{
+ "format": "pushbox.art/1",
+ "id": "cargo.love_letter",
+ "name": "情书与回信",
+ "category": "cargo",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "pink": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "reply": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   ".zttttttttttttz.",
+   ".zDCDDDDDDDDCDz.",
+   ".zDDCDDDDDDCDDz.",
+   ".zDDDCDDDDCDDDz.",
+   ".zDDDDhhDhhDDDz.",
+   ".zmDmDhAhAhhDDz.",
+   ".zmmmmDhAAhDDDz.",
+   ".zmmmDDDhhDDDDz.",
+   ".zCnCCCCChCCCCz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   ".zccccccccccccz.",
+   ".zdeddddddddedz.",
+   ".zddeddddddeddz.",
+   ".zdddeddddedddz.",
+   ".zddddxwwxddddz.",
+   ".zddddwvuwxdddz.",
+   ".zdddddxwxddddz.",
+   ".zddddddxdddddz.",
+   ".zFFFFFFFFFFFFz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "剧情第一章的信（货物图标，大小和轮廓照 cargo.letter，规则还是信件，只换外观）：pink = 僵尸的情书（粉信封、封口一颗画歪的心、左下角一个绿手印）；reply = 铁匠的回信（牛皮纸信封、封口按着一滴铁水压的印）。由剧情数据引用，不改货物目录。",
+ "notes": "ART-06c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "b53cb818cd9e056d293d4f45615b941138b6e9fe364a5ecc5f9fa3459baf466d"
+}

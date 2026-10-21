@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.map_piece",
+ "name": "地图碎片",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "..zzzzzzz.......",
+   "..zEEEEEEzzz....",
+   ".zEFfEEEErrEzz..",
+   ".zEEEfEErrEEEEz.",
+   ".zEEEEEfrEEEEz..",
+   "..zEEEEErfEEEEz.",
+   ".zEEmmEErEfEiEz.",
+   ".zEmmnEErEEizEz.",
+   "..zEnEErrEEEiEz.",
+   ".zEEEErrEEEEEFz.",
+   ".zFEEErEEEEEFz..",
+   "..zFFrFEEEFFz...",
+   "...zzzzzzzzz....",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "道具图标：地图碎片——撕下来的一角旧地图（偏红的旧皮纸色、不规则撕边），蓝色河道、虚线小路和一个红记号，不写字；和改签符、黄符在形状和颜色上分得开。驿站货架、背包格和谢礼里用。",
+ "notes": "ART-05c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fafdf26d42ec88b96d27eb5a437c0624d5a0e384fb20f9bc1adb6475761bc2b7"
+}

@@ -1,0 +1,539 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.delivery_help",
+ "name": "按地图教学回顾",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-rooms2.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/terrain-jeju.js",
+  "workbench/js/core/font-wish.js",
+  "workbench/js/core/font-dhelp.js",
+  "workbench/js/core/ui-screens-dhelp.js",
+  "content/i18n-artdemo/zh-Hans.json",
+  "content/i18n-artdemo/en.json",
+  "content/i18n-wish/zh-Hans.json",
+  "content/i18n-wish/en.json",
+  "content/i18n-dhelp/zh-Hans.json",
+  "content/i18n-dhelp/en.json"
+ ],
+ "depends": [
+  "avatar.goblin_smith",
+  "avatar.old_miner",
+  "avatar.zombie",
+  "cargo.ice_cream",
+  "cargo.letter",
+  "cargo.vase",
+  "char.portitor",
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "deco.dungeon_moss",
+  "deco.dungeon_torch",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "fauna.dungeon_bat",
+  "fauna.dungeon_cat",
+  "fx.dig_bits",
+  "fx.jeju_gust",
+  "item.coin",
+  "item.snack",
+  "mech.bridge",
+  "mech.door",
+  "mech.jeju_seesaw",
+  "mech.ladder",
+  "mech.lantern_float",
+  "mech.lever",
+  "mech.link_symbol",
+  "mech.rune_float",
+  "monster.jiangshi",
+  "monster.skeleton_guard",
+  "monster.wandering_soul",
+  "obj.crate_wood",
+  "theme.diyu",
+  "theme.dungeon",
+  "ui.delivery_icons",
+  "ui.emote"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "delivery_help",
+  "departure": {
+   "screen": "reels",
+   "theme": "theme.dungeon",
+   "exclude": [
+    "fauna.dungeon_rat"
+   ],
+   "cargoList": [
+    "letter",
+    "vase",
+    "ice_cream"
+   ],
+   "recipientList": [
+    "old_miner",
+    "zombie",
+    "goblin_smith"
+   ],
+   "cargo": "letter",
+   "recipient": "old_miner",
+   "liked": true,
+   "rerolls": 1,
+   "cat": "idle",
+   "room2": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_10",
+    "preview_only": true,
+    "world": "dungeon",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_10.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "world": "dungeon",
+   "map": "dungeon_2",
+   "mapList": [
+    "dungeon_2",
+    "diyu_1"
+   ],
+   "mapRooms": {
+    "dungeon_2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_10",
+     "preview_only": true,
+     "world": "dungeon",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_10.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    },
+    "diyu_1": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_01",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_01.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "focus": 1
+  },
+  "maps": [
+   {
+    "world": "diyu",
+    "seen": true,
+    "rooms": [
+     "art_demo_03",
+     "art_demo_04"
+    ]
+   },
+   {
+    "world": "dungeon",
+    "seen": true,
+    "rooms": [
+     "art_demo_08",
+     "art_demo_09"
+    ]
+   },
+   {
+    "world": "jeju",
+    "seen": false,
+    "rooms": [
+     "art_demo_11",
+     "art_demo_12"
+    ]
+   }
+  ],
+  "rooms": {
+   "art_demo_03": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_03",
+    "preview_only": true,
+    "world": "diyu",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_03.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "art_demo_04": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_04",
+    "preview_only": true,
+    "world": "diyu",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_04.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "art_demo_08": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_08",
+    "preview_only": true,
+    "world": "dungeon",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_08.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "art_demo_09": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_09",
+    "preview_only": true,
+    "world": "dungeon",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_09.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "art_demo_11": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_11",
+    "preview_only": true,
+    "world": "jeju",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_11.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   },
+   "art_demo_12": {
+    "format": "pushbox.room/2",
+    "id": "art_demo_12",
+    "preview_only": true,
+    "world": "jeju",
+    "type": "room",
+    "size": [
+     1,
+     1
+    ],
+    "mirror": false,
+    "name": "artdemo.art_demo_12.name",
+    "exits": [
+     "left.0.high",
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "routes": [
+     "left.0.high>right.0.low"
+    ],
+    "legend": {
+     "1": {
+      "feature": "recipient"
+     },
+     "2": {
+      "feature": "keeper"
+     }
+    },
+    "map": [
+     "####################",
+     "####################",
+     "....................",
+     ".........H......1...",
+     "#######..H..########",
+     "#........H.........#",
+     "....................",
+     ".........H...2......",
+     "####################",
+     "####################"
+    ]
+   }
+  },
+  "focus": 0,
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "教学与辅助 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "95acea162f60425c4a28b93b6ecccd3106bb8a6b5681ab28572511361e6e28c5"
+}
