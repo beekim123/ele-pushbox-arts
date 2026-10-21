@@ -23,9 +23,74 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   await page.goto(url);await page.waitForTimeout(200);
   check(await page.locator('#view-scenes').isVisible(),'default opens art scenes');
   const groups=await page.evaluate(()=>PBNav.MENU.map(g=>g.label));
-  assert.deepEqual(groups,['地图概念','美术','声音']);
+  assert.deepEqual(groups,['关卡模式','配送模式','地图概念','美术','声音']);
   const pages=await page.evaluate(()=>PBNav.pages().map(p=>p.view));
   for(const view of pages){await page.goto(url+'#'+view);await page.waitForTimeout(120);check(await page.locator('#view-'+view).isVisible(),'menu '+view);}
+  // The restored mode entries must be actual clickable navigation, not labels.
+  for(const [mode,view] of [['level','level-art'],['delivery','delivery-art']]){
+    const head=page.locator('#nav button.nav-head[data-group="'+mode+'"]');
+    if(await head.getAttribute('aria-expanded')==='false') await head.click();
+    await page.locator('#nav a[data-key="'+view+'"]').click();
+    await page.waitForFunction(view=>!document.querySelector('#view-'+view).hidden&&document.querySelector('#'+view+'-root .mode-resource-card'),view);
+    const expected=await page.evaluate(mode=>PBModeCatalog.assets(mode,'all',PBStore.assets()).map(a=>a.id).sort(),mode);
+    const actual=await page.locator('#'+view+'-root [data-resource-id]').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId).sort());
+    assert.deepEqual(actual,expected,mode+' mode overview contains all its assets');
+    const links=await page.locator('#nav a[data-view="'+view+'"]').evaluateAll(list=>list.map(a=>a.hash));
+    assert.ok(links.includes('#'+view+'/theme.dungeon')&&links.includes('#'+view+'/screens')&&links.includes('#'+view+'/sounds'));
+    if(process.env.WB_MODE_SCREENSHOTS){
+      fs.mkdirSync(process.env.WB_MODE_SCREENSHOTS,{recursive:true});
+      await page.screenshot({path:path.join(process.env.WB_MODE_SCREENSHOTS,mode+'.png')});
+    }
+    check(true,mode+' mode menu and complete resource overview');
+  }
+  await page.locator('#nav a[data-key="delivery-art/theme.diyu"]').click();
+  await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('地府'));
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.yama"]').count(),1);
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.haenyeo"]').count(),0);
+  await page.getByLabel('包括通用资源',{exact:true}).uncheck();
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="obj.crate_wood"]').count(),0);
+  await page.locator('#nav a[data-key="delivery-art"]').click();
+  await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('全部资源'));
+  await page.getByLabel('搜索配送模式资源',{exact:true}).fill('ui.screen.run_door');
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id]').count(),2);
+  await page.getByRole('button',{name:'清除筛选',exact:true}).click();
+  await page.locator('#delivery-art-root').getByLabel('确认状态',{exact:true}).selectOption('draft');
+  const draftIds=await page.locator('#delivery-art-root [data-resource-id]').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId));
+  const expectedDrafts=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json'))).assets.filter(a=>a.stage==='draft').map(a=>a.id);
+  for(const id of expectedDrafts) assert.ok(draftIds.includes(id),id+' draft remains accessible');
+  check(true,'mode search, map/common filter and draft concepts remain accessible');
+  await page.locator('#nav a[data-key="delivery-art/hub"]').click();
+  await page.waitForFunction(()=>document.querySelector('#delivery-art-root [data-resource-id="scene.hub_post"]'));
+  await page.locator('#delivery-art-root [data-resource-id="scene.hub_post"]').getByRole('link',{name:'预览与动画',exact:true}).click();
+  await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).waitFor();
+  await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).selectOption('after');
+  assert.equal(await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).inputValue(),'after');
+  check(true,'whole hub scene opens in the existing animation inspector');
+  await page.goto(url+'#delivery-art/sounds');
+  await page.waitForFunction(()=>document.querySelector('#delivery-art-root [data-preview-sound]'));
+  assert.equal(await page.locator('#delivery-art-root [data-sound-id="sfx:delivery_arrive"]').count(),1);
+  assert.ok(await page.locator('#delivery-art-root [data-preview-sound]').count()>0);
+  assert.equal(await page.evaluate(()=>PBWBAudio.player.snapshot().sfx.length),0);
+  await page.locator('#delivery-art-root [data-preview-sound="sfx:push"]').click();
+  await page.waitForFunction(()=>document.querySelector('[data-mode-audio-status="delivery"]').textContent.includes('已试听：'));
+  check(true,'mode effects use the existing audio monitor and only play after a click');
+  await page.locator('#delivery-art-root [data-preview-sound="sfx:reel_spin"]').click();
+  await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.some(v=>v.uid==='sfx:reel_spin'));
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(url+'#level-art/screens');
+  await page.waitForFunction(()=>!document.querySelector('#view-level-art').hidden);
+  await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.length===0);
+  check(true,'leaving a mode stops the active looping reel effect');
+  assert.ok(await page.locator('#level-art-root [data-resource-id="ui.screen.levels"]').count()===1);
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mode resource page fits a narrow viewport');
+  if(process.env.WB_MODE_SCREENSHOTS) await page.screenshot({path:path.join(process.env.WB_MODE_SCREENSHOTS,'mobile.png')});
+  await page.setViewportSize({width:1280,height:800});
+  if(process.env.WB_MODE_ONLY==='1'){
+    check(errors.length===0,'no mode browser errors'+(errors.length?': '+errors.join('; '):''));
+    assert.equal(failures.length,0,failures.join('\n'));
+    console.log('mode resource checks passed (focused run; global suite not repeated)');
+    return;
+  }
   await page.goto(url+'#ui-proposals'); await page.waitForTimeout(100);
   check(await page.locator('#ui-proposals-root figure').count()===6,'all six G2 confirmed references are present');
   await page.goto(url+'#scenes/level.M03');await page.waitForTimeout(150);
