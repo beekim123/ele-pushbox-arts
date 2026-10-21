@@ -16,6 +16,14 @@
   // { concepts: view }: one item per map of content/concepts/maps.json, in its order
   // and named by its name (workbench.md 6.2), opening #<view>/<map id>.
   const MENU = [
+    { group: "level", label: "关卡模式", items: [
+      { view: "level-art", label: "全部资源", module: "PBLevelArt" },
+      { resourceSections: "level-art", mode: "level" },
+    ] },
+    { group: "delivery", label: "配送模式", items: [
+      { view: "delivery-art", label: "全部资源", module: "PBDeliveryArt" },
+      { resourceSections: "delivery-art", mode: "delivery" },
+    ] },
     { group: "concepts", label: "地图概念", items: [
       { view: "concepts", label: "全部", module: "PBConcepts" },
       { concepts: "concepts" },
@@ -39,7 +47,7 @@
   const doc = document.documentElement;
 
   // Remembered state; any storage failure falls back to defaults for this page.
-  const state = { collapsed: false, groups: {} };
+  const state = { collapsed: false, groups: { level: false, delivery: false } };
   try {
     const v = JSON.parse(localStorage.getItem(KEY) || "null");
     if (v && typeof v === "object") {
@@ -60,7 +68,12 @@
   function itemsOf(m) {
     const out = [];
     for (const it of m.items || [m]) {
-      if (it.maps2) {
+      if (it.resourceSections) {
+        const catalog = root.PBModeCatalog, all = root.PBStore ? root.PBStore.assets() : [];
+        for (const section of catalog ? catalog.sections(it.mode, all).filter(s=>s.id!=="all") : [])
+          out.push({view:it.resourceSections,key:it.resourceSections+"/"+section.id,
+            href:"#"+it.resourceSections+"/"+section.id,label:section.name,group:m.group,groupLabel:m.label});
+      } else if (it.maps2) {
         const slices = (root.PBStore && root.PBStore.catalog("slices")) || [];
         for (const s of slices.filter((x) => x.format === 2))
           out.push({ view: it.maps2, key: it.maps2 + "/map/" + s.id, href: "#" + it.maps2 + "/map/" + s.id, label: s.short_name || String(s.name || s.id).replace(/^配送地图 · /, ""), group: m.group || null, groupLabel: m.items ? m.label : null });
