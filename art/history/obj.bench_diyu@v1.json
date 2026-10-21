@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "obj.bench_diyu",
+ "name": "歇脚长凳",
+ "category": "object",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  32,
+  16
+ ],
+ "anchor": [
+  16,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "..........u.....................",
+   ".........u.u....................",
+   "................................",
+   "........zzzzzz..................",
+   "........zFnnFz..................",
+   "........zFFeez..................",
+   ".........zffz...................",
+   "..zzzzzzzzzzzzzzzzzzzzzz..zzzz..",
+   ".zdcccccccddeeddddedddddzzccdez.",
+   ".zeeeeeeeeeeeeeeeeeeeeffzzdddez.",
+   "..zzzzzzzzzzzzzzzzzzzzzz.zeefez.",
+   ".....zefzzzzzzzzzzzzefz..zdeffz.",
+   ".....zeffffffffffffzefz..zeefez.",
+   "....zefzzzzzzzzzzzz.zefz.zdeffz.",
+   "....zefz............zefz.zeeffz.",
+   "....zzzz............zzzz.zzzzzz."
+  ]
+ ],
+ "usage": "十里长亭一带的歇脚处：路边长木凳，凳上一只冒热气的粗茶碗，凳边一根短木桩；单帧，锚点底边中心。和鬼市摊子分得开。",
+ "notes": "ART-05a 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "ab5169da07c3394d7fc61aa79ad78c99090828cb3936364721c6014c0519407f"
+}

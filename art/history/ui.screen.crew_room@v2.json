@@ -1,0 +1,94 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.crew_room",
+ "name": "伙计房界面",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "workbench/js/core/font-storyui.js",
+  "workbench/js/core/font-shelf.js",
+  "workbench/js/core/font-crew.js",
+  "workbench/js/core/ui-screens-story.js",
+  "workbench/js/core/ui-screens-crew.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "content/i18n-shelf/zh-Hans.json",
+  "content/i18n-shelf/en.json",
+  "content/i18n-storyui/zh-Hans.json",
+  "content/i18n-storyui/en.json",
+  "content/i18n-crew/zh-Hans.json",
+  "content/i18n-crew/en.json"
+ ],
+ "depends": [
+  "avatar.hero_bell_doll",
+  "deco.hero_lantern_tag",
+  "scene.hub_crew",
+  "ui.buff_icons"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "crew_room",
+  "bg": "scene.hub_crew",
+  "state": "before",
+  "focus": 2,
+  "crew": [
+   {
+    "id": "portitor",
+    "unlocked": true
+   },
+   {
+    "id": "old_miner",
+    "unlocked": true
+   },
+   {
+    "id": "bell_doll",
+    "unlocked": true
+   },
+   {
+    "id": "fox_mask",
+    "unlocked": false
+   },
+   {
+    "id": "lamp_flower",
+    "unlocked": false
+   },
+   {
+    "id": "little_haenyeo",
+    "unlocked": false
+   }
+  ],
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-13b 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "84a3743893deac7bfd857a606121d485d58487aaee2c617206a1087ba8bcdbfd"
+}

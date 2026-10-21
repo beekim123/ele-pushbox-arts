@@ -1,0 +1,230 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.run_icons",
+ "name": "房型、奖励、安全与计时图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  8
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "blockade": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "develop": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "event": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "coins": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "item": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "buff": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  },
+  "snack": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "stamp": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    7
+   ]
+  },
+  "wish": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    8
+   ]
+  },
+  "skull": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    9
+   ]
+  },
+  "safe": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    10
+   ]
+  },
+  "think": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    11
+   ]
+  }
+ },
+ "frames": [
+  [
+   "z......z",
+   "zcz..zcz",
+   ".zczzcz.",
+   "zrrrrrrz",
+   "zrllrllz",
+   "zqrrrrqz",
+   "zqtztzqz",
+   ".zzzzzz."
+  ],
+  [
+   "zzzzzzzz",
+   "zddddddz",
+   "zdbbbedz",
+   "zdbbedbz",
+   "zdbedbbz",
+   "zdedbbbz",
+   "zffffffz",
+   "zzzzzzzz"
+  ],
+  [
+   "..zzzz..",
+   ".zBBBBz.",
+   "zBBttBBz",
+   "zBtBBtBz",
+   "zBBBtBBz",
+   "zBBBBBBz",
+   ".zBBtBz.",
+   "..zzzz.."
+  ],
+  [
+   "..z.z...",
+   "..zkz...",
+   ".zdddz..",
+   "zddddez.",
+   "zdddezz.",
+   "zdddzlkz",
+   "zeeezkbz",
+   ".zzz.zz."
+  ],
+  [
+   "..zzzz..",
+   "..zkkz..",
+   ".ziDDiz.",
+   "ziDkkiiz",
+   "ziDkkihz",
+   "ziiiihhz",
+   ".zhhhhz.",
+   "..zzzz.."
+  ],
+  [
+   "...zz..l",
+   "..zmmz..",
+   ".zmmmmz.",
+   "zmmmmmnz",
+   "zzzmnzzz",
+   "l.zmnz..",
+   "..zmnz.l",
+   "..zzzz.."
+  ],
+  [
+   "........",
+   "..zzzz..",
+   ".zttttz.",
+   "zcttiicz",
+   "zccciicz",
+   "zdccccdz",
+   "zFddddFz",
+   ".zzzzzz."
+  ],
+  [
+   ".z.zz.z.",
+   "zttttttz",
+   ".trrsrt.",
+   "ztrssrtz",
+   ".trqqrt.",
+   "ztrrrrtz",
+   "zttttttz",
+   ".z.zz.z."
+  ],
+  [
+   ".zz.zz..",
+   ".ziziz..",
+   "zzzizzzz",
+   "zttittuz",
+   "ziiiiiiz",
+   "zttittuz",
+   "zuuiuuvz",
+   "zzzzzzzz"
+  ],
+  [
+   ".zzzzzz.",
+   "zttttttz",
+   "ztzttztz",
+   "ztzttzuz",
+   "zttzztuz",
+   ".zttttz.",
+   ".ztztuz.",
+   "..zzzz.."
+  ],
+  [
+   "..zzzz..",
+   ".zkzzkA.",
+   "zkc..Akz",
+   "zkrrArkz",
+   "zklArlkz",
+   "zkAttrkz",
+   ".Akzzkz.",
+   "..zzzz.."
+  ],
+  [
+   "..zzzz..",
+   ".zttttz.",
+   "zttztzuz",
+   "ztzztzuz",
+   "ztzztzuz",
+   "ztuztzvz",
+   ".zuuvvz.",
+   "..zzzz.."
+  ]
+ ],
+ "usage": "一局里的 8×8 小图标，每个动画一帧：房型 blockade（长角小鬼脸）/ develop（斜撑木箱）/ event（问号）；奖励 coins（钱袋 + 铜钱）/ item（小锦囊）/ buff（向上箭头 + 星点）/ snack（小糕）/ stamp（齿边邮票）/ wish（红绳小礼包）；skull 叠在房型图标右上角；safe 表示\"这里没有怪\"（符纹圈里被斜线划掉的小鬼脸）；think 想题停钟（小钟 + 暂停两竖）。用于门牌灯笼空位、小地图、HUD 与结算，浅纸面和 HUD 深底上都能认。",
+ "notes": "ART-05a 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "1d0ecca40eeb2ba46359940afc64d8e02dc69606054bbe80c0e69283aae18126"
+}

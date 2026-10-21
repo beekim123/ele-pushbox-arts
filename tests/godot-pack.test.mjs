@@ -36,10 +36,10 @@ function sourceFixture(t) {
     fs.cpSync(from, path.join(root, rel), {recursive: true});
   }
   // Native v1 is fixed to BASE, while the authoring workbench may contain
-  // newer, unapproved candidates. Test native behavior against its actual
-  // baseline manifest; never weaken the producer's frozen-input guard.
-  fs.writeFileSync(path.join(root, 'art/export/manifest.json'),
-    execFileSync('git', ['show', BASE.commit + ':art/export/manifest.json'], {cwd: root}));
+  // newer candidates or later user approvals. Test native v1 against its
+  // actual frozen manifest and approval log, without weakening its producer.
+  for (const rel of ['art/export/manifest.json', 'art/approvals.json'])
+    fs.writeFileSync(path.join(root, rel), execFileSync('git', ['show', BASE.commit + ':' + rel], {cwd: root}));
   git(root, 'config', 'user.name', 'Fixture');
   git(root, 'config', 'user.email', 'fixture@example.invalid');
   // A synthetic fixture starts without real attached technical reports. Its

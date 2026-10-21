@@ -1,0 +1,276 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.buff_icons",
+ "name": "十种增益图标",
+ "category": "ui",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "cart": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "energy_drink": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "cooler": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  },
+  "thermos": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  },
+  "padding": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    4
+   ]
+  },
+  "waterproof": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  },
+  "compass": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    6
+   ]
+  },
+  "running_shoes": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    7
+   ]
+  },
+  "night_vision": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    8
+   ]
+  },
+  "lucky_charm": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    9
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "......zzzzzzz...",
+   "......zddddez...",
+   "..zz..zdeedez...",
+   ".zffz.zdddeez...",
+   "..zfz.zeeeeez...",
+   "...zfzzzzzzzzz..",
+   "...zffffffffffz.",
+   "...zzzzzzzzzzzz.",
+   ".....zxz...zxz..",
+   "....zxvxz.zxvxz.",
+   "....zyxyz.zyxyz.",
+   ".....zzz...zzz..",
+   "................",
+   "................"
+  ],
+  [
+   "......zzzz......",
+   "......zuuz......",
+   "......zvvz......",
+   ".....zmmmnz.....",
+   "....zmmmmnnz....",
+   "....zmtmmnnz....",
+   "....zmtlknnz....",
+   "....zmlkknnz....",
+   "....zmmlknnz....",
+   "....zmllnnnz....",
+   "....zmklnnnz....",
+   "....zmmmnnnz....",
+   "....zmmmnnoz....",
+   "....znnnnooz....",
+   ".....zzzzzz.....",
+   "................"
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zz..zz.....",
+   "..zzzzzzzzzzzz..",
+   ".zrrrrrrrrrrqqz.",
+   ".zqqqqqqqqqqqqz.",
+   ".zttttttttttuuz.",
+   ".zttttrtrttuuvz.",
+   ".zttttsrsttuuvz.",
+   ".zttrrrsrrruuvz.",
+   ".zttttsrsttuuvz.",
+   ".zttttrtrttuuvz.",
+   ".zuuuuuuuuuuuvz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................"
+  ],
+  [
+   ".......u..t.....",
+   "......t..u......",
+   ".......u........",
+   ".....zzzzzz.....",
+   ".....zuuuvz.....",
+   ".....zzzzzz.....",
+   "....zvuuuuvz....",
+   "....ziiiiihz....",
+   "....zitiiihz....",
+   "....zitiiihz....",
+   "....ziiiihhz....",
+   "....ziiiihhz....",
+   "....zuuuuvvz....",
+   "....ziiiihhz....",
+   "....zvvvvwwz....",
+   ".....zzzzzz....."
+  ],
+  [
+   "................",
+   "................",
+   "..zzzzzzzzzzzz..",
+   ".zDDDDDDDDDDDCz.",
+   "zDtDDDDzDDDDDCCz",
+   "zDDDDDDDDDDDDCCz",
+   "zDDDDDDzDDDDDCCz",
+   "zDDzDDDDDDzDDCCz",
+   "zDDDDDDzDDDDDCCz",
+   "zDDDDDDDDDDDDCCz",
+   "zDCDDDDzDDDDCCCz",
+   ".zCCCCCCCCCCCCz.",
+   "..zzzzzzzzzzzz..",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   ".....zzzzzz.....",
+   "....zbbbbbbz....",
+   ".....zzzzzz.....",
+   "....zjbbbbjz....",
+   "....zjzzzzjz....",
+   "...zjjjjjjjjz...",
+   "...zjljjjjjbz.r.",
+   "...zjljjjjjbzrsr",
+   "...zjjjjjjjbzrrq",
+   "...zjjjjjjbbz.z.",
+   "...zjjjjjjbbz...",
+   "...zbbbbbbbbz.r.",
+   "....zzzzzzzz.rsr",
+   ".............zqz",
+   "..............z."
+  ],
+  [
+   "................",
+   "......zzzz......",
+   ".....zkllkz.....",
+   "....zzzzzzzz....",
+   "...zkuuuuuubz...",
+   "..zkuutiuuuvbz..",
+   "..zkuuiiuuuvbz..",
+   "..zkuuuzzuuvbz..",
+   "..zkuuuzzuuvbz..",
+   "..zkuuuwwuuvbz..",
+   "..zbuuuwvuuvbz..",
+   "...zbvvvvvvbz...",
+   "....zzbbbbzz....",
+   "......zzzz......",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   ".........zzz....",
+   "........zrrrz...",
+   ".......zrrtrz...",
+   "..uu..zrrtrrz...",
+   "......zrrtrrrzz.",
+   ".uuu.zrrrrrrrrrz",
+   ".....zrrrrrrqqrz",
+   "..uu.zqqqrqqqqqz",
+   ".....ztttttttttz",
+   ".....zuuuuuuuuuz",
+   "......zzzzzzzzz.",
+   "................",
+   "................"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   "................",
+   "..zzzzz..zzzzz..",
+   ".zxxxxxzzxxxxxz.",
+   "zxzmmmzxxzmmmzxz",
+   "zxzmlmzyyzmlmzxz",
+   "zxzmmmzxxzmmmzxz",
+   ".zxzzzxzzxzzzxz.",
+   "..zzzzz..zzzzz..",
+   "...m.........m..",
+   "..m...........m.",
+   "................",
+   "................",
+   "................"
+  ],
+  [
+   ".....zz..zz.....",
+   "....zkkzzkkz....",
+   ".....zkkkkz.....",
+   "......zkkz......",
+   ".....ziiiiz.....",
+   "....ziiiiiiz....",
+   "...ziDiiiiihz...",
+   "...ziiiiiiihz...",
+   "..ziiiikkiiihz..",
+   "..ziiikllkiihz..",
+   "..ziiiikkiihhz..",
+   "..zhiiiiiihhhz..",
+   "...zhhhhhhhhz...",
+   "....zzzzzzzz....",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "增益图标表（帧名 = 增益 id）：cart 小手推车、energy_drink 带闪电记号的饮料瓶、cooler 白蓝保冷箱 + 雪花、thermos 保温壶 + 热气、padding 软垫、waterproof 卷口防水袋 + 水滴、compass 指南针、running_shoes 跑鞋 + 速度线、night_vision 发光护目镜、lucky_charm 红色小福袋 + 金绳结。图标里不加角标、不加框（增益标记、稀有金边由界面画）。用于 UI-12b 货架、门牌近看的增益奖励、UI-12c 谢礼。",
+ "notes": "ART-05c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "6c3001f69ae964089ff36fd12f3e839e4f6e5917b55f34edf28689410f5c6020"
+}

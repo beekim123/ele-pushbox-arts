@@ -1,0 +1,158 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.run_map",
+ "name": "十二格链式小地图",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/ui-screens-door.js",
+  "content/i18n-door/zh-Hans.json",
+  "content/i18n-door/en.json"
+ ],
+ "depends": [
+  "cargo.ice_cream",
+  "char.portitor",
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "item.coin",
+  "item.sandbag",
+  "item.snack",
+  "item.wish_palm_fan",
+  "mech.door",
+  "mech.ladder",
+  "mech.lantern_float",
+  "mech.link_symbol",
+  "mech.plate",
+  "obj.crate_iron",
+  "obj.crate_wood",
+  "theme.diyu",
+  "ui.delivery_icons",
+  "ui.emote",
+  "ui.run_icons"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "run_map",
+  "world": "diyu",
+  "theme": "theme.diyu",
+  "recipient": "yama",
+  "cargo": "ice_cream",
+  "route": "left.0.low>right.0.high",
+  "open": [
+   "left.0.low",
+   "right.0.high"
+  ],
+  "player": [
+   13,
+   3
+  ],
+  "facing": 1,
+  "hud": {
+   "hearts": 3,
+   "maxHearts": 3,
+   "cargo": "ice_cream",
+   "left": 2,
+   "max": 3,
+   "rule": "melt",
+   "coins": 80,
+   "sand": 0,
+   "items": [
+    "wish_palm_fan"
+   ],
+   "slots": 3,
+   "secs": 400,
+   "snacks": 3
+  },
+  "chain": {
+   "cur": 5,
+   "picks": {
+    "4": "up"
+   }
+  },
+  "safe": true,
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+  "room2": {
+   "format": "pushbox.room/2",
+   "id": "art_demo_07",
+   "preview_only": true,
+   "world": "diyu",
+   "type": "room",
+   "size": [
+    1,
+    1
+   ],
+   "mirror": false,
+   "name": "artdemo.art_demo_07.name",
+   "exits": [
+    "left.0.high",
+    "left.0.low",
+    "right.0.high",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.high>right.0.low"
+   ],
+   "legend": {
+    "1": {
+     "feature": "recipient"
+    },
+    "2": {
+     "feature": "keeper"
+    }
+   },
+   "map": [
+    "####################",
+    "####################",
+    "....................",
+    ".........H......1...",
+    "#######..H..########",
+    "#........H.........#",
+    "....................",
+    ".........H...2......",
+    "####################",
+    "####################"
+   ]
+  }
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-12a 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "282d7bbe56ef7f6c3957bac8049df32816d2a5a50032c125d689d8ee0eb9e3d8"
+}

@@ -1,0 +1,101 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.story_keepsakes",
+ "name": "三章纪念物",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "nail": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "recipe": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "postcard": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "....zzzzz.......",
+   "...zuuuvvz......",
+   "....zzvzz.......",
+   ".....zvz........",
+   ".....zvz........",
+   ".....zvwz.......",
+   "......zvwz......",
+   ".......zvwz.....",
+   "........zvz.....",
+   ".....zzzzzzzz...",
+   "....zddddcdddz..",
+   "....zdeddddedz..",
+   "....zeeeeeeefz..",
+   ".....zzzzzzzz..."
+  ],
+  [
+   "................",
+   ".......zz.......",
+   "......zAiz......",
+   "...zzzzzhzzzzz..",
+   "...zttttttttuz..",
+   "...ztxxtxxxtuz..",
+   "...zttttttttuz..",
+   "...ztwwwtwwtuz..",
+   "...zttttmmmtuz..",
+   "...ztwwzmmnzuz..",
+   "...zttttznzttz..",
+   "...ztwwtwwwttz..",
+   "...zttttttttuz..",
+   "...ztwwwttzzzz..",
+   "...zcccccczuz...",
+   "...zzzzzzzzz...."
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   ".zzzzzzzzzzzzzz.",
+   ".zttttttttttttz.",
+   ".ztrrrrrrtttrtz.",
+   ".ztrrrrrrtitrtz.",
+   ".ztssrrrrtttrtz.",
+   ".ztrryrrurrrrtz.",
+   ".ztqyyyqyqqsqtz.",
+   ".ztvvyvyyyvvvtz.",
+   ".ztwwwwwwwwwwtz.",
+   ".zttttttttttttz.",
+   ".zzzzzzzzzzzzzz.",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "三章结局的纪念物（摆进展览角、贴上邮局墙）：nail = 第一章铁匠寄来的那根打歪的钉子（插在小木座上展示）；recipe = 第二章阿婆抄来的青团方子（红图钉钉在墙上，纸上画着一只青团）；postcard = 第三章的明信片（防波堤上一大一小两个人，天上一只盾牌风筝）。每件不大于 16×16，锚点底边中点。",
+ "notes": "ART-06c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "59addca64e6a76e49ee97bf92a015c4a2fba59e9375e1b0368f190e26c89286f"
+}
