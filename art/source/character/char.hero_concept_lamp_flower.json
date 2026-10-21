@@ -1,0 +1,158 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.hero_concept_lamp_flower",
+ "name": "灯花概念候选",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_wax_lamp": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "B_oil_dish": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "C_wick_sprite": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".........z.z....",
+   "........ziziz...",
+   ".......zijljiz..",
+   ".......zjllljz..",
+   "........zijiz...",
+   ".........zfz....",
+   "..zzzz..zttz....",
+   ".zu..uz.zttuz...",
+   ".zskksztztzttz..",
+   ".zskdszttttuz...",
+   ".zsddszttttuz...",
+   ".zu..uzzttuuz...",
+   "..zzzz.ztuuz....",
+   ".......zfzfz....",
+   ".......zz.zz...."
+  ],
+  [
+   ".........z.z....",
+   "........ziziz...",
+   ".......zijljiz..",
+   ".......zjllljz..",
+   "........zijiz...",
+   ".........zfz....",
+   "..zzzz..zttz....",
+   ".zu..uz.zttuz...",
+   ".zskksztztzttz..",
+   ".zskdszttttuz...",
+   ".zsddszttttuz...",
+   ".zu..uzzttuuz...",
+   "......zt..uuz...",
+   "..zzzzzt..uuz...",
+   "......zf..zfz...",
+   "......zz...zz..."
+  ],
+  [
+   "................",
+   "................",
+   ".........z.z....",
+   "........ziziz...",
+   ".......zijljiz..",
+   ".......zjllljz..",
+   "........zijiz...",
+   "..zzz....zfz....",
+   ".zuuuz..zccz....",
+   ".zukuz.zcczcz...",
+   ".zuuuzzFFFFFFz..",
+   ".zuuuzzeddddez..",
+   "..zzz..zFFFFz...",
+   "........zFFz....",
+   ".......zf..fz...",
+   ".......zz..zz..."
+  ],
+  [
+   "................",
+   ".........z.z....",
+   "........ziziz...",
+   ".......zijljiz..",
+   ".......zjllljz..",
+   "........zijiz...",
+   "..zzz....zfz....",
+   ".zuuuz..zccz....",
+   ".zukuz.zcczcz...",
+   ".zuuuzzFFFFFFz..",
+   ".zuuuzzeddddez..",
+   "..zzz..zFFFFz...",
+   ".......zF..Fz...",
+   ".......zF..Fz...",
+   "......zf....fz..",
+   "......zz....zz.."
+  ],
+  [
+   "................",
+   ".......z.z.z....",
+   "......zijijiz...",
+   "......zjlllljz..",
+   ".......zjlljz...",
+   "........zffz....",
+   ".......zcdccz...",
+   ".zzzz..zczczz...",
+   "zsuusz.zccccz...",
+   "zsjjsz.zdcccz...",
+   "zskksz.zcdccz...",
+   "zsuusz.zccdcz...",
+   ".zuuz..zcccdz...",
+   "..zz...zcdccz...",
+   ".......zfzzfz...",
+   ".......zz..zz..."
+  ],
+  [
+   ".......z.z.z....",
+   "......zijijiz...",
+   "......zjlllljz..",
+   ".......zjlljz...",
+   "........zffz....",
+   ".......zcdccz...",
+   ".zzzz..zczczz...",
+   "zsuusz.zccccz...",
+   "zsjjsz.zdcccz...",
+   "zskksz.zcdccz...",
+   "zsuusz.zccdcz...",
+   ".zuuz..zcccdz...",
+   "......zcd..ccz..",
+   "..zz..zcd..ccz..",
+   "......zfz..zfz..",
+   "......zz....zz.."
+  ]
+ ],
+ "usage": "只用于给用户挑方向的灯花概念草图（每个方向：站 + 走一步，4 fps），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：白蜡小身体 + 头顶橘红灯花，背着玻璃小灯罩当背篓（背包格 = 灯罩里的格）（推荐）；B：铜油灯碟当身子、短腿，灯花在顶上，手边提一只灯罩；更像器物精；C：棉灯芯拧成的细高个，灯花像发髻，背着高灯罩；最瘦长。",
+ "content_hash": "4e153a432069b1dcd28904162038bc1a3e19412963909b554ae3df47d8d0ad94"
+}

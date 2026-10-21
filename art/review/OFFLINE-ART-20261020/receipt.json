@@ -1,0 +1,582 @@
+{
+ "format": "portitor.art-receipt/1",
+ "job": "OFFLINE-ART-20261020",
+ "original_zip_sha256": "678a231134ca1b92c424fbf1d20ac30a7b38e84b4acd2e6f475336ffb7f6d970",
+ "approval": "none",
+ "assets": [
+  {
+   "id": "ui.run_icons",
+   "stage": "review",
+   "source": "art/source/ui/ui.run_icons.json",
+   "incoming_source_sha256": "ad26340c8493bc159c9a7cdddcedcbd626375367bca92555bd3d60f3448f0d6c",
+   "incoming_preview_sha256": "612bf3156726cd11cdaec4635850d8554233524bbc02b75330deb51862e81405"
+  },
+  {
+   "id": "ui.buff_icons",
+   "stage": "review",
+   "source": "art/source/ui/ui.buff_icons.json",
+   "incoming_source_sha256": "9c14aa4b74f87349e5c012d81881fa594480e256329bf59e66183e6fb5c1863a",
+   "incoming_preview_sha256": "8911f2d17991428441825a75ad20456d56857e8c8d99a740177b7ff339b17bb5"
+  },
+  {
+   "id": "char.hero_little_haenyeo_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.hero_little_haenyeo_delivery.json",
+   "incoming_source_sha256": "a8773090a93c338669a150d39b7d6b9c6c56d5c3042915dad35761c45b2ce9fa",
+   "incoming_preview_sha256": "871a416cbede94e011f1e63744780432445bceea8159537a5672be7713c24889"
+  },
+  {
+   "id": "char.hero_lamp_flower_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.hero_lamp_flower_delivery.json",
+   "incoming_source_sha256": "b570fac1ea88da6c871ac6e5e04f9b8fb714116962b66ae99cd18538bc116eab",
+   "incoming_preview_sha256": "6e4863401d4961b4331528e8e00fa4fbe4c314e4e9ddb073a33266037836e8b8"
+  },
+  {
+   "id": "char.hero_concept_fox_mask",
+   "stage": "draft",
+   "source": "art/source/character/char.hero_concept_fox_mask.json",
+   "incoming_source_sha256": "3e21d3ad4d5eecbe91c43f25cb289d5dcfecde61ef9cbfc237887b97ca941bce",
+   "incoming_preview_sha256": "e9a0626be36b2a064edd8b590f9466a71c1c0189256202f746e8aa84ba81a382"
+  },
+  {
+   "id": "char.portitor_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.portitor_delivery.json",
+   "incoming_source_sha256": "5bc7bd3f4740a9e4c55a0a2fff23ebc8b431c3032a418e2496328430068e6d9a",
+   "incoming_preview_sha256": "418638f040d22addaa94447c9fd5a61bb38c45fd0c7f6b2087025273efac6110"
+  },
+  {
+   "id": "char.hero_bell_doll",
+   "stage": "review",
+   "source": "art/source/character/char.hero_bell_doll.json",
+   "incoming_source_sha256": "c230c64a01f87e7bb9cc59f925f743876b89639c7b60c143e6d47369181b3ac9",
+   "incoming_preview_sha256": "4454ed9af0fe5b14be98de138be9c28cf5c8a34f878fd6d0c7c5d1c8c1c34f96"
+  },
+  {
+   "id": "char.hero_concept_lamp_flower",
+   "stage": "draft",
+   "source": "art/source/character/char.hero_concept_lamp_flower.json",
+   "incoming_source_sha256": "c4a5a73ff5f458c28cec3138a27b28185aab688325e5143937513a9f7de46237",
+   "incoming_preview_sha256": "024c8cbe4b66c71dff3aa95bd27b152be45987b5dd6547903ac193fca9c3f1fa"
+  },
+  {
+   "id": "char.hero_old_miner",
+   "stage": "review",
+   "source": "art/source/character/char.hero_old_miner.json",
+   "incoming_source_sha256": "0912b07edcf4fa4d11b06c614d99f31ed74435754d0141812f96522d7ade978a",
+   "incoming_preview_sha256": "2fa44653bd250c7de663ddc46b2622f91f984513113122fc90bd604b8baad58e"
+  },
+  {
+   "id": "char.hero_concept_bell_doll",
+   "stage": "draft",
+   "source": "art/source/character/char.hero_concept_bell_doll.json",
+   "incoming_source_sha256": "dc844251c92570945662ad36734c0ce6b21878bcd5706e6ce3947b33b4589b2d",
+   "incoming_preview_sha256": "775ee1557e731f4850e26ea4ccf55def1f803efd7a5456fe5350e071919b1f1c"
+  },
+  {
+   "id": "char.hero_concept_old_miner",
+   "stage": "draft",
+   "source": "art/source/character/char.hero_concept_old_miner.json",
+   "incoming_source_sha256": "cb6a725a8d56042a897eb488954b27209067d205c3f52f2fc3928d8316921657",
+   "incoming_preview_sha256": "a8eba73ca02b31a0925f6c63f5fc1eb997d7c15d4ad5a1489f4e7358e21c8af2"
+  },
+  {
+   "id": "char.hero_fox_mask_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.hero_fox_mask_delivery.json",
+   "incoming_source_sha256": "0f79b306aa92dce1ddff7430132529d82de752c5dc9be2fdc75bb7419fabad5f",
+   "incoming_preview_sha256": "24991c6d51a7ed9b2504596ce0d17c26f9c03ba196394af5b6a06fc845f4772f"
+  },
+  {
+   "id": "char.hero_fox_mask",
+   "stage": "review",
+   "source": "art/source/character/char.hero_fox_mask.json",
+   "incoming_source_sha256": "eb5a0b072015f50640b629f96ca8730dea3d27f1bed8b5ea3fdca8342775d5ec",
+   "incoming_preview_sha256": "3d97c2a6884a47ee42d390954e2c617799412397d159f333c5c337f9d006d666"
+  },
+  {
+   "id": "char.hero_concept_little_haenyeo",
+   "stage": "draft",
+   "source": "art/source/character/char.hero_concept_little_haenyeo.json",
+   "incoming_source_sha256": "41ee46981989d6f539032c2b0e1446f15126dcaccd3f5981a1dbccd2bf409212",
+   "incoming_preview_sha256": "db78a8922d382dfff71dd3db5060b970fc55663df479bcbda4d3485fd6137916"
+  },
+  {
+   "id": "char.hero_lamp_flower",
+   "stage": "review",
+   "source": "art/source/character/char.hero_lamp_flower.json",
+   "incoming_source_sha256": "2a04203e5d576915fa62a77f71ef811dfffcba65d7e55c52c5d73309337e6c2b",
+   "incoming_preview_sha256": "dd6bf2aa928c0a0d868fab8fc20a305f4a73f8572090e0262e97c20cd6f054f6"
+  },
+  {
+   "id": "char.hero_little_haenyeo",
+   "stage": "review",
+   "source": "art/source/character/char.hero_little_haenyeo.json",
+   "incoming_source_sha256": "7476006c43664dfacabff061b46e11b66228dd76ed7c2a66fccacc0d432cc743",
+   "incoming_preview_sha256": "c68930a469ade97ad048168b0a79885b06c745991db56d1c7296652002c130a6"
+  },
+  {
+   "id": "char.hero_old_miner_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.hero_old_miner_delivery.json",
+   "incoming_source_sha256": "c93953cfa71d0d56f17009d2d65a2f15a55b6212dd9af7185f2921658f7e9846",
+   "incoming_preview_sha256": "c4b4bf1f88e3ec6769d2916fdda4fabe68ba29aeba4630adea6bf18d8e17a38c"
+  },
+  {
+   "id": "char.hero_bell_doll_delivery",
+   "stage": "review",
+   "source": "art/source/character/char.hero_bell_doll_delivery.json",
+   "incoming_source_sha256": "971e46be02f5cd2c02cf6735140d92ac7d3ab79bd0887388a230c89be1e992ce",
+   "incoming_preview_sha256": "6c45cec8f1dc5a67c85a6d6e8c1d3e9b94e55d42b7e2e9b9a8303a3c3f36d5ac"
+  },
+  {
+   "id": "cargo.love_letter",
+   "stage": "review",
+   "source": "art/source/cargo/cargo.love_letter.json",
+   "incoming_source_sha256": "2b667ec6c6d325f5b3d69944b57b4fe807f0c8c8d858dd9be1e7f48a4fd4d613",
+   "incoming_preview_sha256": "bb860ff5d897ed33b917610a5c1edfcc9ba624bbfee741bb7f166b1b48ab6d19"
+  },
+  {
+   "id": "deco.diyu_white_lily",
+   "stage": "review",
+   "source": "art/source/deco/deco.diyu_white_lily.json",
+   "incoming_source_sha256": "c982583212125eccfa517b96203f16410996557ef5d557d088efafb5ed237a16",
+   "incoming_preview_sha256": "b7ce759883c022725c39b66ade123f76ec456be8f800ea26131b8b7f43fb3562"
+  },
+  {
+   "id": "deco.hero_lantern_tag",
+   "stage": "review",
+   "source": "art/source/deco/deco.hero_lantern_tag.json",
+   "incoming_source_sha256": "41eb15b26afd5951b2d7ed811a098f6e0da183c8eee4f8ea3c9acaae02c6d407",
+   "incoming_preview_sha256": "d529b8c67c164d8c993a070179184b8feb2f206b8f4181a61569fef9be822c8a"
+  },
+  {
+   "id": "deco.story_keepsakes",
+   "stage": "review",
+   "source": "art/source/deco/deco.story_keepsakes.json",
+   "incoming_source_sha256": "f669410280c4ec6527502131f2f0ff3b38616c3a1959f5e9eed83406d72274c8",
+   "incoming_preview_sha256": "ccb95196224469cb469b458d037f7bfb05303a2aa0724baeec786c152298b159"
+  },
+  {
+   "id": "deco.paper_house_built",
+   "stage": "review",
+   "source": "art/source/deco/deco.paper_house_built.json",
+   "incoming_source_sha256": "7d6ee7dd4cf60f3d3e436ccdaac0c0e4ee4dc2cd1978dd5c615a3f153135f522",
+   "incoming_preview_sha256": "a12c226ecd556b88e3fa0e610d71d12fd2a7aecca78b0271cd300a6366fd5ba0"
+  },
+  {
+   "id": "deco.story_home_props",
+   "stage": "review",
+   "source": "art/source/deco/deco.story_home_props.json",
+   "incoming_source_sha256": "fa94414429769244fcd7e7d246e6d1e9f231e0925807240d2bffa8ee4dd97733",
+   "incoming_preview_sha256": "09ae6e86d1152b1994777787f0514192f1260597b8fa6d81a948476a726e380b"
+  },
+  {
+   "id": "deco.hero_lantern_tag_concept",
+   "stage": "draft",
+   "source": "art/source/deco/deco.hero_lantern_tag_concept.json",
+   "incoming_source_sha256": "2fc0ce43591e10a31ee325a377ca6862e8a8bfc59180c803d960f5c1a7180979",
+   "incoming_preview_sha256": "5b6dc520898d77282f820c24c89f3dc75131ede28b81e0543333046e172e4778"
+  },
+  {
+   "id": "obj.door_sign_dungeon",
+   "stage": "review",
+   "source": "art/source/object/obj.door_sign_dungeon.json",
+   "incoming_source_sha256": "e24502e1a4c542c8c23d544f9d607e8c2370d3af154a04ebf02b5d85020e451c",
+   "incoming_preview_sha256": "bd3a6efe65c8ae3e36684bd21e565f6f8da26cc28a940d1e6c7e74a4a0eea997"
+  },
+  {
+   "id": "obj.bench_diyu",
+   "stage": "review",
+   "source": "art/source/object/obj.bench_diyu.json",
+   "incoming_source_sha256": "aa9ec27b3e2d1a750d17953bd8c119e5ceec88fbeb1665f4984df08b238d333b",
+   "incoming_preview_sha256": "5628c460163f1513fabfad23c9691a4090032b85a6cdfc92ec5db3945b004f1b"
+  },
+  {
+   "id": "obj.secret_crack",
+   "stage": "review",
+   "source": "art/source/object/obj.secret_crack.json",
+   "incoming_source_sha256": "77ab384fa6bfc56b47062ad432e17fb386d9dd9c3751fb57634c55e88252bce3",
+   "incoming_preview_sha256": "469983339da9c24a1763bab5d8d728f15f74e59910872f43eb91db5f1f6da2c0"
+  },
+  {
+   "id": "obj.door_sign_jeju",
+   "stage": "review",
+   "source": "art/source/object/obj.door_sign_jeju.json",
+   "incoming_source_sha256": "db87387ca7093761358bf9b0cd805f0204bf945be2915dc4ad02f11b7988f8dd",
+   "incoming_preview_sha256": "7742f5424cb773b800680bf7a5150b2043a6d410cda800edd910b1c26a30f228"
+  },
+  {
+   "id": "obj.event_stall_diyu",
+   "stage": "review",
+   "source": "art/source/object/obj.event_stall_diyu.json",
+   "incoming_source_sha256": "f249211bd84be982b9184639d4479d70f8a8448d4f749b03b8caaacc19ccd8cf",
+   "incoming_preview_sha256": "9db67ef46abc1bfd58da0af46ced44ea7e94b966b4c70d14322c9f1149d9e2da"
+  },
+  {
+   "id": "obj.door_lantern_diyu",
+   "stage": "review",
+   "source": "art/source/object/obj.door_lantern_diyu.json",
+   "incoming_source_sha256": "1fe34fc4a3ef027189bd31f92149d575b745ae63b2a7f4f7533ef831f85c2281",
+   "incoming_preview_sha256": "21b68b7b2217e07f68c03f3bc4a84fc8c8097c40b7516433efcd728c1f86a076"
+  },
+  {
+   "id": "item.wish_whetstone",
+   "stage": "review",
+   "source": "art/source/item/item.wish_whetstone.json",
+   "incoming_source_sha256": "0563830cb296e2a9c600296b731b693b3c3c278ae42d7c8f2f098b53ea52122e",
+   "incoming_preview_sha256": "d99753e561e96862e36f4fa25e3f25d0de7950a474b628cd4a10c088eb68ccf6"
+  },
+  {
+   "id": "item.wish_lamp_wick",
+   "stage": "review",
+   "source": "art/source/item/item.wish_lamp_wick.json",
+   "incoming_source_sha256": "8b61bb3ec78884174498ffef1ffdd2ab34a4e47cea2de41c6621bd03e2252961",
+   "incoming_preview_sha256": "a700f7ef11259a9a78ad67dac2ffa21461ba1d3ea5c3a4153a6bc38bef67a8d9"
+  },
+  {
+   "id": "item.wish_family_photo",
+   "stage": "review",
+   "source": "art/source/item/item.wish_family_photo.json",
+   "incoming_source_sha256": "3df2e7b76a276a0960b2412f5c755eabc549884386869b3e3cd9fd25724438c7",
+   "incoming_preview_sha256": "d319c688ce85885bdeaef5c789c994cf6db8ea1225f375db6d402c5ca4cc8bba"
+  },
+  {
+   "id": "item.flare_diyu",
+   "stage": "review",
+   "source": "art/source/item/item.flare_diyu.json",
+   "incoming_source_sha256": "ac2b480c46ccfc4a3c67cdefb03b1b51fdfa988bb9fdacbea11c243f4e53c3a7",
+   "incoming_preview_sha256": "940816d18ca3a7c330d6747cf18f481f51e25f05cf8e52c4f9ce6c479ca1ac35"
+  },
+  {
+   "id": "item.map_piece",
+   "stage": "review",
+   "source": "art/source/item/item.map_piece.json",
+   "incoming_source_sha256": "b8140b327ec2c205ac64177d4aaecc99c2ead90047a3e23b44bf488b936d15bd",
+   "incoming_preview_sha256": "6a1067ceff041b8168f2455fa58bd5a523e36bbfd773a8d44e7231848363d29c"
+  },
+  {
+   "id": "item.wish_cinnabar_ink",
+   "stage": "review",
+   "source": "art/source/item/item.wish_cinnabar_ink.json",
+   "incoming_source_sha256": "10d85596e79e184fd42bcb65dc631dc8f363d746686e4f9e9d7e3eb94b2ec933",
+   "incoming_preview_sha256": "6feae130365f9a550f914ab32d998395693fb00ebb03c12b64c11db8a950cd90"
+  },
+  {
+   "id": "item.wish_osmanthus_honey",
+   "stage": "review",
+   "source": "art/source/item/item.wish_osmanthus_honey.json",
+   "incoming_source_sha256": "d5eb8a9edc5e4572ab4e6d5f9e319b97b23ae722ca6c6de1a0df1c2e3178eb50",
+   "incoming_preview_sha256": "35935f9d7d8d7c1c56768361b026c9255d67627e1fecdd16cb4beef8034f9f6d"
+  },
+  {
+   "id": "item.seal",
+   "stage": "review",
+   "source": "art/source/item/item.seal.json",
+   "incoming_source_sha256": "9921de679b55bdbc9fa7f6da0262203f3de1cef4c0fd21953addf5395d8272f3",
+   "incoming_preview_sha256": "6f4bbb316dca4c764237772be99a0655cab1a63082a916a0e2a2dc050d78a1f6"
+  },
+  {
+   "id": "item.ice_cube",
+   "stage": "review",
+   "source": "art/source/item/item.ice_cube.json",
+   "incoming_source_sha256": "6ce1c2a475feb08f1d8aece1c08a4944cd5fe9808f6960697a842d04d9488abb",
+   "incoming_preview_sha256": "4c2d7d6cb2935103f7942791ed37e782ed1d4eac27fa4c50f1ae3167d402de72"
+  },
+  {
+   "id": "item.wish_dive_mask",
+   "stage": "review",
+   "source": "art/source/item/item.wish_dive_mask.json",
+   "incoming_source_sha256": "8f5923f52b18540ea411ecd79cff308e0f2763fca30721252e474385fcfb4b53",
+   "incoming_preview_sha256": "7b226ca29bfe7bbfc309bf3021145ec77db711350109ffe3a3dea2affeb7c8aa"
+  },
+  {
+   "id": "item.flare",
+   "stage": "review",
+   "source": "art/source/item/item.flare.json",
+   "incoming_source_sha256": "683d4d18cd2b813fe6745f564aa8de01d02c3542b8659bd3a7436546e3ff0901",
+   "incoming_preview_sha256": "0f060d39595ae4bfdf526be85bc209d98f5916115aebcc8ea1feb5389fb635f6"
+  },
+  {
+   "id": "item.wish_name_tag",
+   "stage": "review",
+   "source": "art/source/item/item.wish_name_tag.json",
+   "incoming_source_sha256": "a71243fee4dd22511ebef090da12d34c98da83786c0567bf5ef9e92b8f80ed52",
+   "incoming_preview_sha256": "df4d7967444139826fe5b3657d4d56e0d32fc34e485b271aefc573c83967db2d"
+  },
+  {
+   "id": "item.wish_candied_haws",
+   "stage": "review",
+   "source": "art/source/item/item.wish_candied_haws.json",
+   "incoming_source_sha256": "69462d1773da9a9fcb482e30918cfd320e5967fd5a83ede193fa244cfefaa26d",
+   "incoming_preview_sha256": "b69063b9776bc30f86433511f866f762fa840d3deb38107f17302879259172a5"
+  },
+  {
+   "id": "item.wish_pruning_shears",
+   "stage": "review",
+   "source": "art/source/item/item.wish_pruning_shears.json",
+   "incoming_source_sha256": "db97b3f73f8a8ded24607dcda16d92229c9007e9c17de4187eb785343f28d60e",
+   "incoming_preview_sha256": "914767bf9ae4963d8170efd0c356dd84f6ed9d26556243c8e44e82e629aabd3e"
+  },
+  {
+   "id": "item.seal_diyu",
+   "stage": "review",
+   "source": "art/source/item/item.seal_diyu.json",
+   "incoming_source_sha256": "e681e569d2b7e3ed70d89b08e2e0b865a8a75677611fa1a38a9ce131b6d75795",
+   "incoming_preview_sha256": "1a1899ee90e0582ba334e454f41b69186d5baff66976de6d5a1de106dd1a3e28"
+  },
+  {
+   "id": "item.wish_satba",
+   "stage": "review",
+   "source": "art/source/item/item.wish_satba.json",
+   "incoming_source_sha256": "40c80bd62e1aac6005005296d156f282a60378a1d9ef860ff6b71a749bffff66",
+   "incoming_preview_sha256": "7b3fc534d885bb96bcbb7dfb3dd19cbf833cd62ab87c5a8128eaea0092388a8e"
+  },
+  {
+   "id": "item.hourglass",
+   "stage": "review",
+   "source": "art/source/item/item.hourglass.json",
+   "incoming_source_sha256": "a72d12f54797fead443ff40825e889acbc9ee61056502f57e3299bac794f12bc",
+   "incoming_preview_sha256": "323fd0326bdf4d18437c3bc9c9af931e1803221bb8977ddfeb44cf841d5bf690"
+  },
+  {
+   "id": "item.pocket_watch",
+   "stage": "review",
+   "source": "art/source/item/item.pocket_watch.json",
+   "incoming_source_sha256": "46bfc3fc9fc1804254359428496b34f6661bad0ca7fc1863a924d03973d046d6",
+   "incoming_preview_sha256": "26599a2b06f94f8b2ad6ae724fbb6d507c9f9ba0a4508b6ee8e3a406e92ff7f7"
+  },
+  {
+   "id": "item.transfer_slip",
+   "stage": "review",
+   "source": "art/source/item/item.transfer_slip.json",
+   "incoming_source_sha256": "1bc1e9f87723c39a3cb5a87bd47e530803697d82835e2fec61afae994b68b9df",
+   "incoming_preview_sha256": "4e0d1705910a29d14a865568f8451afa3653b6b24577a732815011f010112c51"
+  },
+  {
+   "id": "item.wish_palm_fan",
+   "stage": "review",
+   "source": "art/source/item/item.wish_palm_fan.json",
+   "incoming_source_sha256": "e2c5809ff1bd983412d0ceaf358929536571b6fb246a0a64acf84dd2af637453",
+   "incoming_preview_sha256": "76f63fe9db35be50c3e6b54fab514a22cff61d7a700cdc7ee487a67feec5940a"
+  },
+  {
+   "id": "item.wish_bird_whistle",
+   "stage": "review",
+   "source": "art/source/item/item.wish_bird_whistle.json",
+   "incoming_source_sha256": "ac9d5bbe978da0a607f75b9815beabf3bcf2c92b197745d9d02e9f21687cdb90",
+   "incoming_preview_sha256": "571526a47709e7eb95e92bce6065339a8a21702e9ebede746f93d35ced87120b"
+  },
+  {
+   "id": "ui.screen.run_event",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_event.json",
+   "incoming_source_sha256": "8d0f8ef1954186f4f512d492c6c9bd883f9b77946574610787f92e02e65aeb5b",
+   "incoming_preview_sha256": "ba24dd4f93492243ed1e74bf9b29ffa0dfc17b75f5b702ad28e6042445f8cd53"
+  },
+  {
+   "id": "ui.screen.story_chapter",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.story_chapter.json",
+   "incoming_source_sha256": "34e55aac8d6d5be4604aa1000136351f2d6d4b5c484d487e7286eab0251d5bbd",
+   "incoming_preview_sha256": "b76f9357a8c22126e66ad04329d7afe506a9d4f3dc729f8f6b9a9a223d323dce"
+  },
+  {
+   "id": "ui.screen.story_letter",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.story_letter.json",
+   "incoming_source_sha256": "5d7e171b01f9961acff16e957b54e67c8a30489a6de3943b192688f6aaee31d6",
+   "incoming_preview_sha256": "15279937dbee7580bc7cd3696fe93c024fd826b4d62ec6fc229ffa57718b4bff"
+  },
+  {
+   "id": "ui.screen.crew_pick",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.crew_pick.json",
+   "incoming_source_sha256": "bc1b8793a32381f94881c8dda996ba40c2422809c1249db3ecc394b69cd23bf8",
+   "incoming_preview_sha256": "d5a2e32e37c7895977100a4c1d250662597051c206e9d7c362d4f485f743da7d"
+  },
+  {
+   "id": "ui.screen.run_wish_card",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_wish_card.json",
+   "incoming_source_sha256": "2461cab7a2fee3fd972d30adc2f626997e5a3820c67c2e54011cd1f7f19dff54",
+   "incoming_preview_sha256": "8bc464050a9f77dfda11ad59a70d7874733392470292bd6ec81df257d9f44065"
+  },
+  {
+   "id": "ui.screen.story_board",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.story_board.json",
+   "incoming_source_sha256": "e238e313a28121e3243a008a6a66f3a5bb318bc783380da178225453b92829dc",
+   "incoming_preview_sha256": "80357e178d45a53036c7f9a65f98ba364396ab99cea007b66a53b0529555c981"
+  },
+  {
+   "id": "ui.screen.lobby_story",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.lobby_story.json",
+   "incoming_source_sha256": "fff3404e6daf85e869d3b204c9e84867245a47315b1c23a5e19af619f7e58813",
+   "incoming_preview_sha256": "0dd1a3ec2e8c710c51746a23fd9a5a7f6c66ac55fcb64993e106645b3352998b"
+  },
+  {
+   "id": "ui.screen.delivery_assist",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.delivery_assist.json",
+   "incoming_source_sha256": "1845cbf59c7585082d0cc09a0aa1bbb998278bf1b49a3b9f09c5b101b6557294",
+   "incoming_preview_sha256": "6831dae01263c759209d1a456e710d12a29374ea17eac34bb7d7867fa71503f9"
+  },
+  {
+   "id": "ui.screen.run_quit",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_quit.json",
+   "incoming_source_sha256": "b6825b2daa4662babfef3de8efe2e4b765c693d1e34c99476ae315590c91dc94",
+   "incoming_preview_sha256": "33f910065bb7bd42c907afaa8f0304c0a1b8bb9ba6282408534a9c6da5a8797f"
+  },
+  {
+   "id": "ui.screen.run_shelf",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_shelf.json",
+   "incoming_source_sha256": "4ffaf100ebdb9b6c060ad462b256c832159c2abf68acc430ecd430eb6f532691",
+   "incoming_preview_sha256": "675a751dd5f5a7d51940b22659d060abfb23551b0f29cb0f12cc38d5e719a916"
+  },
+  {
+   "id": "ui.screen.delivery_practice",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.delivery_practice.json",
+   "incoming_source_sha256": "5b897feacb19032bb27e797a4b0746ed78c0cd1ad6d8c104461aa9a45d4bcbf3",
+   "incoming_preview_sha256": "af1bb96c4a8f91db7f320b93bd4e6aec4eaed6c09fb9220f28e793a5436572ff"
+  },
+  {
+   "id": "ui.screen.story_complete",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.story_complete.json",
+   "incoming_source_sha256": "eaf3b7021a93a3e56278fdfbe18428ce0716a2ec94cebad6695c8858d5f82997",
+   "incoming_preview_sha256": "d3f70a45c8db2734610400a7a541fac3081939c41bd96974d8bb2e07111f25c2"
+  },
+  {
+   "id": "ui.screen.crew_joined",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.crew_joined.json",
+   "incoming_source_sha256": "db168604f70465851211f848d98bf7a88a67bbe74c6004855e5b7de931895fc1",
+   "incoming_preview_sha256": "5a432e495f371bb109f4d792119e4d844dd315f5ef323e6d471c985ea0886b76"
+  },
+  {
+   "id": "ui.screen.run_map",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_map.json",
+   "incoming_source_sha256": "44dd7240f0cf39ed4c34890564f00b72e568f6b877cc87c7a12a3e0b0ee93712",
+   "incoming_preview_sha256": "42a55ad5d15851980df8b41d1f7d0f1dd36e7a29354a98b2aa667392607301ee"
+  },
+  {
+   "id": "ui.screen.run_door",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_door.json",
+   "incoming_source_sha256": "eccdcc1a09cc25f86c6fc57706ed5c9816aed5cf952edc05871753b5c287d45a",
+   "incoming_preview_sha256": "f36686cd7798c0c01674685e4943c8aed58906ff2b217b0ab43bb8eb40abf023"
+  },
+  {
+   "id": "ui.screen.run_door_skull",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_door_skull.json",
+   "incoming_source_sha256": "b5b23f736d9054b9bdf60f6cd8b160aa7b861c2b26d2be836bf38b7657d22be4",
+   "incoming_preview_sha256": "8afd883bcc4345a03a2d0d3267bdb814ea8416421c3cbd7f5b0abd6fedf7a1aa"
+  },
+  {
+   "id": "ui.screen.crew_room",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.crew_room.json",
+   "incoming_source_sha256": "e25a2ca2c04501731f13ef91d6e787f2369b291e0d01551cc2cf78d9a581adc0",
+   "incoming_preview_sha256": "1fbf45df814fcdb73dfb310b71ed7c5d5cb95cbcb3e18a8efb3a162213fec17a"
+  },
+  {
+   "id": "ui.screen.delivery_help",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.delivery_help.json",
+   "incoming_source_sha256": "8a3bb5dcd2e1073cc72606e5d7f1eb3b2da855099464f403f16b3a7076a24983",
+   "incoming_preview_sha256": "e052f8f1483b996b84c6e0029582f2798cf5509b93956112abcb4af65e1d29b5"
+  },
+  {
+   "id": "ui.screen.run_rest",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_rest.json",
+   "incoming_source_sha256": "b5015085b56c37e24d231c744cb4c20023c1d071766d93e1addaa4f2140853b3",
+   "incoming_preview_sha256": "884fb5fe51a9c184a297753f9d3c83feb4f65c1ad1f667e59a7a00bf482ca2b6"
+  },
+  {
+   "id": "ui.screen.run_lucky",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_lucky.json",
+   "incoming_source_sha256": "8313d7ff27e91017389235bc1f02c28360d5a32058dead1a54a7b095bc21abfd",
+   "incoming_preview_sha256": "bf61636bdc9e67418253f7ab08a1e45848557a776a54a534413849882ef2aa4c"
+  },
+  {
+   "id": "ui.screen.run_wish_give",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_wish_give.json",
+   "incoming_source_sha256": "0e2c67c831e2f28bf2515ec96fabdbe3529118dd8922eb7a4d83de0adb441a60",
+   "incoming_preview_sha256": "70a4c5bd8a2fcd42eb8f7222120858c07a160f6e89e471ddceda2fb7004bc4ca"
+  },
+  {
+   "id": "ui.screen.run_result",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.run_result.json",
+   "incoming_source_sha256": "618b964c77e031db5cf7b88679f4f8091aa8a2bca98b7c17de8b04922eed2ced",
+   "incoming_preview_sha256": "52cf29b879a87312367768e07106c37097de9515ab58c7b58d7e792146306db5"
+  },
+  {
+   "id": "ui.screen.story_order",
+   "stage": "review",
+   "source": "art/source/screen/ui.screen.story_order.json",
+   "incoming_source_sha256": "3ba5b323b3b4dd8c4adb4834206c1bf9f4df748f9895eeca775ab70ce6ffcf4b",
+   "incoming_preview_sha256": "7e9efdf11b2a06e537e937548b2000fd3f9fa9f601d1acdf78d49c15299d342c"
+  },
+  {
+   "id": "avatar.hero_fox_mask",
+   "stage": "review",
+   "source": "art/source/avatar/avatar.hero_fox_mask.json",
+   "incoming_source_sha256": "0d74d2c8d75b8d20392ae30a1d50fb378ea250d422e5e6903ee4f367d993bed4",
+   "incoming_preview_sha256": "e0fcbae206ebc5d985075f5d039da1fc2d346fddead853e902c3dabd67837696"
+  },
+  {
+   "id": "avatar.hero_little_haenyeo",
+   "stage": "review",
+   "source": "art/source/avatar/avatar.hero_little_haenyeo.json",
+   "incoming_source_sha256": "0c7223b187734274c1ee02b0b0c8a62950d756d56db47ab6812f1f04c091705d",
+   "incoming_preview_sha256": "4d6be2c7e49feb1b06c2d8b7f584fe18c015b6b8bdc83519093bfe71498d7282"
+  },
+  {
+   "id": "avatar.hero_lamp_flower",
+   "stage": "review",
+   "source": "art/source/avatar/avatar.hero_lamp_flower.json",
+   "incoming_source_sha256": "41580e9954abc0fc1df6486219666acfb93cb945e9a65398bbad5a6d972ee939",
+   "incoming_preview_sha256": "d77574173b0c22fcf9e825ad43aadf67c3d75c44c7244de186b48b10ad984700"
+  },
+  {
+   "id": "avatar.hero_bell_doll",
+   "stage": "review",
+   "source": "art/source/avatar/avatar.hero_bell_doll.json",
+   "incoming_source_sha256": "1efb4e752b4f5cb1c68770dfbf78c87dacb3c4f201abe24f32cef1afee4fbf0e",
+   "incoming_preview_sha256": "177be616dee2e01b4418ffd81a21be0c495b57a91be5f6df77e9cc58f9470afb"
+  },
+  {
+   "id": "scene.hub_post",
+   "stage": "review",
+   "source": "art/source/scene/scene.hub_post.json",
+   "incoming_source_sha256": "785c19e12d12e803406e8cdf26f28cb6597b264975280e1a13aedc58a1163627",
+   "incoming_preview_sha256": "4b7067196dfee13b06e0c34e5020c954e5de374a296e1d5c02b80307d586f612"
+  },
+  {
+   "id": "scene.hub_crew",
+   "stage": "review",
+   "source": "art/source/scene/scene.hub_crew.json",
+   "incoming_source_sha256": "b634bc08ea63b0accdaeaadf282322641a26f7aabd4c70df4ea012e761ad3b4a",
+   "incoming_preview_sha256": "96f49cde2cc6c742917277b3b7aa407ffd6e5e96a63d0e2c4138163ccae49323"
+  },
+  {
+   "id": "scene.hub_gallery",
+   "stage": "review",
+   "source": "art/source/scene/scene.hub_gallery.json",
+   "incoming_source_sha256": "8536f925a092f4a067e10e6e6ee2f7f3dec19bba8ab40135c4539050fb986c65",
+   "incoming_preview_sha256": "c9d3ee9baa76b60eea7ebe0800f909bc33f4ecc781a41c132192e275a571656b"
+  }
+ ]
+}

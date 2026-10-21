@@ -1,0 +1,348 @@
+{
+  "format": "portitor.art.source-map/1",
+  "creation_stage": "pre-publication extraction",
+  "files": [
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/api/native_coverage.json",
+      "source_sha256": "9e1bbeccc1c053d267fa9f379445771c7d62a3a4739dd225f246c23f72b07ed1",
+      "target_path": "godot/native-coverage.json",
+      "target_sha256": "9e1bbeccc1c053d267fa9f379445771c7d62a3a4739dd225f246c23f72b07ed1",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/api/provider_contract.gd",
+      "source_sha256": "5cf3a1cc0930eeeb0eb79105c4a17a5fb9989cc7752d0829aa0c546a34da65af",
+      "target_path": "godot/addons/portitor_art/api/provider_contract.gd",
+      "target_sha256": "5cf3a1cc0930eeeb0eb79105c4a17a5fb9989cc7752d0829aa0c546a34da65af",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/api/ui_model.gd",
+      "source_sha256": "7e8d9770c51cf9ce8530c951cae8d6b6bfb7b8d8a85a8e5a9473272cfdd334d2",
+      "target_path": "godot/addons/portitor_art/api/ui_model.gd",
+      "target_sha256": "7e8d9770c51cf9ce8530c951cae8d6b6bfb7b8d8a85a8e5a9473272cfdd334d2",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/api/visual_cells.gd",
+      "source_sha256": "571a632f4807f229656121e92253b155f88a27c6e698dcceb43cf2bb635e1d99",
+      "target_path": "godot/addons/portitor_art/api/visual_cells.gd",
+      "target_sha256": "571a632f4807f229656121e92253b155f88a27c6e698dcceb43cf2bb635e1d99",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/api/world_snapshot.gd",
+      "source_sha256": "dc92721bd4d05887a93c018f8cba8c6464a2356fb6791cf87bcf9c68cb501e12",
+      "target_path": "godot/addons/portitor_art/api/world_snapshot.gd",
+      "target_sha256": "dc92721bd4d05887a93c018f8cba8c6464a2356fb6791cf87bcf9c68cb501e12",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/ambient/ambient.gd",
+      "source_sha256": "3644031d4b168f38a8e3e086290e8a25b4e0fc860166ac83fecd308fda2fb154",
+      "target_path": "godot/addons/portitor_art/runtime/render/ambient/ambient.gd",
+      "target_sha256": "3644031d4b168f38a8e3e086290e8a25b4e0fc860166ac83fecd308fda2fb154",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/env/environment.gd",
+      "source_sha256": "900fd1b8aeee271cc1340abf9a697ec41d75fb70f10effc0a5ad95a64f95fc57",
+      "target_path": "godot/addons/portitor_art/runtime/render/env/environment.gd",
+      "target_sha256": "900fd1b8aeee271cc1340abf9a697ec41d75fb70f10effc0a5ad95a64f95fc57",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/matter.gd",
+      "source_sha256": "b16350c9bd3778096177a993affb1f2ea877c9750b3a7036c8068f44ddc22dd6",
+      "target_path": "godot/addons/portitor_art/runtime/render/matter.gd",
+      "target_sha256": "b16350c9bd3778096177a993affb1f2ea877c9750b3a7036c8068f44ddc22dd6",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/palette_raster.gd",
+      "source_sha256": "b0d957edb9a6938baf4269deee3b7f6214144a4c8b778e6ebc023ac392782078",
+      "target_path": "godot/addons/portitor_art/runtime/render/palette_raster.gd",
+      "target_sha256": "b0d957edb9a6938baf4269deee3b7f6214144a4c8b778e6ebc023ac392782078",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/sprites/palette.gdshader",
+      "source_sha256": "ffbb5b47ddcad08aca33d766355101f73dfd28bc280afeb9d4cc3deae6e84267",
+      "target_path": "godot/addons/portitor_art/runtime/render/sprites/palette.gdshader",
+      "target_sha256": "ffbb5b47ddcad08aca33d766355101f73dfd28bc280afeb9d4cc3deae6e84267",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/sprites/sprite_assets.gd",
+      "source_sha256": "8418fb430ad2d439e42c5f9ce3864da71a1b408d8eb07ab7a3547a82afdace7a",
+      "target_path": "godot/addons/portitor_art/runtime/render/sprites/sprite_assets.gd",
+      "target_sha256": "8418fb430ad2d439e42c5f9ce3864da71a1b408d8eb07ab7a3547a82afdace7a",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/terrain/terrain.gdshader",
+      "source_sha256": "d8cf0e26931416fce17326dc7385fbb5d282d0038417ec36c1467702f996cba0",
+      "target_path": "godot/addons/portitor_art/runtime/render/terrain/terrain.gdshader",
+      "target_sha256": "d8cf0e26931416fce17326dc7385fbb5d282d0038417ec36c1467702f996cba0",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/terrain/terrain_material.gd",
+      "source_sha256": "86849958e55f773f510d114112fe65df2b5c1f551296f9ef5b5f82148680657e",
+      "target_path": "godot/addons/portitor_art/runtime/render/terrain/terrain_material.gd",
+      "target_sha256": "73a3e419023c6970c84b6b508bd3762ffd53da226a5cecdb03bba6a41b1c30bc",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/themes/background.gd",
+      "source_sha256": "408403731abba0b19e7bc311df32b4943cfb4bcadb74d04c7638e0fdace6d424",
+      "target_path": "godot/addons/portitor_art/runtime/render/themes/background.gd",
+      "target_sha256": "408403731abba0b19e7bc311df32b4943cfb4bcadb74d04c7638e0fdace6d424",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/themes/background_diyu.gd",
+      "source_sha256": "4b7546723e2265a9951094ea29c60f30b2b9df37a70bb0055a070c2a8425b1fd",
+      "target_path": "godot/addons/portitor_art/runtime/render/themes/background_diyu.gd",
+      "target_sha256": "4b7546723e2265a9951094ea29c60f30b2b9df37a70bb0055a070c2a8425b1fd",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/render/world_view.gd",
+      "source_sha256": "0b6020555a6de063875a7da1e1be1f85832655cce0b6b6516c02f60f5dd9e1f5",
+      "target_path": "godot/addons/portitor_art/runtime/render/world_view.gd",
+      "target_sha256": "2eb157fb1245b70dca0428e0dbf54e19b71cc841863d0e34c135a18a4f47c08f",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-10px/OFL.txt",
+      "source_sha256": "f9e939db658ff191ceb664e83cd7f20140f7bc99f82c175859dc62e4f2edc027",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-10px/OFL.txt",
+      "target_sha256": "f9e939db658ff191ceb664e83cd7f20140f7bc99f82c175859dc62e4f2edc027",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-10px/README.md",
+      "source_sha256": "b469655e9d19cccbd6d3e3fc2e68695793eda1a4138f61700c618175226ac178",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-10px/README.md",
+      "target_sha256": "b469655e9d19cccbd6d3e3fc2e68695793eda1a4138f61700c618175226ac178",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2",
+      "source_sha256": "20f58ce5f54e468bc6aa86944aa2445b1e19264193496e9cd57f913cdb279e72",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-10px/fusion-pixel-10px-proportional-sc.woff2",
+      "target_sha256": "20f58ce5f54e468bc6aa86944aa2445b1e19264193496e9cd57f913cdb279e72",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt",
+      "source_sha256": "3ab41567e68e3988ba1ef16dd2644eca95ca5648ea12e7d46e6287fc0bbe5aee",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/LICENSES/ark-pixel/OFL.txt",
+      "target_sha256": "3ab41567e68e3988ba1ef16dd2644eca95ca5648ea12e7d46e6287fc0bbe5aee",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/LICENSES/cubic-11/OFL.txt",
+      "source_sha256": "2b6e5938e5cffa0b9e183bd05f8c363e174e7ebed1a0556e2855fd1707fa2188",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/LICENSES/cubic-11/OFL.txt",
+      "target_sha256": "2b6e5938e5cffa0b9e183bd05f8c363e174e7ebed1a0556e2855fd1707fa2188",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/LICENSES/galmuri/LICENSE.txt",
+      "source_sha256": "86a3ee9495f942f0243f18c103da9faca27adb88142613edb8bb852e56c892c1",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/LICENSES/galmuri/LICENSE.txt",
+      "target_sha256": "86a3ee9495f942f0243f18c103da9faca27adb88142613edb8bb852e56c892c1",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/OFL.txt",
+      "source_sha256": "bc518cf64b8032c07690f33cc270c35c179255a6ac8efa7c165ebae7e8f76a63",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/OFL.txt",
+      "target_sha256": "bc518cf64b8032c07690f33cc270c35c179255a6ac8efa7c165ebae7e8f76a63",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/README.md",
+      "source_sha256": "2e5863f7e394de7052c80424cbdebacdaa2b12ff8e94bda41124d66d1e2e356d",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/README.md",
+      "target_sha256": "2e5863f7e394de7052c80424cbdebacdaa2b12ff8e94bda41124d66d1e2e356d",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/resources/fonts/fusion-pixel-12px/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+      "source_sha256": "0ebd99e6f1e9b650a793a3f759c1c3dfa99f0c5b6502e78569b48ddb43767e40",
+      "target_path": "godot/addons/portitor_art/resources/fonts/fusion-pixel-12px/fusion-pixel-12px-proportional-zh_hans.otf.woff2",
+      "target_sha256": "0ebd99e6f1e9b650a793a3f759c1c3dfa99f0c5b6502e78569b48ddb43767e40",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/T5-SOURCES.md",
+      "source_sha256": "c74d999e862c2e768124d5c6c96c873a7c778270083fc45a11903e4b52aece06",
+      "target_path": "godot/addons/portitor_art/licenses/T5-SOURCES.md",
+      "target_sha256": "c74d999e862c2e768124d5c6c96c873a7c778270083fc45a11903e4b52aece06",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/bubble.gd",
+      "source_sha256": "ff64a7a302e078e9ac4914b796497fb24d8403ab8231d470625851ccb71e5912",
+      "target_path": "godot/addons/portitor_art/runtime/ui/bubble.gd",
+      "target_sha256": "974d9caa5f2d6eb6288d33407df2b86a10f7e7616976040fd24ce48751c30324",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/font_mask.gd",
+      "source_sha256": "9dc3fe35162b2b87742157c77e7299f5c009dacfd600e44ea37c1d5a6cb6a184",
+      "target_path": "godot/addons/portitor_art/runtime/ui/font_mask.gd",
+      "target_sha256": "9dc3fe35162b2b87742157c77e7299f5c009dacfd600e44ea37c1d5a6cb6a184",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/font_style.gd",
+      "source_sha256": "6e4d4932a0c58a9c68e0ed8f89d5cfb234bf94797a0031e53e3ab4d6596f3839",
+      "target_path": "godot/addons/portitor_art/runtime/ui/font_style.gd",
+      "target_sha256": "857cc9036240837176eb716f3acbb263feb7a9672d19fed28413ffa0304397ff",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/illustration.gd",
+      "source_sha256": "f94c8d014c738afc28b8ce9021882b7064bcbba1fd67f9f2c7f66cec42187cb2",
+      "target_path": "godot/addons/portitor_art/runtime/ui/illustration.gd",
+      "target_sha256": "bffd12e0d498a54cb82e058dd526d8e8ba9a06e46f8603f6d05ca40b0b6f0813",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/illustration_style.gd",
+      "source_sha256": "075f293475ca51b2279a967ed81920345146b53a84b5872a942db83ec0f69717",
+      "target_path": "godot/addons/portitor_art/runtime/ui/illustration_style.gd",
+      "target_sha256": "112086200e7ed065a24eed028e919be4c024f6e6033bceec50d9779007497a16",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/keycaps.gd",
+      "source_sha256": "e15975971d144f1c5063d8277fabb87ad3dbe55d73567d0a173a411035dda178",
+      "target_path": "godot/addons/portitor_art/runtime/ui/keycaps.gd",
+      "target_sha256": "dbdef49ae9fbfbea921ad75094932681ef7761bdae4a9bfa5a92e1c4276319fc",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/lobby_skin.gd",
+      "source_sha256": "7fe955e59740b6d76d5a130e42432b1ad1b0521c4a26fe350ce09dc5cde44376",
+      "target_path": "godot/addons/portitor_art/runtime/ui/lobby_skin.gd",
+      "target_sha256": "7fe955e59740b6d76d5a130e42432b1ad1b0521c4a26fe350ce09dc5cde44376",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/palette_dim.gdshader",
+      "source_sha256": "579a730528e33e36e1772c5fb2a7eb1e5db30127c4e1a3791f4d8db634f79a9e",
+      "target_path": "godot/addons/portitor_art/runtime/ui/palette_dim.gdshader",
+      "target_sha256": "579a730528e33e36e1772c5fb2a7eb1e5db30127c4e1a3791f4d8db634f79a9e",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/views/T6-SOURCES.md",
+      "source_sha256": "aa1bac72c62c5d1a3ec8368357c79d13853b7a0c81eeb7c829c554eefad3d62e",
+      "target_path": "godot/addons/portitor_art/licenses/T6-SOURCES.md",
+      "target_sha256": "aa1bac72c62c5d1a3ec8368357c79d13853b7a0c81eeb7c829c554eefad3d62e",
+      "transformation": "byte_copy"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/views/tutorial_feedback.gd",
+      "source_sha256": "dd7382b3d9f3fb59fadf7df7a017b2ccf431bfae5c03d6a96e6e7f71c65534b6",
+      "target_path": "godot/addons/portitor_art/runtime/ui/views/tutorial_feedback.gd",
+      "target_sha256": "4519e234ea81a0625e3350258d7036d2c26d98179ad19db3e9df52589de2298d",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/views/ui_view.gd",
+      "source_sha256": "075336839e58af6cddae965a267785ca7dd1feb9cfc1a590bb695ec9a9478c5d",
+      "target_path": "godot/addons/portitor_art/runtime/ui/views/ui_view.gd",
+      "target_sha256": "0dec3946491ef46c75a9f3d8ab511382b820ba259df202a9f605610e29b0cc61",
+      "transformation": "relative_api_path_relocation"
+    },
+    {
+      "source_repository": "private game extraction",
+      "source_commit": "8f23a8fddbfabbda58df2248c43e2458d5e46161",
+      "source_path": "game/presentation/art_runtime/ui/widgets.gd",
+      "source_sha256": "848f0fdfbdace53073e1a4aa2af0167fad010e09ef650b9d717f43682a64051e",
+      "target_path": "godot/addons/portitor_art/runtime/ui/widgets.gd",
+      "target_sha256": "40492b4a8894aafaa174aa97964c07bdd27a701d1f36a2f7460f8a173194fb9d",
+      "transformation": "relative_api_path_relocation"
+    }
+  ]
+}

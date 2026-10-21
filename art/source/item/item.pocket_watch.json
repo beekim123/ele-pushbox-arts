@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.pocket_watch",
+ "name": "时停怀表",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "......zzzz......",
+   "....vzzkkz....t.",
+   "...z..zlbz..u...",
+   "..v....zz.......",
+   ".z....zzzz.....u",
+   ".v..zzlllkzz....",
+   "z..zllttttkkz...",
+   "...zlttztttkz...",
+   "..zltttztttkbz..",
+   "..zltttzzzttbz..",
+   "..zlttttttuubz..",
+   "..zkttttttuubz..",
+   "...zkttuuuubz...",
+   "...zkkuuuubbz..u",
+   "t...zzbbbbzz....",
+   "......zzzz....t."
+  ]
+ ],
+ "usage": "道具图标：时停怀表——金表壳、链子、白表盘，指针停住，外圈几个淡色光点表示\"停了\"（不用整片青色，免得像冰块）。驿站货架、背包格里用。",
+ "notes": "ART-05a 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "30fd13758eff91f06390b539c95f172633c4cf4bde8008952f9d27c71785ce38"
+}

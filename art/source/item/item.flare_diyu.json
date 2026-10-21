@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.flare_diyu",
+ "name": "引魂灯",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "zzzzzzzzzzzzzzz.",
+   "zFFddddddddeefz.",
+   "zzzzzzzfzzzzzzz.",
+   ".......z........",
+   ".....zzzzz......",
+   "....zffffez.....",
+   "...ztttuuuuz....",
+   "...zttklkuvz....",
+   "...ztkllkuvz....",
+   "...zttkkuuvz....",
+   "....zffffez.....",
+   ".....zzhzz......",
+   ".......h........",
+   ".......i........",
+   "................"
+  ]
+ ],
+ "usage": "道具图标：引魂灯（flare 在地府的样子）——横提杆下吊一盏手提小白纸灯笼，里面暖光；看得出是拿在手里用的，和地上插的 deco.diyu_lantern、门牌灯笼分得开。驿站货架、背包格里用。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3d80fa364792d839c3c8344139f270b492af142a4d00081dbd6d24b491d4b058"
+}

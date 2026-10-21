@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.hero_fox_mask",
+ "name": "小狐头像",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "........................",
+   ".........z......zz......",
+   "........ztzzzz.zttz.....",
+   "......zzzitzyyztitz.....",
+   ".....zyyztitzzztiitz....",
+   "....zyyyyzttttttzzz.....",
+   "...zyyyyzttttttttzz.....",
+   "...zyyyzttttttttttz.....",
+   "zzzyyyztttiitttiittz....",
+   "FFzyyyzttttzztttzztz....",
+   "dczyyyzttttttiittttz....",
+   "ddzyyyittttttttttttz....",
+   "FFzyyiztttttttttttttzz..",
+   "ddzyyhzuutttttitttttzz..",
+   "dcdzyyyzuutttttitttttz..",
+   "dddzyyyyzuuttttttiitz...",
+   "FFFFzyyyyzutttttzzzz....",
+   "dddddzyyyyzzzzzzz.......",
+   "dcdddFzzzzzzzzzzzzzz....",
+   "dddddzrrqqqqpqqqqqppz...",
+   "FFFFFzrrrqqqpqqqqqppz...",
+   "dddddzrrrqqqpqqqqqppz...",
+   "dcdddzrrqqqqpqqqqqppz...",
+   "dddddzrrqqqqpqqqqqppz..."
+  ]
+ ],
+ "usage": "伙计「小狐」的头像（24 × 24）：伙计房、派人界面、滚轮格子里用。白底红纹的庙会狐面，左边露出竹书箱。",
+ "notes": "ART-06b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "9f8fe7a7577f2c61e81d4cb49aec8894ed39298cb52892e645ed651689fd29fb"
+}

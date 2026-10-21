@@ -1,0 +1,91 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.hero_lantern_tag",
+ "name": "亮暗灯牌",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  8,
+  10
+ ],
+ "anchor": [
+  4,
+  10
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "lit": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  "dim": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...zz...",
+   "..zkkz..",
+   "..zllz..",
+   "...zz...",
+   ".zzffzz.",
+   "zddddddz",
+   "zdcddedz",
+   "zdeddedz",
+   "zeeeeefz",
+   ".zzzzzz."
+  ],
+  [
+   "...zz...",
+   "..zklz..",
+   "..zlkz..",
+   "...zz...",
+   ".zzffzz.",
+   "zddddddz",
+   "zdcddedz",
+   "zdeddedz",
+   "zeeeeefz",
+   ".zzzzzz."
+  ],
+  [
+   "...zz...",
+   "..zkkz..",
+   "..zlkz..",
+   "...zz...",
+   ".zzffzz.",
+   "zddddddz",
+   "zdcddedz",
+   "zdeddedz",
+   "zeeeeefz",
+   ".zzzzzz."
+  ],
+  [
+   "...zz...",
+   "..zggz..",
+   "..zffz..",
+   "...zz...",
+   ".zzffzz.",
+   "zFFFFFFz",
+   "zFdFFeFz",
+   "zFeFFeFz",
+   "zeeeeefz",
+   ".zzzzzz."
+  ]
+ ],
+ "usage": "伙计灯牌定稿（ART-06a 概念 A：木牌 + 顶上一盏小灯）：挂在伙计房门口，lit = 伙计在家（小灯一明一暗地轻轻跳，4 fps），dim = 伙计出门了（灯灭、木牌暗一档）。派人界面里也用它表示谁在家。锚点在木牌底边中点，挂钉在第 0 行中间。",
+ "notes": "ART-06b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。 灯光只是装饰：亮暗只表示伙计在不在家，不照亮格子。",
+ "content_hash": "91e30fbd0ba6a06ad8158fd57b10c0056fb140dc126b2c911f94a91c83548045"
+}

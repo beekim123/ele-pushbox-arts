@@ -1,0 +1,67 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.paper_house_built",
+ "name": "搭好的纸扎小楼",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  32,
+  32
+ ],
+ "anchor": [
+  16,
+  32
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................................",
+   ".................zzzz...........",
+   "...............zzqrrqzz.........",
+   ".............zzqqqrrqqqzz.......",
+   ".....zz....zzqqqqqrrqqqqqzz....z",
+   ".....zrz..zqqqqqqqrrqqqqqqqz..zr",
+   ".....zzzzzzzzzzzzzzzzzzzzzzzzzzz",
+   "..........zilzzzzzzzzzzliz......",
+   "..........zilzkzkzkzkzzliz......",
+   "..........zilzkzkzkzkzzliz......",
+   "..........zilzkzkzkzkzzliz......",
+   "..........zilzzzzzzzzzzliz......",
+   "......zzzzzzzzzzzzzzzzzzzzzzzz..",
+   "...zz.zqrrrrrrrrrrrrrrrrrrrrqz.z",
+   "...zrzzqqqqqqqqqqqqqqqqqqqqqqzzr",
+   "....zzzzzzzzzzzzzzzzzzzzzzzzzz.z",
+   "......zilllllllllllllllllliz....",
+   "......zilzzzzzllllllzzzzzliz....",
+   "......zilzkzkzllllllzkzkzliz....",
+   "......zilzzzzAzzzzzzzzzzzliz....",
+   "......zilzkzzzzhhhhzzkzkzliz....",
+   "......zilzkzzAzhhhhzzkzkzliz....",
+   "......zilzzzzzzhhhhzzzzzzliz....",
+   "......zillllzAzhzzhzlllllliz....",
+   "......zilllllzzhhhkzlllllliz....",
+   "......zillllllzhhhhzlllllliz....",
+   ".....zillllllzhhhhzlllllliz.....",
+   "...zzzzzzzzzzzzzzzzzzzzzzzzzz...",
+   "..zccccccccccccccccccccccccccz..",
+   "..zddddddddddddddddddddddddddz..",
+   "..zzzzzzzzzzzzzzzzzzzzzzzzzzzz..",
+   "................................"
+  ]
+ ],
+ "usage": "地府第 3 单搭好的纸扎小楼（剧情第二章，摆在阿婆院子里）：两层，蓝瓦、红柱、黄纸墙（配色接 cargo.paper_house），整栋往右歪了一点；门框左边贴一张红纸条（判官批的“准”，像素里只示意笔画）。32×32，贴底，锚点底边中点。",
+ "notes": "ART-06c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "6ab28f7e8547862544f9ff5cd1b2144c61f01865959552b62f685858b33d75d9"
+}

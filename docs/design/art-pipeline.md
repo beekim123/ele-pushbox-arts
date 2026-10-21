@@ -2,6 +2,8 @@
 
 本文规定美术从制作到进入 Godot 的唯一路径。规则由 `tools/art.mjs` 执行，并由 `tests/art-pipeline.test.mjs`、`tests/workbench.e2e.cjs` 检查。
 
+原生 Godot 包的制作与独立宿主验证另见 `godot/README.md`。候选技术验证和下文的用户素材确认分别记录；两者都不能替代最终发行文件的许可/哈希确认。
+
 ## 1 数据位置
 
 | 路径 | 内容 | 谁写 |

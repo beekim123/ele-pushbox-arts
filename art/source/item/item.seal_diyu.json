@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.seal_diyu",
+ "name": "黄符",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....zzzzzz.....",
+   ".....zlkklz.....",
+   ".....zlAAlz.....",
+   ".....zlAAkz.....",
+   ".....zlllkz.....",
+   ".....zliikz.....",
+   ".....zlkilz.....",
+   ".....zliikz.....",
+   ".....zlkikz.....",
+   ".....zlikkz.....",
+   ".....zliilz.....",
+   ".....zlkikz.....",
+   ".....zlikkz.....",
+   ".....zlkkkz.....",
+   ".....zjjjjz.....",
+   ".....zzzzzz....."
+  ]
+ ],
+ "usage": "道具图标：黄符（seal 在地府的样子）——竖长黄纸符，红色乱笔（不写真字），顶上一点朱印；和横着的改签符票根一眼分得开。驿站货架、背包格里用；按地图选图由 UI-12b 做。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "da17ed9f159fb4109cd401b6082dfccefabf7cde51d36c17f6a04e96e68bb748"
+}

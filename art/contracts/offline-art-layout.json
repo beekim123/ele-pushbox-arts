@@ -1,0 +1,2530 @@
+{
+ "format": "portitor.offline-art-layout/1",
+ "job": "OFFLINE-ART-20261020",
+ "approval": "review-required：本文件和所列素材都是待用户确认的候选；确认前不得进游戏，样张数值等玩法对齐。",
+ "units": "像素，整数；坐标相对各资产 / 画面左上角；游戏逻辑画面 320×180。",
+ "door_signs": {
+  "assets": {
+   "diyu": "obj.door_lantern_diyu",
+   "dungeon": "obj.door_sign_dungeon",
+   "jeju": "obj.door_sign_jeju"
+  },
+  "size": [
+   16,
+   32
+  ],
+  "anchor": [
+   8,
+   32
+  ],
+  "anchor_note": "锚点底边中心 = 房门开口顶边中点，门牌挂在房门上方；不改房门碰撞。",
+  "slots": {
+   "room": {
+    "x": 4,
+    "y": 7,
+    "w": 8,
+    "h": 8,
+    "icon_sheet": "ui.run_icons",
+    "icons": [
+     "blockade",
+     "develop",
+     "event"
+    ]
+   },
+   "reward": {
+    "x": 4,
+    "y": 22,
+    "w": 8,
+    "h": 8,
+    "icon_sheet": "ui.run_icons",
+    "icons": [
+     "coins",
+     "item",
+     "buff",
+     "snack",
+     "stamp",
+     "wish"
+    ],
+    "note": "wish 用 item.<心愿物> 缩到 8×8；收件人小像 12×12 画在木牌外侧（出口在左时 x+12，否则 x-8，y=21）。"
+   },
+   "ring": {
+    "x": 3,
+    "y": 21,
+    "w": 10,
+    "h": 10,
+    "note": "奖励框圈由界面画：stamp 用调色板 r，其余用 k（PB.uiRun ringOf）。"
+   },
+   "skull": {
+    "x": 9,
+    "y": 2,
+    "w": 8,
+    "h": 8,
+    "note": "ui.run_icons skull 加 z 描边叠在房型图标右上角，可超出门牌 1px。"
+   }
+  },
+  "plate_rows": {
+   "rope": 19,
+   "plate": [
+    20,
+    31
+   ],
+   "note": "玩家走近（near，3 格内）时去掉 20–31 行小木牌，改画大木牌：奖励大图 16×16 + 数量 + 收件人小像。"
+  },
+  "slot_rule": "idle、lit 每帧空位位置相同；reroll 播放中不贴图标，末帧回到 idle 第 0 帧。",
+  "animations": {
+   "diyu": {
+    "idle": {
+     "frames": 4,
+     "fps": 4,
+     "loop": true
+    },
+    "lit": {
+     "frames": 2,
+     "fps": 4,
+     "loop": true
+    },
+    "reroll": {
+     "frames": 5,
+     "fps": 8,
+     "loop": false
+    }
+   },
+   "dungeon": {
+    "idle": {
+     "frames": 4,
+     "fps": 4,
+     "loop": true
+    },
+    "lit": {
+     "frames": 2,
+     "fps": 4,
+     "loop": true
+    },
+    "reroll": {
+     "frames": 5,
+     "fps": 8,
+     "loop": false
+    }
+   },
+   "jeju": {
+    "idle": {
+     "frames": 4,
+     "fps": 4,
+     "loop": true
+    },
+    "lit": {
+     "frames": 2,
+     "fps": 4,
+     "loop": true
+    },
+    "reroll": {
+     "frames": 5,
+     "fps": 8,
+     "loop": false
+    }
+   }
+  },
+  "code": "PB.uiRun.SIGN / PB.uiRun.SPOT（workbench/js/core/ui-screens-door.js doorSign）"
+ },
+ "characters": {
+  "body_anchor": [
+   8,
+   32
+  ],
+  "body_anchor_note": "16×32 帧的底边中心 = 脚底中点，对齐地面格顶边；人物仍是 16×16 比例，画在第 16–31 行，顶部留给举货。swim 第 16 行是水面线（= 水格顶边），水下部分不画。",
+  "facing": "源帧一律面朝右。",
+  "mirror": "朝左时整帧水平镜像：像素列 x → 15−x；锚点不变 [8,32]；持物点 x → 16−x、y 不变（货物图标宽度为偶数，按底边中点对齐，翻转后仍居中）。货物图标本身不翻转。",
+  "hold_points_note": "hold_points[动作][帧] = 该帧货物图标的底边中点（相对 16×32 帧左上角）。只有 carry_small / carry_large 带货。",
+  "assets": {
+   "char.portitor_delivery": {
+    "base": "char.portitor",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      1,
+      16,
+      15,
+      16
+     ],
+     "carry_large": [
+      1,
+      16,
+      14,
+      16
+     ],
+     "hurt": [
+      0,
+      16,
+      16,
+      16
+     ],
+     "down": [
+      1,
+      14,
+      15,
+      18
+     ],
+     "slide": [
+      0,
+      16,
+      16,
+      16
+     ],
+     "swim": [
+      1,
+      6,
+      15,
+      12
+     ],
+     "sit": [
+      1,
+      19,
+      15,
+      13
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       25
+      ],
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       25
+      ]
+     ],
+     "carry_large": [
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ],
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ]
+     ]
+    }
+   },
+   "char.hero_old_miner_delivery": {
+    "base": "char.hero_old_miner",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      1,
+      16,
+      14,
+      16
+     ],
+     "carry_large": [
+      1,
+      16,
+      14,
+      16
+     ],
+     "hurt": [
+      0,
+      17,
+      15,
+      15
+     ],
+     "down": [
+      1,
+      14,
+      15,
+      18
+     ],
+     "slide": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "swim": [
+      1,
+      8,
+      15,
+      10
+     ],
+     "sit": [
+      1,
+      20,
+      15,
+      12
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       13,
+       25
+      ],
+      [
+       13,
+       24
+      ],
+      [
+       13,
+       25
+      ],
+      [
+       13,
+       24
+      ]
+     ],
+     "carry_large": [
+      [
+       9,
+       16
+      ],
+      [
+       9,
+       15
+      ],
+      [
+       9,
+       16
+      ],
+      [
+       9,
+       15
+      ]
+     ]
+    }
+   },
+   "char.hero_bell_doll_delivery": {
+    "base": "char.hero_bell_doll",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      0,
+      16,
+      16,
+      16
+     ],
+     "carry_large": [
+      0,
+      16,
+      16,
+      16
+     ],
+     "hurt": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "down": [
+      1,
+      12,
+      15,
+      20
+     ],
+     "slide": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "swim": [
+      0,
+      6,
+      16,
+      12
+     ],
+     "sit": [
+      0,
+      20,
+      16,
+      12
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       14,
+       27
+      ],
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       27
+      ],
+      [
+       14,
+       26
+      ]
+     ],
+     "carry_large": [
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ],
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ]
+     ]
+    }
+   },
+   "char.hero_fox_mask_delivery": {
+    "base": "char.hero_fox_mask",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      1,
+      16,
+      15,
+      16
+     ],
+     "carry_large": [
+      1,
+      16,
+      15,
+      16
+     ],
+     "hurt": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "down": [
+      1,
+      13,
+      15,
+      19
+     ],
+     "slide": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "swim": [
+      1,
+      7,
+      15,
+      11
+     ],
+     "sit": [
+      1,
+      20,
+      15,
+      12
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       25
+      ],
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       25
+      ]
+     ],
+     "carry_large": [
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ],
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ]
+     ]
+    }
+   },
+   "char.hero_lamp_flower_delivery": {
+    "base": "char.hero_lamp_flower",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      1,
+      16,
+      15,
+      16
+     ],
+     "carry_large": [
+      1,
+      16,
+      14,
+      16
+     ],
+     "hurt": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "down": [
+      1,
+      15,
+      15,
+      17
+     ],
+     "slide": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "swim": [
+      1,
+      6,
+      15,
+      12
+     ],
+     "sit": [
+      1,
+      20,
+      15,
+      12
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       14,
+       27
+      ],
+      [
+       14,
+       26
+      ],
+      [
+       14,
+       27
+      ],
+      [
+       14,
+       26
+      ]
+     ],
+     "carry_large": [
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ],
+      [
+       10,
+       17
+      ],
+      [
+       10,
+       16
+      ]
+     ]
+    }
+   },
+   "char.hero_little_haenyeo_delivery": {
+    "base": "char.hero_little_haenyeo",
+    "size": [
+     16,
+     32
+    ],
+    "anchor": [
+     8,
+     32
+    ],
+    "animations": {
+     "carry_small": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "carry_large": {
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+     },
+     "hurt": {
+      "frames": 3,
+      "fps": 8,
+      "loop": false
+     },
+     "down": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false
+     },
+     "slide": {
+      "frames": 2,
+      "fps": 4,
+      "loop": true
+     },
+     "swim": {
+      "frames": 4,
+      "fps": 6,
+      "loop": true
+     },
+     "sit": {
+      "frames": 2,
+      "fps": 2,
+      "loop": true
+     }
+    },
+    "bbox_by_animation": {
+     "carry_small": [
+      0,
+      16,
+      15,
+      16
+     ],
+     "carry_large": [
+      0,
+      16,
+      14,
+      16
+     ],
+     "hurt": [
+      0,
+      17,
+      15,
+      15
+     ],
+     "down": [
+      1,
+      14,
+      15,
+      18
+     ],
+     "slide": [
+      0,
+      17,
+      16,
+      15
+     ],
+     "swim": [
+      0,
+      7,
+      16,
+      11
+     ],
+     "sit": [
+      0,
+      20,
+      16,
+      12
+     ]
+    },
+    "hold_points": {
+     "carry_small": [
+      [
+       13,
+       26
+      ],
+      [
+       13,
+       25
+      ],
+      [
+       13,
+       26
+      ],
+      [
+       13,
+       25
+      ]
+     ],
+     "carry_large": [
+      [
+       9,
+       17
+      ],
+      [
+       9,
+       16
+      ],
+      [
+       9,
+       17
+      ],
+      [
+       9,
+       16
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "cargo_overlay": {
+  "source": "已有 cargo.* 资产（16×16，default 动画第 0 帧），不画进人物源帧。",
+  "carry_small": "用货物图标的 8×8 缩小版（2×2 取样后补 z 描边，见 review/OFFLINE-ART-20261020/delivery/cargo_examples.png），底边中点对准持物点，画在人物之上。",
+  "carry_large": "用原大 16×16 货物图标，底边中点对准持物点，画在人物之上（双手在头顶）。",
+  "examples": [
+   "cargo.letter",
+   "cargo.ice_cream",
+   "cargo.paper_house"
+  ]
+ },
+ "ui_icons": {
+  "ui.run_icons": {
+   "cell": [
+    8,
+    8
+   ],
+   "anchor": [
+    0,
+    0
+   ],
+   "frames": [
+    "blockade",
+    "develop",
+    "event",
+    "coins",
+    "item",
+    "buff",
+    "snack",
+    "stamp",
+    "wish",
+    "skull",
+    "safe",
+    "think"
+   ],
+   "groups": {
+    "room": [
+     "blockade",
+     "develop",
+     "event"
+    ],
+    "reward": [
+     "coins",
+     "item",
+     "buff",
+     "snack",
+     "stamp",
+     "wish"
+    ],
+    "overlay": [
+     "skull"
+    ],
+    "status": [
+     "safe",
+     "think"
+    ]
+   },
+   "used_by": "门牌空位、小地图链、HUD、结算（safe 标签、think 想题停钟小图标）"
+  },
+  "ui.buff_icons": {
+   "cell": [
+    16,
+    16
+   ],
+   "anchor": [
+    0,
+    0
+   ],
+   "frames": [
+    "cart",
+    "energy_drink",
+    "cooler",
+    "thermos",
+    "padding",
+    "waterproof",
+    "compass",
+    "running_shoes",
+    "night_vision",
+    "lucky_charm"
+   ],
+   "note": "帧名 = 增益 id；图标里不画角标和框，增益标记、稀有金边由界面画。",
+   "used_by": "UI-12b 货架、门牌近看的增益奖励、UI-12c 谢礼、伙计本事（ui-screens-crew perkIcon）"
+  }
+ },
+ "ui_layout": {
+  "screen": [
+   320,
+   180
+  ],
+  "hud": {
+   "height": 20,
+   "minimap": {
+    "x": 230,
+    "y": 1,
+    "w": 88,
+    "h": 18
+   },
+   "chain": {
+    "cells": 12,
+    "forks_after": [
+     4,
+     7,
+     9
+    ],
+    "marks": {
+     "6": "station",
+     "10": "rest",
+     "12": "home"
+    }
+   },
+   "note": "一局界面顶栏 20px（PB.uiRun.HUD_H），房间画面从 y=20 起；小地图链画在 MINIMAP 内缩 2px。"
+  },
+  "shelf_cell": {
+   "w": 42,
+   "h": 46,
+   "gap": 4,
+   "group_gap": 14,
+   "buttons": [
+    "restock",
+    "heal",
+    "mend",
+    "quit"
+   ],
+   "events": [
+    "ghost_peddler",
+    "forgetful_soup",
+    "lantern_riddle",
+    "lost_parcel",
+    "haunted_crate"
+   ]
+  },
+  "wish_card": {
+   "card": {
+    "x": 117,
+    "y": 27,
+    "w": 86,
+    "h": 90
+   },
+   "slip": {
+    "x": 203,
+    "y": 86
+   },
+   "panel": {
+    "x": 24,
+    "y": 26,
+    "w": 272,
+    "h": 132
+   }
+  },
+  "story_ticket": {
+   "x": 11,
+   "y": 28,
+   "w": 70,
+   "h": 124,
+   "gap": 6,
+   "perforation_x": 78
+  },
+  "crew": {
+   "room_slot": {
+    "x": 7,
+    "y": 25,
+    "w": 48,
+    "h": 64,
+    "gap": 4
+   },
+   "pick_card": {
+    "w": 86,
+    "gap": 12,
+    "y": 55,
+    "h": 66,
+    "visible": 3,
+    "note": "最多显示 3 张，随光标滑动，两侧 3×5 箭头；名字宽 >78px 时改用 10px 字。"
+   },
+   "joined_panel": {
+    "x": 18,
+    "y": 28,
+    "w": 284,
+    "h": 124
+   }
+  },
+  "help": {
+   "panel": {
+    "x": 6,
+    "y": 3,
+    "w": 308,
+    "h": 151
+   },
+   "list": {
+    "x": 13,
+    "w": 100
+   },
+   "thumbnail": [
+    96,
+    48
+   ],
+   "button_h": 17,
+   "entry": "出发页键位条新增「Tab 教学回顾」（绿框 + 上指光标）"
+  },
+  "text_rules": "12px 中文按钮高至少 17px；英文用直撇号 '（弯撇号在字库里是全角宽）；减号用 \"-\"（U+2212 无字形）。"
+ },
+ "screens": [
+  {
+   "id": "ui.screen.run_door",
+   "group": "UI-12a",
+   "screen": "run_door",
+   "module": "workbench/js/core/ui-screens-door.js",
+   "reference": [
+    "art/export/reference/run_door.zh-Hans.png",
+    "art/export/reference/run_door.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "route": "string",
+    "open": "array[3]",
+    "player": "array[2]",
+    "facing": "number",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[0]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "chain": {
+     "cur": "number"
+    },
+    "doors": [
+     {
+      "exit": "string",
+      "room": "string",
+      "reward": "string",
+      "item": "string",
+      "recipient": "string",
+      "amount": "number"
+     }
+    ],
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": 1
+   },
+   "note": "房间内走近出口：近处门牌换大木牌（奖励大图+数量+收件人小像），远处门牌贴 8×8 小图标；doors[i] = {exit, room, reward, item|amount|buff, recipient, skull}；open = 开着的出口序号；chain.cur = 小地图当前格。"
+  },
+  {
+   "id": "ui.screen.run_door_skull",
+   "group": "UI-12a",
+   "screen": "run_door_skull",
+   "module": "workbench/js/core/ui-screens-door.js",
+   "reference": [
+    "art/export/reference/run_door_skull.zh-Hans.png",
+    "art/export/reference/run_door_skull.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "route": "string",
+    "open": "array[3]",
+    "player": "array[2]",
+    "facing": "number",
+    "collected": "array[1]",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[3]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "chain": {
+     "cur": "number",
+     "picks": "object{4,7}"
+    },
+    "doors": [
+     {
+      "exit": "string",
+      "room": "string",
+      "reward": "string",
+      "item": "string",
+      "amount": "number",
+      "skull": "bool"
+     }
+    ],
+    "reroll": {
+     "door": "string"
+    },
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": 1
+   },
+   "note": "同 run_door，另有 skull 叠标、chain.picks 已走路线、reroll.door = 正在播放改签符转牌的门。"
+  },
+  {
+   "id": "ui.screen.run_map",
+   "group": "UI-12a",
+   "screen": "run_map",
+   "module": "workbench/js/core/ui-screens-door.js",
+   "reference": [
+    "art/export/reference/run_map.zh-Hans.png",
+    "art/export/reference/run_map.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "route": "string",
+    "open": "array[2]",
+    "player": "array[2]",
+    "facing": "number",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[1]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "chain": {
+     "cur": "number",
+     "picks": "object{4}"
+    },
+    "safe": "bool",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": 1,
+    "safe": true
+   },
+   "note": "小地图展开（12 格链，4/7/9 后分叉，6 驿站 / 10 歇脚 / 12 到家）；safe=true 时左上显示「这里没有怪」。"
+  },
+  {
+   "id": "ui.screen.run_shelf",
+   "group": "UI-12b",
+   "screen": "run_shelf",
+   "module": "workbench/js/core/ui-screens-shelf.js",
+   "reference": [
+    "art/export/reference/run_shelf.zh-Hans.png",
+    "art/export/reference/run_shelf.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "player": "array[2]",
+    "facing": "number",
+    "coins": "number",
+    "hearts": "number",
+    "maxHearts": "number",
+    "left": "number",
+    "max": "number",
+    "bag": "array[1]",
+    "slots": "number",
+    "goods": [
+     {
+      "id": "string",
+      "price": "number",
+      "group": "string"
+     }
+    ],
+    "restock": "number",
+    "heal": "number",
+    "mend": "number",
+    "bank": "number",
+    "focus": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": -1,
+    "coins": 90,
+    "hearts": 3,
+    "maxHearts": 3,
+    "left": 2,
+    "max": 3,
+    "slots": 3,
+    "restock": 10,
+    "heal": 0,
+    "mend": 30,
+    "bank": 70,
+    "focus": 2
+   },
+   "note": "鬼市货架：goods 6 格、bag/slots 背包、restock/heal/mend 价格、bank 存款、focus 光标。"
+  },
+  {
+   "id": "ui.screen.run_rest",
+   "group": "UI-12b",
+   "screen": "run_rest",
+   "module": "workbench/js/core/ui-screens-shelf.js",
+   "reference": [
+    "art/export/reference/run_rest.zh-Hans.png",
+    "art/export/reference/run_rest.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "player": "array[2]",
+    "facing": "number",
+    "coins": "number",
+    "hearts": "number",
+    "maxHearts": "number",
+    "left": "number",
+    "max": "number",
+    "bag": "array[3]",
+    "slots": "number",
+    "snack": "number",
+    "again": "number",
+    "picked": "null",
+    "bank": "number",
+    "focus": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": -1,
+    "coins": 90,
+    "hearts": 3,
+    "maxHearts": 3,
+    "left": 2,
+    "max": 3,
+    "slots": 3,
+    "snack": 2,
+    "again": 30,
+    "bank": 70,
+    "focus": 1
+   },
+   "note": "歇脚点：snack 点心数、again 再来一份价、picked 已选（null = 未选）。"
+  },
+  {
+   "id": "ui.screen.run_quit",
+   "group": "UI-12b",
+   "screen": "run_quit",
+   "module": "workbench/js/core/ui-screens-shelf.js",
+   "reference": [
+    "art/export/reference/run_quit.zh-Hans.png",
+    "art/export/reference/run_quit.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "player": "array[2]",
+    "facing": "number",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[1]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "hand": "number",
+    "keep": "number",
+    "focus": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": -1,
+    "hand": 90,
+    "keep": 70,
+    "focus": 1
+   },
+   "note": "中途收工：hand 手上金币、keep 能带走的部分。"
+  },
+  {
+   "id": "ui.screen.run_event",
+   "group": "UI-12b",
+   "screen": "run_event",
+   "module": "workbench/js/core/ui-screens-shelf.js",
+   "reference": [
+    "art/export/reference/run_event.zh-Hans.png",
+    "art/export/reference/run_event.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "player": "array[2]",
+    "facing": "number",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[2]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "event": "string",
+    "forget": "string",
+    "focus": "number",
+    "goods": [
+     {
+      "id": "string",
+      "price": "number",
+      "group": "string",
+      "kind": "string",
+      "wish": "string"
+     }
+    ],
+    "guesses": "array[3]",
+    "guess": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "facing": -1,
+    "event": "forgetful_soup",
+    "forget": "sandbag",
+    "focus": 0,
+    "guess": 1
+   },
+   "note": "事件房：event ∈ 5 种，样张 forgetful_soup（forget 被忘掉的东西、guesses 候选、guess 光标）；事件图为已有素材占位合成。"
+  },
+  {
+   "id": "ui.screen.run_result",
+   "group": "UI-12c",
+   "screen": "run_result",
+   "module": "workbench/js/core/ui-screens-shelf.js",
+   "reference": [
+    "art/export/reference/run_result.zh-Hans.png",
+    "art/export/reference/run_result.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "end": "string",
+    "gift": "string",
+    "left": "number",
+    "max": "number",
+    "secs": "number",
+    "par": "number",
+    "timePct": "number",
+    "likePct": "number",
+    "base": "number",
+    "tip": "number",
+    "hand": "number",
+    "wish": "number",
+    "keep": "number",
+    "score": "number",
+    "rating": "string",
+    "bond": "number",
+    "stamps": "number",
+    "think": "bool",
+    "focus": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "end": "delivered",
+    "gift": "wish_palm_fan",
+    "left": 3,
+    "max": 3,
+    "secs": 960,
+    "par": 764,
+    "timePct": 125,
+    "likePct": 150,
+    "base": 40,
+    "tip": 75,
+    "hand": 150,
+    "wish": 60,
+    "keep": 285,
+    "score": 125,
+    "rating": "A",
+    "bond": 2,
+    "stamps": 1,
+    "think": false,
+    "focus": 0
+   },
+   "note": "送达结算：end、gift 心愿谢礼、secs/par/timePct、likePct、base/tip/hand/wish/keep、score/rating、bond、stamps、think（是否开过想题停钟）。"
+  },
+  {
+   "id": "ui.screen.run_wish_card",
+   "group": "UI-12c",
+   "screen": "run_wish_card",
+   "module": "workbench/js/core/ui-screens-wish.js",
+   "reference": [
+    "art/export/reference/run_wish_card.zh-Hans.png",
+    "art/export/reference/run_wish_card.en.png"
+   ],
+   "params": {
+    "theme": "string",
+    "exclude": "array[0]",
+    "cargoList": "array[3]",
+    "recipientList": "array[3]",
+    "cargo": "string",
+    "recipient": "string",
+    "liked": "bool",
+    "rerolls": "number",
+    "cat": "string",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data",
+    "world": "string",
+    "map": "string",
+    "mapList": "array[2]",
+    "mapRooms": "object{id: room2 快照}",
+    "focus": "number",
+    "item": "string",
+    "known": "bool",
+    "first": "bool"
+   },
+   "sample_values": {
+    "theme": "theme.diyu",
+    "cargo": "ice_cream",
+    "recipient": "yama",
+    "liked": true,
+    "rerolls": 1,
+    "cat": "idle",
+    "world": "diyu",
+    "map": "diyu_1",
+    "focus": 1,
+    "item": "wish_palm_fan",
+    "known": false,
+    "first": true
+   },
+   "note": "出发页（沿用 ui.screen.reels 参数）+ 心愿卡：item 心愿物、known 是否已知、first 首次。"
+  },
+  {
+   "id": "ui.screen.run_lucky",
+   "group": "UI-12c",
+   "screen": "run_lucky",
+   "module": "workbench/js/core/ui-screens-wish.js",
+   "reference": [
+    "art/export/reference/run_lucky.zh-Hans.png",
+    "art/export/reference/run_lucky.en.png"
+   ],
+   "params": {
+    "theme": "string",
+    "exclude": "array[0]",
+    "cargoList": "array[3]",
+    "recipientList": "array[3]",
+    "cargo": "string",
+    "recipient": "string",
+    "liked": "bool",
+    "rerolls": "number",
+    "cat": "string",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data",
+    "world": "string",
+    "map": "string",
+    "mapList": "array[2]",
+    "mapRooms": "object{id: room2 快照}",
+    "focus": "number",
+    "item": "string",
+    "known": "bool",
+    "reason": "string",
+    "double": "bool",
+    "combo": {
+     "recipient": "string",
+     "cargo": "string"
+    },
+    "slots": "number"
+   },
+   "sample_values": {
+    "theme": "theme.diyu",
+    "cargo": "ice_cream",
+    "recipient": "yama",
+    "liked": true,
+    "rerolls": 1,
+    "cat": "idle",
+    "world": "diyu",
+    "map": "diyu_1",
+    "focus": 1,
+    "item": "wish_palm_fan",
+    "known": true,
+    "reason": "lucky",
+    "double": true,
+    "slots": 3
+   },
+   "note": "幸运单：reason=lucky、double 双倍、combo{recipient,cargo}。"
+  },
+  {
+   "id": "ui.screen.run_wish_give",
+   "group": "UI-12c",
+   "screen": "run_wish_give",
+   "module": "workbench/js/core/ui-screens-wish.js",
+   "reference": [
+    "art/export/reference/run_wish_give.zh-Hans.png",
+    "art/export/reference/run_wish_give.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "theme": "string",
+    "recipient": "string",
+    "cargo": "string",
+    "item": "string",
+    "player": "array[2]",
+    "facing": "number",
+    "hud": {
+     "hearts": "number",
+     "maxHearts": "number",
+     "cargo": "string",
+     "left": "number",
+     "max": "number",
+     "rule": "string",
+     "coins": "number",
+     "sand": "number",
+     "items": "array[0]",
+     "slots": "number",
+     "secs": "number",
+     "snacks": "number"
+    },
+    "coins": "number",
+    "bond": "number",
+    "first": "bool",
+    "thanks": "string",
+    "thanksKind": "string",
+    "double": "bool",
+    "page": "number",
+    "pages": "number",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "item": "wish_palm_fan",
+    "facing": 1,
+    "coins": 60,
+    "bond": 2,
+    "first": true,
+    "thanks": "cooler",
+    "thanksKind": "buff",
+    "double": false,
+    "page": 0,
+    "pages": 4
+   },
+   "note": "交付心愿：thanks/thanksKind 谢礼、double、page/pages 分页文字。"
+  },
+  {
+   "id": "ui.screen.story_board",
+   "group": "UI-13a",
+   "screen": "story_board",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/story_board.zh-Hans.png",
+    "art/export/reference/story_board.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "focus": "number",
+    "chapters": [
+     {
+      "label": "string",
+      "name": "string",
+      "who": "string",
+      "color": "string",
+      "orders": "number",
+      "done": "number",
+      "read": "bool",
+      "locked": "bool"
+     }
+    ]
+   },
+   "sample_values": {
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 1
+   },
+   "note": "邮局背景压暗 + 四章车票；chapters[i] 含章名/托付人/颜色/锁定与完成状态。"
+  },
+  {
+   "id": "ui.screen.story_chapter",
+   "group": "UI-13a",
+   "screen": "story_chapter",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/story_chapter.zh-Hans.png",
+    "art/export/reference/story_chapter.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "focus": "number",
+    "chapter": {
+     "label": "string",
+     "name": "string",
+     "who": "string",
+     "color": "string",
+     "line": "string",
+     "map": "string"
+    },
+    "orders": [
+     {
+      "name": "string",
+      "state": "string"
+     }
+    ]
+   },
+   "sample_values": {
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 1
+   },
+   "note": "章节详情：chapter{label,name,who,color,line,map}、orders 4 单。"
+  },
+  {
+   "id": "ui.screen.story_order",
+   "group": "UI-13a",
+   "screen": "story_order",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/story_order.zh-Hans.png",
+    "art/export/reference/story_order.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "focus": "number",
+    "chapter": {
+     "label": "string",
+     "name": "string",
+     "who": "string",
+     "color": "string",
+     "line": "string",
+     "map": "string"
+    },
+    "n": "number",
+    "name": "string",
+    "cargo": "string",
+    "look": "array[2]",
+    "cargoName": "string",
+    "from": "string",
+    "to": "string",
+    "address": "string",
+    "rooms": "array[3]"
+   },
+   "sample_values": {
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 0,
+    "n": 1,
+    "name": "storyui.sample.o1",
+    "cargo": "letter",
+    "cargoName": "storyui.sample.o1.cargo",
+    "from": "zombie",
+    "to": "goblin_smith",
+    "address": "storyui.sample.o1.address"
+   },
+   "note": "单子详情：cargo/look、from→to、address、rooms 途经房。"
+  },
+  {
+   "id": "ui.screen.story_letter",
+   "group": "UI-13a",
+   "screen": "story_letter",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/story_letter.zh-Hans.png",
+    "art/export/reference/story_letter.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "chapter": {
+     "label": "string",
+     "name": "string",
+     "who": "string",
+     "color": "string",
+     "line": "string",
+     "map": "string"
+    },
+    "body": "string",
+    "sign": "string",
+    "copies": "number",
+    "attach": "array[2]",
+    "attachName": "string"
+   },
+   "sample_values": {
+    "bg": "scene.hub_post",
+    "state": "before",
+    "body": "storyui.sample.letter",
+    "sign": "hand",
+    "copies": 3,
+    "attachName": "storyui.sample.nail"
+   },
+   "note": "结局信：body、sign=hand 手印签名、copies、attach 附件。"
+  },
+  {
+   "id": "ui.screen.story_complete",
+   "group": "UI-13a",
+   "screen": "story_complete",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/story_complete.zh-Hans.png",
+    "art/export/reference/story_complete.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "chapter": {
+     "label": "string",
+     "name": "string",
+     "who": "string",
+     "color": "string",
+     "line": "string",
+     "map": "string"
+    },
+    "keepsake": "array[2]",
+    "keepsakeName": "string",
+    "spot": "array[2]",
+    "crew": "string",
+    "crewName": "string",
+    "crewLine": "string",
+    "next": {
+     "label": "string",
+     "name": "string",
+     "who": "string",
+     "color": "string"
+    }
+   },
+   "sample_values": {
+    "bg": "scene.hub_gallery",
+    "state": "before",
+    "keepsakeName": "storyui.sample.nail",
+    "crew": "old_miner",
+    "crewName": "recipient.old_miner.name",
+    "crewLine": "storyui.sample.miner"
+   },
+   "note": "展览角背景 + 纪念物落到 spot（纪念物非透明区左上角）+「新」标 + 新伙计 crew 加入 + next 下一章。"
+  },
+  {
+   "id": "ui.screen.lobby_story",
+   "group": "UI-13a",
+   "screen": "lobby_story",
+   "module": "workbench/js/core/ui-screens-story.js",
+   "reference": [
+    "art/export/reference/lobby_story.zh-Hans.png",
+    "art/export/reference/lobby_story.en.png"
+   ],
+   "params": {
+    "theme": "string",
+    "focus": "number",
+    "coins": "number",
+    "items": [
+     {
+      "key": "string",
+      "new": "bool"
+     }
+    ]
+   },
+   "sample_values": {
+    "theme": "theme.diyu",
+    "focus": 2,
+    "coins": 1280
+   },
+   "note": "大厅菜单新增「剧情」项（样张 focus 停在该项）。"
+  },
+  {
+   "id": "ui.screen.crew_room",
+   "group": "UI-13b",
+   "screen": "crew_room",
+   "module": "workbench/js/core/ui-screens-crew.js",
+   "reference": [
+    "art/export/reference/crew_room.zh-Hans.png",
+    "art/export/reference/crew_room.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "focus": "number",
+    "crew": [
+     {
+      "id": "string",
+      "unlocked": "bool"
+     }
+    ]
+   },
+   "sample_values": {
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "focus": 2
+   },
+   "note": "伙计房背景压暗 + 6 个伙计格；crew[i] = {id, unlocked, home}；本事图标用 ui.buff_icons。"
+  },
+  {
+   "id": "ui.screen.crew_pick",
+   "group": "UI-13b",
+   "screen": "crew_pick",
+   "module": "workbench/js/core/ui-screens-crew.js",
+   "reference": [
+    "art/export/reference/crew_pick.zh-Hans.png",
+    "art/export/reference/crew_pick.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "focus": "number",
+    "order": {
+     "world": "string",
+     "cargo": "string",
+     "recipient": "string"
+    },
+    "crew": [
+     {
+      "id": "string"
+     }
+    ]
+   },
+   "sample_values": {
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "focus": 1
+   },
+   "note": "看单派人：order{world,cargo,recipient}；crew 卡片最多 3 张随光标滑动。"
+  },
+  {
+   "id": "ui.screen.crew_joined",
+   "group": "UI-13b",
+   "screen": "crew_joined",
+   "module": "workbench/js/core/ui-screens-crew.js",
+   "reference": [
+    "art/export/reference/crew_joined.zh-Hans.png",
+    "art/export/reference/crew_joined.en.png"
+   ],
+   "params": {
+    "bg": "string",
+    "state": "string",
+    "hero": "string"
+   },
+   "sample_values": {
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "hero": "old_miner"
+   },
+   "note": "新伙计加入面板：hero = 伙计 id（人设、本事、灯牌）。"
+  },
+  {
+   "id": "ui.screen.delivery_help",
+   "group": "教学/辅助",
+   "screen": "delivery_help",
+   "module": "workbench/js/core/ui-screens-dhelp.js",
+   "reference": [
+    "art/export/reference/delivery_help.zh-Hans.png",
+    "art/export/reference/delivery_help.en.png"
+   ],
+   "params": {
+    "departure": "object（ui.screen.reels 出发页参数）",
+    "maps": [
+     {
+      "world": "string",
+      "seen": "bool",
+      "rooms": "array[2]"
+     }
+    ],
+    "rooms": "object{id: room2 快照}",
+    "focus": "number"
+   },
+   "sample_values": {
+    "focus": 0
+   },
+   "note": "departure = 出发页参数副本（压暗作底）；maps[i] = {world, seen, rooms}，rooms[id] = room2 快照；focus 0–5；view=\"entry\" 只画出发页 + 入口提示。"
+  },
+  {
+   "id": "ui.screen.delivery_practice",
+   "group": "教学/辅助",
+   "screen": "delivery_practice",
+   "module": "workbench/js/core/ui-screens-dhelp.js",
+   "reference": [
+    "art/export/reference/delivery_practice.zh-Hans.png",
+    "art/export/reference/delivery_practice.en.png"
+   ],
+   "params": {
+    "world": "string",
+    "room2": "art-only geometric fixture; preview_only=true; no hints, solutions or private room data"
+   },
+   "sample_values": {
+    "world": "diyu"
+   },
+   "note": "练习界面的几何演示样张；不含真实教学房、提示步骤或解法，不能用于验证玩法。"
+  },
+  {
+   "id": "ui.screen.delivery_assist",
+   "group": "教学/辅助",
+   "screen": "delivery_assist",
+   "module": "workbench/js/core/ui-screens-dhelp.js",
+   "reference": [
+    "art/export/reference/delivery_assist.zh-Hans.png",
+    "art/export/reference/delivery_assist.en.png"
+   ],
+   "params": {
+    "theme": "string",
+    "relaxed": "number",
+    "think": "bool",
+    "heart": "bool",
+    "focus": "number"
+   },
+   "sample_values": {
+    "theme": "theme.dungeon",
+    "relaxed": 70,
+    "think": false,
+    "heart": true,
+    "focus": 0
+   },
+   "note": "辅助面板（大厅墙背景）：relaxed 50–100（6 刻度）、think 想题停钟、heart 连输两局多一颗心、focus、theme。"
+  }
+ ],
+ "scene_layers": {
+  "format": "portitor.scene-layers/1",
+  "ground_top_y": 148,
+  "compose": "按 states 的顺序由下往上叠；prop 取 baked_frame 即得到资产 before/after 帧；figures 只作比例尺，不进资产。",
+  "scenes": {
+   "scene.hub_post": {
+    "file": "art/review/OFFLINE-ART-20261020/hub/hub_post.layers.json",
+    "asset": "art/source/scene/scene.hub_post.json",
+    "size": [
+     320,
+     180
+    ],
+    "layers": [
+     {
+      "name": "back",
+      "role": "background",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 180
+     },
+     {
+      "name": "light",
+      "role": "light",
+      "x": 44,
+      "y": 12,
+      "w": 241,
+      "h": 105
+     },
+     {
+      "name": "mid",
+      "role": "background",
+      "x": 12,
+      "y": 14,
+      "w": 302,
+      "h": 134
+     },
+     {
+      "name": "items_before",
+      "role": "state",
+      "x": 17,
+      "y": 54,
+      "w": 268,
+      "h": 94
+     },
+     {
+      "name": "items_after",
+      "role": "state",
+      "x": 17,
+      "y": 53,
+      "w": 269,
+      "h": 95
+     },
+     {
+      "name": "front",
+      "role": "foreground",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 162
+     }
+    ],
+    "props": [
+     {
+      "name": "stamp",
+      "x": 212,
+      "y": 118,
+      "w": 5,
+      "h": 16,
+      "animation": {
+       "fps": 4,
+       "loop": false,
+       "frames": [
+        0,
+        1,
+        1,
+        2
+       ]
+      },
+      "baked_frame": 2,
+      "note": "邮戳一按一抬：抬起→按下（停一拍）→抬起并留下红戳。每隔几秒播放一次。"
+     },
+     {
+      "name": "letter_slide",
+      "x": 78,
+      "y": 75,
+      "w": 9,
+      "h": 19,
+      "animation": {
+       "fps": 4,
+       "loop": false,
+       "frames": [
+        0,
+        1,
+        2
+       ]
+      },
+      "baked_frame": 1,
+      "note": "信从信格里滑出一封：塞着→探出一半→往下掉（落地后由程序收走或复位）。"
+     }
+    ],
+    "states": {
+     "before": [
+      "back",
+      "light",
+      "mid",
+      "items_before",
+      "prop:stamp",
+      "prop:letter_slide",
+      "front"
+     ],
+     "after": [
+      "back",
+      "light",
+      "mid",
+      "items_before",
+      "items_after",
+      "prop:stamp",
+      "prop:letter_slide",
+      "front"
+     ]
+    },
+    "pngs": [
+     "art/review/OFFLINE-ART-20261020/hub/hub_post_before.png",
+     "art/review/OFFLINE-ART-20261020/hub/hub_post_after.png"
+    ]
+   },
+   "scene.hub_gallery": {
+    "file": "art/review/OFFLINE-ART-20261020/hub/hub_gallery.layers.json",
+    "asset": "art/source/scene/scene.hub_gallery.json",
+    "size": [
+     320,
+     180
+    ],
+    "layers": [
+     {
+      "name": "back",
+      "role": "background",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 180
+     },
+     {
+      "name": "light",
+      "role": "light",
+      "x": 40,
+      "y": 14,
+      "w": 231,
+      "h": 107
+     },
+     {
+      "name": "mid",
+      "role": "background",
+      "x": 11,
+      "y": 14,
+      "w": 292,
+      "h": 134
+     },
+     {
+      "name": "items_before",
+      "role": "state",
+      "x": 20,
+      "y": 57,
+      "w": 155,
+      "h": 81
+     },
+     {
+      "name": "items_after",
+      "role": "state",
+      "x": 18,
+      "y": 57,
+      "w": 263,
+      "h": 81
+     },
+     {
+      "name": "front",
+      "role": "foreground",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 162
+     }
+    ],
+    "props": [
+     {
+      "name": "glass_glint",
+      "x": 130,
+      "y": 109,
+      "w": 43,
+      "h": 15,
+      "animation": {
+       "fps": 8,
+       "loop": false,
+       "frames": [
+        0,
+        1,
+        2,
+        3,
+        0
+       ]
+      },
+      "baked_frame": 2,
+      "note": "玻璃柜反光：一道斜光从左扫到右（8fps），每隔几秒一次，平时停在第 0 帧（无反光）。"
+     },
+     {
+      "name": "album_page",
+      "x": 172,
+      "y": 112,
+      "w": 3,
+      "h": 4,
+      "animation": {
+       "fps": 2,
+       "loop": true,
+       "frames": [
+        0,
+        0,
+        1,
+        0
+       ]
+      },
+      "baked_frame": 0,
+      "note": "邮票册右页角轻轻翘起又落下（2fps）。"
+     }
+    ],
+    "states": {
+     "before": [
+      "back",
+      "light",
+      "mid",
+      "items_before",
+      "prop:glass_glint",
+      "prop:album_page",
+      "front"
+     ],
+     "after": [
+      "back",
+      "light",
+      "mid",
+      "items_before",
+      "items_after",
+      "prop:glass_glint",
+      "prop:album_page",
+      "front"
+     ]
+    },
+    "pngs": [
+     "art/review/OFFLINE-ART-20261020/hub/hub_gallery_before.png",
+     "art/review/OFFLINE-ART-20261020/hub/hub_gallery_after.png"
+    ]
+   },
+   "scene.hub_crew": {
+    "file": "art/review/OFFLINE-ART-20261020/hub/hub_crew.layers.json",
+    "asset": "art/source/scene/scene.hub_crew.json",
+    "size": [
+     320,
+     180
+    ],
+    "layers": [
+     {
+      "name": "back",
+      "role": "background",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 180
+     },
+     {
+      "name": "light_before",
+      "role": "light",
+      "x": 38,
+      "y": 30,
+      "w": 179,
+      "h": 83
+     },
+     {
+      "name": "light_after",
+      "role": "light",
+      "x": 38,
+      "y": 30,
+      "w": 209,
+      "h": 83
+     },
+     {
+      "name": "mid",
+      "role": "background",
+      "x": 10,
+      "y": 14,
+      "w": 301,
+      "h": 134
+     },
+     {
+      "name": "items_before",
+      "role": "state",
+      "x": 50,
+      "y": 61,
+      "w": 224,
+      "h": 87
+     },
+     {
+      "name": "items_after",
+      "role": "state",
+      "x": 61,
+      "y": 59,
+      "w": 236,
+      "h": 89
+     },
+     {
+      "name": "front",
+      "role": "foreground",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 162
+     }
+    ],
+    "props": [
+     {
+      "name": "lamp_tags",
+      "x": 44,
+      "y": 98,
+      "w": 56,
+      "h": 10,
+      "animation": {
+       "fps": 4,
+       "loop": true,
+       "frames": [
+        0,
+        1,
+        0,
+        2
+       ]
+      },
+      "baked_frame": 0,
+      "note": "门口五块灯牌：亮的用 deco.hero_lantern_tag 的 lit 循环（4fps），暗的用 dim；刚开张只有老矿工一块亮，读完三章五块都亮。",
+      "frames_by_state": [
+       "after",
+       "before"
+      ]
+     },
+     {
+      "name": "hammock",
+      "x": 276,
+      "y": 102,
+      "w": 34,
+      "h": 21,
+      "animation": {
+       "fps": 2,
+       "loop": true,
+       "frames": [
+        0,
+        1
+       ]
+      },
+      "baked_frame": 0,
+      "note": "吊床中段上下晃 1px，2fps；读完三章后吊床上多一条毛巾。",
+      "frames_by_state": [
+       "after",
+       "before"
+      ]
+     }
+    ],
+    "states": {
+     "before": [
+      "back",
+      "light_before",
+      "mid",
+      "items_before",
+      "prop:lamp_tags",
+      "prop:hammock",
+      "front"
+     ],
+     "after": [
+      "back",
+      "light_after",
+      "mid",
+      "items_before",
+      "items_after",
+      "prop:lamp_tags",
+      "prop:hammock",
+      "front"
+     ]
+    },
+    "pngs": [
+     "art/review/OFFLINE-ART-20261020/hub/hub_crew_before.png",
+     "art/review/OFFLINE-ART-20261020/hub/hub_crew_after.png"
+    ]
+   }
+  }
+ },
+ "hub_points": {
+  "scene.hub_gallery": {
+   "keepsake_spots": {
+    "nail": [
+     217,
+     110
+    ],
+    "recipe": [
+     243,
+     99
+    ],
+    "postcard": [
+     267,
+     112
+    ]
+   },
+   "note": "deco.story_keepsakes 各帧非透明区左上角的落点（after 帧里三件的位置）；story_complete 的 params.spot 用同一坐标。"
+  },
+  "scene.hub_crew": {
+   "lamp_tags": {
+    "x": 44,
+    "y": 98,
+    "count": 5,
+    "pitch": 12,
+    "tag": "deco.hero_lantern_tag（8×10，锚点 [4,10]）",
+    "order": [
+     "old_miner",
+     "bell_doll",
+     "fox_mask",
+     "lamp_flower",
+     "little_haenyeo"
+    ],
+    "note": "第 i 块左上 (44+12i, 98)；lit = 在家、dim = 出门；before 只有老矿工亮，读完三章五块都亮。"
+   }
+  }
+ },
+ "modules": {
+  "load_order_file": "authoring-modules.json",
+  "load_order": [
+   "font-offline-art-20261020",
+   "font-shelf",
+   "font-wish",
+   "font-storyui",
+   "font-crew",
+   "font-dhelp",
+   "ui-screens-door",
+   "ui-screens-shelf",
+   "ui-screens-wish",
+   "ui-screens-story",
+   "ui-screens-crew",
+   "ui-screens-dhelp"
+  ]
+ },
+ "demo_boundary": "所有房间为接收方新建的20×10几何演示图，不含真实关卡、提示、解法或剧情。文字、数值、进度仅展示布局；真实玩法接入由私有游戏仓库负责。"
+}

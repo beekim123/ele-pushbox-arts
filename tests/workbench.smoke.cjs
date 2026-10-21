@@ -55,6 +55,26 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   await page.getByRole('button',{name:'关闭大图',exact:true}).click();
   await page.goto(url+'#review');await page.waitForTimeout(120);
   const review=await page.locator('#review-root').innerText();check(review.includes('已确认')&&review.includes('待确认'),'review lists both confirmation states');
+  await page.locator('[data-batch="offline-20261020"]').click();
+  check((await page.locator('#review-root').innerText()).includes('82'),'offline batch is available in review');
+  const receipt=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json')));
+  const reports=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/render-report.json')));
+  const candidates=await page.evaluate(ids=>ids.map(id=>({id,approved:PBStore.asset(id).status})),receipt.assets.map(a=>a.id));
+  check(candidates.length===82&&candidates.every(a=>a.approved==='review'||a.approved==='draft'),'all offline entries retain candidate status');
+  for(const item of reports.renders){
+    const result=await page.evaluate(item=>{
+      const a=structuredClone(PBStore.asset(item.id));Object.assign(a.params,item.patch);
+      if(item.patch.world){a.params.room2.world=item.patch.world;a.params.theme='theme.'+item.patch.world;}
+      const r=new PB.Raster(320,180),issues=PB.ui.render(r,a,0,{locale:item.locale,focus:0,env:'full'});
+      return {issues,pixels:item.variant===0?Array.from(r.data):null};
+    },item);
+    assert.deepEqual(result.issues,[],`${item.id}/${item.locale}/${item.variant}`);
+    if(item.variant===0){
+      const png=decodePng(fs.readFileSync(path.join(ROOT,`art/export/reference/${item.id.slice(10)}.${item.locale}.png`)));
+      assert.ok(Buffer.from(result.pixels).equals(Buffer.from(png.data)),item.id+' browser/reference mismatch');
+    }
+  }
+  check(true,'196 offline UI states fit both locales; 46 default browser renders equal PNG references');
   await page.goto(url+'#audio/sfx');await page.waitForTimeout(120);
   check((await page.locator('#audio-root').innerText()).includes('sfx:push'),'sound page lists effects');
   check(errors.length===0,'no browser errors'+(errors.length?': '+errors.join('; '):''));

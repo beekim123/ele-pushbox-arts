@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_lamp_wick",
+ "name": "灯芯",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "................",
+   "................",
+   ".....zz.......zj",
+   "...zzutzz....zgg",
+   "..zuuuuuuz...ztg",
+   ".zuutuuttuz.ztuz",
+   "zuutuutuutuzztz.",
+   "zutuuvvuutvttz..",
+   "zututvwtuvvuuz..",
+   "zuutuutuvuvzz...",
+   ".zutuuuvuvz.....",
+   "..zuuuvvvz......",
+   "...zzvuzz.......",
+   ".....zz.........",
+   "................"
+  ]
+ ],
+ "usage": "心愿物（济州）：灯塔大叔（char.lighthouse_keeper）想要的灯芯——一卷白色编织灯芯，一头露出来、头上一点焦黑。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）；UI-12c 和灯谜摊会涂成一色当剪影用。",
+ "notes": "ART-05c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "0e8334048a15bbb2e4f33c42e9ba8b17cea1934770a9f0b8ef4ff51d1803920c"
+}

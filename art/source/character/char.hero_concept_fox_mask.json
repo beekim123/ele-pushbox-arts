@@ -1,0 +1,158 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.hero_concept_fox_mask",
+ "name": "小狐概念候选",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_bamboo_box": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "B_night_cloak": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "C_side_box": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".........z..z...",
+   "........ztzztz..",
+   "..zzzz..zitzitz.",
+   ".zdcddz.zttttttz",
+   ".zFzzFzzttzittiz",
+   ".zdcddzzzttttttz",
+   ".zFzzFzyzzttiuz.",
+   ".zdcddzyqqzzzz..",
+   ".zFzzFzqqqqqqz..",
+   ".zdcddzqrqqqtz..",
+   ".zFFFFzqrqqqz...",
+   ".zzzzzzqqqqqz...",
+   ".......zxzxz....",
+   ".......zxzxz....",
+   "......zzz.zzz..."
+  ],
+  [
+   ".........z..z...",
+   "........ztzztz..",
+   "..zzzz..zitzitz.",
+   ".zdcddz.zttttttz",
+   ".zFzzFzzttzittiz",
+   ".zdcddzzzttttttz",
+   ".zFzzFzyzzttiuz.",
+   ".zdcddzyqqzzzz..",
+   ".zFzzFzqqqqqqz..",
+   ".zdcddzqrqqqtz..",
+   ".zFFFFzqrqqqz...",
+   ".zzzzzzqqqqqz...",
+   "......zx..zxz...",
+   "......zx..zxz...",
+   "......zx..zxz...",
+   ".....zzz...zzz.."
+  ],
+  [
+   "................",
+   "........z...z...",
+   ".......zjz.zjz..",
+   ".......zttzttz..",
+   "......ztttttttz.",
+   "......ztzittiiz.",
+   "......zttttttz..",
+   "..f..fzyttituz..",
+   "..zf.zyyyzzzz...",
+   "..zfzfyyyyyyyz..",
+   "..fzzyyyyyyyyz..",
+   "..zdfzyyyyyyz...",
+   "...zffyyyyyyz...",
+   ".....zyyyyyz....",
+   "......zxzxz.....",
+   ".....zzz.zzz...."
+  ],
+  [
+   "........z...z...",
+   ".......zjz.zjz..",
+   ".......zttzttz..",
+   "......ztttttttz.",
+   "......ztzittiiz.",
+   "......zttttttz..",
+   "..f..fzyttituz..",
+   "..zf.zyyyzzzz...",
+   "..zfzfyyyyyyyz..",
+   "..fzzyyyyyyyyz..",
+   "..zdfzyyyyyyz...",
+   "...zffyyyyyyz...",
+   "....zyy..yyyz...",
+   "....zyy..yyyz...",
+   ".....zx..zxz....",
+   "....zzz...zzz..."
+  ],
+  [
+   "................",
+   "........z...z...",
+   ".......ztz.ztz..",
+   ".......zitzitz..",
+   ".......zttttttz.",
+   ".......ztzittiz.",
+   ".......zttttttz.",
+   "......zuzttiuz..",
+   ".....zutuzzzz...",
+   "....zttupppppz..",
+   "....zdzddzpppz..",
+   "....zdFzdzpppz..",
+   "....zdzddzpppz..",
+   "....zzzzzzpppz..",
+   ".........zxzxz..",
+   "........zzz.zzz."
+  ],
+  [
+   "........z...z...",
+   ".......ztz.ztz..",
+   ".......zitzitz..",
+   ".......zttttttz.",
+   ".......ztzittiz.",
+   ".......zttttttz.",
+   "......zuzttiuz..",
+   ".....zutuzzzz...",
+   "....zttupppppz..",
+   "....zdzddzpppz..",
+   "....zdFzdzpppz..",
+   "....zdzddzpppz..",
+   ".......zzp..ppz.",
+   "....zzzzzp..ppz.",
+   "........zx..zxz.",
+   ".......zzz...zzz"
+  ]
+ ],
+ "usage": "只用于给用户挑方向的小狐概念草图（每个方向：站 + 走一步，4 fps），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：庙会白狐面 + 靛蓝短褂 + 背上竹编书箱（背包格 = 书箱格）（推荐）；B：黑斗篷上浮着狐面，背后竹背架挂小包袱；神秘感强，暗处容易看不清；C：狐面 + 白尾巴围脖 + 斜挎在身侧的小书箱；书箱在身前，推箱动作要让位。",
+ "content_hash": "b2510c71ed483993f72479d07cd006b3ae3426fafeed1494263f49a393307565"
+}

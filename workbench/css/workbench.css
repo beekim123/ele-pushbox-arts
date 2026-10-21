@@ -285,7 +285,7 @@ canvas.concept-scene { cursor: zoom-in; }
 /* Batch art review (#review, WB-06). Integer-sized canvases may scroll, never shrink. */
 #review-root { max-width: 1440px; padding-bottom: 150px; }
 .review-layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 20px; align-items: start; }
-.review-batches { position: sticky; top: 12px; padding: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.review-batches { position: sticky; top: 12px; max-height: calc(100vh - 180px); overflow-y: auto; padding: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
 .review-batches h3 { margin: 0 0 8px; }
 .review-batches .list-btn { white-space: normal; overflow-wrap: anywhere; padding: 9px 8px; }
 .review-content { min-width: 0; }

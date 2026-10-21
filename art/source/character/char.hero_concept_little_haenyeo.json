@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.hero_concept_little_haenyeo",
+ "name": "小海女概念候选",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_float_back": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "B_side_float": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".......zzzzz....",
+   "......zyyyyyz...",
+   ".....zysuusuyz..",
+   ".....zyuEEEEz...",
+   ".....zyEzEEzz...",
+   "..zzz.zEEEEDz...",
+   ".zjjjz.zEEEz....",
+   "zjjbjjzzBBBzz...",
+   "zjjjjbzBBkBBz...",
+   "zbjjbbzBBkBEz...",
+   ".zujuuzByyyBz...",
+   ".zuzuzzzyyyyz...",
+   "..zzz..zyzzyz...",
+   ".......zyz.zyz..",
+   "......zzz..zzz.."
+  ],
+  [
+   ".......zzzzz....",
+   "......zyyyyyz...",
+   ".....zysuusuyz..",
+   ".....zyuEEEEz...",
+   ".....zyEzEEzz...",
+   "..zzz.zEEEEDz...",
+   ".zjjjz.zEEEz....",
+   "zjjbjjzzBBBzz...",
+   "zjjjjbzBBkBBz...",
+   "zbjjbbzBBkBEz...",
+   ".zujuuzByyyBz...",
+   ".zuzuzzzyyyyz...",
+   "......zyz..zyz..",
+   "..zzz.zyz..zyz..",
+   "......zyz...zyz.",
+   ".....zzz....zzz."
+  ],
+  [
+   "................",
+   ".......zzzzz....",
+   "......zyyyyyzz..",
+   ".....zyyssuuyz..",
+   ".....zyEEEEEz...",
+   ".....zyEzEEzz...",
+   "......zEEEEDz...",
+   ".zuzuz.zEEEz.zz.",
+   ".zuuuzzqqqqqzjjz",
+   ".zuzuzzqyyyqzjjz",
+   ".zuuuzzqyyyqzbjz",
+   "..zzz.zqyyyqzzz.",
+   "......zyyyyyz...",
+   "......zyyzyyz...",
+   "......zyz.zyz...",
+   ".....zzz..zzz..."
+  ],
+  [
+   ".......zzzzz....",
+   "......zyyyyyzz..",
+   ".....zyyssuuyz..",
+   ".....zyEEEEEz...",
+   ".....zyEzEEzz...",
+   "......zEEEEDz...",
+   ".zuzuz.zEEEz.zz.",
+   ".zuuuzzqqqqqzjjz",
+   ".zuzuzzqyyyqzjjz",
+   ".zuuuzzqyyyqzbjz",
+   "..zzz.zqyyyqzzz.",
+   "......zyyyyyz...",
+   ".....zyy..zyyz..",
+   ".....zyy..zyyz..",
+   ".....zyz...zyz..",
+   "....zzz....zzz.."
+  ]
+ ],
+ "usage": "只用于给用户挑方向的小海女概念草图（每个方向：站 + 走一步，4 fps），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：黑潜水服 + 渡口紫短褂，额头推着旧潜水镜，背着奶奶的橘色浮球和网兜（背包格 = 网兜格）（推荐）；B：短褂改成蓝马甲，网兜背在后面、浮球夹在身侧；推箱时浮球要换手。",
+ "content_hash": "b9c3833539a5003eefdc1a4dc9fbe9ab44e556330b06f82076493c14a6af2771"
+}

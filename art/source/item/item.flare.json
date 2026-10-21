@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.flare",
+ "name": "通用照明弹",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "..........t.....",
+   ".......l..k..l..",
+   "........klk.....",
+   "......tklllkt...",
+   "........klk.....",
+   ".......zkzk.l...",
+   "......zihz......",
+   ".....zihz.......",
+   "....zihz........",
+   "...ztihz........",
+   "..zihzz.........",
+   ".zihz...........",
+   ".zhz............",
+   "..z.............",
+   "................"
+  ]
+ ],
+ "usage": "非地府地图用的照明弹道具图标：一根红色信号棒，顶端冒出白黄色的火花。地府用 item.flare_diyu（孔明灯样式），功能相同由游戏实现，这里只交图标。",
+ "notes": "跨地图补齐美术候选（离线全量任务 OFFLINE-ART-20261020，SPECS-SUPPLEMENT「跨地图补齐」），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "6153d696322bebe24eff2bce42101fcd115cdd254bad0b0eb0118cef194cf851"
+}

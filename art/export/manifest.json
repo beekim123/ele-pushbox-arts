@@ -338,6 +338,150 @@
    "ninepatch": null
   },
   {
+   "id": "avatar.hero_bell_doll",
+   "name": "阿铃头像",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "a29b5e1ce64e66ee69450c08cbd828c4a2f43bac74d09a431faad19b651317b4",
+    "status": "review",
+    "preview": "art/export/preview/avatar.hero_bell_doll.png",
+    "preview_sha256": "177be616dee2e01b4418ffd81a21be0c495b57a91be5f6df77e9cc58f9470afb"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.hero_fox_mask",
+   "name": "小狐头像",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "9f8fe7a7577f2c61e81d4cb49aec8894ed39298cb52892e645ed651689fd29fb",
+    "status": "review",
+    "preview": "art/export/preview/avatar.hero_fox_mask.png",
+    "preview_sha256": "e0fcbae206ebc5d985075f5d039da1fc2d346fddead853e902c3dabd67837696"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.hero_lamp_flower",
+   "name": "灯花头像",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "458f1efc63ed2b6377bded57833d2b331cdf3c65e29acf4e7d1bbe2b02770cbd",
+    "status": "review",
+    "preview": "art/export/preview/avatar.hero_lamp_flower.png",
+    "preview_sha256": "d77574173b0c22fcf9e825ad43aadf67c3d75c44c7244de186b48b10ad984700"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "avatar.hero_little_haenyeo",
+   "name": "小海女头像",
+   "category": "avatar",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "5a3161e7a2ac0e4a738518667fbff48ceee6eb00e83c33d4e378396149839bc2",
+    "status": "review",
+    "preview": "art/export/preview/avatar.hero_little_haenyeo.png",
+    "preview_sha256": "4d6be2c7e49feb1b06c2d8b7f584fe18c015b6b8bdc83519093bfe71498d7282"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    24,
+    24
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "avatar.ice_cream_vendor",
    "name": "滚轮头像 · 冰淇淋车老板",
    "category": "avatar",
@@ -1191,6 +1335,49 @@
    "ninepatch": null
   },
   {
+   "id": "cargo.love_letter",
+   "name": "情书与回信",
+   "category": "cargo",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "b53cb818cd9e056d293d4f45615b941138b6e9fe364a5ecc5f9fa3459baf466d",
+    "status": "review",
+    "preview": "art/export/preview/cargo.love_letter.png",
+    "preview_sha256": "bb860ff5d897ed33b917610a5c1edfcc9ba624bbfee741bb7f166b1b48ab6d19"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "pink": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "reply": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "cargo.mittens",
    "name": "货物 · 毛线手套",
    "category": "cargo",
@@ -1945,6 +2132,1233 @@
    "ninepatch": null
   },
   {
+   "id": "char.hero_bell_doll",
+   "name": "阿铃基础整套动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "3fa4eafc012359af5d461aeec343c09b1b3df6084bc06e92509e2a559a269f80",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_bell_doll.png",
+    "preview_sha256": "4454ed9af0fe5b14be98de138be9c28cf5c8a34f878fd6d0c7c5d1c8c1c34f96"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 21,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_bell_doll_delivery",
+   "name": "阿铃七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "7b39388b5dcc4e91219c7f7b5b87521b48225aea911b8226587b2d48063f6e09",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_bell_doll_delivery.png",
+    "preview_sha256": "6c45cec8f1dc5a67c85a6d6e8c1d3e9b94e55d42b7e2e9b9a8303a3c3f36d5ac"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_concept_bell_doll",
+   "name": "阿铃概念候选",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "d949ae46cfd1025f2dfe341cfb945b1f7292f7e6f18c0b2729294966e73f83a5",
+    "status": "draft",
+    "preview": "art/export/preview/char.hero_concept_bell_doll.png",
+    "preview_sha256": "775ee1557e731f4850e26ea4ccf55def1f803efd7a5456fe5350e071919b1f1c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "A_old_bronze": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "B_brass_coat": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "C_patina_bell": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_concept_fox_mask",
+   "name": "小狐概念候选",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "b2510c71ed483993f72479d07cd006b3ae3426fafeed1494263f49a393307565",
+    "status": "draft",
+    "preview": "art/export/preview/char.hero_concept_fox_mask.png",
+    "preview_sha256": "e9a0626be36b2a064edd8b590f9466a71c1c0189256202f746e8aa84ba81a382"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "A_bamboo_box": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "B_night_cloak": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "C_side_box": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_concept_lamp_flower",
+   "name": "灯花概念候选",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "4e153a432069b1dcd28904162038bc1a3e19412963909b554ae3df47d8d0ad94",
+    "status": "draft",
+    "preview": "art/export/preview/char.hero_concept_lamp_flower.png",
+    "preview_sha256": "024c8cbe4b66c71dff3aa95bd27b152be45987b5dd6547903ac193fca9c3f1fa"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "A_wax_lamp": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "B_oil_dish": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    },
+    "C_wick_sprite": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_concept_little_haenyeo",
+   "name": "小海女概念候选",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "b9c3833539a5003eefdc1a4dc9fbe9ab44e556330b06f82076493c14a6af2771",
+    "status": "draft",
+    "preview": "art/export/preview/char.hero_concept_little_haenyeo.png",
+    "preview_sha256": "db78a8922d382dfff71dd3db5060b970fc55663df479bcbda4d3485fd6137916"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "A_float_back": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "B_side_float": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_concept_old_miner",
+   "name": "老矿工概念候选",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "fe64151720cd16dbd0c2b6407a53f440cfe61dfcd2928659e544e1ce638ac5d3",
+    "status": "draft",
+    "preview": "art/export/preview/char.hero_concept_old_miner.png",
+    "preview_sha256": "a8eba73ca02b31a0925f6c63f5fc1eb997d7c15d4ad5a1489f4e7358e21c8af2"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "A_waist_tag": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    },
+    "B_hat_tag": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_fox_mask",
+   "name": "小狐基础整套动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "358ee92a3429621c7dcee81c4020690e75e8cf957d60229e60a0af436e6d537e",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_fox_mask.png",
+    "preview_sha256": "3d97c2a6884a47ee42d390954e2c617799412397d159f333c5c337f9d006d666"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 21,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_fox_mask_delivery",
+   "name": "小狐七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "a6860ab8ec087d6cfdac3b564c1221102374548b654eddc44fe5453cdd128bf0",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_fox_mask_delivery.png",
+    "preview_sha256": "24991c6d51a7ed9b2504596ce0d17c26f9c03ba196394af5b6a06fc845f4772f"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_lamp_flower",
+   "name": "灯花基础整套动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "e2a531dcbab46e25621f71bdceea87842657c22ed31b67c5c44dbb8d35c7a909",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_lamp_flower.png",
+    "preview_sha256": "dd6bf2aa928c0a0d868fab8fc20a305f4a73f8572090e0262e97c20cd6f054f6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 21,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_lamp_flower_delivery",
+   "name": "灯花七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "7467c160c0db4bcea92bea0eb7b85147d716dde0d06a9ec85018a234aac722ad",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_lamp_flower_delivery.png",
+    "preview_sha256": "6e4863401d4961b4331528e8e00fa4fbe4c314e4e9ddb073a33266037836e8b8"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_little_haenyeo",
+   "name": "小海女基础整套动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "ce2ebc320908054ae66a8bf1129b5d42ecc14d20c28e6e1295aa91086b0ebf1a",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_little_haenyeo.png",
+    "preview_sha256": "c68930a469ade97ad048168b0a79885b06c745991db56d1c7296652002c130a6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    },
+    "surface": {
+     "fps": 3,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_little_haenyeo_delivery",
+   "name": "小海女七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "db2bccb4561524230a7c85563ea2773b0250c5433faeafdc55f4f08820a9d6ed",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_little_haenyeo_delivery.png",
+    "preview_sha256": "871a416cbede94e011f1e63744780432445bceea8159537a5672be7713c24889"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_old_miner",
+   "name": "老矿工基础整套动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "b745e9f41ee55508ff2640fad3e414fbe310d87349adf81b184db670413b92de",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_old_miner.png",
+    "preview_sha256": "2fa44653bd250c7de663ddc46b2622f91f984513113122fc90bd604b8baad58e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 21,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      0,
+      0,
+      1
+     ]
+    },
+    "walk": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "push": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "climb": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      10,
+      11
+     ]
+    },
+    "dig": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      12,
+      13,
+      14
+     ]
+    },
+    "pour": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      15,
+      16,
+      17
+     ]
+    },
+    "fall": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      18
+     ]
+    },
+    "win": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      19,
+      20
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.hero_old_miner_delivery",
+   "name": "老矿工七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "bd45d34a0f07b040c3bbf69d4e804c998cab61e3751c004bd807fba9acc29e36",
+    "status": "review",
+    "preview": "art/export/preview/char.hero_old_miner_delivery.png",
+    "preview_sha256": "c4b4bf1f88e3ec6769d2916fdda4fabe68ba29aeba4630adea6bf18d8e17a38c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "char.ice_cream_vendor",
    "name": "冰淇淋车老板（收件人）",
    "category": "character",
@@ -2600,6 +4014,100 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "char.portitor_delivery",
+   "name": "渡界人七组配送扩展动作",
+   "category": "character",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "30aeee7f0617492b83b80e6e171c6cedb7c094850c2aa19088d4055004fecedf",
+    "status": "review",
+    "preview": "art/export/preview/char.portitor_delivery.png",
+    "preview_sha256": "418638f040d22addaa94447c9fd5a61bb38c45fd0c7f6b2087025273efac6110"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 23,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "carry_small": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "carry_large": {
+     "fps": 8,
+     "loop": true,
+     "frames": [
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "hurt": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      8,
+      9,
+      10
+     ]
+    },
+    "down": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      11,
+      12,
+      13,
+      14
+     ]
+    },
+    "slide": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      15,
+      16
+     ]
+    },
+    "swim": {
+     "fps": 6,
+     "loop": true,
+     "frames": [
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "sit": {
+     "fps": 2,
+     "loop": true,
+     "frames": [
+      21,
+      22
      ]
     }
    },
@@ -3342,6 +4850,43 @@
    "ninepatch": null
   },
   {
+   "id": "deco.diyu_white_lily",
+   "name": "白彼岸花",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "037a9c553b83a4296e262323d22931ef735c263b7252b577c8d1b8dcba1b73b7",
+    "status": "review",
+    "preview": "art/export/preview/deco.diyu_white_lily.png",
+    "preview_sha256": "b7ce759883c022725c39b66ade123f76ec456be8f800ea26131b8b7f43fb3562"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "deco.dungeon_moss",
    "name": "石牢 · 苔藓与小菇",
    "category": "deco",
@@ -3519,6 +5064,102 @@
    "ninepatch": null
   },
   {
+   "id": "deco.hero_lantern_tag",
+   "name": "亮暗灯牌",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "91e30fbd0ba6a06ad8158fd57b10c0056fb140dc126b2c911f94a91c83548045",
+    "status": "review",
+    "preview": "art/export/preview/deco.hero_lantern_tag.png",
+    "preview_sha256": "d529b8c67c164d8c993a070179184b8feb2f206b8f4181a61569fef9be822c8a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    10
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    10
+   ],
+   "animations": {
+    "lit": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    },
+    "dim": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.hero_lantern_tag_concept",
+   "name": "灯牌概念候选",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "616f8feff11dcbef1443820d2ba760a4afeb0aaff1e2d9ca585298a9b9a668c2",
+    "status": "draft",
+    "preview": "art/export/preview/deco.hero_lantern_tag_concept.png",
+    "preview_sha256": "5b6dc520898d77282f820c24c89f3dc75131ede28b81e0543333046e172e4778"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    10
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    4,
+    10
+   ],
+   "animations": {
+    "A_wood_lamp": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "B_paper_lantern": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "C_bronze_plate": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "deco.jeju_canola",
    "name": "济州 · 油菜花",
    "category": "deco",
@@ -3644,6 +5285,42 @@
      "frames": [
       0,
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.paper_house_built",
+   "name": "搭好的纸扎小楼",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "6ab28f7e8547862544f9ff5cd1b2144c61f01865959552b62f685858b33d75d9",
+    "status": "review",
+    "preview": "art/export/preview/deco.paper_house_built.png",
+    "preview_sha256": "a12c226ecd556b88e3fa0e610d71d12fd2a7aecca78b0271cd300a6366fd5ba0"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    32,
+    32
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    32
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
      ]
     }
    },
@@ -3957,6 +5634,116 @@
      "frames": [
       0,
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.story_home_props",
+   "name": "收件人之家的剧情摆设",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "339c6ae7a97ea94bc78fcac806419281a662be13f18c16bf644ed553684e7131",
+    "status": "review",
+    "preview": "art/export/preview/deco.story_home_props.png",
+    "preview_sha256": "09ae6e86d1152b1994777787f0514192f1260597b8fa6d81a948476a726e380b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 6,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "letter_on_nail": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "mushroom_vase": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "flower_lamp": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      2,
+      2,
+      3,
+      4
+     ]
+    },
+    "old_goggles": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "deco.story_keepsakes",
+   "name": "三章纪念物",
+   "category": "deco",
+   "kind": "sprite",
+   "layer": "ambient",
+   "current": {
+    "version": 1,
+    "hash": "59addca64e6a76e49ee97bf92a015c4a2fba59e9375e1b0368f190e26c89286f",
+    "status": "review",
+    "preview": "art/export/preview/deco.story_keepsakes.png",
+    "preview_sha256": "ccb95196224469cb469b458d037f7bfb05303a2aa0724baeec786c152298b159"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 3,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "nail": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "recipe": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "postcard": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      2
      ]
     }
    },
@@ -5740,6 +7527,222 @@
    "ninepatch": null
   },
   {
+   "id": "item.flare",
+   "name": "通用照明弹",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "6153d696322bebe24eff2bce42101fcd115cdd254bad0b0eb0118cef194cf851",
+    "status": "review",
+    "preview": "art/export/preview/item.flare.png",
+    "preview_sha256": "0f060d39595ae4bfdf526be85bc209d98f5916115aebcc8ea1feb5389fb635f6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.flare_diyu",
+   "name": "引魂灯",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "3d80fa364792d839c3c8344139f270b492af142a4d00081dbd6d24b491d4b058",
+    "status": "review",
+    "preview": "art/export/preview/item.flare_diyu.png",
+    "preview_sha256": "940816d18ca3a7c330d6747cf18f481f51e25f05cf8e52c4f9ce6c479ca1ac35"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.hourglass",
+   "name": "回溯沙漏",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "ba9aed6642db1b6579d453768dd01ed5240385ae8dea15df2e7efac29cf73363",
+    "status": "review",
+    "preview": "art/export/preview/item.hourglass.png",
+    "preview_sha256": "323fd0326bdf4d18437c3bc9c9af931e1803221bb8977ddfeb44cf841d5bf690"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.ice_cube",
+   "name": "冰块",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "2a0dd95ec5e1ebfe731b115ba5afeaad5813fb77acf7d8928b4a7b6ac425ffa1",
+    "status": "review",
+    "preview": "art/export/preview/item.ice_cube.png",
+    "preview_sha256": "4c2d7d6cb2935103f7942791ed37e782ed1d4eac27fa4c50f1ae3167d402de72"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.map_piece",
+   "name": "地图碎片",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "fafdf26d42ec88b96d27eb5a437c0624d5a0e384fb20f9bc1adb6475761bc2b7",
+    "status": "review",
+    "preview": "art/export/preview/item.map_piece.png",
+    "preview_sha256": "6a1067ceff041b8168f2455fa58bd5a523e36bbfd773a8d44e7231848363d29c"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.pocket_watch",
+   "name": "时停怀表",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "30fd13758eff91f06390b539c95f172633c4cf4bde8008952f9d27c71785ce38",
+    "status": "review",
+    "preview": "art/export/preview/item.pocket_watch.png",
+    "preview_sha256": "26599a2b06f94f8b2ad6ae724fbb6d507c9f9ba0a4508b6ee8e3a406e92ff7f7"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "item.rope_ladder",
    "name": "绳梯",
    "category": "item",
@@ -5827,6 +7830,78 @@
      "loop": false,
      "frames": [
       1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.seal",
+   "name": "通用封条",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "9bfbae624c17de3684e933be4aff145d18696167f97969fd015c49217b4261d6",
+    "status": "review",
+    "preview": "art/export/preview/item.seal.png",
+    "preview_sha256": "6f4bbb316dca4c764237772be99a0655cab1a63082a916a0e2a2dc050d78a1f6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.seal_diyu",
+   "name": "黄符",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "da17ed9f159fb4109cd401b6082dfccefabf7cde51d36c17f6a04e96e68bb748",
+    "status": "review",
+    "preview": "art/export/preview/item.seal_diyu.png",
+    "preview_sha256": "1a1899ee90e0582ba334e454f41b69186d5baff66976de6d5a1de106dd1a3e28"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
      ]
     }
    },
@@ -5997,6 +8072,474 @@
     "date": "2026-10-18T07:35:29.772Z"
    },
    "current_is_approved": true,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.transfer_slip",
+   "name": "改签符",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "025b0f495057e5de42b9a6c2d7d8659e82c8420b6ab55b64ba2f8518bf430eac",
+    "status": "review",
+    "preview": "art/export/preview/item.transfer_slip.png",
+    "preview_sha256": "4e0d1705910a29d14a865568f8451afa3653b6b24577a732815011f010112c51"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_bird_whistle",
+   "name": "鸟哨",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "c864871bf439b680a028d72b6bdfaca9507becc39162c95ae6e2056c65190d67",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_bird_whistle.png",
+    "preview_sha256": "571526a47709e7eb95e92bce6065339a8a21702e9ebede746f93d35ced87120b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_candied_haws",
+   "name": "两串糖葫芦",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "3c473edd5d4ba7dc78be229bb7dba45a2774697cba84e8ff46bf06ce994b2a43",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_candied_haws.png",
+    "preview_sha256": "b69063b9776bc30f86433511f866f762fa840d3deb38107f17302879259172a5"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_cinnabar_ink",
+   "name": "朱砂墨",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "dac14a9b45e0ca830b618c352eb037b4a8755c31d34fa28f827636edafc10a11",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_cinnabar_ink.png",
+    "preview_sha256": "6feae130365f9a550f914ab32d998395693fb00ebb03c12b64c11db8a950cd90"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_dive_mask",
+   "name": "新水镜",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "0033ac55f57939742c4fc48be4320954edcf5ee4778be324ee387443f08fdb6c",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_dive_mask.png",
+    "preview_sha256": "7b226ca29bfe7bbfc309bf3021145ec77db711350109ffe3a3dea2affeb7c8aa"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_family_photo",
+   "name": "全家福",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "8a18a6e75f1d78e874a03b6e9190926808582f29dd1aee48ab0ae327c22902c6",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_family_photo.png",
+    "preview_sha256": "d319c688ce85885bdeaef5c789c994cf6db8ea1225f375db6d402c5ca4cc8bba"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_lamp_wick",
+   "name": "灯芯",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "0e8334048a15bbb2e4f33c42e9ba8b17cea1934770a9f0b8ef4ff51d1803920c",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_lamp_wick.png",
+    "preview_sha256": "a700f7ef11259a9a78ad67dac2ffa21461ba1d3ea5c3a4153a6bc38bef67a8d9"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_name_tag",
+   "name": "名牌",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "ef6ef45dfdd5e98644c95fe1c31d36b1bdde900e26fb11571fcdcd9b6d82529a",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_name_tag.png",
+    "preview_sha256": "df4d7967444139826fe5b3657d4d56e0d32fc34e485b271aefc573c83967db2d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_osmanthus_honey",
+   "name": "桂花蜜",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "fa4bc329606706671ed10dcb6a7a8baa01e0dbc71b6da9ee3c0026bda38cdd61",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_osmanthus_honey.png",
+    "preview_sha256": "35935f9d7d8d7c1c56768361b026c9255d67627e1fecdd16cb4beef8034f9f6d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_palm_fan",
+   "name": "大蒲扇",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "bb2585dd6efb490279e84ef23f0825ab07afce66b1d014259f47a8a898f0f9e9",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_palm_fan.png",
+    "preview_sha256": "76f63fe9db35be50c3e6b54fab514a22cff61d7a700cdc7ee487a67feec5940a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_pruning_shears",
+   "name": "剪枝剪",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "d89f9c231f6ff5606f5cf552b1473c748673fea9a4df88cc7616f3528dcb6413",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_pruning_shears.png",
+    "preview_sha256": "914767bf9ae4963d8170efd0c356dd84f6ed9d26556243c8e44e82e629aabd3e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_satba",
+   "name": "摔跤腰带",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "63c0b7a0094f093febd05da3ef5e96edf9f684223d0ea9f59e27cadda47f2b38",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_satba.png",
+    "preview_sha256": "7b3fc534d885bb96bcbb7dfb3dd19cbf833cd62ab87c5a8128eaea0092388a8e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "item.wish_whetstone",
+   "name": "磨刀石",
+   "category": "item",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "6cf7ad00acb0d013f5caeaf4eab1efc1e0c0e55724d8ef336e86198fa0f3f643",
+    "status": "review",
+    "preview": "art/export/preview/item.wish_whetstone.png",
+    "preview_sha256": "d99753e561e96862e36f4fa25e3f25d0de7950a474b628cd4a10c088eb68ccf6"
+   },
+   "approved": null,
+   "current_is_approved": false,
    "frame_size": [
     16,
     16
@@ -8554,6 +11097,42 @@
    "ninepatch": null
   },
   {
+   "id": "obj.bench_diyu",
+   "name": "歇脚长凳",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "ab5169da07c3394d7fc61aa79ad78c99090828cb3936364721c6014c0519407f",
+    "status": "review",
+    "preview": "art/export/preview/obj.bench_diyu.png",
+    "preview_sha256": "5628c460163f1513fabfad23c9691a4090032b85a6cdfc92ec5db3945b004f1b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    32,
+    16
+   ],
+   "frame_count": 1,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    16
+   ],
+   "animations": {
+    "default": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "obj.crate_iron",
    "name": "铁箱",
    "category": "object",
@@ -8697,6 +11276,236 @@
    "ninepatch": null
   },
   {
+   "id": "obj.door_lantern_diyu",
+   "name": "地府门牌灯笼",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "f1a24a538890b82d0a9c6725f6a644504c3ff434b6f58fa5e98839a03697090d",
+    "status": "review",
+    "preview": "art/export/preview/obj.door_lantern_diyu.png",
+    "preview_sha256": "21b68b7b2217e07f68c03f3bc4a84fc8c8097c40b7516433efcd728c1f86a076"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 9,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    },
+    "lit": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "reroll": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      5,
+      6,
+      7,
+      8,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "obj.door_sign_dungeon",
+   "name": "石牢门牌",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "b3a65de2e8a507a1965bd96770c9181cbc4a7d297f481c653a925b26a5cc20a4",
+    "status": "review",
+    "preview": "art/export/preview/obj.door_sign_dungeon.png",
+    "preview_sha256": "bd3a6efe65c8ae3e36684bd21e565f6f8da26cc28a940d1e6c7e74a4a0eea997"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 9,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    },
+    "lit": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "reroll": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      5,
+      6,
+      7,
+      8,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "obj.door_sign_jeju",
+   "name": "济州门牌",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "1f62a8e39b0b88f60a657a0049f9ed4780452b8d23cd87d75dbe2cac64c78bd3",
+    "status": "review",
+    "preview": "art/export/preview/obj.door_sign_jeju.png",
+    "preview_sha256": "7742f5424cb773b800680bf7a5150b2043a6d410cda800edd910b1c26a30f228"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    32
+   ],
+   "frame_count": 9,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      0,
+      2
+     ]
+    },
+    "lit": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      3,
+      4
+     ]
+    },
+    "reroll": {
+     "fps": 8,
+     "loop": false,
+     "frames": [
+      5,
+      6,
+      7,
+      8,
+      0
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "obj.event_stall_diyu",
+   "name": "鬼市事件摊",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "a4caa4e6a1bcfe8840fb1ce56d918a6c8ce344ea0b41b230182cd34bbd0daf0c",
+    "status": "review",
+    "preview": "art/export/preview/obj.event_stall_diyu.png",
+    "preview_sha256": "9db67ef46abc1bfd58da0af46ced44ea7e94b966b4c70d14322c9f1149d9e2da"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    32,
+    32
+   ],
+   "frame_count": 9,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    16,
+    32
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      3
+     ]
+    },
+    "riddle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      4,
+      5
+     ]
+    },
+    "soup": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      6,
+      7,
+      8
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "obj.goblin_forge",
    "name": "铁砧与炉子（地精铁匠家）",
    "category": "object",
@@ -8736,6 +11545,181 @@
       0,
       1,
       2,
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "obj.secret_crack",
+   "name": "暗门墙缝",
+   "category": "object",
+   "kind": "sprite",
+   "layer": "entity",
+   "current": {
+    "version": 1,
+    "hash": "fe73905c1fcd10b7b866209e139bb223ca8858a3348de14aef9b02722ecee483",
+    "status": "review",
+    "preview": "art/export/preview/obj.secret_crack.png",
+    "preview_sha256": "469983339da9c24a1763bab5d8d728f15f74e59910872f43eb91db5f1f6da2c0"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 4,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    8,
+    16
+   ],
+   "animations": {
+    "idle": {
+     "fps": 4,
+     "loop": true,
+     "frames": [
+      0,
+      1,
+      2,
+      1
+     ]
+    },
+    "open": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "scene.hub_crew",
+   "name": "伙计房刚开张与读完三章两状态",
+   "category": "scene",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "c7d1a29e66b9a3275b42ac084676465abb702d4ee03982b9b0d4569cabef243d",
+    "status": "review",
+    "preview": "art/export/preview/scene.hub_crew.png",
+    "preview_sha256": "96f49cde2cc6c742917277b3b7aa407ffd6e5e96a63d0e2c4138163ccae49323"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    320,
+    180
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "before": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "after": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "scene.hub_gallery",
+   "name": "展览角刚开张与读完三章两状态",
+   "category": "scene",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "1ad434e2c8354559ab5758bf3100f115b55017dace7b27326e795c58ef7b00d2",
+    "status": "review",
+    "preview": "art/export/preview/scene.hub_gallery.png",
+    "preview_sha256": "c9d3ee9baa76b60eea7ebe0800f909bc33f4ecc781a41c132192e275a571656b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    320,
+    180
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "before": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "after": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
+   "id": "scene.hub_post",
+   "name": "邮局刚开张与读完三章两状态",
+   "category": "scene",
+   "kind": "sprite",
+   "layer": "background",
+   "current": {
+    "version": 1,
+    "hash": "042b085023c12380934abe75ebbe019c27bebc88c21cac008214889a4ac7320b",
+    "status": "review",
+    "preview": "art/export/preview/scene.hub_post.png",
+    "preview_sha256": "4b7067196dfee13b06e0c34e5020c954e5de374a296e1d5c02b80307d586f612"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    320,
+    180
+   ],
+   "frame_count": 2,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "before": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "after": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
       1
      ]
     }
@@ -10532,6 +13516,105 @@
    "ninepatch": null
   },
   {
+   "id": "ui.buff_icons",
+   "name": "十种增益图标",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "6c3001f69ae964089ff36fd12f3e839e4f6e5917b55f34edf28689410f5c6020",
+    "status": "review",
+    "preview": "art/export/preview/ui.buff_icons.png",
+    "preview_sha256": "8911f2d17991428441825a75ad20456d56857e8c8d99a740177b7ff339b17bb5"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    16,
+    16
+   ],
+   "frame_count": 10,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "cart": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "energy_drink": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "cooler": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "thermos": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "padding": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "waterproof": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    },
+    "compass": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      6
+     ]
+    },
+    "running_shoes": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      7
+     ]
+    },
+    "night_vision": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      8
+     ]
+    },
+    "lucky_charm": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      9
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "ui.cause_link",
    "name": "一起闪与因果光",
    "category": "ui",
@@ -11474,6 +14557,119 @@
    "ninepatch": null
   },
   {
+   "id": "ui.run_icons",
+   "name": "房型、奖励、安全与计时图标",
+   "category": "ui",
+   "kind": "sprite",
+   "layer": "ui",
+   "current": {
+    "version": 1,
+    "hash": "1d0ecca40eeb2ba46359940afc64d8e02dc69606054bbe80c0e69283aae18126",
+    "status": "review",
+    "preview": "art/export/preview/ui.run_icons.png",
+    "preview_sha256": "612bf3156726cd11cdaec4635850d8554233524bbc02b75330deb51862e81405"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "frame_size": [
+    8,
+    8
+   ],
+   "frame_count": 12,
+   "sheet": "horizontal strip, frame i at x = i * frame_width",
+   "anchor": [
+    0,
+    0
+   ],
+   "animations": {
+    "blockade": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      0
+     ]
+    },
+    "develop": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      1
+     ]
+    },
+    "event": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      2
+     ]
+    },
+    "coins": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      3
+     ]
+    },
+    "item": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      4
+     ]
+    },
+    "buff": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      5
+     ]
+    },
+    "snack": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      6
+     ]
+    },
+    "stamp": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      7
+     ]
+    },
+    "wish": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      8
+     ]
+    },
+    "skull": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      9
+     ]
+    },
+    "safe": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      10
+     ]
+    },
+    "think": {
+     "fps": 1,
+     "loop": false,
+     "frames": [
+      11
+     ]
+    }
+   },
+   "ninepatch": null
+  },
+  {
    "id": "ui.screen.chapters",
    "name": "章节选择",
    "category": "screen",
@@ -12096,6 +15292,842 @@
     "ui.keycap",
     "ui.keyhint",
     "ui.panel"
+   ]
+  },
+  {
+   "id": "ui.screen.crew_joined",
+   "name": "伙计加入提示",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "af48f3905d2c7b2ff8e7ce1c02e17e295c9368dc96e8ea9eb4753de38819e79f",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.crew_joined.png",
+    "preview_sha256": "91237d57331dd757f8a36bcf9e06ba752d40a94ca454ccdd2aa8d171b7084b3e"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-crew.js",
+    "workbench/js/core/ui-screens-story.js",
+    "workbench/js/core/ui-screens-crew.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json",
+    "content/i18n-crew/zh-Hans.json",
+    "content/i18n-crew/en.json"
+   ],
+   "params": {
+    "screen": "crew_joined",
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "hero": "old_miner",
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.old_miner",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.crew_pick",
+   "name": "派伙计界面",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "d0f6f3edde3f83917d2acf45d31df8d6672a74edd637d693ad40a3264d5e2d85",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.crew_pick.png",
+    "preview_sha256": "b269bc34b79c3dc1fac44feca0f6637a9b6e53776827d17d2d0cf88224e8750d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-crew.js",
+    "workbench/js/core/ui-screens-story.js",
+    "workbench/js/core/ui-screens-crew.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json",
+    "content/i18n-crew/zh-Hans.json",
+    "content/i18n-crew/en.json"
+   ],
+   "params": {
+    "screen": "crew_pick",
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "focus": 1,
+    "order": {
+     "world": "dungeon",
+     "cargo": "vase",
+     "recipient": "zombie"
+    },
+    "crew": [
+     {
+      "id": "portitor"
+     },
+     {
+      "id": "old_miner"
+     },
+     {
+      "id": "bell_doll"
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.hero_bell_doll",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.vase",
+    "char.portitor",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.crew_room",
+   "name": "伙计房界面",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "84a3743893deac7bfd857a606121d485d58487aaee2c617206a1087ba8bcdbfd",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.crew_room.png",
+    "preview_sha256": "3813f2e48f9a2633cf36d6bbc1093d451dd5a3b9ef883072ac9cea655574803d"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-crew.js",
+    "workbench/js/core/ui-screens-story.js",
+    "workbench/js/core/ui-screens-crew.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json",
+    "content/i18n-crew/zh-Hans.json",
+    "content/i18n-crew/en.json"
+   ],
+   "params": {
+    "screen": "crew_room",
+    "bg": "scene.hub_crew",
+    "state": "before",
+    "focus": 2,
+    "crew": [
+     {
+      "id": "portitor",
+      "unlocked": true
+     },
+     {
+      "id": "old_miner",
+      "unlocked": true
+     },
+     {
+      "id": "bell_doll",
+      "unlocked": true
+     },
+     {
+      "id": "fox_mask",
+      "unlocked": false
+     },
+     {
+      "id": "lamp_flower",
+      "unlocked": false
+     },
+     {
+      "id": "little_haenyeo",
+      "unlocked": false
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.hero_bell_doll",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.delivery_assist",
+   "name": "配送辅助设置独立面板",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "78c855c1370430776f4a6ec1d6e29d9a08c75a228b57454bec8021a093e91cfc",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.delivery_assist.png",
+    "preview_sha256": "6831dae01263c759209d1a456e710d12a29374ea17eac34bb7d7867fa71503f9"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-dhelp.js",
+    "workbench/js/core/ui-screens-dhelp.js",
+    "content/i18n-dhelp/zh-Hans.json",
+    "content/i18n-dhelp/en.json"
+   ],
+   "params": {
+    "screen": "delivery_assist",
+    "theme": "theme.dungeon",
+    "relaxed": 70,
+    "think": false,
+    "heart": true,
+    "focus": 0,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.delivery_help",
+   "name": "按地图教学回顾",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "95acea162f60425c4a28b93b6ecccd3106bb8a6b5681ab28572511361e6e28c5",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.delivery_help.png",
+    "preview_sha256": "d5810af56287fd0bec9c828b8012fb1a782567a16ec8ae706de45a3d66288149"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/terrain-jeju.js",
+    "workbench/js/core/font-wish.js",
+    "workbench/js/core/font-dhelp.js",
+    "workbench/js/core/ui-screens-dhelp.js",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-wish/zh-Hans.json",
+    "content/i18n-wish/en.json",
+    "content/i18n-dhelp/zh-Hans.json",
+    "content/i18n-dhelp/en.json"
+   ],
+   "params": {
+    "screen": "delivery_help",
+    "departure": {
+     "screen": "reels",
+     "theme": "theme.dungeon",
+     "exclude": [
+      "fauna.dungeon_rat"
+     ],
+     "cargoList": [
+      "letter",
+      "vase",
+      "ice_cream"
+     ],
+     "recipientList": [
+      "old_miner",
+      "zombie",
+      "goblin_smith"
+     ],
+     "cargo": "letter",
+     "recipient": "old_miner",
+     "liked": true,
+     "rerolls": 1,
+     "cat": "idle",
+     "room2": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_10",
+      "preview_only": true,
+      "world": "dungeon",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_10.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "world": "dungeon",
+     "map": "dungeon_2",
+     "mapList": [
+      "dungeon_2",
+      "diyu_1"
+     ],
+     "mapRooms": {
+      "dungeon_2": {
+       "format": "pushbox.room/2",
+       "id": "art_demo_10",
+       "preview_only": true,
+       "world": "dungeon",
+       "type": "room",
+       "size": [
+        1,
+        1
+       ],
+       "mirror": false,
+       "name": "artdemo.art_demo_10.name",
+       "exits": [
+        "left.0.high",
+        "left.0.low",
+        "right.0.high",
+        "right.0.low"
+       ],
+       "routes": [
+        "left.0.high>right.0.low"
+       ],
+       "legend": {
+        "1": {
+         "feature": "recipient"
+        },
+        "2": {
+         "feature": "keeper"
+        }
+       },
+       "map": [
+        "####################",
+        "####################",
+        "....................",
+        ".........H......1...",
+        "#######..H..########",
+        "#........H.........#",
+        "....................",
+        ".........H...2......",
+        "####################",
+        "####################"
+       ]
+      },
+      "diyu_1": {
+       "format": "pushbox.room/2",
+       "id": "art_demo_01",
+       "preview_only": true,
+       "world": "diyu",
+       "type": "room",
+       "size": [
+        1,
+        1
+       ],
+       "mirror": false,
+       "name": "artdemo.art_demo_01.name",
+       "exits": [
+        "left.0.high",
+        "left.0.low",
+        "right.0.high",
+        "right.0.low"
+       ],
+       "routes": [
+        "left.0.high>right.0.low"
+       ],
+       "legend": {
+        "1": {
+         "feature": "recipient"
+        },
+        "2": {
+         "feature": "keeper"
+        }
+       },
+       "map": [
+        "####################",
+        "####################",
+        "....................",
+        ".........H......1...",
+        "#######..H..########",
+        "#........H.........#",
+        "....................",
+        ".........H...2......",
+        "####################",
+        "####################"
+       ]
+      }
+     },
+     "focus": 1
+    },
+    "maps": [
+     {
+      "world": "diyu",
+      "seen": true,
+      "rooms": [
+       "art_demo_03",
+       "art_demo_04"
+      ]
+     },
+     {
+      "world": "dungeon",
+      "seen": true,
+      "rooms": [
+       "art_demo_08",
+       "art_demo_09"
+      ]
+     },
+     {
+      "world": "jeju",
+      "seen": false,
+      "rooms": [
+       "art_demo_11",
+       "art_demo_12"
+      ]
+     }
+    ],
+    "rooms": {
+     "art_demo_03": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_03",
+      "preview_only": true,
+      "world": "diyu",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_03.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "art_demo_04": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_04",
+      "preview_only": true,
+      "world": "diyu",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_04.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "art_demo_08": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_08",
+      "preview_only": true,
+      "world": "dungeon",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_08.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "art_demo_09": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_09",
+      "preview_only": true,
+      "world": "dungeon",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_09.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "art_demo_11": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_11",
+      "preview_only": true,
+      "world": "jeju",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_11.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "art_demo_12": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_12",
+      "preview_only": true,
+      "world": "jeju",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_12.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     }
+    },
+    "focus": 0,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.goblin_smith",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fx.dig_bits",
+    "fx.jeju_gust",
+    "item.coin",
+    "item.snack",
+    "mech.bridge",
+    "mech.door",
+    "mech.jeju_seesaw",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.emote"
    ]
   },
   {
@@ -12807,6 +16839,122 @@
     "ui.keycap",
     "ui.menu_icons",
     "ui.panel"
+   ]
+  },
+  {
+   "id": "ui.screen.delivery_practice",
+   "name": "独立教学练习",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "a5923207e977920c7ea88eb03f39fa8ed9dfbdf7ce7dd88a438e584854fbd320",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.delivery_practice.png",
+    "preview_sha256": "5ae50ac6e219ef874769fd54c727383ecc44fe24f0773a0b50a8217f28f0bbf7"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/terrain-jeju.js",
+    "workbench/js/core/font-dhelp.js",
+    "workbench/js/core/ui-screens-dhelp.js",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-dhelp/zh-Hans.json",
+    "content/i18n-dhelp/en.json"
+   ],
+   "params": {
+    "screen": "delivery_practice",
+    "world": "diyu",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_03",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_03.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    },
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "mech.ladder",
+    "mech.lantern_float",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote"
    ]
   },
   {
@@ -13609,6 +17757,89 @@
     "ui.menu_icons",
     "ui.panel",
     "ui.theme_emblem"
+   ]
+  },
+  {
+   "id": "ui.screen.lobby_story",
+   "name": "带剧情入口的新大厅",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "fcfe4eab5b73084361dfe9ba0205e48cb6898edf9048a500d92df5b3618b6102",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.lobby_story.png",
+    "preview_sha256": "0dd1a3ec2e8c710c51746a23fd9a5a7f6c66ac55fcb64993e106645b3352998b"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "lobby_story",
+    "theme": "theme.diyu",
+    "focus": 2,
+    "coins": 1280,
+    "items": [
+     {
+      "key": "result.lobby.level"
+     },
+     {
+      "key": "result.lobby.delivery"
+     },
+     {
+      "key": "storyui.lobby.story",
+      "new": true
+     },
+     {
+      "key": "menu.settings"
+     },
+     {
+      "key": "menu.quit"
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.diyu"
    ]
   },
   {
@@ -14910,6 +19141,1925 @@
    ]
   },
   {
+   "id": "ui.screen.run_door",
+   "name": "门牌选择（岔路①）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "a879658752384bebf27423649995e3114a799dab77a027b987e94c962f74d253",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_door.png",
+    "preview_sha256": "e6e6f5c1a2930535e96eb357e52d4a0487a54e266dd17627126a394d7d366710"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/ui-screens-door.js",
+    "content/i18n-door/zh-Hans.json",
+    "content/i18n-door/en.json"
+   ],
+   "params": {
+    "screen": "run_door",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "route": "left.0.high>right.0.low",
+    "open": [
+     "left.0.high",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "player": [
+     13,
+     3
+    ],
+    "facing": 1,
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 3,
+     "max": 3,
+     "rule": "melt",
+     "coins": 20,
+     "sand": 0,
+     "items": [],
+     "slots": 3,
+     "secs": 190,
+     "snacks": 3
+    },
+    "chain": {
+     "cur": 3
+    },
+    "doors": [
+     {
+      "exit": "right.0.high",
+      "room": "blockade",
+      "reward": "wish",
+      "item": "wish_palm_fan",
+      "recipient": "yama"
+     },
+     {
+      "exit": "right.0.low",
+      "room": "develop",
+      "reward": "coins",
+      "amount": 30
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_04",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_04.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_door_skull",
+   "name": "骷髅门牌与改签提示（岔路③）",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "a408e28faacd6058bbd256b27e488794ed31d9bd8e1d89eff039acd7cf9b6374",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_door_skull.png",
+    "preview_sha256": "8833ff8bd822a953c21a132aa3e2552482ef967b652f09733785576b1e9f0fd1"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/ui-screens-door.js",
+    "content/i18n-door/zh-Hans.json",
+    "content/i18n-door/en.json"
+   ],
+   "params": {
+    "screen": "run_door_skull",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "route": "left.0.low>right.0.high",
+    "open": [
+     "left.0.low",
+     "right.0.high",
+     "right.0.low"
+    ],
+    "player": [
+     13,
+     3
+    ],
+    "facing": 1,
+    "collected": [],
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 2,
+     "max": 3,
+     "rule": "melt",
+     "coins": 85,
+     "sand": 0,
+     "items": [
+      "wish_palm_fan",
+      "transfer_slip",
+      "hourglass"
+     ],
+     "slots": 3,
+     "secs": 590,
+     "snacks": 3
+    },
+    "chain": {
+     "cur": 8,
+     "picks": {
+      "4": "up",
+      "7": "up"
+     }
+    },
+    "doors": [
+     {
+      "exit": "right.0.high",
+      "room": "develop",
+      "reward": "item",
+      "item": "flare_diyu"
+     },
+     {
+      "exit": "right.0.low",
+      "room": "blockade",
+      "reward": "coins",
+      "amount": 100,
+      "skull": true
+     }
+    ],
+    "reroll": {
+     "door": "right.0.low"
+    },
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_05",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_05.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.hourglass",
+    "item.sandbag",
+    "item.snack",
+    "item.transfer_slip",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_event",
+   "name": "奇遇事件",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "21611d010673af548b4fd10c1201f99a8199d782383edf491a1006cf8ffc14a3",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_event.png",
+    "preview_sha256": "088cdc69171a640e4fb369bd9c48badf69732960424dc8b35739436b0b12c969"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json"
+   ],
+   "params": {
+    "screen": "run_event",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "player": [
+     13,
+     3
+    ],
+    "facing": -1,
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 2,
+     "max": 3,
+     "rule": "melt",
+     "coins": 65,
+     "sand": 0,
+     "items": [
+      "wish_palm_fan",
+      "sandbag"
+     ],
+     "slots": 3,
+     "secs": 520,
+     "snacks": 3
+    },
+    "event": "forgetful_soup",
+    "forget": "sandbag",
+    "focus": 0,
+    "goods": [
+     {
+      "id": "hourglass",
+      "price": 100,
+      "group": "rare"
+     },
+     {
+      "id": "running_shoes",
+      "kind": "buff",
+      "price": 100,
+      "group": "rare"
+     },
+     {
+      "id": "wish_palm_fan",
+      "price": 65,
+      "group": "rare",
+      "wish": "yama"
+     }
+    ],
+    "guesses": [
+     "wish_family_photo",
+     "wish_palm_fan",
+     "wish_cinnabar_ink"
+    ],
+    "guess": 1,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_06",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_06.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.meng_po",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.event_stall_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_lucky",
+   "name": "上上签",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "f3d57767a3f106ef40a4aa126debb2d1f9eebc57d04ff454a55d81bb465ac43a",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_lucky.png",
+    "preview_sha256": "b198d3e8c35ab199ffd2cbdac499bac874ff2fbb5700db1301c2de2fde4afb19"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-wish.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "workbench/js/core/ui-screens-wish.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-wish/zh-Hans.json",
+    "content/i18n-wish/en.json"
+   ],
+   "params": {
+    "screen": "run_lucky",
+    "theme": "theme.diyu",
+    "exclude": [],
+    "cargoList": [
+     "letter",
+     "ice_cream",
+     "vase"
+    ],
+    "recipientList": [
+     "meng_po",
+     "yama",
+     "judge"
+    ],
+    "cargo": "ice_cream",
+    "recipient": "yama",
+    "liked": true,
+    "rerolls": 1,
+    "cat": "idle",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_01",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_01.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    },
+    "world": "diyu",
+    "map": "diyu_1",
+    "mapList": [
+     "dungeon_2",
+     "diyu_1"
+    ],
+    "mapRooms": {
+     "dungeon_2": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_10",
+      "preview_only": true,
+      "world": "dungeon",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_10.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "diyu_1": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_01",
+      "preview_only": true,
+      "world": "diyu",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_01.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     }
+    },
+    "focus": 1,
+    "item": "wish_palm_fan",
+    "known": true,
+    "reason": "lucky",
+    "double": true,
+    "combo": {
+     "recipient": "yama",
+     "cargo": "ice_cream"
+    },
+    "slots": 3,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon"
+   ]
+  },
+  {
+   "id": "ui.screen.run_map",
+   "name": "十二格链式小地图",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "282d7bbe56ef7f6c3957bac8049df32816d2a5a50032c125d689d8ee0eb9e3d8",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_map.png",
+    "preview_sha256": "29686bc2ae586448ea60857afde4797ec0da19e537463327b6288167283873b6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/ui-screens-door.js",
+    "content/i18n-door/zh-Hans.json",
+    "content/i18n-door/en.json"
+   ],
+   "params": {
+    "screen": "run_map",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "route": "left.0.low>right.0.high",
+    "open": [
+     "left.0.low",
+     "right.0.high"
+    ],
+    "player": [
+     13,
+     3
+    ],
+    "facing": 1,
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 2,
+     "max": 3,
+     "rule": "melt",
+     "coins": 80,
+     "sand": 0,
+     "items": [
+      "wish_palm_fan"
+     ],
+     "slots": 3,
+     "secs": 400,
+     "snacks": 3
+    },
+    "chain": {
+     "cur": 5,
+     "picks": {
+      "4": "up"
+     }
+    },
+    "safe": true,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_07",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_07.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_iron",
+    "obj.crate_wood",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_quit",
+   "name": "收工确认",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "69d33f8968976190f341eb048e63459f0369be8de613446447e4fa22f7dd8886",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_quit.png",
+    "preview_sha256": "785bed33424b0c25ec2234a78e78d0620b990db713d45248d3654dad0998b8de"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json"
+   ],
+   "params": {
+    "screen": "run_quit",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "player": [
+     13,
+     3
+    ],
+    "facing": -1,
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 2,
+     "max": 3,
+     "rule": "melt",
+     "coins": 90,
+     "sand": 0,
+     "items": [
+      "wish_palm_fan"
+     ],
+     "slots": 3,
+     "secs": 470,
+     "snacks": 3
+    },
+    "hand": 90,
+    "keep": 70,
+    "focus": 1,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_06",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_06.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_rest",
+   "name": "歇脚三选一",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "a208a8529626e6cf179e78c3f9587985ce130c20771d3b5c2e1094bd68c66bc2",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_rest.png",
+    "preview_sha256": "ebe2ffabbce27e3b1286a08afc9b6e31b54aa5d6cc995dd119e79d5778f3c5c1"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json"
+   ],
+   "params": {
+    "screen": "run_rest",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "player": [
+     13,
+     3
+    ],
+    "facing": -1,
+    "coins": 90,
+    "hearts": 3,
+    "maxHearts": 3,
+    "left": 2,
+    "max": 3,
+    "bag": [
+     "wish_palm_fan",
+     "hourglass",
+     "flare_diyu"
+    ],
+    "slots": 3,
+    "snack": 2,
+    "again": 30,
+    "picked": null,
+    "bank": 70,
+    "focus": 1,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_06",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_06.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.portitor_delivery",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.flare_diyu",
+    "item.hourglass",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.bench_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_result",
+   "name": "一局结算",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "443788e171ed3ee3dd9a2560289a1ad29431ec291958500fdfff2795f31fc62c",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_result.png",
+    "preview_sha256": "b88ae2013d23fa31af2fcecf2306283de1013c2b25a84d036fa0caa890ada241"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-wish.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-wish/zh-Hans.json",
+    "content/i18n-wish/en.json"
+   ],
+   "params": {
+    "screen": "run_result",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "end": "delivered",
+    "gift": "wish_palm_fan",
+    "left": 3,
+    "max": 3,
+    "secs": 960,
+    "par": 764,
+    "timePct": 125,
+    "likePct": 150,
+    "base": 40,
+    "tip": 75,
+    "hand": 150,
+    "wish": 60,
+    "keep": 285,
+    "score": 125,
+    "rating": "A",
+    "bond": 2,
+    "stamps": 1,
+    "think": false,
+    "focus": 0,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_02",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_02.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_shelf",
+   "name": "驿站货架",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "d320d14cb6590b353ac900dcbdf416aca4577ac9a9a3105c8b09747469333815",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_shelf.png",
+    "preview_sha256": "28bb9619b5ff4ab93716c78be1ddc9305999dac166c246782ddbeebac7b54b14"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json"
+   ],
+   "params": {
+    "screen": "run_shelf",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "player": [
+     13,
+     3
+    ],
+    "facing": -1,
+    "coins": 90,
+    "hearts": 3,
+    "maxHearts": 3,
+    "left": 2,
+    "max": 3,
+    "bag": [
+     "wish_palm_fan"
+    ],
+    "slots": 3,
+    "goods": [
+     {
+      "id": "first_aid",
+      "price": 50,
+      "group": "fixed"
+     },
+     {
+      "id": "snack",
+      "price": 10,
+      "group": "fixed"
+     },
+     {
+      "id": "ice_cube",
+      "price": 15,
+      "group": "common"
+     },
+     {
+      "id": "sandbag",
+      "price": 10,
+      "group": "common"
+     },
+     {
+      "id": "flare",
+      "price": 25,
+      "group": "common"
+     },
+     {
+      "id": "pocket_watch",
+      "price": 70,
+      "group": "rare"
+     }
+    ],
+    "restock": 10,
+    "heal": 0,
+    "mend": 30,
+    "bank": 70,
+    "focus": 2,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_06",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_06.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.first_aid",
+    "item.flare_diyu",
+    "item.ice_cube",
+    "item.pocket_watch",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_wish_card",
+   "name": "心愿签",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "f66a370c3f29b0a3bd07636885976672bd26dd36b0c9fffd2841fb35f1000667",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_wish_card.png",
+    "preview_sha256": "9221b7515b964626565f8f7be118e25fe1e2a703cab98e3ad704cf06205f0353"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-wish.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "workbench/js/core/ui-screens-wish.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-wish/zh-Hans.json",
+    "content/i18n-wish/en.json"
+   ],
+   "params": {
+    "screen": "run_wish_card",
+    "theme": "theme.diyu",
+    "exclude": [],
+    "cargoList": [
+     "letter",
+     "ice_cream",
+     "vase"
+    ],
+    "recipientList": [
+     "meng_po",
+     "yama",
+     "judge"
+    ],
+    "cargo": "ice_cream",
+    "recipient": "yama",
+    "liked": true,
+    "rerolls": 1,
+    "cat": "idle",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_01",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_01.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    },
+    "world": "diyu",
+    "map": "diyu_1",
+    "mapList": [
+     "dungeon_2",
+     "diyu_1"
+    ],
+    "mapRooms": {
+     "dungeon_2": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_10",
+      "preview_only": true,
+      "world": "dungeon",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_10.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     },
+     "diyu_1": {
+      "format": "pushbox.room/2",
+      "id": "art_demo_01",
+      "preview_only": true,
+      "world": "diyu",
+      "type": "room",
+      "size": [
+       1,
+       1
+      ],
+      "mirror": false,
+      "name": "artdemo.art_demo_01.name",
+      "exits": [
+       "left.0.high",
+       "left.0.low",
+       "right.0.high",
+       "right.0.low"
+      ],
+      "routes": [
+       "left.0.high>right.0.low"
+      ],
+      "legend": {
+       "1": {
+        "feature": "recipient"
+       },
+       "2": {
+        "feature": "keeper"
+       }
+      },
+      "map": [
+       "####################",
+       "####################",
+       "....................",
+       ".........H......1...",
+       "#######..H..########",
+       "#........H.........#",
+       "....................",
+       ".........H...2......",
+       "####################",
+       "####################"
+      ]
+     }
+    },
+    "focus": 1,
+    "item": "wish_palm_fan",
+    "known": false,
+    "first": true,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "id": "ui.screen.run_wish_give",
+   "name": "交付心愿",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "e4041d0365c9b56380cde32a7eff3a8bf88fb3ebdcf5f95d86f67826a33710a8",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.run_wish_give.png",
+    "preview_sha256": "aff3411a570d8830f5cd82367e6ee29a9ea4b640c74cf6886605840d97b91b3a"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui-delivery.js",
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/tilemodel.js",
+    "workbench/js/core/matter.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/env.js",
+    "workbench/js/core/i18n.js",
+    "workbench/js/core/font-delivery.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/rooms.js",
+    "workbench/js/core/mapgen.js",
+    "workbench/js/core/rooms2.js",
+    "workbench/js/core/delivery-scene.js",
+    "workbench/js/core/delivery-scene2.js",
+    "workbench/js/core/ui-screens-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/terrain-diyu.js",
+    "workbench/js/core/font-shelf.js",
+    "workbench/js/core/font-wish.js",
+    "workbench/js/core/ui-screens-door.js",
+    "workbench/js/core/ui-screens-shelf.js",
+    "workbench/js/core/ui-screens-wish.js",
+    "content/i18n-shelf/zh-Hans.json",
+    "content/i18n-shelf/en.json",
+    "content/i18n-wish/zh-Hans.json",
+    "content/i18n-wish/en.json"
+   ],
+   "params": {
+    "screen": "run_wish_give",
+    "world": "diyu",
+    "theme": "theme.diyu",
+    "recipient": "yama",
+    "cargo": "ice_cream",
+    "item": "wish_palm_fan",
+    "player": [
+     13,
+     3
+    ],
+    "facing": 1,
+    "hud": {
+     "hearts": 3,
+     "maxHearts": 3,
+     "cargo": "ice_cream",
+     "left": 3,
+     "max": 3,
+     "rule": "melt",
+     "coins": 85,
+     "sand": 0,
+     "items": [],
+     "slots": 3,
+     "secs": 960,
+     "snacks": 3
+    },
+    "coins": 60,
+    "bond": 2,
+    "first": true,
+    "thanks": "cooler",
+    "thanksKind": "buff",
+    "double": false,
+    "page": 0,
+    "pages": 4,
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+    "room2": {
+     "format": "pushbox.room/2",
+     "id": "art_demo_02",
+     "preview_only": true,
+     "world": "diyu",
+     "type": "room",
+     "size": [
+      1,
+      1
+     ],
+     "mirror": false,
+     "name": "artdemo.art_demo_02.name",
+     "exits": [
+      "left.0.high",
+      "left.0.low",
+      "right.0.high",
+      "right.0.low"
+     ],
+     "routes": [
+      "left.0.high>right.0.low"
+     ],
+     "legend": {
+      "1": {
+       "feature": "recipient"
+      },
+      "2": {
+       "feature": "keeper"
+      }
+     },
+     "map": [
+      "####################",
+      "####################",
+      "....................",
+      ".........H......1...",
+      "#######..H..########",
+      "#........H.........#",
+      "....................",
+      ".........H...2......",
+      "####################",
+      "####################"
+     ]
+    }
+   },
+   "depends": [
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ]
+  },
+  {
    "id": "ui.screen.settings",
    "name": "设置",
    "category": "screen",
@@ -15520,6 +21670,441 @@
    ]
   },
   {
+   "id": "ui.screen.story_board",
+   "name": "故事单总览",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "9e878ba77913f99c4afd997a9730bbda4eefc5e790d557f2b96d05be781c5423",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.story_board.png",
+    "preview_sha256": "8d015ab2ac244e3b509b2299b8c2e6018bd61f8c28ce765d4d68b1e0539ef0d6"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "story_board",
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 1,
+    "chapters": [
+     {
+      "label": "storyui.ch.0",
+      "name": "storyui.sample.ch0.name",
+      "who": "old_miner",
+      "color": "e",
+      "orders": 2,
+      "done": 2,
+      "read": true
+     },
+     {
+      "label": "storyui.ch.1",
+      "name": "storyui.sample.ch1.name",
+      "who": "zombie",
+      "color": "m",
+      "orders": 4,
+      "done": 1
+     },
+     {
+      "label": "storyui.ch.2",
+      "name": "storyui.sample.ch2.name",
+      "who": "ancestor",
+      "color": "j",
+      "orders": 4,
+      "done": 0,
+      "locked": true
+     },
+     {
+      "label": "storyui.ch.3",
+      "name": "storyui.sample.ch3.name",
+      "who": "haenyeo",
+      "color": "v",
+      "orders": 4,
+      "done": 0,
+      "locked": true
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.ancestor",
+    "avatar.haenyeo",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "id": "ui.screen.story_chapter",
+   "name": "章节页",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "fa2ed3d4a3410cf08b31e4ab1b300dbe16510de345117577b41f4be0555df2ea",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.story_chapter.png",
+    "preview_sha256": "fd2643cebfdccb18863083add205a4064d4505b758b2b19bfd87ef4f54b4a336"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "story_chapter",
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 1,
+    "chapter": {
+     "label": "storyui.ch.1",
+     "name": "storyui.sample.ch1.name",
+     "who": "zombie",
+     "color": "m",
+     "line": "storyui.sample.ch1.line",
+     "map": "d2.map.dungeon"
+    },
+    "orders": [
+     {
+      "name": "storyui.sample.o1",
+      "state": "done"
+     },
+     {
+      "name": "storyui.sample.o2",
+      "state": "now"
+     },
+     {
+      "state": "locked"
+     },
+     {
+      "state": "locked"
+     }
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.zombie",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "id": "ui.screen.story_complete",
+   "name": "读完一章",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "fba428fba71b89791fc9f9b3c5cd74674832adfea59f73c37f86953d516ba818",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.story_complete.png",
+    "preview_sha256": "ef6aec3d440d6453f21cbc085dee84730801be316600fd4ee1ca05f67441bfa0"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "story_complete",
+    "bg": "scene.hub_gallery",
+    "state": "before",
+    "chapter": {
+     "label": "storyui.ch.1",
+     "name": "storyui.sample.ch1.name",
+     "who": "zombie",
+     "color": "m",
+     "line": "storyui.sample.ch1.line",
+     "map": "d2.map.dungeon"
+    },
+    "keepsake": [
+     "deco.story_keepsakes",
+     "nail"
+    ],
+    "keepsakeName": "storyui.sample.nail",
+    "spot": [
+     217,
+     110
+    ],
+    "crew": "old_miner",
+    "crewName": "recipient.old_miner.name",
+    "crewLine": "storyui.sample.miner",
+    "next": {
+     "label": "storyui.ch.2",
+     "name": "storyui.sample.ch2.name",
+     "who": "ancestor",
+     "color": "j"
+    },
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.ancestor",
+    "avatar.old_miner",
+    "deco.story_keepsakes",
+    "scene.hub_gallery"
+   ]
+  },
+  {
+   "id": "ui.screen.story_letter",
+   "name": "感谢信",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "f1548144200d3b6cef62e3e3eed018ec7b8a7ca907dedbcca0dad8b9c4c4d625",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.story_letter.png",
+    "preview_sha256": "0703645283f43594f8a75848567dccc31607108d0e9fcdc6b57044681fbde632"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "story_letter",
+    "bg": "scene.hub_post",
+    "state": "before",
+    "chapter": {
+     "label": "storyui.ch.1",
+     "name": "storyui.sample.ch1.name",
+     "who": "zombie",
+     "color": "m",
+     "line": "storyui.sample.ch1.line",
+     "map": "d2.map.dungeon"
+    },
+    "body": "storyui.sample.letter",
+    "sign": "hand",
+    "copies": 3,
+    "attach": [
+     "deco.story_keepsakes",
+     "nail"
+    ],
+    "attachName": "storyui.sample.nail",
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "deco.story_keepsakes",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "id": "ui.screen.story_order",
+   "name": "单子出发页",
+   "category": "screen",
+   "kind": "procedural",
+   "layer": "ui",
+   "current": {
+    "version": 2,
+    "hash": "bb35dacfc379112ecaf68f84702d94af9ef8f542431f2f4952d5233185fc998a",
+    "status": "review",
+    "preview": "art/export/preview/ui.screen.story_order.png",
+    "preview_sha256": "a6ab4698e716b2d245716d9cc7f625c58bdda5c95e52540ff13248b11ab928fa"
+   },
+   "approved": null,
+   "current_is_approved": false,
+   "renderer": [
+    "workbench/js/core/ui.js",
+    "workbench/js/core/scene.js",
+    "workbench/js/core/terrain.js",
+    "workbench/js/core/ambient.js",
+    "workbench/js/core/i18n.js",
+    "content/i18n/zh-Hans.json",
+    "content/i18n/en.json",
+    "workbench/js/core/env.js",
+    "workbench/js/core/ui-kit.js",
+    "workbench/js/core/ui-style.js",
+    "workbench/js/core/font-ui.js",
+    "content/i18n-ui/zh-Hans.json",
+    "content/i18n-ui/en.json",
+    "workbench/js/core/ui-common.js",
+    "workbench/js/core/ui-screens-result.js",
+    "content/i18n-result/zh-Hans.json",
+    "content/i18n-result/en.json",
+    "workbench/js/core/font-offline-art-20261020.js",
+    "workbench/js/core/font-delivery.js",
+    "workbench/js/core/font-delivery2.js",
+    "workbench/js/core/font-rooms2.js",
+    "workbench/js/core/font-storyui.js",
+    "workbench/js/core/ui-screens-story.js",
+    "content/i18n-delivery/zh-Hans.json",
+    "content/i18n-delivery/en.json",
+    "content/i18n-delivery2/zh-Hans.json",
+    "content/i18n-delivery2/en.json",
+    "content/i18n-artdemo/zh-Hans.json",
+    "content/i18n-artdemo/en.json",
+    "content/i18n-storyui/zh-Hans.json",
+    "content/i18n-storyui/en.json"
+   ],
+   "params": {
+    "screen": "story_order",
+    "bg": "scene.hub_post",
+    "state": "before",
+    "focus": 0,
+    "chapter": {
+     "label": "storyui.ch.1",
+     "name": "storyui.sample.ch1.name",
+     "who": "zombie",
+     "color": "m",
+     "line": "storyui.sample.ch1.line",
+     "map": "d2.map.dungeon"
+    },
+    "n": 1,
+    "name": "storyui.sample.o1",
+    "cargo": "letter",
+    "look": [
+     "cargo.love_letter",
+     "pink"
+    ],
+    "cargoName": "storyui.sample.o1.cargo",
+    "from": "zombie",
+    "to": "goblin_smith",
+    "address": "storyui.sample.o1.address",
+    "rooms": [
+     "art_demo_13",
+     "art_demo_08",
+     [
+      "art_demo_14",
+      1
+     ]
+    ],
+    "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+   },
+   "depends": [
+    "avatar.goblin_smith",
+    "avatar.zombie",
+    "cargo.love_letter",
+    "scene.hub_post"
+   ]
+  },
+  {
    "id": "ui.target",
    "name": "目标高亮",
    "category": "ui",
@@ -15662,7 +22247,674 @@
    "ninepatch": null
   }
  ],
- "text_issues": [],
+ "text_issues": [
+  {
+   "screen": "ui.screen.crew_joined",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.perk"
+  },
+  {
+   "screen": "ui.screen.crew_joined",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.cost"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.pick.today"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "recipient.zombie.name"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.old_miner.name"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "buff.night_vision.name"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.perk"
+  },
+  {
+   "screen": "ui.screen.crew_pick",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.cost"
+  },
+  {
+   "screen": "ui.screen.crew_room",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.old_miner.name"
+  },
+  {
+   "screen": "ui.screen.crew_room",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.little_haenyeo.name"
+  },
+  {
+   "screen": "ui.screen.crew_room",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.perk"
+  },
+  {
+   "screen": "ui.screen.crew_room",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "crew.cost"
+  },
+  {
+   "screen": "ui.screen.delivery_assist",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.assist.relaxed.desc"
+  },
+  {
+   "screen": "ui.screen.delivery_assist",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.assist.heart"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.desc.art_demo_03"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.seen.note"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Màp → Réçîpîéñt → Çàrgö ~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Düñgéöñ ~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Réçîpîéñt ~~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Öld Mîñér ~~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Léttér ~~] · [Lîght. Nö spéçîàl rülé héré. ~~~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Öld Mîñér ~~~~] · [Wàîts àt hîs döör ~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "[Séléçt ~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "Enter"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "[Gö ~~]"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "d2.map.diyu"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.mech.art_demo_04"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "d2.map.dungeon"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.mech.art_demo_08"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.mech.art_demo_09"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "d2.map.jeju"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "dhelp.back"
+  },
+  {
+   "screen": "ui.screen.delivery_help",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "Esc"
+  },
+  {
+   "screen": "ui.screen.delivery_practice",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dhelp.practice.note"
+  },
+  {
+   "screen": "ui.screen.delivery_practice",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "artdemo.art_demo_03.name"
+  },
+  {
+   "screen": "ui.screen.delivery_practice",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "R"
+  },
+  {
+   "screen": "ui.screen.delivery_practice",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "[Bàçk tö prép ~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "event.forgetful_soup.text"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "event.forgetful_soup.a_note"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "event.forgetful_soup.b_note"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dlv.shop.bag"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "event.forget"
+  },
+  {
+   "screen": "ui.screen.run_event",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "event.wish_safe"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Màp → Réçîpîéñt → Çàrgö ~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Réçîpîéñt ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Kîñg Yàmà ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Îçé çréàm ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Îçé çréàm ~~~~] · [Mélts: 1 pöîñt pér 45 s, fàstér îf höt ~~~~~~~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "[Îçé çréàm ~~~~] · [Mélts: 1 pöîñt pér 45 s, fàstér îf höt ~~~~~~~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Kîñg Yàmà ~~~~] · [Prévîéw rülé ~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "recipient.yama.name"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dlv.shop.bag"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.lucky.give"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "wish.lucky.give"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.double.note"
+  },
+  {
+   "screen": "ui.screen.run_lucky",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "wish.double.note"
+  },
+  {
+   "screen": "ui.screen.run_quit",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.quit.rule"
+  },
+  {
+   "screen": "ui.screen.run_quit",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.quit.no_tip"
+  },
+  {
+   "screen": "ui.screen.run_quit",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.quit.wish"
+  },
+  {
+   "screen": "ui.screen.run_quit",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "shelf.quit.wish"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "recipient.yama.name"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "run.gift"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "item.wish_palm_fan.name"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "cargo.ice_cream.name"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dlv.done.integrity"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "dlv.done.time"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "dlv.done.time"
+  },
+  {
+   "screen": "ui.screen.run_result",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "run.wish"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "item.ice_cube.desc"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.group.rare"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.restock"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.heal"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.mend"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.quit"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "shelf.quit"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "shelf.bank"
+  },
+  {
+   "screen": "ui.screen.run_shelf",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "shelf.bank"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Màp → Réçîpîéñt → Çàrgö ~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Réçîpîéñt ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Kîñg Yàmà ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Îçé çréàm ~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Îçé çréàm ~~~~] · [Mélts: 1 pöîñt pér 45 s, fàstér îf höt ~~~~~~~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "[Îçé çréàm ~~~~] · [Mélts: 1 pöîñt pér 45 s, fàstér îf höt ~~~~~~~~~~~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "[Kîñg Yàmà ~~~~] · [Prévîéw rülé ~~~~~]"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "cargo.ice_cream.rule"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "cargo.ice_cream.rule"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "recipient.yama.rule"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.slip"
+  },
+  {
+   "screen": "ui.screen.run_wish_card",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.yama.hint"
+  },
+  {
+   "screen": "ui.screen.run_wish_give",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.give.coins"
+  },
+  {
+   "screen": "ui.screen.run_wish_give",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.give.bond"
+  },
+  {
+   "screen": "ui.screen.run_wish_give",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.give.gift"
+  },
+  {
+   "screen": "ui.screen.run_wish_give",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "wish.give.unlock"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.locked"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.locked"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.bar"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.ch.0"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.read"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.ch.1"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.ch.2"
+  },
+  {
+   "screen": "ui.screen.story_board",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.ch.3"
+  },
+  {
+   "screen": "ui.screen.story_complete",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "title"
+  },
+  {
+   "screen": "ui.screen.story_complete",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.done.crew"
+  },
+  {
+   "screen": "ui.screen.story_complete",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.sample.ch2.name"
+  },
+  {
+   "screen": "ui.screen.story_letter",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.bar"
+  },
+  {
+   "screen": "ui.screen.story_letter",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.letter.attach"
+  },
+  {
+   "screen": "ui.screen.story_order",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "recipient.goblin_smith.name"
+  },
+  {
+   "screen": "ui.screen.story_order",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.order.rooms"
+  },
+  {
+   "screen": "ui.screen.story_order",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.bar"
+  },
+  {
+   "screen": "ui.screen.story_order",
+   "locale": "qps",
+   "kind": "overflow",
+   "key": "storyui.order.address"
+  },
+  {
+   "screen": "ui.screen.story_order",
+   "locale": "qps",
+   "kind": "offscreen",
+   "key": "artdemo.art_demo_14.name"
+  }
+ ],
  "references": [
   {
    "name": "showcase.dungeon",
@@ -16458,6 +23710,258 @@
    "unapproved": []
   },
   {
+   "name": "crew_joined.zh-Hans",
+   "file": "art/export/reference/crew_joined.zh-Hans.png",
+   "sha256": "91237d57331dd757f8a36bcf9e06ba752d40a94ca454ccdd2aa8d171b7084b3e",
+   "uses": [
+    "ui.screen.crew_joined",
+    "avatar.old_miner",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_joined",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "crew_joined.en",
+   "file": "art/export/reference/crew_joined.en.png",
+   "sha256": "13bf3da68e9fecbc441471d36611f18434cec01f084da52957852645311206b3",
+   "uses": [
+    "ui.screen.crew_joined",
+    "avatar.old_miner",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_joined",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "crew_pick.zh-Hans",
+   "file": "art/export/reference/crew_pick.zh-Hans.png",
+   "sha256": "b269bc34b79c3dc1fac44feca0f6637a9b6e53776827d17d2d0cf88224e8750d",
+   "uses": [
+    "ui.screen.crew_pick",
+    "avatar.hero_bell_doll",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.vase",
+    "char.portitor",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_pick",
+    "avatar.hero_bell_doll",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "crew_pick.en",
+   "file": "art/export/reference/crew_pick.en.png",
+   "sha256": "8d3890ef30818ff927c207e4508278601dc86e843b0d6c3e436d4fe21159ebb5",
+   "uses": [
+    "ui.screen.crew_pick",
+    "avatar.hero_bell_doll",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.vase",
+    "char.portitor",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_pick",
+    "avatar.hero_bell_doll",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "crew_room.zh-Hans",
+   "file": "art/export/reference/crew_room.zh-Hans.png",
+   "sha256": "3813f2e48f9a2633cf36d6bbc1093d451dd5a3b9ef883072ac9cea655574803d",
+   "uses": [
+    "ui.screen.crew_room",
+    "avatar.hero_bell_doll",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_room",
+    "avatar.hero_bell_doll",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "crew_room.en",
+   "file": "art/export/reference/crew_room.en.png",
+   "sha256": "0fac1b6a619ca113a41a1a7e7f1028f428f8cdb5828ba4b93f71baf5c9383ca5",
+   "uses": [
+    "ui.screen.crew_room",
+    "avatar.hero_bell_doll",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.crew_room",
+    "avatar.hero_bell_doll",
+    "deco.hero_lantern_tag",
+    "scene.hub_crew",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "delivery_assist.zh-Hans",
+   "file": "art/export/reference/delivery_assist.zh-Hans.png",
+   "sha256": "6831dae01263c759209d1a456e710d12a29374ea17eac34bb7d7867fa71503f9",
+   "uses": [
+    "ui.screen.delivery_assist",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_assist",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "delivery_assist.en",
+   "file": "art/export/reference/delivery_assist.en.png",
+   "sha256": "c1ade42cedcdeeb1da278b61cf19b58a5de8adb397a136629daca689448cd8eb",
+   "uses": [
+    "ui.screen.delivery_assist",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_assist",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "delivery_help.zh-Hans",
+   "file": "art/export/reference/delivery_help.zh-Hans.png",
+   "sha256": "d5810af56287fd0bec9c828b8012fb1a782567a16ec8ae706de45a3d66288149",
+   "uses": [
+    "ui.screen.delivery_help",
+    "avatar.goblin_smith",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fx.dig_bits",
+    "fx.jeju_gust",
+    "item.coin",
+    "item.snack",
+    "mech.bridge",
+    "mech.door",
+    "mech.jeju_seesaw",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.emote"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_help"
+   ]
+  },
+  {
+   "name": "delivery_help.en",
+   "file": "art/export/reference/delivery_help.en.png",
+   "sha256": "eac967bc734fdba2dada881ce0d8489bc984cb61bced606c9992cdb2246e6c02",
+   "uses": [
+    "ui.screen.delivery_help",
+    "avatar.goblin_smith",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "fx.dig_bits",
+    "fx.jeju_gust",
+    "item.coin",
+    "item.snack",
+    "mech.bridge",
+    "mech.door",
+    "mech.jeju_seesaw",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.delivery_icons",
+    "ui.emote"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_help"
+   ]
+  },
+  {
    "name": "delivery_hud.zh-Hans",
    "file": "art/export/reference/delivery_hud.zh-Hans.png",
    "sha256": "7576fe1591a8aaf3189791cccfc1ba0a84925ed35bf21979b391d10f89af65c5",
@@ -16586,6 +24090,54 @@
    ],
    "all_approved": true,
    "unapproved": []
+  },
+  {
+   "name": "delivery_practice.zh-Hans",
+   "file": "art/export/reference/delivery_practice.zh-Hans.png",
+   "sha256": "5ae50ac6e219ef874769fd54c727383ecc44fe24f0773a0b50a8217f28f0bbf7",
+   "uses": [
+    "ui.screen.delivery_practice",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "mech.ladder",
+    "mech.lantern_float",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_practice"
+   ]
+  },
+  {
+   "name": "delivery_practice.en",
+   "file": "art/export/reference/delivery_practice.en.png",
+   "sha256": "9396b0c8bed9aa83c52a08b1c77d02e65483419f76909d4f208ee81130da89aa",
+   "uses": [
+    "ui.screen.delivery_practice",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "mech.ladder",
+    "mech.lantern_float",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.delivery_practice"
+   ]
   },
   {
    "name": "dialogue.zh-Hans",
@@ -16882,6 +24434,44 @@
    ],
    "all_approved": true,
    "unapproved": []
+  },
+  {
+   "name": "lobby_story.zh-Hans",
+   "file": "art/export/reference/lobby_story.zh-Hans.png",
+   "sha256": "0dd1a3ec2e8c710c51746a23fd9a5a7f6c66ac55fcb64993e106645b3352998b",
+   "uses": [
+    "ui.screen.lobby_story",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.diyu"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby_story"
+   ]
+  },
+  {
+   "name": "lobby_story.en",
+   "file": "art/export/reference/lobby_story.en.png",
+   "sha256": "f5c212f81d7545897248a6791441ee4c5b040bc507df6bd1dc4833f9adb903f7",
+   "uses": [
+    "ui.screen.lobby_story",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "mech.exit_flag",
+    "obj.crate_wood",
+    "theme.diyu"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.lobby_story"
+   ]
   },
   {
    "name": "lobby.zh-Hans",
@@ -17218,6 +24808,764 @@
    "unapproved": []
   },
   {
+   "name": "run_door_skull.zh-Hans",
+   "file": "art/export/reference/run_door_skull.zh-Hans.png",
+   "sha256": "8833ff8bd822a953c21a132aa3e2552482ef967b652f09733785576b1e9f0fd1",
+   "uses": [
+    "ui.screen.run_door_skull",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.hourglass",
+    "item.sandbag",
+    "item.snack",
+    "item.transfer_slip",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_door_skull",
+    "item.hourglass",
+    "item.transfer_slip",
+    "item.wish_palm_fan",
+    "obj.door_lantern_diyu",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_door_skull.en",
+   "file": "art/export/reference/run_door_skull.en.png",
+   "sha256": "c069fbcdae29846b3bedb5bbff2162e6f0280ab442a76f056fcb9b4f0808e4ee",
+   "uses": [
+    "ui.screen.run_door_skull",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.hourglass",
+    "item.sandbag",
+    "item.snack",
+    "item.transfer_slip",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_door_skull",
+    "item.hourglass",
+    "item.transfer_slip",
+    "item.wish_palm_fan",
+    "obj.door_lantern_diyu",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_door.zh-Hans",
+   "file": "art/export/reference/run_door.zh-Hans.png",
+   "sha256": "e6e6f5c1a2930535e96eb357e52d4a0487a54e266dd17627126a394d7d366710",
+   "uses": [
+    "ui.screen.run_door",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_door",
+    "item.wish_palm_fan",
+    "obj.door_lantern_diyu",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_door.en",
+   "file": "art/export/reference/run_door.en.png",
+   "sha256": "e6e6f5c1a2930535e96eb357e52d4a0487a54e266dd17627126a394d7d366710",
+   "uses": [
+    "ui.screen.run_door",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.bridge",
+    "mech.door",
+    "mech.ladder",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_wood",
+    "obj.door_lantern_diyu",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_door",
+    "item.wish_palm_fan",
+    "obj.door_lantern_diyu",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_event.zh-Hans",
+   "file": "art/export/reference/run_event.zh-Hans.png",
+   "sha256": "088cdc69171a640e4fb369bd9c48badf69732960424dc8b35739436b0b12c969",
+   "uses": [
+    "ui.screen.run_event",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.meng_po",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.event_stall_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_event",
+    "item.wish_palm_fan",
+    "obj.event_stall_diyu"
+   ]
+  },
+  {
+   "name": "run_event.en",
+   "file": "art/export/reference/run_event.en.png",
+   "sha256": "8164d14b283644031fdab1226cb796c83eec1864aaefebeaad0f52004cca46a8",
+   "uses": [
+    "ui.screen.run_event",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.meng_po",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.event_stall_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_event",
+    "item.wish_palm_fan",
+    "obj.event_stall_diyu"
+   ]
+  },
+  {
+   "name": "run_lucky.zh-Hans",
+   "file": "art/export/reference/run_lucky.zh-Hans.png",
+   "sha256": "b198d3e8c35ab199ffd2cbdac499bac874ff2fbb5700db1301c2de2fde4afb19",
+   "uses": [
+    "ui.screen.run_lucky",
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_lucky",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_lucky.en",
+   "file": "art/export/reference/run_lucky.en.png",
+   "sha256": "d8046567482c0b17d9d36e338706f575a4e599314d32c1632022098fd633165d",
+   "uses": [
+    "ui.screen.run_lucky",
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_lucky",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_map.zh-Hans",
+   "file": "art/export/reference/run_map.zh-Hans.png",
+   "sha256": "29686bc2ae586448ea60857afde4797ec0da19e537463327b6288167283873b6",
+   "uses": [
+    "ui.screen.run_map",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_iron",
+    "obj.crate_wood",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_map",
+    "item.wish_palm_fan",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_map.en",
+   "file": "art/export/reference/run_map.en.png",
+   "sha256": "29686bc2ae586448ea60857afde4797ec0da19e537463327b6288167283873b6",
+   "uses": [
+    "ui.screen.run_map",
+    "cargo.ice_cream",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.link_symbol",
+    "mech.plate",
+    "obj.crate_iron",
+    "obj.crate_wood",
+    "theme.diyu",
+    "ui.delivery_icons",
+    "ui.emote",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_map",
+    "item.wish_palm_fan",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_quit.zh-Hans",
+   "file": "art/export/reference/run_quit.zh-Hans.png",
+   "sha256": "785bed33424b0c25ec2234a78e78d0620b990db713d45248d3654dad0998b8de",
+   "uses": [
+    "ui.screen.run_quit",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_quit",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_quit.en",
+   "file": "art/export/reference/run_quit.en.png",
+   "sha256": "01b585ff3ae90a93c77c557ce896a927ad8179cede7edb8ef6a07652e63c122a",
+   "uses": [
+    "ui.screen.run_quit",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_quit",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_rest.zh-Hans",
+   "file": "art/export/reference/run_rest.zh-Hans.png",
+   "sha256": "ebe2ffabbce27e3b1286a08afc9b6e31b54aa5d6cc995dd119e79d5778f3c5c1",
+   "uses": [
+    "ui.screen.run_rest",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.portitor_delivery",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.flare_diyu",
+    "item.hourglass",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.bench_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_rest",
+    "char.portitor_delivery",
+    "item.flare_diyu",
+    "item.hourglass",
+    "item.wish_palm_fan",
+    "obj.bench_diyu"
+   ]
+  },
+  {
+   "name": "run_rest.en",
+   "file": "art/export/reference/run_rest.en.png",
+   "sha256": "cff9966e484d06400d2a224804ac49ceff33a5f138e02c6375db2de16168ba32",
+   "uses": [
+    "ui.screen.run_rest",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.portitor_delivery",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.flare_diyu",
+    "item.hourglass",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "obj.bench_diyu",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_rest",
+    "char.portitor_delivery",
+    "item.flare_diyu",
+    "item.hourglass",
+    "item.wish_palm_fan",
+    "obj.bench_diyu"
+   ]
+  },
+  {
+   "name": "run_result.zh-Hans",
+   "file": "art/export/reference/run_result.zh-Hans.png",
+   "sha256": "b88ae2013d23fa31af2fcecf2306283de1013c2b25a84d036fa0caa890ada241",
+   "uses": [
+    "ui.screen.run_result",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_result",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_result.en",
+   "file": "art/export/reference/run_result.en.png",
+   "sha256": "352a70f4b809c2601a5d8817b9c264dc5126fd168a240fc63789aeb9f27f1264",
+   "uses": [
+    "ui.screen.run_result",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_result",
+    "item.wish_palm_fan"
+   ]
+  },
+  {
+   "name": "run_shelf.zh-Hans",
+   "file": "art/export/reference/run_shelf.zh-Hans.png",
+   "sha256": "28bb9619b5ff4ab93716c78be1ddc9305999dac166c246782ddbeebac7b54b14",
+   "uses": [
+    "ui.screen.run_shelf",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.first_aid",
+    "item.flare_diyu",
+    "item.ice_cube",
+    "item.pocket_watch",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_shelf",
+    "item.flare_diyu",
+    "item.ice_cube",
+    "item.pocket_watch",
+    "item.wish_palm_fan",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "run_shelf.en",
+   "file": "art/export/reference/run_shelf.en.png",
+   "sha256": "5b09abbd4644ba78ad89782173dabb1984202eefb1e0bb95145810d03eaa75ba",
+   "uses": [
+    "ui.screen.run_shelf",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.turtle_keeper",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.first_aid",
+    "item.flare_diyu",
+    "item.ice_cube",
+    "item.pocket_watch",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_shelf",
+    "item.flare_diyu",
+    "item.ice_cube",
+    "item.pocket_watch",
+    "item.wish_palm_fan",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "run_wish_card.zh-Hans",
+   "file": "art/export/reference/run_wish_card.zh-Hans.png",
+   "sha256": "9221b7515b964626565f8f7be118e25fe1e2a703cab98e3ad704cf06205f0353",
+   "uses": [
+    "ui.screen.run_wish_card",
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_wish_card",
+    "item.wish_palm_fan",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_wish_card.en",
+   "file": "art/export/reference/run_wish_card.en.png",
+   "sha256": "ccf874c4335c8b82bccbd4df61eeb002d4f4ef8fe16c24c8f9c9224348815369",
+   "uses": [
+    "ui.screen.run_wish_card",
+    "avatar.judge",
+    "avatar.meng_po",
+    "avatar.yama",
+    "cargo.ice_cream",
+    "cargo.letter",
+    "cargo.vase",
+    "char.portitor",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "deco.dungeon_moss",
+    "deco.dungeon_torch",
+    "fauna.diyu_butterfly",
+    "fauna.diyu_dog",
+    "fauna.dungeon_bat",
+    "fauna.dungeon_cat",
+    "item.coin",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.door",
+    "mech.ladder",
+    "mech.lantern_float",
+    "mech.lever",
+    "mech.link_symbol",
+    "mech.rune_float",
+    "monster.jiangshi",
+    "monster.skeleton_guard",
+    "monster.wandering_soul",
+    "obj.crate_wood",
+    "theme.diyu",
+    "theme.dungeon",
+    "ui.run_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_wish_card",
+    "item.wish_palm_fan",
+    "ui.run_icons"
+   ]
+  },
+  {
+   "name": "run_wish_give.zh-Hans",
+   "file": "art/export/reference/run_wish_give.zh-Hans.png",
+   "sha256": "aff3411a570d8830f5cd82367e6ee29a9ea4b640c74cf6886605840d97b91b3a",
+   "uses": [
+    "ui.screen.run_wish_give",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_wish_give",
+    "item.wish_palm_fan",
+    "ui.buff_icons"
+   ]
+  },
+  {
+   "name": "run_wish_give.en",
+   "file": "art/export/reference/run_wish_give.en.png",
+   "sha256": "6789812b231a52b489d3677f1d3ce48ada7291d95b805cdac09af66658f4b3e9",
+   "uses": [
+    "ui.screen.run_wish_give",
+    "cargo.ice_cream",
+    "char.portitor",
+    "char.yama",
+    "deco.diyu_lantern",
+    "deco.diyu_lily",
+    "fauna.diyu_dog",
+    "item.coin",
+    "item.sandbag",
+    "item.snack",
+    "item.wish_palm_fan",
+    "mech.ladder",
+    "theme.diyu",
+    "ui.buff_icons",
+    "ui.delivery_icons"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.run_wish_give",
+    "item.wish_palm_fan",
+    "ui.buff_icons"
+   ]
+  },
+  {
    "name": "settings_help.zh-Hans",
    "file": "art/export/reference/settings_help.zh-Hans.png",
    "sha256": "3d3fdb5cb73d342afd7a4f76f7ef3de8cbb0606badb85c4e0962a074a613e1a0",
@@ -17426,6 +25774,176 @@
    ],
    "all_approved": true,
    "unapproved": []
+  },
+  {
+   "name": "story_board.zh-Hans",
+   "file": "art/export/reference/story_board.zh-Hans.png",
+   "sha256": "8d015ab2ac244e3b509b2299b8c2e6018bd61f8c28ce765d4d68b1e0539ef0d6",
+   "uses": [
+    "ui.screen.story_board",
+    "avatar.ancestor",
+    "avatar.haenyeo",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_board",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_board.en",
+   "file": "art/export/reference/story_board.en.png",
+   "sha256": "f9aa711e8fbc1c75f59866070325c7e667d39ae545946d3554b7757c2e1c01cb",
+   "uses": [
+    "ui.screen.story_board",
+    "avatar.ancestor",
+    "avatar.haenyeo",
+    "avatar.old_miner",
+    "avatar.zombie",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_board",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_chapter.zh-Hans",
+   "file": "art/export/reference/story_chapter.zh-Hans.png",
+   "sha256": "fd2643cebfdccb18863083add205a4064d4505b758b2b19bfd87ef4f54b4a336",
+   "uses": [
+    "ui.screen.story_chapter",
+    "avatar.zombie",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_chapter",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_chapter.en",
+   "file": "art/export/reference/story_chapter.en.png",
+   "sha256": "42f032f3be24be95da658e185c881d27222fb014e40c44071a93905d5e76c9a0",
+   "uses": [
+    "ui.screen.story_chapter",
+    "avatar.zombie",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_chapter",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_complete.zh-Hans",
+   "file": "art/export/reference/story_complete.zh-Hans.png",
+   "sha256": "ef6aec3d440d6453f21cbc085dee84730801be316600fd4ee1ca05f67441bfa0",
+   "uses": [
+    "ui.screen.story_complete",
+    "avatar.ancestor",
+    "avatar.old_miner",
+    "deco.story_keepsakes",
+    "scene.hub_gallery"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_complete",
+    "deco.story_keepsakes",
+    "scene.hub_gallery"
+   ]
+  },
+  {
+   "name": "story_complete.en",
+   "file": "art/export/reference/story_complete.en.png",
+   "sha256": "ca191dc2dc349935eeea754c3a0d72dd7f0d66c83aaaf7e033f87481a4477c8a",
+   "uses": [
+    "ui.screen.story_complete",
+    "avatar.ancestor",
+    "avatar.old_miner",
+    "deco.story_keepsakes",
+    "scene.hub_gallery"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_complete",
+    "deco.story_keepsakes",
+    "scene.hub_gallery"
+   ]
+  },
+  {
+   "name": "story_letter.zh-Hans",
+   "file": "art/export/reference/story_letter.zh-Hans.png",
+   "sha256": "0703645283f43594f8a75848567dccc31607108d0e9fcdc6b57044681fbde632",
+   "uses": [
+    "ui.screen.story_letter",
+    "deco.story_keepsakes",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_letter",
+    "deco.story_keepsakes",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_letter.en",
+   "file": "art/export/reference/story_letter.en.png",
+   "sha256": "f51c2e44ee0d78a8945017f9423e00e9a0f26229cec9539e3f5c685dc68966d1",
+   "uses": [
+    "ui.screen.story_letter",
+    "deco.story_keepsakes",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_letter",
+    "deco.story_keepsakes",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_order.zh-Hans",
+   "file": "art/export/reference/story_order.zh-Hans.png",
+   "sha256": "a6ab4698e716b2d245716d9cc7f625c58bdda5c95e52540ff13248b11ab928fa",
+   "uses": [
+    "ui.screen.story_order",
+    "avatar.goblin_smith",
+    "avatar.zombie",
+    "cargo.love_letter",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_order",
+    "cargo.love_letter",
+    "scene.hub_post"
+   ]
+  },
+  {
+   "name": "story_order.en",
+   "file": "art/export/reference/story_order.en.png",
+   "sha256": "0dbb113db3c99577a3ec2a07bbd037d69ebdc1ef6c0cc21bdc1b0b61381b3fd8",
+   "uses": [
+    "ui.screen.story_order",
+    "avatar.goblin_smith",
+    "avatar.zombie",
+    "cargo.love_letter",
+    "scene.hub_post"
+   ],
+   "all_approved": false,
+   "unapproved": [
+    "ui.screen.story_order",
+    "cargo.love_letter",
+    "scene.hub_post"
+   ]
   }
  ]
 }

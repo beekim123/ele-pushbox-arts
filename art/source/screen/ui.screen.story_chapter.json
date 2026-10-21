@@ -1,0 +1,86 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.story_chapter",
+ "name": "章节页",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "workbench/js/core/font-rooms2.js",
+  "workbench/js/core/font-storyui.js",
+  "workbench/js/core/ui-screens-story.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "content/i18n-artdemo/zh-Hans.json",
+  "content/i18n-artdemo/en.json",
+  "content/i18n-storyui/zh-Hans.json",
+  "content/i18n-storyui/en.json"
+ ],
+ "depends": [
+  "avatar.zombie",
+  "scene.hub_post"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "story_chapter",
+  "bg": "scene.hub_post",
+  "state": "before",
+  "focus": 1,
+  "chapter": {
+   "label": "storyui.ch.1",
+   "name": "storyui.sample.ch1.name",
+   "who": "zombie",
+   "color": "m",
+   "line": "storyui.sample.ch1.line",
+   "map": "d2.map.dungeon"
+  },
+  "orders": [
+   {
+    "name": "storyui.sample.o1",
+    "state": "done"
+   },
+   {
+    "name": "storyui.sample.o2",
+    "state": "now"
+   },
+   {
+    "state": "locked"
+   },
+   {
+    "state": "locked"
+   }
+  ],
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-13a 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "fa2ed3d4a3410cf08b31e4ab1b300dbe16510de345117577b41f4be0555df2ea"
+}

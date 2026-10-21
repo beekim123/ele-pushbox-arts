@@ -1,0 +1,83 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.hero_lantern_tag_concept",
+ "name": "灯牌概念候选",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  8,
+  10
+ ],
+ "anchor": [
+  4,
+  10
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_wood_lamp": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "B_paper_lantern": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "C_bronze_plate": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    2
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...zz...",
+   "..zkkz..",
+   "..zllz..",
+   "...zz...",
+   ".zzffzz.",
+   "zddddddz",
+   "zdcddedz",
+   "zdeddedz",
+   "zeeeeefz",
+   ".zzzzzz."
+  ],
+  [
+   "...zz...",
+   "..zffz..",
+   ".zttuuz.",
+   "ztttkuvz",
+   "ztkllkvz",
+   "ztttkuvz",
+   ".zuuuvz.",
+   "..zffz..",
+   "...ii...",
+   "...hh..."
+  ],
+  [
+   "...zz...",
+   "...ff...",
+   "..zzzz..",
+   ".zkllkz.",
+   "zklzzkbz",
+   "zkzttzbz",
+   "zkzttzbz",
+   "zkbzzbbz",
+   ".zbbbbz.",
+   "..zzzz.."
+  ]
+ ],
+ "usage": "伙计灯牌的概念草图（挂在伙计腰上，也挂在伙计房门口），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：木牌 + 顶上一盏小灯（推荐，和渡口木构一致、亮暗好表现）；B：小纸灯笼 + 红穗；C：圆铜牌 + 白芯。",
+ "content_hash": "616f8feff11dcbef1443820d2ba760a4afeb0aaff1e2d9ca585298a9b9a668c2"
+}

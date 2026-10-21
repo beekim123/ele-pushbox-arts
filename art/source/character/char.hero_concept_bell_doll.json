@@ -1,0 +1,158 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.hero_concept_bell_doll",
+ "name": "阿铃概念候选",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_old_bronze": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "B_brass_coat": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  },
+  "C_patina_bell": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    4,
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".zz.zz..........",
+   "zdezedz...zz....",
+   ".zdddz...zddz...",
+   "..zez...zdFFez..",
+   "...zf...zFFFez..",
+   "...zzf.zFFFzFzez",
+   "..zfezfzFFFFFFez",
+   "..zeefzdddddddee",
+   "..zfzfz.zzzzhzzz",
+   "..zeefz.zwiiwz..",
+   "..zzzz.zwvwwwz..",
+   ".......zwvwwvz..",
+   "........zwzwz...",
+   "........zwzwz...",
+   "........zz.zz..."
+  ],
+  [
+   ".zz.zz..........",
+   "zdezedz...zz....",
+   ".zdddz...zddz...",
+   "..zez...zdFFez..",
+   "...zf...zFFFez..",
+   "...zzf.zFFFzFzez",
+   "..zfezfzFFFFFFez",
+   "..zeefzdddddddee",
+   "..zfzfz.zzzzhzzz",
+   "..zeefz.zwiiwz..",
+   "..zzzz.zwvwwwz..",
+   ".......zwvwwvz..",
+   ".......zw..zwz..",
+   ".......zw..zwz..",
+   ".......zw..zwz..",
+   ".......zz...zz.."
+  ],
+  [
+   "................",
+   "................",
+   ".........zz.....",
+   "........zllz....",
+   ".......zlkkbz...",
+   ".......zkkkbz...",
+   "..z.z.zkkzkzbz..",
+   "..zkz.zkkkkkbz..",
+   "...zz.zlllllkbz.",
+   "...zfzzzzzhzzz..",
+   "..zifizBBBBBz...",
+   "..zfffzBkBBBuz..",
+   "..ziiizBkBBBz...",
+   "..zzzz.zBBBz....",
+   ".......zxzxz....",
+   ".......zz.zz...."
+  ],
+  [
+   "................",
+   ".........zz.....",
+   "........zllz....",
+   ".......zlkkbz...",
+   ".......zkkkbz...",
+   "..z.z.zkkzkzbz..",
+   "..zkz.zkkkkkbz..",
+   "...zz.zlllllkbz.",
+   "...zfzzzzzhzzz..",
+   "..zifizBBBBBz...",
+   "..zfffzBkBBBuz..",
+   "..ziiizBkBBBz...",
+   "......zB..BBz...",
+   "..zzzzzB..BBz...",
+   "......zx..zxz...",
+   "......zz...zz..."
+  ],
+  [
+   "................",
+   "................",
+   ".........zz.....",
+   "........zpoz....",
+   ".......zpnnoz...",
+   "......zpnnnooz..",
+   ".zzz..znnznzoz..",
+   "zkzkz.znnnnnoz..",
+   ".zkz.zpnnnnnooz.",
+   "..zfzpmmmmmmmooz",
+   "...zfzzzzzzzzzz.",
+   "...zeez.zzhzz...",
+   "...zfez.zwzwz...",
+   "...zeez.zwzwz...",
+   "...zzzz.zz.zz...",
+   "................"
+  ],
+  [
+   "................",
+   ".........zz.....",
+   "........zpoz....",
+   ".......zpnnoz...",
+   "......zpnnnooz..",
+   ".zzz..znnznzoz..",
+   "zkzkz.znnnnnoz..",
+   ".zkz.zpnnnnnooz.",
+   "..zfzpmmmmmmmooz",
+   "...zfzzzzzzzzzz.",
+   "...zeez.zzhzz...",
+   "...zfez.zwzwz...",
+   ".......zw..zwz..",
+   "...zeezzw..zwz..",
+   "...zzzzzz...zz..",
+   "................"
+  ]
+ ],
+ "usage": "只用于给用户挑方向的阿铃概念草图（每个方向：站 + 走一步，4 fps），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：旧青铜大铃铛头 + 蝴蝶发条钥匙 + 背后发条盒（背包格 = 发条盒抽屉）；比主角矮两格像素（推荐）；B：亮黄铜小铃头 + 渡口紫短褂，钥匙小，背包是挂红绳的小挎包；更像穿制服的伙计，暖色面积偏大；C：铜绿整铃身（头身一体像手摇铃），钥匙在背后，背包是背后的小抽屉；轮廓最圆。",
+ "content_hash": "d949ae46cfd1025f2dfe341cfb945b1f7292f7e6f18c0b2729294966e73f83a5"
+}

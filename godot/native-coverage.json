@@ -1,0 +1,2011 @@
+{
+  "format": "portitor.art.native-coverage-input/1",
+  "source_document": "docs/design/godot-art-package.md#6.2",
+  "evidence_stage": "source_inventory",
+  "verified": false,
+  "notes": [
+    "Static source inventory only; extraction, wiring and candidate screenshot validation have not passed by this classification.",
+    "art:ui.hud_glow retains the existing unapproved rectangle versus rounded, shaking, brightened reference discrepancy."
+  ],
+  "evidence_categories": {
+    "S": "Generic approved sprite drawing; does not prove gameplay integration.",
+    "M": "Existing native visual material implementation.",
+    "T": "Existing native theme implementation.",
+    "F": "Existing procedural feedback implementation; hud_glow discrepancy retained.",
+    "U": "Existing independent UI implementation.",
+    "E": "Existing embedded UI implementation; independent wrapper remains a placeholder.",
+    "R-T": "Reference theme media only; fallback is not a complete native theme.",
+    "R-U": "Reference UI media only; no corresponding complete native view."
+  },
+  "entries": [
+    {
+      "uid": "art:avatar.ancestor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.baker",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.candy_princess",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.fisher",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.goblin_chief",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.goblin_smith",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.haenyeo",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.ice_cream_vendor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.judge",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.kid",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.lighthouse_keeper",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.meng_po",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.narwhal",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.old_miner",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.reindeer_herder",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.snowman",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.tangerine_farmer",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.wuchang",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.yama",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:avatar.zombie",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.buckwheat_jelly",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.chocolate",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.ice_cream",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.ice_lantern",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.kite",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.letter",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.mittens",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.paper_house",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.pudding",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.qingtuan",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.soup_flask",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.tangerine",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:cargo.vase",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.ancestor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.baker",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.candy_princess",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.fisher",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.goblin_chief",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.goblin_smith",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.haenyeo",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.ice_cream_vendor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.judge",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.kid",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.lighthouse_keeper",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.lucky_cat",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.meng_po",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.miner",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.narwhal",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.portitor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.reindeer_herder",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.snowman",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.tangerine_farmer",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.turtle_keeper",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.wuchang",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.yama",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:char.zombie",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.candy_frosting_flower",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.candy_lollipop_tree",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.candy_mint_bush",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.cave_crystal",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.cave_mushroom",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.cosmos_sprout",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.diyu_lantern",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.diyu_lily",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.dungeon_moss",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.dungeon_torch",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.forest_flower",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.forest_grass",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.jeju_canola",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.jeju_harubang",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.jeju_tangerine_tree",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.polar_cabin",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.polar_lingonberry",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.polar_snowhouse",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.polar_spruce",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.ruins_lotus",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.ruins_vine",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:deco.sky_flower",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.candy_hummingbird",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.candy_lamb",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.cave_moth",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.cosmos_drone",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.diyu_butterfly",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.diyu_dog",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.dungeon_bat",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.dungeon_cat",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.dungeon_rat",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.forest_bird",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.forest_butterfly",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.jeju_dragonfly",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.jeju_pony",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.polar_bunting",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.polar_reindeer",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.ruins_scarab",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.sky_cloudling",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fauna.sky_dove",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.candy_heat",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.dig_bits",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.explosion",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.fire",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.fizz",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.frost",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.goal_spark",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.gust",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.jeju_gust",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.land_dust",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.monster_poof",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.ripple",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.rubble",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:fx.splash",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.bomb",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.coin",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.first_aid",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.rope_ladder",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.sandbag",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.snack",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.snack_candy",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.snack_jeju",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:item.snack_polar",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:material.chapter2_5",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "material",
+      "evidence": [
+        "M"
+      ]
+    },
+    {
+      "uid": "art:mech.bin",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.bin_gauge",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.bounce_mushroom",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.bridge",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.button",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.candy_jelly",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.candy_oven_vent",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.cart_track",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.door",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.exit_flag",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.ferry_gate",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.frost_vent",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.heat_vent",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.jeju_seesaw",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.ladder",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.lantern_float",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.lantern_plank",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.lever",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.lift",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.link_symbol",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.mine_cart",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.plate",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.portal",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.rope_ladder",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.rune_float",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.seesaw",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.socket",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.socket_lit",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.torch",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:mech.vine",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.ant_army",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.dokkaebi",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.gingerbread",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.imp",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.jiangshi",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.penguin",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.rat_swarm",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.seagull",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.skeleton_guard",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.wandering_soul",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:monster.yeti",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:obj.crate_iron",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:obj.crate_nested",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:obj.crate_wood",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:obj.goblin_forge",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:theme.candy",
+      "version": 1,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-T"
+      ]
+    },
+    {
+      "uid": "art:theme.cave",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.cosmos",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.diyu",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.dungeon",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.forest",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.jeju",
+      "version": 1,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-T"
+      ]
+    },
+    {
+      "uid": "art:theme.polar",
+      "version": 1,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-T"
+      ]
+    },
+    {
+      "uid": "art:theme.ruins",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:theme.sky",
+      "version": 2,
+      "native": "implemented",
+      "implementation_kind": "theme",
+      "evidence": [
+        "T"
+      ]
+    },
+    {
+      "uid": "art:ui.action_icon",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.bubble",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.bubble_tail",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.cause_link",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.class_icon",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.cursor",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.delivery_icons",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.emote",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.goal_glow",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.goal_lamp",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.hud_glow",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.icons",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.key_cmd",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.keycap",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.keyhint",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "feedback",
+      "evidence": [
+        "F"
+      ]
+    },
+    {
+      "uid": "art:ui.menu_icons",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.panel",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.rule_icon",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.chapters",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.clear_found",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.complete",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.confirm",
+      "version": 3,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.controls",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.delivery_hud",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.delivery_pause",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.dialogue",
+      "version": 3,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.hint",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.hint_animal",
+      "version": 2,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.hub_start",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.hud_keys",
+      "version": 1,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.levels",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.lobby",
+      "version": 5,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.lobby_generic",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.observe",
+      "version": 2,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.pause",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.pause_help",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.reels",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.rulecard",
+      "version": 6,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.rulecard_how",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.settings",
+      "version": 7,
+      "native": "implemented",
+      "implementation_kind": "ui",
+      "evidence": [
+        "U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.settings_help",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "embedded_ui",
+      "evidence": [
+        "E"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.settlement",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.settlement_fail",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.screen.shop",
+      "version": 4,
+      "native": "reference_only",
+      "implementation_kind": "reference",
+      "evidence": [
+        "R-U"
+      ]
+    },
+    {
+      "uid": "art:ui.target",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    },
+    {
+      "uid": "art:ui.theme_emblem",
+      "version": 1,
+      "native": "implemented",
+      "implementation_kind": "sprite",
+      "evidence": [
+        "S"
+      ]
+    }
+  ]
+}
