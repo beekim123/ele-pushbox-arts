@@ -1,0 +1,114 @@
+{
+ "format": "pushbox.art/1",
+ "id": "char.hero_concept_old_miner",
+ "name": "老矿工概念候选",
+ "category": "character",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "draft",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "entity",
+ "palette": "endesga32",
+ "animations": {
+  "A_waist_tag": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    0,
+    1
+   ]
+  },
+  "B_hat_tag": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    3
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zkklllz....",
+   "....zkkkkklltz..",
+   "....zbbbbbbbbbz.",
+   "..zz.zEEEEzEz...",
+   ".zccdzEEEEEEz...",
+   ".zcddzzFFFFz....",
+   ".zcddziiiiiiz...",
+   ".zfddzhiiiiEz...",
+   "..zffzhhiiiFz...",
+   "...zzzxxxxxf....",
+   ".....zxxzxxzzz..",
+   ".....zxz.zxzkz..",
+   ".....zffzzfzdz..",
+   ".....zzz..zzz..."
+  ],
+  [
+   "......zzzzz.....",
+   ".....zkklllz....",
+   "....zkkkkklltz..",
+   "....zbbbbbbbbbz.",
+   "..zz.zEEEEzEz...",
+   ".zccdzEEEEEEz...",
+   ".zcddzzFFFFz....",
+   ".zcddziiiiiiz...",
+   ".zfddzhiiiiEz...",
+   "..zffzhhiiiFz...",
+   "...zzzxxxxxf....",
+   ".....zxxzxxzzz..",
+   "....zxz...zxzkz.",
+   "....zxz...zxzkz.",
+   "....zffz..zfzdz.",
+   "....zzz....zzz.."
+  ],
+  [
+   "................",
+   "......zzzzz.....",
+   ".....zkklllz....",
+   "....zkkkkklltz..",
+   "....zbbbbbbbbbf.",
+   "..zz.zEEEEzEz.zz",
+   ".zccdzEEEEEEzzkz",
+   ".zcddzzFFFFz.zdz",
+   ".zcddziiiiiiz.z.",
+   ".zfddzhiiiiEz...",
+   "..zffzhhiiiFz...",
+   "...zzzxxxxxz....",
+   ".....zxxzxxz....",
+   ".....zxz.zxz....",
+   ".....zffzzffz...",
+   ".....zzz..zzz..."
+  ],
+  [
+   "......zzzzz.....",
+   ".....zkklllz....",
+   "....zkkkkklltz..",
+   "....zbbbbbbbbbf.",
+   "..zz.zEEEEzEz.zz",
+   ".zccdzEEEEEEzzkz",
+   ".zcddzzFFFFz.zdz",
+   ".zcddziiiiiiz.z.",
+   ".zfddzhiiiiEz...",
+   "..zffzhhiiiFz...",
+   "...zzzxxxxxz....",
+   ".....zxxzxxz....",
+   "....zxz...zxz...",
+   "....zxz...zxz...",
+   "....zffz..zffz..",
+   "....zzz....zzz.."
+  ]
+ ],
+ "usage": "只用于给用户挑方向的老矿工概念草图（每个方向：站 + 走一步，4 fps），不进入游戏。",
+ "notes": "ART-06a 伙计概念草稿（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出）：不进游戏、不走确认；制作方推荐 A 方向继续完整候选，用户尚未选择。 A：灯牌挂在腰上（推荐：身体与已确认 char.miner 完全一致，只多一块腰牌，动作最省）；B：灯牌挂在矿灯 / 帽檐前面，走路时晃在脸前，远看更显眼，但挡帽灯。",
+ "content_hash": "fe64151720cd16dbd0c2b6407a53f440cfe61dfcd2928659e544e1ce638ac5d3"
+}

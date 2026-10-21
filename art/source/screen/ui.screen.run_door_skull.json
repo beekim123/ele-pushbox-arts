@@ -1,0 +1,183 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.run_door_skull",
+ "name": "骷髅门牌与改签提示（岔路③）",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui-delivery.js",
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/tilemodel.js",
+  "workbench/js/core/matter.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/env.js",
+  "workbench/js/core/i18n.js",
+  "workbench/js/core/font-delivery.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/rooms.js",
+  "workbench/js/core/mapgen.js",
+  "workbench/js/core/rooms2.js",
+  "workbench/js/core/delivery-scene.js",
+  "workbench/js/core/delivery-scene2.js",
+  "workbench/js/core/ui-screens-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/terrain-diyu.js",
+  "workbench/js/core/ui-screens-door.js",
+  "content/i18n-door/zh-Hans.json",
+  "content/i18n-door/en.json"
+ ],
+ "depends": [
+  "cargo.ice_cream",
+  "char.portitor",
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "fauna.diyu_butterfly",
+  "fauna.diyu_dog",
+  "item.coin",
+  "item.hourglass",
+  "item.sandbag",
+  "item.snack",
+  "item.transfer_slip",
+  "item.wish_palm_fan",
+  "mech.bridge",
+  "mech.door",
+  "mech.ladder",
+  "mech.lantern_float",
+  "mech.link_symbol",
+  "mech.plate",
+  "obj.crate_wood",
+  "obj.door_lantern_diyu",
+  "theme.diyu",
+  "ui.delivery_icons",
+  "ui.emote",
+  "ui.run_icons"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "run_door_skull",
+  "world": "diyu",
+  "theme": "theme.diyu",
+  "recipient": "yama",
+  "cargo": "ice_cream",
+  "route": "left.0.low>right.0.high",
+  "open": [
+   "left.0.low",
+   "right.0.high",
+   "right.0.low"
+  ],
+  "player": [
+   13,
+   3
+  ],
+  "facing": 1,
+  "collected": [],
+  "hud": {
+   "hearts": 3,
+   "maxHearts": 3,
+   "cargo": "ice_cream",
+   "left": 2,
+   "max": 3,
+   "rule": "melt",
+   "coins": 85,
+   "sand": 0,
+   "items": [
+    "wish_palm_fan",
+    "transfer_slip",
+    "hourglass"
+   ],
+   "slots": 3,
+   "secs": 590,
+   "snacks": 3
+  },
+  "chain": {
+   "cur": 8,
+   "picks": {
+    "4": "up",
+    "7": "up"
+   }
+  },
+  "doors": [
+   {
+    "exit": "right.0.high",
+    "room": "develop",
+    "reward": "item",
+    "item": "flare_diyu"
+   },
+   {
+    "exit": "right.0.low",
+    "room": "blockade",
+    "reward": "coins",
+    "amount": 100,
+    "skull": true
+   }
+  ],
+  "reroll": {
+   "door": "right.0.low"
+  },
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。",
+  "room2": {
+   "format": "pushbox.room/2",
+   "id": "art_demo_05",
+   "preview_only": true,
+   "world": "diyu",
+   "type": "room",
+   "size": [
+    1,
+    1
+   ],
+   "mirror": false,
+   "name": "artdemo.art_demo_05.name",
+   "exits": [
+    "left.0.high",
+    "left.0.low",
+    "right.0.high",
+    "right.0.low"
+   ],
+   "routes": [
+    "left.0.high>right.0.low"
+   ],
+   "legend": {
+    "1": {
+     "feature": "recipient"
+    },
+    "2": {
+     "feature": "keeper"
+    }
+   },
+   "map": [
+    "####################",
+    "####################",
+    "....................",
+    ".........H......1...",
+    "#######..H..########",
+    "#........H.........#",
+    "....................",
+    ".........H...2......",
+    "####################",
+    "####################"
+   ]
+  }
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-12a 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "a408e28faacd6058bbd256b27e488794ed31d9bd8e1d89eff039acd7cf9b6374"
+}

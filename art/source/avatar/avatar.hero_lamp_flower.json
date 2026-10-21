@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.hero_lamp_flower",
+ "name": "灯花头像",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".........zziiizzz.......",
+   "........ziiijiiiiz......",
+   "........zijjjjjiz.......",
+   ".......ziijltljiiz......",
+   ".......ziijllljiiz......",
+   "........zijjjjjiz.......",
+   ".........ziiiiiz........",
+   "........zzzzfzzzz.......",
+   ".......zttttzuuvvz......",
+   "......zttuttttuuvvz.....",
+   "......zttuttttuuvvz.....",
+   "......ztttttttuuvvz.....",
+   "zzzzzzztttttttuuvvz.....",
+   "uuuuuuzttttzttuzvvz.....",
+   "sllllszttttzttuzvvz.....",
+   "sllllsztttDttffuDvz.....",
+   "slkklsztttttttuuvvz.....",
+   "sljklsztttttttuuvvz.....",
+   "slkklszztttttuuvvzz.....",
+   "sllllzttzzzzzzzzzvvz....",
+   "sllllzttuuuuuuuuvvvz....",
+   "uuuuuzttuuuuuuuuvvvz....",
+   "zzzzzzttuuuuuuuuvvvz....",
+   ".....zttuuuuuuuuvvvz...."
+  ]
+ ],
+ "usage": "伙计「灯花」的头像（24 × 24）：伙计房、派人界面、剧情对话里用。蜡烛脑袋、头顶橘红灯花，左边露出小灯罩。",
+ "notes": "ART-06c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "458f1efc63ed2b6377bded57833d2b331cdf3c65e29acf4e7d1bbe2b02770cbd"
+}

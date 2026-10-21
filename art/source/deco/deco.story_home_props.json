@@ -1,0 +1,165 @@
+{
+ "format": "pushbox.art/1",
+ "id": "deco.story_home_props",
+ "name": "收件人之家的剧情摆设",
+ "category": "deco",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  8,
+  16
+ ],
+ "layer": "ambient",
+ "palette": "endesga32",
+ "animations": {
+  "letter_on_nail": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  },
+  "mushroom_vase": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    1
+   ]
+  },
+  "flower_lamp": {
+   "fps": 4,
+   "loop": true,
+   "frames": [
+    2,
+    2,
+    3,
+    4
+   ]
+  },
+  "old_goggles": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    5
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".......zz.......",
+   "......zvwz......",
+   ".......zz.......",
+   "......f..f......",
+   "....ff....ff....",
+   "..zzzzzzzzzzzz..",
+   ".zttttttttttttz.",
+   ".zDCDDDDDDDDCDz.",
+   ".zDDCDDDDDDCDDz.",
+   ".zDDDCDDDDCDDDz.",
+   ".zDDDDhhDhhDDDz.",
+   ".zmDmDhAhAhhDDz.",
+   ".zmmmmDhAAhDDDz.",
+   ".zmmmDDDhhDDDDz.",
+   ".zCnCCCCChCCCCz.",
+   "..zzzzzzzzzzzz.."
+  ],
+  [
+   ".....zzzz.......",
+   "....zsstsz......",
+   "...zsttssrz.....",
+   "...zrsssrrz.....",
+   "....zzczzz......",
+   "......zcz.......",
+   ".....zzczz......",
+   ".....ztcuz......",
+   "......ztuz......",
+   ".....zrrrrz.....",
+   "....zttttttz....",
+   "...ztqtqtqtuz...",
+   "...ztttttttuz...",
+   "....ztqtqtqz....",
+   ".....ztttuz.....",
+   "......zzzz......"
+  ],
+  [
+   "................",
+   "................",
+   "................",
+   ".......zz.......",
+   "......zlkz......",
+   "......zlkz......",
+   ".......zjz......",
+   "...zzzzzfzzzz...",
+   "...zkkkkkkkkz...",
+   "...zFFFFFFFeez..",
+   "....zeeeeeefz...",
+   "......zFfz......",
+   "......zFez......",
+   ".....zFFeez.....",
+   "....zFFFeeez....",
+   "....zzzzzzzz...."
+  ],
+  [
+   "................",
+   "................",
+   ".......zz.......",
+   "......zlkz......",
+   "......llkz......",
+   "......zlkz......",
+   ".....zijiz......",
+   "...zzzzzfzzzz...",
+   "...zkkkkkkkkz...",
+   "...zFFFFFFFeez..",
+   "....zeeeeeefz...",
+   "......zFfz......",
+   "......zFez......",
+   ".....zFFeez.....",
+   "....zFFFeeez....",
+   "....zzzzzzzz...."
+  ],
+  [
+   "........l.......",
+   "..........l.....",
+   "....k...........",
+   ".......zz..k....",
+   "......zlkz......",
+   "......zlkz......",
+   "......zjzz......",
+   "...zzzzzfzzzz...",
+   "...zkkkkkkkkz...",
+   "...zFFFFFFFeez..",
+   "....zeeeeeefz...",
+   "......zFfz......",
+   "......zFez......",
+   ".....zFFeez.....",
+   "....zFFFeeez....",
+   "....zzzzzzzz...."
+  ],
+  [
+   "................",
+   ".......zz.......",
+   "......zwvz......",
+   "......zyyz......",
+   ".....zy..yz.....",
+   "....zy....yz....",
+   "...zy......yz...",
+   "..zzzzz..zzzzz..",
+   ".zvuuuvzzvuuuvz.",
+   "zvsttsrvvssttrvz",
+   "zvssssrzzvssssvz",
+   "zvrssrrvvrsssrvz",
+   ".zvrrrvzzvrrrvz.",
+   "..zzzzz..zzzzz..",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "收件人之家“下一单再来时多出来的东西”：letter_on_nail = 铁砧旁钉子上挂着的那封情书；mushroom_vase = 插着一朵石牢发光蘑菇的花瓶（瓶子照 cargo.vase）；flower_lamp = 阿婆院里会爆灯花的油灯（4 fps：亮两拍，灯芯开出一朵灯花，再爆几颗火星）；old_goggles = 挂在墙上的旧潜水镜（擦得发亮）。锚点底边中点，装饰层，不能互动。",
+ "notes": "ART-06c 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "339c6ae7a97ea94bc78fcac806419281a662be13f18c16bf644ed553684e7131"
+}

@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_candied_haws",
+ "name": "两串糖葫芦",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   ".....z......z...",
+   "....ztz....zdz..",
+   "...ziitz..zitz..",
+   "...ziiihz.zihz..",
+   "....zhhzzziiitz.",
+   "....ztizziiiihz.",
+   "...ziiihzzhhhz..",
+   "...ziiihzziitz..",
+   "....zhhzziiiihz.",
+   ".....dz.zhhhhz..",
+   ".....dz.zzhhz...",
+   ".....ez.zdz.....",
+   ".....dzzdz......",
+   ".....ezzez......",
+   ".....zzzz.......",
+   "................"
+  ]
+ ],
+ "usage": "心愿物：黑白无常（char.wuchang）想要的两串糖葫芦——一串直、一串斜（一个想吃、一个嘴上说不要），红果带糖衣高光。剪影是两串圆。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "3c473edd5d4ba7dc78be229bb7dba45a2774697cba84e8ff46bf06ce994b2a43"
+}

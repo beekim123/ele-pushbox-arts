@@ -1,0 +1,59 @@
+{
+ "format": "pushbox.art/1",
+ "id": "avatar.hero_bell_doll",
+ "name": "阿铃头像",
+ "category": "avatar",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  24,
+  24
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "...........zz...........",
+   "..........zdFz..........",
+   ".........zdFFez.........",
+   "..........zFez..........",
+   "........zzdFFfzz........",
+   ".......zddFFFFefz.......",
+   "......zddcFFFFeefz......",
+   "......zdcFFFFFeefz......",
+   "......zdcFFFFFeefz......",
+   "......zddFFzFFezfz......",
+   ".....zddFFFzFFezffz.....",
+   ".....zddFFFFFFeeffz.....",
+   ".....zddFFFFFffeffz.....",
+   "....zdeeeeeeeeeeeffz....",
+   "..zzdddFFFFFFFFeeeffz...",
+   ".zzcccccccccccddddFFFz..",
+   "zuzeeeeeeeeeeeeffffffz..",
+   "zuzzzzzzzzzzgzzzzzzzz...",
+   ".zuuzvzziDiiiihhz.......",
+   "..zz.zziiiiiiiihhzz.....",
+   "....zvvwwwwwwwwwxxxz....",
+   "....zvvwwwwwwwwwxxxz....",
+   "....zvvwwwwwwwwwxxxz....",
+   "....zvvwwwwwwwwwxxxz...."
+  ]
+ ],
+ "usage": "伙计「阿铃」的头像（24 × 24）：伙计房、派人界面、滚轮格子里用。铜铃脑袋、两只小黑眼，左肩后露出发条钥匙。",
+ "notes": "ART-06b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-08 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "a29b5e1ce64e66ee69450c08cbd828c4a2f43bac74d09a431faad19b651317b4"
+}

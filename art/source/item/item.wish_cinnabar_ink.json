@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_cinnabar_ink",
+ "name": "朱砂墨",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   "..........zzz...",
+   ".........zaiiz..",
+   ".........ziahz..",
+   "........ziahz...",
+   "........zahhz...",
+   ".......ziahz....",
+   ".......zahhz....",
+   ".zzzzzzzhhzzz...",
+   "zwvvvvvzzvvvwz..",
+   "zvxzzzzzzzzxwz..",
+   "zvzyyyiAiyzxwz..",
+   "zvzyyiAiiyzxwz..",
+   "zwxzzzzzzzzxyz..",
+   ".zyyyyyyyyyyz...",
+   "..zzzzzzzzzz...."
+  ]
+ ],
+ "usage": "心愿物：判官（char.judge）想要的朱砂墨——一锭朱红的墨斜靠在一方小砚台上，砚池里一点红。剪影是斜条 + 方块。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "dac14a9b45e0ca830b618c352eb037b4a8755c31d34fa28f827636edafc10a11"
+}

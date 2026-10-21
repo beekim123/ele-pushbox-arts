@@ -1,0 +1,85 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.lobby_story",
+ "name": "带剧情入口的新大厅",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "workbench/js/core/font-rooms2.js",
+  "workbench/js/core/font-storyui.js",
+  "workbench/js/core/ui-screens-story.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "content/i18n-artdemo/zh-Hans.json",
+  "content/i18n-artdemo/en.json",
+  "content/i18n-storyui/zh-Hans.json",
+  "content/i18n-storyui/en.json"
+ ],
+ "depends": [
+  "char.portitor",
+  "deco.diyu_lantern",
+  "deco.diyu_lily",
+  "fauna.diyu_butterfly",
+  "mech.exit_flag",
+  "obj.crate_wood",
+  "theme.diyu"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "lobby_story",
+  "theme": "theme.diyu",
+  "focus": 2,
+  "coins": 1280,
+  "items": [
+   {
+    "key": "result.lobby.level"
+   },
+   {
+    "key": "result.lobby.delivery"
+   },
+   {
+    "key": "storyui.lobby.story",
+    "new": true
+   },
+   {
+    "key": "menu.settings"
+   },
+   {
+    "key": "menu.quit"
+   }
+  ],
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-13a 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "fcfe4eab5b73084361dfe9ba0205e48cb6898edf9048a500d92df5b3618b6102"
+}

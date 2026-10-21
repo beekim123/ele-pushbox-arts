@@ -1,0 +1,102 @@
+{
+ "format": "pushbox.art/1",
+ "id": "ui.screen.story_board",
+ "name": "故事单总览",
+ "category": "screen",
+ "kind": "procedural",
+ "renderer": [
+  "workbench/js/core/ui.js",
+  "workbench/js/core/scene.js",
+  "workbench/js/core/terrain.js",
+  "workbench/js/core/ambient.js",
+  "workbench/js/core/i18n.js",
+  "content/i18n/zh-Hans.json",
+  "content/i18n/en.json",
+  "workbench/js/core/env.js",
+  "workbench/js/core/ui-kit.js",
+  "workbench/js/core/ui-style.js",
+  "workbench/js/core/font-ui.js",
+  "content/i18n-ui/zh-Hans.json",
+  "content/i18n-ui/en.json",
+  "workbench/js/core/ui-common.js",
+  "workbench/js/core/ui-screens-result.js",
+  "content/i18n-result/zh-Hans.json",
+  "content/i18n-result/en.json",
+  "workbench/js/core/font-offline-art-20261020.js",
+  "workbench/js/core/font-delivery.js",
+  "workbench/js/core/font-delivery2.js",
+  "workbench/js/core/font-rooms2.js",
+  "workbench/js/core/font-storyui.js",
+  "workbench/js/core/ui-screens-story.js",
+  "content/i18n-delivery/zh-Hans.json",
+  "content/i18n-delivery/en.json",
+  "content/i18n-delivery2/zh-Hans.json",
+  "content/i18n-delivery2/en.json",
+  "content/i18n-artdemo/zh-Hans.json",
+  "content/i18n-artdemo/en.json",
+  "content/i18n-storyui/zh-Hans.json",
+  "content/i18n-storyui/en.json"
+ ],
+ "depends": [
+  "avatar.ancestor",
+  "avatar.haenyeo",
+  "avatar.old_miner",
+  "avatar.zombie",
+  "scene.hub_post"
+ ],
+ "version": 2,
+ "stage": "review",
+ "size": [
+  320,
+  180
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "params": {
+  "screen": "story_board",
+  "bg": "scene.hub_post",
+  "state": "before",
+  "focus": 1,
+  "chapters": [
+   {
+    "label": "storyui.ch.0",
+    "name": "storyui.sample.ch0.name",
+    "who": "old_miner",
+    "color": "e",
+    "orders": 2,
+    "done": 2,
+    "read": true
+   },
+   {
+    "label": "storyui.ch.1",
+    "name": "storyui.sample.ch1.name",
+    "who": "zombie",
+    "color": "m",
+    "orders": 4,
+    "done": 1
+   },
+   {
+    "label": "storyui.ch.2",
+    "name": "storyui.sample.ch2.name",
+    "who": "ancestor",
+    "color": "j",
+    "orders": 4,
+    "done": 0,
+    "locked": true
+   },
+   {
+    "label": "storyui.ch.3",
+    "name": "storyui.sample.ch3.name",
+    "who": "haenyeo",
+    "color": "v",
+    "orders": 4,
+    "done": 0,
+    "locked": true
+   }
+  ],
+  "sample": "美术演示样张；地图、进度和数值均为虚构展示参数，不代表玩法或存档。"
+ },
+ "usage": "美术演示样张：几何背景、文字与数值仅供布局审阅，不含真实房间、提示、解法或剧情。待用户确认。",
+ "notes": "UI-13a 美术候选（离线全量任务 OFFLINE-ART-20261020），须由用户确认后才可用于正式游戏。",
+ "content_hash": "9e878ba77913f99c4afd997a9730bbda4eefc5e790d557f2b96d05be781c5423"
+}

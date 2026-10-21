@@ -6,6 +6,7 @@ import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {BASE} from '../tools/lib/godot-pack.mjs';
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const libPath = path.join(repo, 'tools/lib/godot-pack.mjs');
@@ -34,6 +35,11 @@ function sourceFixture(t) {
     fs.mkdirSync(path.dirname(path.join(root, rel)), {recursive: true});
     fs.cpSync(from, path.join(root, rel), {recursive: true});
   }
+  // Native v1 is fixed to BASE, while the authoring workbench may contain
+  // newer, unapproved candidates. Test native behavior against its actual
+  // baseline manifest; never weaken the producer's frozen-input guard.
+  fs.writeFileSync(path.join(root, 'art/export/manifest.json'),
+    execFileSync('git', ['show', BASE.commit + ':art/export/manifest.json'], {cwd: root}));
   git(root, 'config', 'user.name', 'Fixture');
   git(root, 'config', 'user.email', 'fixture@example.invalid');
   // A synthetic fixture starts without real attached technical reports. Its
@@ -55,6 +61,16 @@ function mutateJson(root, rel, change) {
   change(value);
   fs.writeFileSync(file, JSON.stringify(value) + '\n');
 }
+
+test('new authoring candidates cannot silently enter the fixed native baseline', async t => {
+  const lib = await import(libPath), f = sourceFixture(t);
+  mutateJson(f.root, 'art/export/manifest.json', x => {
+    x.assets.push({id: 'ui.screen.art_demo_unapproved', current_is_approved: false});
+  });
+  const sourceCommit = commit(f.root);
+  assert.throws(() => lib.buildGodotPack({...f, sourceCommit, packageVersion: '1.0.0-rc.1',
+    outDir: path.join(f.root, 'out-candidate')}), /frozen source\/media changed: art\/export\/manifest.json/);
+});
 
 test('rights inventory preserves operative asset terms and identifies the committed Catalog source', async t => {
   const lib = await import(libPath), f = sourceFixture(t);

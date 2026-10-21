@@ -37,6 +37,7 @@ loadCore(["terrain-candy"], { authoringModel: false });   // ART-02a: theme.cand
 loadCore(["font-ui11", "ui-screens-settings2"], { authoringModel: false });   // UI-11a: lobby skin row on the settings page
 loadCore(["ui-onboarding"], { authoringModel: false });   // UX-05: seven onboarding screens (PB.ui.SCREENS.onb_*)
 loadCore(["terrain-polar"], { authoringModel: false });   // ART-01a: theme.polar terrain (wraps PB.terrain)
+loadCore(["font-offline-art-20261020", "font-shelf", "font-wish", "font-storyui", "font-crew", "font-dhelp", "ui-screens-door", "ui-screens-shelf", "ui-screens-wish", "ui-screens-story", "ui-screens-crew", "ui-screens-dhelp"], { authoringModel: false }); // OFFLINE-ART-20261020: new candidates only
 const LOCALES = ["zh-Hans", "en"];
 // content/i18n (frozen) plus the content/i18n-<name> tables (tools/lib/i18n.mjs).
 function loadI18n() {

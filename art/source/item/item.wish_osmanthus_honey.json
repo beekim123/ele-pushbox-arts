@@ -1,0 +1,51 @@
+{
+ "format": "pushbox.art/1",
+ "id": "item.wish_osmanthus_honey",
+ "name": "桂花蜜",
+ "category": "item",
+ "kind": "sprite",
+ "version": 1,
+ "stage": "review",
+ "size": [
+  16,
+  16
+ ],
+ "anchor": [
+  0,
+  0
+ ],
+ "layer": "ui",
+ "palette": "endesga32",
+ "animations": {
+  "default": {
+   "fps": 1,
+   "loop": false,
+   "frames": [
+    0
+   ]
+  }
+ },
+ "frames": [
+  [
+   "................",
+   ".....zzzzzz.....",
+   "....zccccccz....",
+   "...zctcccccdz...",
+   "....ziiiiiz.....",
+   ".....zkkkz......",
+   "....zbkjebz.....",
+   "...zbFeeeffz....",
+   "..zbFlFeeeefz...",
+   "..zFlklFelefz...",
+   "..zeFlFeelklz...",
+   "..zeeeeelelfz...",
+   "...zeffffffz....",
+   "....zzzzzzz.....",
+   "................",
+   "................"
+  ]
+ ],
+ "usage": "心愿物：孟婆（char.meng_po）想要的桂花蜜——一罐蜜，罐口扎布系红绳，罐身几朵小黄桂花，罐口流着一点蜜。剪影是带布盖的圆罐。驿站货架、背包格、门牌心愿位和心愿签里用（界面按 \"item.\" + id 找图）。",
+ "notes": "ART-05b 美术候选（离线全量任务 OFFLINE-ART-20261020，原 DSN-07 拆出），等用户在工作台确认；确认前不得进游戏。",
+ "content_hash": "fa4bc329606706671ed10dcb6a7a8baa01e0dbc71b6da9ee3c0026bda38cdd61"
+}
