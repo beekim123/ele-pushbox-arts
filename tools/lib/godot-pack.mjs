@@ -268,7 +268,11 @@ function collect(reader,base,version){
     if(asset){origin={kind:'approved_art',uid:asset.uid,version:asset.version,hash:asset.hash,approval:asset.approval,source_path:asset.origin.media_path};terms=['character','avatar','monster'].includes(asset.category)?['reserved-character-rights']:['CC-BY-NC-SA-4.0'];}
     if(sound){origin={kind:'approved_sound',uid:sound.uid,version:sound.version,hash:sound.hash,approval:sound.approval,source_path:sound.origin.media_path};terms=['CC-BY-NC-SA-4.0'];}
     if(font){origin={kind:'frozen_font_or_notice',source_path:font.origin_path,source_sha256:font.sha256};terms=['original-font-notices-OFL-and-upstream'];}
-    if(p.endsWith('/api/catalog.gd'))terms=['MIT-algorithms'];
+    if(p===PREFIX+'licenses/LICENSE-ASSETS.md')terms=['operative-asset-license-notice','original-visual-and-sound-data-CC-BY-NC-SA-4.0','reserved-brand-or-character-rights','third-party-fonts-retain-original-licenses','approval-records-historical-facts-only'];
+    if(p===PREFIX+'api/catalog.gd'){
+      origin={kind:'committed_producer_source',source_path:'godot/'+p,source_sha256:sha256(reader.get('godot/'+p)),transformation:'byte_copy'};
+      terms=['MIT-algorithms'];
+    }
     if(p===PREFIX+'resources/catalog.json'){
       origin={kind:'mixed_runtime_index',schema_code:'tools/lib/godot-pack.mjs',assets_base_commit:BASE.commit,
         art:assets.map(a=>({uid:a.uid,version:a.version,hash:a.hash,history_path:a.origin.history_path,history_sha256:a.origin.history_sha256,approval:a.approval,terms:['character','avatar','monster'].includes(a.category)?['reserved-character-rights']:['CC-BY-NC-SA-4.0']})),

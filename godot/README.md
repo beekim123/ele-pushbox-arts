@@ -50,6 +50,16 @@ The archive contains only ordinary files under `addons/portitor_art/`:
 - `licenses/` preserves the root code/material terms, T5/T6 mixed-source tables
   and a per-file candidate rights inventory. It is not a blanket MIT grant.
 
+The material notice has an explicit operative-asset-license classification; its
+CC, reserved brand/character and original font terms remain controlling. The
+Catalog entry identifies the committed `godot/addons/portitor_art/api/catalog.gd`
+source path and SHA256 of its copied bytes, with the source commit bound by the
+manifest's producer identity. Rights-inventory corrections change payload
+identity even when all renderer and media bytes remain unchanged. A technical
+report bound to an earlier payload stays historical until the changed actual
+package receives its own measured report. Palette attribution does not assert a
+new MIT or CC0 grant.
+
 All 221 art identities remain in the index; 43 procedural approval PNGs stay in
 producer review material outside the runtime ZIP. Thirteen reference-only assets
 have no runnable native fallback. Static 208 implemented / 13 reference-only

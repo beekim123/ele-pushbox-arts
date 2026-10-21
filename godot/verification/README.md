@@ -1,6 +1,13 @@
 # Scoped native technical report
 
-The current report is a fresh complete run after the selected-native guard and
+The candidate currently has no attached receipt after the rights-inventory
+classification/provenance correction. That metadata changes payload identity;
+the producer emits a matching pending envelope until this actual changed package
+is tested. The report bytes described below remain historical and are not
+reassigned to the new payload. Renderer/media/font bytes and existing limits are
+unchanged by the metadata correction.
+
+The retained pre-correction report is a complete run after the selected-native guard and
 original public asset-name compatibility fixes. It tests source/verifier
 `d8f804180fecaac064ae885235cfe68a3c363bc2` and pending manifest
 `600f33e2da9407f0d232ade5688b35f40033e03283ad9dcfd330312871a3e8b0`.

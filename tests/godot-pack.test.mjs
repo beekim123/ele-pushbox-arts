@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -54,6 +55,30 @@ function mutateJson(root, rel, change) {
   change(value);
   fs.writeFileSync(file, JSON.stringify(value) + '\n');
 }
+
+test('rights inventory preserves operative asset terms and identifies the committed Catalog source', async t => {
+  const lib = await import(libPath), f = sourceFixture(t);
+  const built = lib.buildGodotPack({...f, packageVersion: '1.0.0-rc.1', outDir: path.join(f.root, 'out-rights')});
+  const zipped = lib.readStoreZip(fs.readFileSync(built.archive));
+  const rights = JSON.parse(zipped.get('addons/portitor_art/licenses/inventory.json'));
+  await t.test('the material notice cannot be read as MIT documentation', () => {
+    const notice = rights.files.find(x => x.path === 'addons/portitor_art/licenses/LICENSE-ASSETS.md');
+    assert.deepEqual(notice.terms, ['operative-asset-license-notice', 'original-visual-and-sound-data-CC-BY-NC-SA-4.0',
+      'reserved-brand-or-character-rights', 'third-party-fonts-retain-original-licenses', 'approval-records-historical-facts-only']);
+    assert.deepEqual(zipped.get(notice.path), execFileSync('git', ['show', f.sourceCommit + ':LICENSE-ASSETS.md'], {cwd: f.root}));
+  });
+  await t.test('the copied Catalog names its actual committed source bytes', () => {
+    const sourcePath = 'godot/addons/portitor_art/api/catalog.gd';
+    const sourceBytes = execFileSync('git', ['show', f.sourceCommit + ':' + sourcePath], {cwd: f.root});
+    const catalog = rights.files.find(x => x.path === 'addons/portitor_art/api/catalog.gd');
+    assert.deepEqual(catalog.origin, {kind: 'committed_producer_source', source_path: sourcePath,
+      source_sha256: createHash('sha256').update(sourceBytes).digest('hex'), transformation: 'byte_copy'});
+    assert.deepEqual(zipped.get(catalog.path), sourceBytes);
+    assert.equal(JSON.parse(fs.readFileSync(built.manifest)).producer.commit, f.sourceCommit);
+  });
+  assert.deepEqual(rights.palette, {creator: 'ENDESGA', name: 'ENDESGA 32', source: 'https://lospec.com/palette-list/endesga-32',
+    basis: 'Existing project records free public use; no named MIT/CC0 grant is asserted.'});
+});
 
 test('real committed inputs yield identical STORE archives and preserve selected approvals', async t => {
   const lib = await import(libPath);
