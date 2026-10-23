@@ -326,7 +326,7 @@ async function screensRegression(page,url){
 
 // WB-15: offline bundled documents, safe internal navigation and static image previews.
 async function docsRegression(page,url){
-  const go=async hash=>{await page.goto(url+hash);await page.locator('#docs-article h1').waitFor();};
+  const go=async hash=>{await page.goto(url+hash);await page.locator('#docs-article[data-doc-path="'+decodeURIComponent(hash.slice(1))+'"] h1').waitFor();};
   const shot=async name=>{if(process.env.WB_EVIDENCE_DIR){const dir=path.join(process.env.WB_EVIDENCE_DIR,'screenshots');fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,name+'.png')});}};
   await page.setViewportSize({width:1280,height:800});
   await page.goto(url+'#home');
@@ -356,6 +356,7 @@ async function docsRegression(page,url){
   assert.ok(await page.evaluate(()=>window.__wb15Article===document.querySelector('#docs-article').firstElementChild),'section jump retains rendered document nodes');
   await page.locator('#docs-article').getByRole('link',{name:'美术流程',exact:true}).click();
   await page.waitForFunction(()=>location.hash==='#docs/design/art-pipeline.md');
+  await page.locator('#docs-article[data-doc-path="docs/design/art-pipeline.md"] h1').waitFor();
   assert.equal(await page.locator('#docs-article h1').first().innerText(),'美术流程：源数据、版本、确认与交付');
   await go('#docs/design/ui-style.md');
   const image=page.locator('#docs-article img[src*="ui-style/lobby/overview.png"]').first();

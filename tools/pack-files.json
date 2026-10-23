@@ -3,6 +3,7 @@
  "source": "https://github.com/beekim123/ele-pushbox-arts.git",
  "include": [
   "art/source/**",
+  "art/owners.json",
   "art/history/**",
   "art/approvals.json",
   "art/review-batches.json",
@@ -19,6 +20,7 @@
   "tools/lib/i18n.mjs",
   "tools/lib/audio.mjs",
   "tools/lib/concepts.mjs",
+  "tools/lib/art-owners.mjs",
   "tools/build-font.py",
   "workbench/js/core/raster.js",
   "workbench/js/core/sprites.js",

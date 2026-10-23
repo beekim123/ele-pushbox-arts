@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import {assetOwner, validateOwnerTable} from './art-owners.mjs';
 
 export const PACKAGE_ID = 'portitor.art.godot';
 export const PREFIX = 'addons/portitor_art/';
@@ -158,6 +159,7 @@ export function validateCatalog(index,files) {
   need(Array.isArray(index.assets)&&index.assets.length===221,'expected 221 approved identities');
   const byUid=new Map();const artRecords=new Map(index.approval_records.art.map(r=>[r.id,r]));
   for(const a of index.assets){
+    if(Object.hasOwn(a,'owner'))assetOwner(a,{owners:{[a.id]:a.owner}});
     need(!Object.hasOwn(a,'name')||typeof a.name==='string','invalid optional selected asset name');
     need(UID.test(a.uid)&&a.uid==='art:'+a.id&&!byUid.has(a.uid)&&a.id!=='char.portitor_alt','invalid/duplicate approved UID');byUid.set(a.uid,a);
     need(a.approved===true&&a.placeholder===false&&integer(a.version,1)&&HASH.test(a.hash)&&HASH.test(a.png_sha256),'invalid approved asset identity');
@@ -195,6 +197,8 @@ function collect(reader,base,version){
   const basePack=base.json('art-pack.json');need(sha256(base.get('art-pack.json'))===BASE.manifest_sha256,'assets_base manifest identity mismatch');
   const frozen=p=>{const a=reader.get(p),b=base.get(p);need(a.equals(b),'frozen source/media changed: '+p);return a;};
   for(const p of ['art-pack.json','art/approvals.json','audio/approvals.json','art/export/manifest.json'])frozen(p);
+  const ownerInputs=[...reader.tree.keys()].filter(p=>p.startsWith('art/source/')&&p.endsWith('.json')).map(p=>reader.json(p));
+  const owners=validateOwnerTable(reader.json('art/owners.json'),ownerInputs);
   const approvalRecords={art:reader.json('art/approvals.json').records,audio:reader.json('audio/approvals.json').records};
   const coverage=reader.json('godot/native-coverage.json');
   need(coverage.format==='portitor.art.native-coverage-input/1'&&coverage.evidence_stage==='source_inventory'&&coverage.verified===false,'expected unverified static coverage input');
@@ -233,7 +237,7 @@ function collect(reader,base,version){
     const native={native:c.native,implementation_kind:c.implementation_kind,evidence:c.evidence,evidence_stage:'source_inventory',verified:false};
     const texturePath=history.kind==='sprite'?`resources/sprites/${id}@v${ap.version}.png`:'';
     if(texturePath)files.set(PREFIX+texturePath,png);
-    assets.push({uid,id,name:history.name,kind:history.kind,category:history.category,layer:history.layer,version:ap.version,hash:ap.hash,approved:true,placeholder:false,
+    assets.push({uid,id,name:history.name,owner:assetOwner(history,owners),kind:history.kind,category:history.category,layer:history.layer,version:ap.version,hash:ap.hash,approved:true,placeholder:false,
       approval:rec.id,png_sha256:ap.png_sha256,texture_path:texturePath,size:history.size||[0,0],frame_count:history.kind==='sprite'?history.frames.length:0,
       anchor:history.anchor||[0,0],animations:history.animations||{},ninepatch:history.ninepatch||null,params:history.params||{},depends:history.depends||[],native,
       origin:{history_path:historyPath,history_sha256:sha256(reader.get(historyPath)),media_path:ap.png,renderer:history.renderer||[]}});
@@ -296,6 +300,7 @@ export function buildGodotPack({root,sourceCommit,packageVersion,outDir}) {
   reader.run('merge-base','--is-ancestor',BASE.commit,sourceCommit);
   // Rebuilding a fixed commit cannot silently execute another revision's packer.
   need(reader.get('tools/lib/godot-pack.mjs').equals(fs.readFileSync(new URL(import.meta.url))),'running producer differs from sourceCommit');
+  need(reader.get('tools/lib/art-owners.mjs').equals(fs.readFileSync(new URL('./art-owners.mjs',import.meta.url))),'running owner metadata helper differs from sourceCommit');
   const {files,index}=collect(reader,base,packageVersion),table=treeTable(files);validateFiles(table);
   const approved=index.assets.map(a=>[a.uid,a.version,a.hash,a.approval,a.png_sha256]).concat(index.audio.map(a=>[a.uid,a.version,a.hash,a.approval,a.sha256]),index.fonts.map(f=>[f.id,f.sha256])).sort((a,b)=>cmp(a[0],b[0]));
   const renderer=table.filter(f=>/\.(gd|gdshader|gdshaderinc)$/.test(f.path)||f.path===PREFIX+'resources/catalog.json');
