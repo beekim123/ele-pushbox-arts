@@ -44,7 +44,7 @@
 
 ## 3 通用规则（每个包都适用）
 
-- **两个仓库**：美术仓库 https://github.com/beekim123/ele-pushbox-arts.git ，本机 `/Users/key_/Desktop/CURRGO/pushbox/pushbox-arts`（公开仓库：推送 `main` 就等于公开）。游戏仓库 https://github.com/beekim123/ele-pushbox.git （私有），本机副本位置以用户机器为准；只有 BR-06 改它，WB-13 只读。
+- **两个仓库**：美术仓库 https://github.com/beekim123/ele-pushbox-arts.git ，本机目录在下文写作 `<美术仓库目录>`，实际路径见用户给的提示词（公开仓库：推送 `main` 就等于公开；不要把本机路径写进本仓库）。游戏仓库 https://github.com/beekim123/ele-pushbox.git （私有），本机副本位置以用户机器为准；只有 BR-06 改它，WB-13 只读。
 - **冻结区一律不改**：`art/source/**`、`art/approvals.json`、`art/history/**`、`art/export/**`（含 `preview/`，只能由 build 生成）、`workbench/js/core/**`、`content/i18n*/**`、`content/levels/**`、`godot/**`、`SNAPSHOT.md` 列出的文件。任何美术换版本数必须为 0。
 - 不引入前端框架、npm 依赖或构建步骤；双击 `workbench/index.html`（file://）和 HTTP 两种打开方式都必须能用。
 - 包文件里写了「可改」，就只改清单里的文件。验收必须的小改动可以超出清单：每个文件 30 行以内、不碰冻结区、不碰第 1 节不授权的文件、不改测试阈值；在交付里单列「清单外的小改动」。超出这些就按第 6 节停下。
@@ -72,13 +72,13 @@
 **第 0 步（只做一次）**：
 ```bash
 # 美术仓库
-cd /Users/key_/Desktop/CURRGO/pushbox/pushbox-arts
+cd <美术仓库目录>
 git fetch origin
 git worktree add ../pushbox-arts-merge-queue -b merge/workbench-queue origin/main
 cd ../pushbox-arts-merge-queue
 git merge --no-ff origin/claude/peaceful-rubin-i3guy1 -m "merge: workbench queue packages"
 git push origin HEAD:main
-cd /Users/key_/Desktop/CURRGO/pushbox/pushbox-arts
+cd <美术仓库目录>
 git worktree remove ../pushbox-arts-merge-queue
 git fetch origin
 git merge-base --is-ancestor merge/workbench-queue origin/main && git branch -D merge/workbench-queue
@@ -88,7 +88,7 @@ git merge-base --is-ancestor merge/workbench-queue origin/main && git branch -D 
 
 **开工**（美术仓库）
 ```bash
-cd /Users/key_/Desktop/CURRGO/pushbox/pushbox-arts
+cd <美术仓库目录>
 git fetch origin
 git worktree add ../pushbox-arts-<编号> -b <分支> origin/main
 cd ../pushbox-arts-<编号>
@@ -102,7 +102,7 @@ cd ../pushbox-arts-<编号>
 
 **合并推送**
 ```bash
-cd /Users/key_/Desktop/CURRGO/pushbox/pushbox-arts
+cd <美术仓库目录>
 git fetch origin
 git worktree add ../pushbox-arts-merge-<编号> -b merge/<编号> origin/main
 cd ../pushbox-arts-merge-<编号>
@@ -114,7 +114,7 @@ git push origin HEAD:main
 
 **删分支**（包分支只在本机，不推远端）
 ```bash
-cd /Users/key_/Desktop/CURRGO/pushbox/pushbox-arts
+cd <美术仓库目录>
 git worktree remove ../pushbox-arts-<编号>
 git worktree remove ../pushbox-arts-merge-<编号>
 git fetch origin
