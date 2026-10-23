@@ -107,6 +107,8 @@
     if (!selected) { box.append(el("p", { class: "muted", text: "选择左侧的一项资产查看详情。" })); return; }
     const a = store.effective(selected), st = store.status(selected);
     box.append(el("h2", { text: a.name }), el("div", { class: "btn-row" }, [el("span", { class: "mono", text: `art:${a.id} · v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]));
+    const screen=root.PBScreens.identify(a.id);
+    if(screen)box.append(el("a",{class:"btn small",href:"#screen/"+screen.id,text:"在界面清单中打开"}));
     const host = el("div", { class: "stage-host" });
     box.append(host);
     if (a.kind === "sprite") {
