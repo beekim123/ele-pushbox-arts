@@ -1,9 +1,4 @@
-/* Workbench menu: left category menu, folding, left-column collapse and the
- * narrow-screen drawer. MENU is the only list of pages: the menu is drawn from
- * it and main.js builds its router from it. To add a page, add one entry to a
- * category here (plus the page's own <section id="view-…"> and view script).
- * A page may have more than one menu item (href: a place inside the page); the
- * delivery v2 maps are items generated from slices.json (workbench.md 6.1).
+/* Six visible workspace destinations plus an internal tool-route registry.
  * Loaded in <head> so a collapsed left column never flashes open. */
 (function (root) {
   "use strict";
@@ -15,32 +10,41 @@
   // named by its short_name (workbench.md 6.1), opening #<view>/map/<map id>.
   // { concepts: view }: one item per map of content/concepts/maps.json, in its order
   // and named by its name (workbench.md 6.2), opening #<view>/<map id>.
+  // Six visible destinations; tools remain addressable through a separate registry.
   const MENU = [
-    { group: "level", label: "关卡模式", items: [
-      { view: "level-art", label: "全部资源", module: "PBLevelArt" },
-      { resourceSections: "level-art", mode: "level" },
-    ] },
-    { group: "delivery", label: "配送模式", items: [
-      { view: "delivery-art", label: "全部资源", module: "PBDeliveryArt" },
-      { resourceSections: "delivery-art", mode: "delivery" },
-    ] },
-    { group: "concepts", label: "地图概念", items: [
-      { view: "concepts", label: "全部", module: "PBConcepts" },
-      { concepts: "concepts" },
-    ] },
-    { group: "art", label: "美术", items: [
-      { view: "scenes", label: "场景", module: "PBScenes" },
-      { view: "assets", label: "资产与动画", module: "PBAssets" },
-      { view: "edit", label: "编辑与对比", module: "PBEditor" },
-      { view: "review", label: "确认", module: "PBReview", badge: "review-count" },
-      { view: "export", label: "导出", module: "PBExport", badge: "drafts-count", tone: "warn" },
-      { view: "ui-proposals", label: "界面风格提案", module: "PBUiProposals" },
-    ] },
-    { group: "audio", label: "声音", items: [
-      { view: "audio", href: "#audio/sfx", label: "音效", module: "PBWBAudio" },
-      // 音乐、按地图 are hidden while background music is shelved (user 2026-10-17); #audio/music and #audio/maps still open.
-    ] },
+    {view:'home',label:'总览',module:'PBHome'},
+    {view:'assets',href:'#library',label:'资源库',module:'PBAssets',badge:'drafts-count',tone:'warn'},
+    {view:'scenes',label:'场景与界面',module:'PBScenes'},
+    {view:'review',label:'确认',module:'PBReview',badge:'review-count'},
+    {view:'concepts',label:'地图概念',module:'PBConcepts'},
+    {view:'audio',href:'#audio/sfx',label:'声音',module:'PBWBAudio'},
   ];
+  const TOOLS = [
+    {view:'edit',label:'编辑与对比',module:'PBEditor'},
+    {view:'export',label:'导出',module:'PBExport'},
+    {view:'ui-proposals',label:'界面风格提案',module:'PBUiProposals'},
+    {view:'level-art',label:'关卡音效',module:'PBLevelArt'},
+    {view:'delivery-art',label:'配送音效',module:'PBDeliveryArt'},
+  ];
+  function resolve(hash) {
+    let raw=(hash||'').replace(/^#/,''), canonical=raw||'home';
+    const [path,query='']=canonical.split('?'), [view,...rest]=path.split('/'), id=rest.join('/');
+    if(view==='level-art'||view==='delivery-art') {
+      const params=new URLSearchParams({mode:view==='level-art'?'level':'delivery'});
+      if(id&&id!=='all') params.set(id.startsWith('theme.')?'theme':'group',id.startsWith('theme.')?id.slice(6):id);
+      canonical='library?'+params;
+    } else if(view==='assets') canonical='library'+(id?'?id='+encodeURIComponent(id):'');
+    else if(view==='export') canonical='review/export';
+    else if(view==='ui-proposals') canonical='scenes/ui-proposals';
+    const [next,params='']=canonical.split('?'), [name,...parts]=next.split('/');
+    if(name==='library') {
+      const q=new URLSearchParams(params), mode=q.get('mode');
+      return {hash:'#'+canonical,view:q.get('group')==='sounds'&&['level','delivery'].includes(mode)?mode+'-art':'assets',id:q.get('group')==='sounds'?'sounds':q.get('id'),query:params,nav:'assets'};
+    }
+    if(next==='review/export')return {hash:'#'+canonical,view:'export',id:null,nav:'review'};
+    if(next==='scenes/ui-proposals')return {hash:'#'+canonical,view:'ui-proposals',id:null,nav:'scenes'};
+    return {hash:'#'+canonical,view:name,id:parts.join('/')||null,query:params,nav:name==='edit'?'assets':name};
+  }
 
   const KEY = "pb.wb.nav.v1";
   const NARROW = "(max-width: 720px)";
@@ -58,7 +62,7 @@
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* storage unavailable */ } }
   if (state.collapsed) doc.setAttribute("data-nav", "collapsed");
 
-  const PAGES = [];
+  const PAGES = TOOLS.slice();
   for (const m of MENU) {
     if (m.items) { for (const it of m.items) if (it.view) PAGES.push(Object.assign({ group: m.group, groupLabel: m.label }, it)); }
     else PAGES.push(Object.assign({ group: null, groupLabel: null }, m));
@@ -229,7 +233,7 @@
   }
 
   root.PBNav = {
-    MENU, init, setCurrent, setBadge,
+    MENU, init, setCurrent, setBadge, resolve,
     pages: () => PAGES.slice(),
     links: () => items.map(({ key, href, view, label }) => ({ key, href, view, label })),
     drawerOpen,

@@ -4,7 +4,12 @@
   "use strict";
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
   const CAT = { avatar: "头像", cargo: "货物", monster: "怪物", scene: "整幅场景", theme: "主题（地形·背景·生态）", fauna: "小动物", deco: "植物与装饰", character: "角色", object: "箱子与物件", mechanism: "机关", item: "物品", fx: "特效", ui: "界面元素", screen: "界面画面", terrain: "地形与背景", material: "材料（第 2–5 章）" };
-  const filt = { cat: "all", status: "all", q: "" };
+  const filt = { cat:'all',status:'all',q:'',mode:'all',theme:'all',group:'all',shared:true };
+  let query='', eligible=new Set();
+  function setQuery(value){query=value;const p=new URLSearchParams(value);Object.assign(filt,{cat:p.get('category')||'all',status:p.get('status')||'all',q:p.get('q')||'',mode:p.get('mode')||'all',theme:p.get('theme')||'all',group:p.get('group')||'all',shared:p.get('shared')!=='0'});}
+  function address(id){const p=new URLSearchParams();for(const [key,value] of Object.entries({mode:filt.mode,theme:filt.theme,group:filt.group,category:filt.cat,status:filt.status,q:filt.q}))if(value&&value!=='all')p.set(key,value);if(!filt.shared)p.set('shared','0');if(id)p.set('id',id);return '#library'+(p.size?'?'+p:'');}
+  function navigate(){location.hash=address();}
+
   let selected = null, stage = null, anim = null;
 
   const warned = new Set(), cards = new Map();
@@ -20,7 +25,7 @@
   function thumb(a, maxW, maxH) {
     const sprite = a.kind === "sprite", w = sprite ? a.size[0] : 320, h = sprite ? a.size[1] : 180;
     const z = Math.max(1, Math.min(Math.floor(maxW / w), Math.floor(maxH / h)));
-    const width = sprite ? w * z : 144, height = sprite ? h * z : 81;
+    const width = sprite ? w * z : maxW >= 320 ? 320 : 144, height = sprite ? h * z : maxW >= 320 ? 180 : 81;
     if (a._draft) {
       const c = canvasThumb(a); c.style.width = width + "px"; c.style.height = height + "px"; return c;
     }
@@ -43,6 +48,7 @@
   }
 
   function matches(a) {
+    if (!eligible.has(a.id)) return false;
     if (filt.cat !== "all" && a.category !== filt.cat) return false;
     const st = store.status(a.id);
     if (filt.status !== "all" && st !== filt.status) return false;
@@ -52,10 +58,20 @@
 
   function renderFilters() {
     const cats = document.getElementById("asset-categories"), sts = document.getElementById("asset-status");
-    cats.textContent = ""; sts.textContent = "";
+    cats.textContent = ''; sts.textContent = '';
+    const controls=document.getElementById('library-filters');controls.textContent='';
+    const choose=(label,value,options,change)=>{const select=el('select',{'aria-label':label,onchange:()=>{change(select.value);navigate();}});for(const [id,name]of options)select.append(el('option',{value:id,text:name}));select.value=value;controls.append(el('label',{class:'library-control'},[el('span',{text:label}),select]));};
+    choose('模式',filt.mode,[['all','全部模式'],['level','关卡模式'],['delivery','配送模式']],v=>{filt.mode=v;filt.theme='all';});
+    const themes=new Map();for(const m of filt.mode==='all'?['level','delivery']:[filt.mode])for(const s of root.PBModeCatalog.sections(m,store.assets()).filter(s=>s.id.startsWith('theme.')))themes.set(s.id.slice(6),s.name);
+    choose('主题',filt.theme,[['all','全部主题'],...themes],v=>filt.theme=v);
+    choose('用途分组',filt.group,[['all','全部用途'],['characters','角色与生物'],['items','物品与装饰'],['mechanisms','机关与特效'],['screens','界面与引导'],['hub','渡口·伙计·剧情']],v=>filt.group=v);
+    const shared=el('input',{type:'checkbox',checked:filt.shared,onchange:()=>{filt.shared=shared.checked;navigate();}});controls.append(el('label',{class:'library-control'},[shared,'包括通用资源']));
+    controls.append(el('a',{class:'btn small',href:'#library',text:'清除筛选'}));
+    document.getElementById('asset-search').value=filt.q;
+
     const counts = {};
     for (const a of store.assets()) counts[a.category] = (counts[a.category] || 0) + 1;
-    const chip = (box, key, val, label) => box.append(el("button", { class: "chip", type: "button", "aria-pressed": String(filt[key] === val), text: label, onclick: () => { filt[key] = val; renderFilters(); renderCards(); } }));
+    const chip = (box, key, val, label) => box.append(el("button", { class: "chip", type: "button", "aria-pressed": String(filt[key] === val), text: label, onclick: () => { filt[key] = val; navigate(); } }));
     chip(cats, "cat", "all", `全部 ${store.assets().length}`);
     for (const c of Object.keys(counts)) chip(cats, "cat", c, `${CAT[c] || c} ${counts[c]}`);
     for (const [v, l] of [["all", "全部状态"], ["review", "待确认"], ["approved", "已确认"], ["draft", "草稿"], ["local", "本地修改"]]) chip(sts, "status", v, l);
@@ -64,13 +80,14 @@
   function renderCards() {
     const box = document.getElementById("asset-cards");
     const list = store.assets().map((a) => store.effective(a.id));
+    eligible=new Set(root.PBModeCatalog.library(store.assets(),filt).map(a=>a.id));
     let count = 0;
     for (const a of list) {
       const st = store.status(a.id), key = a.frames || a;
       let entry = cards.get(a.id);
       if (!entry || entry.key !== key || entry.status !== st) {
-        const node = el("button", { class: "card", type: "button", onclick: () => { root.PBDetailDrawer.origin("asset-inspector", () => cards.get(a.id).node); if (location.hash === "#assets/" + a.id) show(a.id); else location.hash = "#assets/" + a.id; } }, [
-          el("div", { class: "thumb" }, [thumb(a, 128, 80)]),
+        const node = el("button", { class: "card" + (a.size?.[0]>=320 || a.kind!=="sprite" ? " large-asset" : ""), "data-resource-id": a.id, type: "button", onclick: () => { root.PBDetailDrawer.origin("asset-inspector", () => cards.get(a.id).node); if (location.hash === address(a.id)) show(a.id); else location.hash = address(a.id); } }, [
+          el("div", { class: "thumb" }, [thumb(a, a.size?.[0]>=320 || a.kind!=="sprite" ? 320 : 128, a.size?.[0]>=320 || a.kind!=="sprite" ? 180 : 96)]),
           el("div", { class: "name", text: a.name }),
           el("div", { class: "row" }, [el("span", { class: "id", text: `${a.id} v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]),
         ]);
@@ -153,11 +170,14 @@
   }
 
   function show(id) {
-    selected = id && store.asset(id) ? id : selected;
+    clearTimeout(searchTimer);
+    selected = id && store.asset(id) ? id : null;
+    document.getElementById('view-assets').classList.toggle('has-detail',!!selected);
+    if(!selected&&!query)document.querySelector('#view-assets .work').scrollTop=0;
     renderFilters(); renderCards(); renderInspector();
     root.PBDetailDrawer.origin("asset-inspector", () => cards.get(selected)?.node);
     root.PBDetailDrawer.show("asset-inspector", !!id);
-    document.getElementById("asset-search").oninput = (e) => { clearTimeout(searchTimer); const value = e.target.value.trim(); searchTimer = setTimeout(() => { filt.q = value; renderCards(); }, 150); };
+    document.getElementById("asset-search").oninput = (e) => { clearTimeout(searchTimer); const value = e.target.value.trim(); searchTimer = setTimeout(() => { filt.q = value; navigate(); }, 150); };
   }
-  root.PBAssets = { show, hide: () => { root.PBDetailDrawer.hide("asset-inspector"); if (stage) stage.setVisible(false); }, wake: () => stage && stage.setVisible(true), CAT, thumb, drawProcedural };
+  root.PBAssets = { show, setQuery, hide: () => { root.PBDetailDrawer.hide("asset-inspector"); if (stage) stage.setVisible(false); }, wake: () => stage && stage.setVisible(true), CAT, thumb, drawProcedural };
 })(window);

@@ -27,6 +27,7 @@
 <div class="nav-scrim" id="nav-scrim" hidden></div>
 
 <main>
+  <section class="view single" id="view-home" hidden><div class="page home-page" id="home-root"></div></section>
   <section class="view single" id="view-level-art" hidden>
     <div class="page mode-resources" id="level-art-root"></div>
   </section>
@@ -44,6 +45,7 @@
 
   <section class="view" id="view-assets" hidden>
     <aside class="side" aria-label="筛选">
+      <h2>资源库</h2><div id="library-filters"></div>
       <input type="search" id="asset-search" placeholder="搜索名称或标识" aria-label="搜索资产">
       <div class="filter-group" id="asset-categories" role="group" aria-label="分类"></div>
       <div class="filter-group" id="asset-status" role="group" aria-label="状态"></div>
@@ -117,6 +119,7 @@
 <script src="js/app/stage.js"></script>
 <script src="js/app/views/scenes.js"></script>
 <script src="js/app/views/assets.js"></script>
+<script src="js/app/views/home.js"></script>
 <script src="js/app/mode-catalog.js"></script>
 <script src="js/app/views/mode-resources.js"></script>
 <script src="js/app/views/editor.js"></script>

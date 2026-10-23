@@ -1,5 +1,5 @@
 /* Entry: hash routing (#view/id), navigation state, badges, toast and downloads.
- * The pages and their menu come from PBNav.MENU (js/app/nav.js). */
+ * PBNav.pages() provides visible destinations and addressable internal tools. */
 (function (root) {
   "use strict";
   const store = root.PBStore;
@@ -31,9 +31,11 @@
   }
 
   function route() {
-    const [view, ...rest] = (location.hash.slice(1) || "scenes").split("/");
-    const name = VIEWS[view] ? view : "scenes";
-    const id = rest.join("/") || null;
+    const place = nav.resolve(location.hash);
+    if(location.hash!==place.hash) history.replaceState(null,'',place.hash);
+    const name = VIEWS[place.view] ? place.view : 'home';
+    const id = place.id;
+    root.PBAssets.setQuery(place.query || '');
     for (const v of Object.keys(VIEWS)) {
       const sec = document.getElementById("view-" + v);
       const on = v === name;
@@ -42,9 +44,20 @@
     }
     // A page with places of its own in the menu (配送: maps, rooms; 声音: sfx, music, maps) says which item and breadcrumb fit.
     const at = VIEWS[name].where ? VIEWS[name].where(id) : name === "audio" ? { key: "audio/" + (id || "sfx").split("/")[0] } : null;
-    nav.setCurrent(name, at);
+    nav.setCurrent(place.nav || name, at);
     active = name;
     VIEWS[name].show(id);
+    for(const [owner,other,first,second] of [['scenes','ui-proposals','场景预览','界面风格提案'],['review','export','确认清单','导出']]) {
+      const target=document.getElementById('view-'+(name===other?other:owner));
+      if(name!==owner&&name!==other)continue;
+      let tabs=target.querySelector('.workspace-tabs');
+      if(!tabs){tabs=root.PBStage.el('nav',{class:'workspace-tabs','aria-label':owner==='scenes'?'场景与界面':'确认与导出'});target.prepend(tabs);}
+      tabs.replaceChildren(...[[owner,first],[owner+'/'+other,second]].map(([route,label])=>root.PBStage.el('a',{href:'#'+route,class:'chip','aria-current':String((name===owner)===(route===owner)),text:label})));
+    }
+    if(name==='review'){
+      const record=new URLSearchParams(place.query||'').get('record'),entry=record&&document.getElementById('approval-'+record);
+      if(entry){entry.open=true;entry.scrollIntoView({block:'start'});}
+    }
     updateBadges();
   }
 

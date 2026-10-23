@@ -83,21 +83,10 @@ test('mode routes reject missing sections without hiding the resource overview',
   assert.deepEqual(Array.from(C.assets('unknown-mode', 'all', assets)), []);
 });
 
-test('the menu restores two real mode pages with theme links and preserved global tools', () => {
-  const C = load(), document = {documentElement:{}};
-  const window = {PBModeCatalog:C, PBStore:{assets:()=>assets, asset:id=>assets.find(a=>a.id===id)}};
-  vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'workbench/js/app/nav.js'), 'utf8'),
-    {window, document, localStorage:{getItem:()=>null}});
-  const nav = window.PBNav;
-  assert.deepEqual(Array.from(nav.MENU, m => m.label), ['关卡模式','配送模式','地图概念','美术','声音']);
-  for (const [mode, route] of [['level','level-art'], ['delivery','delivery-art']]) {
-    const group = nav.MENU.find(m => m.group === mode);
-    assert.ok(group.items.some(i => i.view === route && i.module));
-    assert.ok(group.items.some(i => i.resourceSections === route && i.mode === mode));
-  }
-  for (const view of ['assets','scenes','review','audio']) assert.ok(nav.pages().some(p=>p.view===view));
-  const html = fs.readFileSync(path.join(ROOT, 'workbench/index.html'), 'utf8');
-  for (const route of ['level-art','delivery-art']) assert.ok(html.includes(`id="view-${route}"`));
-  assert.ok(html.includes('js/app/mode-catalog.js'));
-  assert.ok(html.includes('js/app/views/mode-resources.js'));
+test('six visible entries keep separate internal tool routes', () => {
+  const C=load(), document={documentElement:{}};
+  const window={PBModeCatalog:C,PBStore:{assets:()=>assets}};
+  vm.runInNewContext(fs.readFileSync(path.join(ROOT,'workbench/js/app/nav.js'),'utf8'),{window,document,localStorage:{getItem:()=>null}});
+  assert.deepEqual(Array.from(window.PBNav.MENU,m=>m.label),['总览','资源库','场景与界面','确认','地图概念','声音']);
+  for(const view of ['assets','edit','export','ui-proposals','audio'])assert.ok(window.PBNav.pages().some(p=>p.view===view),view);
 });
