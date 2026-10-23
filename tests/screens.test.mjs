@@ -46,17 +46,18 @@ const expectedLab={
  controls:[['Esc',null,'lobby']],dialogue:[['Esc',null,'lobby']],
 };
 const source=JSON.parse(fs.readFileSync(path.join(ROOT,'content/screens/screens.json'),'utf8'));
+const LAB_IDS=['lobby','chapters','levels','play','pause','hint','rulecard','complete','settings','controls','dialogue'];
 const normalize=t=>[t.key??null,t.focus??null,t.to,t.when??null];
 for(const [id,expected]of Object.entries(expectedLab))test('public lab behavior table: '+id,()=>{
- const screen=source.screens.find(s=>s.id===id);assert.equal(screen.game,'in_use');
+ const screen=source.screens.find(s=>s.id===id);assert.equal(screen.game,['lobby','settings','controls','dialogue'].includes(id)?'in_use':'frozen_v1');
  assert.deepEqual(screen.transitions.map(normalize),expected.map(([key,focus,to,when])=>[key,focus,to,when??null]));
 });
-test('42 logical pages reference all 49 public art screens, while future pages have no invented transitions',()=>{
+test('42 painted logical pages plus sourced backlog reference all 49 public art screens, while future pages have no invented transitions',()=>{
  const manifest=JSON.parse(fs.readFileSync(path.join(ROOT,'art/export/manifest.json'),'utf8'));
  const actual=source.screens.flatMap(s=>[s.art,...s.variants]).filter(Boolean).sort();
  assert.deepEqual(actual,manifest.assets.filter(a=>a.id.startsWith('ui.screen.')).map(a=>a.id).sort());assert.equal(actual.length,49);
- assert.equal(source.screens.length,42);assert.equal(source.screens.filter(s=>s.game==='in_use').length,11);
- for(const s of source.screens.filter(s=>s.game==='not_yet'))assert.deepEqual(s.transitions.map(normalizeFuture),expectedFuture[s.id],s.id);assert.ok(source.screens.every(s=>!('owner'in s)));
+ assert.equal(source.screens.filter(s=>s.art!==null).length,42);assert.equal(source.screens.filter(s=>s.art===null).length,6);assert.equal(source.screens.length,48);assert.deepEqual(['in_use','frozen_v1','not_yet'].map(k=>source.screens.filter(s=>s.game===k).length),[4,19,25]);
+ for(const s of source.screens.filter(s=>s.art!==null&&!LAB_IDS.includes(s.id)))assert.deepEqual(s.transitions.map(normalizeFuture),expectedFuture[s.id],s.id);assert.ok(source.screens.every(s=>!('owner'in s)));
 });
 test('primary menu text and measured click regions stay bound to the correct focus',()=>{
  const page=id=>source.screens.find(s=>s.id===id);
@@ -102,7 +103,7 @@ const expectedFuture={
 };
 const expectedPending={confirm:['P02','P03'],crew_joined:['P23'],crew_pick:['P23'],crew_room:['P23'],delivery_assist:['P20'],delivery_help:['P21'],delivery_hud:['P04','P05','P06'],delivery_pause:['P26'],delivery_practice:['P25'],hint_animal:['P15'],observe:['P14'],reels:['P25'],run_door:['P16'],run_door_skull:['P16'],run_event:['P17'],run_lucky:['P18'],run_map:['P13'],run_quit:['P09'],run_rest:['P08'],run_result:['P10'],run_shelf:['P06','P07'],run_wish_card:['P18'],run_wish_give:['P19'],settlement:['P12'],settlement_fail:['P11'],shop:['P06','P07'],story_board:['P22'],story_chapter:['P22'],story_complete:['P22'],story_letter:['P22'],story_order:['P22']};
 test('WB-13 independent primary action and pending tables cover all 31 future pages',()=>{
- const future=source.screens.filter(s=>s.game==='not_yet');
+ const future=source.screens.filter(s=>s.art!==null&&!LAB_IDS.includes(s.id));
  assert.deepEqual(future.map(s=>s.id).sort(),Object.keys(expectedFuture).sort());
  assert.equal(future.length,31);
  for(const s of future){
@@ -152,3 +153,11 @@ for(const [name,mutate,message]of [
  ['variant menu mismatched target art',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].art='ui.screen.lobby',/target art/],
 ])test('WB-13 rejects '+name+' through full transition validation',()=>{const f=fixture();try{f.screens.screens[0].variantTransitions={'ui.screen.alt':[{key:'Enter',focus:0,label:'继续',to:'lobby',art:'ui.screen.alt',mode:'delivery',hotspot:[1,2,30,10]}]};mutate(f);f.save();const out=f.run('check');assert.notEqual(out.status,0);assert.match(out.stderr,message);}finally{f.clean();}});
 test('WB-13 build preserves valid variant routing metadata',()=>{const f=fixture();try{f.screens.screens[0].variantTransitions={'ui.screen.alt':[{key:'Enter',focus:0,label:'继续',to:'lobby',art:'ui.screen.alt',mode:'delivery',hotspot:[1,2,30,10]}]};f.save();const out=f.run('build');assert.equal(out.status,0,out.stderr);const data=JSON.parse(fs.readFileSync(path.join(f.dir,'workbench/data/screens.js'),'utf8').slice('window.PB_SCREENS = '.length).trim().replace(/;$/,''));assert.deepEqual(data.screens[0].variantTransitions,f.screens.screens[0].variantTransitions);}finally{f.clean();}});
+
+// WB-16 metadata validation uses temporary fixtures, never real approvals.
+test('WB-16 accepts frozen_v1 as an explicit game consumption state',()=>{const f=fixture();try{f.screens.screens[0].game='frozen_v1';f.save();const r=f.run('check');assert.equal(r.status,0,r.stderr);}finally{f.clean();}});
+test('WB-16 rejects a design backlog page without a real source note',()=>{const f=fixture();try{f.screens.screens.push({id:'future',art:null,variants:[],name:'待设计',flow:'开始',game:'not_yet',notes:'  ',transitions:[]});f.save();const r=f.run('check');assert.notEqual(r.status,0);assert.match(r.stderr,/notes|source/i);}finally{f.clean();}});
+test('WB-16 rejects unknown game states',()=>{const f=fixture();try{f.screens.screens[0].game='unknown';f.save();assert.notEqual(f.run('check').status,0);}finally{f.clean();}});
+test('WB-16 backlog has missing design and four unstarted downstream steps even if frozen',()=>{const f=fixture();try{f.screens.screens.push({id:'future',art:null,variants:[],name:'待设计',flow:'开始',game:'frozen_v1',notes:'来源：公开示例',transitions:[]});f.save();const r=f.run('build');assert.equal(r.status,0,r.stderr);const data=JSON.parse(fs.readFileSync(path.join(f.dir,'workbench/data/screens.js'),'utf8').slice('window.PB_SCREENS = '.length).trim().replace(/;$/,''));assert.deepEqual(data.screens[1].steps,{design:false,html:false,approved:false,godot:'missing',game:false});assert.equal(data.totals.missing_design,1);assert.equal(data.totals.painted,1);}finally{f.clean();}});
+
+test('WB-16 real backlog sources and frozen metadata preserve the original paint and action set',()=>{const pending=source.screens.filter(s=>s.art===null);assert.deepEqual(pending.map(s=>s.id).sort(),['delivery_growth','delivery_kitchen','hud_tools','lobby_modes','new_controls','new_play_keys'].sort());for(const s of pending){assert.ok(s.notes.trim());assert.deepEqual(s.transitions,[]);assert.deepEqual(s.variants,[]);}for(const id of LAB_IDS)assert.ok(source.screens.find(s=>s.id===id)?.art);for(const s of source.screens.filter(s=>s.game==='frozen_v1'&&s.art&&!LAB_IDS.includes(s.id)))assert.match(s.notes,/live_[a-z_]+\.gd/);});

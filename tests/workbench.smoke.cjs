@@ -30,6 +30,8 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   await page.goto(url);await page.waitForTimeout(200);
   await docsRegression(page,url);
   if(process.env.WB_DOCS_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-15 focused document checks passed');return;}
+  if(process.env.WB_BACKLOG_ONLY==='1'){await backlogRegression(page,url);assert.deepEqual(errors,[]);console.log('WB-16 focused backlog checks passed');return;}
+  await backlogRegression(page,url);
   await screensRegression(page,url);
   if(process.env.WB_SCREENS_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-11 focused screen checks passed');return;}
   if(process.env.WB_VISIBLE_ONLY==='1'){await visibleContentRegression(page,url);assert.deepEqual(errors,[]);return;}
@@ -284,7 +286,7 @@ async function screensRegression(page,url){
   await go('#scenes');assert.ok(await page.locator('#view-screens').isVisible(),'screen inventory is default scenes tab');
   assert.equal(await page.locator('[data-screen-row]').count(),await page.evaluate(()=>PB_SCREENS.screens.length));
   assert.equal(await page.locator('#screen-list canvas').count(),0,'screen list has no live canvases');await shot('screens-inventory');
-  await page.getByLabel('搜索界面',{exact:true}).fill('lobby');assert.equal(await page.locator('[data-screen-row]:visible').count(),1);
+  await page.getByLabel('搜索界面',{exact:true}).fill('lobby');assert.equal(await page.locator('[data-screen-row]:visible').count(),2);assert.deepEqual(await page.locator('[data-screen-row]:visible').evaluateAll(nodes=>nodes.map(n=>n.dataset.screenRow).sort()),['lobby','lobby_modes']);
   await go('#screen/lobby');assert.ok(await page.locator('#screen-stage canvas').isVisible());assert.equal(await page.locator('#screen-outgoing li').count(),5);await shot('screens-single');
   await page.getByLabel('画面变体',{exact:true}).selectOption('ui.screen.lobby_story');assert.ok((await page.locator('#screen-variant-note').innerText()).includes('主图'));
   const variant=await page.getByLabel('画面变体',{exact:true}).inputValue();assert.equal(variant,'ui.screen.lobby_story');
@@ -388,4 +390,18 @@ async function docsRegression(page,url){
   assert.ok(await page.evaluate(()=>document.querySelector('main').scrollTop===0&&document.getElementById('view-docs').scrollTop===0),'opening another document resets narrow reader scroll');
   await page.setViewportSize({width:1280,height:800});
   console.log('WB-15 document directory, five bodies, sections, image decode, links and body search passed');
+}
+
+// WB-16: real inventory states, symbols, sources, and preview placeholder.
+async function backlogRegression(page,url){
+ const shot=async name=>{if(process.env.WB_EVIDENCE_DIR){const dir=path.join(process.env.WB_EVIDENCE_DIR,'screenshots');fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,name+'.png')});}};
+ await page.setViewportSize({width:1280,height:1000});await page.goto(url+'#scenes');await page.waitForSelector('#screen-backlog');
+ const pending=await page.evaluate(()=>PB_SCREENS.screens.filter(s=>s.art===null));assert.equal(pending.length,6);
+ assert.equal(await page.locator('#screen-list tbody').first().getAttribute('id'),'screen-backlog');assert.ok((await page.locator('#screen-backlog').innerText()).includes('待设计（6）'));
+ for(const s of pending){const row=page.locator('[data-screen-row="'+s.id+'"]');assert.equal(await row.locator('[data-step]').count(),5);assert.equal(await row.locator('[data-step="design"]').getAttribute('data-state'),'missing');assert.equal(await row.locator('[data-state="pending"]').count(),4);assert.ok((await row.innerText()).includes(s.notes));}
+ for(const theme of ['light','dark']){await page.locator('#appearance').selectOption(theme);const legend=await page.locator('#screen-progress-legend .screen-step').evaluateAll(nodes=>nodes.map(n=>({text:n.textContent,color:getComputedStyle(n).color})));assert.equal(legend.length,4);assert.equal(new Set(legend.map(n=>n.color)).size,4,'four legible state colors '+theme);assert.ok(legend.some(n=>n.text.includes('✓'))&&legend.some(n=>n.text.includes('◐'))&&legend.some(n=>n.text.includes('○'))&&legend.some(n=>n.text.includes('!')));await shot('backlog-'+theme);}
+ assert.equal(await page.locator('[data-screen-row="play"] [data-step="game"]').getAttribute('data-state'),'partial');assert.ok((await page.locator('[data-screen-row="play"] [data-game="frozen_v1"]').innerText()).includes('v1 已冻结'));
+ await page.goto(url+'#home');const totals=await page.evaluate(()=>PB_SCREENS.totals),text=await page.locator('#home-root').innerText();for(const part of ['待设计 '+totals.missing_design+' 个','Godot 未实现的界面 '+(totals.pages-totals.implemented)+' 个','游戏未接入 '+totals.not_yet+' 个','v1 已冻结 '+totals.frozen_v1+' 个'])assert.ok(text.includes(part),part);await shot('home-gaps');
+ await page.goto(url+'#scenes/play/new_controls');const frame=page.frameLocator('#embedded-play');await frame.locator('#play-placeholder').waitFor();assert.ok((await frame.locator('#play-placeholder').innerText()).includes('来源：docs/design/gameplay/README.md'));await shot('backlog-placeholder');
+ await page.locator('#appearance').selectOption('light');await page.setViewportSize({width:1280,height:800});
 }

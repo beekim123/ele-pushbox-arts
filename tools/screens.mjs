@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const keys=new Set(['Enter','Esc','H','Z','R','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Tab','Q','2']);
-const flows=new Set(['开始','关卡内','配送一局','剧情','伙计','设置与帮助']);
+const flows=new Set(['开始','关卡内','配送一局','剧情','伙计','设置与帮助','新关卡线（设计中）']);
 export function validate(source,manifest){
  const errors=[], screens=source.screens||[], ids=new Set(), assets=new Set((manifest.assets||[]).map(a=>a.id)), covered=new Set();
  if(source.format!=='pushbox.screens/1'||!Array.isArray(source.screens)||!Array.isArray(source.unlisted))errors.push('invalid screens format');
@@ -14,8 +14,8 @@ export function validate(source,manifest){
  const reference=(id,from)=>{if(typeof id!=='string'||!assets.has(id))errors.push('missing art: '+id+' ('+from+')');else covered.add(id);};
  for(const s of screens){
   if('owner'in s)errors.push('owner must remain in ART-07 ownership metadata: '+s.id);
-  if(!s.name||!flows.has(s.flow)||!['in_use','not_yet'].includes(s.game)||typeof s.notes!=='string')errors.push('invalid page fields: '+s.id);
-  if(s.art!==null)reference(s.art,s.id);
+  if(!s.name||!flows.has(s.flow)||!['in_use','frozen_v1','not_yet'].includes(s.game)||typeof s.notes!=='string')errors.push('invalid page fields: '+s.id);
+  if(s.art!==null)reference(s.art,s.id);else if(!s.notes?.trim())errors.push('missing source notes: '+s.id);
   if(!Array.isArray(s.variants))errors.push('invalid variants: '+s.id);else for(const id of s.variants)reference(id,s.id);
   if(!Array.isArray(s.transitions)){errors.push('invalid transitions: '+s.id);continue;}
   let transitions=s.transitions;
@@ -44,9 +44,9 @@ export function validate(source,manifest){
 export function build(source,manifest,coverage){
  const assets=new Map(manifest.assets.map(a=>[a.id,a])),native=new Map(coverage.entries.map(e=>[e.uid.replace(/^art:/,''),e]));
  const progress=id=>({html:assets.has(id),approved:assets.get(id)?.current?.status==='approved',godot:native.get(id)?.native||'missing'});
- const screens=source.screens.map(s=>({...s,steps:{design:true,...progress(s.art),game:s.game==='in_use'},coverage:native.get(s.art)||null,variantsProgress:s.variants.map(art=>({art,steps:progress(art),coverage:native.get(art)||null}))}));
- const totals={pages:screens.length,design:screens.length,html:0,approved:0,implemented:0,reference_only:0,missing:0,in_use:0,not_yet:0};
- for(const s of screens){if(s.steps.html)totals.html++;if(s.steps.approved)totals.approved++;totals[s.steps.godot]++;totals[s.game]++;}
+ const screens=source.screens.map(s=>({...s,steps:{design:s.art!==null,...progress(s.art),game:s.art!==null&&s.game==='in_use'},coverage:native.get(s.art)||null,variantsProgress:s.variants.map(art=>({art,steps:progress(art),coverage:native.get(art)||null}))}));
+ const totals={pages:screens.length,painted:0,missing_design:0,design:0,html:0,approved:0,implemented:0,reference_only:0,missing:0,in_use:0,frozen_v1:0,not_yet:0};
+ for(const s of screens){if(s.art===null)totals.missing_design++;else totals.painted++;if(s.steps.design)totals.design++;if(s.steps.html)totals.html++;if(s.steps.approved)totals.approved++;totals[s.steps.godot]++;totals[s.game]++;}
  return {format:source.format,screens,unlisted:source.unlisted,totals};
 }
 function main(){
