@@ -72,7 +72,7 @@
     for (const s of sceneList()) {
       if (s.group !== group) { group = s.group; listEl.append(el("div", { class: "group-title", text: group })); }
       const badge = s.asset ? statusBadge(s.asset.id) : null;
-      listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), "data-scene": s.id, onclick: () => { if (location.hash === "#scenes/" + s.id) show(s.id); else location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
+      listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), "data-scene": s.id, onclick: () => { const screen=s.group==="游戏界面"&&root.PBScreens.identify(s.id); if(screen){location.hash="#screen/"+screen.id;return;} if (location.hash === "#scenes/" + s.id) show(s.id); else location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
     }
   }
   function statusBadge(id) { const st = store.status(id); return el("span", { class: "badge " + st, text: store.statusLabel(st) }); }

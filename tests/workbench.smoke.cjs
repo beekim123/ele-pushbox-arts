@@ -21,10 +21,12 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   const page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error') errors.push(m.text());});
   await page.goto(url);await page.waitForTimeout(200);
+  await screensRegression(page,url);
+  if(process.env.WB_SCREENS_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-11 focused screen checks passed');return;}
   if(process.env.WB_VISIBLE_ONLY==='1'){await visibleContentRegression(page,url);assert.deepEqual(errors,[]);return;}
   await libraryRegression(page,url);
   if(process.env.WB_LIBRARY_ONLY==='1'||process.env.WB_MODE_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-10 focused library checks passed');return;}
-  await page.goto(url+'#ui-proposals'); await page.waitForTimeout(100);
+  await page.goto(url+'#scenes/references'); await page.waitForTimeout(100);
   check(await page.locator('#ui-proposals-root figure').count()===6,'all six G2 confirmed references are present');
   await page.goto(url+'#scenes/level.M03');await page.waitForTimeout(150);
   assert.deepEqual(await page.evaluate(()=>PBStore.levels().map(l=>l.id).sort()),['M03','M04','M05']);
@@ -113,7 +115,7 @@ async function visibleContentRegression(page, url) {
       await page.getByRole('button',{name:'关闭详情',exact:true}).click();
       assert.ok(await card.evaluate(n=>document.activeElement===n),'asset close returns to the originating card');
     }
-    await go('#scenes');
+    await go('#scenes/preview');
     const sceneId=await page.locator('#scene-list .list-btn').nth(1).getAttribute('data-scene');
     assert.ok(sceneId,'scene cards expose stable identity for focus restoration');
     await page.locator('#scene-list .list-btn').nth(1).click();
@@ -172,7 +174,7 @@ async function visibleContentRegression(page, url) {
     assert.equal(await page.locator('#review-empty-notice').count(),0);
     await shot('review-injected-pending');
   } finally {await page.evaluate(()=>{PBStore.status=window.__wb09Status;delete window.__wb09Status;delete window.__wb09Pending;});}
-  await go('#scenes');
+  await go('#scenes/preview');
   // Initial late-registry menu refresh must preserve populated browser-only badges.
   const badgeRefresh=await page.evaluate(()=>{
     const draft=PBStore.assets().find(a=>a.kind==='sprite'&&!PBStore.drafts()[a.id]);
@@ -212,11 +214,14 @@ async function libraryRegression(page,url){
   }
   await page.goto(url);assert.ok(await page.locator('#view-home').isVisible(),'home is default');
   assert.deepEqual(await page.locator('.home-batch').evaluateAll(nodes=>nodes.map(n=>n.dataset.approval)),await page.evaluate(()=>PBStore.approvals().slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(b=>b.id)),'home recent batches are actual confirmation records');
-  await page.locator('.home-batch').first().click();assert.ok(await page.locator('details[id^="approval-"][open]').count());
+  const recentRecord=await page.locator('.home-batch').first().getAttribute('data-approval');
+  await page.locator('.home-batch').first().click();
+  await page.waitForFunction(id=>document.getElementById('approval-'+id)?.open,recentRecord);
+  assert.ok(await page.locator('details[id^="approval-"][open]').count());
 
   assert.deepEqual(await page.evaluate(()=>PBNav.MENU.map(m=>m.label)),['总览','资源库','场景与界面','确认','地图概念','声音']);
   assert.equal(await page.locator('#nav a').count(),6);
-  const routes=[['#level-art','#library?mode=level'],['#delivery-art','#library?mode=delivery'],['#assets','#library'],['#assets/char.portitor','#library?id=char.portitor'],['#edit','#edit'],['#edit/char.portitor','#edit/char.portitor'],['#export','#review/export'],['#ui-proposals','#scenes/ui-proposals'],['#concepts/cenote','#concepts/cenote'],['#audio/sfx','#audio/sfx'],['#audio/music','#audio/music'],['#audio/maps','#audio/maps']];
+  const routes=[['#level-art','#library?mode=level'],['#delivery-art','#library?mode=delivery'],['#assets','#library'],['#assets/char.portitor','#library?id=char.portitor'],['#edit','#edit'],['#edit/char.portitor','#edit/char.portitor'],['#export','#review/export'],['#ui-proposals','#scenes/screens'],['#concepts/cenote','#concepts/cenote'],['#audio/sfx','#audio/sfx'],['#audio/music','#audio/music'],['#audio/maps','#audio/maps']];
   for(const mode of ['level','delivery'])for(const s of await page.evaluate(mode=>PBModeCatalog.sections(mode,PBStore.assets()).filter(s=>s.id!=='all').map(s=>s.id),mode))routes.push(['#'+mode+'-art/'+s,'#library?mode='+mode+'&'+(s.startsWith('theme.')?'theme='+s.slice(6):'group='+s)]);
   for(const [old,next] of routes){await page.goto(url+old);await page.waitForFunction(hash=>location.hash===hash,next);assert.ok(await page.locator('main > section:not([hidden])').count()===1,old+' has one live destination');if(old.startsWith('#assets/'))assert.ok(await page.locator('#asset-inspector h2').isVisible());}
   await page.goto(url+'#library?mode=delivery&theme=diyu');
@@ -261,4 +266,49 @@ async function libraryRegression(page,url){
   await page.setViewportSize({width:1280,height:800});await page.goto(url+'#concepts');const text=page.locator('#concept-text-only');assert.equal(await text.getAttribute('open'),null);const allCount=await page.locator('.concept-card').count();await page.getByLabel('完整度',{exact:true}).selectOption('scene');assert.ok(await page.locator('.concept-card:visible').count()<allCount);await page.getByLabel('完整度',{exact:true}).selectOption('all');
   await page.goto(url+'#delivery-art/sounds');assert.equal(await page.evaluate(()=>PBWBAudio.player.snapshot().sfx.length),0,'mode sounds do not autoplay');assert.equal(await page.locator('[data-sound-id="sfx:delivery_arrive"]').count(),1);await page.locator('#delivery-art-root [data-preview-sound="sfx:push"]').click();await page.waitForFunction(()=>document.querySelector('[data-mode-audio-status="delivery"]').textContent.includes('已试听：'));await page.locator('#delivery-art-root [data-preview-sound="sfx:reel_spin"]').click();await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.some(v=>v.uid==='sfx:reel_spin'));await page.goto(url+'#library');await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.length===0);
   check(true,'WB-10 baseline IDs, six entries, legacy routes, URL filters, compact PNG cards and concept wall');
+}
+
+// WB-11 screens share one inventory across list, details and SVG; no new renderer loop.
+async function screensRegression(page,url){
+  const go=async hash=>{await page.goto(url+hash);await page.waitForTimeout(120);};
+  const shot=async name=>{if(process.env.WB_EVIDENCE_DIR){const dir=path.join(process.env.WB_EVIDENCE_DIR,'screenshots');fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,name+'.png')});}};
+  await go('#scenes');assert.ok(await page.locator('#view-screens').isVisible(),'screen inventory is default scenes tab');
+  assert.equal(await page.locator('[data-screen-row]').count(),await page.evaluate(()=>PB_SCREENS.screens.length));
+  assert.equal(await page.locator('#screen-list canvas').count(),0,'screen list has no live canvases');await shot('screens-inventory');
+  await page.getByLabel('搜索界面',{exact:true}).fill('lobby');assert.equal(await page.locator('[data-screen-row]:visible').count(),1);
+  await go('#screen/lobby');assert.ok(await page.locator('#screen-stage canvas').isVisible());assert.equal(await page.locator('#screen-outgoing li').count(),5);await shot('screens-single');
+  await page.getByLabel('画面变体',{exact:true}).selectOption('ui.screen.lobby_story');assert.ok((await page.locator('#screen-variant-note').innerText()).includes('主图'));
+  const variant=await page.getByLabel('画面变体',{exact:true}).inputValue();assert.equal(variant,'ui.screen.lobby_story');
+  await page.locator('#screen-progress [data-step="godot"]').click();assert.ok(await page.locator('#screen-coverage').isVisible());assert.ok((await page.locator('#screen-coverage').innerText()).includes('没有条目'));
+  await go('#screen/hint');await page.locator('#screen-stage').getByRole('button',{name:'暂停',exact:true}).click();
+  const hintPixels=[];
+  for(const tier of ['0','1','2']){await page.getByLabel('提示级别',{exact:true}).selectOption(tier);hintPixels.push(await page.locator('#screen-stage canvas').evaluate(c=>c.toDataURL()));if(process.env.WB_EVIDENCE_DIR){await page.locator('#screen-stage canvas').screenshot({path:path.join(process.env.WB_EVIDENCE_DIR,'screenshots','hint-tier-'+(Number(tier)+1)+'.png')});}}
+  assert.equal(new Set(hintPixels).size,3,'paused tier selection changes existing renderer pixels instead of retaining fixed params.level=3');
+  // The logical levels screen must preserve the existing scenes preview's fifth-row focus.
+  // Capture only the public stage API in this browser; no production test hooks are added.
+  await page.evaluate(()=>{
+    window.__wb11StageCreate=PBStage.create;
+    PBStage.create=function(host,options){const stage=window.__wb11StageCreate(host,options);if(host.id==='screen-stage')window.__wb11ScreenStage=stage;return stage;};
+    location.hash='#screen/levels';
+  });
+  try {
+    await page.waitForFunction(()=>location.hash==='#screen/levels'&&!!window.__wb11ScreenStage);
+    const canonicalLevels=await page.evaluate(()=>{
+      window.__wb11ScreenStage.setTick(0);
+      const r=new PB.Raster(320,180);
+      PB.ui.render(r,PBStore.asset('ui.screen.levels'),0,{focus:4,specs:Object.fromEntries(PBStore.levels().map(l=>[l.id,l])),levelSpec:PBStore.level('M05'),ruleSpec:PBStore.level('M03'),animate:true});
+      const actual=document.querySelector('#screen-stage canvas').getContext('2d').getImageData(0,0,320,180).data;
+      return actual.every((value,index)=>value===r.data[index]);
+    });
+    assert.ok(canonicalLevels,'#screen/levels frozen-tick pixels preserve canonical focus4 selected row and its measured Enter hotspot');
+  } finally {
+    await page.evaluate(()=>{PBStage.create=window.__wb11StageCreate;delete window.__wb11StageCreate;delete window.__wb11ScreenStage;});
+  }
+  await go('#scenes/flow');assert.equal(await page.locator('#screen-flow svg [data-screen-node]').count(),await page.evaluate(()=>PB_SCREENS.screens.length));
+  assert.equal(await page.locator('#screen-flow svg path[data-transition]').count(),await page.evaluate(()=>PB_SCREENS.screens.reduce((n,s)=>n+s.transitions.length,0)));await shot('screens-flow');
+  await page.locator('#screen-flow [data-screen-node="pause"]').click();await page.waitForFunction(()=>location.hash==='#screen/pause');
+  await go('#library?id=ui.screen.pause_help');await page.getByRole('link',{name:'在界面清单中打开',exact:true}).click();await page.waitForFunction(()=>location.hash==='#screen/pause');
+  for(const width of [1280,390]){await page.setViewportSize({width,height:800});await go('#screen/pause');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'screen detail fits '+width);await go('#scenes');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'screen list fits '+width);}
+  await page.setViewportSize({width:1280,height:800});
+  await go('#home');const text=await page.locator('#home-root').innerText();const totals=await page.evaluate(()=>PB_SCREENS.totals);assert.ok(text.includes('Godot 未实现的界面 '+(totals.pages-totals.implemented)+' 个'));assert.ok(text.includes('游戏未接入 '+totals.not_yet+' 个'));
 }

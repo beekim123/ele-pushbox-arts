@@ -403,3 +403,31 @@ table.concepts th:first-child { min-width: 80px; }
 
 #view-assets .card { min-width:0; overflow:hidden; }
 #view-assets .card .id { overflow-wrap:anywhere; }
+
+/* WB-11 screen inventory keeps lists static and confines wide SVG/table views. */
+.screens-page { width:100%; min-width:0; max-width:1400px; }
+#screen-search { margin:0 0 16px; width:min(100%,440px); }
+.screen-table-wrap,.screen-flow { max-width:100%; overflow:auto; }
+.screen-table { width:100%; border-collapse:collapse; font-size:13px; }
+.screen-table th,.screen-table td { text-align:left; padding:10px; vertical-align:top; border-bottom:1px solid var(--line,#435065); }
+.screen-table td:first-child { min-width:148px; }
+.screen-table img { display:block; image-rendering:pixelated; margin-bottom:6px; }
+.screen-flow-heading th { background:var(--panel,#252b38); padding-top:16px; }
+.screen-progress { display:flex; flex-wrap:wrap; gap:5px; max-width:420px; }
+.screen-step { display:inline-block; font:inherit; font-size:11px; border:1px solid var(--line,#586171); border-radius:4px; padding:4px 6px; white-space:nowrap; background:transparent; color:inherit; text-decoration:none; }
+.screen-step.done { color:var(--accent,#78c7a0); }
+.screen-step.pending { opacity:.7; }
+button.screen-step { cursor:pointer; }
+.screen-links a,.screen-links span { display:block; margin-bottom:5px; }
+.screen-coverage { white-space:pre-wrap; overflow-wrap:anywhere; padding:12px; border:1px solid var(--line,#586171); }
+.screen-flow svg { display:block; color:var(--text,#dbe1e9); }
+.screen-flow rect { fill:var(--panel,#252b38); stroke:var(--line,#69788c); }
+.screen-flow rect.in-use { stroke:var(--accent,#78c7a0); stroke-width:2; }
+.screen-flow text { fill:currentColor; font:13px sans-serif; }
+.screen-flow .screen-svg-id { font-size:10px; opacity:.75; }
+.screen-flow .screen-svg-heading { font-weight:bold; font-size:16px; }
+.screen-svg-edges path { fill:none; stroke:currentColor; stroke-width:1; opacity:.3; }
+.screen-svg-edges path:hover { opacity:1; stroke-width:3; }
+#screen-stage { min-width:0; }
+#screen-incoming li,#screen-outgoing li { margin:8px 0; }
+@media(max-width:720px) { .screens-page { padding:14px 10px; } .screen-table { min-width:760px; } }

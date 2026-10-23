@@ -47,12 +47,18 @@
     nav.setCurrent(place.nav || name, at);
     active = name;
     VIEWS[name].show(id);
-    for(const [owner,other,first,second] of [['scenes','ui-proposals','场景预览','界面风格提案'],['review','export','确认清单','导出']]) {
-      const target=document.getElementById('view-'+(name===other?other:owner));
-      if(name!==owner&&name!==other)continue;
+    const sceneViews=['scenes','screens','ui-proposals'];
+    if(sceneViews.includes(name)) {
+      const target=document.getElementById('view-'+name);
       let tabs=target.querySelector('.workspace-tabs');
-      if(!tabs){tabs=root.PBStage.el('nav',{class:'workspace-tabs','aria-label':owner==='scenes'?'场景与界面':'确认与导出'});target.prepend(tabs);}
-      tabs.replaceChildren(...[[owner,first],[owner+'/'+other,second]].map(([route,label])=>root.PBStage.el('a',{href:'#'+route,class:'chip','aria-current':String((name===owner)===(route===owner)),text:label})));
+      if(!tabs){tabs=root.PBStage.el('nav',{class:'workspace-tabs','aria-label':'场景与界面'});target.prepend(tabs);}
+      const selected=name==='screens'?(id==='flow'?'flow':'screens'):name;
+      tabs.replaceChildren(...[['scenes','界面清单','screens'],['scenes/preview','场景预览','scenes'],['scenes/flow','流程图','flow'],['scenes/references','界面风格参考','ui-proposals']].map(([route,label,key])=>root.PBStage.el('a',{href:'#'+route,class:'chip','aria-current':String(selected===key),text:label})));
+    }
+    if(name==='review'||name==='export') {
+      const target=document.getElementById('view-'+name);let tabs=target.querySelector('.workspace-tabs');
+      if(!tabs){tabs=root.PBStage.el('nav',{class:'workspace-tabs','aria-label':'确认与导出'});target.prepend(tabs);}
+      tabs.replaceChildren(...[['review','确认清单'],['review/export','导出']].map(([route,label])=>root.PBStage.el('a',{href:'#'+route,class:'chip','aria-current':String((name==='review')===(route==='review')),text:label})));
     }
     if(name==='review'){
       const record=new URLSearchParams(place.query||'').get('record'),entry=record&&document.getElementById('approval-'+record);

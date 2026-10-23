@@ -10,7 +10,7 @@
     box.append(stats,el('h2',{text:'最近 3 个确认批次'}));
     const batches=store.approvals().slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
     const batchList=el('div',{class:'home-batches'});for(const b of batches)batchList.append(el('a',{class:'home-batch',href:'#review?record='+encodeURIComponent(b.id),'data-approval':b.id},[el('strong',{text:b.id+' · '+b.date.slice(0,10)}),el('span',{text:b.items.length+' 项 · '+(b.scope||'已记录的确认')})]));box.append(batchList);
-    box.append(el('h2',{text:'内容缺口'}),el('p',{text:'只有文字的地图概念 '+maps.filter(m=>!(root.PB_CONCEPT_SCENES||{})[m.id]).length+' 张'}),el('p',{class:'muted',text:'Godot 未实现的界面：待 WB-11 接入界面清单数据'}),el('h2',{text:'快捷入口'}));
+    box.append(el('h2',{text:'内容缺口'}),el('p',{text:'只有文字的地图概念 '+maps.filter(m=>!(root.PB_CONCEPT_SCENES||{})[m.id]).length+' 张'}),el('p',{class:'muted',text:'Godot 未实现的界面 '+(root.PB_SCREENS.totals.pages-root.PB_SCREENS.totals.implemented)+' 个、游戏未接入 '+root.PB_SCREENS.totals.not_yet+' 个'}),el('h2',{text:'快捷入口'}));
     box.append(el('div',{class:'btn-row'},[['资源库','#library'],['场景与界面','#scenes'],['确认与导出','#review'],['地图概念','#concepts'],['声音','#audio/sfx']].map(([text,href])=>el('a',{class:'btn',href,text}))));
   }
   root.PBHome={show};

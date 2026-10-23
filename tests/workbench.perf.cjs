@@ -191,7 +191,7 @@ let server, browser;
     const row = { hash, openBlockMs: +openBlock.toFixed(2), cpuPercent: +cpu.toFixed(2), limit, heavy }; results.push(row); console.log(JSON.stringify(row));
     if (!heavy) { assert.ok(cpu < limit, hash + ' idle CPU <' + limit + '%'); if (limit === 5) assert.ok(openBlock < 200, hash + ' list open longest task <200ms'); }
   }
-  for (const hash of ['library?mode=delivery', 'library?mode=delivery&theme=diyu', 'library?mode=delivery&group=screens', 'library', 'review']) await measure(hash, 5);
+  for (const hash of ['library?mode=delivery', 'library?mode=delivery&theme=diyu', 'library?mode=delivery&group=screens', 'library', 'review', 'scenes', 'scenes/flow']) await measure(hash, 5);
   for (const [hash, input] of [['library?mode=delivery', '#asset-search'], ['library', '#asset-search'], ['review', '#review-search']]) {
     await page.goto(url + '#' + hash); await page.waitForTimeout(200); await page.evaluate(() => { window.wbLongTasks = []; });
     for (const text of ['u', 'ui', 'ui.screen', '']) { await page.locator(input).fill(text); await page.waitForTimeout(180); }

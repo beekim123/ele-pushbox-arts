@@ -20,6 +20,7 @@
     {view:'audio',href:'#audio/sfx',label:'声音',module:'PBWBAudio'},
   ];
   const TOOLS = [
+    {view:'screens',label:'界面清单',module:'PBScreens'},
     {view:'edit',label:'编辑与对比',module:'PBEditor'},
     {view:'export',label:'导出',module:'PBExport'},
     {view:'ui-proposals',label:'界面风格提案',module:'PBUiProposals'},
@@ -35,14 +36,19 @@
       canonical='library?'+params;
     } else if(view==='assets') canonical='library'+(id?'?id='+encodeURIComponent(id):'');
     else if(view==='export') canonical='review/export';
-    else if(view==='ui-proposals') canonical='scenes/ui-proposals';
+    else if(view==='ui-proposals'||(view==='scenes'&&id==='ui-proposals')) canonical='scenes/screens';
+    else if(view==='scenes'&&id==='references') canonical='scenes/references';
+    else if(view==='scenes'&&id?.startsWith('ui.screen.')) { const s=root.PBScreens?.identify(id); if(s) canonical='screen/'+s.id; }
     const [next,params='']=canonical.split('?'), [name,...parts]=next.split('/');
     if(name==='library') {
       const q=new URLSearchParams(params), mode=q.get('mode');
       return {hash:'#'+canonical,view:q.get('group')==='sounds'&&['level','delivery'].includes(mode)?mode+'-art':'assets',id:q.get('group')==='sounds'?'sounds':q.get('id'),query:params,nav:'assets'};
     }
     if(next==='review/export')return {hash:'#'+canonical,view:'export',id:null,nav:'review'};
-    if(next==='scenes/ui-proposals')return {hash:'#'+canonical,view:'ui-proposals',id:null,nav:'scenes'};
+    if(next==='scenes/references')return {hash:'#'+canonical,view:'ui-proposals',id:null,nav:'scenes'};
+    if(name==='screen')return {hash:'#'+canonical,view:'screens',id:parts.join('/'),nav:'scenes'};
+    if(['scenes','scenes/screens','scenes/flow'].includes(next))return {hash:'#'+canonical,view:'screens',id:next==='scenes/flow'?'flow':null,nav:'scenes'};
+    if(next==='scenes/preview')return {hash:'#'+canonical,view:'scenes',id:null,nav:'scenes'};
     return {hash:'#'+canonical,view:name,id:parts.join('/')||null,query:params,nav:name==='edit'?'assets':name};
   }
 
