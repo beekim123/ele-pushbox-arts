@@ -48,6 +48,7 @@
     if(next==='scenes/references')return {hash:'#'+canonical,view:'ui-proposals',id:null,nav:'scenes'};
     if(name==='screen')return {hash:'#'+canonical,view:'screens',id:parts.join('/'),nav:'scenes'};
     if(['scenes','scenes/screens','scenes/flow'].includes(next))return {hash:'#'+canonical,view:'screens',id:next==='scenes/flow'?'flow':null,nav:'scenes'};
+    if(next==='scenes/play'||next.startsWith('scenes/play/'))return {hash:'#'+canonical,view:'screens',id:next==='scenes/play'?'play/lobby':parts.join('/'),nav:'scenes'};
     if(next==='scenes/preview')return {hash:'#'+canonical,view:'scenes',id:null,nav:'scenes'};
     return {hash:'#'+canonical,view:name,id:parts.join('/')||null,query:params,nav:name==='edit'?'assets':name};
   }
