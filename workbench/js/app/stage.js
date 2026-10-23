@@ -176,3 +176,49 @@
   window.addEventListener("resize", () => { for (const s of all) s.relayout(); });
   root.PBStage = { create, el };
 })(window);
+
+
+// Responsive detail panels share one lifecycle; wide screens retain their grid slot.
+(function (root) {
+  "use strict";
+  const entries = new Map(), media = root.matchMedia("(max-width: 1100px)");
+  function entry(id) {
+    if (entries.has(id)) return entries.get(id);
+    const panel = document.getElementById(id), slot = document.createComment(id + " wide slot");
+    panel.before(slot);
+    const dialog = root.PBStage.el("dialog", { class: "detail-drawer", "aria-label": panel.getAttribute("aria-label") });
+    const item = { panel, slot, dialog, origin: null, active: false, requested: false };
+    const close = root.PBStage.el("button", { class: "btn", type: "button", text: "关闭详情", onclick: () => dismiss(item, true) });
+    dialog.append(root.PBStage.el("div", { class: "detail-drawer-head" }, [root.PBStage.el("strong", { text: panel.getAttribute("aria-label") }), close]));
+    dialog.addEventListener("cancel", e => { e.preventDefault(); dismiss(item, true); });
+    dialog.addEventListener("click", e => { if (e.target === dialog) dismiss(item, true); });
+    document.body.append(dialog); entries.set(id, item);
+    return item;
+  }
+  function dismiss(item, focusBack) {
+    item.requested = false;
+    if (item.dialog.open) item.dialog.close();
+    if (focusBack && item.origin) {
+      const target = item.origin();
+      if (target && target.isConnected) target.focus();
+    }
+  }
+  function sync(item) {
+    if (media.matches) {
+      if (item.panel.parentNode !== item.dialog) item.dialog.append(item.panel);
+      if ((!item.active || !item.requested) && item.dialog.open) item.dialog.close();
+      if (item.active && item.requested && !item.dialog.open) {
+        item.dialog.showModal(); item.panel.scrollTop = 0;
+      }
+    } else {
+      if (item.dialog.open) item.dialog.close();
+      item.slot.after(item.panel);
+    }
+  }
+  root.PBDetailDrawer = {
+    origin(id, resolve) { entry(id).origin = resolve; },
+    show(id, requested) { const item = entry(id); item.active = true; item.requested = !!requested; sync(item); },
+    hide(id) { const item = entries.get(id); if (item) { item.active = false; dismiss(item, false); } },
+  };
+  media.addEventListener("change", () => { for (const item of entries.values()) sync(item); });
+})(window);

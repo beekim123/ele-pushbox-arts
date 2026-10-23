@@ -19,6 +19,7 @@
   const maps = () => { const c = data(); return c && Array.isArray(c.maps) ? c.maps : []; };
   const find = (id) => maps().find((m) => m.id === id) || null;
   const scenes = () => root.PB_CONCEPT_SCENES || {};
+  const registered = m => !!scenes()[m.id];
   const list = (v) => (Array.isArray(v) ? v : v ? [v] : []);
   // images[].file is a path from the repository root (art/concepts/<id>/…); this page is workbench/index.html.
   const src = (file) => new URL(file, new URL("../", location.href)).href;
@@ -41,19 +42,24 @@
     box.append(el("h2", { text: "地图概念" }),
       el("p", { class: "muted", text: "新地图先出概念：会动的概念场景、文字说明和静态概念图；用户满意了再做详细设计和全部美术。概念图只用来挑方向，不进游戏。" }),
       el("p", { class: "small muted" }, ["数据：", code("content/concepts/maps.json"), "；概念图：", code("art/concepts/<id>/"), "；概念场景：", code("workbench/js/concepts/<id>.js"), "。"]));
+    const withScene = maps().filter(registered), textOnly = maps().filter(m => !registered(m));
+    function table(group) {
     const t = el("table", { class: "grid concepts" });
-    t.append(el("thead", {}, [el("tr", {}, ["名字", "阶段", "文化", "一句话", "概念图", "用户评价"].map((x) => el("th", { text: x })))]));
+    t.append(el("thead", {}, [el("tr", {}, ["名字", "阶段", "文化", "一句话", "完整度", "用户评价"].map((x) => el("th", { text: x })))]));
     const tb = el("tbody");
-    for (const m of maps()) tb.append(el("tr", { "data-id": m.id }, [
+    for (const m of group) tb.append(el("tr", { "data-id": m.id }, [
       el("td", {}, [el("a", { href: "#concepts/" + m.id, text: m.name || m.id })]),
       el("td", { text: m.stage || "—" }),
       el("td", { text: m.culture || "—" }),
       el("td", { class: "small", text: m.pitch || "" }),
-      el("td", { class: "num", text: String(list(m.images).length) }),
+      el("td", { class: "small", text: "概念场景" + (registered(m) ? "有" : "无") + " · 静态概念图 " + list(m.images).length + " 张" }),
       el("td", {}, [badge(m.verdict, VERDICT[m.verdict] || "")]),
     ]));
     t.append(tb);
-    box.append(t);
+    return t;
+    }
+    box.append(el("h3", { text: "有概念场景（" + withScene.length + "）" }), table(withScene),
+      el("details", { id: "concept-text-only", class: "concept-text-only" }, [el("summary", { text: "只有文字（" + textOnly.length + "）" }), table(textOnly)]));
   }
 
   // ---- #concepts/<id>: the card ----
@@ -64,14 +70,7 @@
     return el("ul", { class: "concept-list" }, xs.map((x) => el("li", { text: String(x) })));
   }
   function mechanisms(ids) {
-    if (!list(ids).length) return value(null);
-    const out = el("span");
-    list(ids).forEach((id, i) => {
-      const m = store.mechanism(id);
-      if (i) out.append("、");
-      out.append(el("a", { href: "#mechanisms/" + id, text: m ? m.name : id }));
-    });
-    return out;
+    return value(list(ids).join("、"));
   }
   function prompt(text) {
     if (!text) return value(null);
@@ -233,5 +232,8 @@
     return m ? { key: "concepts/" + m.id, trail: [m.name || m.id] } : { key: "concepts", trail: [id || "全部"] };
   }
 
+  root.addEventListener("DOMContentLoaded", () => {
+    if (!document.getElementById("view-concepts").hidden) show(location.hash.slice("#concepts".length).replace(/^\//, ""));
+  });
   root.PBConcepts = { show, hide, where, state: () => ({ mapId, scene: !!scene, playing, tick, failed: failed ? String(failed.message || failed) : null }) };
 })(window);

@@ -21,6 +21,7 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   const page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error') errors.push(m.text());});
   await page.goto(url);await page.waitForTimeout(200);
+  if(process.env.WB_VISIBLE_ONLY==='1'){await visibleContentRegression(page,url);assert.deepEqual(errors,[]);return;}
   check(await page.locator('#view-scenes').isVisible(),'default opens art scenes');
   const groups=await page.evaluate(()=>PBNav.MENU.map(g=>g.label));
   assert.deepEqual(groups,['关卡模式','配送模式','地图概念','美术','声音']);
@@ -148,7 +149,119 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   check(true,'196 offline UI states fit both locales; 46 default browser renders equal PNG references');
   await page.goto(url+'#audio/sfx');await page.waitForTimeout(120);
   check((await page.locator('#audio-root').innerText()).includes('sfx:push'),'sound page lists effects');
+  await visibleContentRegression(page,url);
   check(errors.length===0,'no browser errors'+(errors.length?': '+errors.join('; '):''));
   assert.equal(failures.length,0,failures.join('\n'));
   console.log('all public workbench smoke checks passed');
 })().catch(e=>{console.error(e.message);process.exitCode=1;}).finally(async()=>{if(browser) await browser.close();if(server) await new Promise(resolve=>server.close(resolve));});
+
+
+// WB-09 additions: one browser, browser-only fake pending data, no repository writes.
+async function visibleContentRegression(page, url) {
+  const evidence=process.env.WB_EVIDENCE_DIR;
+  const shot=async name=>{if(evidence){fs.mkdirSync(path.join(evidence,'screenshots'),{recursive:true});await page.screenshot({path:path.join(evidence,'screenshots',name+'.png')});}};
+  const go=async hash=>{await page.goto(url+hash);await page.waitForTimeout(150);};
+  for(const width of [1024,1100,1280,1440,720]) {
+    await page.setViewportSize({width,height:800});
+    await go('#assets');
+    const card=page.locator('#asset-cards .card:visible').first();
+    await card.click();
+    const panel=page.locator('#asset-inspector');
+    await panel.locator('h2').waitFor();
+    const rect=await panel.boundingBox();
+    assert.ok(rect&&rect.y>=0&&rect.y<800&&rect.x>=0&&rect.x+rect.width<=width+1,'asset details in viewport at '+width);
+    if(width<=1100){
+      assert.equal(await page.locator('dialog.detail-drawer[open]').count(),1);
+      if(width===720) assert.ok(rect.width>=width-2,'mobile details fill width');
+    } else assert.equal(await page.locator('dialog.detail-drawer[open]').count(),0);
+    if(width!==720) await shot('assets-'+width);
+    if(width<=1100){
+      await page.keyboard.press('Escape');
+      assert.ok(await card.evaluate(n=>document.activeElement===n),'asset Escape returns to the originating card');
+      await card.click();
+      await page.getByRole('button',{name:'关闭详情',exact:true}).click();
+      assert.ok(await card.evaluate(n=>document.activeElement===n),'asset close returns to the originating card');
+    }
+    await go('#scenes');
+    const sceneId=await page.locator('#scene-list .list-btn').nth(1).getAttribute('data-scene');
+    assert.ok(sceneId,'scene cards expose stable identity for focus restoration');
+    await page.locator('#scene-list .list-btn').nth(1).click();
+    await page.locator('#scene-info h2').waitFor();
+    const sceneRect=await page.locator('#scene-info').boundingBox();
+    assert.ok(sceneRect&&sceneRect.y>=0&&sceneRect.y<800&&sceneRect.x+sceneRect.width<=width+1,'scene details in viewport at '+width);
+    if(width!==720) await shot('scenes-'+width);
+    if(width<=1100){
+      await page.keyboard.press('Escape');
+      assert.equal(await page.evaluate(()=>document.activeElement.dataset.scene),sceneId,'scene Escape restores same card after list rebuild');
+      await page.locator('#scene-list [data-scene="'+sceneId+'"]').click();
+      await page.getByRole('button',{name:'关闭详情',exact:true}).click();
+      assert.equal(await page.evaluate(()=>document.activeElement.dataset.scene),sceneId);
+    }
+  }
+  await page.setViewportSize({width:1280,height:800});
+  await go('#assets');
+  assert.ok(!/\b(avatar|cargo|monster|scene)\b/.test(await page.locator('#asset-categories').innerText()),'asset category labels are Chinese');
+  await go('#review');
+  assert.equal(await page.locator('#review-status').inputValue(),'all');
+  assert.ok((await page.locator('#review-root').innerText()).includes('当前没有待确认的美术'));
+  assert.ok(await page.locator('#review-results .review-card:visible').count()>0);
+  await shot('review-no-pending');
+  await page.locator('#review-status').selectOption('approved');
+  await page.locator('#review-category').selectOption('character');
+  assert.equal(await page.locator('#review-status').inputValue(),'approved','manual status survives this opening');
+  await page.getByRole('button',{name:/^草稿 \d+ 项$/}).click();
+  assert.equal(await page.locator('#review-status').inputValue(),'draft');
+  assert.ok(await page.locator('#review-results .review-card:visible').count()>0);
+  await go('#concepts');
+  const expected=await page.evaluate(()=>PBStore.content().concepts.maps.filter(m=>!PB_CONCEPT_SCENES[m.id]).map(m=>m.id));
+  const textGroup=page.locator('#concept-text-only');
+  assert.equal(await textGroup.getAttribute('open'),null,'text-only concept table defaults closed');
+  assert.equal(await page.locator('#nav-concept-text-only').getAttribute('open'),null,'text-only navigation defaults closed');
+  assert.equal(await textGroup.locator('tbody tr').count(),expected.length);
+  assert.ok((await page.locator('#concepts-root').innerText()).includes('完整度'));
+  await shot('concepts-table-and-nav');
+  await textGroup.locator('summary').scrollIntoViewIfNeeded();
+  await page.locator('#nav-concept-text-only summary').scrollIntoViewIfNeeded();
+  await shot('concepts-text-collapsed');
+  await textGroup.locator('summary').click();
+  assert.equal(await textGroup.locator('tbody tr:visible').count(),expected.length);
+  await page.locator('#nav-concept-text-only summary').click();
+  await shot('concepts-text-expanded');
+  await go('#concepts/'+expected[0]);
+  assert.equal(await page.locator('a[href^="#mechanisms/"]').count(),0);
+  const empty=await page.locator('.concept-scene-empty').boundingBox();
+  assert.ok(empty&&empty.height<60,'missing concept scene occupies one line');
+  await go('#maps');
+  assert.equal(await page.evaluate(()=>location.hash),'#maps','unknown maps address uses normal fallback without rooms redirect');
+  assert.ok(await page.locator('#view-scenes').isVisible());
+  // Inject one fake status into this browser only; restore it even on failure.
+  await page.evaluate(()=>{window.__wb09Status=PBStore.status;window.__wb09Pending=PBStore.assets().find(a=>PBStore.status(a.id)==='approved').id;PBStore.status=id=>id===window.__wb09Pending?'review':window.__wb09Status(id);});
+  try {
+    await go('#review');
+    assert.equal(await page.locator('#review-status').inputValue(),'review');
+    assert.equal(await page.locator('#review-results .review-card:visible').count(),1);
+    assert.equal(await page.locator('#review-empty-notice').count(),0);
+    await shot('review-injected-pending');
+  } finally {await page.evaluate(()=>{PBStore.status=window.__wb09Status;delete window.__wb09Status;delete window.__wb09Pending;});}
+  await go('#scenes');
+  // Initial late-registry menu refresh must preserve populated browser-only badges.
+  const badgeRefresh=await page.evaluate(()=>{
+    const draft=PBStore.assets().find(a=>a.kind==='sprite'&&!PBStore.drafts()[a.id]);
+    const selected=PBStore.assets().find(a=>a.id!==draft.id&&!PBStore.review().selected[a.id]);
+    const keys=['pb.wb.drafts.v1','pb.wb.review.v1'], saved=keys.map(k=>localStorage.getItem(k));
+    const snapshot=()=>['drafts-count','review-count'].map(id=>{const n=document.getElementById(id);return {id,hidden:n.hidden,count:n.textContent};});
+    try {
+      PBStore.setDraft(draft.id,structuredClone(draft.frames));
+      PBStore.toggleSelected(selected.id,true);
+      const before=snapshot();
+      window.dispatchEvent(new Event('DOMContentLoaded'));
+      return {before,after:snapshot()};
+    } finally {
+      PBStore.discardDraft(draft.id); PBStore.toggleSelected(selected.id,false);
+      keys.forEach((key,i)=>{if(saved[i]===null)localStorage.removeItem(key);else localStorage.setItem(key,saved[i]);});
+    }
+  });
+  assert.ok(badgeRefresh.before.every(b=>!b.hidden&&Number(b.count)>0),'browser-local draft and selection badges start populated');
+  assert.deepEqual(badgeRefresh.after,badgeRefresh.before,'late concept registration refresh preserves badge visibility and counts');
+  console.log('WB-09 visible content regressions passed');
+}

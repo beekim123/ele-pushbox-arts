@@ -72,7 +72,7 @@
     for (const s of sceneList()) {
       if (s.group !== group) { group = s.group; listEl.append(el("div", { class: "group-title", text: group })); }
       const badge = s.asset ? statusBadge(s.asset.id) : null;
-      listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), onclick: () => { location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
+      listEl.append(el("button", { class: "list-btn", type: "button", "aria-current": String(current && current.id === s.id), "data-scene": s.id, onclick: () => { if (location.hash === "#scenes/" + s.id) show(s.id); else location.hash = "#scenes/" + s.id; } }, [el("span", { text: s.name }), badge]));
     }
   }
   function statusBadge(id) { const st = store.status(id); return el("span", { class: "badge " + st, text: store.statusLabel(st) }); }
@@ -224,7 +224,9 @@
     });
     if (root.PBOnboarding) root.PBOnboarding.attach(current.kind === "level" ? current.level : null, stage);   // UX-03 引导
     info(current); steps(current);
+    root.PBDetailDrawer.origin("scene-info", () => document.querySelector('#scene-list [data-scene="' + current.id + '"]'));
+    root.PBDetailDrawer.show("scene-info", !!id);
   }
 
-  root.PBScenes = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true) };
+  root.PBScenes = { show, hide: () => { root.PBDetailDrawer.hide("scene-info"); if (stage) stage.setVisible(false); }, wake: () => stage && stage.setVisible(true) };
 })(window);
