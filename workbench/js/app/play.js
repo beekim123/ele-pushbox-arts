@@ -8,14 +8,16 @@
  const conditions=Object.fromEntries(pages.flatMap(s=>transitions(s).map(t=>t.when)).filter(w=>w&&!w.startsWith('第 ')&&w!=='关卡完成').map(w=>[w,['没有上次关卡','没有没看过的规则','没有更多规则卡','有下一关','章节已开放','所选教学已开放'].includes(w)]));
  const embedded=new URLSearchParams(location.search).get('embed')==='1',gallery=document.getElementById('play-gallery'),back=document.getElementById('play-return'),fullscreen=document.getElementById('play-fullscreen'),galleryBack=document.getElementById('play-gallery-back');
  const galleryFlows=['配送一局','剧情','伙计'];
+ const labIds=new Set(['lobby','chapters','levels','play','pause','hint','rulecard','complete','settings','controls','dialogue']);
+ const galleryScreen=s=>!!s?.art&&!labIds.has(s.id);
  let stage=null,route=null,trail=[],noticeTimer=0;
- function groupOf(s){return s?.game==='not_yet'&&!galleryFlows.includes(s.flow)?'配送一局':s?.flow;}
- function galleryFlow(){const s=screen();return s?.game==='not_yet'||route.mode==='delivery'&&galleryFlows.includes(groupOf(s))?groupOf(s):route.art?(route.art.includes('story')?'剧情':route.art.includes('crew')?'伙计':'配送一局'):null;}
+ function groupOf(s){return galleryScreen(s)&&!galleryFlows.includes(s.flow)?'配送一局':s?.flow;}
+ function galleryFlow(){const s=screen();if(!s?.art)return null;return galleryScreen(s)||route.mode==='delivery'&&galleryFlows.includes(groupOf(s))?groupOf(s):route.art?(route.art.includes('story')?'剧情':route.art.includes('crew')?'伙计':'配送一局'):null;}
  function large(){return !!galleryFlow()&&route.large;}
  function openPainting(s,art){trail.push({...route});route={id:s.id,focus:s.id===route.id?route.focus:0,tier:1,mode:'delivery',art:art||null,large:true};save(false);show();}
  function showWall(){
   gallery.replaceChildren(el('h1',{text:galleryFlow()+' · 缩略图墙'}));
-  const list=el('div',{class:'play-gallery-grid'}),rows=pages.filter(s=>groupOf(s)===galleryFlow());
+  const list=el('div',{class:'play-gallery-grid'}),rows=pages.filter(s=>s.art!==null&&groupOf(s)===galleryFlow());
   if(route.art&&!rows.some(s=>s.id===route.id))rows.unshift(screen());
   for(const s of rows){const art=s.id===route.id&&route.art?route.art:s.art;
    list.append(el('button',{type:'button','data-gallery-page':s.id,onclick:()=>openPainting(s,art===s.art?null:art)},[el('img',{src:'../art/export/preview/'+art+'.png',alt:'',width:320,height:180,loading:'lazy',decoding:'async'}),el('span',{text:s.name})]));
@@ -29,7 +31,7 @@
  function asset(){const a=store.asset(route.art||screen()?.art);return a&&root.PB.ui.SCREENS[a.params.screen]?a:null;}
  function currentTransitions(){if(galleryFlow())return [];const s=screen();return route.art?s?.variantTransitions?.[route.art]||[]:s?.transitions||[];}
  function count(){const p=asset()?.params||{};if(route.id==='hint')return route.tier===3?2:1;if(route.id==='complete')return 2;if(route.id==='settings')return Math.max(1,(p.items||[]).filter(x=>x.key!=='settings.ui_style').length);if(route.id==='delivery_help')return Math.max(1,(p.maps||[]).flatMap(m=>m.rooms||[]).length);if(route.id==='delivery_assist')return 3;if(['reels','run_wish_card'].includes(route.id))return 3;return Math.max(1,(p.chapters||p.levels||p.items||p.orders||p.crew||p.goods||[]).length,...currentTransitions().map(t=>t.focus===undefined?1:t.focus+1));}
- function parse(){const [id,query='']=decodeURIComponent(location.hash.slice(1)||'lobby').split('?'),p=new URLSearchParams(query),s=pages.find(s=>s.id===id),mode=['lab','delivery'].includes(p.get('mode'))?p.get('mode'):null,art=mode?variant(s,p.get('art')):null;return{id:s||id==='@quit'?id:'lobby',focus:Math.max(0,Number(p.get('focus'))|0),tier:Math.max(1,Math.min(3,Number(p.get('tier'))||1)),mode:id==='lobby'&&!art?'lab':s?.game==='not_yet'||art?'delivery':mode||'lab',art,large:p.get('view')==='large'};}
+ function parse(){const [id,query='']=decodeURIComponent(location.hash.slice(1)||'lobby').split('?'),p=new URLSearchParams(query),s=pages.find(s=>s.id===id),mode=['lab','delivery'].includes(p.get('mode'))?p.get('mode'):null,art=mode?variant(s,p.get('art')):null;return{id:s||id==='@quit'?id:'lobby',focus:Math.max(0,Number(p.get('focus'))|0),tier:Math.max(1,Math.min(3,Number(p.get('tier'))||1)),mode:id==='lobby'&&!art?'lab':galleryScreen(s)||art?'delivery':mode||'lab',art,large:p.get('view')==='large'};}
  function url(r){const p=new URLSearchParams({focus:String(r.focus)});if(r.id==='hint')p.set('tier',String(r.tier));if(r.mode==='delivery'||r.art)p.set('mode',r.mode||'lab');if(r.art)p.set('art',r.art);if(r.large)p.set('view','large');return'#'+r.id+'?'+p;}
  function save(replace){history[replace?'replaceState':'pushState']({pbPlay:true,route:{...route},trail:trail.map(x=>({...x}))},'',url(route));}
  function allowed(t){if(!t.when)return true;if(t.when==='第 1 级')return true;if(t.when==='第 1–2 级')return route.tier<3;if(t.when==='第 3 级')return route.tier===3;if(t.when==='关卡完成')return false;return !!conditions[t.when];}
@@ -42,12 +44,12 @@
   placeholder.hidden=true;notice.hidden=true;clearTimeout(noticeTimer);
   if(wall){host.replaceChildren();showWall();save(true);sync();return;}
   placeholder.hidden=!!a&&route.id!=='@quit';
-  placeholder.textContent=route.id==='@quit'?'已退出（预览） · 按 Enter 回大厅':'此页还没画：'+(s?.name||route.id)+'（'+route.id+'）';
-  const fps=route.id==='delivery_help'?0.5:s?.game==='not_yet'?(['reels','settlement'].includes(route.id)?2:1):['chapters','pause','rulecard','complete','settings','controls'].includes(route.id)?2:4;
+  placeholder.textContent=route.id==='@quit'?'已退出（预览） · 按 Enter 回大厅':'此页还没画：'+(s?.name||route.id)+'（'+route.id+'）'+(s?.notes?'。'+s.notes:'');
+  const fps=route.id==='delivery_help'?0.5:galleryScreen(s)?(['reels','settlement'].includes(route.id)?2:1):['chapters','pause','rulecard','complete','settings','controls'].includes(route.id)?2:4;
   stage=root.PBStage.create(host,{width:320,height:180,animated:!!a,autoplay:true,fps,controls:false,keyboard:false,fitWindow:true,label:s?.name||'已退出（预览）',draw:(r,tick)=>{if(a)root.PBScreenRenderer.draw(r,s,a,tick,{interactive:true,model:true,focus:route.focus,hintTier:route.tier});}});
   save(true);sync();
  }
- function go(id,options={}){const art=variant(pages.find(s=>s.id===id),options.art),mode=id==='lobby'&&!art?'lab':art||pages.find(s=>s.id===id)?.game==='not_yet'?'delivery':['lab','delivery'].includes(options.mode)?options.mode:route.mode||'lab';if(id===route.id&&mode===route.mode&&art===route.art){stage?.refresh();sync();return;}trail.push({...route});route={id,focus:0,tier:1,mode,art,large:false};save(false);show();}
+ function go(id,options={}){const art=variant(pages.find(s=>s.id===id),options.art),mode=id==='lobby'&&!art?'lab':art||galleryScreen(pages.find(s=>s.id===id))?'delivery':['lab','delivery'].includes(options.mode)?options.mode:route.mode||'lab';if(id===route.id&&mode===route.mode&&art===route.art){stage?.refresh();sync();return;}trail.push({...route});route={id,focus:0,tier:1,mode,art,large:false};save(false);show();}
  function toast(text){notice.textContent=text;notice.hidden=false;clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>{notice.hidden=true;},1400);}
  function apply(t){
   if(!t)return;

@@ -2,7 +2,7 @@
 (function(root){
  'use strict';
  const el=root.PBStage.el,store=root.PBStore,data=root.PB_SCREENS,all=data.screens;
- const byId=new Map(all.map(s=>[s.id,s])),flows=['开始','关卡内','配送一局','剧情','伙计','设置与帮助'];
+ const byId=new Map(all.map(s=>[s.id,s])),flows=['开始','关卡内','配送一局','剧情','伙计','设置与帮助','新关卡线（设计中）'];
  const nativeLabels={implemented:'已实现',reference_only:'只有参考图',missing:'没有条目'};
  let stage=null,embedded=null,updateEmbedded=null,query='',current=null,art=null,hintTier=2;
  function link(id,text){return el('a',{href:'#screen/'+id,text:text||byId.get(id)?.name||id});}
@@ -10,35 +10,41 @@
  function from(id){return all.flatMap(s=>s.transitions.filter(t=>t.to===id).map(t=>({screen:s,transition:t})));}
  function identify(id){return all.find(s=>s.art===id||s.variants.includes(id));}
  function coverage(entry,host){host.hidden=false;host.textContent=entry?JSON.stringify(entry,null,2):'没有条目';}
+ const gameLabels={in_use:'在用',frozen_v1:'v1 已冻结',not_yet:'未接入'};
+ const symbols={done:'✓',partial:'◐',pending:'○',missing:'!'};
  function progress(s,host,detail,selectedArt,ownVariantProgress=false){
   const variant=s.variantsProgress.find(v=>v.art===selectedArt),steps=variant?{design:true,...variant.steps,game:ownVariantProgress?variant.steps.game:s.steps.game}:s.steps,entry=variant?variant.coverage:s.coverage;
-  const items=[['design','设计',true],['html','HTML 画面',steps.html],['approved','用户确认',steps.approved],['godot','Godot · '+nativeLabels[steps.godot],steps.godot==='implemented'],['game','游戏接入',steps.game]];
+  const game=!s.art?'pending':ownVariantProgress&&variant?(steps.game?'done':'pending'):s.game==='frozen_v1'?'partial':steps.game?'done':'pending';
+  const items=[['design','设计',steps.design?'done':'missing'],['html','HTML 画面',steps.html?'done':'pending'],['approved','用户确认',steps.approved?'done':'pending'],['godot','Godot · '+nativeLabels[steps.godot],steps.godot==='implemented'?'done':steps.godot==='reference_only'?'partial':'pending'],['game','游戏接入'+(game==='partial'?' · v1 已冻结':''),game]];
   const bar=el('div',{class:'screen-progress','aria-label':'五步进度'});
-  for(const [step,label,ok]of items){const attrs={class:'screen-step '+(ok?'done':'pending'),'data-step':step,title:label+'：'+(ok?'已完成':'未完成'),text:(ok?'● ':'○ ')+label};
+  for(const [step,label,state]of items){const attrs={class:'screen-step '+state,'data-step':step,'data-state':state,title:label+'：'+{done:'已完成',partial:'只有参考图 / 部分',pending:'未开始',missing:'缺设计'}[state],text:symbols[state]+' '+label+(state==='missing'?' · 缺设计':'')};
    if(step==='html')bar.append(el('a',{...attrs,href:'#screen/'+s.id}));
    else if(step==='godot')bar.append(el('button',{...attrs,type:'button',onclick:()=>coverage(entry,detail)}));
    else bar.append(el('span',attrs));
-  }
-  host.append(bar);
+  }host.append(bar);
  }
  function list(box){
-  box.append(el('h1',{text:'界面清单'}),el('p',{class:'muted',text:`${data.totals.pages} 个页面 · 主画面与变体覆盖全部界面资源。进度由清单、资源 manifest 和 native coverage 生成；游戏接入人工维护。`}));
-  const search=el('input',{id:'screen-search',type:'search','aria-label':'搜索界面',placeholder:'搜索页面名称、编号或流程',value:query,oninput:()=>{query=search.value;filter();}});
-  box.append(search);
+  box.append(el('h1',{text:'界面清单'}),el('p',{class:'muted',text:`${data.totals.pages} 个页面 · 已有主画面 ${data.totals.painted} 个，待设计 ${data.totals.missing_design} 个。进度来自登记、资源 manifest 和 native coverage；冻结 v1 不代表重做版已接入。`}));
+  const legend=el('div',{id:'screen-progress-legend',class:'screen-progress-legend','aria-label':'进度图例'});
+  for(const [state,label]of [['done','已完成'],['partial','只有参考图 / 部分'],['pending','未开始'],['missing','缺设计']])legend.append(el('span',{class:'screen-step '+state,text:symbols[state]+' '+label}));box.append(legend);
+  const search=el('input',{id:'screen-search',type:'search','aria-label':'搜索界面',placeholder:'搜索页面名称、编号或流程',value:query,oninput:()=>{query=search.value;filter();}});box.append(search);
   const detail=el('pre',{id:'screen-list-coverage',class:'screen-coverage',hidden:true,'aria-live':'polite'}),wrap=el('div',{class:'screen-table-wrap'}),table=el('table',{id:'screen-list',class:'screen-table'});
-  table.append(el('thead',{},[el('tr',{},['页面','五步进度','所属模式','从哪里跳来','能跳到哪里'].map(text=>el('th',{scope:'col',text})))]));
+  table.append(el('thead',{},[el('tr',{},['页面','五步进度','游戏接入','从哪里跳来','能跳到哪里'].map(text=>el('th',{scope:'col',text})))]));
   const rows=[];
-  for(const flow of flows){const body=el('tbody',{'data-flow':flow});body.append(el('tr',{class:'screen-flow-heading'},[el('th',{colspan:5,scope:'rowgroup',text:flow})]));
-   for(const s of all.filter(s=>s.flow===flow)){
-    const name=el('td',{},[link(s.id,s.name),el('div',{class:'mono small muted',text:s.id})]);
-    if(s.art)name.prepend(el('a',{href:'#screen/'+s.id,tabindex:-1,'aria-hidden':'true'},[el('img',{src:'../art/export/preview/'+s.art+'.png',alt:'',width:128,height:72,loading:'lazy',decoding:'async'})]));
-    const steps=el('td');progress(s,steps,detail,s.art);
-    const incoming=[...new Map(from(s.id).map(x=>[x.screen.id,x.screen])).values()],outgoing=[...new Set(s.transitions.map(t=>t.to))];
-    const ingress=el('td',{class:'screen-links'});for(const x of incoming)ingress.append(link(x.id));if(!incoming.length)ingress.textContent='—';
-    const egress=el('td',{class:'screen-links'});for(const to of outgoing)egress.append(target({to}));if(!outgoing.length)egress.textContent='尚未登记';
-    const row=el('tr',{'data-screen-row':s.id},[name,steps,el('td',{text:'未标'}),ingress,egress]);rows.push({s,row,body});body.append(row);
-   }table.append(body);
+  function row(s,body){
+   const name=el('td',{},[link(s.id,s.name),el('div',{class:'mono small muted',text:s.id})]);
+   if(s.art)name.prepend(el('a',{href:'#screen/'+s.id,tabindex:-1,'aria-hidden':'true'},[el('img',{src:'../art/export/preview/'+s.art+'.png',alt:'',width:128,height:72,loading:'lazy',decoding:'async'})]));
+   else name.append(el('span',{class:'screen-step missing',text:'! 缺设计'}),el('p',{class:'screen-source',text:s.notes}));
+   const steps=el('td');progress(s,steps,detail,s.art);
+   const incoming=[...new Map(from(s.id).map(x=>[x.screen.id,x.screen])).values()],outgoing=[...new Set(s.transitions.map(t=>t.to))];
+   const ingress=el('td',{class:'screen-links'});for(const x of incoming)ingress.append(link(x.id));if(!incoming.length)ingress.textContent='—';
+   const egress=el('td',{class:'screen-links'});for(const to of outgoing)egress.append(target({to}));if(!outgoing.length)egress.textContent=s.art?'尚未登记':'设计后登记';
+   const item=el('tr',{'data-screen-row':s.id},[name,steps,el('td',{'data-game':s.game,title:s.notes,text:gameLabels[s.game]}),ingress,egress]);rows.push({s,row:item,body});body.append(item);
   }
+  const pending=all.filter(s=>s.art===null),backlog=el('tbody',{id:'screen-backlog','data-flow':'待设计'});backlog.append(el('tr',{class:'screen-flow-heading'},[el('th',{colspan:5,scope:'rowgroup',text:'待设计（'+pending.length+'）'})]));
+  const sourceGroup=s=>s.id==='lobby_modes'?'公共入口':s.flow==='新关卡线（设计中）'?'新关卡线（等操作方案）':'冻结的配送 v1';
+  for(const group of ['公共入口','冻结的配送 v1','新关卡线（等操作方案）']){const entries=pending.filter(s=>sourceGroup(s)===group);if(!entries.length)continue;backlog.append(el('tr',{class:'screen-source-heading'},[el('th',{colspan:5,scope:'rowgroup',text:group})]));for(const s of entries)row(s,backlog);}table.append(backlog);
+  for(const flow of flows){const body=el('tbody',{'data-flow':flow});body.append(el('tr',{class:'screen-flow-heading'},[el('th',{colspan:5,scope:'rowgroup',text:flow})]));for(const s of all.filter(s=>s.art!==null&&s.flow===flow))row(s,body);table.append(body);}
   function filter(){const q=query.toLowerCase();for(const {s,row}of rows)row.hidden=!`${s.name} ${s.id} ${s.art} ${s.variants.join(' ')} ${s.flow}`.toLowerCase().includes(q);for(const body of table.tBodies)body.hidden=![...body.querySelectorAll('[data-screen-row]')].some(r=>!r.hidden);}
   wrap.append(table);box.append(wrap,detail);filter();
  }
@@ -54,7 +60,7 @@
   function render(){
    if(stage)stage.destroy();steps.replaceChildren();native.hidden=true;progress(s,steps,native,art);
    const variant=art!==s.art;note.textContent=variant?'当前为外观变体。下方跳转只对应主图；变体菜单可能不同，尚未登记其游戏行为。':'下方跳转对应主图。画面是代码绘制的公开示例，局内展示不能游玩。';
-   const a=store.asset(art);if(!a){host.textContent='尚无 HTML 画面';return;}
+   const a=store.asset(art);if(!a){stage=null;host.textContent='此页还没画：'+s.name+'（'+s.id+'）。'+s.notes;return;}
    stage=root.PBStage.create(host,{width:320,height:180,animated:true,autoplay:true,label:s.name,draw:(r,tick)=>{
     root.PBScreenRenderer.draw(r,s,a,tick,{...options,hintTier:hintTier+1});
    },disclaimer:'界面外观参考；交互以清单中的主图跳转为准。'});
@@ -83,7 +89,7 @@
   if(!embedded||event.source!==embedded.contentWindow||event.data?.type!=='pb-play-page')return;
   const s=byId.get(event.data.id),selectedArt=event.data.art;
   if(event.data.id==='@quit'&&selectedArt===null){updateEmbedded?.(null,null);return;}
-  if(!s||typeof selectedArt!=='string'||![s.art,...s.variants].includes(selectedArt))return;
+  if(!s||!(s.art===null&&selectedArt===null)&&(typeof selectedArt!=='string'||![s.art,...s.variants].includes(selectedArt)))return;
   updateEmbedded?.(s,selectedArt);
  });
  function embeddedPreview(box,id){
@@ -91,7 +97,7 @@
   box.append(el('h1',{text:'原样预览'}),el('p',{class:'muted',text:'点一下预览区域后使用游戏按键；配送、剧情和伙计按流程查看缩略图墙与大图。'}));
   const layout=el('div',{class:'embedded-play-layout'}),list=el('nav',{class:'embedded-play-list','aria-label':'预览页面清单'}),main=el('div',{class:'embedded-play-main'});
   for(const flow of flows){list.append(el('h2',{text:flow}));for(const s of all.filter(s=>s.flow===flow))list.append(el('a',{href:'#scenes/play/'+s.id,'data-preview-page':s.id,'aria-current':String(s.id===selected.id),text:s.name}));}
-  embedded=el('iframe',{id:'embedded-play',title:'原样预览 · '+selected.name,src:'play.html?embed=1#'+selected.id+(['配送一局','剧情','伙计'].includes(selected.flow)||selected.game==='not_yet'?'?mode=delivery':''),allow:'fullscreen',class:'embedded-play-frame'});
+  embedded=el('iframe',{id:'embedded-play',title:'原样预览 · '+selected.name,src:'play.html?embed=1#'+selected.id+(['配送一局','剧情','伙计'].includes(selected.flow)||selected.art!==null&&selected.game==='not_yet'?'?mode=delivery':''),allow:'fullscreen',class:'embedded-play-frame'});
   const steps=el('div',{id:'embedded-play-progress'}),detail=el('pre',{class:'screen-coverage',hidden:true}),name=el('h2',{id:'embedded-play-name',text:selected.name}),detailLink=el('a',{href:'#screen/'+selected.id,text:'在界面清单中打开'});
   updateEmbedded=(s,selectedArt)=>{
    if(!s){name.textContent='已退出（预览）';embedded.title='原样预览 · 已退出（预览）';detailLink.href='#scenes';steps.replaceChildren();detail.replaceChildren();detail.hidden=true;for(const item of list.querySelectorAll('[data-preview-page]'))item.setAttribute('aria-current','false');return;}

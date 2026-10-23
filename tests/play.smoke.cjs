@@ -2,6 +2,7 @@
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const ROOT=path.resolve(__dirname,'..'),inventory=JSON.parse(fs.readFileSync(path.join(ROOT,'content/screens/screens.json'))).screens;
+const LAB_IDS=['lobby','chapters','levels','play','pause','hint','rulecard','complete','settings','controls','dialogue'];
 let browser,server;
 (async()=>{
  assert.ok(fs.existsSync(path.join(ROOT,'workbench/play.html')),'standalone preview page exists');
@@ -27,6 +28,9 @@ let browser,server;
  }
  if(process.env.WB_PLAY_MODEL_ONLY==='1'){await model();console.log('WB-12 M05 HUD model passed');return;}
 
+ async function backlog(){for(const s of inventory.filter(s=>s.art===null)){await open(s.id);assert.equal(await page.locator('#play-placeholder').isVisible(),true,'backlog placeholder '+s.id);const text=await page.locator('#play-placeholder').innerText();assert.ok(text.includes('此页还没画：'+s.name+'（'+s.id+'）'));assert.ok(text.includes(s.notes),'placeholder retains public source '+s.id);assert.equal(await page.locator('#play-gallery').isVisible(),false,'missing designs never request a null PNG');}console.log('WB-16 all backlog placeholders retain sources');}
+ if(process.env.WB_PLAY_BACKLOG_ONLY==='1'){await backlog();assert.deepEqual(errors,[]);return;}
+ await backlog();
  // WB-13 extends the standalone consumer; the WB-12 cases below remain intact.
  async function delivery(){
   await open('lobby');await page.keyboard.press('i');
@@ -38,11 +42,11 @@ let browser,server;
   await page.keyboard.press('i');
   const openMode=async(id,focus=0,art)=>{await page.goto(base+'?deliveryCase='+(++caseNumber)+'#'+id+'?focus='+focus+'&mode=delivery'+(art?'&art='+encodeURIComponent(art):''));await page.waitForFunction(id=>document.body.dataset.page===id,id);};
   let walls=0,large=0;
-  const galleryPages=inventory.filter(s=>s.game==='not_yet'||['配送一局','剧情','伙计'].includes(s.flow));
+  const galleryPages=inventory.filter(s=>s.art!==null&&!LAB_IDS.includes(s.id));
   for(const s of galleryPages){
    await openMode(s.id);
    const wall=page.locator('#play-gallery');assert.equal(await wall.isVisible(),true,s.id+' opens its flow wall');
-   const groupOf=x=>x.game==='not_yet'&&!['配送一局','剧情','伙计'].includes(x.flow)?'配送一局':x.flow;const group=inventory.filter(x=>groupOf(x)===groupOf(s));assert.equal(await wall.locator('[data-gallery-page]').count(),group.length,s.flow+' includes every page');
+   const groupOf=x=>x.art&&!LAB_IDS.includes(x.id)&&!['配送一局','剧情','伙计'].includes(x.flow)?'配送一局':x.flow;const group=inventory.filter(x=>x.art!==null&&groupOf(x)===groupOf(s));assert.equal(await wall.locator('[data-gallery-page]').count(),group.length,s.flow+' includes every page');
    for(const item of group)assert.equal(await wall.locator('[data-gallery-page="'+item.id+'"] img').getAttribute('src'),'../art/export/preview/'+item.art+'.png','export PNG '+item.id);
    await wall.locator('[data-gallery-page="'+s.id+'"] img').evaluate(async img=>{await img.decode();});assert.equal(await wall.locator('[data-gallery-page="'+s.id+'"] img').evaluate(img=>img.complete&&img.naturalWidth>0),true,'gallery PNG really loaded '+s.id);
    assert.equal(await page.locator('#play-stage canvas').count(),0,'wall has no live painters');
@@ -67,7 +71,7 @@ let browser,server;
   await openMode('lobby',3,'ui.screen.pause_help');assert.equal(await page.evaluate(()=>document.body.dataset.art),'ui.screen.lobby','unregistered variant cannot borrow primary transitions');assert.ok(!(await page.url()).includes('art='));
   await openMode('lobby',0,'ui.screen.lobby_story');await page.keyboard.press('i');assert.ok(!(await page.locator('#play-info').innerText()).includes('待定'),'variant info omits unused pending transitions');await page.keyboard.press('i');
   // The new mode uses the same frozen painter inputs; focus never edits stored assets.
-  await openMode('reels');await page.locator('[data-gallery-page="reels"]').click();const focusEvidence=await page.evaluate(()=>{const rows=[];for(const s of PB_SCREENS.screens.filter(s=>s.game==='not_yet'||s.variantTransitions))for(const art of [s.art,...Object.keys(s.variantTransitions||{})]){const a=PBStore.asset(art),before=JSON.stringify(a),renders=[0,1].map(focus=>{const r=new PB.Raster(320,180);PBScreenRenderer.draw(r,s,a,31,{interactive:true,model:true,focus});return r.data;});rows.push({id:s.id,art,equal:renders[0].every((v,i)=>v===renders[1][i]),unchanged:before===JSON.stringify(a)});}return rows;});
+  await openMode('reels');await page.locator('[data-gallery-page="reels"]').click();const focusEvidence=await page.evaluate(labIds=>{const rows=[];for(const s of PB_SCREENS.screens.filter(s=>s.art!==null&&!labIds.includes(s.id)||s.variantTransitions))for(const art of [s.art,...Object.keys(s.variantTransitions||{})]){const a=PBStore.asset(art),before=JSON.stringify(a),renders=[0,1].map(focus=>{const r=new PB.Raster(320,180);PBScreenRenderer.draw(r,s,a,31,{interactive:true,model:true,focus});return r.data;});rows.push({id:s.id,art,equal:renders[0].every((v,i)=>v===renders[1][i]),unchanged:before===JSON.stringify(a)});}return rows;},LAB_IDS);
   assert.ok(focusEvidence.every(x=>x.unchanged),'interactive focus never mutates painter params');
   for(const art of ['ui.screen.confirm','ui.screen.delivery_help','ui.screen.delivery_pause','ui.screen.crew_pick','ui.screen.story_board','ui.screen.lobby_story'])assert.equal(focusEvidence.find(x=>x.art===art).equal,false,'painted focus changes '+art);
   for(const art of ['ui.screen.delivery_hud','ui.screen.run_door','ui.screen.story_letter','ui.screen.crew_joined'])assert.equal(focusEvidence.find(x=>x.art===art).equal,true,'display painter deliberately ignores focus '+art);
@@ -125,7 +129,7 @@ let browser,server;
  async function condition(when){if(!when||when.startsWith('第 ')||when==='关卡完成')return;await page.keyboard.press('i');await page.getByLabel(when,{exact:true}).check();await page.getByLabel(when,{exact:true}).focus();await page.keyboard.press('i');assert.equal(await page.locator('#play-info').isVisible(),false,'I closes from checkbox');}
  async function lab(context='standalone'){
  let keyboard=0,mouse=0;
- for(const s of inventory.filter(s=>s.game==='in_use'))for(const t of s.transitions){
+ for(const s of inventory.filter(s=>LAB_IDS.includes(s.id)))for(const t of s.transitions){
   const tier=t.when==='第 3 级'?3:1,focus=t.focus||0;
   for(const mode of ['keyboard',...(t.hotspot?['mouse']:[])]){
    await open(s.id,focus,tier);await condition(t.when);const limit=await page.evaluate(()=>{const s=PB_SCREENS.screens.find(s=>s.id===document.body.dataset.page),p=PBStore.asset(s.art).params;return s.id==='hint'?(Number(document.body.dataset.tier)===3?2:1):s.id==='complete'?2:s.id==='settings'?p.items.filter(x=>x.key!=='settings.ui_style').length:Math.max(1,(p.chapters||p.levels||p.items||[]).length);});
@@ -156,7 +160,7 @@ let browser,server;
  let pixels=0;
  for(const s of inventory)for(const art of [s.art].filter(Boolean)){
   const focus=({lobby:2,chapters:1,levels:2,pause:5,hint:1,complete:1,settings:2})[s.id]||0;await open(s.id,focus,s.id==='hint'?3:1);
-  if(s.game==='not_yet')await page.locator('[data-gallery-page="'+s.id+'"]').click();
+  if(s.art!==null&&!LAB_IDS.includes(s.id))await page.locator('[data-gallery-page="'+s.id+'"]').click();
   const got=await page.evaluate(()=>{PBPlay.stage().setPlaying(false);PBPlay.stage().setTick(37);return Array.from(PBPlay.stage().canvas.getContext('2d').getImageData(0,0,320,180).data);});
   const expected=await reference.evaluate(({id,art,focus})=>{PBScreens.show(id,{interactive:true,model:true,focus,hintTier:id==='hint'?3:1,art});const stage=PBScreens.stage();stage.setPlaying(false);stage.setTick(37);return Array.from(stage.canvas.getContext('2d').getImageData(0,0,320,180).data);},{id:s.id,art,focus});
   assert.deepEqual(got,expected,'exact RGBA '+s.id+' '+art);pixels++;
@@ -172,7 +176,7 @@ let browser,server;
  await lifecycle();
  // The prior page must stop immediately, only the current stage advances.
  const clocks=await page.evaluate(async()=>{const old=PBPlay.stage();location.hash='#chapters';await new Promise(r=>setTimeout(r,180));const before=old.tick(),next=PBPlay.stage(),start=next.tick();const deadline=performance.now()+1200;while(next.tick()<=start&&performance.now()<deadline)await new Promise(r=>setTimeout(r,25));return{stopped:old.tick()===before,current:next.tick()>start,canvases:document.querySelectorAll('#play-stage canvas').length};});assert.ok(clocks.stopped&&clocks.current&&clocks.canvases===1,'exclusive current-page clock '+JSON.stringify(clocks));
- const evidence=process.env.WB_EVIDENCE_DIR;if(evidence){fs.mkdirSync(evidence,{recursive:true});await page.setViewportSize({width:1280,height:800});for(const s of inventory.filter(s=>s.game==='in_use')){await open(s.id);await page.screenshot({path:path.join(evidence,context+'-play-'+s.id+'.png')});}await open('lobby');let i=0;const shot=async()=>page.screenshot({path:path.join(evidence,context+'-flow-'+String(i++).padStart(2,'0')+'-'+(await state()).id+'.png')});await shot();for(const key of ['Enter','Enter','Enter','c','Escape','Escape','Escape']){await page.keyboard.press(key);await shot();}}
+ const evidence=process.env.WB_EVIDENCE_DIR;if(evidence){fs.mkdirSync(evidence,{recursive:true});await page.setViewportSize({width:1280,height:800});for(const s of inventory.filter(s=>LAB_IDS.includes(s.id))){await open(s.id);await page.screenshot({path:path.join(evidence,context+'-play-'+s.id+'.png')});}await open('lobby');let i=0;const shot=async()=>page.screenshot({path:path.join(evidence,context+'-flow-'+String(i++).padStart(2,'0')+'-'+(await state()).id+'.png')});await shot();for(const key of ['Enter','Enter','Enter','c','Escape','Escape','Escape']){await page.keyboard.press(key);await shot();}}
  assert.deepEqual(errors,[]);console.log('WB-12 play smoke passed '+JSON.stringify({context,transport:process.env.WB_HTTP==='1'?'HTTP':'file',keyboard,mouse,pixels}));
  }
  await lab();await delivery();await embedded();

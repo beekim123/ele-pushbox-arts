@@ -510,14 +510,14 @@ window.PB_SCREENS = {
           "to": "lobby"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.chapters",
@@ -577,14 +577,14 @@ window.PB_SCREENS = {
           "to": "chapters"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。画面选中的是示例行；进入操作不绑定某个固定关卡。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。画面选中的是示例行；进入操作不绑定某个固定关卡。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.levels",
@@ -655,14 +655,14 @@ window.PB_SCREENS = {
           "when": "关卡完成"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。场景与顶栏组合展示，HTML 不能游玩；过关是自动事件，没有按键或点击区。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。场景与顶栏组合展示，HTML 不能游玩；过关是自动事件，没有按键或点击区。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "reference_only",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.hud_keys",
@@ -774,14 +774,14 @@ window.PB_SCREENS = {
           "to": "play"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。设置页 Esc 返回暂停；重开和跳过此关对应主图菜单文字。操作说明变体多一项，不能沿用主图 focus。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。设置页 Esc 返回暂停；重开和跳过此关对应主图菜单文字。操作说明变体多一项，不能沿用主图 focus。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.pause",
@@ -889,14 +889,14 @@ window.PB_SCREENS = {
           "to": "play"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。画法 state.focus 0–2 表示提示第 1–3 级；清单 focus 0/1 仅是第 3 级动作菜单。前两级只记录键盘推进，不虚构按钮。动作文字按实际画面为「演示」「回到正确位置」。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。画法 state.focus 0–2 表示提示第 1–3 级；清单 focus 0/1 仅是第 3 级动作菜单。前两级只记录键盘推进，不虚构按钮。动作文字按实际画面为「演示」「回到正确位置」。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.hint",
@@ -967,14 +967,14 @@ window.PB_SCREENS = {
           ]
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。带按法变体的按钮位置不同，下方跳转只对应主图。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。带按法变体的按钮位置不同，下方跳转只对应主图。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.rulecard",
@@ -1058,14 +1058,14 @@ window.PB_SCREENS = {
           "to": "levels"
         }
       ],
-      "game": "in_use",
-      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。「你发现了」变体按钮位置不同，下方跳转只对应主图。",
+      "game": "frozen_v1",
+      "notes": "公开画面使用示例数据；跳转按 WB-11 的关卡模式主图行为。「你发现了」变体按钮位置不同，下方跳转只对应主图。 WB-16：关卡 v1 已冻结，重做时清理；公开示例只保留旧版画面与跳转。",
       "steps": {
         "design": true,
         "html": true,
         "approved": true,
         "godot": "implemented",
-        "game": true
+        "game": false
       },
       "coverage": {
         "uid": "art:ui.screen.complete",
@@ -1309,8 +1309,8 @@ window.PB_SCREENS = {
           "notes": "待定 P02：确认框取消或返回后的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P02：确认框取消或返回后的目标页未明确。（docs/design/mode-delivery.md §4 时间与操作） 待定 P03：确认放弃后的结算画面未绑定。（docs/design/mode-delivery.md §4 时间与操作）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P02：确认框取消或返回后的目标页未明确。（docs/design/mode-delivery.md §4 时间与操作） 待定 P03：确认放弃后的结算画面未绑定。（docs/design/mode-delivery.md §4 时间与操作） WB-16 冻结 v1 来源：游戏仓库 live_service_ui.gd（confirm_abandon 标题）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -1366,7 +1366,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -1519,7 +1519,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） 热点仅对应公开主样张可见卡片。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） 热点仅对应公开主样张可见卡片。 WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -1623,7 +1623,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P23：伙计页面各派出、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -1743,7 +1743,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P20：配送辅助独立面板的入口与返回页未明确。（docs/design/mode-delivery.md §4 时间与操作）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P20：配送辅助独立面板的入口与返回页未明确。（docs/design/mode-delivery.md §4 时间与操作） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -1807,7 +1807,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P21：教学列表关闭后的目标页未明确。（docs/design/delivery-run.md §3.7 首次教学与教学回顾） 教学条目为选择区域；练习与返回按钮不占教学焦点索引。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P21：教学列表关闭后的目标页未明确。（docs/design/delivery-run.md §3.7 首次教学与教学回顾） 教学条目为选择区域；练习与返回按钮不占教学焦点索引。 WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -1845,8 +1845,8 @@ window.PB_SCREENS = {
           ]
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P04：配送 HUD 送达后的结算画面及页面顺序未绑定。（docs/design/mode-delivery.md §2 一局的流程） 待定 P05：配送 HUD 失败后的结算画面未绑定。（docs/design/delivery-slice.md §2 一局的流程） 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P04：配送 HUD 送达后的结算画面及页面顺序未绑定。（docs/design/mode-delivery.md §2 一局的流程） 待定 P05：配送 HUD 失败后的结算画面未绑定。（docs/design/delivery-slice.md §2 一局的流程） 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站） WB-16 冻结 v1 来源：游戏仓库 live_hud.gd（delivery_hud@v4 开头注释）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2003,8 +2003,8 @@ window.PB_SCREENS = {
           "notes": "待定 P26：配送暂停页 Esc 返回操作的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P26：配送暂停页 Esc 返回操作的目标页未明确。（docs/design/delivery-slice.md §2 一局的流程）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P26：配送暂停页 Esc 返回操作的目标页未明确。（docs/design/delivery-slice.md §2 一局的流程） WB-16 冻结 v1 来源：游戏仓库 live_overlays.gd（pause 标题）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2082,7 +2082,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P25：教学入口与返回准备操作尚未绑定到滚轮台。（docs/design/delivery-run.md §3.7 首次教学与教学回顾）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P25：教学入口与返回准备操作尚未绑定到滚轮台。（docs/design/delivery-run.md §3.7 首次教学与教学回顾） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2101,7 +2101,7 @@ window.PB_SCREENS = {
       "flow": "配送一局",
       "transitions": [],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P15：提示气泡的入口、关闭操作及返回页未明确。（docs/design/delivery-run.md §7.2 全实时的规则） 实际主样张未画出可绑定的按键或按钮，不补造动作。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P15：提示气泡的入口、关闭操作及返回页未明确。（docs/design/delivery-run.md §7.2 全实时的规则） 实际主样张未画出可绑定的按键或按钮，不补造动作。 WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2145,7 +2145,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P14：看全图页面的返回目标页未明确。（docs/design/delivery-run.md §7.3 玩家想慢慢想的时候）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P14：看全图页面的返回目标页未明确。（docs/design/delivery-run.md §7.3 玩家想慢慢想的时候） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2229,7 +2229,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P25：教学入口与返回准备操作尚未绑定到滚轮台。（docs/design/delivery-run.md §3.7 首次教学与教学回顾） 教学回顾入口未画出，不补造按键。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P25：教学入口与返回准备操作尚未绑定到滚轮台。（docs/design/delivery-run.md §3.7 首次教学与教学回顾） 教学回顾入口未画出，不补造按键。 WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2256,7 +2256,7 @@ window.PB_SCREENS = {
       "flow": "配送一局",
       "transitions": [],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P16：门牌画面与配送 HUD 之间的页面绑定未明确。（docs/design/delivery-run.md §3.4 路线） 实际主样张未画出可绑定的按键或按钮，不补造动作。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P16：门牌画面与配送 HUD 之间的页面绑定未明确。（docs/design/delivery-run.md §3.4 路线） 实际主样张未画出可绑定的按键或按钮，不补造动作。 WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2296,7 +2296,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P16：门牌画面与配送 HUD 之间的页面绑定未明确。（docs/design/delivery-run.md §3.4 路线）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P16：门牌画面与配送 HUD 之间的页面绑定未明确。（docs/design/delivery-run.md §3.4 路线） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -2369,8 +2369,8 @@ window.PB_SCREENS = {
           "notes": "待定 P17：奇遇选项完成后的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P17：奇遇选项完成后的目标页未明确。（docs/design/mode-delivery.md §9 随机事件与顺路单）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P17：奇遇选项完成后的目标页未明确。（docs/design/mode-delivery.md §9 随机事件与顺路单） WB-16 冻结 v1 来源：游戏仓库 live_details.gd / live_panels.gd（event 标题）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2413,8 +2413,8 @@ window.PB_SCREENS = {
           "notes": "待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。（docs/design/delivery-run.md §6.1 已定做法）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。（docs/design/delivery-run.md §6.1 已定做法） WB-16 冻结 v1 来源：游戏仓库 live_details.gd / live_order_ui.gd（lucky 标题）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2433,7 +2433,7 @@ window.PB_SCREENS = {
       "flow": "配送一局",
       "transitions": [],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P13：小地图入口、关闭操作及返回页未明确。（docs/design/mode-delivery.md §4 时间与操作） 实际主样张未画出可绑定的按键或按钮，不补造动作。",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P13：小地图入口、关闭操作及返回页未明确。（docs/design/mode-delivery.md §4 时间与操作） 实际主样张未画出可绑定的按键或按钮，不补造动作。 WB-16：限定注释/标题只见通用 map，与其他已登记画面不能唯一绑定，保持未接入；不据此否认冻结 v1 存在相应页面。",
       "steps": {
         "design": true,
         "html": true,
@@ -2514,8 +2514,8 @@ window.PB_SCREENS = {
           "notes": "待定 P09：收工确认、取消与返回的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P09：收工确认、取消与返回的目标页未明确。（docs/design/delivery-run.md §4.6 一局怎么结束）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P09：收工确认、取消与返回的目标页未明确。（docs/design/delivery-run.md §4.6 一局怎么结束） WB-16 冻结 v1 来源：游戏仓库 live_service_ui.gd（confirm_retire 标题）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2690,8 +2690,8 @@ window.PB_SCREENS = {
           "notes": "待定 P08：歇脚页按钮与离开操作的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P08：歇脚页按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P08：歇脚页按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪） WB-16 冻结 v1 来源：游戏仓库 live_service_ui.gd（rest 标题，UI-12b 注释）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -2764,8 +2764,8 @@ window.PB_SCREENS = {
           "notes": "待定 P10：一局结算页各按钮的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P10：一局结算页各按钮的目标页未明确。（docs/design/delivery-run.md §4.6 一局怎么结束）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P10：一局结算页各按钮的目标页未明确。（docs/design/delivery-run.md §4.6 一局怎么结束） WB-16 冻结 v1 来源：游戏仓库 live_service_ui.gd（result 标题，UI-12b 注释）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -3129,8 +3129,8 @@ window.PB_SCREENS = {
           "notes": "待定 P07：货架按钮与离开操作的目标页未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站） 待定 P07：货架按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站） 待定 P07：货架按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪） WB-16 冻结 v1 来源：游戏仓库 live_service_ui.gd（shelf 界面标识，UI-12b 注释）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -3245,8 +3245,8 @@ window.PB_SCREENS = {
           "notes": "待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。"
         }
       ],
-      "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。（docs/design/delivery-run.md §6.1 已定做法）",
+      "game": "frozen_v1",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：重做版的游戏接入仍未登记。 待定 P18：心愿卡与上上签页面的打开、出发及关闭路由未明确。（docs/design/delivery-run.md §6.1 已定做法） WB-16 冻结 v1 来源：游戏仓库 live_order_ui.gd（UI-12c 准备页开头注释与 wish 标识，对应包中同组发愿卡）；这只证明旧版页面在用，不代表重做版已接入。",
       "steps": {
         "design": true,
         "html": true,
@@ -3282,7 +3282,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P19：心愿交付页下一页操作的目标页未明确。（docs/design/delivery-run.md §6.1 已定做法）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P19：心愿交付页下一页操作的目标页未明确。（docs/design/delivery-run.md §6.1 已定做法） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -3359,7 +3359,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P12：再送一单按钮的目标页存在来源差异。（docs/design/delivery-slice.md §2 一局的流程）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P12：再送一单按钮的目标页存在来源差异。（docs/design/delivery-slice.md §2 一局的流程） WB-16：限定注释/标题只见通用 result / ResultTitle，与其他已登记画面不能唯一绑定，保持未接入；不据此否认冻结 v1 存在相应页面。",
       "steps": {
         "design": true,
         "html": true,
@@ -3433,7 +3433,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P11：失败结算页各按钮的目标页未明确。（docs/design/delivery-slice.md §2 一局的流程）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P11：失败结算页各按钮的目标页未明确。（docs/design/delivery-slice.md §2 一局的流程） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -3591,7 +3591,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站） 待定 P07：货架按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P06：打开货架时选用的货架画面未绑定。（docs/design/delivery-slice.md §8 驿站） 待定 P07：货架按钮与离开操作的目标页未明确。（docs/design/delivery-run.md §4.2 花在哪） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -3873,7 +3873,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -4147,7 +4147,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -4199,7 +4199,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -4251,7 +4251,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -4349,7 +4349,7 @@ window.PB_SCREENS = {
         }
       ],
       "game": "not_yet",
-      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩）",
+      "notes": "公开示例，仅登记按键、按钮与页面。待定 P24：游戏 main 的页面消费证据不足，保持 not_yet。 待定 P22：剧情页面各打开、返回、确认操作的目标页未明确。（docs/design/mode-story.md §2.3 一单里的规矩） WB-16：限定只读的 live 文件注释和标题尚不能唯一绑定本页，保持未接入；剧情/伙计也不推断已使用。",
       "steps": {
         "design": true,
         "html": true,
@@ -4359,18 +4359,135 @@ window.PB_SCREENS = {
       },
       "coverage": null,
       "variantsProgress": []
+    },
+    {
+      "id": "lobby_modes",
+      "art": null,
+      "variants": [],
+      "name": "多模式大厅",
+      "flow": "开始",
+      "game": "not_yet",
+      "notes": "来源：游戏仓库 CORE-01 交付要求；现在游戏在旧大厅上用代码加入口。用途：统一展示可进入的模式，先补 HTML 设计。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
+    },
+    {
+      "id": "delivery_growth",
+      "art": null,
+      "variants": [],
+      "name": "配送成长与下一单选项面板",
+      "flow": "配送一局",
+      "game": "frozen_v1",
+      "notes": "来源：游戏仓库 live_growth_ui.gd 开头 growth / next-order 注释及 growth 标题。用途：展示成长与下一单选项；v1 直接在游戏代码里做的，重做时先补设计。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
+    },
+    {
+      "id": "delivery_kitchen",
+      "art": null,
+      "variants": [],
+      "name": "配送补给厨房面板",
+      "flow": "配送一局",
+      "game": "frozen_v1",
+      "notes": "来源：游戏仓库 live_panels.gd 的 kitchen / KitchenTitle 标题。用途：展示补给厨房；v1 直接在游戏代码里做的，重做时先补设计。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
+    },
+    {
+      "id": "new_play_keys",
+      "art": null,
+      "variants": [],
+      "name": "新操作的按键提示",
+      "flow": "新关卡线（设计中）",
+      "game": "not_yet",
+      "notes": "来源：docs/design/gameplay/README.md。用途：新操作的按键提示；暂定，等操作方案确认后再画。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
+    },
+    {
+      "id": "new_controls",
+      "art": null,
+      "variants": [],
+      "name": "新操作的操作说明页",
+      "flow": "新关卡线（设计中）",
+      "game": "not_yet",
+      "notes": "来源：docs/design/gameplay/README.md。用途：新操作的操作说明页；暂定，等操作方案确认后再画。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
+    },
+    {
+      "id": "hud_tools",
+      "art": null,
+      "variants": [],
+      "name": "本关工具图标",
+      "flow": "新关卡线（设计中）",
+      "game": "not_yet",
+      "notes": "来源：docs/design/gameplay/README.md。用途：本关工具图标；暂定，等操作方案确认后再画。",
+      "transitions": [],
+      "steps": {
+        "design": false,
+        "html": false,
+        "approved": false,
+        "godot": "missing",
+        "game": false
+      },
+      "coverage": null,
+      "variantsProgress": []
     }
   ],
   "unlisted": [],
   "totals": {
-    "pages": 42,
+    "pages": 48,
+    "painted": 42,
+    "missing_design": 6,
     "design": 42,
     "html": 42,
     "approved": 42,
     "implemented": 10,
     "reference_only": 10,
-    "missing": 22,
-    "in_use": 11,
-    "not_yet": 31
+    "missing": 28,
+    "in_use": 4,
+    "frozen_v1": 19,
+    "not_yet": 25
   }
 };

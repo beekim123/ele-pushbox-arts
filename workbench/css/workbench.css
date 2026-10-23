@@ -502,3 +502,13 @@ button.screen-step { cursor:pointer; }
 .docs-lightbox-frame img { display:block; max-width:none; margin:auto; image-rendering:pixelated; }
 @media(max-width:1200px) { .docs-body { grid-template-columns:minmax(0,1fr); gap:20px; } .docs-outline { position:static; grid-row:1; max-height:150px; } #docs-toc { columns:2; column-gap:22px; } #docs-toc a { break-inside:avoid; } }
 @media(max-width:720px) { #view-docs { overflow:auto; } .docs-layout { height:auto; grid-template-columns:minmax(0,1fr); } .docs-directory { max-height:310px; border-right:0; border-bottom:1px solid var(--line); padding:16px; } .docs-body { padding:20px 16px 60px; } .docs-prose h1 { font-size:23px; } .docs-outline { max-height:130px; } #docs-toc { columns:1; } .docs-lightbox { inset:8px; width:calc(100vw - 16px); height:calc(100vh - 16px); padding:10px; } }
+
+/* WB-16 state colors use both explicit symbols and the chrome's light/dark palette. */
+.screen-step.done { color:var(--ok); border-color:currentColor; }
+.screen-step.partial { color:var(--warn); border-color:currentColor; }
+.screen-step.pending { color:var(--muted); opacity:1; }
+.screen-step.missing { color:var(--danger); border-color:currentColor; font-weight:650; }
+.screen-progress-legend { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.screen-source { max-width:270px; margin:6px 0 0; font-size:12px; color:var(--muted); }
+.screen-source-heading th { background:var(--panel-2); color:var(--muted); font-size:12px; }
+#screen-backlog>.screen-flow-heading th { color:var(--danger); font-size:16px; }
