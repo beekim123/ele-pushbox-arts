@@ -30,7 +30,7 @@
   }
 
   const PREF_KEY = "pushbox.review.preferences.v1", ZOOMS = [2, 3, 4, 6];
-  const CAT = Object.assign({}, root.PBAssets.CAT, { monster: "怪物", avatar: "头像", cargo: "货物" });
+  const CAT = root.PBAssets.CAT;
   const prefs = { batch: "all", status: "review", cat: "all", q: "", zooms: {} };
   try {
     const saved = JSON.parse(localStorage.getItem(PREF_KEY) || "null");
@@ -41,7 +41,7 @@
   } catch (e) { /* Storage may be unavailable on file:// or in private browsing. */ }
   function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch (e) { /* Keep working without persistence. */ } }
 
-  let lightbox = null, searchTimer = 0;
+  let lightbox = null, searchTimer = 0, opened = false;
   function closeLightbox() {
     if (!lightbox) return;
     const old = lightbox; lightbox = null;
@@ -115,11 +115,15 @@
     const assigned = new Set(batches.flatMap(b => b.assets.map(a => a.id)));
     batches.push({ id: "other", name: "其他", about: "尚未归入批次的资产", assets: assets.filter(a => !assigned.has(a.id)) });
     if (prefs.batch !== "all" && !batches.some(b => b.id === prefs.batch)) prefs.batch = "all";
-    if (!["review", "approved", "all"].includes(prefs.status)) prefs.status = "review";
+    if (!["review", "approved", "draft", "local", "all"].includes(prefs.status)) prefs.status = "review";
     const categories = [...new Set(assets.map(a => a.category))];
     if (prefs.cat !== "all" && !categories.includes(prefs.cat)) prefs.cat = "all";
     const counts = { approved: 0, review: 0, draft: 0, local: 0 };
     for (const a of assets) counts[store.status(a.id)]++;
+    if (!opened) {
+      prefs.status = counts.review ? "review" : "all";
+      prefs.batch = "all"; prefs.cat = "all"; prefs.q = ""; opened = true;
+    }
     box.append(el("h2", { text: "确认美术" }),
       el("p", { class: "muted", text: `共 ${assets.length} 项：待确认 ${counts.review}、已确认 ${counts.approved}、草稿 ${counts.draft}、本地修改 ${counts.local}。` }),
       el("p", { class: "note small", text: "勾选你实际看过并认可的具体版本，再复制确认文字或下载文件交回。勾选不等于确认；只有用户确认并记录进 art/approvals.json 的版本才能进入游戏。修改意见会一起交回。" }));
@@ -128,7 +132,7 @@
     const content = el("div", { class: "review-content" });
     const filters = el("div", { class: "review-filters" }), results = el("div", { id: "review-results" });
     const status = el("select", { id: "review-status", onchange: () => { prefs.status = status.value; changed(); } });
-    for (const [value, name] of [["review", "待确认"], ["approved", "已确认"], ["all", "全部"]]) status.append(el("option", { value, text: name }));
+    for (const [value, name] of [["review", "待确认"], ["approved", "已确认"], ["draft", "草稿"], ["local", "本地修改"], ["all", "全部"]]) status.append(el("option", { value, text: name }));
     status.value = prefs.status;
     const cat = el("select", { id: "review-category", onchange: () => { prefs.cat = cat.value; changed(); } });
     cat.append(el("option", { value: "all", text: "全部类别" }));
@@ -138,6 +142,17 @@
       oninput: () => { clearTimeout(searchTimer); const value = search.value; searchTimer = setTimeout(() => { prefs.q = value; changed(); }, 150); } });
     filters.append(el("label", { class: "review-control", text: "状态 " }, [status]), el("label", { class: "review-control", text: "类别 " }, [cat]),
       el("label", { class: "review-search", text: "搜索 " }, [search]));
+    if (!counts.review) {
+      const notice = el("div", { class: "note review-empty-notice", id: "review-empty-notice" }, [el("p", { text: "当前没有待确认的美术" })]);
+      const recent = batches.filter(b => b.id !== "other" && b.assets.length).slice(-1)[0];
+      const shortcut = (label, batch, state) => el("button", { class: "btn small", type: "button", text: label, onclick: () => {
+        prefs.batch = batch; prefs.status = state; prefs.cat = "all"; prefs.q = "";
+        status.value = state; cat.value = "all"; search.value = ""; clearTimeout(searchTimer); changed();
+      } });
+      if (recent) notice.append(shortcut("最近批次：" + recent.name, recent.id, "all"));
+      notice.append(shortcut("草稿 " + counts.draft + " 项", "all", "draft"));
+      box.append(notice);
+    }
     content.append(filters, results);
     box.append(el("div", { class: "review-layout" }, [sidebar, content]));
 
@@ -237,5 +252,5 @@
     for (const r of recs) box.append(el("details", {}, [el("summary", { text: `${r.id} · ${r.date.slice(0, 10)} · ${r.by}（${r.via === "chat" ? "聊天" : "工作台文件"}）· ${r.items.length} 项${r.scope ? " · " + r.scope : ""}` }),
       el("ul", {}, r.items.map((i) => el("li", { class: "mono", text: `${i.asset}@v${i.version} #${i.hash.slice(0, 12)} → ${i.png}` }))), r.note ? el("p", { class: "small", text: r.note }) : null]));
   }
-  root.PBReview = { show };
+  root.PBReview = { show, hide: () => { opened = false; clearTimeout(searchTimer); closeLightbox(); } };
 })(window);

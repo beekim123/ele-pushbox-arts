@@ -3,7 +3,7 @@
 (function (root) {
   "use strict";
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
-  const CAT = { theme: "主题（地形·背景·生态）", fauna: "小动物", deco: "植物与装饰", character: "角色", object: "箱子与物件", mechanism: "机关", item: "物品", fx: "特效", ui: "界面元素", screen: "界面画面", terrain: "地形与背景", material: "材料（第 2–5 章）" };
+  const CAT = { avatar: "头像", cargo: "货物", monster: "怪物", scene: "整幅场景", theme: "主题（地形·背景·生态）", fauna: "小动物", deco: "植物与装饰", character: "角色", object: "箱子与物件", mechanism: "机关", item: "物品", fx: "特效", ui: "界面元素", screen: "界面画面", terrain: "地形与背景", material: "材料（第 2–5 章）" };
   const filt = { cat: "all", status: "all", q: "" };
   let selected = null, stage = null, anim = null;
 
@@ -69,7 +69,7 @@
       const st = store.status(a.id), key = a.frames || a;
       let entry = cards.get(a.id);
       if (!entry || entry.key !== key || entry.status !== st) {
-        const node = el("button", { class: "card", type: "button", onclick: () => { location.hash = "#assets/" + a.id; } }, [
+        const node = el("button", { class: "card", type: "button", onclick: () => { root.PBDetailDrawer.origin("asset-inspector", () => cards.get(a.id).node); if (location.hash === "#assets/" + a.id) show(a.id); else location.hash = "#assets/" + a.id; } }, [
           el("div", { class: "thumb" }, [thumb(a, 128, 80)]),
           el("div", { class: "name", text: a.name }),
           el("div", { class: "row" }, [el("span", { class: "id", text: `${a.id} v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]),
@@ -155,7 +155,9 @@
   function show(id) {
     selected = id && store.asset(id) ? id : selected;
     renderFilters(); renderCards(); renderInspector();
+    root.PBDetailDrawer.origin("asset-inspector", () => cards.get(selected)?.node);
+    root.PBDetailDrawer.show("asset-inspector", !!id);
     document.getElementById("asset-search").oninput = (e) => { clearTimeout(searchTimer); const value = e.target.value.trim(); searchTimer = setTimeout(() => { filt.q = value; renderCards(); }, 150); };
   }
-  root.PBAssets = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true), CAT, thumb, drawProcedural };
+  root.PBAssets = { show, hide: () => { root.PBDetailDrawer.hide("asset-inspector"); if (stage) stage.setVisible(false); }, wake: () => stage && stage.setVisible(true), CAT, thumb, drawProcedural };
 })(window);

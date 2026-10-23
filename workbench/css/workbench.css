@@ -264,7 +264,7 @@ table.concepts td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .badge.cv-no { color: var(--danger); }
 .concept-scene-frame { overflow: auto; max-width: 100%; margin: 8px 0; }
 canvas.concept-scene { display: block; width: 960px; height: 540px; image-rendering: pixelated; background: var(--stage); border-radius: 4px; }
-.concept-scene-empty { width: min(960px, 100%); aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; margin: 8px 0; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel); color: var(--muted); }
+.concept-scene-empty { margin: 8px 0; color: var(--muted); }
 .concept-images { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start; }
 button.concept-thumb { display: flex; flex-direction: column; gap: 4px; max-width: 100%; padding: 4px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); color: inherit; text-align: left; cursor: zoom-in; }
 .concept-thumb img { display: block; max-width: 100%; image-rendering: pixelated; }
@@ -359,3 +359,19 @@ body:has(#view-review:not([hidden])) .toast { bottom: 110px; z-index: 16; }
 
 /* Bind percentage thumbnail limits to the card, rather than an implicit max-content track. */
 .card .thumb { grid-template-columns: minmax(0, 1fr); }
+
+
+/* WB-09: narrow details are modal drawers; the original wide grid is untouched. */
+.detail-drawer { position: fixed; inset: 0 0 0 auto; width: min(440px, 100vw); height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; border-left: 1px solid var(--line); background: var(--panel); color: var(--text); }
+.detail-drawer[open] { display: flex; flex-direction: column; }
+.detail-drawer::backdrop { background: rgba(15, 14, 18, .55); }
+.detail-drawer-head { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border-bottom: 1px solid var(--line); }
+.detail-drawer > .info { flex: 1; min-height: 0; width: 100%; border: 0; }
+.nav-subgroup > summary { padding: 8px 10px; color: var(--muted); cursor: pointer; }
+.nav-subgroup > .nav-list { padding-left: 10px; }
+.concept-text-only > summary { padding: 12px 0; font-weight: 600; cursor: pointer; }
+.review-empty-notice .btn { margin: 0 8px 4px 0; }
+@media (max-width: 720px) { .detail-drawer { width: 100vw; border-left: 0; } }
+
+table.concepts th:nth-child(2), table.concepts td:nth-child(2) { white-space: nowrap; }
+table.concepts th:first-child { min-width: 80px; }

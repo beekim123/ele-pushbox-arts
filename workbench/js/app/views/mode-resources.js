@@ -3,7 +3,7 @@
 (function (root) {
   'use strict';
   const store = root.PBStore, C = root.PBModeCatalog, el = root.PBStage.el;
-  const CAT = Object.assign({}, root.PBAssets.CAT, {avatar:'头像',cargo:'货物',monster:'怪物',scene:'整幅场景'});
+  const CAT = root.PBAssets.CAT;
   function create(mode) {
     const config = C.MODES[mode];
     let section = 'all', grid = null, count = null, empty = null, audioStatus = null;

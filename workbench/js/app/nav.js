@@ -128,7 +128,13 @@
       const dot = h("span", { class: "nav-dot", hidden: true });
       const head = h("button", { class: "nav-head", type: "button", "data-group": m.group, "aria-controls": listId, onclick: () => setGroup(m.group, !isOpen(m.group)) },
         [h("span", { class: "nav-head-label", text: m.label }), dot, h("span", { class: "chev", "aria-hidden": "true" })]);
-      const list = h("ul", { class: "nav-list", id: listId, role: "list" }, own.map((p) => h("li", {}, [link(p)])));
+      const textOnly = own.filter(p => p.view === "concepts" && p.key !== "concepts" && !(root.PB_CONCEPT_SCENES || {})[p.key.slice("concepts/".length)]);
+      const textKeys = new Set(textOnly.map(p => p.key));
+      const list = h("ul", { class: "nav-list", id: listId, role: "list" }, own.filter(p => !textKeys.has(p.key)).map((p) => h("li", {}, [link(p)])));
+      if (textOnly.length) list.append(h("li", {}, [h("details", { id: "nav-concept-text-only", class: "nav-subgroup" }, [
+        h("summary", { text: "只有文字（" + textOnly.length + "）" }),
+        h("ul", { class: "nav-list", role: "list" }, textOnly.map(p => h("li", {}, [link(p)]))),
+      ])]));
       nav.append(h("div", { class: "nav-group", "data-group": m.group }, [head, list]));
       heads.set(m.group, { head, list, dot, pages: PAGES.filter((p) => p.group === m.group) });
       applyGroup(m.group);
@@ -218,6 +224,8 @@
       if (media.addEventListener) media.addEventListener("change", onChange); else if (media.addListener) media.addListener(onChange);
     }
     syncToggle();
+    // Concept renderers follow main.js in the offline document; group after registration.
+    root.addEventListener("DOMContentLoaded", () => { const key = currentKey; render(); setCurrent(current, { key }); root.PBMain.updateBadges(); });
   }
 
   root.PBNav = {
