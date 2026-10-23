@@ -204,5 +204,34 @@ let server, browser;
   }
   await measure('library?id=char.portitor', 10);
   for (const id of ['ui.screen.reels', 'ui.screen.settlement', 'ui.screen.levels']) await measure('library?id=' + id, 30, true);
+  // WB-12 appended measurements: ordinary animated views retain the 10% gate.
+  // Only levels is one of WB-08's named heavy paintings (30%, report only).
+  const playURL = url.replace('index.html', 'play.html');
+  const playPages = ['lobby', 'chapters', 'levels', 'play', 'pause', 'hint', 'rulecard', 'complete', 'settings', 'controls', 'dialogue'];
+  for (const id of playPages) {
+    await page.goto(playURL + '#' + id); await page.waitForFunction(id => document.body.dataset.page === id, id);
+    await page.waitForTimeout(450);
+    const before = await metrics(); await page.waitForTimeout(3000); const after = await metrics();
+    const cpu = (after.TaskDuration - before.TaskDuration) / (after.Timestamp - before.Timestamp) * 100;
+    const heavy = id === 'levels', limit = heavy ? 30 : 10;
+    const row = { page: 'play.html#' + id, cpuPercent: +cpu.toFixed(2), limit, heavy };
+    results.push(row); console.log(JSON.stringify(row));
+    if (!heavy) assert.ok(cpu < limit, 'play.html#' + id + ' idle CPU <' + limit + '%');
+  }
+  const playSwitches = [];
+  for (const id of playPages) {
+    await page.evaluate(() => { window.wbLongTasks = []; });
+    const elapsed = await page.evaluate(async id => {
+      const start = performance.now(); location.hash = '#' + id;
+      while (document.body.dataset.page !== id) await new Promise(resolve => setTimeout(resolve, 0));
+      return performance.now() - start;
+    }, id);
+    await page.waitForTimeout(150);
+    const block = await page.evaluate(() => Math.max(0, ...wbLongTasks.map(t => t.duration)));
+    const row = { id, elapsedMs: +elapsed.toFixed(2), longestTaskMs: +block.toFixed(2), targetMs: 250, heavy: id === 'levels' };
+    playSwitches.push(row); console.log(JSON.stringify({ page: 'play.html', switch: row }));
+    if (id !== 'levels') assert.ok(block < 250, 'play.html#' + id + ' switch longest task <250ms');
+  }
+  console.log(JSON.stringify({ page: 'play.html', switches: playSwitches }));
   assert.deepEqual(errors, []); console.log('WB-08 performance gates passed ' + (process.env.WB_HTTP === '1' ? 'HTTP' : 'file'));
 })().catch(e => { console.error(e.stack); process.exitCode = 1; }).finally(async () => { if (browser) await browser.close(); if (server) await new Promise(resolve => server.close(resolve)); });

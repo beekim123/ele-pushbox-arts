@@ -63,12 +63,13 @@
     for (const extra of o.extras || []) bar.append(extra);
     bar.append(el("span", { class: "spacer" }), info);
 
-    const children = [bar, frame];
+    const children = o.controls === false ? [frame] : [bar, frame];
     if (o.disclaimer) children.push(el("p", { class: "disclaimer", text: o.disclaimer }));
     if (o.caption) children.push(el("p", { class: "stage-caption", text: o.caption }));
     for (const c of children) host.append(c);
 
     frame.addEventListener("keydown", (e) => {
+      if (o.keyboard === false) return;
       if (e.key === " " && o.animated) { setPlaying(!state.playing); e.preventDefault(); }
       else if (e.key === "ArrowRight" && o.animated) { step(1); e.preventDefault(); }
       else if (e.key === "ArrowLeft" && o.animated) { step(-1); e.preventDefault(); }
@@ -83,6 +84,7 @@
     }
     function effectiveZoom() {
       if (state.zoom) return state.zoom;
+      if (o.fitWindow) return Math.max(1, Math.floor(Math.min(window.innerWidth / state.w, window.innerHeight / state.h)));
       const availW = Math.max(160, frame.clientWidth - 32), availH = Math.max(160, (o.maxHeight || window.innerHeight * 0.62));
       let z = Math.floor(Math.min(availW / state.w, availH / state.h));
       return Math.max(1, Math.min(o.maxFit || 12, z));
