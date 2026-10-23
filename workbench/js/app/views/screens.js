@@ -4,14 +4,14 @@
  const el=root.PBStage.el,store=root.PBStore,data=root.PB_SCREENS,all=data.screens;
  const byId=new Map(all.map(s=>[s.id,s])),flows=['开始','关卡内','配送一局','剧情','伙计','设置与帮助'];
  const nativeLabels={implemented:'已实现',reference_only:'只有参考图',missing:'没有条目'};
- let stage=null,query='',current=null,art=null,hintTier=2;
+ let stage=null,embedded=null,updateEmbedded=null,query='',current=null,art=null,hintTier=2;
  function link(id,text){return el('a',{href:'#screen/'+id,text:text||byId.get(id)?.name||id});}
  function target(t){return byId.has(t.to)?link(t.to):el('span',{text:{'@return':'返回来源页','@quit':'退出游戏','@stay':'留在本页'}[t.to]});}
  function from(id){return all.flatMap(s=>s.transitions.filter(t=>t.to===id).map(t=>({screen:s,transition:t})));}
  function identify(id){return all.find(s=>s.art===id||s.variants.includes(id));}
  function coverage(entry,host){host.hidden=false;host.textContent=entry?JSON.stringify(entry,null,2):'没有条目';}
- function progress(s,host,detail,selectedArt){
-  const variant=s.variantsProgress.find(v=>v.art===selectedArt),steps=variant?{design:true,...variant.steps,game:s.steps.game}:s.steps,entry=variant?variant.coverage:s.coverage;
+ function progress(s,host,detail,selectedArt,ownVariantProgress=false){
+  const variant=s.variantsProgress.find(v=>v.art===selectedArt),steps=variant?{design:true,...variant.steps,game:ownVariantProgress?variant.steps.game:s.steps.game}:s.steps,entry=variant?variant.coverage:s.coverage;
   const items=[['design','设计',true],['html','HTML 画面',steps.html],['approved','用户确认',steps.approved],['godot','Godot · '+nativeLabels[steps.godot],steps.godot==='implemented'],['game','游戏接入',steps.game]];
   const bar=el('div',{class:'screen-progress','aria-label':'五步进度'});
   for(const [step,label,ok]of items){const attrs={class:'screen-step '+(ok?'done':'pending'),'data-step':step,title:label+'：'+(ok?'已完成':'未完成'),text:(ok?'● ':'○ ')+label};
@@ -78,6 +78,30 @@
   for(const s of all){const p=points.get(s.id),a=make('a',{href:'#screen/'+s.id,'data-screen-node':s.id});a.append(make('rect',{x:p.x,y:p.y,width:180,height:48,rx:5,class:s.game==='in_use'?'in-use':''}),make('text',{x:p.x+10,y:p.y+20},s.name),make('text',{x:p.x+10,y:p.y+37,class:'screen-svg-id'},s.id));svg.append(a);}
   const wrapper=el('div',{id:'screen-flow',class:'screen-flow',tabindex:0});wrapper.append(svg);box.append(wrapper);
  }
- function show(id,options){if(stage){stage.destroy();stage=null;}current=null;const box=document.getElementById('screens-root');box.replaceChildren();if(id==='flow')flow(box);else if(id)detail(box,id,options);else list(box);}
- root.PBScreens={show,identify,stage:()=>stage,hide:()=>{if(stage){stage.destroy();stage=null;}},where:id=>({key:'scenes',trail:['场景与界面',id==='flow'?'流程图':byId.get(id)?.name||'界面清单']})};
+ // file:// reports origin 'null'; bind messages to our exact frame and public inventory.
+ root.addEventListener('message',event=>{
+  if(!embedded||event.source!==embedded.contentWindow||event.data?.type!=='pb-play-page')return;
+  const s=byId.get(event.data.id),selectedArt=event.data.art;
+  if(event.data.id==='@quit'&&selectedArt===null){updateEmbedded?.(null,null);return;}
+  if(!s||typeof selectedArt!=='string'||![s.art,...s.variants].includes(selectedArt))return;
+  updateEmbedded?.(s,selectedArt);
+ });
+ function embeddedPreview(box,id){
+  const selected=byId.get(id)||byId.get('lobby');
+  box.append(el('h1',{text:'原样预览'}),el('p',{class:'muted',text:'点一下预览区域后使用游戏按键；配送、剧情和伙计按流程查看缩略图墙与大图。'}));
+  const layout=el('div',{class:'embedded-play-layout'}),list=el('nav',{class:'embedded-play-list','aria-label':'预览页面清单'}),main=el('div',{class:'embedded-play-main'});
+  for(const flow of flows){list.append(el('h2',{text:flow}));for(const s of all.filter(s=>s.flow===flow))list.append(el('a',{href:'#scenes/play/'+s.id,'data-preview-page':s.id,'aria-current':String(s.id===selected.id),text:s.name}));}
+  embedded=el('iframe',{id:'embedded-play',title:'原样预览 · '+selected.name,src:'play.html?embed=1#'+selected.id+(['配送一局','剧情','伙计'].includes(selected.flow)||selected.game==='not_yet'?'?mode=delivery':''),allow:'fullscreen',class:'embedded-play-frame'});
+  const steps=el('div',{id:'embedded-play-progress'}),detail=el('pre',{class:'screen-coverage',hidden:true}),name=el('h2',{id:'embedded-play-name',text:selected.name}),detailLink=el('a',{href:'#screen/'+selected.id,text:'在界面清单中打开'});
+  updateEmbedded=(s,selectedArt)=>{
+   if(!s){name.textContent='已退出（预览）';embedded.title='原样预览 · 已退出（预览）';detailLink.href='#scenes';steps.replaceChildren();detail.replaceChildren();detail.hidden=true;for(const item of list.querySelectorAll('[data-preview-page]'))item.setAttribute('aria-current','false');return;}
+   name.textContent=s.name;embedded.title='原样预览 · '+s.name;detailLink.href='#screen/'+s.id;
+   steps.replaceChildren();detail.hidden=true;progress(s,steps,detail,selectedArt,true);
+   for(const item of list.querySelectorAll('[data-preview-page]'))item.setAttribute('aria-current',String(item.dataset.previewPage===s.id));
+  };updateEmbedded(selected,selected.art);
+  main.append(embedded,name,steps,detail,detailLink);
+  layout.append(list,main);box.append(layout);
+ }
+ function show(id,options){if(stage){stage.destroy();stage=null;}if(embedded){embedded.remove();embedded=null;updateEmbedded=null;}current=null;const box=document.getElementById('screens-root');box.replaceChildren();if(id?.startsWith('play/'))embeddedPreview(box,id.slice(5));else if(id==='flow')flow(box);else if(id)detail(box,id,options);else list(box);}
+ root.PBScreens={show,identify,stage:()=>stage,hide:()=>{if(embedded){embedded.remove();embedded=null;updateEmbedded=null;}if(stage){stage.destroy();stage=null;}},where:id=>({key:'scenes',trail:['场景与界面',id?.startsWith('play/')?'原样预览':id==='flow'?'流程图':byId.get(id)?.name||'界面清单']})};
 })(window);

@@ -1,5 +1,12 @@
 // Public art workbench smoke test; fresh profile, one browser renderer.
 const fs=require('fs'), path=require('path'), assert=require('assert/strict');
+// Fast route contract also runs without a browser while UI work is in progress.
+if(process.env.WB_PLAY_ROUTE_ONLY==='1'){
+  const vm=require('vm'),window={},document={documentElement:{}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../workbench/js/app/nav.js'),'utf8'),{window,document,URLSearchParams,localStorage:{getItem:()=>null}});
+  assert.deepEqual(JSON.parse(JSON.stringify(window.PBNav.resolve('#scenes/play/settings'))),{hash:'#scenes/play/settings',view:'screens',id:'play/settings',nav:'scenes'},'embedded route stays inside scene workspace');
+  console.log('WB-14 embedded route passed');process.exit(0);
+}
 const { chromium }=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const ROOT=path.resolve(__dirname,'..');
 let server, browser, failures=[];

@@ -431,3 +431,15 @@ button.screen-step { cursor:pointer; }
 #screen-stage { min-width:0; }
 #screen-incoming li,#screen-outgoing li { margin:8px 0; }
 @media(max-width:720px) { .screens-page { padding:14px 10px; } .screen-table { min-width:760px; } }
+
+/* WB-14 embedded public preview: one isolated frame, grouped page links. */
+.embedded-play-layout{display:grid;grid-template-columns:minmax(145px,210px) minmax(0,1fr);gap:20px;align-items:start}
+.embedded-play-list{max-height:72vh;overflow:auto;border:1px solid var(--line);padding:12px}
+.embedded-play-list h2{font-size:13px;margin:16px 0 6px}
+.embedded-play-list h2:first-child{margin-top:0}
+.embedded-play-list a{display:block;padding:6px 8px;border-radius:4px;text-decoration:none}
+.embedded-play-list a[aria-current="true"]{background:var(--panel-2);color:var(--accent)}
+.embedded-play-main{min-width:0}
+.embedded-play-frame{display:block;width:100%;aspect-ratio:16/9;border:1px solid #5e584c;background:#000}
+#embedded-play-progress{margin:12px 0}
+@media(max-width:720px){.embedded-play-layout{grid-template-columns:1fr}.embedded-play-list{max-height:170px}.embedded-play-list a{display:inline-block}.embedded-play-list h2{display:block}}

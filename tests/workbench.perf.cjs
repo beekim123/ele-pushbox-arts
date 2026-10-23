@@ -233,5 +233,20 @@ let server, browser;
     if (id !== 'levels') assert.ok(block < 250, 'play.html#' + id + ' switch longest task <250ms');
   }
   console.log(JSON.stringify({ page: 'play.html', switches: playSwitches }));
+  // WB-14: measure the frame's renderer without weakening the ordinary 10% gate.
+  await page.goto(url+'#scenes/play/settings');await page.waitForSelector('#embedded-play');
+  const embedded=page.frames().find(f=>f!==page.mainFrame());await embedded.waitForFunction(()=>document.body.dataset.page==='settings');
+  let embedCDP,embedScope;
+  try{embedCDP=await page.context().newCDPSession(embedded);embedScope='iframe renderer target';await embedCDP.send('Performance.enable');}
+  catch(error){if(!/does not have a separate CDP session/.test(error.message))throw error;embedCDP=cdp;embedScope='shared renderer target: iframe plus idle parent';}
+  const embedMetrics=async()=>Object.fromEntries((await embedCDP.send('Performance.getMetrics')).metrics.map(m=>[m.name,m.value]));
+  await page.waitForTimeout(450);const embedBefore=await embedMetrics();await page.waitForTimeout(3000);const embedAfter=await embedMetrics();
+  const embeddedCPU=(embedAfter.TaskDuration-embedBefore.TaskDuration)/(embedAfter.Timestamp-embedBefore.Timestamp)*100;
+  console.log(JSON.stringify({page:'scenes/play/settings',cpuPercent:+embeddedCPU.toFixed(2),limit:10,scope:embedScope}));
+  assert.ok(embeddedCPU<10,'embedded preview idle CPU <10%');if(embedCDP!==cdp)await embedCDP.detach();
+  await page.goto(playURL+'#reels?mode=delivery');await page.waitForFunction(()=>document.body.dataset.presentation==='wall');
+  const wallBefore=await metrics();await page.waitForTimeout(3000);const wallAfter=await metrics();
+  const wallCPU=(wallAfter.TaskDuration-wallBefore.TaskDuration)/(wallAfter.Timestamp-wallBefore.Timestamp)*100;
+  console.log(JSON.stringify({page:'delivery-wall',cpuPercent:+wallCPU.toFixed(2),limit:10}));assert.ok(wallCPU<10,'PNG gallery idle CPU <10%');
   assert.deepEqual(errors, []); console.log('WB-08 performance gates passed ' + (process.env.WB_HTTP === '1' ? 'HTTP' : 'file'));
 })().catch(e => { console.error(e.stack); process.exitCode = 1; }).finally(async () => { if (browser) await browser.close(); if (server) await new Promise(resolve => server.close(resolve)); });
