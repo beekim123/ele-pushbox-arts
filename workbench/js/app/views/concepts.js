@@ -42,24 +42,22 @@
     box.append(el("h2", { text: "地图概念" }),
       el("p", { class: "muted", text: "新地图先出概念：会动的概念场景、文字说明和静态概念图；用户满意了再做详细设计和全部美术。概念图只用来挑方向，不进游戏。" }),
       el("p", { class: "small muted" }, ["数据：", code("content/concepts/maps.json"), "；概念图：", code("art/concepts/<id>/"), "；概念场景：", code("workbench/js/concepts/<id>.js"), "。"]));
-    const withScene = maps().filter(registered), textOnly = maps().filter(m => !registered(m));
-    function table(group) {
-    const t = el("table", { class: "grid concepts" });
-    t.append(el("thead", {}, [el("tr", {}, ["名字", "阶段", "文化", "一句话", "完整度", "用户评价"].map((x) => el("th", { text: x })))]));
-    const tb = el("tbody");
-    for (const m of group) tb.append(el("tr", { "data-id": m.id }, [
-      el("td", {}, [el("a", { href: "#concepts/" + m.id, text: m.name || m.id })]),
-      el("td", { text: m.stage || "—" }),
-      el("td", { text: m.culture || "—" }),
-      el("td", { class: "small", text: m.pitch || "" }),
-      el("td", { class: "small", text: "概念场景" + (registered(m) ? "有" : "无") + " · 静态概念图 " + list(m.images).length + " 张" }),
-      el("td", {}, [badge(m.verdict, VERDICT[m.verdict] || "")]),
-    ]));
-    t.append(tb);
-    return t;
+    const filters={stage:'all',verdict:'all',complete:'all'},controls=el('div',{class:'concept-controls'});
+    const count=el('p',{class:'small muted','aria-live':'polite'}),results=el('div');
+    function select(label,key,choices){const control=el('select',{'aria-label':label,onchange:()=>{filters[key]=control.value;render();}});for(const [id,name]of choices)control.append(el('option',{value:id,text:name}));controls.append(el('label',{class:'library-control'},[label,control]));}
+    select('阶段','stage',[['all','全部阶段'],...[...new Set(maps().map(m=>m.stage||'—'))].map(v=>[v,v])]);
+    select('评价','verdict',[['all','全部评价'],...[...new Set(maps().map(m=>m.verdict||'—'))].map(v=>[v,v])]);
+    select('完整度','complete',[['all','全部完整度'],['scene','有概念场景'],['text','只有文字'],['images','有概念图']]);
+    function wall(group){return el('div',{class:'concept-wall'},group.map(m=>el('a',{class:'concept-card',href:'#concepts/'+m.id,'data-id':m.id},[
+      el('h3',{text:m.name||m.id}),el('p',{class:'small',text:m.culture||'—'}),el('div',{class:'row'},[badge(m.stage,'cv-stage'),badge(m.verdict,VERDICT[m.verdict]||'')]),el('p',{class:'small muted',text:'概念场景'+(registered(m)?'有':'无')+' · 概念图 '+list(m.images).length+' 张'}),el('p',{class:'small',text:m.pitch||''})
+    ])));}
+    function render(){const rows=maps().filter(m=>(filters.stage==='all'||(m.stage||'—')===filters.stage)&&(filters.verdict==='all'||(m.verdict||'—')===filters.verdict)&&(filters.complete==='all'||filters.complete==='scene'&&registered(m)||filters.complete==='text'&&!registered(m)||filters.complete==='images'&&list(m.images).length));
+      const withScene=rows.filter(registered),textOnly=rows.filter(m=>!registered(m));
+      count.textContent='显示 '+rows.length+' / '+maps().length+' 张地图概念';
+      results.replaceChildren(el('h3',{text:'有概念场景（'+withScene.length+'）'}),wall(withScene),el('details',{id:'concept-text-only',class:'concept-text-only'},[el('summary',{text:'只有文字（'+textOnly.length+'）'}),wall(textOnly)]));
+      if(!rows.length)results.append(el('p',{class:'muted',text:'没有符合条件的地图概念。'}));
     }
-    box.append(el("h3", { text: "有概念场景（" + withScene.length + "）" }), table(withScene),
-      el("details", { id: "concept-text-only", class: "concept-text-only" }, [el("summary", { text: "只有文字（" + textOnly.length + "）" }), table(textOnly)]));
+    box.append(controls,count,results);render();
   }
 
   // ---- #concepts/<id>: the card ----

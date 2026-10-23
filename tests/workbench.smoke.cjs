@@ -22,77 +22,8 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error') errors.push(m.text());});
   await page.goto(url);await page.waitForTimeout(200);
   if(process.env.WB_VISIBLE_ONLY==='1'){await visibleContentRegression(page,url);assert.deepEqual(errors,[]);return;}
-  check(await page.locator('#view-scenes').isVisible(),'default opens art scenes');
-  const groups=await page.evaluate(()=>PBNav.MENU.map(g=>g.label));
-  assert.deepEqual(groups,['关卡模式','配送模式','地图概念','美术','声音']);
-  const pages=await page.evaluate(()=>PBNav.pages().map(p=>p.view));
-  for(const view of pages){await page.goto(url+'#'+view);await page.waitForTimeout(120);check(await page.locator('#view-'+view).isVisible(),'menu '+view);}
-  // The restored mode entries must be actual clickable navigation, not labels.
-  for(const [mode,view] of [['level','level-art'],['delivery','delivery-art']]){
-    const head=page.locator('#nav button.nav-head[data-group="'+mode+'"]');
-    if(await head.getAttribute('aria-expanded')==='false') await head.click();
-    await page.locator('#nav a[data-key="'+view+'"]').click();
-    await page.waitForFunction(view=>!document.querySelector('#view-'+view).hidden&&document.querySelector('#'+view+'-root .mode-resource-card'),view);
-    const expected=await page.evaluate(mode=>PBModeCatalog.assets(mode,'all',PBStore.assets()).map(a=>a.id).sort(),mode);
-    const actual=await page.locator('#'+view+'-root [data-resource-id]').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId).sort());
-    assert.deepEqual(actual,expected,mode+' mode overview contains all its assets');
-    const links=await page.locator('#nav a[data-view="'+view+'"]').evaluateAll(list=>list.map(a=>a.hash));
-    assert.ok(links.includes('#'+view+'/theme.dungeon')&&links.includes('#'+view+'/screens')&&links.includes('#'+view+'/sounds'));
-    if(process.env.WB_MODE_SCREENSHOTS){
-      fs.mkdirSync(process.env.WB_MODE_SCREENSHOTS,{recursive:true});
-      await page.screenshot({path:path.join(process.env.WB_MODE_SCREENSHOTS,mode+'.png')});
-    }
-    check(true,mode+' mode menu and complete resource overview');
-  }
-  await page.locator('#nav a[data-key="delivery-art/theme.diyu"]').click();
-  await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('地府'));
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.yama"]:visible').count(),1);
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.haenyeo"]:visible').count(),0);
-  await page.getByLabel('包括通用资源',{exact:true}).uncheck();
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="obj.crate_wood"]:visible').count(),0);
-  await page.locator('#nav a[data-key="delivery-art"]').click();
-  await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('全部资源'));
-  await page.getByLabel('搜索配送模式资源',{exact:true}).fill('ui.screen.run_door');
-  await page.waitForFunction(()=>[...document.querySelectorAll('#delivery-art-root [data-resource-id]')].filter(c=>!c.hidden).length===2);
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id]:visible').count(),2);
-  await page.getByRole('button',{name:'清除筛选',exact:true}).click();
-  await page.locator('#delivery-art-root').getByLabel('确认状态',{exact:true}).selectOption('draft');
-  const draftIds=await page.locator('#delivery-art-root [data-resource-id]:visible').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId));
-  const expectedDrafts=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json'))).assets.filter(a=>a.stage==='draft').map(a=>a.id);
-  for(const id of expectedDrafts) assert.ok(draftIds.includes(id),id+' draft remains accessible');
-  check(true,'mode search, map/common filter and draft concepts remain accessible');
-  await page.locator('#nav a[data-key="delivery-art/hub"]').click();
-  await page.waitForFunction(()=>document.querySelector('#delivery-art-root [data-resource-id="scene.hub_post"]'));
-  await page.locator('#delivery-art-root [data-resource-id="scene.hub_post"]').getByRole('link',{name:'预览与动画',exact:true}).click();
-  await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).waitFor();
-  await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).selectOption('after');
-  assert.equal(await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).inputValue(),'after');
-  check(true,'whole hub scene opens in the existing animation inspector');
-  await page.goto(url+'#delivery-art/sounds');
-  await page.waitForFunction(()=>document.querySelector('#delivery-art-root [data-preview-sound]'));
-  assert.equal(await page.locator('#delivery-art-root [data-sound-id="sfx:delivery_arrive"]').count(),1);
-  assert.ok(await page.locator('#delivery-art-root [data-preview-sound]').count()>0);
-  assert.equal(await page.evaluate(()=>PBWBAudio.player.snapshot().sfx.length),0);
-  await page.locator('#delivery-art-root [data-preview-sound="sfx:push"]').click();
-  await page.waitForFunction(()=>document.querySelector('[data-mode-audio-status="delivery"]').textContent.includes('已试听：'));
-  check(true,'mode effects use the existing audio monitor and only play after a click');
-  await page.locator('#delivery-art-root [data-preview-sound="sfx:reel_spin"]').click();
-  await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.some(v=>v.uid==='sfx:reel_spin'));
-  await page.setViewportSize({width:390,height:844});
-  await page.goto(url+'#level-art/screens');
-  await page.waitForFunction(()=>!document.querySelector('#view-level-art').hidden);
-  await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.length===0);
-  check(true,'leaving a mode stops the active looping reel effect');
-  assert.ok(await page.locator('#level-art-root [data-resource-id="ui.screen.levels"]').count()===1);
-  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mode resource page fits a narrow viewport');
-  if(process.env.WB_MODE_SCREENSHOTS) await page.screenshot({path:path.join(process.env.WB_MODE_SCREENSHOTS,'mobile.png')});
-  await page.setViewportSize({width:1280,height:800});
-  if(process.env.WB_MODE_ONLY==='1'){
-    check(errors.length===0,'no mode browser errors'+(errors.length?': '+errors.join('; '):''));
-    assert.equal(failures.length,0,failures.join('\n'));
-    console.log('mode resource checks passed (focused run; global suite not repeated)');
-    return;
-  }
+  await libraryRegression(page,url);
+  if(process.env.WB_LIBRARY_ONLY==='1'||process.env.WB_MODE_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-10 focused library checks passed');return;}
   await page.goto(url+'#ui-proposals'); await page.waitForTimeout(100);
   check(await page.locator('#ui-proposals-root figure').count()===6,'all six G2 confirmed references are present');
   await page.goto(url+'#scenes/level.M03');await page.waitForTimeout(150);
@@ -153,7 +84,7 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   check(errors.length===0,'no browser errors'+(errors.length?': '+errors.join('; '):''));
   assert.equal(failures.length,0,failures.join('\n'));
   console.log('all public workbench smoke checks passed');
-})().catch(e=>{console.error(e.message);process.exitCode=1;}).finally(async()=>{if(browser) await browser.close();if(server) await new Promise(resolve=>server.close(resolve));});
+})().catch(e=>{console.error(e.stack);process.exitCode=1;}).finally(async()=>{if(browser) await browser.close();if(server) await new Promise(resolve=>server.close(resolve));});
 
 
 // WB-09 additions: one browser, browser-only fake pending data, no repository writes.
@@ -216,16 +147,14 @@ async function visibleContentRegression(page, url) {
   const expected=await page.evaluate(()=>PBStore.content().concepts.maps.filter(m=>!PB_CONCEPT_SCENES[m.id]).map(m=>m.id));
   const textGroup=page.locator('#concept-text-only');
   assert.equal(await textGroup.getAttribute('open'),null,'text-only concept table defaults closed');
-  assert.equal(await page.locator('#nav-concept-text-only').getAttribute('open'),null,'text-only navigation defaults closed');
-  assert.equal(await textGroup.locator('tbody tr').count(),expected.length);
+  assert.equal(await page.locator('#nav a').count(),6,'concept maps stay out of the six-entry navigation');
+  assert.equal(await textGroup.locator('.concept-card').count(),expected.length);
   assert.ok((await page.locator('#concepts-root').innerText()).includes('完整度'));
   await shot('concepts-table-and-nav');
   await textGroup.locator('summary').scrollIntoViewIfNeeded();
-  await page.locator('#nav-concept-text-only summary').scrollIntoViewIfNeeded();
   await shot('concepts-text-collapsed');
   await textGroup.locator('summary').click();
-  assert.equal(await textGroup.locator('tbody tr:visible').count(),expected.length);
-  await page.locator('#nav-concept-text-only summary').click();
+  assert.equal(await textGroup.locator('.concept-card:visible').count(),expected.length);
   await shot('concepts-text-expanded');
   await go('#concepts/'+expected[0]);
   assert.equal(await page.locator('a[href^="#mechanisms/"]').count(),0);
@@ -233,7 +162,7 @@ async function visibleContentRegression(page, url) {
   assert.ok(empty&&empty.height<60,'missing concept scene occupies one line');
   await go('#maps');
   assert.equal(await page.evaluate(()=>location.hash),'#maps','unknown maps address uses normal fallback without rooms redirect');
-  assert.ok(await page.locator('#view-scenes').isVisible());
+  assert.ok(await page.locator('#view-home').isVisible());
   // Inject one fake status into this browser only; restore it even on failure.
   await page.evaluate(()=>{window.__wb09Status=PBStore.status;window.__wb09Pending=PBStore.assets().find(a=>PBStore.status(a.id)==='approved').id;PBStore.status=id=>id===window.__wb09Pending?'review':window.__wb09Status(id);});
   try {
@@ -264,4 +193,72 @@ async function visibleContentRegression(page, url) {
   assert.ok(badgeRefresh.before.every(b=>!b.hidden&&Number(b.count)>0),'browser-local draft and selection badges start populated');
   assert.deepEqual(badgeRefresh.after,badgeRefresh.before,'late concept registration refresh preserves badge visibility and counts');
   console.log('WB-09 visible content regressions passed');
+}
+
+// WB-10 baseline exported from the unmodified browser page; sorted IDs hashed independently.
+async function libraryRegression(page,url){
+  const baseline={"all":[304,"5226d2afc1843048f8eabe2df097ee0faeb81be8c5156c931786429dd28e7846"],"level/all/true":[108,"424b2c9137904c0a8a3d3297fc54bddedff8e64e7f2df6f9f798f0a32422cac8"],"level/all/false":[108,"424b2c9137904c0a8a3d3297fc54bddedff8e64e7f2df6f9f798f0a32422cac8"],"level/theme.dungeon/true":[84,"f110b0b1009700b1a2de769a6980a28b272a66f6590ba9d9fb4657a7ddcbd16e"],"level/theme.dungeon/false":[5,"12024b168c9d7ce4973d819b76a9d7fad8afe2979f4b38b1d0e8d4e10d88f8cc"],"level/theme.ruins/true":[83,"fcfa117baa0d2224b43ff25176df66d45606feee2acb3efa54e8ef4cc5e9a1fb"],"level/theme.ruins/false":[4,"1b02a40e88915bb47966b8263f85f8516b405c3083ff61bd1521f872d1ef6014"],"level/theme.cave/true":[83,"32387bbbf7c12cfc36af24e7c7ffcf6631bbe4ecfa1d4bb586a9378d3fd5c1f7"],"level/theme.cave/false":[4,"776b7424ca0aeba13b817f88169aa841a5337791aea21b70631847705db9ceef"],"level/theme.forest/true":[84,"975ca60d8b7686939de55a4768561065cc469cda55676b60849193e255f0c50d"],"level/theme.forest/false":[5,"bc1faf76500ce52585b7989c6f423803855bacb4c5a520303b71b049337b5680"],"level/theme.sky/true":[83,"d413ebdd65c45b6a0f15978cb27ef185801a528149a28cbd77b75bde1ca8e5bd"],"level/theme.sky/false":[4,"4e8ec93fdf3843b7aa82b1e0792021a7a4a428db46fbe5dcbff4752fa0f73b86"],"level/theme.cosmos/true":[82,"689ba013ee9d054c4a3eafa8716e70e61ec3e46aaf2a567afd7902b148ca262c"],"level/theme.cosmos/false":[3,"d40996ca3797d409cede7fba837c92fbcbdd68794e6edae7b1a588318cde93af"],"level/characters/true":[13,"670f0fc7aa88054f4186d0c6bccb75440f8111a3dd88b693365362e319b75e93"],"level/characters/false":[13,"670f0fc7aa88054f4186d0c6bccb75440f8111a3dd88b693365362e319b75e93"],"level/items/true":[17,"f11b7337ca8dba5f7e44cd4c54bc479c12a27e5f37d321b71072df5b54a245c0"],"level/items/false":[17,"f11b7337ca8dba5f7e44cd4c54bc479c12a27e5f37d321b71072df5b54a245c0"],"level/mechanisms/true":[35,"1d440248f4949eb3cab8429b7450c6e75d5261cdacfb4c43eb7cf192ccd90f6a"],"level/mechanisms/false":[35,"1d440248f4949eb3cab8429b7450c6e75d5261cdacfb4c43eb7cf192ccd90f6a"],"level/screens/true":[36,"d891ff45ac31e264227594b2ab839aec0895df6f7d65c9612cc2915acab620a5"],"level/screens/false":[36,"d891ff45ac31e264227594b2ab839aec0895df6f7d65c9612cc2915acab620a5"],"delivery/all/true":[279,"471bb18eaaea4ad441148d71809251e2d00080bc3ed093bce656e66fc44b4517"],"delivery/all/false":[279,"471bb18eaaea4ad441148d71809251e2d00080bc3ed093bce656e66fc44b4517"],"delivery/theme.dungeon/true":[184,"c15f9141c9c84c6a5a36d4a1227cd49250b672a80b8c9020ddffe2c5dbb0c4c7"],"delivery/theme.dungeon/false":[16,"9a2bdf6a12cd9137cdab2c1198647d40fef69301e6c2744186e44b79883ec42d"],"delivery/theme.diyu/true":[193,"2b42fb620f83548a075a1e6beadfdf942f80ea847528737be5003aec20c7dcc7"],"delivery/theme.diyu/false":[25,"ea926b12a4d1928d62ff2944c24cd7f4b5212ae762fc684a580df37a670553bd"],"delivery/theme.jeju/true":[188,"9f668af34fdbb908eeb0e74215055189f36088d047ee4534cb7e5d81ad090ac0"],"delivery/theme.jeju/false":[20,"6d6dbd076383ab636d65759fe6f6016a3d2c8fef2d573e487bcac08dca02304c"],"delivery/theme.polar/true":[186,"b85f15d9d12a51d12a957c38f6e2cbbeb50176592e00c9b12a46c6f371a6a11b"],"delivery/theme.polar/false":[18,"3e230fbd66e5e8d040a25bccac8699c63482cf720840cf89c11080b08e4be1d0"],"delivery/theme.candy/true":[188,"8eba69eada694a44dc7ff42e748c3dc261c1d1619bf670748931f96201b9072b"],"delivery/theme.candy/false":[20,"0f4f5a6f20a0085c4f0d20c4cd3e73a2c610cbbbdc14685dc12dfc71b6074a5f"],"delivery/characters/true":[90,"fb068befc5e9c9e84ef84d64b4850ec7cc659e10227fe0daecc0ec01fbf1d496"],"delivery/characters/false":[90,"fb068befc5e9c9e84ef84d64b4850ec7cc659e10227fe0daecc0ec01fbf1d496"],"delivery/items/true":[79,"13f46287f561038944b863f9f2e900f165250c9c761cf03b25d912a5c6dc81c9"],"delivery/items/false":[79,"13f46287f561038944b863f9f2e900f165250c9c761cf03b25d912a5c6dc81c9"],"delivery/mechanisms/true":[44,"783a805598dc85e164e27a40aebb85cf61a2b3536e8138a975667c4c86ff2192"],"delivery/mechanisms/false":[44,"783a805598dc85e164e27a40aebb85cf61a2b3536e8138a975667c4c86ff2192"],"delivery/screens/true":[55,"6e0ee89c0e47b5711fd5ced40cab8f86d9ed9fee9f7f2eaf5d85a0d412269ef7"],"delivery/screens/false":[55,"6e0ee89c0e47b5711fd5ced40cab8f86d9ed9fee9f7f2eaf5d85a0d412269ef7"],"delivery/hub/true":[37,"bf8eef337cbcdc317fbe3c53a55b44c4da7e248025afe8be932143039d3c2148"],"delivery/hub/false":[37,"bf8eef337cbcdc317fbe3c53a55b44c4da7e248025afe8be932143039d3c2148"]};
+  const hashes=await page.evaluate(()=>{const out={};for(const mode of ['all','level','delivery']){const groups=mode==='all'?[{id:'all'}]:PBModeCatalog.sections(mode,PBStore.assets()).filter(s=>s.id!=='sounds');for(const s of groups)for(const shared of (mode==='all'?[true]:[true,false])){const filter={mode,shared};if(s.id.startsWith('theme.'))filter.theme=s.id.slice(6);else filter.group=s.id;out[mode==='all'?'all':mode+'/'+s.id+'/'+shared]=PBModeCatalog.library(PBStore.assets(),filter).map(a=>a.id).sort();}}return out;});
+  for(const [key,[count,hash]] of Object.entries(baseline)){assert.equal(hashes[key].length,count,key+' count');assert.equal(require('crypto').createHash('sha256').update(JSON.stringify(hashes[key])).digest('hex'),hash,key+' exact IDs');}
+  const themeCases=await page.evaluate(()=>{const all=PBStore.assets(),C=PBModeCatalog;return [...new Set(Object.values(C.MODES).flatMap(m=>m.themes))].flatMap(theme=>[true,false].map(shared=>({theme,shared,actual:C.library(all,{mode:'all',theme,shared}).map(a=>a.id).sort(),expected:[...new Set(Object.keys(C.MODES).filter(mode=>C.MODES[mode].themes.includes(theme)).flatMap(mode=>C.assets(mode,'theme.'+theme,all,{shared}).map(a=>a.id)))].sort()})));});
+  for(const row of themeCases)assert.deepEqual(row.actual,row.expected,'all-mode '+row.theme+' shared='+row.shared+' supports only matching modes');
+  for(const [key,[count,hash]] of Object.entries(baseline)){
+    const [mode,section,shared]=key==='all'?['all','all','true']:key.split('/'),p=new URLSearchParams();
+    if(mode!=='all')p.set('mode',mode);if(section.startsWith('theme.'))p.set('theme',section.slice(6));else if(section!=='all')p.set('group',section);if(shared==='false')p.set('shared','0');
+    await page.goto(url+'#library'+(p.size?'?'+p:''));
+    await page.waitForFunction(({count,mode,section,shared})=>document.querySelector('#asset-count').textContent===count+' 项'&&document.querySelector('[aria-label="模式"]').value===mode&&document.querySelector('[aria-label="主题"]').value===(section.startsWith('theme.')?section.slice(6):'all')&&document.querySelector('[aria-label="用途分组"]').value===(section.startsWith('theme.')?'all':section)&&document.querySelector('#library-filters input').checked===(shared==='true'),{count,mode,section,shared});
+    const actual=await page.locator('#asset-cards .card:not([hidden])').evaluateAll(nodes=>nodes.map(n=>n.dataset.resourceId).sort());
+    assert.equal(require('crypto').createHash('sha256').update(JSON.stringify(actual)).digest('hex'),hash,key+' rendered exact IDs');
+  }
+  await page.goto(url);assert.ok(await page.locator('#view-home').isVisible(),'home is default');
+  assert.deepEqual(await page.locator('.home-batch').evaluateAll(nodes=>nodes.map(n=>n.dataset.approval)),await page.evaluate(()=>PBStore.approvals().slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map(b=>b.id)),'home recent batches are actual confirmation records');
+  await page.locator('.home-batch').first().click();assert.ok(await page.locator('details[id^="approval-"][open]').count());
+
+  assert.deepEqual(await page.evaluate(()=>PBNav.MENU.map(m=>m.label)),['总览','资源库','场景与界面','确认','地图概念','声音']);
+  assert.equal(await page.locator('#nav a').count(),6);
+  const routes=[['#level-art','#library?mode=level'],['#delivery-art','#library?mode=delivery'],['#assets','#library'],['#assets/char.portitor','#library?id=char.portitor'],['#edit','#edit'],['#edit/char.portitor','#edit/char.portitor'],['#export','#review/export'],['#ui-proposals','#scenes/ui-proposals'],['#concepts/cenote','#concepts/cenote'],['#audio/sfx','#audio/sfx'],['#audio/music','#audio/music'],['#audio/maps','#audio/maps']];
+  for(const mode of ['level','delivery'])for(const s of await page.evaluate(mode=>PBModeCatalog.sections(mode,PBStore.assets()).filter(s=>s.id!=='all').map(s=>s.id),mode))routes.push(['#'+mode+'-art/'+s,'#library?mode='+mode+'&'+(s.startsWith('theme.')?'theme='+s.slice(6):'group='+s)]);
+  for(const [old,next] of routes){await page.goto(url+old);await page.waitForFunction(hash=>location.hash===hash,next);assert.ok(await page.locator('main > section:not([hidden])').count()===1,old+' has one live destination');if(old.startsWith('#assets/'))assert.ok(await page.locator('#asset-inspector h2').isVisible());}
+  await page.goto(url+'#library?mode=delivery&theme=diyu');
+  assert.equal(await page.locator('#asset-cards [data-resource-id="char.yama"]:visible').count(),1);
+  assert.equal(await page.locator('#asset-cards [data-resource-id="char.haenyeo"]:visible').count(),0);
+  await page.getByLabel('包括通用资源',{exact:true}).uncheck();await page.waitForFunction(()=>location.hash.includes('shared=0')&&document.querySelector('#asset-count').textContent==='25 项');
+  assert.equal(await page.locator('#asset-cards [data-resource-id="obj.crate_wood"]:visible').count(),0);
+  await page.goto(url+'#library');await page.evaluate(()=>window.__card=document.querySelector('#asset-cards .card'));
+  await page.getByLabel('搜索资产',{exact:true}).fill('ui.screen.run_door');await page.waitForFunction(()=>location.hash.includes('q=')&&document.querySelector('#asset-count').textContent==='2 项');
+  assert.equal(await page.locator('#asset-cards .card:visible').count(),2);
+  await page.goBack();await page.waitForFunction(()=>location.hash==='#library'&&document.querySelector('#asset-count').textContent==='304 项');
+  assert.ok(await page.evaluate(()=>window.__card===document.querySelector('#asset-cards .card')),'URL filtering preserves PNG card identity');
+  await page.goto(url+'#library?mode=delivery&status=draft');
+  const draftIds=await page.locator('#asset-cards .card:visible').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId));
+  for(const a of JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json'))).assets.filter(a=>a.stage==='draft'))assert.ok(draftIds.includes(a.id),a.id+' draft discoverable');
+  await page.goto(url+'#library?mode=delivery&group=hub');await page.locator('[data-resource-id="scene.hub_post"]').click();await page.locator('#asset-inspector').getByLabel('动画',{exact:true}).selectOption('after');
+  for(const width of [1440,1280,1024,390]){await page.setViewportSize({width,height:900});for(const view of ['home','library','concepts']){await page.goto(url+'#'+view);await page.waitForTimeout(150);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),view+' fits '+width);if(width===1440&&view==='library')assert.ok(await page.locator('#asset-cards .card:visible').evaluateAll(cards=>cards.filter(c=>{const r=c.getBoundingClientRect();return r.top>=0&&r.bottom<=innerHeight&&r.left>=0&&r.right<=innerWidth;}).length)>=12,'12 fully visible cards');if(process.env.WB_EVIDENCE_DIR){const dir=path.join(process.env.WB_EVIDENCE_DIR,'screenshots');fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,view+'-'+width+'.png')});}}}
+  // WB-10 native procedural PNG geometry: independent of the sprite-only perf sample.
+  const proceduralIds=await page.evaluate(()=>{const samples=new Map();for(const a of PBStore.assets())if(a.kind!=='sprite'&&!samples.has(a.category))samples.set(a.category,a.id);return [...samples.values()];});
+  for(const width of [1440,1280,390]){
+    await page.setViewportSize({width,height:900});await page.goto(url+'#library');
+    for(const id of proceduralIds){
+      const card=page.locator('#asset-cards [data-resource-id="'+id+'"]');await card.scrollIntoViewIfNeeded();
+      await card.locator('.asset-png-thumb img').waitFor();
+      await page.waitForFunction(id=>{const image=document.querySelector('#asset-cards [data-resource-id="'+id+'"] img');return image&&image.complete&&image.naturalWidth>0;},id);
+      const geometry=await card.evaluate(card=>{
+        const wrapper=card.querySelector('.asset-png-thumb'),image=wrapper.querySelector('img'),frame=card.querySelector('.thumb');
+        const rect=node=>{const r=node.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height};};
+        const outer=rect(card),view=rect(frame),png=rect(wrapper),pixels=rect(image),style=getComputedStyle(card);
+        const inner={left:outer.left+parseFloat(style.borderLeftWidth)+parseFloat(style.paddingLeft),right:outer.right-parseFloat(style.borderRightWidth)-parseFloat(style.paddingRight)};
+        return {png,pixels,native:[image.naturalWidth,image.naturalHeight],view,outer,inner,viewport:innerWidth};
+      });
+      const tag=id+' at '+width+' '+JSON.stringify(geometry);
+      assert.deepEqual(geometry.native,[320,180],'procedural preview PNG has native 320x180 pixels: '+tag);
+      assert.ok(Math.abs(geometry.png.width-320)<0.5&&Math.abs(geometry.png.height-180)<0.5,'procedural wrapper renders native 320x180 at 1x: '+tag);
+      assert.ok(Math.abs(geometry.pixels.width-320)<0.5&&Math.abs(geometry.pixels.height-180)<0.5,'procedural PNG image renders native 320x180 at 1x: '+tag);
+      assert.ok(geometry.png.left>=geometry.view.left-0.5&&geometry.png.right<=geometry.view.right+0.5&&geometry.png.top>=geometry.view.top-0.5&&geometry.png.bottom<=geometry.view.bottom+0.5,'procedural PNG is not clipped by thumbnail frame: '+tag);
+      assert.ok(geometry.png.left>=geometry.inner.left-0.5&&geometry.png.right<=geometry.inner.right+0.5,'span-two card content accommodates 320 pixels and its own padding: '+tag);
+      assert.ok(geometry.outer.left>=-0.5&&geometry.outer.right<=geometry.viewport+0.5,'large card fits viewport without horizontal clipping: '+tag);
+    }
+  }
+  await page.setViewportSize({width:1280,height:800});await page.goto(url+'#concepts');const text=page.locator('#concept-text-only');assert.equal(await text.getAttribute('open'),null);const allCount=await page.locator('.concept-card').count();await page.getByLabel('完整度',{exact:true}).selectOption('scene');assert.ok(await page.locator('.concept-card:visible').count()<allCount);await page.getByLabel('完整度',{exact:true}).selectOption('all');
+  await page.goto(url+'#delivery-art/sounds');assert.equal(await page.evaluate(()=>PBWBAudio.player.snapshot().sfx.length),0,'mode sounds do not autoplay');assert.equal(await page.locator('[data-sound-id="sfx:delivery_arrive"]').count(),1);await page.locator('#delivery-art-root [data-preview-sound="sfx:push"]').click();await page.waitForFunction(()=>document.querySelector('[data-mode-audio-status="delivery"]').textContent.includes('已试听：'));await page.locator('#delivery-art-root [data-preview-sound="sfx:reel_spin"]').click();await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.some(v=>v.uid==='sfx:reel_spin'));await page.goto(url+'#library');await page.waitForFunction(()=>PBWBAudio.player.snapshot().sfx.length===0);
+  check(true,'WB-10 baseline IDs, six entries, legacy routes, URL filters, compact PNG cards and concept wall');
 }

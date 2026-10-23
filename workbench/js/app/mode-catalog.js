@@ -113,5 +113,14 @@
     return entries.filter(e=>e.kind==='sfx' &&
       (mode === 'level' ? !DELIVERY_SOUNDS.has(e.id) : !LEVEL_SOUNDS.has(e.id)));
   }
-  root.PBModeCatalog = {MODES, sections, assets, sounds, modes, themes, related};
+  // Library adapter composes the existing classification without changing it.
+  function library(all, filter = {}) {
+    const chosen=(MODES[filter.mode]?[filter.mode]:Object.keys(MODES)).filter(mode=>!filter.theme||filter.theme==='all'||MODES[mode].themes.includes(filter.theme));
+    const section=filter.theme&&filter.theme!=='all'?'theme.'+filter.theme:'all';
+    const allowed=new Set(chosen.flatMap(mode=>assets(mode,section,all,{shared:filter.shared!==false})).map(a=>a.id));
+    let group=null;
+    if(filter.group&&filter.group!=='all')group=new Set(chosen.flatMap(mode=>sections(mode,all).some(s=>s.id===filter.group)?assets(mode,filter.group,all):[]).map(a=>a.id));
+    return all.filter(a=>allowed.has(a.id)&&(!group||group.has(a.id)));
+  }
+  root.PBModeCatalog = {MODES, sections, assets, sounds, modes, themes, related, library};
 })(typeof window !== 'undefined' ? window : globalThis);

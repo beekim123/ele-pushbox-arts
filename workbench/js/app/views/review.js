@@ -249,7 +249,7 @@
     box.append(el("h3", { text: "已记录的确认" }));
     const recs = store.approvals();
     if (!recs.length) box.append(el("p", { class: "muted", text: "还没有任何确认记录。" }));
-    for (const r of recs) box.append(el("details", {}, [el("summary", { text: `${r.id} · ${r.date.slice(0, 10)} · ${r.by}（${r.via === "chat" ? "聊天" : "工作台文件"}）· ${r.items.length} 项${r.scope ? " · " + r.scope : ""}` }),
+    for (const r of recs) box.append(el("details", {id:"approval-"+r.id}, [el("summary", { text: `${r.id} · ${r.date.slice(0, 10)} · ${r.by}（${r.via === "chat" ? "聊天" : "工作台文件"}）· ${r.items.length} 项${r.scope ? " · " + r.scope : ""}` }),
       el("ul", {}, r.items.map((i) => el("li", { class: "mono", text: `${i.asset}@v${i.version} #${i.hash.slice(0, 12)} → ${i.png}` }))), r.note ? el("p", { class: "small", text: r.note }) : null]));
   }
   root.PBReview = { show, hide: () => { opened = false; clearTimeout(searchTimer); closeLightbox(); } };

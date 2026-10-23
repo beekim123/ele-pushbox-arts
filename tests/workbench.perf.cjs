@@ -23,8 +23,8 @@ let server, browser;
     window.wbLongTasks = [];
     new PerformanceObserver(list => { window.wbLongTasks.push(...list.getEntries().map(e => ({ start: e.startTime, duration: e.duration }))); }).observe({ type: 'longtask', buffered: true });
   });
-  await page.goto(url + '#delivery-art');
-  await page.waitForFunction(() => window.PBAssets && document.querySelector('#delivery-art-root .mode-resource-card'));
+  await page.goto(url + '#library?mode=delivery');
+  await page.waitForFunction(() => window.PBAssets && document.querySelector('#asset-cards [data-resource-id]'));
   if (process.env.WB_PERF_ONLY !== '1') {
     // Catches drawing thumbnails synchronously, wrong sheet crop, changed first frame, and procedural pixels.
     const pngData = Object.fromEntries((await page.evaluate(() => PBStore.assets().map(a => a.id))).map(id => [id, "data:image/png;base64," + fs.readFileSync(path.join(ROOT, "art/export/preview", id + ".png")).toString("base64")]));
@@ -65,7 +65,7 @@ let server, browser;
     // Catches oversized whole-scene sprites being clipped inside actual asset cards.
     // The former canvas is mounted in the same grid with its original inline size,
     // so inherited max-width/max-height constraints remain the independent reference.
-    await page.goto(url + '#assets');
+    await page.goto(url + '#library');
     await page.waitForFunction(() => [...document.querySelectorAll('#asset-cards .card .id')].some(n => n.textContent.startsWith('scene.hub_post ')));
     const cardGeometry = await page.evaluate(() => {
       const card = [...document.querySelectorAll('#asset-cards .card')].find(n => n.querySelector('.id').textContent.startsWith('scene.hub_post '));
@@ -102,21 +102,21 @@ let server, browser;
     assert.equal(fallback.warnings, 1, 'failed PNG warns once per asset'); assert.ok(fallback.equal, 'failed PNG falls back to former canvas pixels');
     // Catches rebuilding cards and synchronous search filtering in all three list consumers.
     for (const [hash, cards, search, query] of [
-      ['delivery-art', '#delivery-art-root [data-resource-id]', '#delivery-art-root input[type=search]', 'ui.screen.run_door'],
-      ['assets', '#asset-cards .card', '#asset-search', 'ui.screen.run_door'],
+      ['library?mode=delivery', '#asset-cards [data-resource-id]', '#asset-search', 'ui.screen.run_door'],
+      ['library', '#asset-cards .card', '#asset-search', 'ui.screen.run_door'],
       ['review', '#review-results .review-card', '#review-search', 'ui.screen.run_door'],
     ]) {
       await page.goto(url + '#' + hash);
       if (hash === 'review') await page.locator('#review-status').selectOption('all');
-      await page.evaluate(selector => { window.wbCards = [...document.querySelectorAll(selector)]; }, cards);
+      await page.evaluate(selector => { window.wbCards = [...document.querySelectorAll(selector)]; window.wbHidden = wbCards.map(c=>c.hidden); }, cards);
       await page.locator(search).fill(query);
-      assert.ok(await page.evaluate(() => wbCards.every(c => !c.hidden)), hash + ' waits for debounce');
+      assert.ok(await page.evaluate(() => wbCards.every((c,i) => c.hidden===wbHidden[i])), hash + ' waits for debounce');
       await page.waitForTimeout(190);
       const result = await page.evaluate(selector => ({ same: wbCards.every((c, i) => document.querySelectorAll(selector)[i] === c), shown: [...document.querySelectorAll(selector)].filter(c => !c.hidden).length }), cards);
       assert.ok(result.same, hash + ' preserves card node identity'); assert.equal(result.shown, 2, hash + ' filters visible results');
       await page.locator(search).fill(''); await page.waitForTimeout(190);
-      if (hash === 'delivery-art') {
-        await page.getByRole('button', { name: '清除筛选', exact: true }).click();
+      if (hash === 'library?mode=delivery') {
+        await page.getByRole('link', { name: '清除筛选', exact: true }).click();
         assert.ok(await page.evaluate(selector => wbCards.every((c, i) => document.querySelectorAll(selector)[i] === c), cards), 'clear filter preserves cards');
       }
     }
@@ -185,24 +185,24 @@ let server, browser;
     await page.goto(url + '?wb-perf=' + (++navigation) + '#' + hash); await page.waitForTimeout(450);
     if (hash === 'review') { await page.locator('#review-status').selectOption('all'); await page.waitForTimeout(200); }
     const openBlock = await page.evaluate(() => Math.max(0, ...wbLongTasks.map(t => t.duration)));
-    if (hash.startsWith('assets/')) { await page.locator('#asset-inspector .stage-frame').scrollIntoViewIfNeeded(); await page.waitForTimeout(1200); }
+    if (hash.startsWith('library?id=')) { assert.ok(await page.locator('#asset-inspector').isVisible(),'performance samples the visible library inspector'); await page.locator('#asset-inspector .stage-frame').scrollIntoViewIfNeeded(); await page.waitForTimeout(1200); }
     const before = await metrics(); await page.waitForTimeout(3000); const after = await metrics();
     const cpu = (after.TaskDuration - before.TaskDuration) / (after.Timestamp - before.Timestamp) * 100;
     const row = { hash, openBlockMs: +openBlock.toFixed(2), cpuPercent: +cpu.toFixed(2), limit, heavy }; results.push(row); console.log(JSON.stringify(row));
     if (!heavy) { assert.ok(cpu < limit, hash + ' idle CPU <' + limit + '%'); if (limit === 5) assert.ok(openBlock < 200, hash + ' list open longest task <200ms'); }
   }
-  for (const hash of ['delivery-art', 'delivery-art/theme.diyu', 'delivery-art/screens', 'assets', 'review']) await measure(hash, 5);
-  for (const [hash, input] of [['delivery-art', '#delivery-art-root input[type=search]'], ['assets', '#asset-search'], ['review', '#review-search']]) {
+  for (const hash of ['library?mode=delivery', 'library?mode=delivery&theme=diyu', 'library?mode=delivery&group=screens', 'library', 'review']) await measure(hash, 5);
+  for (const [hash, input] of [['library?mode=delivery', '#asset-search'], ['library', '#asset-search'], ['review', '#review-search']]) {
     await page.goto(url + '#' + hash); await page.waitForTimeout(200); await page.evaluate(() => { window.wbLongTasks = []; });
     for (const text of ['u', 'ui', 'ui.screen', '']) { await page.locator(input).fill(text); await page.waitForTimeout(180); }
-    if (hash === 'delivery-art') for (const status of ['approved', 'draft', 'all']) await page.locator('#delivery-art-root').getByLabel('确认状态', { exact: true }).selectOption(status);
-    if (hash === 'assets') for (const name of ['已确认', '草稿', '全部状态']) await page.locator('#asset-status').getByRole('button', { name, exact: true }).click();
+    if (hash === 'library?mode=delivery') for (const name of ['已确认','草稿','全部状态']) await page.locator('#asset-status').getByRole('button',{name,exact:true}).click();
+    if (hash === 'library') for (const name of ['已确认', '草稿', '全部状态']) await page.locator('#asset-status').getByRole('button', { name, exact: true }).click();
     if (hash === 'review') for (const status of ['approved', 'review', 'all']) await page.locator('#review-status').selectOption(status);
     await page.waitForTimeout(200);
     const block = await page.evaluate(() => Math.max(0, ...wbLongTasks.map(t => t.duration)));
     console.log(JSON.stringify({ hash, searchFilterBlockMs: block })); assert.ok(block < 100, hash + ' search/filter longest task <100ms');
   }
-  await measure('assets/char.portitor', 10);
-  for (const id of ['ui.screen.reels', 'ui.screen.settlement', 'ui.screen.levels']) await measure('assets/' + id, 30, true);
+  await measure('library?id=char.portitor', 10);
+  for (const id of ['ui.screen.reels', 'ui.screen.settlement', 'ui.screen.levels']) await measure('library?id=' + id, 30, true);
   assert.deepEqual(errors, []); console.log('WB-08 performance gates passed ' + (process.env.WB_HTTP === '1' ? 'HTTP' : 'file'));
 })().catch(e => { console.error(e.stack); process.exitCode = 1; }).finally(async () => { if (browser) await browser.close(); if (server) await new Promise(resolve => server.close(resolve)); });
