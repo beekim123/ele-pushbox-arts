@@ -1,4 +1,4 @@
-/* Six visible workspace destinations plus an internal tool-route registry.
+/* Seven visible workspace destinations plus an internal tool-route registry.
  * Loaded in <head> so a collapsed left column never flashes open. */
 (function (root) {
   "use strict";
@@ -10,7 +10,7 @@
   // named by its short_name (workbench.md 6.1), opening #<view>/map/<map id>.
   // { concepts: view }: one item per map of content/concepts/maps.json, in its order
   // and named by its name (workbench.md 6.2), opening #<view>/<map id>.
-  // Six visible destinations; tools remain addressable through a separate registry.
+  // Seven visible destinations; tools remain addressable through a separate registry.
   const MENU = [
     {view:'home',label:'总览',module:'PBHome'},
     {view:'assets',href:'#library',label:'资源库',module:'PBAssets',badge:'drafts-count',tone:'warn'},
@@ -18,6 +18,7 @@
     {view:'review',label:'确认',module:'PBReview',badge:'review-count'},
     {view:'concepts',label:'地图概念',module:'PBConcepts'},
     {view:'audio',href:'#audio/sfx',label:'声音',module:'PBWBAudio'},
+    {view:'docs',label:'文档',module:'PBDocs'},
   ];
   const TOOLS = [
     {view:'screens',label:'界面清单',module:'PBScreens'},
