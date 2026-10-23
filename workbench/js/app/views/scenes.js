@@ -5,44 +5,6 @@
   const PB = root.PB, store = root.PBStore, el = root.PBStage.el;
   let stage = null, current = null, step = 0, grid = false, observe = false;
 
-  // Chapter pictures are rendered at tick 0 by the approved composition.
-  // Cache only those static backdrops; the wall and UI keep their live clock.
-  const chapterPictures = new Map(), chapterLayers = new Map();
-  const setFlat = PB.uiStyle.setFlat;
-  PB.uiStyle.setFlat = function (...args) { chapterPictures.clear(); chapterLayers.clear(); return setFlat.apply(this, args); };
-  function drawChapterScreen(r, asset, tick, state) {
-    const backdrop = PB.uiStyle.backdrop;
-    PB.uiStyle.backdrop = function (target, theme, pictureTick, env, props) {
-      if (pictureTick !== 0 || props !== true) return backdrop.apply(this, arguments);
-      const key = theme + "|" + env + "|" + target.data.length;
-      const saved = chapterPictures.get(key);
-      if (saved) { target.data.set(saved.pixels); return saved.theme; }
-      const result = backdrop.apply(this, arguments);
-      chapterPictures.set(key, { pixels: target.data.slice(), theme: result });
-      return result;
-    };
-    const wall = PB.uiStyle.wall, dim = PB.uk.dim;
-    const key = JSON.stringify([asset.params, state.focus, state.env, state.showIssues, PB.i18n.getLocale()]);
-    try {
-      if (!chapterLayers.has(key)) {
-        const pixels = new PB.Raster(r.w, r.h), shades = [];
-        PB.uiStyle.wall = () => {};
-        PB.uk.dim = function(c, amount, box) {
-          if (c.r === pixels) shades.push({ amount, box: box && box.slice() });
-          return dim.apply(this, arguments);
-        };
-        try { PB.ui.render(pixels, asset, tick, state); }
-        finally { PB.uiStyle.wall = wall; PB.uk.dim = dim; }
-        chapterLayers.set(key, { pixels, shades });
-      }
-      const layer = chapterLayers.get(key), canvas = new PB.uk.C(r);
-      wall(canvas, "theme.dungeon", tick, state.env);
-      // Preserve the approved cards' dimming of the background at their edges.
-      for (const shade of layer.shades) dim(canvas, shade.amount, shade.box);
-      r.blit(layer.pixels, 0, 0);
-    } finally { PB.uiStyle.backdrop = backdrop; }
-  }
-
   function sceneList() {
     const list = [];
     for (const t of PB.scene.THEMES) {
@@ -133,7 +95,7 @@
       PB.scene.renderLevel(r, s.level, st.parsed, Object.assign({ tick, grid, observe, pose: won ? "win" : p.pose, facing: p.facing, target: nextTarget(s.level, st.parsed) }, envOpts()));
       outline(r, PB.i18n.takeIssues());
     } else {
-      if (s.asset.params.screen === "chapters") drawChapterScreen(r, s.asset, tick, screenState(s));
+      if (s.asset.params.screen === "chapters") root.PBScreenRenderer.drawChapter(r, s.asset, tick, screenState(s));
       else PB.ui.render(r, s.asset, tick, screenState(s));
     }
   }
@@ -197,7 +159,7 @@
   }
 
   function show(id) {
-    chapterPictures.clear(); chapterLayers.clear();
+    root.PBScreenRenderer.clearChapters();
     const list = sceneList();
     current = list.find((s) => s.id === id) || list[0];
     step = 0;

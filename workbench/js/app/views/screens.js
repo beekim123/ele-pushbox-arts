@@ -42,12 +42,13 @@
   function filter(){const q=query.toLowerCase();for(const {s,row}of rows)row.hidden=!`${s.name} ${s.id} ${s.art} ${s.variants.join(' ')} ${s.flow}`.toLowerCase().includes(q);for(const body of table.tBodies)body.hidden=![...body.querySelectorAll('[data-screen-row]')].some(r=>!r.hidden);}
   wrap.append(table);box.append(wrap,detail);filter();
  }
- function detail(box,id){
+ function detail(box,id,options){
   const s=byId.get(id);if(!s){box.append(el('h1',{text:'没有这个页面'}),el('a',{href:'#scenes',text:'返回界面清单'}));return;}
-  current=s;art=s.art;hintTier=2;
+  current=s;art=options?.art||s.art;hintTier=options?.hintTier===undefined?2:options.hintTier-1;
   box.append(el('a',{href:'#scenes',text:'← 界面清单'}),el('h1',{text:s.name}),el('p',{class:'mono small muted',text:s.id+' · '+s.flow+' · 所属模式：未标'}));
   const host=el('div',{id:'screen-stage',class:'stage-host'}),steps=el('div',{id:'screen-progress'}),native=el('pre',{id:'screen-coverage',class:'screen-coverage',hidden:true,'aria-live':'polite'});
   const select=el('select',{'aria-label':'画面变体',onchange:()=>{art=select.value;render();}});for(const a of [s.art,...s.variants].filter(Boolean))select.append(el('option',{value:a,text:(a===s.art?'主图 · ':'变体 · ')+(store.asset(a)?.name||a)}));
+  select.value=art;
   const tier=el('select',{'aria-label':'提示级别',onchange:()=>{hintTier=Number(tier.value);stage.refresh();}});for(const n of [0,1,2])tier.append(el('option',{value:n,text:'提示 '+(n+1)+'/3'}));tier.value='2';
   const note=el('p',{id:'screen-variant-note',class:'note small'});box.append(el('div',{class:'btn-row'},[el('label',{},['画面 ',select]),...(id==='hint'?[el('label',{},['提示级别 ',tier])]:[])]),host,note,steps,native,el('p',{class:'small muted',text:s.notes}));
   function render(){
@@ -55,9 +56,7 @@
    const variant=art!==s.art;note.textContent=variant?'当前为外观变体。下方跳转只对应主图；变体菜单可能不同，尚未登记其游戏行为。':'下方跳转对应主图。画面是代码绘制的公开示例，局内展示不能游玩。';
    const a=store.asset(art);if(!a){host.textContent='尚无 HTML 画面';return;}
    stage=root.PBStage.create(host,{width:320,height:180,animated:true,autoplay:true,label:s.name,draw:(r,tick)=>{
-    if(id==='play')root.PB.scene.renderLevel(r,root.PB.scene.SHOWCASE,null,{tick,hud:false});
-    const preview=id==='hint'?{...a,params:{...a.params,level:hintTier+1}}:a;
-    root.PB.ui.render(r,preview,tick,{focus:id==='hint'?hintTier:0,specs:Object.fromEntries(store.levels().map(l=>[l.id,l])),levelSpec:store.level('M05'),ruleSpec:store.level('M03'),animate:true});
+    root.PBScreenRenderer.draw(r,s,a,tick,{...options,hintTier:hintTier+1});
    },disclaimer:'界面外观参考；交互以清单中的主图跳转为准。'});
   }
   render();
@@ -79,6 +78,6 @@
   for(const s of all){const p=points.get(s.id),a=make('a',{href:'#screen/'+s.id,'data-screen-node':s.id});a.append(make('rect',{x:p.x,y:p.y,width:180,height:48,rx:5,class:s.game==='in_use'?'in-use':''}),make('text',{x:p.x+10,y:p.y+20},s.name),make('text',{x:p.x+10,y:p.y+37,class:'screen-svg-id'},s.id));svg.append(a);}
   const wrapper=el('div',{id:'screen-flow',class:'screen-flow',tabindex:0});wrapper.append(svg);box.append(wrapper);
  }
- function show(id){if(stage){stage.destroy();stage=null;}current=null;const box=document.getElementById('screens-root');box.replaceChildren();if(id==='flow')flow(box);else if(id)detail(box,id);else list(box);}
- root.PBScreens={show,identify,hide:()=>{if(stage){stage.destroy();stage=null;}},where:id=>({key:'scenes',trail:['场景与界面',id==='flow'?'流程图':byId.get(id)?.name||'界面清单']})};
+ function show(id,options){if(stage){stage.destroy();stage=null;}current=null;const box=document.getElementById('screens-root');box.replaceChildren();if(id==='flow')flow(box);else if(id)detail(box,id,options);else list(box);}
+ root.PBScreens={show,identify,stage:()=>stage,hide:()=>{if(stage){stage.destroy();stage=null;}},where:id=>({key:'scenes',trail:['场景与界面',id==='flow'?'流程图':byId.get(id)?.name||'界面清单']})};
 })(window);
