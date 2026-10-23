@@ -56,7 +56,7 @@ test('42 logical pages reference all 49 public art screens, while future pages h
  const actual=source.screens.flatMap(s=>[s.art,...s.variants]).filter(Boolean).sort();
  assert.deepEqual(actual,manifest.assets.filter(a=>a.id.startsWith('ui.screen.')).map(a=>a.id).sort());assert.equal(actual.length,49);
  assert.equal(source.screens.length,42);assert.equal(source.screens.filter(s=>s.game==='in_use').length,11);
- for(const s of source.screens.filter(s=>s.game==='not_yet'))assert.deepEqual(s.transitions,[],s.id);assert.ok(source.screens.every(s=>!('owner'in s)));
+ for(const s of source.screens.filter(s=>s.game==='not_yet'))assert.deepEqual(s.transitions.map(normalizeFuture),expectedFuture[s.id],s.id);assert.ok(source.screens.every(s=>!('owner'in s)));
 });
 test('primary menu text and measured click regions stay bound to the correct focus',()=>{
  const page=id=>source.screens.find(s=>s.id===id);
@@ -65,3 +65,90 @@ test('primary menu text and measured click regions stay bound to the correct foc
  assert.deepEqual(page('lobby').variants,['ui.screen.hub_start','ui.screen.lobby_generic','ui.screen.lobby_story']);
  assert.equal(page('play').transitions.find(t=>t.label==='过关').key,undefined);assert.equal(page('play').transitions.find(t=>t.label==='过关').hotspot,undefined);
 });
+
+
+// Independent WB-13 transcription from the measured public primary PNGs.
+// Only destination bindings justified by the cited design are active; uncertain
+// buttons remain @stay. A selection card is not an invented extra menu button.
+const normalizeFuture=t=>[t.key??null,t.focus??null,t.label,t.to,t.hotspot??null,t.when??null];
+const expectedFuture={
+ confirm:[['Enter',0,'放弃','@stay',[48,109,106,20],null],['Enter',1,'再想想','@stay',[166,109,106,20],null],['Esc',null,'返回','@stay',null,null]],
+ crew_joined:[['Enter',null,'确认','@stay',null,null]],
+ crew_pick:[['Enter',0,'派出','@stay',[19,55,86,66],null],['Enter',1,'派出','@stay',[117,55,86,66],null],['Enter',2,'派出','@stay',[215,55,86,66],null],['Esc',null,'返回','@stay',null,null]],
+ crew_room:[['ArrowLeft',null,'选择','@stay',null,null],['ArrowRight',null,'选择','@stay',null,null],['Esc',null,'返回','@stay',null,null]],
+ delivery_assist:[['ArrowUp',null,'选择','@stay',null,null],['ArrowDown',null,'选择','@stay',null,null],['ArrowLeft',null,'调整','@stay',null,null],['ArrowRight',null,'调整','@stay',null,null],['Esc',null,'返回','@stay',null,null]],
+ delivery_help:[['Enter',null,'练习一下','delivery_practice',[125,132,99,17],'所选教学已开放'],['Esc',null,'返回','@stay',[230,132,65,17],null]],
+ delivery_hud:[['Esc',null,'暂停','delivery_pause',null,null]],
+ delivery_pause:[['Enter',0,'继续','delivery_hud',[81,58,158,17],null],['Enter',1,'重来这个房间','delivery_hud',[81,75,158,17],null],['Enter',2,'放弃这一单','confirm',[81,92,158,17],null],['Enter',3,'设置','settings',[81,109,158,17],null],['Enter',4,'返回大厅','lobby',[81,126,158,17],null],['Esc',null,'返回','@stay',null,null]],
+ delivery_practice:[['R',null,'重置','@stay',null,null],['Tab',null,'教学列表','delivery_help',null,null],['Esc',null,'返回准备','@stay',null,null]],
+ hint_animal:[],observe:[['Tab',null,'返回','@stay',null,null]],
+ reels:[['ArrowLeft',null,'选择','@stay',null,null],['ArrowRight',null,'选择','@stay',null,null],['R',null,'重转','@stay',null,null],['Enter',null,'出发','delivery_hud',null,null]],
+ run_door:[],run_door_skull:[['2',null,'重抽','@stay',null,null]],
+ run_event:[['Enter',0,'喝','@stay',[134,82,82,18],null],['Enter',1,'不喝','@stay',[220,82,82,18],null]],
+ run_lucky:[['Enter',null,'出发','@stay',null,null]],run_map:[],
+ run_quit:[['Enter',0,'收工','@stay',[48,128,106,20],null],['Enter',1,'再想想','@stay',[166,128,106,20],null],['Esc',null,'返回','@stay',null,null]],
+ run_rest:[['Enter',0,'恢复生命','@stay',[120,43,186,28],'样张中不可用'],['Enter',1,'修复货物','@stay',[120,73,186,28],null],['Enter',2,'领取补给','@stay',[120,103,186,28],null],['Enter',3,'收工','@stay',[220,140,94,18],null],['Q',3,'收工','@stay',[220,140,94,18],null],['Esc',null,'离开','@stay',null,null]],
+ run_result:[['Enter',0,'再送一单','@stay',[68,158,88,18],null],['Enter',1,'回大厅','@stay',[164,158,88,18],null]],
+ run_shelf:[['Enter',0,'购买','@stay',[14,41,42,46],null],['Enter',1,'购买','@stay',[60,41,42,46],null],['Enter',2,'购买','@stay',[116,41,42,46],null],['Enter',3,'购买','@stay',[162,41,42,46],null],['Enter',4,'购买','@stay',[208,41,42,46],null],['Enter',5,'购买','@stay',[264,41,42,46],null],['Enter',6,'换一批','@stay',[179,98,66,27],null],['R',6,'换一批','@stay',[179,98,66,27],null],['Enter',7,'恢复生命','@stay',[248,98,66,27],'样张中不可用'],['Enter',8,'修复货物','@stay',[179,129,66,27],null],['Enter',9,'收工','@stay',[248,129,66,27],null],['Q',9,'收工','@stay',[248,129,66,27],null],['Esc',null,'离开','@stay',null,null]],
+ run_wish_card:[['ArrowLeft',null,'选择','@stay',null,null],['ArrowRight',null,'选择','@stay',null,null],['R',null,'重转','@stay',null,null],['Enter',null,'出发','@stay',null,null]],
+ run_wish_give:[['Enter',null,'下一页','@stay',null,null]],
+ settlement:[['Enter',0,'再送一单','@stay',[68,158,88,18],null],['Enter',1,'回大厅','lobby',[164,158,88,18],null]],
+ settlement_fail:[['Enter',0,'再送一单','@stay',[68,151,88,18],null],['Enter',1,'回大厅','@stay',[164,151,88,18],null]],
+ shop:[['Enter',0,'购买','@stay',[97,32,212,20],null],['Enter',1,'购买','@stay',[97,53,212,20],null],['Enter',2,'购买','@stay',[97,74,212,20],'样张中不可用'],['Enter',3,'购买','@stay',[97,95,212,20],'样张中不可用'],['Esc',null,'离开','@stay',null,null]],
+ story_board:[['ArrowLeft',null,'选择','@stay',null,null],['ArrowRight',null,'选择','@stay',null,null],['Enter',0,'打开','@stay',[11,28,70,124],null],['Enter',1,'打开','@stay',[87,28,70,124],null],['Enter',2,'打开','@stay',[163,28,70,124],'样张中未开放'],['Enter',3,'打开','@stay',[239,28,70,124],'样张中未开放'],['Esc',null,'返回','@stay',null,null]],
+ story_chapter:[['ArrowUp',null,'选择','@stay',null,null],['ArrowDown',null,'选择','@stay',null,null],['Enter',0,'打开','@stay',[18,77,284,18],null],['Enter',1,'打开','@stay',[18,97,284,18],null],['Enter',2,'打开','@stay',[18,117,284,18],'样张中未开放'],['Enter',3,'打开','@stay',[18,137,284,18],'样张中未开放'],['Esc',null,'返回','@stay',null,null]],
+ story_complete:[['Enter',null,'确认','@stay',null,null]],story_letter:[['Enter',null,'收进邮局','@stay',null,null]],
+ story_order:[['Enter',0,'出发','@stay',[80,135,76,18],null],['Enter',1,'返回','@stay',[164,135,76,18],null]],
+};
+const expectedPending={confirm:['P02','P03'],crew_joined:['P23'],crew_pick:['P23'],crew_room:['P23'],delivery_assist:['P20'],delivery_help:['P21'],delivery_hud:['P04','P05','P06'],delivery_pause:['P26'],delivery_practice:['P25'],hint_animal:['P15'],observe:['P14'],reels:['P25'],run_door:['P16'],run_door_skull:['P16'],run_event:['P17'],run_lucky:['P18'],run_map:['P13'],run_quit:['P09'],run_rest:['P08'],run_result:['P10'],run_shelf:['P06','P07'],run_wish_card:['P18'],run_wish_give:['P19'],settlement:['P12'],settlement_fail:['P11'],shop:['P06','P07'],story_board:['P22'],story_chapter:['P22'],story_complete:['P22'],story_letter:['P22'],story_order:['P22']};
+test('WB-13 independent primary action and pending tables cover all 31 future pages',()=>{
+ const future=source.screens.filter(s=>s.game==='not_yet');
+ assert.deepEqual(future.map(s=>s.id).sort(),Object.keys(expectedFuture).sort());
+ assert.equal(future.length,31);
+ for(const s of future){
+  assert.deepEqual(s.transitions.map(normalizeFuture),expectedFuture[s.id],s.id);
+  assert.match(s.notes,/待定 P24/,'game usage remains explicitly unconfirmed: '+s.id);
+  for(const id of expectedPending[s.id])assert.ok((s.notes+' '+s.transitions.map(t=>t.notes||'').join(' ')).includes('待定 '+id),s.id+' missing '+id);
+  for(const t of s.transitions){assert.ok(t.sources?.length,s.id+' source missing');for(const c of t.sources){assert.equal(typeof c.file,'string');assert.equal(typeof c.section,'string');}if(t.to==='@stay'&&!['选择','调整','重转','重置'].includes(t.label))assert.match(t.notes||'',/待定 P\d+/);}
+ }
+ assert.equal(source.screens.find(s=>s.id==='delivery_hud').transitions.some(t=>t.key==='C'),false,'C completion belongs only to the preview simulator');
+});
+const expectedKnownSources=[
+ ['reels','出发','delivery_hud','docs/design/delivery-slice.md','2 一局的流程'],
+ ['reels','重转','@stay','docs/design/mode-delivery.md','3.2 玩家能做什么'],
+ ['delivery_help','练习一下','delivery_practice','docs/design/delivery-run.md','3.7 首次教学与教学回顾'],
+ ['delivery_practice','教学列表','delivery_help','docs/design/delivery-run.md','3.7 首次教学与教学回顾'],
+ ['delivery_practice','重置','@stay','docs/design/delivery-run.md','3.7 首次教学与教学回顾'],
+ ['delivery_hud','暂停','delivery_pause','docs/design/delivery-slice.md','11 HUD 与操作'],
+ ['delivery_pause','继续','delivery_hud','docs/design/delivery-slice.md','2 一局的流程'],
+ ['delivery_pause','重来这个房间','delivery_hud','docs/design/delivery-slice.md','2 一局的流程'],
+ ['delivery_pause','放弃这一单','confirm','docs/design/mode-delivery.md','4 时间与操作'],
+ ['delivery_pause','设置','settings','docs/design/delivery-slice.md','2 一局的流程'],
+ ['delivery_pause','返回大厅','lobby','docs/design/delivery-slice.md','2 一局的流程'],
+ ['settlement','回大厅','lobby','docs/design/delivery-slice.md','2 一局的流程'],
+];
+test('WB-13 confirmed destinations retain their independent design citations',()=>{
+ for(const [id,label,to,file,section]of expectedKnownSources){const t=source.screens.find(s=>s.id===id).transitions.find(t=>t.label===label);assert.equal(t?.to,to,id+' '+label);assert.ok(t.sources.some(c=>c.file===file&&c.section===section),id+' '+label+' citation');}
+});
+const expectedVariants={
+ 'ui.screen.hub_start':[['Enter',0,'开始游戏','@stay',[20,86,120,13],null],['Enter',1,'选择章节','chapters',[12,107,110,13],null],['Enter',2,'设置','settings',[12,126,110,13],null],['Enter',3,'退出','@quit',[12,145,110,13],null]],
+ 'ui.screen.lobby_generic':[['Enter',0,'关卡模式','@stay',[22,72,104,18],null],['Enter',1,'配送','@stay',[22,94,104,18],null],['Enter',2,'设置','settings',[22,116,104,18],null],['Enter',3,'退出','@quit',[22,138,104,18],null]],
+ 'ui.screen.lobby_story':[['Enter',0,'关卡模式','@stay',[22,65,104,18],null],['Enter',1,'配送','@stay',[22,84,104,18],null],['Enter',2,'剧情','@stay',[22,103,104,18],null],['Enter',3,'设置','settings',[22,122,104,18],null],['Enter',4,'退出','@quit',[22,141,104,18],null]],
+};
+test('WB-13 lobby variants use their own measured menus without changing primary lab behavior',()=>{
+ const lobby=source.screens.find(s=>s.id==='lobby');assert.deepEqual(Object.keys(lobby.variantTransitions).sort(),Object.keys(expectedVariants).sort());
+ for(const [art,expected]of Object.entries(expectedVariants)){assert.deepEqual(lobby.variantTransitions[art].map(normalizeFuture),expected,art);for(const t of lobby.variantTransitions[art]){assert.ok(t.sources?.length);if(t.to==='@stay')assert.match(t.notes,/待定 P01/);}}
+});
+for(const key of ['Tab','Q','2'])test('WB-13 validates measured extra key '+key,()=>{const f=fixture();try{f.screens.screens[0].transitions=[{key,label:'公开按键',to:'@stay'}];f.save();assert.equal(f.run('check').status,0);}finally{f.clean();}});
+for(const [name,mutate,message]of [
+ ['variant menu unknown destination',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].to='missing',/destination/],
+ ['variant menu unknown key',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].key='Space',/invalid key/],
+ ['variant menu missing hotspot',f=>delete f.screens.screens[0].variantTransitions['ui.screen.alt'][0].hotspot,/hotspot/],
+ ['variant menu out of bounds',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].hotspot=[319,0,2,5],/hotspot/],
+ ['variant menu negative focus',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].focus=-1,/focus/],
+ ['variant menu art not listed',f=>f.screens.screens[0].variantTransitions['ui.screen.lobby']=[],/variant/],
+ ['variant menu not an array',f=>f.screens.screens[0].variantTransitions['ui.screen.alt']={},/variant/],
+ ['variant menu invalid mode',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].mode='story',/mode/],
+ ['variant menu mismatched target art',f=>f.screens.screens[0].variantTransitions['ui.screen.alt'][0].art='ui.screen.lobby',/target art/],
+])test('WB-13 rejects '+name+' through full transition validation',()=>{const f=fixture();try{f.screens.screens[0].variantTransitions={'ui.screen.alt':[{key:'Enter',focus:0,label:'继续',to:'lobby',art:'ui.screen.alt',mode:'delivery',hotspot:[1,2,30,10]}]};mutate(f);f.save();const out=f.run('check');assert.notEqual(out.status,0);assert.match(out.stderr,message);}finally{f.clean();}});
+test('WB-13 build preserves valid variant routing metadata',()=>{const f=fixture();try{f.screens.screens[0].variantTransitions={'ui.screen.alt':[{key:'Enter',focus:0,label:'继续',to:'lobby',art:'ui.screen.alt',mode:'delivery',hotspot:[1,2,30,10]}]};f.save();const out=f.run('build');assert.equal(out.status,0,out.stderr);const data=JSON.parse(fs.readFileSync(path.join(f.dir,'workbench/data/screens.js'),'utf8').slice('window.PB_SCREENS = '.length).trim().replace(/;$/,''));assert.deepEqual(data.screens[0].variantTransitions,f.screens.screens[0].variantTransitions);}finally{f.clean();}});
