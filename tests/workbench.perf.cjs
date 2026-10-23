@@ -248,5 +248,7 @@ let server, browser;
   const wallBefore=await metrics();await page.waitForTimeout(3000);const wallAfter=await metrics();
   const wallCPU=(wallAfter.TaskDuration-wallBefore.TaskDuration)/(wallAfter.Timestamp-wallBefore.Timestamp)*100;
   console.log(JSON.stringify({page:'delivery-wall',cpuPercent:+wallCPU.toFixed(2),limit:10}));assert.ok(wallCPU<10,'PNG gallery idle CPU <10%');
+  // WB-15 appended gates: the largest bundled body and image document remain idle.
+  for(const hash of ['docs/design/audio.md','docs/design/ui-style.md']) await measure(hash,5);
   assert.deepEqual(errors, []); console.log('WB-08 performance gates passed ' + (process.env.WB_HTTP === '1' ? 'HTTP' : 'file'));
 })().catch(e => { console.error(e.stack); process.exitCode = 1; }).finally(async () => { if (browser) await browser.close(); if (server) await new Promise(resolve => server.close(resolve)); });

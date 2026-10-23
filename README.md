@@ -2,7 +2,7 @@
 
 仓库：https://github.com/beekim123/ele-pushbox-arts
 
-独立的美术、地图概念与声音工作台。双击 `workbench/index.html` 打开总览；左栏有资源库、场景与界面、确认、地图概念和声音。资源库筛选会保存在地址中，旧地址仍可打开。游戏开发在独立的私有仓库进行。
+独立的美术、地图概念与声音工作台。双击 `workbench/index.html` 打开总览；左栏有资源库、场景与界面、确认、地图概念、声音和文档。文档入口可搜索并阅读 `docs/design/` 的设计文档，新增或修改文档后运行 `node tools/docs.mjs build` 更新离线目录。资源库筛选会保存在地址中，旧地址仍可打开。游戏开发在独立的私有仓库进行。
 
 在「资源库」按模式、主题 / 地图、用途、资源类别和确认状态筛选；配送可查看渡口 / 伙计 / 剧情关联素材及音效。点卡片进入预览、动画、编辑与确认流程。状态默认全部，概念稿不会隐藏；共用资源引用同一 ID，去重后为 304 项。
 
@@ -14,6 +14,8 @@ node tools/art.mjs build
 node tools/art.mjs verify
 node tools/audio.mjs build
 node tools/audio.mjs verify
+node tools/docs.mjs build
+node tools/docs.mjs check
 node --test --test-concurrency=1 tests/*.test.mjs
 node tests/workbench.smoke.cjs
 ```

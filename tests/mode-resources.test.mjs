@@ -83,10 +83,10 @@ test('mode routes reject missing sections without hiding the resource overview',
   assert.deepEqual(Array.from(C.assets('unknown-mode', 'all', assets)), []);
 });
 
-test('six visible entries keep separate internal tool routes', () => {
+test('seven visible entries keep separate internal tool routes', () => {
   const C=load(), document={documentElement:{}};
   const window={PBModeCatalog:C,PBStore:{assets:()=>assets}};
   vm.runInNewContext(fs.readFileSync(path.join(ROOT,'workbench/js/app/nav.js'),'utf8'),{window,document,localStorage:{getItem:()=>null}});
-  assert.deepEqual(Array.from(window.PBNav.MENU,m=>m.label),['总览','资源库','场景与界面','确认','地图概念','声音']);
+  assert.deepEqual(Array.from(window.PBNav.MENU,m=>m.label),['总览','资源库','场景与界面','确认','地图概念','声音','文档']);
   for(const view of ['assets','edit','export','ui-proposals','audio'])assert.ok(window.PBNav.pages().some(p=>p.view===view),view);
 });

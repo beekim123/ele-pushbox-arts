@@ -28,6 +28,8 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   const page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error') errors.push(m.text());});
   await page.goto(url);await page.waitForTimeout(200);
+  await docsRegression(page,url);
+  if(process.env.WB_DOCS_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-15 focused document checks passed');return;}
   await screensRegression(page,url);
   if(process.env.WB_SCREENS_ONLY==='1'){assert.deepEqual(errors,[]);console.log('WB-11 focused screen checks passed');return;}
   if(process.env.WB_VISIBLE_ONLY==='1'){await visibleContentRegression(page,url);assert.deepEqual(errors,[]);return;}
@@ -156,7 +158,7 @@ async function visibleContentRegression(page, url) {
   const expected=await page.evaluate(()=>PBStore.content().concepts.maps.filter(m=>!PB_CONCEPT_SCENES[m.id]).map(m=>m.id));
   const textGroup=page.locator('#concept-text-only');
   assert.equal(await textGroup.getAttribute('open'),null,'text-only concept table defaults closed');
-  assert.equal(await page.locator('#nav a').count(),6,'concept maps stay out of the six-entry navigation');
+  assert.equal(await page.locator('#nav a').count(),7,'concept maps stay out of the seven-entry navigation');
   assert.equal(await textGroup.locator('.concept-card').count(),expected.length);
   assert.ok((await page.locator('#concepts-root').innerText()).includes('完整度'));
   await shot('concepts-table-and-nav');
@@ -226,8 +228,8 @@ async function libraryRegression(page,url){
   await page.waitForFunction(id=>document.getElementById('approval-'+id)?.open,recentRecord);
   assert.ok(await page.locator('details[id^="approval-"][open]').count());
 
-  assert.deepEqual(await page.evaluate(()=>PBNav.MENU.map(m=>m.label)),['总览','资源库','场景与界面','确认','地图概念','声音']);
-  assert.equal(await page.locator('#nav a').count(),6);
+  assert.deepEqual(await page.evaluate(()=>PBNav.MENU.map(m=>m.label)),['总览','资源库','场景与界面','确认','地图概念','声音','文档']);
+  assert.equal(await page.locator('#nav a').count(),7);
   const routes=[['#level-art','#library?mode=level'],['#delivery-art','#library?mode=delivery'],['#assets','#library'],['#assets/char.portitor','#library?id=char.portitor'],['#edit','#edit'],['#edit/char.portitor','#edit/char.portitor'],['#export','#review/export'],['#ui-proposals','#scenes/screens'],['#concepts/cenote','#concepts/cenote'],['#audio/sfx','#audio/sfx'],['#audio/music','#audio/music'],['#audio/maps','#audio/maps']];
   for(const mode of ['level','delivery'])for(const s of await page.evaluate(mode=>PBModeCatalog.sections(mode,PBStore.assets()).filter(s=>s.id!=='all').map(s=>s.id),mode))routes.push(['#'+mode+'-art/'+s,'#library?mode='+mode+'&'+(s.startsWith('theme.')?'theme='+s.slice(6):'group='+s)]);
   for(const [old,next] of routes){await page.goto(url+old);await page.waitForFunction(hash=>location.hash===hash,next);assert.ok(await page.locator('main > section:not([hidden])').count()===1,old+' has one live destination');if(old.startsWith('#assets/'))assert.ok(await page.locator('#asset-inspector h2').isVisible());}
@@ -318,4 +320,72 @@ async function screensRegression(page,url){
   for(const width of [1280,390]){await page.setViewportSize({width,height:800});await go('#screen/pause');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'screen detail fits '+width);await go('#scenes');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'screen list fits '+width);}
   await page.setViewportSize({width:1280,height:800});
   await go('#home');const text=await page.locator('#home-root').innerText();const totals=await page.evaluate(()=>PB_SCREENS.totals);assert.ok(text.includes('Godot 未实现的界面 '+(totals.pages-totals.implemented)+' 个'));assert.ok(text.includes('游戏未接入 '+totals.not_yet+' 个'));
+}
+
+// WB-15: offline bundled documents, safe internal navigation and static image previews.
+async function docsRegression(page,url){
+  const go=async hash=>{await page.goto(url+hash);await page.locator('#docs-article h1').waitFor();};
+  const shot=async name=>{if(process.env.WB_EVIDENCE_DIR){const dir=path.join(process.env.WB_EVIDENCE_DIR,'screenshots');fs.mkdirSync(dir,{recursive:true});await page.screenshot({path:path.join(dir,name+'.png')});}};
+  await page.setViewportSize({width:1280,height:800});
+  await page.goto(url+'#home');
+  const count=await page.evaluate(()=>PB_DOCS.docs.length);
+  assert.ok((await page.locator('#home-root').innerText()).includes('设计文档 '+count+' 份'),'home counts bundled design documents');
+  await page.locator('#home-root').getByRole('link',{name:'文档',exact:true}).click();
+  await page.locator('#docs-article h1').waitFor();
+  assert.equal(await page.locator('#nav a[aria-current="page"]').innerText(),'文档');
+  assert.equal(await page.locator('#docs-list [data-doc-path]').count(),count,'directory lists every bundled document');
+  for(const file of ['art-direction.md','art-pipeline.md','audio.md','ui-style.md','workbench.md']){
+    const source=fs.readFileSync(path.join(ROOT,'docs/design',file),'utf8');
+    await go('#docs/design/'+file);
+    assert.equal(await page.locator('#docs-article').getAttribute('data-doc-path'),'docs/design/'+file);
+    assert.equal(await page.locator('#docs-article h1').first().innerText(),source.match(/^# (.+)$/m)[1]);
+    assert.ok(await page.locator('#docs-toc a').count()>1,file+' includes a section directory');
+  }
+  await go('#docs/design/art-direction.md');
+  await shot('docs-directory-and-body');
+  assert.ok(await page.locator('#docs-article table').count()>0,'Markdown tables appear in document');
+  await page.locator('#docs-article table').first().scrollIntoViewIfNeeded();
+  await shot('docs-table');
+  const section=await page.locator('#docs-toc a').nth(1).getAttribute('href');
+  await page.evaluate(()=>{window.__wb15Article=document.querySelector('#docs-article').firstElementChild;});
+  await page.locator('#docs-toc a').nth(1).click();
+  await page.waitForFunction(hash=>decodeURIComponent(location.hash)===hash,decodeURIComponent(section));
+  assert.equal(await page.locator('#docs-article h1').first().innerText(),'美术规范（AD-1）','section route preserves whole current document');
+  assert.ok(await page.evaluate(()=>window.__wb15Article===document.querySelector('#docs-article').firstElementChild),'section jump retains rendered document nodes');
+  await page.locator('#docs-article').getByRole('link',{name:'美术流程',exact:true}).click();
+  await page.waitForFunction(()=>location.hash==='#docs/design/art-pipeline.md');
+  assert.equal(await page.locator('#docs-article h1').first().innerText(),'美术流程：源数据、版本、确认与交付');
+  await go('#docs/design/ui-style.md');
+  const image=page.locator('#docs-article img[src*="ui-style/lobby/overview.png"]').first();
+  await image.scrollIntoViewIfNeeded();
+  const imageState=await image.evaluate(async node=>{await node.decode();return {width:node.naturalWidth,height:node.naturalHeight,pixels:getComputedStyle(node).imageRendering};});
+  assert.ok(imageState.width>0&&imageState.height>0,'ui-style repository image actually decodes');
+  assert.equal(imageState.pixels,'pixelated');
+  await shot('docs-image');
+  await image.click();assert.ok(await page.locator('#docs-lightbox[open] img').isVisible(),'document image opens a large preview');
+  await page.getByRole('button',{name:'关闭文档大图',exact:true}).click();
+  assert.ok(await image.evaluate(node=>document.activeElement===node.closest('button')),'closing image restores its preview button focus');
+  const search=page.getByRole('searchbox',{name:'搜索文档',exact:true});
+  await search.fill('调色板');
+  assert.ok(await search.evaluate(node=>document.activeElement===node),'document search keeps focus '+JSON.stringify(await page.evaluate(()=>({active:document.activeElement?.outerHTML,dialog:document.querySelector('#docs-lightbox')?.open}))));
+  assert.ok(await page.locator('#docs-list [data-doc-path="docs/design/art-direction.md"]').isVisible(),'body search finds the art direction');
+  assert.ok((await page.locator('#docs-list').innerText()).includes('调色板'),'body search shows a matching snippet');
+  await shot('docs-search');
+  await page.locator('#docs-list [data-doc-path="docs/design/art-direction.md"]').click();
+  await page.waitForFunction(()=>location.hash==='#docs/design/art-direction.md');
+  assert.equal(await search.inputValue(),'调色板','opening search result preserves the current query');
+  for(const width of [1280,390]){
+    await page.setViewportSize({width,height:800});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'documents fit '+width);
+  }
+  const oldScroll=await page.evaluate(()=>{
+    const readers=[document.querySelector('main'),document.getElementById('view-docs')];
+    for(const node of readers)node.scrollTop=node.scrollHeight;
+    const old=Math.max(...readers.map(node=>node.scrollTop));location.hash='#docs/design/art-pipeline.md';return old;
+  });
+  await page.waitForFunction(()=>document.getElementById('docs-article').dataset.docPath==='docs/design/art-pipeline.md');
+  assert.ok(oldScroll>0,'narrow document has a real outer scrolling position');
+  assert.ok(await page.evaluate(()=>document.querySelector('main').scrollTop===0&&document.getElementById('view-docs').scrollTop===0),'opening another document resets narrow reader scroll');
+  await page.setViewportSize({width:1280,height:800});
+  console.log('WB-15 document directory, five bodies, sections, image decode, links and body search passed');
 }
