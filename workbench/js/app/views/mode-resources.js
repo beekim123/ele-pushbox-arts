@@ -7,6 +7,7 @@
   function create(mode) {
     const config = C.MODES[mode];
     let section = 'all', grid = null, count = null, empty = null, audioStatus = null;
+    let searchTimer = 0;
     const filter = {category:'all',status:'all',query:'',shared:true};
     const getSection = id => C.sections(mode, store.assets()).find(s=>s.id===id) || {id:'all',name:'全部资源'};
     const badge = a => el('span', {class:'badge '+store.status(a.id), text:store.statusLabel(store.status(a.id))});
@@ -46,7 +47,7 @@
       ]);
     }
     function renderCards() {
-      stop(); grid.textContent = '';
+      stop();
       const isSound = section === 'sounds';
       const source = isSound ? C.sounds(mode,store.audio().entries || []) : C.assets(mode,section,store.assets(),{shared:filter.shared});
       const rows = source.filter(a=> {
@@ -57,7 +58,8 @@
       });
       count.textContent = `显示 ${rows.length} / ${source.length} 项${isSound?'音效':'美术资源'}`;
       empty.hidden = rows.length !== 0;
-      for (const a of rows) grid.append(isSound?soundCard(a):artCard(a));
+      const visible = new Set(rows.map(a=>isSound?a.uid:a.id));
+      for (const card of grid.children) card.hidden = !visible.has(isSound?card.dataset.soundId:card.dataset.resourceId);
     }
     function select(label, value, choices, change) {
       const control = el('select',{'aria-label':label,onchange:()=>{change(control.value);renderCards();}});
@@ -68,6 +70,7 @@
     function show(id) {
       const next = getSection(id || 'all');
       if (next.id !== section) Object.assign(filter,{category:'all',status:'all',query:'',shared:true});
+      clearTimeout(searchTimer);
       section = next.id;
       const host = document.getElementById(config.view+'-root');
       host.textContent = '';
@@ -91,14 +94,17 @@
       controls.append(select('确认状态',filter.status,[['all','全部状态'],['approved','已确认'],['review','待确认'],
         ...(!isSound?[['draft','概念 / 草稿'],['local','本地修改']]:[])],v=>{filter.status=v;}));
       const search = el('input',{type:'search','aria-label':'搜索'+config.name+'资源',placeholder:'搜索名称或资源 ID',value:filter.query,
-        oninput:()=>{filter.query=search.value;renderCards();}});
+        oninput:()=>{clearTimeout(searchTimer);const value=search.value;searchTimer=setTimeout(()=>{filter.query=value;renderCards();},150);}});
       controls.append(search);
       if (section.startsWith('theme.')) {
         const common = el('input',{type:'checkbox',checked:filter.shared,onchange:()=>{filter.shared=common.checked;renderCards();}});
         controls.append(el('label',{class:'mode-resource-control'},[common,'包括通用资源']));
       }
       controls.append(el('button',{class:'btn',type:'button',text:'清除筛选',onclick:()=>{
-        Object.assign(filter,{category:'all',status:'all',query:'',shared:true});show(section);
+        clearTimeout(searchTimer); Object.assign(filter,{category:'all',status:'all',query:'',shared:true});
+        for (const control of controls.querySelectorAll('select')) control.value='all';
+        search.value=''; const common=controls.querySelector('input[type=checkbox]'); if(common) common.checked=true;
+        renderCards();
       }}));
       if (isSound) controls.append(el('button',{class:'btn',type:'button',text:'停止试听',onclick:()=>{
         stop(); audioStatus.textContent = '已停止试听。';
@@ -109,6 +115,8 @@
       grid = el('div',{class:'mode-resource-grid'});
       empty = el('p',{class:'muted',text:'没有符合条件的资源，请调整筛选。'});
       host.append(controls,count); if (isSound) host.append(audioStatus);
+      const source = isSound ? C.sounds(mode,store.audio().entries || []) : C.assets(mode,section,store.assets(),{shared:true});
+      for (const a of source) grid.append(isSound?soundCard(a):artCard(a));
       host.append(empty,grid); renderCards();
     }
     function where(id) {

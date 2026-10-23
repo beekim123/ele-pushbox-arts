@@ -142,10 +142,11 @@
     const animHost = el("div", { class: "stage-host" });
     info.append(el("h2", { text: "对比" }), el("div", { class: "btn-row" }, [cmpSel, diffBtn]), ui.compare, el("h3", { text: "动画预览（含本地修改）" }), animHost);
     const names = Object.keys(a.animations); let anim = names[0];
-    const animSel = el("select", { "aria-label": "动画", onchange: () => { anim = animSel.value; } });
+    const animSel = el("select", { "aria-label": "动画", onchange: () => { anim = animSel.value; if (preview) preview.setTick(0); } });
     for (const n of names) animSel.append(el("option", { value: n, text: n }));
     if (preview) preview.destroy();
     preview = root.PBStage.create(animHost, { width: a.size[0], height: a.size[1], animated: true, backgrounds: ["dark", "checker", "light"], maxHeight: 160, maxFit: 8, extras: [animSel],
+      frameKey: tick => PB.sprites.frameAt(a, anim, tick),
       stepTicks: () => (a.animations[anim].fps ? Math.round(60 / a.animations[anim].fps) : 60),
       draw: (r, tick) => r.blitRows(frames[PB.sprites.frameAt(a, anim, tick)], 0, 0, false) });
 

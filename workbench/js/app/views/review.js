@@ -41,52 +41,42 @@
   } catch (e) { /* Storage may be unavailable on file:// or in private browsing. */ }
   function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch (e) { /* Keep working without persistence. */ } }
 
-  let previews = [], raf = 0, lastPaint = 0, lightbox = null;
-  function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
-  function visible() { const view = document.getElementById("view-review"); return view && !view.hidden && !document.hidden; }
-  function animate(now) {
-    raf = 0;
-    if (!visible()) return;
-    if (now - lastPaint >= 80) {
-      lastPaint = now;
-      for (const p of previews) {
-        if (lightbox && p !== lightbox.preview) continue;
-        const rect = p.canvas.getBoundingClientRect();
-        if (rect.bottom > 52 && rect.top < innerHeight && rect.right > 0 && rect.left < innerWidth) p.draw(now);
-      }
-    }
-    raf = requestAnimationFrame(animate);
-  }
-  function start() { if (!raf) raf = requestAnimationFrame(animate); }
+  let lightbox = null, searchTimer = 0;
   function closeLightbox() {
     if (!lightbox) return;
     const old = lightbox; lightbox = null;
-    previews = previews.filter(p => p !== old.preview);
-    old.dialog.close(); old.dialog.remove();
+    old.preview.destroy(); old.dialog.close(); old.dialog.remove();
     root.removeEventListener("resize", old.fit);
   }
-  root.addEventListener("hashchange", () => { if (location.hash.split("/")[0] !== "#review") { stop(); closeLightbox(); } });
-  document.addEventListener("visibilitychange", () => { if (visible()) start(); else stop(); });
+  root.addEventListener("hashchange", () => { if (location.hash.split("/")[0] !== "#review") closeLightbox(); });
 
-  function makePreview(a, z) {
-    const canvas = root.PBAssets.thumb(a, a.kind === "sprite" ? a.size[0] : 320, a.kind === "sprite" ? a.size[1] : 180);
-    const raster = new PB.Raster(canvas.width, canvas.height), ctx = canvas.getContext("2d");
-    let action = Object.keys(a.animations || {})[0], frame = null, origin = performance.now();
-    const p = { canvas, zoom: (n) => { canvas.style.width = canvas.width * n + "px"; canvas.style.height = canvas.height * n + "px"; },
-      action: (name) => { action = name; frame = null; origin = performance.now(); p.draw(origin); },
-      draw: (now) => {
-        // A queued animation-frame timestamp can precede a newly created preview.
-        const tick = Math.max(0, Math.floor((now - origin) * 60 / 1000));
-        if (a.kind === "sprite") {
-          const f = action ? PB.sprites.frameAt(a, action, tick) : 0;
-          if (f === frame) return;
-          frame = f; raster.data.fill(0); raster.blitRows(a.frames[f], 0, 0, false);
-        } else if (a.category === "theme") PB.scene.renderLevel(raster, PB.scene.SHOWCASE, null, { tick, theme: a.id, hud: false });
-        else if (a.category === "material") { if (frame !== null) return; frame = 0; PB.matter.swatches(raster); }
-        else PB.ui.render(raster, a, tick, { focus: 0, specs: Object.fromEntries(store.levels().map(l => [l.id, l])), levelSpec: store.level("M05"), ruleSpec: store.level("M03") });
-        ctx.putImageData(new ImageData(raster.data, raster.w, raster.h), 0, 0);
-      } };
-    p.zoom(z); previews.push(p); return p;
+  function makePreview(a, z, live) {
+    const w = a.kind === "sprite" ? a.size[0] : 320, h = a.kind === "sprite" ? a.size[1] : 180;
+    let action = Object.keys(a.animations || {})[0], stage = null;
+    const canvas = live ? el("div", { class: "stage-host" }) : root.PBAssets.thumb(a, w, h);
+    if (live) {
+      stage = root.PBStage.create(canvas, { width: w, height: h, animated: true, maxFit: 12,
+        frameKey: a.kind === "sprite" ? tick => PB.sprites.frameAt(a, action, tick) : null,
+        draw: (r, tick) => {
+          if (a.kind === "sprite") r.blitRows(a.frames[PB.sprites.frameAt(a, action, tick)], 0, 0, false);
+          else root.PBAssets.drawProcedural(r, a, tick);
+        } });
+    }
+    return { canvas, width: w, height: h,
+      zoom: n => {
+        const target = stage ? stage.canvas : canvas;
+        target.style.width = w * n + "px"; target.style.height = h * n + "px";
+      },
+      action: name => {
+        action = name;
+        if (stage) stage.setTick(0);
+        else if (canvas.tagName === "CANVAS") {
+          const r = new PB.Raster(w, h); r.blitRows(a.frames[a.animations[name].frames[0]], 0, 0, false);
+          canvas.getContext("2d").putImageData(new ImageData(r.data, w, h), 0, 0);
+        } else canvas.style.setProperty("--thumb-frame", a.animations[name].frames[0]);
+      },
+      destroy: () => { if (stage) stage.destroy(); },
+    };
   }
   function actionSelect(a, preview) {
     const names = Object.keys(a.animations || {});
@@ -98,10 +88,10 @@
   function enlarge(a) {
     closeLightbox();
     const dialog = el("dialog", { class: "review-lightbox", "aria-label": "大图 " + a.name });
-    const preview = makePreview(a, 1), host = el("div", { class: "review-large-preview" }, [preview.canvas]);
+    const preview = makePreview(a, 1, true), host = el("div", { class: "review-large-preview" }, [preview.canvas]);
     const caption = el("p", { class: "small muted" });
     const fit = () => {
-      const z = Math.max(1, Math.floor(Math.min(host.clientWidth / preview.canvas.width, host.clientHeight / preview.canvas.height)));
+      const z = Math.max(1, Math.floor(Math.min(host.clientWidth / preview.width, host.clientHeight / preview.height)));
       preview.zoom(z); caption.textContent = `${a.name} · ${a.id} · ×${z} · Esc 关闭`;
     };
     dialog.append(el("div", { class: "review-heading" }, [el("h2", { text: a.name }),
@@ -111,11 +101,11 @@
     dialog.addEventListener("cancel", e => { e.preventDefault(); closeLightbox(); });
     dialog.addEventListener("click", e => { if (e.target === dialog) closeLightbox(); });
     document.getElementById("review-root").append(dialog); dialog.showModal(); fit();
-    root.addEventListener("resize", fit); start();
+    root.addEventListener("resize", fit);
   }
 
   function show() {
-    stop(); closeLightbox(); previews = [];
+    clearTimeout(searchTimer); closeLightbox();
     store.pruneReview();
     const box = document.getElementById("review-root");
     box.textContent = "";
@@ -145,7 +135,7 @@
     for (const key of categories) cat.append(el("option", { value: key, text: CAT[key] || key }));
     cat.value = prefs.cat;
     const search = el("input", { id: "review-search", type: "search", placeholder: "搜索名字 / 编号", value: prefs.q,
-      oninput: () => { prefs.q = search.value; changed(); } });
+      oninput: () => { clearTimeout(searchTimer); const value = search.value; searchTimer = setTimeout(() => { prefs.q = value; changed(); }, 150); } });
     filters.append(el("label", { class: "review-control", text: "状态 " }, [status]), el("label", { class: "review-control", text: "类别 " }, [cat]),
       el("label", { class: "review-search", text: "搜索 " }, [search]));
     content.append(filters, results);
@@ -173,31 +163,44 @@
       return !q || a.id.toLowerCase().includes(q) || a.name.toLowerCase().includes(q);
     }
     function changed() { savePrefs(); renderResults(); }
+    const groups = new Map();
+    const noResults = el("p", { class: "muted", text: "没有符合条件的资产。可以切换状态、类别或清空搜索。" });
     function renderResults() {
-      stop(); closeLightbox(); previews = []; results.textContent = ""; sidebar.textContent = "";
+      closeLightbox(); sidebar.textContent = "";
       sidebar.append(el("h3", { text: "按批次查看" }));
       const batchButton = (id, name, list) => sidebar.append(el("button", { class: "list-btn", type: "button", "data-batch": id, "aria-current": String(prefs.batch === id),
         text: `${name} · ${list.filter(matches).length} / ${list.length}`, onclick: () => { prefs.batch = id; changed(); } }));
       batchButton("all", "全部批次", assets);
       for (const b of batches) batchButton(b.id, b.name, b.assets);
-      const groups = prefs.batch === "all" ? batches : batches.filter(b => b.id === prefs.batch);
       let shown = 0;
-      for (const b of groups) {
-        const list = b.assets.filter(matches), pending = b.assets.filter(a => store.status(a.id) === "review");
-        if (!list.length && prefs.batch === "all") continue;
-        shown += list.length;
-        const selectAll = el("button", { class: "btn", type: "button", text: "全选这一批待确认的", disabled: !pending.length,
-          onclick: () => { for (const a of pending) store.toggleSelected(a.id, true); renderResults(); summary(); } });
-        const group = el("section", { class: "review-group", "aria-label": b.name });
-        group.append(el("div", { class: "review-heading" }, [el("h3", { text: `${b.name}（${list.length}）` }), selectAll]), el("p", { class: "small muted", text: b.about || "" }));
-        if (b.id === "onboarding") group.append(el("p", { class: "note small" }, [document.createTextNode("这 6 项是关卡里的按键提示、目标发光等。在「美术 › 场景」查看 "),
-          el("a", { href: "#scenes/level.M01", text: "M01–M07 的使用效果（打开 M01）" })]));
-        const cards = el("div", { class: "review-cards" });
-        for (const a of list) cards.append(card(a));
-        group.append(cards); results.append(group);
+      for (const b of batches) {
+        let group = groups.get(b.id);
+        if (!group) {
+          const pending = b.assets.filter(a => store.status(a.id) === "review");
+          const selectAll = el("button", { class: "btn", type: "button", text: "全选这一批待确认的", disabled: !pending.length,
+            onclick: () => { for (const a of pending) store.toggleSelected(a.id, true); renderResults(); summary(); } });
+          const node = el("section", { class: "review-group", "aria-label": b.name }), heading = el("h3");
+          node.append(el("div", { class: "review-heading" }, [heading, selectAll]), el("p", { class: "small muted", text: b.about || "" }));
+          if (b.id === "onboarding") node.append(el("p", { class: "note small" }, [document.createTextNode("这 6 项是关卡里的按键提示、目标发光等。在「美术 › 场景」查看 "),
+            el("a", { href: "#scenes/level.M01", text: "M01–M07 的使用效果（打开 M01）" })]));
+          const container = el("div", { class: "review-cards" });
+          for (const a of b.assets) container.append(card(a));
+          node.append(container); results.append(node);
+          group = { node, heading, container }; groups.set(b.id, group);
+        }
+        const inBatch = prefs.batch === "all" || prefs.batch === b.id;
+        let count = 0;
+        for (const node of group.container.children) {
+          node.hidden = !inBatch || !matches(store.asset(node.dataset.asset));
+          if (!node.hidden) count++;
+          node.querySelector('input[type="checkbox"]').checked = !!store.review().selected[node.dataset.asset];
+          node.querySelector('.feedback-input').value = (store.review().feedback[node.dataset.asset] || {}).text || "";
+        }
+        group.heading.textContent = `${b.name}（${count}）`;
+        group.node.hidden = !inBatch || (!count && prefs.batch === "all"); shown += count;
       }
-      if (!shown) results.append(el("p", { class: "muted", text: "没有符合条件的资产。可以切换状态、类别或清空搜索。" }));
-      start();
+      if (!noResults.isConnected) results.append(noResults);
+      noResults.hidden = shown !== 0;
     }
     function card(a) {
       const st = store.status(a.id), effective = store.effective(a.id);
@@ -207,6 +210,7 @@
       const fb = el("input", { class: "feedback-input", type: "text", placeholder: "需要修改时填写", value: (store.review().feedback[a.id] || {}).text || "", "aria-label": "修改意见 " + a.name,
         oninput: () => { store.setFeedback(a.id, fb.value.trim()); summary(); } });
       const preview = makePreview(effective, prefs.zooms[a.id] || 3);
+      preview.zoom(prefs.zooms[a.id] || 3);
       const zoom = el("select", { class: "review-zoom", "aria-label": "放大倍数 " + a.name, onchange: () => { prefs.zooms[a.id] = Number(zoom.value); preview.zoom(Number(zoom.value)); savePrefs(); } });
       for (const z of ZOOMS) zoom.append(el("option", { value: String(z), text: "×" + z }));
       zoom.value = String(prefs.zooms[a.id] || 3);
