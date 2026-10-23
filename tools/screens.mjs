@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-const keys=new Set(['Enter','Esc','H','Z','R','ArrowUp','ArrowDown','ArrowLeft','ArrowRight']);
+const keys=new Set(['Enter','Esc','H','Z','R','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Tab','Q','2']);
 const flows=new Set(['开始','关卡内','配送一局','剧情','伙计','设置与帮助']);
 export function validate(source,manifest){
  const errors=[], screens=source.screens||[], ids=new Set(), assets=new Set((manifest.assets||[]).map(a=>a.id)), covered=new Set();
@@ -18,7 +18,17 @@ export function validate(source,manifest){
   if(s.art!==null)reference(s.art,s.id);
   if(!Array.isArray(s.variants))errors.push('invalid variants: '+s.id);else for(const id of s.variants)reference(id,s.id);
   if(!Array.isArray(s.transitions)){errors.push('invalid transitions: '+s.id);continue;}
-  for(const t of s.transitions){
+  let transitions=s.transitions;
+  if(s.variantTransitions!==undefined){
+   if(!s.variantTransitions||typeof s.variantTransitions!=='object'||Array.isArray(s.variantTransitions))errors.push('invalid variant transitions: '+s.id);
+   else for(const [art,items]of Object.entries(s.variantTransitions)){
+    if(!s.variants?.includes(art)||!Array.isArray(items))errors.push('invalid variant transitions: '+s.id+' / '+art);
+    else transitions=transitions.concat(items);
+   }
+  }
+  for(const t of transitions){
+   if(t.mode!==undefined&&!['lab','delivery'].includes(t.mode))errors.push('invalid mode: '+s.id);
+   if(t.art!==undefined&&!screens.find(p=>p.id===t.to)?.variants?.includes(t.art))errors.push('invalid target art: '+s.id+' → '+t.art);
    const automatic=t.key===undefined&&t.label==='过关'&&t.when==='关卡完成'&&t.to==='complete';
    if(!keys.has(t.key)&&!automatic)errors.push('invalid key: '+s.id);
    if(!t.label||(!ids.has(t.to)&&!['@return','@quit','@stay'].includes(t.to)))errors.push('invalid destination or label: '+s.id+' → '+t.to);
