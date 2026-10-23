@@ -27,3 +27,5 @@ node tests/workbench.smoke.cjs
 本批资源在工作台「确认」选择「离线交付」批次查看：选「已确认」看76项，选「全部」另含6项概念；说明、演示数据边界和实际接收成绩见 [接收记录](art/review/OFFLINE-ART-20261020/RECEIVED.md)。
 
 `art-pack.json` 仍是上次固定资源版本的清单，工作台新增候选后在当前main运行 `pack.mjs check` 会拒绝清单差异，这是未发布状态；不能把此目录按旧版本号直接导入游戏。旧标签和游戏资源锁保持不变，后续批准与新版本发布另行进行。
+
+美术规范、界面风格、声音和工作台设计以本仓库 [`docs/design/`](docs/design/) 为唯一来源；新页面先登记到 `content/screens/screens.json`、画出 HTML 并经用户确认后，才进入游戏。
