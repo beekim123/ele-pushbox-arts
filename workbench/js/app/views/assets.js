@@ -7,22 +7,33 @@
   const filt = { cat: "all", status: "all", q: "" };
   let selected = null, stage = null, anim = null;
 
-  function thumb(a, maxW, maxH) {
-    const c = document.createElement("canvas");
-    if (a.kind === "sprite") {
-      const f = a.frames[firstFrame(a)];
-      c.width = a.size[0]; c.height = a.size[1];
-      const r = new PB.Raster(a.size[0], a.size[1]); r.blitRows(f, 0, 0, false);
-      c.getContext("2d").putImageData(new ImageData(r.data, r.w, r.h), 0, 0);
-      const z = Math.max(1, Math.min(Math.floor(maxW / a.size[0]), Math.floor(maxH / a.size[1])));
-      c.style.width = a.size[0] * z + "px"; c.style.height = a.size[1] * z + "px";
-    } else {
-      c.width = 320; c.height = 180;
-      const r = new PB.Raster(320, 180); drawProcedural(r, a, 0);
-      c.getContext("2d").putImageData(new ImageData(r.data, 320, 180), 0, 0);
-      c.style.width = "144px"; c.style.height = "81px";
-    }
+  const warned = new Set(), cards = new Map();
+  let searchTimer = 0;
+  function canvasThumb(a) {
+    const c = document.createElement("canvas"), sprite = a.kind === "sprite";
+    c.width = sprite ? a.size[0] : 320; c.height = sprite ? a.size[1] : 180;
+    const r = new PB.Raster(c.width, c.height);
+    if (sprite) r.blitRows(a.frames[firstFrame(a)], 0, 0, false); else drawProcedural(r, a, 0);
+    c.getContext("2d").putImageData(new ImageData(r.data, r.w, r.h), 0, 0);
     return c;
+  }
+  function thumb(a, maxW, maxH) {
+    const sprite = a.kind === "sprite", w = sprite ? a.size[0] : 320, h = sprite ? a.size[1] : 180;
+    const z = Math.max(1, Math.min(Math.floor(maxW / w), Math.floor(maxH / h)));
+    const width = sprite ? w * z : 144, height = sprite ? h * z : 81;
+    if (a._draft) {
+      const c = canvasThumb(a); c.style.width = width + "px"; c.style.height = height + "px"; return c;
+    }
+    const wrapper = el("span", { class: "asset-png-thumb" });
+    wrapper.style.width = width + "px"; wrapper.style.height = height + "px";
+    wrapper.style.setProperty("--thumb-frame", sprite ? firstFrame(a) : 0);
+    const img = el("img", { src: "../art/export/preview/" + a.id + ".png", alt: "", loading: "lazy", decoding: "async", width: sprite ? w * a.frames.length : w, height: h });
+    img.style.width = (sprite ? a.frames.length * 100 : 100) + "%";
+    img.addEventListener("error", () => {
+      if (!warned.has(a.id)) { warned.add(a.id); console.warn("预览 PNG 加载失败，改用代码绘制：" + a.id); }
+      const c = canvasThumb(a); c.style.width = "100%"; c.style.height = "100%"; wrapper.replaceChildren(c);
+    }, { once: true });
+    wrapper.append(img); return wrapper;
   }
   function firstFrame(a) { const n = Object.values(a.animations || {})[0]; return n ? n.frames[0] : 0; }
   function drawProcedural(r, a, tick) {
@@ -52,17 +63,24 @@
 
   function renderCards() {
     const box = document.getElementById("asset-cards");
-    box.textContent = "";
-    const list = store.assets().map((a) => store.effective(a.id)).filter(matches);
-    document.getElementById("asset-count").textContent = list.length ? `${list.length} 项` : "没有符合条件的资产。";
+    const list = store.assets().map((a) => store.effective(a.id));
+    let count = 0;
     for (const a of list) {
-      const st = store.status(a.id);
-      box.append(el("button", { class: "card", type: "button", "aria-current": String(selected === a.id), onclick: () => { location.hash = "#assets/" + a.id; } }, [
-        el("div", { class: "thumb" }, [thumb(a, 128, 80)]),
-        el("div", { class: "name", text: a.name }),
-        el("div", { class: "row" }, [el("span", { class: "id", text: `${a.id} v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]),
-      ]));
+      const st = store.status(a.id), key = a.frames || a;
+      let entry = cards.get(a.id);
+      if (!entry || entry.key !== key || entry.status !== st) {
+        const node = el("button", { class: "card", type: "button", onclick: () => { location.hash = "#assets/" + a.id; } }, [
+          el("div", { class: "thumb" }, [thumb(a, 128, 80)]),
+          el("div", { class: "name", text: a.name }),
+          el("div", { class: "row" }, [el("span", { class: "id", text: `${a.id} v${a.version}` }), el("span", { class: "badge " + st, text: store.statusLabel(st) })]),
+        ]);
+        if (entry) entry.node.replaceWith(node); else box.append(node);
+        entry = { node, key, status: st }; cards.set(a.id, entry);
+      }
+      entry.node.setAttribute("aria-current", String(selected === a.id));
+      entry.node.hidden = !matches(a); if (!entry.node.hidden) count++;
     }
+    document.getElementById("asset-count").textContent = count ? `${count} 项` : "没有符合条件的资产。";
   }
 
   function renderInspector() {
@@ -86,6 +104,7 @@
       stage = root.PBStage.create(host, {
         width: a.size[0] + pad * 2, height: a.size[1] + pad * 2, animated: true, backgrounds: ["checker", "dark", "light"], maxHeight: 240, maxFit: 12, label: a.name,
         extras: [animSel, anchorBtn],
+        frameKey: tick => PB.sprites.frameAt(a, anim, tick),
         stepTicks: () => { const A = a.animations[anim]; return A.fps ? Math.round(60 / A.fps) : 60; },
         draw: (r, tick) => {
           const A = a.animations[anim]; const f = PB.sprites.frameAt(a, anim, tick);
@@ -136,7 +155,7 @@
   function show(id) {
     selected = id && store.asset(id) ? id : selected;
     renderFilters(); renderCards(); renderInspector();
-    document.getElementById("asset-search").oninput = (e) => { filt.q = e.target.value.trim(); renderCards(); };
+    document.getElementById("asset-search").oninput = (e) => { clearTimeout(searchTimer); const value = e.target.value.trim(); searchTimer = setTimeout(() => { filt.q = value; renderCards(); }, 150); };
   }
-  root.PBAssets = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true), CAT, thumb };
+  root.PBAssets = { show, hide: () => stage && stage.setVisible(false), wake: () => stage && stage.setVisible(true), CAT, thumb, drawProcedural };
 })(window);

@@ -45,17 +45,18 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   }
   await page.locator('#nav a[data-key="delivery-art/theme.diyu"]').click();
   await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('地府'));
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.yama"]').count(),1);
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.haenyeo"]').count(),0);
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.yama"]:visible').count(),1);
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="char.haenyeo"]:visible').count(),0);
   await page.getByLabel('包括通用资源',{exact:true}).uncheck();
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id="obj.crate_wood"]').count(),0);
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id="obj.crate_wood"]:visible').count(),0);
   await page.locator('#nav a[data-key="delivery-art"]').click();
   await page.waitForFunction(()=>document.querySelector('#delivery-art-root h1')?.textContent.includes('全部资源'));
   await page.getByLabel('搜索配送模式资源',{exact:true}).fill('ui.screen.run_door');
-  assert.equal(await page.locator('#delivery-art-root [data-resource-id]').count(),2);
+  await page.waitForFunction(()=>[...document.querySelectorAll('#delivery-art-root [data-resource-id]')].filter(c=>!c.hidden).length===2);
+  assert.equal(await page.locator('#delivery-art-root [data-resource-id]:visible').count(),2);
   await page.getByRole('button',{name:'清除筛选',exact:true}).click();
   await page.locator('#delivery-art-root').getByLabel('确认状态',{exact:true}).selectOption('draft');
-  const draftIds=await page.locator('#delivery-art-root [data-resource-id]').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId));
+  const draftIds=await page.locator('#delivery-art-root [data-resource-id]:visible').evaluateAll(cards=>cards.map(c=>c.dataset.resourceId));
   const expectedDrafts=JSON.parse(fs.readFileSync(path.join(ROOT,'art/review/OFFLINE-ART-20261020/receipt.json'))).assets.filter(a=>a.stage==='draft').map(a=>a.id);
   for(const id of expectedDrafts) assert.ok(draftIds.includes(id),id+' draft remains accessible');
   check(true,'mode search, map/common filter and draft concepts remain accessible');
@@ -129,7 +130,7 @@ const check=(ok,msg)=>{ console.log((ok?'ok ':'FAIL ')+msg); if(!ok) failures.pu
   check(candidates.length===82&&candidates.every(a=>a.status===(sourceStage.get(a.id)==='review'?'approved':'draft')),
     '76 reviewed entries are approved; six delivery concepts remain draft');
   await page.locator('#review-status').selectOption('approved');
-  assert.equal(await page.locator('#review-results .review-card').count(),76);
+  assert.equal(await page.locator('#review-results .review-card:visible').count(),76);
   check((await page.locator('#review-root').innerText()).includes('待确认 0'),'no reviewed art remains pending');
   for(const item of reports.renders){
     const result=await page.evaluate(item=>{

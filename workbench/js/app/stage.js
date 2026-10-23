@@ -1,12 +1,13 @@
 /* Stage: integer-zoom pixel canvas with background, play/pause and frame
- * stepping. Redraws only on change; the animation loop runs only while playing,
- * while the stage is visible and while the page is visible. */
+ * stepping. Sprite frames redraw on change; procedural previews use a capped
+ * clock. Only the active, intersecting stage in a visible page can play. */
 (function (root) {
   "use strict";
   const PB = root.PB;
   const ZOOMS = [1, 2, 3, 4, 5, 6, 8, 10, 12];
   const BACKS = { checker: "透明格", dark: "深底", light: "浅底", scene: "场景" };
   const all = new Set();
+  let active = null;
 
   function el(tag, attrs, children) {
     const e = document.createElement(tag);
@@ -23,7 +24,8 @@
     host.textContent = "";
     const state = {
       w: o.width, h: o.height, zoom: o.zoom || 0, back: o.background || (o.backgrounds ? o.backgrounds[0] : null),
-      playing: o.animated ? (o.autoplay !== false) : false, tick: 0, visible: true, raf: 0, last: 0,
+      playing: o.animated ? (o.autoplay !== false) : false, tick: 0, visible: true, intersecting: true, timer: 0, last: 0,
+      fps: o.fps || 8, slow: 0, verySlow: 0, frameKey: undefined,
     };
     const canvas = el("canvas", { width: state.w, height: state.h, "aria-label": o.label || "像素预览" });
     const ctx = canvas.getContext("2d");
@@ -88,7 +90,7 @@
     function layout() {
       const z = effectiveZoom();
       canvas.style.width = state.w * z + "px"; canvas.style.height = state.h * z + "px";
-      info.textContent = `${state.w}×${state.h} · ${z}×`;
+      info.textContent = `${state.w}×${state.h} · ${z}×` + (state.fps < (o.fps || 8) ? ` · 性能模式 · ${state.fps} fps` : "");
       paintBack(z);
     }
     function paintBack(zArg) {
@@ -100,33 +102,49 @@
       else canvas.style.background = "transparent";
     }
     function draw() {
+      const started = performance.now();
       const r = new PB.Raster(state.w, state.h);
       try { o.draw(r, state.tick, state.back); }
       catch (err) { console.error(err); info.textContent = "绘制失败：" + err.message; }
       ctx.putImageData(new ImageData(r.data, state.w, state.h), 0, 0);
+      state.frameKey = o.frameKey ? o.frameKey(state.tick) : undefined;
+      const ms = performance.now() - started;
+      state.slow = ms > 40 ? state.slow + 1 : 0;
+      state.verySlow = ms > 120 ? state.verySlow + 1 : 0;
+      const cap = state.verySlow >= 3 ? 2 : state.slow >= 3 ? 4 : state.fps;
+      if (cap < state.fps) { state.fps = cap; layout(); }
       if (o.onFrame) o.onFrame(state.tick);
     }
-    function loop(t) {
-      state.raf = 0;
-      if (!running()) return;
-      if (!state.last) state.last = t;
-      const frameMs = 1000 / 60, dt = t - state.last;
-      const steps = Math.min(6, Math.round(dt / frameMs));
-      if (steps > 0) {
-        state.tick += steps;
-        // Keep the fractional remainder; resetting to t drops alternate RAFs
-        // when a 60 Hz display lands just below the frame interval.
-        state.last = dt > 6 * frameMs ? t : state.last + steps * frameMs;
-        draw();
-      }
-      state.raf = requestAnimationFrame(loop);
+    function stopClock() {
+      if (state.timer) clearTimeout(state.timer);
+      state.timer = 0; state.last = 0;
     }
-    function running() { return state.playing && state.visible && !document.hidden && host.isConnected; }
-    function kick() { if (running() && !state.raf) { state.last = 0; state.raf = requestAnimationFrame(loop); } }
+    function running() { return active === api && state.playing && state.visible && state.intersecting && !document.hidden && host.isConnected; }
+    function loop() {
+      state.timer = 0;
+      if (!running()) { state.last = 0; return; }
+      const now = performance.now(), delta = now - state.last;
+      const steps = Math.floor(delta * 60 / 1000);
+      state.tick += steps; state.last += steps * 1000 / 60;
+      if (!o.frameKey || o.frameKey(state.tick) !== state.frameKey) draw();
+      schedule();
+    }
+    function schedule() {
+      if (running() && !state.timer) state.timer = setTimeout(loop, o.frameKey && state.fps === (o.fps || 8) ? 1000 / 60 : 1000 / state.fps);
+    }
+    function kick() {
+      if (!running()) { stopClock(); return; }
+      if (!state.last) state.last = performance.now();
+      schedule();
+    }
     function setPlaying(p) {
+      if (p && active !== api) {
+        if (active) active.setPlaying(false);
+        active = api;
+      }
       state.playing = p;
       if (playBtn) { playBtn.textContent = p ? "暂停" : "播放"; playBtn.setAttribute("aria-pressed", String(p)); }
-      if (p) kick(); else if (state.raf) { cancelAnimationFrame(state.raf); state.raf = 0; }
+      if (p) kick(); else stopClock();
     }
     function step(d) {
       setPlaying(false);
@@ -138,15 +156,17 @@
       canvas, frame,
       refresh: () => { draw(); },
       resize(w, h) { state.w = w; state.h = h; canvas.width = w; canvas.height = h; layout(); draw(); },
-      setVisible(v) { state.visible = v; if (v) kick(); },
+      setVisible(v) { state.visible = v; kick(); },
       wake: kick,
       setTick(t) { state.tick = t; draw(); },
       tick: () => state.tick,
       playing: () => state.playing,
       setPlaying,
       relayout: layout,
-      destroy() { state.playing = false; if (state.raf) cancelAnimationFrame(state.raf); all.delete(api); },
+      destroy() { state.playing = false; stopClock(); observer.disconnect(); if (active === api) active = null; all.delete(api); },
     };
+    const observer = new IntersectionObserver(entries => { state.intersecting = entries[0].isIntersecting; kick(); });
+    observer.observe(frame);
     all.add(api);
     layout(); draw(); setPlaying(state.playing);
     return api;

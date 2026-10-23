@@ -346,3 +346,16 @@ body:has(#view-review:not([hidden])) .toast { bottom: 110px; z-index: 16; }
   .review-bar .btn { padding: 5px 8px; font-size: 12px; }
   .review-lightbox { inset: 8px; width: calc(100vw - 16px); height: calc(100vh - 16px); padding: 10px; }
 }
+
+/* WB-08: fixed-size PNG crops retain the former integer pixel geometry. */
+.asset-png-thumb { position: relative; display: block; flex: none; overflow: hidden; max-width: none; }
+.asset-png-thumb > img { position: absolute; top: 0; left: calc(-100% * var(--thumb-frame, 0)); height: 100%; max-width: none; image-rendering: pixelated; }
+.asset-png-thumb > canvas { display: block; image-rendering: pixelated; }
+.review-preview .asset-png-thumb { margin: auto; }
+.card[hidden], .mode-resource-card[hidden], .review-card[hidden], .review-group[hidden] { display: none; }
+.review-large-preview .stage-host { width: 100%; min-width: 0; }
+
+.card .thumb .asset-png-thumb { max-width: 100%; max-height: 84px; }
+
+/* Bind percentage thumbnail limits to the card, rather than an implicit max-content track. */
+.card .thumb { grid-template-columns: minmax(0, 1fr); }
