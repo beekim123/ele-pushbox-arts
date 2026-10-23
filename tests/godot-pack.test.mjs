@@ -29,7 +29,7 @@ function sourceFixture(t) {
   for (const rel of ['godot', 'art/approvals.json', 'art/history', 'art/export/approved',
     'art/export/manifest.json', 'art-pack.json', 'audio/approvals.json', 'audio/history',
     'audio/export/approved', 'third_party/fonts', 'LICENSE', 'LICENSE-ASSETS.md',
-    'tools/lib/godot-pack.mjs', 'tools/pack-godot.mjs']) {
+    'tools/lib/godot-pack.mjs', 'tools/lib/art-owners.mjs', 'art/owners.json', 'tools/pack-godot.mjs']) {
     const from = path.join(repo, rel);
     assert.ok(fs.existsSync(from), 'native producer input is missing: ' + rel);
     fs.mkdirSync(path.dirname(path.join(root, rel)), {recursive: true});

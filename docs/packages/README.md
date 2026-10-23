@@ -16,3 +16,7 @@
 - 最后检查：node tools/art.mjs build（只允许指定换版本）；node tools/art.mjs verify；node tools/audio.mjs verify；node --test --test-concurrency=1 tests/*.test.mjs；node tests/workbench.smoke.cjs。
 - 交回：git push -u origin art/<编号>；无法推送用 git bundle create <编号>.bundle origin/main..art/<编号>。
 - 交付（40 行以内）：提交号、实际检查结果、允许的换版本清单、遗留、当前阶段、下一步及执行人。包未授权的扩大修改先说明。
+
+## 模块归属交回
+
+- [ART-07](ART-07.md)：组合owner元数据与导出技术验收通过，69项归属供用户过目；只交回 `art/ART-07-owner`，不合main、不发布或新增批准。

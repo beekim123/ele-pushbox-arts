@@ -17,7 +17,7 @@ const realBefore = fs.existsSync(real) ? crypto.createHash("sha256").update(fs.r
 // pipeline itself regardless of what the user has approved in the repository.
 function sandbox() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "pb-art-"));
-  for (const d of ["art/source", "art/concepts", "content"]) if (fs.existsSync(path.join(REPO, d))) fs.cpSync(path.join(REPO, d), path.join(dir, d), { recursive: true });
+  for (const d of ["art/source", "art/owners.json", "art/concepts", "content"]) if (fs.existsSync(path.join(REPO, d))) fs.cpSync(path.join(REPO, d), path.join(dir, d), { recursive: true });
   return dir;
 }
 const art = (root, ...args) => execFileSync(process.execPath, [path.join(REPO, "tools/art.mjs"), ...args, "--root", root], { encoding: "utf8" });

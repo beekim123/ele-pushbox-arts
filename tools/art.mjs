@@ -19,6 +19,7 @@ const buildContent = contentTools?.buildContent || ((root, opts = {}) => {
 });
 const printIssues = contentTools?.printIssues || (res => { for (const i of res.issues) console.error(`${i.level}: ${i.where}: ${i.msg}`); });
 import { loadTextTables, missingGlyphs } from "./lib/i18n.mjs";
+import { readOwnerTable, withOwners } from "./lib/art-owners.mjs";
 
 const argv = process.argv.slice(2);
 const cmd = argv[0];
@@ -156,6 +157,7 @@ function pngOf(r) { return encodePng(r.w, r.h, r.data); }
 // ---------- commands ----------
 function build() {
   const byId = loadSources();
+  const owners = readOwnerTable(ROOT, [...byId.values()].map(item => item.src));
   const approvals = loadApprovals();
   let bumped = 0, errors = 0, snapshotChanged = 0;
   for (const it of byId.values()) {
@@ -203,6 +205,7 @@ function build() {
     bundleAssets.push(Object.assign({}, src, { status, approved_versions: approvedVersions }));
   }
   if (LOCKED) manifest.assets = PACK.assets;
+  manifest.assets = withOwners(manifest.assets, owners);
   if (snapshotChanged) console.log(`${snapshotChanged} 项与资源版本不同（不影响游戏；要更新代表画面请刷新快照）`);
   // Reference composites (illustrations built from current versions).
   fs.mkdirSync(rel("art/export/reference"), { recursive: true });
@@ -245,7 +248,7 @@ function build() {
   let modelCheck = null;
   if (fs.existsSync(rel("content/model-check.generated.json"))) modelCheck = readJson(rel("content/model-check.generated.json"));
   const reviewBatches = fs.existsSync(rel("art/review-batches.json")) ? readJson(rel("art/review-batches.json")) : [];
-  const bundle = { reviewBatches, built: new Date().toISOString(), assets: bundleAssets, history, approvals: approvals.records, levels: specs, modelCheck, references: refs, i18n: I18N, textIssues: text };
+  const bundle = { reviewBatches, built: new Date().toISOString(), assets: withOwners(bundleAssets, owners), history, approvals: approvals.records, levels: specs, modelCheck, references: refs, i18n: I18N, textIssues: text };
   // Preserve the build date when the actual bundle data did not change.
   const oldBundle = rel("workbench/data/bundle.js");
   if (fs.existsSync(oldBundle)) {
